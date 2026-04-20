@@ -38,8 +38,10 @@ label filipIntroduction_after:
     m "Jasne!"
     "[filipName[M]] otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
 
-    show scene office with fade
+    scene bg office
+    play sound "sounds/sfx_door_open.mp3"
 
+    show kurowska with dissolve
     "Przed tobą siedzi Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
@@ -145,7 +147,8 @@ label kurowskaBureaucracyMenu:
                     k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno"
                     $ rudeToKurowska = True
                     k "Dobrze w takim razie koniec tego wywiadu. Masz tutaj klucze do twojego domu, a teraz idź zanim cię wywale!"
-                    show scene office night
+                    scene bg secretary
+                    play sound "sounds/sfx_door_slam.mp3"
                     you "{i}JESZCZE ŻYJĘ! Byłoby ciężko gdyby mnie wyrzuciła na bruk. Dostałem klucze do domu, o przyjemnych rozmowach nie myślę.{/i}"
                     jump gettingHouseKeys
 
@@ -154,7 +157,7 @@ label gettingHouseKeys:
     k "(ps. Kasia Dowbor go remontowała)"
     you "Thank you thank you thank you"
     you "{i}Tam musi być luksusowo{/i}"
-    show scene office with dissolve
+    scene bg cityhallinside
     show piotr 
     "Wychodzisz"
     p "dobrze wszystko? coś ty długo u niej byłeś"

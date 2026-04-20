@@ -84,7 +84,9 @@ label piotrTravelToCity:
     you "{i}Czy ten most nie jest za stary?{/i}"
     you "{i}Przecież on się może w każdym momencie zawalić.{/i}"
     you "{i}Już mi się tutaj nie podoba, mieszkańcy polegają na starych technologiach, które już dawno powinny zostać wyparte.{/i}"
+
     you "{i}Przed czym chcą się bronić? Chyba nie chce wiedzieć...{w=1.0} aż strach pomyśleć co może być w ukryte w tych lasach.{/i}"
+    scene bg citysquarenight with dissolve
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     "Na ulicach nie ma nikogo, {w}oprócz {i}was{/i}."
     "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.3}, ciepłą{w=.3}, witającą{w=.3} i zarazem przyjazną atmosferę."
@@ -92,7 +94,9 @@ label piotrTravelToCity:
     you "{i}Brak żywej duszy na ulicach... Chyba nie jest tak późno. Mam nadzieję, że ta {u}Kurowska{/u} jeszcze ma otwarte biuro{/i}"
     "Podchodzicie do urzędu miasta. Wiedziałeś, że to wasza destynacja po wielkim{w=.3}, rozległym{w=.3}, ogromnym{w=.3} i zarazem małym herbem."
     "Miał taką...{w=0.5} urzędniczą aurę"
+    scene bg cityhallinside with dissolve
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu cię wyprowadza."
+
     show piotr at center
     p "Siedź tu grzecznie ja zaraz wrócę."
     you "Okej"
@@ -102,10 +106,13 @@ label piotrTravelToCity:
     "Od razu jak się obudziłeś pod jakimś drzewem w tym lesie wiedziałeś, że coś tu nie gra..."
     "Tylko co..."
     "Rozluźniasz się i opierasz się o ścianę, czując jak sosnowe igły kłują cię w plecy."
+
     "Zostały na twojej koszulce od kiedy leżałeś w lesie."
     "Czujesz wstyd, ponieważ przeszedłeś przez całe miasto, wyglądając jak pijak."
     "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności ⸻ siedzenia ⸻ kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły."
     "Po chwili wraca piotr i woła cię do sekretariatu..."
+    scene bg secretary with dissolve
+
 
     show piotr at center with dissolve
     pause 0.5
