@@ -121,7 +121,7 @@ label kurowskaBureaucracyMenu:
             k "Dobra wracając do twojej pracy..."
             "[kurowskaName] przegląda dokumenty na stole, potem w stole, potem za nią"
             "Wydaje się, że ona wie że jest praca ale nie może znaleźć tego papieru na stole"
-            k "Do jasnej mufinki... Zgubiłam chyba..."
+            k "Do jasnej muffinki... Zgubiłam chyba..."
             k "No to w takim razie nie mam nic. Jutro bedę w stanie powiedzieć wiecęj, dlatego dzisiaj jesteś wolny."
             k "Tylko zgłoś się do mnie jutro."
             you "Spoko"
