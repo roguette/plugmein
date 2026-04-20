@@ -180,6 +180,7 @@ label goingIntoTown:
     menu:
         "Chcę iść do domu":
             you "{i}Chyba idę spać...{/i}"
+            jump goingHomeFirstNight
         "Chcę zwiedzić miasto":
             you "{i}Chyba nie idę spać...{/i}"
 

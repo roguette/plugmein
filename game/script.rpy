@@ -8,11 +8,11 @@ define m = Character("???") #mystery speaker
 
 
 image side piotr = "piotr side.png"
+
 define p = Character("Piotr", image="piotr", color="#a222be")
-
 define f = Character("Filip", color="#a222be")
-
 define k = Character("Barbara K.", color="#ff41c9")
+define t = Character("Tomcio", color="#ec1f1f")
 
 default friendship = {"Piotr": 0, "Filip": 0, "Kurowska": 0}
 
