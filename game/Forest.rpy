@@ -84,6 +84,7 @@ label piotrTravelToCity:
     you "{i}Już mi się tutaj nie podoba, mieszkańcy polegają na starych technologiach, które już dawno powinny zostać wyparte.{/i}"
     you "{i}Przed czym chcą się bronić? Chyba nie chce wiedzieć...{/i}"
     you "{i}aż strach myśleć co może być w ukryte w tych lasach.{/i}"
+    scene bg citysquarenight with dissolve
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste"
     "Na ulicach nie ma nikogo, {w} oprócz was."
     "[name] zwrócił uwagę na ilość budynków, która była astronomiczna. Aż w końcu bohaterowie dotarli na rynku, na którym pomimo później godziny, dało się wyczuć miłą i przyjazną atmosferę"
@@ -91,6 +92,7 @@ label piotrTravelToCity:
     you "{i}Brak żywej duszy na ulicach... Chyba nie jest tak późno. Mam nadzieję, że Kurowska jeszcze ma otwarte biuro{/i}"
     "Podchodzicie do urzędu miasta. Wiedziałeś że to właśnie ten budynek jest urzędem przez duży herb nad wejściem"
     "Miał taką... {w=0.5} urzędniczą aurę"
+    scene bg cityhallinside with dissolve
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu wyprowadza cię"
     show piotr at center
     p "Siedź tu grzecznie ja zaraz wrócę"
@@ -106,7 +108,7 @@ label piotrTravelToCity:
     "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności - siedzenia,"
     "kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły"
     "Po chwili wraca piotr i woła cię do sekretariatu"
-
+    scene bg secretary with dissolve
     show piotr at center with dissolve
     pause 0.5
     show piotr at left with move
