@@ -1,6 +1,6 @@
 ﻿
 define config.default_text_cps = 50
-define config.main_menu_music = "audio/title.mp3"
+define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
 
 define e = Character("Eileen")
