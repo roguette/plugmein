@@ -3,20 +3,16 @@ define config.default_text_cps = 50
 define config.main_menu_music = "audio/title.mp3"
 
 
-define e = Character("Eileen")
 define mks = Character("MKS 23", color="#fafafa")
-define m = Character("???")
+define m = Character("???") #mystery speaker
 
 
-define piotrName = "Piotr"
 image side piotr = "piotr side.png"
-define p = Character("[piotrName]", image="piotr", color="#a222be")
+define p = Character("Piotr", image="piotr", color="#a222be")
 
-define filipName = "Filip"
-define f = Character("[filipName]", color="#a222be")
+define f = Character("Filip", color="#a222be")
 
-define kurowskaName = "Kurowska"
-define k = Character("[kurowskaName]", color="#ff41c9")
+define k = Character("Barbara K.", color="#ff41c9")
 
 default friendship = {"Piotr": 0, "Filip": 0, "Kurowska": 0}
 
@@ -35,22 +31,22 @@ label start:
 
     scene bg busstopa with dissolve
 
-    you "{i}głupi mks oczywiście że musiał się spóźnić{/i}"
-    you "{i}zostały mi 2 minuty a muszę jeszcze iść do szatni{/i}"
+    you "{i}Głupi mks oczywiście, że musiał się spóźnić...{/i}"
+    you "{i}Zostały mi tylko 2 minuty, a muszę jeszcze iść do szatni!!!{/i}"
     "{cps=1}...{/cps}"
-    you "{i}o dobra mam zielone mogę przejść{/i}"
+    you "{i}O dobra mam zielone mogę przejść! (hihi){/i}"
 
     show bus at center
 
-    mks "hejka naklejka"
+    mks "Ohayoooo!!!!"
 
     window hide
 
     play sound "audio/hit_by_bus.mp3"
     show bus:
         linear 3.0 zoom 3.0
-    you "AAAAAAAAAAAAAAAAAAA{nw}"
     pause 2.5
+    you "AAAAAAAAAAAAAAAAAAA{nw}"
     scene black
 
     pause 3.0
@@ -91,10 +87,10 @@ label start:
     "patrzysz się na niego z podejrzliwością"
     you "Kim ty jesteś?? Halo?? Co ty tutaj robisz???"
     m "Nie drzyj się jesteś w lesie"
-    p "Nazywam się [piotrName] i jestem czarodziejem"
+    p "Nazywam się Piotr i jestem czarodziejem"
     p "To znaczy miałem oczyszczać las, ale twoja obecność mi przeszkodziła"
     "patrzysz się dookoła i widzisz obok siebie koło z onyksu"
-    "[piotrName] daje ci swoją rękę, a dokładniej łapę i pomaga ci wstać"
+    "Piotr daje ci swoją rękę, a dokładniej łapę i pomaga ci wstać"
     you "{cps=20}Dziękuję! Czekaj co{/cps}{nw}"
     you "{cps=20}tfym ja ci przeszkodziłem{/cps}{nw}"
     you "{cps=20}czemu ty jesteś ptakiem{/cps}{nw}"
@@ -105,4 +101,3 @@ label start:
     p "Mogę odpowiedzieć na twoje pytania, ale pod warunkiem że będziesz cicho"
 
     jump piotrIntroductionMenu
-
