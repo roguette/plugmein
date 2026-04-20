@@ -177,13 +177,6 @@ label goingIntoTown:
     menu:
         "Chcę iść do domu":
             you "{i}Chyba idę spać...{/i}"
-            jump goingToHouseAfterKurowska
         "Chcę zwiedzić miasto":
             you "{i}Chyba nie idę spać...{/i}"
-            jump goingToExploreTownAfterKurowska
 
-
-label goingToHouseAfterKurowska:
-    
-
-label goingToExploreTownAfterKurowska

@@ -9,7 +9,7 @@ define m = Character("???")
 
 
 define piotrName = "Piotr"
-image side piotr = "piotr_side.png"
+image side piotr = "piotr side.png"
 define p = Character("[piotrName]", image="piotr", color="#a222be")
 
 define filipName = "Filip"
