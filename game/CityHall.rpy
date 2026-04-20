@@ -20,12 +20,12 @@ label filipIntroduction_after:
     m "Coś mi się wydaje, że są rzeczy ważniejsze."
     m "Ty możesz swoje rytuały zrobić nawet jutro. A [name] mógł w tym lesie umrzeć"
     m "Chodź tu"
-    "Podchodzisz trochę bliżej do [filipName]a, on wstaje i podaje ci rękę"
-    f "Cześć. Nazywam się [filipName] i witam w pięknym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
+    "Podchodzisz trochę bliżej do [filipName[M]]a, on wstaje i podaje ci rękę"
+    f "Cześć. Nazywam się [filipName[M]] i witam w pięknym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
     you "No tak"
     f "A czy coś już wiesz o tym mieście?"
     you "No nie"
-    "[filipName] jest uradowany tą informacją z jakiegoś powodu"
+    "[filipName[M]] jest uradowany tą informacją z jakiegoś powodu"
     f "No to świetnie. Teraz zaprowadzę cię do Kurowskiej, ale najpierw muszę się zapytać czy wolne."
     f "Ostatnio złapałem ją na robieniu skipu C na stole... tak, więc przyjemnie nie było i nie pachniało też dobrze..."
     you "Mam tylko jedno pytanie"
@@ -33,10 +33,10 @@ label filipIntroduction_after:
     you "Dlaczego jeszcze nie śpicie? Czy nie jest teraz noc?"
     f "Dzisiaj mieliśmy problem z wodą w mieście i cały dzień byliśmy zajęci tym"
     f "W tym mieście zawsze coś się dzieje.."
-    "[filipName] podchodzi do drzwi i grzecznie puka"
+    "[filipName[M]] podchodzi do drzwi i grzecznie puka"
     f "Dobry wieczór, mam nową osobę czy mogę ją wprowadzić tutaj?"
     m "Jasne!"
-    "[filipName] otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
+    "[filipName[M]] otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
 
     show scene office with fade
 

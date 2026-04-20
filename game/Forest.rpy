@@ -117,10 +117,3 @@ label piotrTravelToCity:
     you "Ale co ja"
     p "No przecież zapytał się o twoje imię"
     jump filipIntroduction
-    
-
-
-    
-
-    
-
