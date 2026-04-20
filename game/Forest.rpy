@@ -18,7 +18,7 @@ label piotrIntroductionMenu:
             you "Może ty wiesz dlaczego tutaj jestem?"
             p "Jak powiedziałem ci wcześniej jestem czarodziejem, a nie pracownikiem w bibliotece. {b}Nie mam pojęcia!{/b}"
             p "Ja tylko oczyszczam ten las z nieczystości, np złej aury itd."
-            p "Dodatkowo muszę jeszcze ochraniać przyrodę przed złem, turkuciami i pruchnicą."
+            p "Dodatkowo muszę jeszcze ochraniać przyrodę przed złem, turkuciami i próchnicą."
             p "A w mieście leczę mieszkańców i pomagam im w przeróżnych sytuacjach związanych z ich kiepskim zdrowiem fizycznym {b}JAK I PSYCHICZNYM!!!{/b}"
             you "Okej..??"
             jump piotrIntroductionMenu
@@ -27,12 +27,12 @@ label piotrIntroductionMenu:
             $ friendship["Piotr"] -= 1
             you "Wiem już wszystko o tobie..."
             you "To ty mnie porwałeś!{w} Jesteś okrutnym kłamcą!"
-            "Wpadasz w malignę i zaczynasz płakać, walić głową o ziemię, tarzać się w malinach ⸻ dosłownie jak Raskolnikow."
+            "Wpadasz w malignę i zaczynasz płakać, walić głową o ziemię, tarzać się w malinach - dosłownie jak Raskolnikow."
             you "Dlaczegooooooo...!!!"
             you "To ty mnie porwałeś tą {b}różdżką{/b}."
             p "Bijesz mnie psychicznie, o co mnie oskarżasz!"
             you "To {b}co{/b} ty tutaj robisz?"
-            p "Oczyszczam las sobie, a {b}TY{/b} mi cały rytuał zepsułeś!"
+            p "Oczyszczałem las sobie, a {b}TY{/b} mi cały rytuał zepsułeś!"
             you "Jakim cudem {b}ja{/b} jestem winny w tej sytuacji?"
             p "{b}Strzelę ci stringami jak jeszcze raz oskarżysz mnie o porwanie!!!{/b}"
             you "..."
@@ -55,10 +55,10 @@ label piotrIntroductionMenu:
 
 
 label piotrTravelToCity:
-    "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to byś Wielki Mur Chiński ⸻ ale wyglądał na za bardzo z temu, żeby był oryginalny."
+    "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
     if accused_piotr_of_kidnapping:
         "Twój wzrok wraca do Piotra."
-        you "{i}Czy on naprawdę potrafi strzelać stringami..?{/i} {w} Jego pazury pewnie by rozszarpały te stringi."
+        you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
     if stayed_silent_start:
         p "Co?"
         p "Czemu nic nie mówisz?"
@@ -80,7 +80,7 @@ label piotrTravelToCity:
     "Droga z lasu do miasta nie jest długa, chociaż czasem może zaskoczyć {i}dziką zwierzyną.{/i}"
     "Razem z Piotrem wracacie przez most i podążacie do urzędu miasta. Pomimo późnej godziny temperatura nie jest niesprzyjająca, nawet przyjemna (idealna do skinny dipping... znaczy CO)."
     scene bg entrancenight with fade 
-    "Podchodzicie razem do ogromnej drewnianej bramy, za którą jest duże{w=.3}, rozległe{w=.3}, pachnące{w=.3} i zarazem śmierdzące miasto."
+    "Podchodzicie razem do ogromnej drewnianej bramy, za którą jest duże{w=.6}, rozległe{w=.6}, pachnące{w=.6} i zarazem podśmierdujące miasto."
     you "{i}Czy ten most nie jest za stary?{/i}"
     you "{i}Przecież on się może w każdym momencie zawalić.{/i}"
     you "{i}Już mi się tutaj nie podoba, mieszkańcy polegają na starych technologiach, które już dawno powinny zostać wyparte.{/i}"
@@ -89,11 +89,11 @@ label piotrTravelToCity:
     scene bg citysquarenight with dissolve
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     "Na ulicach nie ma nikogo, {w}oprócz {i}was{/i}."
-    "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.3}, ciepłą{w=.3}, witającą{w=.3} i zarazem przyjazną atmosferę."
+    "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.6}, ciepłą{w=.6}, witającą{w=.6} i zarazem przyjazną atmosferę."
     "Można by było powiedzieć, że ten wasz spacer jest {i}romantyczny{/i}{w=1.0}, gdyby nie to, że pewnie przez Piotra tu jesteś."
     you "{i}Brak żywej duszy na ulicach... Chyba nie jest tak późno. Mam nadzieję, że ta {u}Kurowska{/u} jeszcze ma otwarte biuro{/i}"
-    "Podchodzicie do urzędu miasta. Wiedziałeś, że to wasza destynacja po wielkim{w=.3}, rozległym{w=.3}, ogromnym{w=.3} i zarazem małym herbem."
-    "Miał taką...{w=0.5} urzędniczą aurę"
+    "Podchodzicie do urzędu miasta. Wiedziałeś, że to wasza destynacja po wielkim{w=.6}, rozległym{w=.6}, ogromnym{w=.6} i zarazem małym herbem."
+    "Miał taką...{w=0.5} urzędniczą aurę."
     scene bg cityhallinside with dissolve
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu cię wyprowadza."
 
@@ -101,7 +101,8 @@ label piotrTravelToCity:
     p "Siedź tu grzecznie ja zaraz wrócę."
     you "Okej"
     "{i}Ale z ciebie good boy.{nw}{/i}"
-    "Siadasz na krześle obok. Krzesło się lekko ugina pod twoją ogromną dupą, ale nadal się trzyma. Ty jednak kompletnie to ignorujesz ⸻ myślisz o czymś innym."
+    hide piotr
+    "Siadasz na krześle obok. Krzesło się lekko ugina pod twoją ogromną dupą, ale nadal się trzyma. Ty jednak kompletnie to ignorujesz - myślisz o czymś innym."
     "O tym jak tu dotarłeś, kim jest Piotr, i co musisz robić."
     "Od razu jak się obudziłeś pod jakimś drzewem w tym lesie wiedziałeś, że coś tu nie gra..."
     "Tylko co..."
@@ -109,7 +110,7 @@ label piotrTravelToCity:
 
     "Zostały na twojej koszulce od kiedy leżałeś w lesie."
     "Czujesz wstyd, ponieważ przeszedłeś przez całe miasto, wyglądając jak pijak."
-    "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności ⸻ siedzenia ⸻ kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły."
+    "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności - siedzenia - kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły."
     "Po chwili wraca piotr i woła cię do sekretariatu..."
     scene bg secretary with dissolve
 
@@ -117,7 +118,7 @@ label piotrTravelToCity:
     show piotr at center with dissolve
     pause 0.5
     show piotr at left with move
-    show filip at right with dissolve
+    show filip normal at right with dissolve
     
     f "To jest furas pod tytułem???"
     p "[name]"
