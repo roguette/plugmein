@@ -22,6 +22,7 @@ style window:
 
 
 label start:
+
     play music "audio/street.mp3" 
     
 
@@ -68,6 +69,8 @@ label start:
     m "Proszę pana, czy pan żyje?!"
     "Ktoś kładzie swoją rękę na twoim ramieniu i próbuje cię obudzić, a jego długie pazury wbijają ci się w skórę."
 
+
+
     scene bg forestnight with fade
 
     you "AAAAA!!!!"
@@ -102,3 +105,12 @@ label start:
     p "Mogę odpowiedzieć na twoje pytania, ale pod warunkiem że będziesz {b}c i c h o{/b}{w} (bo przyjdzie Zdicho)."
 
     jump piotrIntroductionMenu
+
+
+
+
+label gameEndCreditsScene:
+    scene black with fade
+    stop music fadeout 1.0
+    pause 1.0
+    $ renpy.movie_cutscene("misc/credits.webm")
