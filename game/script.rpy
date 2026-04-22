@@ -1,11 +1,8 @@
-﻿
-define config.default_text_cps = 50
+﻿define config.default_text_cps = 50
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
-
 
 define mks = Character("MKS 23", color="#fafafa")
 define m = Character("???") #mystery speaker
-
 
 image side piotr = "piotr side.png"
 
@@ -13,8 +10,21 @@ define p = Character("Piotr", image="piotr", color="#a222be")
 define f = Character("Filip", color="#a222be")
 define k = Character("Barbara K.", color="#ff41c9")
 define t = Character("Tomcio", color="#ec1f1f")
+define v = Character("Vasili", color="#6a6277")
 
-default friendship = {"Piotr": 0, "Filip": 0, "Kurowska": 0}
+init python:
+    import random
+
+
+
+
+default friendship = {
+    "Piotr": 0, 
+    "Filip": 0, 
+    "Kurowska": 0,
+    "Tomcio": 0,
+    "Vasili": 0
+}
 
 style window:
     background Solid("#00000080")

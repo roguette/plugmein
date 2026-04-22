@@ -116,5 +116,25 @@ label goingHomeFirstNight:
         "Chcę iść spać":
             you "Zmęczyłem się"
             "(niby czym ale ok)"
-        "Dom był niedaleko, więc szybko trafiłeś pod drzwi swojego nowego lokalu."
-        "Nie wyglądał on przytulnie, ale teraz jest za późno na takie rozmyślania."
+    "Dom był niedaleko, więc szybko trafiłeś pod drzwi swojego nowego lokalu."
+    "Nie wyglądał on przytulnie, ale teraz jest za późno na takie rozmyślania."
+    jump wakingUpAfterFirstNight
+
+
+label goingIntoTownFirstNight:
+    "odwracasz się w stronę urzędu miasta i widzisz ogromne jezioro w tle"
+    "Ta woda w jeziorze jest całkiem spokojna, prawie jak w basenie"
+    "Potem patrzysz w bok i widzisz tę nieodkrytą część małego miasteczka Bratgren"
+    "Gdzie ty chcesz iść?"
+    menu:
+        "JEZIORO!!!":
+            jump firstNightLakeVisit
+        "MIASTO!!":
+            jump firstNightTownWalk
+
+label firstNightTownWalk:
+    
+
+
+
+

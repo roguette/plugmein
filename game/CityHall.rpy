@@ -183,4 +183,6 @@ label goingIntoTown:
             jump goingHomeFirstNight
         "Chcę zwiedzić miasto":
             you "{i}Chyba nie idę spać...{/i}"
+            you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
+            jump goingIntoTownFirstNight
 
