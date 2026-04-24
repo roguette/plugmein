@@ -47,7 +47,7 @@ label firstNightLakeVisit:
 define experiencedCommies = False
 label vasiliFirstNightMegaMenu:
     menu:
-        "Zapytaj jaką ma wiedzę na temat ryb"
+        "Zapytaj jaką ma wiedzę na temat ryb":
             $ ryba = random.choice(["vasiliFishBrzana", "vasiliFishKoza", "vasiliFishWstegorz"])
             jump expression ryba
 
@@ -94,7 +94,7 @@ label vasiliFirstNightMegaMenu:
             you "Kurowska każe mi jutro pracować od rana, więc będzie lepiej jak isę wyśpię."
             v   "Tak tak, sen jest najważniejszy, zaraz po zdrowiu psychicznym."
             you "Dobranoc"
-                "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
+            "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
             jump goingHomeTiredAfterVasiliFirstNight
         "Zapytaj o życie":
             you "Jestem ciekaw twojej przeszłości. Tyle się nasłuchałem historii tego miejsca, a nic nie wiem o ich mieszkańcach"
@@ -212,7 +212,6 @@ label vasiliAfterFishMonologue:
                     $ friendship["Vasili"] -= 2
                     you "{i}Przecież nie chciałem żeby tak wyszło. Nie mam siły (i chęci), by więcej słuchać o tych rybach. Mam dość dzisiejszego dnia!{/i}"
                     "Droga do domu była pełna przemyśleń na temat twojego postępowania w związku z Vasilijem. "
-                    "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
                     jump wakingUpAfterFirstNight
                 "Zaprezentuj wymówkę i zostań.":
                     you "Nie... tylko chciałem się przejść, bo mnie nogi bolą."

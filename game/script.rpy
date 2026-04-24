@@ -11,6 +11,8 @@ define f = Character("Filip", color="#a222be")
 define k = Character("Barbara K.", color="#ff41c9")
 define t = Character("Tomcio", color="#ec1f1f")
 define v = Character("Vasili", color="#6a6277")
+define wp = Character("Wiktoria P.", color="#7e3611")
+define b = Character("Wiktoria P.", color="#77beee")
 
 init python:
     import random
@@ -25,9 +27,6 @@ default friendship = {
     "Tomcio": 0,
     "Vasili": 0
 }
-
-style window:
-    background Solid("#00000080")
 
 
 
