@@ -1,7 +1,10 @@
 label wakingUpAfterFirstNight:
     "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
+    stop music fadeout 1.0
+    scene black with dissolve
 
     if fountainLoreReceived != True:
+        play music "sb_soulsearcher.mp3"
         "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie spać"
         "I zanim się obejrzysz, już śpisz"
 
@@ -14,15 +17,16 @@ label wakingUpAfterFirstNight:
         you "{i}Z tą głupią fontanną zawsze jest coś{/i}"
         "Przed tobą pojawia się dusza"
         m "Fontanna nie jest głupia"
-        you "{i}Jeśli this ho czyta moje myśli to się zesram to jest przerażające{/i}"
+        you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy{/i}"
         m "Spokojnie. Nie defekuj. Nie jestem złą duszą"
         "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie"
         "I wygląda to jak jakaś relacja parasocjalna"
         "Taka jak na twitchu"
-        you "Kim Pani jest"
+        you "Kim pani jest"
         m "Ty wiesz kim ja jestem."
-        you "Czy Pani jest B-{nw}"
+        you "Aha to ty jesteś B-{nw}"
         bjork "Tak, {w=0.6}jestem Bjork"
+        stop music fadeout 0.5
 
 
 

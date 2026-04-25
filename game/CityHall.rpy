@@ -20,12 +20,12 @@ label filipIntroduction_after:
     m "Coś mi się wydaje, że są rzeczy ważniejsze."
     m "Ty możesz swoje rytuały zrobić nawet jutro. A [name] mógł w tym lesie umrzeć"
     m "Chodź tu"
-    "Podchodzisz trochę bliżej do [filipName[M]]a, on wstaje i podaje ci rękę"
-    f "Cześć. Nazywam się [filipName[M]] i witam w pięknym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
+    "Podchodzisz trochę bliżej do Filipa, on wstaje i podaje ci rękę"
+    f "Cześć. Nazywam się Filip i witam w pięknym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
     you "No tak"
     f "A czy coś już wiesz o tym mieście?"
     you "No nie"
-    "[filipName[M]] jest uradowany tą informacją z jakiegoś powodu"
+    "Filip jest uradowany tą informacją z jakiegoś powodu"
     f "No to świetnie. Teraz zaprowadzę cię do Kurowskiej, ale najpierw muszę się zapytać czy wolne."
     f "Ostatnio złapałem ją na robieniu skipu C na stole... tak, więc przyjemnie nie było i nie pachniało też dobrze..."
     you "Mam tylko jedno pytanie"
@@ -33,25 +33,27 @@ label filipIntroduction_after:
     you "Dlaczego jeszcze nie śpicie? Czy nie jest teraz noc?"
     f "Dzisiaj mieliśmy problem z wodą w mieście i cały dzień byliśmy zajęci tym"
     f "W tym mieście zawsze coś się dzieje.."
-    "[filipName[M]] podchodzi do drzwi i grzecznie puka"
+    "Filip podchodzi do drzwi i grzecznie puka"
     f "Dobry wieczór, mam nową osobę czy mogę ją wprowadzić tutaj?"
     m "Jasne!"
-    "[filipName[M]] otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
+    "Filip otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
 
     scene bg office
-    play sound "sounds/sfx_door_open.mp3"
+    stop music
+    play sound "audio/sfx_door_open.mp3"
 
-    show kurowska with dissolve
+    "..."
     "Przed tobą siedzi Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
+    show kurowska with dissolve
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
     you "Zwą...{w=1} mnie [name]."
-    k "Okeeej.. Jestem [kurowskaName], prezydent miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
+    k "Okeeej.. Jestem Barbara, prezydent miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
     you "Właśnie obudziłem się w lesie, nie wiem kim jestem, nie wiem gdzie jestem, znam tylko swoje imie"
     k "Czyli tak jak wszyscy..."
-    "[kurowskaName] pisze coś do swojego notatnika"
+    "Barbara pisze coś do swojego notatnika"
 
-    "Czy chcesz zadać pytanie?"
+    "{nw}"
     jump kurowskaMysteryMenu
 
 label kurowskaMysteryMenu:
@@ -74,7 +76,7 @@ define rudeToKurowska = False
 
 label kurowskaBureaucracyMenu:
     if askedAboutHousing and askedAboutCityHistory and askedAboutWork:
-        jump gettingHouseKeys
+        jump gettingHouseKeysGood
 
     k "Czy masz jakieś pytania?"
     menu:
@@ -121,7 +123,7 @@ label kurowskaBureaucracyMenu:
             k "Kompletnie nie jestem w stanie wyobrazić takiego życia bez jakichkolwiek czynności"
             you "{i}Pryszniców on pewnie też nie może wyobrazić{/i}"
             k "Dobra wracając do twojej pracy..."
-            "[kurowskaName] przegląda dokumenty na stole, potem w stole, potem za nią"
+            "Barbara przegląda dokumenty na stole, potem w stole, potem za nią"
             "Wydaje się, że ona wie że jest praca ale nie może znaleźć tego papieru na stole"
             k "Do jasnej muffinki... Zgubiłam chyba..."
             k "No to w takim razie nie mam nic. Jutro bedę w stanie powiedzieć wiecęj, dlatego dzisiaj jesteś wolny."
@@ -147,17 +149,21 @@ label kurowskaBureaucracyMenu:
                     k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno"
                     $ rudeToKurowska = True
                     k "Dobrze w takim razie koniec tego wywiadu. Masz tutaj klucze do twojego domu, a teraz idź zanim cię wywale!"
-                    scene bg secretary
-                    play sound "sounds/sfx_door_slam.mp3"
+                    scene bg secretary with vpunch
+                    play sound "audio/sfx_door_slam.mp3"
                     you "{i}JESZCZE ŻYJĘ! Byłoby ciężko gdyby mnie wyrzuciła na bruk. Dostałem klucze do domu, o przyjemnych rozmowach nie myślę.{/i}"
-                    jump gettingHouseKeys
+                    jump gettingHouseKeysUniversal
 
-label gettingHouseKeys:
+label gettingHouseKeysGood:
     k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu."
     k "(ps. Kasia Dowbor go remontowała)"
     you "Thank you thank you thank you"
     you "{i}Tam musi być luksusowo{/i}"
+    jump gettingHouseKeysUniversal
+
+label gettingHouseKeysUniversal:
     scene bg cityhallinside
+    play music "stillofnight.mp3"
     show piotr 
     "Wychodzisz"
     p "dobrze wszystko? coś ty długo u niej byłeś"
@@ -176,6 +182,8 @@ label gettingHouseKeys:
 
 label goingIntoTown:
     "Wychodzisz z urzędu miasta i idziesz przed siebie"
+    scene bg citysquarenight with dissolve
+    play sound "sfx_footsteps_a.mp3"
     "Nie masz pojęcia co teraz robić"
     menu:
         "Chcę iść do domu":

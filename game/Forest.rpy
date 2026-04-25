@@ -86,7 +86,9 @@ label piotrTravelToCity:
     you "{i}Już mi się tutaj nie podoba, mieszkańcy polegają na starych technologiach, które już dawno powinny zostać wyparte.{/i}"
 
     you "{i}Przed czym chcą się bronić? Chyba nie chce wiedzieć...{w=1.0} aż strach pomyśleć co może być w ukryte w tych lasach.{/i}"
+    play sound "sfx_footsteps_alot.mp3"
     scene bg citysquarenight with dissolve
+    play music "stillofnight.mp3" fadein 0.5
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     "Na ulicach nie ma nikogo, {w}oprócz {i}was{/i}."
     "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.6}, ciepłą{w=.6}, witającą{w=.6} i zarazem przyjazną atmosferę."

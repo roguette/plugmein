@@ -1,4 +1,6 @@
 label firstNightLakeVisit:
+    play music "forest.mp3" fadein 1.0
+    scene bg lakenighta with dissolve
     "Schodzisz w dół, skręcasz parę razy i docierasz na piękną łąkę"
     "Jest naprawdę ogromna"
     "Jest też jakiś dziwny las, ale nie musisz tam teraz iść"
@@ -7,14 +9,16 @@ label firstNightLakeVisit:
     "Twoja droga nad jezioro powinna być, w teorii, spokojna"
     "Szuranie twoich nóg w wysokiej trawie powinno być jedynym dźwiękiem"
     "Jednak los miał inne plany"
+    scene bg lakenightb with dissolve
     "Na brzegu jeziora widzisz jakąś sylwetkę"
     "Ktokolwiek to jest, próbuje łowić ryby i jest {b}strasznie{/b} głośny"
-    you "do jasnej muffinki"
-    you "Chyba nie mam energii na kolejne konwersacje."
-    you "Może przemknę się bokiem i mnie na zauważy.{nw}"
+    you "{i}do jasnej muffinki{/i}"
+    you "{i}Chyba nie mam energii na kolejne konwersacje.{/i}"
+    you "{i}Może przemknę się bokiem i mnie na zauważy.{/i}{nw}"
+    show vasili normal
     m "Kto tam stoi"
     m "HALOOO"
-    you "Yyyyy... nikt? Przestań do mnie gadać."
+    you "{i}Yyyyy... nikt? Przestań do mnie gadać.{/i}"
     you "Jestem tutaj nowy"
     "Podchodzisz bliżej do niego. Może on jest dziwny, ale to nie znaczy, że ty będziesz od razu niemiłym do niego"
     you "Nazywam się [name]"
@@ -36,7 +40,7 @@ label firstNightLakeVisit:
             you "Trochę ćwiczeń i będzie znacznie lepiej."
             v "Kim ty jesteś, żeby tak krytykować mój głos?"
             "[name] zaczyna pięknie śpiewać"
-            you "la la la la la {w=0.5}la"
+            you "la la la la la {w=1.5}la"
             v "No cóż... Mówiłem, że nie jestem specjalistą."
             $ friendship["Vasili"] -= 1
     
@@ -55,7 +59,7 @@ label vasiliFirstNightMegaMenu:
             $ experiencedCommies = True
             v   "Nie wierzę, że Kurowska jest dobrą prezydentką."
             v   "Kurowska to coś gorszego niż zło."
-            v   "Zaczęła zaciskać kapitalistyczną smycz — każdy musiał znaleźć pr*cę."
+            v   "Zaczęła zaciskać kapitalistyczną smycz - każdy musiał znaleźć pr*cę."
             v   "Kurowska jest wydajna i właśnie w tym tkwi prawdziwe niebezpieczeństwo."
             v   "Wygłasza przemówienia, pokazuje swój uśmiech à la Morawiecka i macha dzieciom."
             v   "Ma im wierzyć w jej bajeczki."
@@ -67,7 +71,7 @@ label vasiliFirstNightMegaMenu:
             v   "Nazwała to 'zastojem arkanicznym'."
             v   "Zakazała mu nawet pomagać Pyndzlowi na farmie."
             v   "Bo to nie było 'rolniczo uzasadnione'."
-            v   "Nie daj się zwieść latarniom — oświetlenie miasta to w rzeczywistości sieć inwigilacji."
+            v   "Nie daj się zwieść latarniom - oświetlenie miasta to w rzeczywistości sieć inwigilacji."
             v   "Latarnie mają oczy…"
             v   "Jakieś dziesięć lat temu nasze wody zostały zakażone."
             v   "Ludzie umierali od trucizny w tej wodzie."
@@ -83,7 +87,7 @@ label vasiliFirstNightMegaMenu:
             v   "Praca będzie losowana boską metodą."
             v   "Wszystkie banki zostaną zlikwidowane."
             v   "Ich budynki przerobimy na centra dystrybucji kimchi."
-            v   "Kimchi będzie podawane lodowato zimne — żeby proletariat był czujny."
+            v   "Kimchi będzie podawane lodowato zimne - żeby proletariat był czujny."
             v   "Beton to symbol ucisku."
             v   "Każdy dom zostanie zburzony i odbudowany z drewna."
             v   "Naprawimy miasto gałązka po gałązce."
@@ -94,6 +98,7 @@ label vasiliFirstNightMegaMenu:
             you "Kurowska każe mi jutro pracować od rana, więc będzie lepiej jak isę wyśpię."
             v   "Tak tak, sen jest najważniejszy, zaraz po zdrowiu psychicznym."
             you "Dobranoc"
+            hide vasili with dissolve
             "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
             jump goingHomeTiredAfterVasiliFirstNight
         "Zapytaj o życie":
@@ -128,7 +133,7 @@ label vasiliFirstNightMegaMenu:
 label goingHomeTiredAfterVasiliFirstNight:
     "Przez zmęczenie droga do domu trwała wieki, ale nic nie było widać, ponieważ oszczędzają na wyłączaniu latarń."
     "Pomimo braku widoczności przejscie do domu nie sprawiło ci dużo trudu."
-    # koniec
+    jump wakingUpAfterFirstNight
 
 label vasiliFishBrzana:
     v "Brzana (łac. Barbus barbus) to średniej wielkości, typowa rzeczna ryba z rodziny karpiowatych."
@@ -150,19 +155,19 @@ label vasiliFishBrzana:
 
 
 label vasiliFishKoza:
-    v "Koza [[1]] to gatunek małej ryby [[2]] słodkowodnej z rodziny piskorzowatych [[3]]."
-    v "Zamieszkuje Europę [[4]][[5]] z wyjątkiem Irlandii [[6]], Szkocji, Norwegii i północnej Szwecji."
-    v "Nie występuje też w Finlandii, północnej Rosji oraz południowych[[3.5]] półwyspach."
-    v "Chodzi o Półwysep Iberyjski[[7]][[8]], Apeniński[[676767]] i Bałkański."
-    v "Osiąga przeciętnie ok. 10 cm[[9]]."
-    v "Maksymalnie dorasta do 13,5 cm długości[[123]]."
-    v "Ma wydłużone ciało[[10]]."
-    v "Posiada obronne, ruchome kolce[[11]] w okolicy oka[[12]][[13]]."
-    v "Grzbiet jest brązowoszary[[14]] i pokryty[[1]] ciemnymi plamkami."
-    v "Wzdłuż boków biegną dwa[[2]], rzadziej jeden[[1]], rzędy plam."
-    v "Jest ich zwykle 10-20, są duże, okrągłe i ciemne[[15]]."
-    v "U nasady płetwy ogonowej znajduje się jedna duża ciemna plama[[20]]."
-    v "Brzuch jest biały lub żółtawy[[6]]."
+    v "Koza [[1] to gatunek małej ryby [[2] słodkowodnej z rodziny piskorzowatych [[3]."
+    v "Zamieszkuje Europę [[4][[5] z wyjątkiem Irlandii [[6], Szkocji, Norwegii i północnej Szwecji."
+    v "Nie występuje też w Finlandii, północnej Rosji oraz południowych[[3.5] półwyspach."
+    v "Chodzi o Półwysep Iberyjski[[7][[8], Apeniński[[676767] i Bałkański."
+    v "Osiąga przeciętnie ok. 10 cm[[9]."
+    v "Maksymalnie dorasta do 13,5 cm długości[[123]."
+    v "Ma wydłużone ciało[[10]."
+    v "Posiada obronne, ruchome kolce[[11] w okolicy oka[[12][[13]."
+    v "Grzbiet jest brązowoszary[[14] i pokryty[[1] ciemnymi plamkami."
+    v "Wzdłuż boków biegną dwa[[2], rzadziej jeden[[1], rzędy plam."
+    v "Jest ich zwykle 10-20, są duże, okrągłe i ciemne[[15]."
+    v "U nasady płetwy ogonowej znajduje się jedna duża ciemna plama[[20]."
+    v "Brzuch jest biały lub żółtawy[[6]."
     v "Żywi się bezkręgowcami dennymi..."
     jump vasiliAfterFishMonologue
 
@@ -208,6 +213,7 @@ label vasiliAfterFishMonologue:
                     v "Czyli tak jak zawsze... nikt mnie nie lubi."
                     v "Każdy ode mnie ucieka."
                     v "Idź już sobie, nie rań mnie więcej."
+                    hide vasili with dissolve
                     you "Nie chciałem... dobranoc."
                     $ friendship["Vasili"] -= 2
                     you "{i}Przecież nie chciałem żeby tak wyszło. Nie mam siły (i chęci), by więcej słuchać o tych rybach. Mam dość dzisiejszego dnia!{/i}"
@@ -227,9 +233,11 @@ label vasiliAfterFishMonologue:
 
 label vasiliTalksAboutFavoriteFish:
     you "{i}W co ja się wkopałem... JA JUŻ NIE CHCE...{/i}"
+    scene black with dissolve
     "Przez nadmiar emocji (i najwyraźniej yappowanie Vasilia) usnąłeś"
     "Ale on to zauważył"
-    "Piwowarski budzi cię i każe ci iść spać, ponieważ martwi się o twoje zdrowie"
+    "Vasili budzi cię i każe ci iść spać, ponieważ martwi się o twoje zdrowie"
     "(Nie wie, że zasnąłeś z nudów, {w=0.6}#delulu)"
     "Droga do domu jest jak przez mgłę. Nie pamiętasz za dużo, ponieważ zostałeś obudzony i jesteś bardzo zaspany."
     "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w sekundzie, kiedy położyłeś głowę na poduszkę"
+    jump wakingUpAfterFirstNight

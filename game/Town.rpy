@@ -13,10 +13,12 @@ label goingHomeFirstNight:
     you "{i}Chyba że to jest wiosna...{/i}"
     you "{i}nie chcę zimy{/i}"
     "Patrzysz się w górę w poszukiwaniu odpowiedzi, ale widzisz tylko ciemne, puste i nudne niebo"
-    "Jedyny fakt, którego jesteś w tym mieście 100% pewien, to jest to, że fontanna jest magiczna"
+    "Jedyny fakt, którego jesteś w tym mieście 100%% pewien, to jest to, że fontanna jest magiczna"
     "Podchodzisz bliżej, żeby jej się lepiej przyjrzeć"
     
     scene bg fountainnight with dissolve
+    stop music fadeout 10.0
+    play sound "sfx_footsteps_a.mp3"
 
     "Im bliżej jesteś do tej fontanny, tym ciszej się robi"
     "Nie że wcześniej było głośno w środku nocy"
@@ -25,11 +27,14 @@ label goingHomeFirstNight:
     "powietrze jest gęste i ciężkie, i ty czujesz to wyraźnie"
     "Wygląda na to, że będziesz musiał wrócić później."
     "Oddalasz się od fontanny (z tym gęstym powietrzem w prezencie) i idziesz do domu"
+    scene bg colacocastreetnighta with dissolve
+    play music "stillofnight.mp3" fadeout 10.0
+    play sound "sfx_footsteps_b.mp3"
     you "{i}Gdzie ja w ogóle mieszkam{/i}"
     "Patrzysz na klucz w swojej dłoni"
     "Do klucza jest przypięty mały breloczek, na którym jest po prostu napisane ULICA Y/N POMOCY NIE WIEM JAK TO NAZWAĆ" # TODO: nazwać tą ulicę ??
     "Dzięki plot armor nie masz problemu ze znalezieniem ulicy z breloczka"
-    "Na całej ulicy są tylko dwa domy, a ten na samym końcu jest twój"
+    "Na całej ulicy są tylko trzy domy, a ten na samym końcu jest twój"
 
     menu:
         "Chcę się przywitać":
@@ -57,6 +62,7 @@ label goingHomeFirstNight:
             m "Jezu no co ty ode mnie chcesz?"
             you "AAAAA"
             "w okamgnieniu się odwracasz i widzisz tego sąsiada - jeszcze zaspanego"
+            show tomcio normal with dissolve
             "Gość jest zbudowany jak byk (no co ty nie powiesz) - bardzo wysoki i szeroki"
             you "{i}whoopsie daisy yoo hoo{/i}"
             you "{i}...{/i}"
@@ -93,6 +99,7 @@ label goingHomeFirstNight:
                     you "Ale nudna praca. Myślałem że coś ukrywasz"
                     you "No to dziękuję ja idę spać"
                     you "DOBRANOCC"
+                    hide tomcio normal with dissolve
                     you "{i}Ten tomcio to chyba spoko gość, tylko trochę dziwny. No cóż sąsiadów się nie wybiera, przeżyję.{/i}"
                 "Opowiedz mu wszystko o sobie":
                     you "Dobry wieczór"
@@ -102,6 +109,10 @@ label goingHomeFirstNight:
                     you "w każdym razie nie ważne. Ja byłem pierwszy hihi"
                     you "pewnie już wiesz ale jestem twoim nowym sąsiadem!! (irytująco wesoły ton)"
                     "On robi krok do tyłu i zamyka ci drzwi przed nosem"
+                    hide tomcio normal
+                    with vpunch
+                    play sound "sfx_door_slam.mp3"
+
                 "Ragebait":
                     $ rudeToTomcio = True
                     you "A w sumie nie ważne"
@@ -111,6 +122,8 @@ label goingHomeFirstNight:
                     m "czy ja naprawdę jestem taki groźny"
                     m "Czy to przez to że jestem gruby????"
                     "On wpada w malignę, zaczyna płakać i zamyka drzwi"
+                    hide tomcio normal with dissolve
+
                     you "{i}???{/i}"
             "Wychodzisz przez (teraz otwartą) bramę, i idziesz do domu"
         "Chcę iść spać":
@@ -140,6 +153,7 @@ label firstNightTownWalk:
     "więc ta tradycja pozostaje tajemnicą którą dopiero masz odkryć."
     "Rozglądasz się i zauważasz fontannę, poza którą na rynku nie ma nic."
     "widzisz kościół w oddali i postanawiasz się mu przyjrzeć"
+    scene bg churchnighta with dissolve
     #you "{i}{/i}"
     you "{i}W KOŃCU{/i}"
     you "{i}pierwszy raz widzę kogoś na tej ulicy{/i}"
@@ -149,6 +163,7 @@ label firstNightTownWalk:
     "...aż w końcu tajemnicza osoba macha do ciebie i gestem zachęca abyś podszedł bliżej"
     you "{i}czego ona chce??{/i}"
     "podchodzisz bliżej do tajemniczej kobiety przed kościołem"
+    show wp normal with dissolve
     you "Dobry wieczór?"
     m "Czy my się znamy?"
     you "Nie"
@@ -188,6 +203,7 @@ label firstNightTownWalk:
     you "Aha teraz ma sens czemu jest taki"
     "patrzy sie na ciebie jakbyś właśnie zabił starą lichwiarkę i jej córkę"
     "{i}Może lepiej nie obrażać ich wierzeń{/i}"
+    with vpunch
     you "*gulp* ...tzn ma taki unikalny styl, nigdy wcześniej czegoś takiego nie widziałem"
     wp "{i}No ja myślę{/i}"
     wp "nikt nie wie co ta dusza tam szeptała do bjork a ten witraż to jedyna rekonstrukcja jaką mamy"
@@ -306,7 +322,7 @@ label afterFirstNightTownWalkQuestionsMenu:
     you 'aww dziękuję'
     you 'myślę że najlepiej już pójdę do domu jeszcze go nawet nie widziałem'
     wp 'czekaj jaki dom?? skąd???'
-    you 'dom który dostałam od kurowskiej?'
+    you 'dom który dostałem od kurowskiej?'
     wp  'CO'
     wp 'jak to dostałeś dom???'
     you '*pokazuje klucze* no od kurowskiej dostałem'
@@ -322,8 +338,10 @@ label afterFirstNightTownWalkQuestionsMenu:
     you 'dobranoc'
     wp 'pa'
     $ fountainLoreReceived = True
+    scene bg citysquarenight with dissolve
     "zaczynasz iść do domu. głowa ciąży ci od nadmiaru informacji które właśnie otrzymałeś."
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
+    jump wakingUpAfterFirstNight
 
 
 

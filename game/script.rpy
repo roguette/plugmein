@@ -1,4 +1,4 @@
-﻿define config.default_text_cps = 50
+﻿define config.default_text_cps = 90
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
 define mks = Character("MKS 23", color="#fafafa")
@@ -12,7 +12,7 @@ define k = Character("Barbara K.", color="#ff41c9")
 define t = Character("Tomcio", color="#ec1f1f")
 define v = Character("Vasili", color="#6a6277")
 define wp = Character("Wiktoria P.", color="#7e3611")
-define b = Character("Wiktoria P.", color="#77beee")
+define bjork = Character("Björk", color="#77beee")
 
 init python:
     import random
@@ -71,9 +71,11 @@ label start:
     "{cps=15}Który pewnie już uciekł i jedzie sobie dalej.{/cps}"
     "{cps=2}...{/cps}"
     "Mimo tego,{w=.5} o dziwo,{w=.5} żyjesz{w=.5}<3"
+    play music "forest.mp3" fadein 2.0
     "Strasznie cię boli głowa, ale nie możesz podnieść ręki, aby sprawdzić czy w ogóle ją jeszcze masz."
     "Jesteś tak słaby, że nie możesz nawet otworzyć oczu."
     #"(tu będzie dzwięk kroków i wgl muzyka ale nie chciało mi się jeszcze szukać)"
+    
     m "Do jasnej muffinki!!!"
     m "Proszę pana, czy pan żyje?!"
     "Ktoś kładzie swoją rękę na twoim ramieniu i próbuje cię obudzić, a jego długie pazury wbijają ci się w skórę."
@@ -101,9 +103,21 @@ label start:
     you "Kim ty jesteś??{w=.5} Halo???{w=.5} Co ty tutaj robisz???"
     m "Nie drzyj się, jesteś w lesie!!!"
     p "Jednakże, nazywam się Piotr i jestem czarodziejem."
-    p "To znaczy miałem oczyszczać las, ale {b}twoja obecność{/b} mi przeszkodziła."
     "Patrzysz się dookoła i widzisz obok siebie koło z onyksu."
     "Piotr daje ci swoją rękę, a dokładniej łapę, i pomaga ci wstać."
+    you "Co to za kamyki tam masz"
+    you "Te takie czarne"
+    p "To? (wskazuje jednym ze swoich długich,{w=.5} czarnych,{w=.5} strasznych,{w=.5} a nawet krzywych{w=.5} pazurów na koło z onyksu)"
+    you "Tak"
+    "Piotr podchodzi do tego koła i podnosi dwa kamienie"
+    you "Co to jest..."
+    p "To jest onyks. Używam tych kamieni do usuwania złych vibeów z tego lasu"
+    p "Im więcej złej energii wchłaniają, tym są cięższe"
+    p "Weź ten i ten i zrób takie six seven"
+    "Jeden z tych kamieni jest rzeczywiście o wiele cieższy od drugiego"
+    "Mimo tego, że są prawie identyczne"
+    you "Ale heca"
+    p "Miałem oczyszczać las, ale {b}twoja obecność{/b} mi przeszkodziła."
     you "{cps=15}Dziękuję! Czekaj co?{/cps}{nw}"
     you "{cps=15}Co masz na myśli mówiąć, że {b}ja{/b} ci przeszkodziłem?{/cps}{nw}"
     you "{cps=15}Czemu ty jesteś ptakiem?{/cps}{nw}"
