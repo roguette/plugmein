@@ -71,7 +71,7 @@ label goingHomeFirstNight:
             m "???"
             m "To nie {b}ty{/b} pukałeś mi do drzwi?"
             m "W środku nocy?"
-            m "czemu tłuczesz w moje drzwi o 23"
+            m "czemu tłuczesz w moje drzwi o północy"
             you "No dobra, powiedzmy że masz rację"
             "Sąsiad jest oszołomiony twoją arogancją"
             you "Jestem twoim nowym sąsiadem i chciałem się przywitać"

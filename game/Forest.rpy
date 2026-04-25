@@ -84,12 +84,31 @@ label piotrTravelToCity:
     you "{i}Czy ten most nie jest za stary?{/i}"
     you "{i}Przecież on się może w każdym momencie zawalić.{/i}"
     you "{i}Już mi się tutaj nie podoba, mieszkańcy polegają na starych technologiach, które już dawno powinny zostać wyparte.{/i}"
-
     you "{i}Przed czym chcą się bronić? Chyba nie chce wiedzieć...{w=1.0} aż strach pomyśleć co może być w ukryte w tych lasach.{/i}"
+    you "Czy wy kupiliście tę ścianę na Temu?"
+    show piotr normal with dissolve
+    p "Jakie Temu o czym ty mówisz"
+    you "No taki sklep internetowy"
+    p "Jaki?"
+    you "Tam można kupić wszystko ale to ci przychodzi po dwóch miesiącach"
+    p "Ale o czym ty mówisz???"
+    you "{i}Albo on jest głupi albo takie coś nie istnieje w tym świećie{/i}"
+    you "Gdzie my w ogóle jesteśmy"
+    p "Wchodzimy do miasta Bratgren"
+    you "Znaczy to wiem ale"
+    you "{i}On nic nie wie. Z kim ja rozmawiam.{/i}"
+    you "{i}Jeśli ktoś może odpowiedzieć na moje pytania, to to na pewno będzie ta Kurowska{/i}"
+    you "Nie ważne"
     play sound "sfx_footsteps_alot.mp3"
     scene bg citysquarenight with dissolve
     play music "stillofnight.mp3" fadein 0.5
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
+    you "Dlaczego dosłownie nikogo nie ma na ulicach?"
+    you "Jest jakiś sekret czy coś?"
+    p "No bo jest zimno dzisiaj"
+    you "Ale mi nie jest zimno"
+    p "Nie wiem jak ci nie jest zimno, ja tu zamarznę zaraz"
+    you "To chodźmy szybicej do tej Kurowskiej"
     "Na ulicach nie ma nikogo, {w}oprócz {i}was{/i}."
     "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.6}, ciepłą{w=.6}, witającą{w=.6} i zarazem przyjazną atmosferę."
     "Można by było powiedzieć, że ten wasz spacer jest {i}romantyczny{/i}{w=1.0}, gdyby nie to, że pewnie przez Piotra tu jesteś."
@@ -98,8 +117,12 @@ label piotrTravelToCity:
     "Miał taką...{w=0.5} urzędniczą aurę."
     scene bg cityhallinside with dissolve
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu cię wyprowadza."
-
     show piotr at center
+    p "Jednak nie wchodź bo muszę jeszcze z Filipem pogadać"
+    you "O czym"
+    p "Mowa jest srebrem, a milczenie złotem."
+    "Jesteś oszołomiony arogancją Piotra. Jesteś pewny że będzie ciebie obgadywać"
+
     p "Siedź tu grzecznie ja zaraz wrócę."
     you "Okej"
     "{i}Ale z ciebie good boy.{nw}{/i}"
@@ -109,9 +132,11 @@ label piotrTravelToCity:
     "Od razu jak się obudziłeś pod jakimś drzewem w tym lesie wiedziałeś, że coś tu nie gra..."
     "Tylko co..."
     "Rozluźniasz się i opierasz się o ścianę, czując jak sosnowe igły kłują cię w plecy."
-
     "Zostały na twojej koszulce od kiedy leżałeś w lesie."
     "Czujesz wstyd, ponieważ przeszedłeś przez całe miasto, wyglądając jak pijak."
+    you "{i}Tyle aury straciłem{/i}"
+    you "{i}Ale nikogo nie było na zewnątrz. Nikt mnie nie zobaczył{/i}"
+    you "{i}Chyba że ktoś patrzył się przez okno?{/i}"
     "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności - siedzenia - kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły."
     "Po chwili wraca piotr i woła cię do sekretariatu..."
     scene bg secretary with dissolve
@@ -119,8 +144,8 @@ label piotrTravelToCity:
 
     show piotr at center with dissolve
     pause 0.5
-    show piotr at left with move
-    show filip normal at right with dissolve
+    show piotr at leftish with move
+    show filip normal at rightish with dissolve
     
     f "To jest furas pod tytułem???"
     p "[name]"

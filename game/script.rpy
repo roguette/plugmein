@@ -31,18 +31,23 @@ default friendship = {
 
 
 label start:
-
     play music "audio/street.mp3" 
     
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
+    jump filipIntroduction_after #wakingUpAfterFirstNight 
 
     scene bg busstopa with dissolve
 
-    you "{i}Głupi mks oczywiście, że musiał się spóźnić...{/i}"
-    you "{i}Zostały mi tylko 2 minuty, a muszę jeszcze iść do baru {w=.5}po matchę!!!{/i}"
+    you "{i}No szybciej już{/i}"
+    "Szybko, nerwowo, impulsywnie oraz intensywnie wciskasz przycisk na światłach (ten taki żółty)"
+    "Wczoraj naprawiali światła właśnie na tym przejściu i ewidentnie coś zepsuli"
+    "{cps=1}...{/cps}"
+    "Stoisz na tym przejściu z minutę, a światła dalej są czerwone"
+    you "{i}Zostały mi tylko 2 minuty, a muszę jeszcze iść do baru {w=.5}po matchę.{/i}"
+    you "{i}Jeśli jeszcze raz się spóźnię to obniżą mi zachowanie{/i}"
     "{cps=1}...{/cps}"
     you "{i}O dobra mam zielone mogę przejść!{/i}"
 
@@ -74,6 +79,7 @@ label start:
     play music "forest.mp3" fadein 2.0
     "Strasznie cię boli głowa, ale nie możesz podnieść ręki, aby sprawdzić czy w ogóle ją jeszcze masz."
     "Jesteś tak słaby, że nie możesz nawet otworzyć oczu."
+    
     #"(tu będzie dzwięk kroków i wgl muzyka ale nie chciało mi się jeszcze szukać)"
     
     m "Do jasnej muffinki!!!"
@@ -82,7 +88,7 @@ label start:
 
 
 
-    scene bg forestnight with fade
+    scene bg forestnight with vpunch
 
     you "AAAAA!!!!"
     you "Proszę mnie nie dotykać!!!"
@@ -117,12 +123,15 @@ label start:
     "Jeden z tych kamieni jest rzeczywiście o wiele cieższy od drugiego"
     "Mimo tego, że są prawie identyczne"
     you "Ale heca"
-    p "Miałem oczyszczać las, ale {b}twoja obecność{/b} mi przeszkodziła."
+    you "Co się robi z najcięższymi kamykami"
+    p "Zostawiam je w piwnicy jeśli jest zbyt ciężki"
+    p "Miałem właśnie oczyszczać las, ale {b}twoja obecność{/b} mi przeszkodziła."
     you "{cps=15}Dziękuję! Czekaj co?{/cps}{nw}"
     you "{cps=15}Co masz na myśli mówiąć, że {b}ja{/b} ci przeszkodziłem?{/cps}{nw}"
     you "{cps=15}Czemu ty jesteś ptakiem?{/cps}{nw}"
     you "{cps=15}{b}CO SIĘ DZIEJE!?{/b}{/cps}{nw}"
     show piotr angry
+    with vpunch
     p "SYBAU!"
     show piotr
     p "Mogę odpowiedzieć na twoje pytania, ale pod warunkiem że będziesz {b}c i c h o{/b}{w} (bo przyjdzie Zdicho)."

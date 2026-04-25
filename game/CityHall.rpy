@@ -1,10 +1,12 @@
 
-
+define wasRudeToPiotr = False
 label filipIntroduction:
     menu:
         "Sprowokuj piotra":
+            $ wasRudeToPiotr = True
             $ friendship["Piotr"] -= 1
             you "Obsrałeś się jak mnie zobaczyłeś Panie Piotrze więc sybau"
+            p "To nie prawda. Proszę nie oczerniać mojego wizerunku"
             you "{i}ale dałem do pieca{/i}"
             p "..."
             jump filipIntroduction_after            
@@ -17,16 +19,33 @@ label filipIntroduction:
 label filipIntroduction_after:
     p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał,"
     p "teraz muszę zacząć od nowa."
+    you "Jakim cudem to jest moja wina?"
+    you "Trzeci raz cię pytam i dalej nie wiem"
+    m "No właśnie też bym chciał usłyszeć jakim cudem to jest twoja wina w tej sytuacji"
     m "Coś mi się wydaje, że są rzeczy ważniejsze."
     m "Ty możesz swoje rytuały zrobić nawet jutro. A [name] mógł w tym lesie umrzeć"
     m "Chodź tu"
     "Podchodzisz trochę bliżej do Filipa, on wstaje i podaje ci rękę"
-    f "Cześć. Nazywam się Filip i witam w pięknym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
+    "Uśmiechasz się jak w reklamie nieruchomości"
+    "Nie wiesz, czy możesz mu ufać, ale on na pewno ma lepsze viby od Piotra."
+    f "Cześć. Nazywam się Filip i witam w naszym małym, pięknym, fajnym i zarazem przytulnym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
     you "No tak"
     f "A czy coś już wiesz o tym mieście?"
     you "No nie"
     "Filip jest uradowany tą informacją z jakiegoś powodu"
-    f "No to świetnie. Teraz zaprowadzę cię do Kurowskiej, ale najpierw muszę się zapytać czy wolne."
+    f "No to świetnie. Teraz zaprowadzę cię do Kurowskiej, ona odpowie na wszystkie twoje pytania."
+    f "Ona lubi takie rzeczy opowiadać tylko musisz się pytać"
+    f "Tylko nie stresuj się. Bądź dla niej miły i ona będzie miła dla ciebie"
+    f "Aha powiem ci jeszcze jedną rzecz - nie jesteś jedyny."
+    f "Wszyscy pojawiliśmy się przed tym miastem, tak jak ty."
+    you "Piotr mi tego nie powiedział..."
+    f "A to czemu gatekeepujesz, panie Piotrze"
+    p "To jest mój pierwszy raz, kiedy spotykam taką osobę"
+    f "Ma sens, ale proszę następnej osobie takie rzeczy mówić"
+    f "Pan [name] pewnie się stresował przez ciebie"
+    you "no właśnie"
+    f "No dobra wracając do Kurowskiej"
+    f "Najpierw muszę się zapytać czy wolne"
     f "Ostatnio złapałem ją na robieniu skipu C na stole... tak, więc przyjemnie nie było i nie pachniało też dobrze..."
     you "Mam tylko jedno pytanie"
     f "Tak?"
@@ -36,22 +55,33 @@ label filipIntroduction_after:
     "Filip podchodzi do drzwi i grzecznie puka"
     f "Dobry wieczór, mam nową osobę czy mogę ją wprowadzić tutaj?"
     m "Jasne!"
+    play sound "audio/sfx_door_open.mp3"
     "Filip otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
+    f "no no no idź idź"
 
     scene bg office
     stop music
-    play sound "audio/sfx_door_open.mp3"
 
     "..."
-    "Przed tobą siedzi Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
+    "Przed tobą siedzi Pani Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
     show kurowska with dissolve
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
     you "Zwą...{w=1} mnie [name]."
-    k "Okeeej.. Jestem Barbara, prezydent miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
+    k "Okeeej.. Mam na imię Barbara, jestem prezydentem miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
     you "Właśnie obudziłem się w lesie, nie wiem kim jestem, nie wiem gdzie jestem, znam tylko swoje imie"
+    you "Piotr znalazł mnie i zaprowadził mnie do pani"
+    you "No i tyle wiem"
     k "Czyli tak jak wszyscy..."
     "Barbara pisze coś do swojego notatnika"
+    k "Jeszcze raz jak masz na imię???"
+    you "[name]"
+    k "Jakie dziwne imię. Weź mi to przeliteruj"
+
+    $ nameSpelled = '-'.join([f"{letter}{{w=0.5}}" for letter in name])
+    you "[nameSpelled]"
+    k "Okej mam"
+
 
     "{nw}"
     jump kurowskaMysteryMenu
@@ -61,11 +91,43 @@ label kurowskaMysteryMenu:
         "Docieknij co to znaczy wszyscy.":
             k "Wszyscy, którzy tutaj mieszkają trafili w ten sam sposób do naszego miasta."
             k "Nikt nie wie skąd się tutaj bierzemy, ale jedno wiadomo - jesteśmy tutaj szczęśliwi."
-            jump kurowskaBureaucracyMenu
         "Milcz":
             you "{i}Chyba nie wiem o co chodzi... ale boję się jej o to pytać.{/i}"
             you "{i}Może jest jeszcze jakaś agresywna.{/i}"
-            jump kurowskaBureaucracyMenu
+    you "Mam kwerendę"
+    k "Słucham?"
+    you "Co jest w lesie poza miastem, i dlaczego to miasto jest w jakichś hebździnkach dolnych"
+    k "Ha ha!"
+    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby"
+    you "..."
+    you "(w szoku)"
+    k "No właśnie dlatego Piotr robi te rytuały. Wokół tego miasta jest taka tarcza, która odpycha od siebie zlą energię"
+    you "No piotr mi mówił jak on to robi tym onyksem"
+    k "Problem jest w tym, że za jakieś 5 lat braknie nam tego onyksu"
+    k "Więc albo znajdziemy jakiś sposób na oczyszczanie tego onyksu"
+    k "Albo będziemy musieli go przenosić w 5 osób, bo będzie tak ciężki, że inaczej się nie da"
+    k "...albo wszyscy umrzemy"
+    you "..."
+    you "{i}Nie daję zgody na śmierć{/i}"
+    you "{i}Na pewno coś wymyślą do tego czasu więc nie muszę się tym przejmować{/i}"
+    you "A może pani ma do mnie jakieś pytania?"
+    k "Hmm...."
+    k "Czy ty cokolwiek pamiętasz?"
+    "Ale ty nie pamiętasz nic. Twoja pamięc jest pusta, jak nowy dysk Simsang SSD T1 2TB Titan Gray USB-C"
+    "Próbujesz coś sobie przypomnieć, ale znowu zaczyna cię boleć głowa"
+    "Tym razem głowa cię boli jeszcze bardziej więc chwytasz się głowy i szybko zaczynasz myśleć o czymś innym"
+    you "{i}Ewidentnie coś albo ktoś nie chce, żebym coś pamiętał{/i}"
+    you "{i}Na razie lepiej będzie udawać, że nic nie rozumiem{/i}"
+    you "{i}Bo jeszcze wyczyszczą mi pamięc jeszcze raz{/i}"
+    you "Nic nie pamiętam."
+    k "Właśnie nikt w tym mieście nic nie pamięta"
+    k "Wszyscy mają jakieś zaniki pamięci"
+    k "Ja też."
+    you "Chciałem porozmawiać o czymś innym, nie takim ponurym jak śmierć całego miasta,"
+    you "Ale śkończyło się na tym, że wszyscy mamy alzheimera"
+    you "Było by to zabawne, gdyby nie było to tak straszne"
+    k "Jakoś trzeba sobie radzić."
+    jump kurowskaBureaucracyMenu
 
 
 define askedAboutCityHistory = False
@@ -138,6 +200,7 @@ label kurowskaBureaucracyMenu:
                     you "Czy każdy może kupić takie ubrania?"
                     you "Bo Pani wygląda jak DIVA!"
                     k "Ha ha, dziękuje. Oczywiście, że można, trzeba się tylko zgłosić do naszej krawcowej."
+                    k "Jest na rynku, obok piekarni"
                     $ friendship["Kurowska"] += 1
                     jump kurowskaBureaucracyMenu
                 "Powiedz coś o jej fryzurze":
@@ -157,8 +220,8 @@ label kurowskaBureaucracyMenu:
 label gettingHouseKeysGood:
     k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu."
     k "(ps. Kasia Dowbor go remontowała)"
-    you "Thank you thank you thank you"
     you "{i}Tam musi być luksusowo{/i}"
+    you "Thank you thank you thank you"
     jump gettingHouseKeysUniversal
 
 label gettingHouseKeysUniversal:
@@ -175,15 +238,19 @@ label gettingHouseKeysUniversal:
     p "Aha. Okej."
     p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM"
     hide piotr with dissolve
-    you "{i}Bracie its not that deep{/i}"
+    you "{i}Chyba się na mnie obraził{/i}"
+    if wasRudeToPiotr == True:
+        you "{i}Chyba przesadziłem w sekretariacie{/i}"
+    you "{i}Ale bracie its not that deep{/i}"
+    "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:40"
     jump goingIntoTown
         
 
 
 label goingIntoTown:
-    "Wychodzisz z urzędu miasta i idziesz przed siebie"
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
+    "Wychodzisz z urzędu miasta i idziesz przed siebie"
     "Nie masz pojęcia co teraz robić"
     menu:
         "Chcę iść do domu":
