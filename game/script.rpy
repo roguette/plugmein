@@ -37,7 +37,7 @@ label start:
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
-    jump filipIntroduction_after #wakingUpAfterFirstNight 
+    jump wakingUpAfterFirstNight 
 
     scene bg busstopa with dissolve
 

@@ -47,7 +47,7 @@ label wakingUpAfterFirstNight:
     "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
     scene bg house with fade
     play music ""
-    "Ten dom jest mały (ale dla y/n jest ogromny bo jest skinny i ma skinny waist)"
+    "Ten dom jest mały (ale dla ciebie jest ogromny bo jest skinny i ma skinny waist)"
     "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu"
     "Jednak obudziło Cię uczucie głodu"
     "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu"

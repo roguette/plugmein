@@ -1,3 +1,4 @@
+define rudeToVasili = False
 label firstNightLakeVisit:
     play music "forest.mp3" fadein 1.0
     scene bg lakenighta with dissolve
@@ -21,42 +22,73 @@ label firstNightLakeVisit:
     you "{i}Yyyyy... nikt? Przestań do mnie gadać.{/i}"
     you "Jestem tutaj nowy"
     "Podchodzisz bliżej do niego. Może on jest dziwny, ale to nie znaczy, że ty będziesz od razu niemiłym do niego"
+    "wyciąga z kieszeni jakieś urządzenie i puszcza ci muzykę w obcym języku."
+    "muzyka jest dziwna, nawet niepokojąca."
+    m "bratgren było fajnym miastem. Pamiętam jak surowce miasta nie były gromadzone przez tłuste lwy na szczycie. Wszystko należało do ludu"
+    menu:
+        "Udawaj, że za nim jest coś strasznego":
+            "Po 5 minutach twojego ragebaitu Vasili się nie odwraca"
+            "po tym jak skończy mówić, każe ci się nie bać duchów przy tym jeziorze bo nic ci nie zrobią."
+            you "Jakie duchy?" 
+            m "no a co żeś widział tam"
+            you 'a no ducha widziałem' 
+            m "To są duchy zmarłych."
+            m "Przychodzę tu w nocy bo czasami pojawia się duch mojego dziadka."
+            menu:
+                "Jak on miał na imie?":
+                    m "Grzegorz Brą z Owy"
     you "Nazywam się [name]"
     v "Witaj! Mam na imię Vasili. Warzę eliksiry, w wolnym czasię łowię ryby i lubię też śpiewać"
     you "O jak fajnie, pewnie dużo ludzi cię zna?"
     v "No nie wiem... śpiewam tylko jak jestem sam... Nie mnie to oceniać."
+    "Vasili zaczyna opowiadać ci o tym jeziorze, ale ty nie protestujesz, bo i tak miałeś się pytać"
+    v "To jest {i}nasze{/i} jezioro, Świtezianka."
+    v "Są bardzo fajne legendy o tym jeziorze, i w nich chodzi o to, że właściwie są straszne, i że w ogóle to są legendy"
+    v "W jednej z nich, założycielka naszego miasta, a dokładniej jej własne ciało, miało podobnie chyba zostać tak niby wrzucone do tej zimnej wody, którą widzisz przed sobą"
+    v "I możesz zobaczyć teraz."
+    v "Dlatego, w sensie tak ogólnie mówiąc, no to nikt tu nie pływa, tak jakby, wiesz, nikt"
+    v "Bo to jest trochę tak, że niby można, ale właściwie to nie bardzo, bo wszyscy jakby uznali, że ten pomysł nie jest z najelpszych"
+    v "Znaczy, ja nie mówię, że coś się stanie, ale też nie mówię, że się nie stanie, dlatego że właśnie iż jednak bo tak to bo i się nie nic tej z nich."
+    v "Więc dlatego, tak podsumowując i reasumując, nikt tu nie pływa, i to tak nie bez powodu, tylko tak specjalnie, że jednak nie"
+    v "dlatego że właśnie iż jednak bo tak to bo i się nie nic tej z nich"
+    v "ale jednocześnie trochę jakby może nie do końca, tylko tak bardziej że no wiesz o co chodzi"
 
     menu:
         "Pochwal śpiew":
-            you "Świetnie śpiewasz! Słychać, że masz talent."
-            you "Można powiedzieć, że dałeś do pieca."
+            you "Świetnie śpiewasz, towarzyszu! Słychać, że masz talent."
+            you "Można powiedzieć, że dałeś do {i}naszego{/i} pieca."
             you "Jestem pewny, że kiedyś wylądujesz na wielkiej scenie."
             v "Dzięki wielkie. Nie wiesz jak mi to dzień zrobiło."
             $ friendship["Vasili"] += 1
         
         "Krytykuj śpiew":
-            you "Tak szczerze to chyba powinieneś jeszcze troszkę pićwiczyć."
+            you "Tak szczerze to chyba powinieneś jeszcze troszkę poćwiczyć."
             you "Słychać, że amatorsko śpiewasz."
             you "Trochę ćwiczeń i będzie znacznie lepiej."
+            you "Studiowałem w teatrze, więc wiem o czym mówię"
             v "Kim ty jesteś, żeby tak krytykować mój głos?"
             "[name] zaczyna pięknie śpiewać"
             you "la la la la la {w=1.5}la"
             v "No cóż... Mówiłem, że nie jestem specjalistą."
             $ friendship["Vasili"] -= 1
+            $ rudeToVasili = True
     
     v "To o czym chciałbyś się dowiedzieć? Wiem tutaj praktycznie wszystko,"
     v "spędzam całe dnie na ulicy i jeśli się dobrze przypatrzy to można się dużo plotek nasłuchać."
+    v "Ja słucham ludzi cały czas."
+    v "Wiedziałeś, że kapitalizm jest zły?{nw}"
     jump vasiliFirstNightMegaMenu
 
-define experiencedCommies = False
+define endorsedCommunism = False
+define heardVasiliMonologue = False
 label vasiliFirstNightMegaMenu:
     menu:
         "Zapytaj jaką ma wiedzę na temat ryb":
             $ ryba = random.choice(["vasiliFishBrzana", "vasiliFishKoza", "vasiliFishWstegorz"])
             jump expression ryba
 
-        "Zapytaj o poglądy polityczne":
-            $ experiencedCommies = True
+        "Zapytaj o poglądy polityczne" if not heardVasiliMonologue:
+            $ heardVasiliMonologue = True
             v "Nie wierzę, że Kurowska jest dobrą prezydentką."
             v "Kurowska to coś gorszego niż zło."
             v "Zaczęła zaciskać kapitalistyczną smycz - każdy musiał znaleźć pr*cę."
@@ -69,7 +101,7 @@ label vasiliFirstNightMegaMenu:
             v "Ona tylko ułatwia ci dotarcie do pracy, żebyś mógł produkować więcej rzeczy."
             v "Pamiętam, jak próbowała nałożyć podatek na Piotra za to, że nic nie robił."
             v "Nazwała to 'zastojem arkanicznym'."
-            v "Zakazała mu nawet pomagać Pyndzlowi na farmie."
+            v "Zakazała mu nawet pomagać Wiktorii na farmie."
             v "Bo to nie było 'rolniczo uzasadnione'."
             v "Nie daj się zwieść latarniom - oświetlenie miasta to w rzeczywistości sieć inwigilacji."
             v "Latarnie mają oczy…"
@@ -94,13 +126,25 @@ label vasiliFirstNightMegaMenu:
             v "Dekadencja burżuazji musi zostać zakończona."
             v "Głosuj na mnie, towarzyszu."
 
-            you "Wiesz co chyba jest już bardzo późno. Lepiej jak pójde teraz do domu."
-            you "Kurowska każe mi jutro pracować od rana, więc będzie lepiej jak isę wyśpię."
-            v "Tak tak, sen jest najważniejszy, zaraz po zdrowiu psychicznym."
-            you "Dobranoc"
-            hide vasili with dissolve
-            "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
-            jump goingHomeTiredAfterVasiliFirstNight
+            v "Czy zagłosujesz na mnie?"
+            menu:
+                "Tak":
+                    $ endorsedCommunism = True
+                    $ friendship["Vasili"] += 1
+                    v "Dziękuję towarzyszu."
+                    v "Wiedziałem, że mogę na ciebie liczyć."
+                    jump vasiliFirstNightMegaMenu
+                "Nie dziękuję":
+                    $ friendship["Vasili"] -= 1
+                    v "wiedziałem, że będziesz popierał kapitalizm"
+                    v "W takim razie proszę opuścić teren naszego domu"
+                    you "To jak to działa, że mówisz że to nasz dom ale mnie wyganiasz"
+                    v "Idź popieraj kapitalizm gdzieś indziej."
+                    hide vasili with dissolve
+                    "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
+                    jump goingHomeTiredAfterVasiliFirstNight
+
+            
         "Zapytaj o życie":
             you "Jestem ciekaw twojej przeszłości. Tyle się nasłuchałem historii tego miejsca, a nic nie wiem o ich mieszkańcach"
             v "Chcesz wiedzieć o moim życiu?"
@@ -111,13 +155,29 @@ label vasiliFirstNightMegaMenu:
             menu:
                 "Dopytaj o wypadek":
                     you "Jeśli mogę zapytać, to co się stało?"
-                    v "Jasne, nie ma problemu. To w skrócie mój dziadek wpadł do kotła z wrzącym eliksirem..."
-                    v "nie przeżył..."
-                    you "O jeju" # jelito core
-                    v "Ale było minęło i teraz trzeba żyć dalej."
+                    if friendship["Vasili"] < 0:
+                        v "Wiesz co, wolę nie mówić o moim dziadku"
+                        v "Ten temat jest dość prywatny, i wolę nie opowiadać o takich rzeczach"
+                        you "Wszystko w porządku. Rozumiem cię."
+                    else:
+                        v "Jasne, nie ma problemu. To w skrócie mój dziadek wpadł do kotła z wrzącym eliksirem..."
+                        v "nie przeżył..."
+                        you "O jeju" # jelito core
+                        v "Ale było minęło i teraz trzeba żyć dalej."
                 "Milcz":
                     you "{i}Jestem trochę ciekawy o jaki wypadek chodzi, ale Vasili wydaję się być wrażliwym człowiekiem.{/i}"
-                    you "{i}Może lepiej zostawię to w spokoju.{/i}"
+                    if rudeToVasili == False:
+                        you "{i}Może lepiej zostawię to w spokoju.{/i}"
+                    else:
+                        you "{i}Skoro tyle gada to równie dobrze może opowiedzieć o swoim dziadku.{/i}"
+                        you "Na co umarł twój dziadek"
+                        v "Kiedy miałem 13 lat wpadł do kotła z eliksirem"
+                        you "wow ale heca"
+                        v "To nie jest śmieszne."
+                        v "Sam fakt tego, że mój dziadek przestał żyć, to jakby no, wiesz, nie jest ani trochę zabawne, tak w ogóle w sensie no tak"
+                        v "Bo to jest taka niefajna, smutna, tragiczna a nawet nieszczęśliwa sytuacja, że niby można coś powiedzieć, ale właściwie to nie ma z czego się śmiać."
+                        v "I że ogólnie to jest bardziej taki moment na bycie poważnym, a nie na jakieś żarty, bo to jednak mówimy właśnie o śmierci mojego dziadka"
+
             v "Natomiast jeśli chodzi o moje pasje to kocham łowić ryby i śpiewać w tym samym momencie."
             v "Czy zaspokoiłem twoją ciekawość?"
             you "Tak, dziękuję że się ze mną podzieliłeś swoją historią. "
@@ -158,7 +218,7 @@ label vasiliFishKoza:
     v "Koza [[1] to gatunek małej ryby [[2] słodkowodnej z rodziny piskorzowatych [[3]."
     v "Zamieszkuje Europę [[4][[5] z wyjątkiem Irlandii [[6], Szkocji, Norwegii i północnej Szwecji."
     v "Nie występuje też w Finlandii, północnej Rosji oraz południowych[[3.5] półwyspach."
-    v "Chodzi o Półwysep Iberyjski[[7][[8], Apeniński[[676767] i Bałkański."
+    v "Chodzi o Półwysep Iberyjski[[7][[8], Apeniński[[67] i Bałkański."
     v "Osiąga przeciętnie ok. 10 cm[[9]."
     v "Maksymalnie dorasta do 13,5 cm długości[[123]."
     v "Ma wydłużone ciało[[10]."
@@ -236,8 +296,17 @@ label vasiliTalksAboutFavoriteFish:
     scene black with dissolve
     "Przez nadmiar emocji (i najwyraźniej yappowanie Vasilia) usnąłeś"
     "Ale on to zauważył"
-    "Vasili budzi cię i każe ci iść spać, ponieważ martwi się o twoje zdrowie"
+    v "[name]!"
+    v "Czy ty mnie słuchasz?"
+    you "Przepraszam. Jest bardzo późno, i chyba powieniem iść spać"
+    v "Mi się wydaje, że powienieneś iść spać. Brak snu nie jest zdrowy"
+    v "A wiesz, ja się martwię o twoje zdrowie."
     "(Nie wie, że zasnąłeś z nudów, {w=0.6}#delulu)"
+    you "To w takim razie dobranoc. Kiedyś się jeszcze na pewno spotkamy."
+    if friendship["Vasili"] < 0:
+        v "Dobranoc."
+    else:
+        v "Dobranoc, towarzyszu."
     "Droga do domu jest jak przez mgłę. Nie pamiętasz za dużo, ponieważ zostałeś obudzony i jesteś bardzo zaspany."
     "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w sekundzie, kiedy położyłeś głowę na poduszkę"
     jump wakingUpAfterFirstNight
