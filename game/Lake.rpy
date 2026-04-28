@@ -1,4 +1,5 @@
 define rudeToVasili = False
+define metVasili = False
 label firstNightLakeVisit:
     play music "forest.mp3" fadein 1.0
     scene bg lakenighta with dissolve
@@ -38,6 +39,7 @@ label firstNightLakeVisit:
                 "Jak on miał na imie?":
                     m "Grzegorz Brą z Owy"
     you "Nazywam się [name]"
+    $ metVasili = True
     v "Witaj! Mam na imię Vasili. Warzę eliksiry, w wolnym czasię łowię ryby i lubię też śpiewać"
     you "O jak fajnie, pewnie dużo ludzi cię zna?"
     v "No nie wiem... śpiewam tylko jak jestem sam... Nie mnie to oceniać."
@@ -310,3 +312,158 @@ label vasiliTalksAboutFavoriteFish:
     "Droga do domu jest jak przez mgłę. Nie pamiętasz za dużo, ponieważ zostałeś obudzony i jesteś bardzo zaspany."
     "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w sekundzie, kiedy położyłeś głowę na poduszkę"
     jump wakingUpAfterFirstNight
+
+label workingAtVasili:
+    "Dzisiejsza droga nad jezioro jest, o dziwo, spokojniejsza od wczorajszej."
+    "Pomimo dnia i w okół tętniącego życia, było ciszej niż poprzedniej nocy."
+    "W tle było tylko słychać ptaki, brak fal i śpiewów Piwowarskiego sprawiały, że życie było lepsze."
+    "Kiedy docierasz nad jezioro, nie zastajesz żywej duszy."
+    "Jedyne co widzisz to dym unoszący się z chatki, położonej zaraz obok jeziora. Jednak, widzisz unowszącą się zieloną aurę."
+    "{i}Ta zielona aura... Chyba tam musi żyć ktoś odklejony od rzeczywistości. Innym razem odwiedzę tę posiadłość.{/i}"
+    "Nie znajdując Piwowarskiego, wracasz się w stronę Urzędu miasta. W oddali jednak zauważasz domek, który wydawał się dość przytulny."
+    "Wydaję się być bezpiecznie, może tam mieszka Piwowarski..."
+    "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
+    "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony, bo jedyny, wędkarz."
+    if endorsedCommunism:
+        v "Witaj towarzyszu."
+        you "Yyy? Cześć..."
+        v "Co cię sprowadza w NASZE skromne progi... HAHAHA bo wiesz... kolektywizacja majątku..."
+        you "haha(??).. rozumiem. Ale nie przyszedłem tutaj na pogaduszki."
+        you "Kurowska kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie czy nie masz coś dla mnie do roboty."
+        v "Ach ten wolny rynek... same z nim problemy."
+        v "W normalnym zakładzie miałbyś pracę od razu, a teraz tak się musisz bawić."
+        you "No więc... masz może coś co mógłbym zrobić? Bardzo mi na tym zależy."
+        you "Nie mam nawet pieniędzy na jedzenie."
+        v "No dobra... chociaż będzie to pierwszy i OSTATNI raz jak ci dajemy pracę, nie cierpimy wolnego rynku..."
+        v "To tak jak mówiliśmy, musisz skolektywizować akcyzę od drobnomieszczaństwa przesiądującego w naszym gmaszysku." 
+        v "My jako szlachcice wymagamy od ciebie pełnego posłuszeństwa i bierności wobec błagań oraz przekupstw od ludzi niższych od nas." 
+        v "Innymi słowy musisz zebrać jajka od naszych kur z kurnika za naszym domem." 
+        v "Dodatkowo prosimy cię o potępienie poczynań burżuazji, poprzez naznaczenie dobrej ścieżki umysłowej, używając do tego biografii naszego wspaniałego przywódcy oraz ojca naszego narodu Ogułki," 
+        v " który powinien rządzić naszym pospólstwem przez kolejne dziesiątki lat." 
+        v "Czyli jak zbierzesz jajka, przeczytaj kurom biografię o naszym OJCU."
+        you "...."
+        you "Troszkę dużo informacji, ale jak tak mówisz, że to wszystko jest nasze..." 
+        you "to mogę się do ciebie wprowadzić?"
+        v "Niestety nie." 
+        v "Twój rodowód nie pozwala na rozpust wobec twoich aksjomatów." 
+        v "Twoje poczynania i zobowiązania są odmienne, dlategoż z tego ambarasu nie jesteśmy w żadnej ewentualności," 
+        v "w mocy nadanej nam przez naszego pana i ojca Ogułki, podarować ci schronienie" 
+        v "w naszym niewystawnym miejscu bytowania."
+        you "{i}BRO WTF CO TU SIĘ DZIEJE. JA NIE CHCE. CHCE DO DOMU... naszego DOMU....{/i}"
+        you  "No dobra... w takim razie ide pozbierać jajka...?"
+        v "Zebrać akcyzę."
+        v "Tylko pamiętaj o bezwzględności."
+        "Oddalając się słyszysz jak Piwowarski zaczyna śpiewać 'Międzynarodówkę'."
+        you "{i}JUŻ NIGDY TUTAJ NIE WRACAM... może tylko po pieniądze...{/i}"
+        "Jak Vasili mówił kurnik był zaraz za domem." 
+        "Ale... nie powiedział o jednym..."
+        you "{i}KURY SĄ CZERWONE?! Nie wytrzymam, za chwile coś mnie powali....{/i}"
+        you "{i}DLACZEGO???{/i}"
+
+        you "Jak on mógł to wam zrobić..."
+        m "Niestety.... t-"
+        you "CO?! KTO TO RZUCIŁ?!! y... POWIEDZIAŁ*"
+        kura "To ja. Tutaj na dole."
+        kura "Tak to ja jestem symbolem wiejskiego ludu gnębionego przez burżuazyjne jaja wielkiego kapitału"
+        kura "lub przedstawiciel klasy niskiej"
+        kura "(bo na wysokich półkach siedzi burżuacja)"
+        kura "towaru wartościowego zwanego drobiem."
+        you "Chyba mam schizofrenię.... przez tę jego czerwoną aurę."
+        kura"Niestety nie... my umiemy mówić."
+        kura "Vasili nas nauczył, bo stwierdził, że woli wysłuchiwać problemy klasy niskiej, niż się z nimi uporywać..."
+        you "Chyba to wytłumaczenie nie pomogło. Nie ważne, muszę zabrać wasze jajka."
+        kura "Co musisz zrobić???"
+        you "Zebrać jajka.... AAAA zebrać akyzę???"
+        kura "Dobra, trzeba było tak od razu."
+        kura "Niestety nie mamy dużo do oddania, ponieważ Vasili rano pobierał opodatkowanie za przespaną noc..."
+        you "Dobra będzie co będzie. Muszę tylko zarobić, by coś zjeść i mnie więcej tutaj NIE zobaczycie."
+        "Wyzbierawszy wysztkie jajka, idziesz do Vasiliego, by mu je oddać. Pukasz do drzwi i znowu otwiera je Vasili."
+        v "I jak zbieranie podatku od niższych warstw społecznych zakończyło się sukcesem?"
+        you "Tak. Czy mogę dostać swoją zapłatę, ponieważ umieram z głodu."
+        v "No dobra... tylko nie wiem czy zdążysz przed zamknięciem piekarni."
+        v "Dzisiaj dostawa była i pewnie kolejki po 4 godziny... A nie czekaj, wolny rynek..."
+        v "Jak się pospieszysz to zdążysz na jeszcze ciepłe buły Rafała."
+        you "Dziękuje! Do widzenia." 
+        v "Żegnaj towarzyszu."
+    else:
+        v "Witaj!"
+        you "Cześć..."
+        v "Co się sprowadza w moje skromne progi."
+        you "Kurowska kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie czy nie masz coś dla mnie do roboty."
+        you "No więc... masz może coś co mógłbym zrobić?"
+        you "Bardzo mi na tym zależy. Nie mam nawet pieniędzy na jedzenie."
+        v "Jasne... niech tylko pomyślę co... hm... Dobra już wiem potrzebuję,"
+        v "żebyś nakarmił moje lisy."
+        v "Nie miałem dzisiaj czasu na to, więc pewnie są trochę wściekłe."
+        v "Ale wiem, że dasz sobie rady."
+        v "Ich wybieg jest zaraz za domem."
+        v "(Na twoim miejscu bym się pospieszył, żeby nie zrobiły się zbyt złe)."
+        you "{i}Dobra... nie jest to najcięższa praca, ale mam nadzieję, że te lisy będą dla mnie miłe.{/i}"
+        "Vasili daje ci żarcie dla lisów w pojemniku z IKEI i wychodzisz z domu, żeby nakarmić głodne liski."
+        "Idziesz za jego dom i widzisz..."
+        "A w sumie to nic nie widzisz, bo nie ma żadnych lisów"
+        you "{i}excusez moi nikogo tu nie ma{/i}"
+        menu:
+            "Wydawaj dźwięki lisa":
+                    "Nie przychodzi ci do głowy żaden lisowy dźwięk."
+                    "Lisy nie miauczą, nie szczekają, nie wchodzą w tryb alpha."
+                    "A może lisy są po prostu ciche? Te wszystkie myśli przelatują ci przez głowę,"
+                    "podczas gdy stoisz jak idiota z pojemnikiem na jedzenie"
+        you "{i}Co ja mam robić popłaczę się zaraz{/i}"
+        you "{i}Wiem.{/i}"
+        you "{i}Zostawię jedzenie za domem to przyjdzie sam{/i}"
+        you "{i}Pewnie mnie się boi, dlatego go nie widzę{/i}"
+        "Otwierasz pojemnik i zostawiasz go na ziemi, po czym wracasz do Vasiliego"
+        v "Czy zadbałeś o zaspokojenie podstawowych potrzeb żywieniowych moich zwierząt pochodzących spoza lokalnego ekosystemu?"
+        you "{i}Hell no{/i}"
+        you "A właśnie"  
+        you "Za twoim domem nic nie ma"  
+        v "Jak to"  
+        you "{i}srak to{/i}"
+        you "Tak, po prostu zostawiłem tam to jedzenie co mi dałeś"  
+        you "A teraz gdzie hajs"
+        you "Ile dostanę za swoją ciężką pracę?"
+        v "Jak to nie ma lisów za moim domem"  
+        you "Powiedziałem co powiedziałem"  
+        v "Ugh, może nie wyszły bo jesteś nowy"  
+        v "Powinieneś tam zostać, może wtedy przyjdą"  
+        "Wracasz za jego dom po raz kolejny i widzisz małego liska jedzącego jedzenie, które tam zostawiłeś."
+        "Jego futro jest bielsze niż zęby w reklamie colgate. Jest bardzo słaby"
+        you "{i}O mój boże czemu on jest taki słodki{/i}"  
+        you "{i}Czy to znaczy że on umiera...{/i}"  
+        "Wracasz do Vasiliego i pukasz w jego drzwi po raz trzeci"
+        v 'Znowu ty'  
+        you 'Tam za twoim domem jest lisek który je to jedzenie'  
+        you 'Jest taki chudziutki i malutki'  
+        you 'Co mam robić??'  
+        v 'muszę go zobaczyć omg'  
+        "Wychodzi z domu, a za nim ciągnie się czerwona aura."
+        "Do tej pory miałeś do czynienia tylko z zieloną aurą."
+        "Ta jednak nie pachnie jak obornik."
+        "Oboje idziecie za dom i obserwujecie białego liska dalej jedzącego swoje jedzonko"
+        v '(szeptem)O mój boże, nie widzisz że on jest ranny?'  
+        you '(też szeptem)Skąd wiesz że jest ranny?'  
+        v 'Nie widzisz że jego noga jest zgięta 90 stopni na południe?'  
+        you 'Skąd ty wiesz gdzie jest południe'  
+        lis 'Słyszę was'  
+        you '...'
+        "patrzysz się z politowaniem"
+        you 'Wiesz co'  
+        you 'Mam tego dość'  
+        you 'Daj mi pieniądze i idę'  
+        v 'Czekaj'  
+        "Piwowarski podnosi liska i mówi, że jest kręgarzem."
+        "Nie widzisz co robi, ale słyszysz ASMR i jest to trochę straszne"
+        v 'Proszę. Już lepiej'  
+        lis 'Dzięki!!!'  
+        "Lisek robi piruet i odskakuje do lasu"
+        you 'co się właśnie stało'  
+        v 'Ta głupia zawsze sobie coś skręca. Musiałem zostać kręgarzem przez nią'  
+        you 'Okej... nie będę zadawać pytań'  
+        you 'Po prostu mi zapłać i idę'  
+        v 'Dobra. Masz'  
+        you 'Dzięki'  
+        v 'Na razie, towarzyszu'
+        you "{i}już nigdy tu nie wrócę{/i}" 
+        you "{i}nawet jak mam umierać z głodu{/i}"
+    jump gotMoney

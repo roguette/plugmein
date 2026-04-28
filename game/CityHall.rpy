@@ -261,3 +261,230 @@ label goingIntoTown:
             you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
             jump goingIntoTownFirstNight
 
+label goingToTownToKurowskaDueToHungerDayTwoPartTwo:
+    "Wchodząc do środka czujesz zapach świeżo zaparzonej kawy i bułek. Ten zapach prowadzi cię do szału."
+    "Kiedy Filip wychodzi od Kurowskiej z pustą tacą. Podchodzisz do niego."
+    you 'Hej...'
+    f "Hejka"
+    f "Boże wyglądasz okropnie co jest"
+    you "Od kiedy pojawiłem się w tym mieście nic nie jadłem. Masz tu jakieś jedzenie?"
+    f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły rafała z kawą"
+    you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy"
+    you "Więc nie mogę kupić jedzenia"
+    you "Dosłownie zaraz umrę jeśli nic nie zjem"
+    f "Jasne"
+    "Filip odkłada talerz przy zlewie a potem znika w pomieszczeniu gospodarczym."
+    "Słyszysz jak musi coś odsuwać żeby dostać się do tej bułki której tak chciałeś"
+    "Bierzesz bułę rafała i pochłaniasz ją. Mimo że jest przeterminowana jak tuleja wciąż smakuje jak z najwyższej półki"
+    you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra że brakuje mi słow."
+    f "Smakują ci dlatego, że jesteś głodny."
+    f "Ale ogólnie to są rzeczywiście smaczne. Polecam pójść do tej piekarni kiedy są świeże."
+    f "Wtedy są jeszcze lepsze."
+    f "Wszyscy w tym mieście kochają buły rafała"
+    you "Gdzie je kupiłeś też chcę jak będę miał pieniądze"
+    f "No w BBB na rynku"
+    "Filip pokazuje ci palcem gdzie na mapie jest ta piekarnia"
+    "Szybko się orientujesz, gdzie to jest na rynku"
+    f "To jest tu. Ta piekarnia jest dość duża, więc na pewno ją zauważysz"
+    f "A co do pieniędzy.."
+    f "Powinieneś zapytać Kurowską o pracę ona ci pomoże"
+    you "Thank you thank you thank you"
+    you "Ratujesz mi życie w tym momencie"
+    "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym pukać identycznie jak Filip wczoraj"
+    k "KTO TAK PUKA NA BELZEBUBA???"
+    you "To ja."
+    k "A 'ja' to kto?"
+    you "[name]"
+    k "Wejdź"
+    "Wchodisz do jej biura i widzisz, że jest znowu jest zajęta jakimiś dokumentami"
+    you "{i}Czy ona będzie na mnie zła za to że ja tak sobie wszedłem{/i}"
+    you "{i}Oby nie.{/i}"
+    you "{i}Ale przecież sama mi kazała wczoraj się zgłosić... No to dzień dobry{/i}"
+    you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do pracy.. chyba.."
+    k "Tak, pamiętam"
+    if rudeToKurowska == True:
+        jump goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude
+    else:
+        jump goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
+
+label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
+    k "Sam sobie znajdź pracę"
+    you "Ale"
+    k "'ale ale ale' ale cyganisz"
+    k "Wynoś się i idź do pracy"
+    "Wściekła kurowska wyrzuca cię ze swojego biura"
+    you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem{/i}"
+    jump goingToFindAJob
+
+
+define playerRobbed = False
+label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
+    $ randomCorrectChoiceIndex = random.randint(1, 4)
+    k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą"
+    "Kurowska znowu zaczęła szukać czegoś na swoim biurku"
+    "..."
+    "Tym razem znalazła to co chciała."
+    k "Proszę. To powinno wystarczyć żebyś przeżyła zanim coś znajdziesz"
+    "Kurowska dała ci sakiewkę pełną monet."
+    "Jest cholernie ciężka"
+    k "Trzymaj."
+    you "Co to jest?"
+    you "Czemu te monety są takie ciężkie"
+    k "Zwykle nie używamy tych monet"
+    k "Trzymałam je w biurze i chciałam się ich pozbyć więc to jest win win situation"
+    k "A teraz idź znajdź pracę i zrób mi dumę"
+    you "Dziękuję bardzo na pewno to zrobię"
+    "Opuszczasz jej biuro i żegnasz się z Filipem. Teraz masz trochę pieniędzy i możesz w końcu coś robić{w=0.5} nie umierając z głodu"
+    "Ulice po rush hour są teraz praktycznie puste, poza kilkoma bezdomnymi i lekko groźnymi osobami."
+    you "{i}Chyba aż tak długo nie spędziłem czasu u Kurowskiej, skoro nie ma praktycznie żywej duszy na ulicy. Pewnie wszyscy siedzą w pracy.{/i}"
+    you "{i}A teraz pora na kupienie sobie POŻYWNEGO śniadania.{/i}"
+    you "{i}Z tej racji pójdę sobie do BBB{/i}"
+    "Przechodząc obok fontanny atakuje cię meżczyzna, chociaż jest niski, to wygląda na groźnego."
+    m "Oddaj wszystkie pieniądze jakie masz!!!"
+    $ playerRobbed = True
+    you "CO! Nie proszę, nie rób mi krzywdy, ale nie mogę dać ci tych pieniędzy."
+    you "Nie jadłem nic od wczoraj, te pieniądze dostałem w prezencie. Muszę je wykorzystać na jedzenie i ubranie, bom głodny i goły."
+    m "No dobra, mam serce, dlatego pozwolę ci zawalczyć o to czy będziesz musiał mi oddać twoje pieniądze."
+    you "PRZECIEŻ TO NIESPRAWIEDLIWE!"
+    m "Życie jest niesprawiedliwe."
+    m "Teraz odpowiedz na moje pytanie, które brzmi: 'Jakie jest mój ulubiony włoski brainrot?'"
+    menu:
+        "Triple T":
+            if randomCorrectChoiceIndex == 1:
+                jump KamilRobberyCorrectChoice
+            else:
+                jump KamilRobberyWrongChoice
+        "Lirili larila":
+            if randomCorrectChoiceIndex == 1:
+                jump KamilRobberyCorrectChoice
+            else:
+                jump KamilRobberyWrongChoice
+        "Garamararambraramanmararaman dan Madudungdung tak tuntung perkuntung":
+            if randomCorrectChoiceIndex == 1:
+                jump KamilRobberyCorrectChoice
+            else:
+                jump KamilRobberyWrongChoice
+        "Japa kasti":
+            jump KamilRobberyWrongChoice
+
+define robberyStopped = False
+label KamilRobberyCorrectChoice:
+    $ robberyStopped = True
+    m "Grrr....."
+    "nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa"
+    m "heh.. wiedziałem że ty to powiesz"
+    you "{i}???{/i}"
+    you "{i}To dobrze czy źle{/i}"
+    m "Masz te swoje finanse..."
+    you "I co, łyso ci? Teraz idź sobie zanim cię gdzieś zgłoszę."
+    m "Ale jak... no dobra... teraz wygrałeś ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
+    you "{i}Nie będę nosił ze sobą pieniędzy{/i}"
+
+label KamilRobberyWrongChoice:
+    k "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
+    menu:
+        "Odpowiedz normalnie":
+            you "Chytry dwa razy traci"
+            m "???"
+            you "{i}On chyba mnie nie zrozumiał{/i}"
+        "Bądź final girl":
+            you "Ale nie mam więcej"
+            k "Ha-ha-ha! Jesteś biedny!"
+            you "To czemu okradasz ludzi"
+            you "Bo nie masz własnych pieniędzy?"
+            m "I tak nawet nie wiesz, na co to wydać"
+            you "Chciałem kupić chleb w BBB?"
+            m "To przecież ma tyle kalorii..."
+            you "Jak tak się przejmujesz kaloriami, to pomyśl o te w swoim mózgu"
+            you "Bo ich tam nie ma jak w pepsi zero"
+            you "Puknij się w ten głupi łeb"
+            m "Po co??"
+            you "No zrób to"
+            "Stuka się w ten głupi łeb i wydaje to taki dźwięk, że słychać że tam nic nie ma"
+            you "No właśnie"
+            "Złodziej zaczyna płakać i ucieka"
+    you "{i}To nie mój problem.{/i}"
+    you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
+    you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
+    "Wracasz do urzędu miasta, ale nie zastajesz Filipa, więc pukasz do drzwi Kurowskiej."
+    "..."
+    you "Dzień dobry. To znowu ja"
+    k "Wejdź."
+    "Wchodząc czujesz, że ćwiczyła skip T."
+    you "Przepraszam, że znowu przeszkadzam, ale zostałem okradziony."
+    you "Zabrano mi wszystkie pieniądze. Teraz nie wiem co mam robić."
+    you "Czy będzie mogła pani mi pomóc?"
+    "Uśmiechasz się jak w reklamie nieruchomości."
+    k "A co ja jestem wróżką?"
+    you "Nie... Ale myślałem, że pomoże pani potrzebującemu..."
+    k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają"
+    k "Znajdź. Pracę."
+    jump goingToFindAJob
+
+label workingAtFilip:
+    "Wracasz do urzędu i idziesz do Filipa."
+    you "A to znowu ja"
+    f "Hejka"
+    you 'Jeszcze jedno pytanko'
+    f 'Tak?'
+    you 'Masz może jakąś robotę dla mnie'
+    you 'czy jest dosłownie cokolwiek co mogę zrobić'
+    f 'Hmm'
+    "Filip wstaje i znowu idzie do swojej szafy." 
+    "Słychać, że znowu przesuwa ciężkie pudła, ale tym razem trwa to dłużej." 
+    "Wychodzi z ogromnym stosem dokumentów. Potem wraca i przynosi jeszcze więcej papieru." 
+    "Zanim się obejrzysz, na biurku przed tobą są już dwa wysokie stosy dokumentów, a biurko się wygina od ich ciężaru"
+    "Potem wraca z wózkiem na bagaże, tylko że zamiast walizek tam są papiery"
+    you 'Co to w ogóle jest?'
+    f 'A to są po prostu jakieś papiery i poczta, która nigdy nie dotarła do Kurowskiej'
+    f 'Po prostu przez lata zbierałem i uważałem, że nie jest zbyt ważna, więc ją trzymałem'
+    f 'A teraz ona chce to wszystko zobaczyć'
+    you 'No to co mam z tym zrobić'
+    f 'Weź te wszystkie dokumenty i zanieś je do Kurowskiej'
+    you 'Ale nie dam rady tego unieść ty jesteś zdrowy??'
+    f 'Nie mówię ci żebyś niósł wszystko na raz głuptasie'
+    f 'Tu jest z 120kg papieru na tym biurku nie oczekuję że to podniesiesz'
+    f 'Zwłaszcza ze swoim snatched waistem'
+    you 'No spoko...'
+    "Podnosisz mały stosik papieru. Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz"
+    "Najwidoczniej przenosisz jakieś skargi."
+    "Każdy nagłowek jest gorszy od poprzedniego"
+    "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'"
+    if metVasili:
+        you "{i}Wiadomo, że chodzi o Vasiliego{/i}"
+    "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny"
+    "Nie dziwię się że Filip uznał to za nieważne - wygląda jak jakiś fanfik"
+    "{i}Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne{/i}"
+    you "{i}KTO TO NAPISAŁ{/i}"
+    "Pukasz do drzwi Kurowskiej"
+    if rudeToKurowska:
+        k "KTO TAK PUKA NA BELZEBUBA??"
+    else:
+        k "Wejdź"
+    "Wchodzisz do biura Kurowskiej i nie możesz uwierzyć w to, że ona serio zamierza czytać te maile"
+    you 'Gdzie to zostawić'
+    k 'Na moim stole'
+    you 'Na pewno? Ten papier nie jest skinny'
+    k 'Dobra zostaw na podłodze'
+    "Zostawiasz pierwszy stosik papierów na podłodze." 
+    "Nosisz dzielnie jeden po drugim, ale część ciebie chce tylko czytać te śmieci."
+    "Nagłówki są coraz bardziej dzikie..."
+    "{i}Kapelusz Rafała sieje dramat wśród Bratgrenian{/i}"
+    "{i}Skarga na robale z Kolorado atakujące pomidory{/i}"
+    "{i}Ktoś mi nasrał przed drzwiami do domu proszę to usunąć{/i}"
+    "{i}Pilne: Sąsiad lewituje jak dua lipa. To chyba czarna magia.{/i}"
+    "Zanim się obejrzysz przeniosłeś już wszystko i zabrakło ci nagłówków do czytania"
+    you 'Dużo tych mailów...'
+    k 'Co? jakich mailów'
+    you 'No tych które noszę od ostatnich 20 minut'
+    k 'MAILE?? prosze mi je wynieść, to praca filipa, ja mam ważniejsze rzeczy na głowie'
+    you 'to po co ja je tyle nosiłem *crying face expression*'  
+    "Bierzesz z rezygnacją kupkę mailów i wracasz do filipa"
+    f 'A co ty tu robisz z tymi papierami?'
+    you 'Kurowska powiedziała że to ty masz odpowiadać na maile'
+    you "I że muszę z powrotem je przenieść"
+    f 'CO? zdążą zamknąć przedsionek zanim skończę odpowiadać na wszystkie...'
+    f 'No dobra... przynieś je tu wszystkie'
+    "Po kolejnych 20 minutach kończysz pracę u filipa, który teraz leży zdruzgotany na stercie papierów."
+    f 'Dzieki za pomoc, chociaż wsm nic sie nie zmieniło'
+    f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'

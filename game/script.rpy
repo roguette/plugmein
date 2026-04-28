@@ -13,6 +13,8 @@ define t = Character("Tomcio", color="#ec1f1f")
 define v = Character("Vasili", color="#6a6277")
 define wp = Character("Wiktoria P.", color="#7e3611")
 define bjork = Character("Björk", color="#77beee")
+define kura = Character("Kura", color="#e05a17")
+define lis = Character("LISa Simpson", color="#ffffff")
 
 init python:
     import random

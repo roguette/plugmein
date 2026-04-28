@@ -146,6 +146,7 @@ label goingIntoTownFirstNight:
             jump firstNightTownWalk
 
 define hasToApologiseToPiotr = False
+define metWiktoria = False
 label firstNightTownWalk:
     you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
     "rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
@@ -174,6 +175,7 @@ label firstNightTownWalk:
     you "..."
     m "..."
     you "..."
+    $ metWiktoria = True
     wp "Mam na imię Wiktoria"
     you "Miło cię poznać. Mam na imię [name]"
     "uśmiechasz się jak w reklamie nieruchomości"
@@ -344,8 +346,36 @@ label afterFirstNightTownWalkQuestionsMenu:
     jump wakingUpAfterFirstNight
 
 
+label goingToTownToKurowskaDueToHungerDayTwo:
+    scene bg citysquareday with dissolve
+    play sound "sfx_footsteps_b.mp3"
+    "Idąc do Kurowskiej podziwiasz budynki i przyrodę, ponieważ dzień wcześniej nie dało się tego zrobić."
+    "Droga do urzędu miasta była bardzo przyjemna, jednak najgorszą częścią było oparcie się zapachom wydobywającym się z piekarni"  
+    "Brzuch ci burczy, niestety nie masz żadnych pieniędzy by zapłacić za przyszły posiłek"
+    you "{i}NIE WYTRZYMAM... taki jestem głodny. Trzeba było wczoraj od kogoś pożyczyć pieniądze. No cóż, muszę jeszcze wytrzymać do końca dnia, aż otrzymam moją dzisiejszą wypłatę.{/i}"
+    "Ulice teraz tętnią życiem, każdy spieszy się do pracy, w niektórych momentach nawet ciężko przecisnąć się przez tłumy."
+    "Jednak nikt nie odważy się zbliżyć do fontanny."
+    "Patrzysz w górę i dziwisz się, że dalej nie widać słońca"
+    "Ludzie są prawdopodobnie przyzwyczajeni do niekończących się chmur stratus pokrywających niebo"
+    "Gdy podchodzisz do urzędu, on znowu robi na tobie wrażenie, nie tak wielkie jak wczoraj, ale dalej jest bardzo inponujące."
+    "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa"
+    jump goingToTownToKurowskaDueToHungerDayTwoPartTwo
 
-
-
-
-
+label goingToFindAJob:
+    "Wychodzisz na zewnątrz żeby zastanowić się co powinieneś zrobić dalej."
+    "Jak powiedziała kurowska powinieneś wybrać kogoś kogo znasz i pójść do niego żeby poprosić o pracę."
+    "Ponieważ nie chcesz umrzeć z głodu dzisiaj."
+    "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk"
+    "Do kogo idziesz pracować?"
+    menu:
+        # "Wiktoria" if metWiktoria:
+        #     "nie wiem"
+        "Vasili (to jest ta ciekawsza opcja)" if metVasili:
+            you "{i}Pójdę do niego tylko dlatego, że jestem ciekaw{/i}" 
+            you "{i}Poza tym chyba nie mam innej opcji{/i}" 
+            jump workingAtVasili
+        "Filip":
+            you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
+            jump workingAtFilip
+    
+label gotMoney:

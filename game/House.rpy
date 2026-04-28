@@ -51,14 +51,24 @@ label wakingUpAfterFirstNight:
     "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu"
     "Jednak obudziło Cię uczucie głodu"
     "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu"
-    "W mieście jest jedna osoba, która może ci teraz pomóc - Filip"
-    "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niego"
-    scene bg citysquareday with dissolve
-    play sound "sfx_footsteps_b.mp3"
-    "Wchodzisz na rynek i widzisz wielu przechodniów, co kontrastuje z wczorajszą nocą, kiedy na zewnątrz nie było nikogo."  
-    "Jednak nikt nie odważy się zbliżyć do fontanny."
-    "Patrzysz w górę i dziwisz się, że nie widzisz słońca"
-    "Ludzie są prawdopodobnie przyzwyczajeni do niekończących się chmur stratus pokrywających niebo"
-    "Nie ma czasu do stracenia i wchodzisz do ratusza, szukając Filipa"
-    "Wchodzisz do jego biura i widzisz go, zmęczonego, przeglądającego dokumenty"
+
+    "Idziesz do kuchni po jakieś jedzenie, na szczęście w kuchni masz dużą lodówkę"
+    "Co chcesz zjeść"
+    menu:
+        "Kawior":
+            "Jesteś na 99% pewny że nie masz czegoś takiego w lodówce."
+            "Dostałeś ten dom za darmo, ale nie przesadzajmy. Nie ma szans że też dostałeś tak luksusowe jedzenie w prezencie"
+        "Winniczki":
+            you "{i}To jest chyba jedyna rzecz w mojej lodówce{/i}"
+        "Dead dove":
+            "Wiadomo, że nie należy jeść martwych gołębi"
+        "Nie chcę jeść":
+            you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
+
+    "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem który włącza i wyłącza w niej swiatło."
+    "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
+    "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny"
+    "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska"
+    "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej"
+    jump goingToTownToKurowskaDueToHungerDayTwo
 
