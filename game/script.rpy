@@ -1,8 +1,8 @@
-﻿define config.default_text_cps = 90
+﻿define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
 define mks = Character("MKS 23", color="#fafafa")
-define m = Character("???") #mystery speaker
+define m = Character("???", color="#808080") #mystery speaker
 
 image side piotr = "piotr side.png"
 
@@ -11,26 +11,33 @@ define f = Character("Filip", color="#a222be")
 define k = Character("Barbara K.", color="#ff41c9")
 define t = Character("Tomcio", color="#ec1f1f")
 define v = Character("Vasili", color="#6a6277")
-define wp = Character("Wiktoria P.", color="#7e3611")
+define wp = Character("Wiktoria P.", color="#af582d")
 define bjork = Character("Björk", color="#77beee")
 define kura = Character("Kura", color="#e05a17")
-define lis = Character("LISa Simpson", color="#ffffff")
+define lis = Character("LISa Simpson", color="#fffffa")
+define frau = Character("Frau Crusty", color="#a14f10")
+define r = Character("Rafał", color="#105da1")
+define n = Character("Niu Niu", color="#8410a1")
 
 init python:
     import random
-
-
-
 
 default friendship = {
     "Piotr": 0, 
     "Filip": 0, 
     "Kurowska": 0,
     "Tomcio": 0,
-    "Vasili": 0
+    "Vasili": 0,
+    "Rafal": 0,
+    "WiktoriaP": 0,
+    "WiktoriaW": 0
 }
 
+transform leftish:
+    xalign 0.25
 
+transform rightish:
+    xalign 0.75
 
 label start:
     play music "audio/street.mp3" 

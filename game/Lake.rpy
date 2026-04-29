@@ -1,5 +1,6 @@
 define rudeToVasili = False
 define metVasili = False
+define knowsAboutVasiliGrandfatherGhost = False
 label firstNightLakeVisit:
     play music "forest.mp3" fadein 1.0
     scene bg lakenighta with dissolve
@@ -35,6 +36,7 @@ label firstNightLakeVisit:
             you 'a no ducha widziałem' 
             m "To są duchy zmarłych."
             m "Przychodzę tu w nocy bo czasami pojawia się duch mojego dziadka."
+            $ knowsAboutVasiliGrandfatherGhost = True
             menu:
                 "Jak on miał na imie?":
                     m "Grzegorz Brą z Owy"
@@ -314,16 +316,23 @@ label vasiliTalksAboutFavoriteFish:
     jump wakingUpAfterFirstNight
 
 label workingAtVasili:
+    scene bg lakedaya with dissolve
+    play sound "sfx_footsteps_a.mp3"
     "Dzisiejsza droga nad jezioro jest, o dziwo, spokojniejsza od wczorajszej."
     "Pomimo dnia i w okół tętniącego życia, było ciszej niż poprzedniej nocy."
-    "W tle było tylko słychać ptaki, brak fal i śpiewów Piwowarskiego sprawiały, że życie było lepsze."
+    "W tle było tylko słychać ptaki, brak fal i śpiewów Vasiliego sprawiały, że życie było lepsze."
+    scene bg lakedayb with dissolve
+    play sound "sfx_footsteps_a.mp3"
     "Kiedy docierasz nad jezioro, nie zastajesz żywej duszy."
     "Jedyne co widzisz to dym unoszący się z chatki, położonej zaraz obok jeziora. Jednak, widzisz unowszącą się zieloną aurę."
     "{i}Ta zielona aura... Chyba tam musi żyć ktoś odklejony od rzeczywistości. Innym razem odwiedzę tę posiadłość.{/i}"
-    "Nie znajdując Piwowarskiego, wracasz się w stronę Urzędu miasta. W oddali jednak zauważasz domek, który wydawał się dość przytulny."
-    "Wydaję się być bezpiecznie, może tam mieszka Piwowarski..."
+    "Nie znajdując Vasiliego, wracasz się w stronę Urzędu miasta. W oddali jednak zauważasz domek, który wydawał się dość przytulny."
+    scene bg vasilihouse with dissolve
+    play sound "sfx_footsteps_a.mp3"
+    "Wydaję się być bezpiecznie, może tam mieszka Vasili..."
     "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
     "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony, bo jedyny, wędkarz."
+    show vasili normal with dissolve
     if endorsedCommunism:
         v "Witaj towarzyszu."
         you "Yyy? Cześć..."
@@ -353,8 +362,9 @@ label workingAtVasili:
         you  "No dobra... w takim razie ide pozbierać jajka...?"
         v "Zebrać akcyzę."
         v "Tylko pamiętaj o bezwzględności."
-        "Oddalając się słyszysz jak Piwowarski zaczyna śpiewać 'Międzynarodówkę'."
+        "Oddalając się słyszysz jak Vasili zaczyna śpiewać 'Międzynarodówkę'."
         you "{i}JUŻ NIGDY TUTAJ NIE WRACAM... może tylko po pieniądze...{/i}"
+        scene bg kurnik with dissolve
         "Jak Vasili mówił kurnik był zaraz za domem." 
         "Ale... nie powiedział o jednym..."
         you "{i}KURY SĄ CZERWONE?! Nie wytrzymam, za chwile coś mnie powali....{/i}"
@@ -363,6 +373,7 @@ label workingAtVasili:
         you "Jak on mógł to wam zrobić..."
         m "Niestety.... t-"
         you "CO?! KTO TO RZUCIŁ?!! y... POWIEDZIAŁ*"
+        show kura with dissolve
         kura "To ja. Tutaj na dole."
         kura "Tak to ja jestem symbolem wiejskiego ludu gnębionego przez burżuazyjne jaja wielkiego kapitału"
         kura "lub przedstawiciel klasy niskiej"
@@ -377,7 +388,9 @@ label workingAtVasili:
         kura "Dobra, trzeba było tak od razu."
         kura "Niestety nie mamy dużo do oddania, ponieważ Vasili rano pobierał opodatkowanie za przespaną noc..."
         you "Dobra będzie co będzie. Muszę tylko zarobić, by coś zjeść i mnie więcej tutaj NIE zobaczycie."
+        scene bg vasilihouse
         "Wyzbierawszy wysztkie jajka, idziesz do Vasiliego, by mu je oddać. Pukasz do drzwi i znowu otwiera je Vasili."
+        show vasili normal with dissolve
         v "I jak zbieranie podatku od niższych warstw społecznych zakończyło się sukcesem?"
         you "Tak. Czy mogę dostać swoją zapłatę, ponieważ umieram z głodu."
         v "No dobra... tylko nie wiem czy zdążysz przed zamknięciem piekarni."
@@ -385,6 +398,7 @@ label workingAtVasili:
         v "Jak się pospieszysz to zdążysz na jeszcze ciepłe buły Rafała."
         you "Dziękuje! Do widzenia." 
         v "Żegnaj towarzyszu."
+        hide vasili with dissolve
     else:
         v "Witaj!"
         you "Cześć..."
@@ -400,6 +414,7 @@ label workingAtVasili:
         v "(Na twoim miejscu bym się pospieszył, żeby nie zrobiły się zbyt złe)."
         you "{i}Dobra... nie jest to najcięższa praca, ale mam nadzieję, że te lisy będą dla mnie miłe.{/i}"
         "Vasili daje ci żarcie dla lisów w pojemniku z IKEI i wychodzisz z domu, żeby nakarmić głodne liski."
+        hide vasili with dissolve
         "Idziesz za jego dom i widzisz..."
         "A w sumie to nic nie widzisz, bo nie ma żadnych lisów"
         you "{i}excusez moi nikogo tu nie ma{/i}"
@@ -414,6 +429,7 @@ label workingAtVasili:
         you "{i}Zostawię jedzenie za domem to przyjdzie sam{/i}"
         you "{i}Pewnie mnie się boi, dlatego go nie widzę{/i}"
         "Otwierasz pojemnik i zostawiasz go na ziemi, po czym wracasz do Vasiliego"
+        show vasili normal with dissolve
         v "Czy zadbałeś o zaspokojenie podstawowych potrzeb żywieniowych moich zwierząt pochodzących spoza lokalnego ekosystemu?"
         you "{i}Hell no{/i}"
         you "A właśnie"  
@@ -427,11 +443,13 @@ label workingAtVasili:
         you "Powiedziałem co powiedziałem"  
         v "Ugh, może nie wyszły bo jesteś nowy"  
         v "Powinieneś tam zostać, może wtedy przyjdą"  
+        hide vasili with dissolve
         "Wracasz za jego dom po raz kolejny i widzisz małego liska jedzącego jedzenie, które tam zostawiłeś."
         "Jego futro jest bielsze niż zęby w reklamie colgate. Jest bardzo słaby"
         you "{i}O mój boże czemu on jest taki słodki{/i}"  
         you "{i}Czy to znaczy że on umiera...{/i}"  
         "Wracasz do Vasiliego i pukasz w jego drzwi po raz trzeci"
+        show vasili normal with vpunch
         v 'Znowu ty'  
         you 'Tam za twoim domem jest lisek który je to jedzenie'  
         you 'Jest taki chudziutki i malutki'  
@@ -441,8 +459,10 @@ label workingAtVasili:
         "Do tej pory miałeś do czynienia tylko z zieloną aurą."
         "Ta jednak nie pachnie jak obornik."
         "Oboje idziecie za dom i obserwujecie białego liska dalej jedzącego swoje jedzonko"
-        v '(szeptem)O mój boże, nie widzisz że on jest ranny?'  
-        you '(też szeptem)Skąd wiesz że jest ranny?'  
+        show vasili normal at leftish with move 
+        show lis at rightish with dissolve 
+        v '(szeptem) O mój boże, nie widzisz że on jest ranny?'  
+        you '(też szeptem) Skąd wiesz że jest ranny?'  
         v 'Nie widzisz że jego noga jest zgięta 90 stopni na południe?'  
         you 'Skąd ty wiesz gdzie jest południe'  
         lis 'Słyszę was'  
@@ -452,18 +472,21 @@ label workingAtVasili:
         you 'Mam tego dość'  
         you 'Daj mi pieniądze i idę'  
         v 'Czekaj'  
-        "Piwowarski podnosi liska i mówi, że jest kręgarzem."
+        "Vasili podnosi liska i mówi, że jest kręgarzem."
         "Nie widzisz co robi, ale słyszysz ASMR i jest to trochę straszne"
         v 'Proszę. Już lepiej'  
         lis 'Dzięki!!!'  
         "Lisek robi piruet i odskakuje do lasu"
+        hide lis with dissolve
         you 'co się właśnie stało'  
+        show vasili normal at center with move 
         v 'Ta głupia zawsze sobie coś skręca. Musiałem zostać kręgarzem przez nią'  
         you 'Okej... nie będę zadawać pytań'  
         you 'Po prostu mi zapłać i idę'  
         v 'Dobra. Masz'  
         you 'Dzięki'  
         v 'Na razie, towarzyszu'
+        hide vasili with dissolve
         you "{i}już nigdy tu nie wrócę{/i}" 
         you "{i}nawet jak mam umierać z głodu{/i}"
     jump gotMoney

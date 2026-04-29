@@ -46,17 +46,17 @@ label wakingUpAfterFirstNight:
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
     scene bg house with fade
-    play music ""
-    "Ten dom jest mały (ale dla ciebie jest ogromny bo jest skinny i ma skinny waist)"
+    "Ten dom jest mały (ale dla ciebie jest ogromny bo [name] jest skinny i ma skinny waist)"
     "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu"
     "Jednak obudziło Cię uczucie głodu"
     "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu"
 
+    scene bg kitchen with fade
     "Idziesz do kuchni po jakieś jedzenie, na szczęście w kuchni masz dużą lodówkę"
     "Co chcesz zjeść"
     menu:
         "Kawior":
-            "Jesteś na 99% pewny że nie masz czegoś takiego w lodówce."
+            "Jesteś na 99%% pewny że nie masz czegoś takiego w lodówce."
             "Dostałeś ten dom za darmo, ale nie przesadzajmy. Nie ma szans że też dostałeś tak luksusowe jedzenie w prezencie"
         "Winniczki":
             you "{i}To jest chyba jedyna rzecz w mojej lodówce{/i}"

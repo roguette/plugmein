@@ -64,7 +64,7 @@ label filipIntroduction_after:
 
     "..."
     "Przed tobą siedzi Pani Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
-    show kurowska with dissolve
+    show kurowska normal with dissolve
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
     you "Zwą...{w=1} mnie [name]."
@@ -262,19 +262,29 @@ label goingIntoTown:
             jump goingIntoTownFirstNight
 
 label goingToTownToKurowskaDueToHungerDayTwoPartTwo:
+    play sound "sfx_footsteps_a.mp3"
+    scene bg cityhallinside with dissolve
     "Wchodząc do środka czujesz zapach świeżo zaparzonej kawy i bułek. Ten zapach prowadzi cię do szału."
+    scene bg secretary with dissolve
+    play sound "sfx_door_open.mp3"
     "Kiedy Filip wychodzi od Kurowskiej z pustą tacą. Podchodzisz do niego."
+    show filip normal with dissolve
     you 'Hej...'
     f "Hejka"
+    show filip shocked with vpunch
     f "Boże wyglądasz okropnie co jest"
     you "Od kiedy pojawiłem się w tym mieście nic nie jadłem. Masz tu jakieś jedzenie?"
+    show filip normal
     f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły rafała z kawą"
     you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy"
     you "Więc nie mogę kupić jedzenia"
     you "Dosłownie zaraz umrę jeśli nic nie zjem"
     f "Jasne"
+    show filip normal at offscreenright with move
     "Filip odkłada talerz przy zlewie a potem znika w pomieszczeniu gospodarczym."
     "Słyszysz jak musi coś odsuwać żeby dostać się do tej bułki której tak chciałeś"
+    show filip normal at center with move
+    "Wraca i daje ci bułę Rafała. Jest twarda ale nie masz wyboru."
     "Bierzesz bułę rafała i pochłaniasz ją. Mimo że jest przeterminowana jak tuleja wciąż smakuje jak z najwyższej półki"
     you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra że brakuje mi słow."
     f "Smakują ci dlatego, że jesteś głodny."
@@ -291,15 +301,19 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     you "Thank you thank you thank you"
     you "Ratujesz mi życie w tym momencie"
     "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym pukać identycznie jak Filip wczoraj"
+    with vpunch
     k "KTO TAK PUKA NA BELZEBUBA???"
     you "To ja."
     k "A 'ja' to kto?"
     you "[name]"
     k "Wejdź"
+    scene bg office with dissolve
+    play sound "sfx_door_open.mp3"
     "Wchodisz do jej biura i widzisz, że jest znowu jest zajęta jakimiś dokumentami"
     you "{i}Czy ona będzie na mnie zła za to że ja tak sobie wszedłem{/i}"
     you "{i}Oby nie.{/i}"
     you "{i}Ale przecież sama mi kazała wczoraj się zgłosić... No to dzień dobry{/i}"
+    show kurowska normal with dissolve
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do pracy.. chyba.."
     k "Tak, pamiętam"
     if rudeToKurowska == True:
@@ -313,13 +327,15 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     k "'ale ale ale' ale cyganisz"
     k "Wynoś się i idź do pracy"
     "Wściekła kurowska wyrzuca cię ze swojego biura"
+    show bg secretary with vpunch
+    play sound "sfx_door_slam.mp3"
     you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem{/i}"
     jump goingToFindAJob
 
 
 define playerRobbed = False
 label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
-    $ randomCorrectChoiceIndex = random.randint(1, 4)
+    $ randomCorrectChoiceIndex = random.randint(1, 3)
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą"
     "Kurowska znowu zaczęła szukać czegoś na swoim biurku"
     "..."
@@ -334,12 +350,17 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     k "Trzymałam je w biurze i chciałam się ich pozbyć więc to jest win win situation"
     k "A teraz idź znajdź pracę i zrób mi dumę"
     you "Dziękuję bardzo na pewno to zrobię"
+    scene bg secretary with dissolve
+    play sound "sfx_door_open.mp3"
     "Opuszczasz jej biuro i żegnasz się z Filipem. Teraz masz trochę pieniędzy i możesz w końcu coś robić{w=0.5} nie umierając z głodu"
+    scene bg citysquareday with dissolve
+    play sound "sfx_footsteps_b.mp3"
     "Ulice po rush hour są teraz praktycznie puste, poza kilkoma bezdomnymi i lekko groźnymi osobami."
     you "{i}Chyba aż tak długo nie spędziłem czasu u Kurowskiej, skoro nie ma praktycznie żywej duszy na ulicy. Pewnie wszyscy siedzą w pracy.{/i}"
     you "{i}A teraz pora na kupienie sobie POŻYWNEGO śniadania.{/i}"
     you "{i}Z tej racji pójdę sobie do BBB{/i}"
     "Przechodząc obok fontanny atakuje cię meżczyzna, chociaż jest niski, to wygląda na groźnego."
+    show kamil normal with vpunch
     m "Oddaj wszystkie pieniądze jakie masz!!!"
     $ playerRobbed = True
     you "CO! Nie proszę, nie rób mi krzywdy, ale nie mogę dać ci tych pieniędzy."
@@ -355,12 +376,12 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
             else:
                 jump KamilRobberyWrongChoice
         "Lirili larila":
-            if randomCorrectChoiceIndex == 1:
+            if randomCorrectChoiceIndex == 2:
                 jump KamilRobberyCorrectChoice
             else:
                 jump KamilRobberyWrongChoice
         "Garamararambraramanmararaman dan Madudungdung tak tuntung perkuntung":
-            if randomCorrectChoiceIndex == 1:
+            if randomCorrectChoiceIndex == 3:
                 jump KamilRobberyCorrectChoice
             else:
                 jump KamilRobberyWrongChoice
@@ -378,18 +399,20 @@ label KamilRobberyCorrectChoice:
     m "Masz te swoje finanse..."
     you "I co, łyso ci? Teraz idź sobie zanim cię gdzieś zgłoszę."
     m "Ale jak... no dobra... teraz wygrałeś ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
+    hide kamil with dissolve
     you "{i}Nie będę nosił ze sobą pieniędzy{/i}"
 
 label KamilRobberyWrongChoice:
-    k "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
+    m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
     menu:
         "Odpowiedz normalnie":
             you "Chytry dwa razy traci"
             m "???"
+            hide kamil with dissolve
             you "{i}On chyba mnie nie zrozumiał{/i}"
         "Bądź final girl":
             you "Ale nie mam więcej"
-            k "Ha-ha-ha! Jesteś biedny!"
+            m "Ha-ha-ha! Jesteś biedny!"
             you "To czemu okradasz ludzi"
             you "Bo nie masz własnych pieniędzy?"
             m "I tak nawet nie wiesz, na co to wydać"
@@ -402,15 +425,21 @@ label KamilRobberyWrongChoice:
             you "No zrób to"
             "Stuka się w ten głupi łeb i wydaje to taki dźwięk, że słychać że tam nic nie ma"
             you "No właśnie"
+            hide kamil with dissolve
             "Złodziej zaczyna płakać i ucieka"
     you "{i}To nie mój problem.{/i}"
     you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
+    scene bg secretary with dissolve
+    play sound "sfx_footsteps_a.mp3"
     "Wracasz do urzędu miasta, ale nie zastajesz Filipa, więc pukasz do drzwi Kurowskiej."
     "..."
     you "Dzień dobry. To znowu ja"
     k "Wejdź."
+    scene bg office with dissolve
+    play sound "sfx_door_open.mp3"
     "Wchodząc czujesz, że ćwiczyła skip T."
+    show kurowska normal with dissolve
     you "Przepraszam, że znowu przeszkadzam, ale zostałem okradziony."
     you "Zabrano mi wszystkie pieniądze. Teraz nie wiem co mam robić."
     you "Czy będzie mogła pani mi pomóc?"
@@ -419,10 +448,13 @@ label KamilRobberyWrongChoice:
     you "Nie... Ale myślałem, że pomoże pani potrzebującemu..."
     k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają"
     k "Znajdź. Pracę."
+    hide kurowska normal with dissolve
     jump goingToFindAJob
 
 label workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
+    scene bg secretary with dissolve
+    play sound "sfx_door_open.mp3"
     you "A to znowu ja"
     f "Hejka"
     you 'Jeszcze jedno pytanko'
