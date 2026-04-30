@@ -1,5 +1,5 @@
 define seenBjorkGhost = False
-
+define hasSkinnyWaist = False
 # renpy-graphviz: BREAK
 
 label h_wakingUpAfterFirstNight:
@@ -66,6 +66,7 @@ label h_wakingUpAfterFirstNight:
         "Dead dove":
             "Wiadomo, że nie należy jeść martwych gołębi"
         "Nie chcę jeść":
+            $ hasSkinnyWaist = True
             you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
 
     "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem który włącza i wyłącza w niej swiatło."
