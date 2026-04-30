@@ -1,6 +1,6 @@
 
 define wasRudeToPiotr = False
-label filipIntroduction:
+label ch_filipIntroduction:
     menu:
         "Sprowokuj piotra":
             $ wasRudeToPiotr = True
@@ -9,14 +9,14 @@ label filipIntroduction:
             p "To nie prawda. Proszę nie oczerniać mojego wizerunku"
             you "{i}ale dałem do pieca{/i}"
             p "..."
-            jump filipIntroduction_after            
+            jump ch_filipIntroduction_after            
         "Milcz":
             you "{i}on nie jest tuff{/i}" 
-            jump filipIntroduction_after
+            jump ch_filipIntroduction_after
 
 
 
-label filipIntroduction_after:
+label ch_filipIntroduction_after:
     p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał,"
     p "teraz muszę zacząć od nowa."
     you "Jakim cudem to jest moja wina?"
@@ -86,7 +86,7 @@ label filipIntroduction_after:
     "{nw}"
     jump kurowskaMysteryMenu
 
-label kurowskaMysteryMenu:
+label ch_kurowskaMysteryMenu:
     menu:
         "Docieknij co to znaczy wszyscy.":
             k "Wszyscy, którzy tutaj mieszkają trafili w ten sam sposób do naszego miasta."
@@ -127,7 +127,7 @@ label kurowskaMysteryMenu:
     you "Ale śkończyło się na tym, że wszyscy mamy alzheimera"
     you "Było by to zabawne, gdyby nie było to tak straszne"
     k "Jakoś trzeba sobie radzić."
-    jump kurowskaBureaucracyMenu
+    jump ch_kurowskaBureaucracyMenu
 
 
 define askedAboutCityHistory = False
@@ -136,9 +136,9 @@ define askedAboutWork = False
 define commentedOnKurowskasAppearance = False
 define rudeToKurowska = False
 
-label kurowskaBureaucracyMenu:
+label ch_kurowskaBureaucracyMenu:
     if askedAboutHousing and askedAboutCityHistory and askedAboutWork:
-        jump gettingHouseKeysGood
+        jump ch_gettingHouseKeysGood
 
     k "Czy masz jakieś pytania?"
     menu:
@@ -217,14 +217,14 @@ label kurowskaBureaucracyMenu:
                     you "{i}JESZCZE ŻYJĘ! Byłoby ciężko gdyby mnie wyrzuciła na bruk. Dostałem klucze do domu, o przyjemnych rozmowach nie myślę.{/i}"
                     jump gettingHouseKeysUniversal
 
-label gettingHouseKeysGood:
+label ch_gettingHouseKeysGood:
     k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu."
     k "(ps. Kasia Dowbor go remontowała)"
     you "{i}Tam musi być luksusowo{/i}"
     you "Thank you thank you thank you"
     jump gettingHouseKeysUniversal
 
-label gettingHouseKeysUniversal:
+label ch_gettingHouseKeysUniversal:
     scene bg cityhallinside
     play music "stillofnight.mp3"
     show piotr normal 
@@ -247,7 +247,7 @@ label gettingHouseKeysUniversal:
         
 
 
-label goingIntoTown:
+label ch_goingIntoTown:
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
     "Wychodzisz z urzędu miasta i idziesz przed siebie"
@@ -261,7 +261,7 @@ label goingIntoTown:
             you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
             jump goingIntoTownFirstNight
 
-label goingToTownToKurowskaDueToHungerDayTwoPartTwo:
+label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     play sound "sfx_footsteps_a.mp3"
     scene bg cityhallinside with dissolve
     "Wchodząc do środka czujesz zapach świeżo zaparzonej kawy i bułek. Ten zapach prowadzi cię do szału."
@@ -321,7 +321,7 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     else:
         jump goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
 
-label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
+label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     k "Sam sobie znajdź pracę"
     you "Ale"
     k "'ale ale ale' ale cyganisz"
@@ -334,7 +334,7 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
 
 
 define playerRobbed = False
-label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
+label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     $ randomCorrectChoiceIndex = random.randint(1, 3)
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą"
     "Kurowska znowu zaczęła szukać czegoś na swoim biurku"
@@ -389,7 +389,7 @@ label goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
             jump KamilRobberyWrongChoice
 
 define robberyStopped = False
-label KamilRobberyCorrectChoice:
+label ch_KamilRobberyCorrectChoice:
     $ robberyStopped = True
     m "Grrr....."
     "nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa"
@@ -402,7 +402,7 @@ label KamilRobberyCorrectChoice:
     hide kamil with dissolve
     you "{i}Nie będę nosił ze sobą pieniędzy{/i}"
 
-label KamilRobberyWrongChoice:
+label ch_KamilRobberyWrongChoice:
     m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
     menu:
         "Odpowiedz normalnie":
@@ -451,7 +451,7 @@ label KamilRobberyWrongChoice:
     hide kurowska normal with dissolve
     jump goingToFindAJob
 
-label workingAtFilip:
+label ch_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"

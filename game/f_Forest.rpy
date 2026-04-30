@@ -3,7 +3,7 @@ define accused_piotr_of_kidnapping = False
 define asked_where_i_am_start = False
 define stayed_silent_start = False
 
-label piotrIntroductionMenu:
+label f_piotrIntroductionMenu:
     menu:
         "Kim ty jesteś" if not asked_who_is_piotr:
             $ asked_who_is_piotr = True
@@ -21,7 +21,7 @@ label piotrIntroductionMenu:
             p "Dodatkowo muszę jeszcze ochraniać przyrodę przed złem, turkuciami i próchnicą."
             p "A w mieście leczę mieszkańców i pomagam im w przeróżnych sytuacjach związanych z ich kiepskim zdrowiem fizycznym {b}JAK I PSYCHICZNYM!!!{/b}"
             you "Okej..??"
-            jump piotrIntroductionMenu
+            jump f_piotrIntroductionMenu
         "Oskarż o porwanie" if not accused_piotr_of_kidnapping:
             $ accused_piotr_of_kidnapping = True
             $ friendship["Piotr"] -= 1
@@ -37,7 +37,7 @@ label piotrIntroductionMenu:
             p "{b}Strzelę ci stringami jak jeszcze raz oskarżysz mnie o porwanie!!!{/b}"
             you "..."
             you "{i}Może moje słowa były trochę niemiłe...{/i}"
-            jump piotrIntroductionMenu
+            jump f_piotrIntroductionMenu
         "Zapytaj się gdzie jesteś" if not asked_where_i_am_start:
             $ asked_where_i_am_start = True
             you "Ale gdzie ja jestem?"
@@ -45,16 +45,16 @@ label piotrIntroductionMenu:
             you "???"
             you "Czy ja wyglądam na osobę która wie co to jest za miejsce?! (bffr im not on mat-geo-ai pff)"
             "Piotr robi eyeroll, wzdycha i milczy."
-            jump piotrIntroductionMenu
+            jump f_piotrIntroductionMenu
         "milcz" if not stayed_silent_start:
             $ stayed_silent_start = True
             you "{i}Milcząc chyba nic się nie dowiem{/i}"
-            jump piotrIntroductionMenu
+            jump f_piotrIntroductionMenu
         "(nie mam więcej pytań)":
-            jump piotrTravelToCity
+            jump f_piotrTravelToCity
 
 
-label piotrTravelToCity:
+label f_piotrTravelToCity:
     "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
     if accused_piotr_of_kidnapping:
         "Twój wzrok wraca do Piotra."
@@ -151,4 +151,4 @@ label piotrTravelToCity:
     p "[name]"
     you "Ale co ja..?"
     p "No przecież zapytał się o twoje imię."
-    jump filipIntroduction
+    jump ch_filipIntroduction
