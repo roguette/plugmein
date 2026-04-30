@@ -308,40 +308,47 @@ label firstNightTownWalkQuestionsMenu:
 
 define fountainLoreReceived = False
 label afterFirstNightTownWalkQuestionsMenu:
-    you "czy jest coś jeszcze co powinienem wiedzieć"
-    wp "tak zapomniałam ci powiedzieć czemu w ogóle opowiadam ci o tym kościele"
-    you "słucham?"
-    wp "w tym kościele jest mnóstwo relikwii"
-    wp "na przykład nóż którym zabito bjork"
-    wp "teraz jest zamknięty ale jeśli kiedyś będziesz potrzebować odpowiedzi znajdziesz je tutaj"
-    you "aha dobra dzięki"
-    "opuszczasz teren kościoła a Wiktoria zamyka za tobą bramę"
-
-    you 'to tyle informacji naraz...'
-    you 'na pewno jutro wszystko zapomnę'
-    wp 'spokojnie, to w porządku zapominać'
-    wp 'jeśli będziesz czegoś potrzebować jestem tu żeby pomóc'
-    you 'aww dziękuję'
-    you 'myślę że najlepiej już pójdę do domu jeszcze go nawet nie widziałem'
-    wp 'czekaj jaki dom?? skąd???'
-    you 'dom który dostałem od kurowskiej?'
-    wp  'CO'
-    wp 'jak to dostałeś dom???'
-    you '*pokazuje klucze* no od kurowskiej dostałem'
-    wp 'czemu ona teraz ma swoje ulubieńce'
-    you 'może mi ktoś wytłumaczyć co się dzieje???'
-    wp 'kurowska zwykle nie rozdaje domów za darmo'
-    you 'to nie było za darmo powiedziała że muszę znaleźć pracę'
-    wp 'aaaa ona trochę nie lubi bezrobotnych'
-    wp 'cokolwiek robisz pamiętaj żeby płacić podatki wtedy będziesz miał z nią spokój'
-    wp 'jest miła tylko dla tych co płacą podatki'
-    you 'oho okej'
-    you 'dziękuję ci za wszystkie informacje bardzo to doceniam ale teraz chciałbym się położyć'
-    you 'dobranoc'
-    wp 'pa'
+    you "Czy jest coś jeszcze, co powinienem wiedzieć?"
+    wp "Tak, zapomniałam ci powiedzieć, czemu w ogóle opowiadam ci o tym kościele."
+    you "Słucham?"
+    wp "W tym kościele jest mnóstwo relikwii."
+    wp "Na przykład nóż, którym zabito Bjork."
+    wp "Teraz jest zamknięty, ale jeśli kiedyś będziesz potrzebować odpowiedzi, znajdziesz je tutaj."
+    you "Aha, dobra, dzięki."
+    "Opuszczasz teren kościoła, a Wiktoria zamyka za tobą bramę."
+    "Zrobiłeś tylko 3 kroki do tyłu więc twój widok niewiele się zmienił"
+    "(Czego się spodziewałeś)"
+    you 'To tyle informacji naraz...'
+    you 'Na pewno jutro wszystko zapomnę.'
+    wp 'Ej rell'
+    wp "Nie wiem jak ja to pamiętam."
+    wp 'W każdym razie, jeśli będziesz czegoś potrzebować, jestem tu, żeby pomóc.'
+    you 'Aww, dziękuję.'
+    you "Która jest godzina?"
+    wp "No jest już po północy"
+    you "Czemu ty łazisz an rynku po północy"
+    wp "Yyyy.."
+    wp "Nie interesuj się."
+    you 'Myślę, że najlepiej już pójdę do domu. Jeszcze go nawet nie widziałem.'
+    wp 'Czekaj, jaki dom?? Skąd???'
+    you 'Dom, który dostałem od Kurowskiej?'
+    wp 'CO?'
+    wp 'Jak to dostałeś, dom???'
+    you '*pokazuje klucze* No, od Kurowskiej dostałem.'
+    wp 'Czemu ona teraz ma swoje ulubieńce?'
+    you 'Może mi ktoś wytłumaczyć, co się dzieje???'
+    wp 'Kurowska zwykle nie rozdaje domów za darmo.'
+    you 'To nie było za darmo, powiedziała, że muszę znaleźć pracę.'
+    wp 'Aaaa, ona trochę nie lubi bezrobotnych.'
+    wp 'Cokolwiek robisz, pamiętaj, żeby płacić podatki. Wtedy będziesz miał z nią spokój.'
+    wp 'Jest miła tylko dla tych, co płacą podatki.'
+    you 'Oho okej.'
+    you 'Dziękuję ci za wszystkie informacje, bardzo to doceniam, ale teraz chciałbym się położyć.'
+    you 'Dobranoc.'
+    wp 'Pa.'
     $ fountainLoreReceived = True
     scene bg citysquarenight with dissolve
-    "zaczynasz iść do domu. głowa ciąży ci od nadmiaru informacji które właśnie otrzymałeś."
+    "Zaczynasz iść do domu. Głowa ciąży ci od nadmiaru informacji które właśnie otrzymałeś."
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
     jump wakingUpAfterFirstNight
 
@@ -384,46 +391,50 @@ label goingToFindAJob:
     
 label gotMoney:
     scene bg citysquareday with dissolve
-    "Masz dość bycia głodnym więc idziesz prosto do BBB"
+    "Masz dość bycia głodnym, więc idziesz prosto do BBB."
     "(Big Buły Bakery)"
+    call gotMoneyBakeryEntrance
+
+label gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
-    "Piekarnia jest rzeczywiście duża. Zapachy rozchodzące się po ulicy prowadzą cię do szału"
-    "Zapach drożdży unosi się w powietrzu, a za szybą jest wiele wypieków"
+    "Piekarnia jest rzeczywiście duża. Zapachy rozchodzące się po ulicy prowadzą cię do szału."
+    "Zapach drożdży unosi się w powietrzu, a za szybą jest wiele wypieków."
     scene bg bakeryinside with dissolve
-    "Pierwsze co zauważasz w środku to plakaty Taylor Spit"
-    "Ale{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}. Jest kolejka"
+    "Pierwsze co zauważasz w środku to plakaty Taylor Spit."
+    "Ale{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}. Jest kolejka."
     show wp normal at leftish with moveinleft
     show fraucrusty normal at center with moveinleft
     show rafal normal at rightish with moveinright
-    "Przed tobą są dwie osoby, a pierwszą jest Frau Crusty"
+    "Przed tobą są dwie osoby, a pierwszą jest Frau Crusty."
     if metWiktoriaP:
-        you "O hej"
-        wp "No cześć! Co tam"
+        you "O hej."
+        wp "No cześć! Co tam?"
         you "Masakra... Musiałem pracować..."
-        wp "Do kogo poszedłeś"
+        wp "Do kogo poszedłeś?"
         if workedAtFilip:
-            you "Do Filipa"
-            you "Kazał mi przenosić dokumenty do Kurowskiej"
-            you "A jak już skończyłem, Kurowska kazała mi z powrotem przenieść te listy"
-            you "Bo to on ma je czytać"
-            wp "Trzeba było poprosić pieniądze i wyjść po czymś takim"
-            wp "I skibidi"
+            you "Do Filipa."
+            you "Kazał mi przenosić dokumenty do Kurowskiej."
+            you "A jak już skończyłem, Kurowska kazała mi z powrotem przenieść te listy."
+            you "Bo to on ma je czytać."
+            wp "Trzeba było poprosić pieniądze i wyjść po czymś takim."
+            wp "I skibidi."
         if workedAtVasili:
-            you "Do Vasiliego"
+            you "Do Vasiliego."
             if endorsedCommunism:
-                you "Wiesz co, nie było źle"
-                you "Mamy podobne poglądy polityczne"
-                "Wiktoria robi bombastic side eye"
+                you "Wiesz co, nie było źle."
+                you "Mamy podobne poglądy polityczne."
+                "Wiktoria robi bombastic side eye."
             else:
-                you "Jezu to była masakra cały czas o komuniźmie gadał"
-            you "Szkoda gadać"
-            you "Ty go znasz lepiej ode mnie, pewnie wiesz jak to wyglądało"
-            wp "Let me guess"
+                you "Jezu, to była masakra, cały czas o komuniźmie gadał."
+            you "Szkoda gadać."
+            you "Ty go znasz lepiej ode mnie, pewnie wiesz jak to wyglądało."
+            wp "Let me guess."
             wp "Śpiewał 'Międzynarodówkę'?"
             you "Tak..."
             wp "Współczuję..."
+    call gotMoneyBakeryCustomer
 
-
+label gotMoneyBakeryCustomer:
     frau "A cóż to za bezczelne pytanie?"
     frau "Oczywiście, że mam pieniądze."
     frau "Tylko dzisiaj brakuje mi 23 foryntów."
@@ -433,224 +444,247 @@ label gotMoney:
     frau "Ale mam dzisiaj urodziny!!!"
     menu:
         "Daj jej trochę monet":
-            you "Masz"
+            you "Masz."
             frau "Mój gyatt tutaj utknie na dobre!"
-            frau "Dziękuję"
+            frau "Dziękuję."
             with vpunch
             show fraucrusty normal at offscreenleft with move
             "Frau Crusty wychodzi z piekarni z tortem skipem C"
 
         "Udawaj, że nic nie słyszałeś":
-            frau "Wszyscy jesteście bezczelni i agresywni"
+            frau "Wszyscy jesteście bezczelni i agresywni."
             with vpunch
             show fraucrusty normal at offscreenleft with move
             "Frau Crusty wychodzi z piekarni bez tortu skipem C"
     hide fraucrusty
-    wp "Okeeej"
-    m "Hejka"
-    wp "No cześć co tam"
-    m "A w sumie nic w malignie byłem cały dzień"
-    wp "Tak standardowo"
-    "Oboje zaczęli się śmiać"
-    wp "Poproszę 3 buły Rafała"
+    call gotMoneyBakeryTea
+
+label gotMoneyBakeryTea:
+    wp "Okeeej."
+    m "Hejka."
+    wp "No cześć, co tam?"
+    m "A w sumie nic, w malignie byłem cały dzień."
+    wp "Tak, standardowo."
+    "Oboje zaczęli się śmiać."
+    wp "Poproszę 3 buły Rafała."
     m "Jasne."
     "Z tyłu widać całe koszyki z bułami Rafała."
-    you "{i}Chyba są mega popularne tutaj{/i}"
-    m "Proszę"
-    "Nagle wchodzi kolejny nieznany ci mężczyzna"
-    "Wygląda jak jakiś alfons"
+    "Patrzysz się na te buły jak na monoporcje z LA"
+    "Tylko że buły Rafała nie kosztują $15 za 150g"
+    "Nie masz zielonego pojęcia jeśli chodzi o pieniądze w tym mieście"
+    "Niby coś tam masz, ale nie wiesz czy tego starczy na jedną bułę, czy sto."
+    you "{i}Te buły są mega popularne tutaj{/i}"
+    you "{i}Ale bym zjadł taką..{/i}"
+    m "Proszę."
+    "Nagle wchodzi kolejny nieznany ci mężczyzna."
+    "Wygląda jak jakiś alfons."
     show niuniu normal at leftish
-    m "Jezu znowu ty"
+    m "Jezu no znowu ty."
     show wp normal at rightish
     show rafal normal at left
     m "Tak, Rafale, to ja!"
-    r "No co ty chcesz ode mnie znowu"
-    m "Pokaż co masz pod kapeluszem"
-    wp "(szeptem) To jest Niu Niu"
-    wp "Ogólnie to jest taki typ co wymyśla teorie spiskowe w tym mieście"
-    wp "I tym razem ofiarą jest Rafał"
-    wp "On był na koncercie Taylor Spit i podczas tego koncertu ona rzuciła w niego swój kapelusz"
-    wp "Od tego dnia cały czas go nosi"
-    wp "A Niu wymyślił, że on coś ukrywa pod tym kapeluszem"
-    r "Nie dobra mam dość"
-    "Rafał wyciąga miotłę i uderza Niunia"
+    r "No co ty chcesz ode mnie, znowu?"
+    m "Pokaż, co masz pod kapeluszem."
+    wp "(szeptem) To jest Niu Niu."
+    wp "Ogólnie to jest taki typ, co wymyśla teorie spiskowe w tym mieście."
+    wp "I tym razem ofiarą jest Rafał."
+    wp "On był na koncercie Taylor Spit i podczas tego koncertu ona rzuciła w niego swój kapelusz."
+    wp "Od tego dnia cały czas go nosi."
+    wp "A Niuniu wymyślił, że on coś ukrywa pod tym kapeluszem."
+    r "Nie, dobra, mam dość."
+    "Rafał wyciąga miotłę i uderza Niunia."
     with vpunch
     n "AAAAA"
     r "Sharp or dull"
     n "Sharp?"
-    r "Nie. To jeszcze raz"
+    r "Nie. To jeszcze raz."
     with vpunch
-    "Uderza go jeszcze raz"
-    n "No to jest sharp"
-    r "Wyjdź z mojej piekarni bo zaraz ci sharp or dull zrobię cegłą"
-    n "Dobra dobra"
-    show niuniu at offscreenleft with move
+    "Uderza go jeszcze raz."
+    n "No, to jest sharp."
+    r "Wyjdź z mojej piekarni, bo zaraz ci sharp or dull zrobię cegłą."
+    n "Dobra, dobra."
+    show niuniu normal at offscreenleft with move
     show wp normal at leftish with move
     show rafal normal at rightish with move
     you "Współczuję."
-    r "Jezu mam go dość on tak mnie irytuje"
-    you "Nie dziwię ci się"
+    you "Czy ty naprawdę masz tu gdzieś cegłę?"
+    r "Tak. Jestem przygotowany."
+    "Rafał wyciągą dwoma łapami ogromną cegłę"
+    "Najwidoczniej ma z 300 lat, bo nieważne z jakiej strony jej dotyka to sypie się z niej kurz"
+    "Ta cegła już dawno straciła swoje proste krawędzie, i jest lekko zaokrąglona, jakby Rafał już ją na kimś testował."
+    "Jedna strona tej cegły jest widocznie ciemniejsza od innych, niby wyjęto ją z budynku"
+    "Była w tym mieście dłużej od ciebie, i pewnie słyszała wszystkie tajemnice tego miasta."
+    "W jej szczelinach widać brud i kurz, które nigdy nie zostały wypłukane."
+    "Cegła jest czerwona jak reszta ścian w tej piekarni, więc pasuje do wnętrza"
+    you "{i}Pewnie została wyjęta z jakiejś ściany{/i}"
+    you "{i}Chyba że sama wypadła?{/i}"
+    "Ta cegła miała swoje wyznaczone miejsce, pod stołem Rafała"
+    "Leży tam przez wiele lat, nie protestując"
+
+    r "Jezu, mam go dość, on tak mnie irytuje."
+    you "Nie dziwię ci się."
     r "..."
-    r "No dobra co tam chciałeś"
-    "Zapomniałeś o jedzeniu przez to co się właśnie wydarzyło"
-    you "Poproszę 3 buły Rafała"
-    r "Jasne"
-    r "Ale czekaj nie widziałem cię wcześniej"
+    r "No dobra, co tam chciałeś?"
+    "Zapomniałeś o jedzeniu przez to, co się właśnie wydarzyło."
+    you "Poproszę 3 buły Rafała."
+    r "Jasne."
+    r "Ale czekaj, nie widziałem cię wcześniej."
     r "Nie pracujesz przypadkiem na drugim końcu miasta?"
-    wp "No właśnie też mi się tak wydawało"
-    you "Nieee jestem tutaj nowy."
-    you "Urodziłem się wczoraj jak konrad"
-    "Rafał uważnie cię słucha, wkładając buły do papierowej torebki"
-    r "Aha ma sens"
-    you "Widzę, że masz plakaty Taylor Spit"
-    r "Znasz ją??"
-    you "Tak. Kojarzę ją"
-    r "Wow ale heca"
-    "Wyciągasz bułę Rafała i zaczynasz ją jeść"
-    "Ale nie tak normalnie jakbys jadł kajzerkę z biedronki"
-    "Tylko jak homofob jedzący banan"
-    "Odrywasz pierwszy kawałek bułki ręką i Rafał patrzy się na ciebie jakbyś popełnił zbrodnię"
+    wp "No właśnie, też mi się tak wydawało."
+    you "Nieee, jestem tutaj nowy."
+    you "Urodziłem się wczoraj, jak Konrad."
+    "Rafał uważnie cię słucha, wkładając buły do papierowej torebki."
+    r "Aha, ma sens."
+    you "Widzę, że masz plakaty Taylor Spit."
+    r "Znasz ją?"
+    you "Tak. Kojarzę ją."
+    r "Wow, ale heca."
+    "Wyciągasz bułę Rafała i zaczynasz ją jeść."
+    "Ale nie tak normalnie, jakbyś jadł kajzerkę z Biedronki."
+    "Tylko jak homofob jedzący banan."
+    "Odrywasz pierwszy kawałek bułki ręką i Rafał patrzy się na ciebie, jakbyś popełnił zbrodnię."
     r "Co ty robisz..."
     you "W sensie?"
-    you "Jem"
+    you "Jem."
     r "Nie umiesz w savoir vivre..."
     you "Co???"
-    r "Daj mi to. Pokażę ci jak to się je"
-    "Rafał gryzie tę bułkę jak normalna osoba"
-    r "No teraz mam nadzieję, że umiesz"
-    r "A tak na marginesie za dużo soli wsypałem do ciasta"
-    you "Imo jest smaczna"
-    you "Lubię sól"
-    you "Masz jakieś wersje tej buły czy tylko takie common jak jajo w adopt me?"
-    r "No mam tylko takie zwykłe bo nie mam pomysłu"
+    r "Daj mi to. Pokażę ci, jak to się je."
+    "Rafał gryzie tę bułkę jak normalna osoba."
+    r "No, teraz mam nadzieję, że umiesz."
+    r "A tak na marginesie, za dużo soli wsypałem do ciasta."
+    you "Imo jest smaczna."
+    you "Lubię sól."
+    you "Masz jakieś wersje tej buły, czy tylko takie common jak jajo w Adopt Me?"
+    r "No, mam tylko takie zwykłe, bo nie mam pomysłu."
     you "Hmmm"
-    you "No właśnie ta z solą jest dobra więc tych na pewno musisz więcej zrobić"
+    you "No właśnie, ta z solą jest dobra, więc tych na pewno musisz więcej zrobić."
     wp "Czy ty już kiedyś jadłeś bułę Rafała?"
-    you "Tak. Filip mi dał bo byłem głodny"
-    wp "Ma sens"
-    r "Okej dobra masz fajną aurę. Chcesz z nami wypić trochę herbaty?"
+    you "Tak. Filip mi dał, bo byłem głodny."
+    wp "Ma sens."
+    r "Okej, dobra, masz fajną aurę. Chcesz z nami wypić trochę herbaty?"
     you "Oczywiście!!"
-    "Rafał znika w kuchni, ale szybko wraca z kubkami i cukrem"
-    r "Usiądźcie proszę"
+    "Rafał znika w kuchni, ale szybko wraca z kubkami i cukrem."
+    r "Usiądźcie, proszę."
     you "Wy się znacie?"
-    wp "Tak. Poznałam go w tej piekarni"
-    r "Wyczułem dobry vibe od niej, macie podobną aurę"
+    wp "Tak. Poznałam go w tej piekarni."
+    r "Wyczułem dobry vibe od niej, macie podobną aurę."
     you "{i}oby nie zieloną{/i}"
-    "Rafał podchodzi do drzwi i zamyka je na klucz, sprawdzając czy nikt nie idzie"
-    "Jeszcze raz idzie do kuchni, ale tym razem przynosi gorącą wodę i matchę"
-    r "Czekaj bo zapomniałem cię zapytać"
-    r "Co ty chcesz do picia"
-    you "A co tu przyniosłeś"
-    r "Matchę"
-    you "KOCHAM MATCHĘ"
+    "Rafał podchodzi do drzwi i zamyka je na klucz, sprawdzając, czy nikt nie idzie."
+    "Jeszcze raz idzie do kuchni, ale tym razem przynosi gorącą wodę i matchę."
+    r "Czekaj, bo zapomniałem cię zapytać."
+    r "Co ty chcesz do picia?"
+    you "A co tu przyniosłeś?"
+    r "Matchę."
+    you "KOCHAM MATCHĘ."
     wp "Matching!!!"
-    "Przesuwasz się trochę bliżej ściany, żeby ktoś mógł usiąść obok ciebie"
-    you "a WIĘC..."
+    "Przesuwasz się trochę bliżej ściany, żeby ktoś mógł usiąść obok ciebie."
+    you "A WIĘC..."
     you "Spill the {i}tea{/i}"
-    "Oboje zaczynają się śmiać"
-    wp "Nie chcę brzmieć jak Niuniuś, którego Rafał pobił miotłą ale..."
-    wp "Muszę zapytać"
-    wp "Czy ty też uważasz, że to miasto coś ukrywa"
-    "Nie zajmuje ci dużo czasu, żeby odpowiedzieć na to pytanie"
-    "Od kiedy Kurowska opowiedziała ci o tym mieście wiedziałeś że coś jest nie tak"
-    "Trudno powiedzieć czy to była twoja inteligencja,{w=0.5} czy po prostu jesteś normalnie taki podejrzliwy wobec wszystkiego"
-    you "No tak"
-    you "Imo to miasto ogólnie jest dziwne"
-    you "Na przykład czemu to miasto leży w jakimś losowym mieście"
-    you "I dlaczego tu jest tylko jedno miasto"
+    "Oboje zaczynają się śmiać."
+    wp "Nie chcę brzmieć jak Niuniuś, którego Rafał pobił miotłą, ale..."
+    wp "Muszę zapytać."
+    wp "Czy ty też uważasz, że to miasto coś ukrywa?"
+    "Nie zajmuje ci dużo czasu, żeby odpowiedzieć na to pytanie."
+    "Od kiedy Kurowska opowiedziała ci o tym mieście, wiedziałeś, że coś jest nie tak."
+    "Trudno powiedzieć, czy to była twoja inteligencja,{w=0.5} czy po prostu jesteś normalnie taki podejrzliwy wobec wszystkiego."
+    you "No tak."
+    you "Imo to miasto ogólnie jest dziwne."
+    you "Na przykład, czemu to miasto leży w jakimś losowym mieście?"
+    you "I dlaczego tu jest tylko jedno miasto?"
     you "Ja mam uwierzyć w to, że nikomu nie chciało się osiedlić gdzieś indziej?"
-    wp "NO WŁASNIE"
+    wp "NO WŁAŚNIE."
     if knowsAboutVasiliGrandfatherGhost:
-        you "Dowiedziałem się od Vasiliego że to jezioro jest jakieś magiczne"
-        you "Bo pojawia się tam duch jego dziadka"
+        you "Dowiedziałem się od Vasiliego, że to jezioro jest jakieś magiczne."
+        you "Bo pojawia się tam duch jego dziadka."
     if metWiktoriaP:
-        you "Od ciebie też dużo się dowiedziałem"
-        "Patrzysz się na Wiktorię"
+        you "Od ciebie też dużo się dowiedziałem."
+        "Patrzysz się na Wiktorię."
     if seenBjorkGhost:
-        you "Poza tym widziałem dusze Bjork"
-    you "Dziwne to wszystko.."
+        you "Poza tym widziałem dusze Bjork."
+    you "Dziwne to wszystko."
     wp "WIDZISZ RAFAŁ"
-    wp "Mówiłam ci"
-    r "No dobra powiedzmy, że masz rację"
-    r "I co teraz"
-    wp "Nie wiem ale nie będę mogła zasnąć po takim czymś"
-    wp "Trzeba coś zrobić po prostu"
-    you "No rel"
+    wp "Mówiłam ci."
+    r "No dobra, powiedzmy, że masz rację."
+    r "I co teraz?"
+    wp "Nie wiem, ale nie będę mogła zasnąć po takim czymś."
+    wp "Trzeba coś zrobić, po prostu."
+    you "No rel."
     you "Jest może jakieś muzeum w tym mieście?"
-    wp "No jest. To jest ten kościół"
-    you "No to idziemy tam"
-    wp "Okej"
-    wp "Mogę jutro o 10:00"
-    you "No to spotykamy się na rynku o 10:00"
-    wp "Dobra"
+    wp "No jest. To jest ten kościół."
+    you "No to idziemy tam."
+    wp "Okej."
+    wp "Mogę jutro o 10:00."
+    you "No to spotykamy się na rynku o 10:00."
+    wp "Dobra."
     r "A ja co?"
     wp "Ale czy ty chcesz z nami iść do kościoła?"
-    r "Nie"
-    wp "No właśnie"
-    you "Dobra to wiecie co"
-    you "Dziękuję za herbatę jesteście mega fajni"
-    you "Ale ja muszę iść"
-    you "Popatrzę się jeszcze raz na tą fontannę na rynku i pójdę do krawcowej"
-    you "Bo nie mam żadnych ubrań"
+    r "Nie."
+    wp "No właśnie."
+    you "Dobra, to wiecie co.."
+    you "Dziękuję za herbatę, jesteście mega fajni."
+    you "Ale ja muszę iść."
+    you "Popatrzę się jeszcze raz na tę fontannę na rynku i pójdę do krawcowej."
+    you "Bo nie mam żadnych ubrań."
     wp "Paaa"
-    r "Dowidzenia senorita"
+    r "Dowidzenia, senorita."
     you "{i}Jestem dumny z siebie{/i}"
     you "{i}Chyba znalazłem besties w tej piekarni{/i}"
     scene bg bakeryfrontday with dissolve
-    "Wychodzisz i idziesz prosto do tej fontanny"
-    "Na szczęście fontanna jest blisko"
+    "Wychodzisz i idziesz prosto do tej fontanny."
+    "Na szczęście fontanna jest blisko."
     scene bg fountainday with dissolve
     stop music fadeout 5
-    "Powietrze dalej jest gęste przy tej fontannie"
-    "Patrzysz się na tą fontannę inaczej ponieważ już wiesz, że coś jest nie tak"
-    "Analizujesz każdy centymetr kwadratowy tej fontanny jak teksty piosenek"
-    "W końcu twój wzrok pada na napis w obcym języku, którego wcześniej nie widziałeś"
-    you "co za dziad to pisał..."
+    "Powietrze dalej jest gęste przy tej fontannie."
+    "Patrzysz się na tę fontannę inaczej, ponieważ już wiesz, że coś jest nie tak."
+    "Analizujesz każdy centymetr kwadratowy tej fontanny jak teksty piosenek."
+    "W końcu twój wzrok pada na napis w obcym języku, którego wcześniej nie widziałeś."
+    you "Co za dziad to pisał..."
     show bjork normal with dissolve
     if seenBjorkGhost:
-        you "Znowu ty"
+        you "Znowu ty."
     else:
         you "Hejka?"
-        you "Czekaj czy ty nie jesteś Bjork przypadkiem"
-        bjork "Jestem"
-        you "Omg widziałem twój portret"
-    "Jesteś w szoku że widzisz duszę Bjork przed sobą"
-    "Nikt inny na rynku pewnie tego nie widzi, ponieważ nikt na to nie reaguje"
-    "Wygląda jakbyś miał schizofrenię przez to że gadasz do fontanny"
+        you "Czekaj, czy ty nie jesteś Bjork przypadkiem?"
+        bjork "Jestem."
+        you "Omg, widziałem twój portret."
+    "Jesteś w szoku, że widzisz duszę Bjork przed sobą."
+    "Nikt inny na rynku pewnie tego nie widzi, ponieważ nikt na to nie reaguje."
+    "Wygląda, jakbyś miał schizofrenię przez to, że gadasz do fontanny."
     bjork "{i}Underneath our feet{/i}"
     bjork "{i}Crystals grow like plants{/i}"
     bjork "{i}Listen how they grow{/i}"
-    you "Czekaj tu ja zaraz wrócę"
+    you "Czekaj, tu ja zaraz wrócę."
+    bjork "Nie ufaj w{w=0.5}.{w=0.5}.{w=0.5}.{nw}"
     scene bg bakeryfrontday with dissolve
-    "Biegniesz z powrotem do piekarni, żeby powiedzieć Rafałowi i Wiktorii o tym, co właśnie zobaczyłeś"
-    "I tak ci pewnie nie uwierzą, ale musisz spróbować"
-    "Wiesz żest duża szansa że będziesz wyglądał jak idiota, jeśli na serio tylko ty możesz widzieć Bjork"
-    "Bo jak nie to serio masz schizofrenię"
+    "Biegniesz z powrotem do piekarni, żeby powiedzieć Rafałowi i Wiktorii o tym, co właśnie zobaczyłeś."
+    "I tak ci pewnie nie uwierzą, ale musisz spróbować."
+    "Wiesz, jest duża szansa, że będziesz wyglądał jak idiota, jeśli na serio tylko ty możesz widzieć Bjork."
+    "Bo jak nie, to serio masz schizofrenię."
     scene bg bakeryinside with vpunch
-    you "Duch bjork jest przy fontannie."
-    "Wiktoria nie traci ani sekundy i wybiega z piekarni"
-    "Rafał biegnie za Wiktorią, nawet nie zamykając piekarni"
+    you "Duch Bjork jest przy fontannie."
+    "Wiktoria nie traci ani sekundy i wybiega z piekarni."
+    "Rafał biegnie za Wiktorią, nawet nie zamykając piekarni."
     scene bg fountainday with dissolve
     show wp normal at leftish with moveinleft
     show rafal normal at rightish with moveinleft
-    r "Nikogo tu nie ma"
-    you "Nie ma szans, że ona zrobiła ze mnie idiotę"
-    you "Zrobiła ze mnie idiotę jak w jakimś stereotypowym filmie o duchach"
-    wp "Nie wiem jak Rafał, ale ja ci wierzę"
-    wp "Na pewno coś widziałeś"
-    r "No w sumie"
+    r "Nikogo tu nie ma."
+    you "Nie ma szans, że ona zrobiła ze mnie idiotę."
+    you "Zrobiła ze mnie idiotę jak w jakimś stereotypowym filmie o duchach."
+    wp "Nie wiem jak, Rafał, ale ja ci wierzę."
+    wp "Na pewno coś widziałeś."
+    r "No, w sumie."
     you "I co teraz?"
-    wp "Nie wiem"
-    r "Nie wiem"
-    you "Bjork pewnie nas podsłuchiwała w tej piekarni"
+    wp "Nie wiem."
+    r "Nie wiem."
+    you "Bjork pewnie nas podsłuchiwała w tej piekarni."
     you "{i}Jeśli ty to słyszysz, proszę mnie nie nawiedzać{/i}"
     you "{i}Bo nie wytrzymam{/i}"
-    "Patrzycie się na tą fontannę, ale nic dziwnego się nie dzieje"
-    r "Dobra ja chyba wracam"
-    wp "No ja już też idę"
-    you "Naprawdę przepraszam że was tak oszukałem trochę"
-    wp "Ok"
-    you "No to cześć"
+    "Patrzycie się na tę fontannę, ale nic dziwnego się nie dzieje."
+    r "Dobra, ja chyba wracam."
+    wp "No, ja już też idę."
+    you "Naprawdę przepraszam, że was tak oszukałem trochę."
+    wp "Ok."
+    you "No to cześć."
     r "Cześć siedem"
 
 

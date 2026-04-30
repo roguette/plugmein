@@ -117,7 +117,7 @@ label piotrTravelToCity:
     "Miał taką...{w=0.5} urzędniczą aurę."
     scene bg cityhallinside with dissolve
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu cię wyprowadza."
-    show piotr at center
+    show piotr normal at center
     p "Jednak nie wchodź bo muszę jeszcze z Filipem pogadać"
     you "O czym"
     p "Mowa jest srebrem, a milczenie złotem."
@@ -142,10 +142,10 @@ label piotrTravelToCity:
     scene bg secretary with dissolve
 
 
-    show piotr at center with dissolve
+    show piotr normal at center with dissolve
     pause 0.5
-    show piotr at leftish with move
-    show filip normal at rightish with dissolve
+    show piotr normal at leftish with move 
+    show filip normal at rightish with dissolve # TODO: filip appears at the top???
     
     f "To jest furas pod tytułem???"
     p "[name]"

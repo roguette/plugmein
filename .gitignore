@@ -27,3 +27,5 @@
 
 
 /.vscode
+/android.keystore
+/bundle.keystore

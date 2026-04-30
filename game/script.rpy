@@ -46,7 +46,6 @@ label start:
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
-    jump wakingUpAfterFirstNight 
 
     scene bg busstopa with dissolve
 
@@ -103,7 +102,7 @@ label start:
     you "Proszę mnie nie dotykać!!!"
     you "This is my no-no square!!!"
     you "Stranger Danger!!!"
-    show piotr at center with dissolve
+    show piotr normal at center with dissolve
     "Otwierasz oczy i widzisz przed sobą wysokiego ptaka, od którego próbujesz się odsunąć, ale{w=.5} za tobą jest drzewo."
     "Dlatego siedzisz i patrzysz się na niego jak głupi."
     you "{i}Co jest?{/i}"
@@ -129,7 +128,7 @@ label start:
     p "To jest onyks. Używam tych kamieni do usuwania złych vibeów z tego lasu"
     p "Im więcej złej energii wchłaniają, tym są cięższe"
     p "Weź ten i ten i zrób takie six seven"
-    "Jeden z tych kamieni jest rzeczywiście o wiele cieższy od drugiego"
+    "Jeden z tych kamieni rzeczywiście jest o wiele cieższy od drugiego"
     "Mimo tego, że są prawie identyczne"
     you "Ale heca"
     you "Co się robi z najcięższymi kamykami"
@@ -142,7 +141,7 @@ label start:
     show piotr angry
     with vpunch
     p "SYBAU!"
-    show piotr
+    show piotr normal
     p "Mogę odpowiedzieć na twoje pytania, ale pod warunkiem że będziesz {b}c i c h o{/b}{w} (bo przyjdzie Zdicho)."
 
     jump piotrIntroductionMenu

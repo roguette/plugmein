@@ -45,7 +45,7 @@ label wakingUpAfterFirstNight:
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
-    scene bg house with fade
+    scene bg bedroom with fade
     "Ten dom jest mały (ale dla ciebie jest ogromny bo [name] jest skinny i ma skinny waist)"
     "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu"
     "Jednak obudziło Cię uczucie głodu"

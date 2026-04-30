@@ -227,7 +227,7 @@ label gettingHouseKeysGood:
 label gettingHouseKeysUniversal:
     scene bg cityhallinside
     play music "stillofnight.mp3"
-    show piotr 
+    show piotr normal 
     "Wychodzisz"
     p "dobrze wszystko? coś ty długo u niej byłeś"
     you "jesteś delulu nie było mnie dosłownie 5 minut"
