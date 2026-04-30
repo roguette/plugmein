@@ -145,7 +145,7 @@ label start:
     show piotr normal
     p "Mogę odpowiedzieć na twoje pytania, ale pod warunkiem że będziesz {b}c i c h o{/b}{w} (bo przyjdzie Zdicho)."
 
-    jump piotrIntroductionMenu
+    jump f_piotrIntroductionMenu
 
 
  

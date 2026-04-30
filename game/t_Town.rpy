@@ -1,7 +1,7 @@
 define metTomcio = False
 define rudeToTomcio = False
 
-label goingHomeFirstNight:
+label t_goingHomeFirstNight:
     "Decydujesz, że ci się nie chce, więc idziesz do swojego nowego domu"
     "Czujesz dreszcze przebiegające po plecach"
     "Ale {w=0.6}nie wiesz dokładnie, co je spowodowało - to, że nie ma żywej duszy,"
@@ -131,23 +131,23 @@ label goingHomeFirstNight:
             "(niby czym ale ok)"
     "Dom był niedaleko, więc szybko trafiłeś pod drzwi swojego nowego lokalu."
     "Nie wyglądał on przytulnie, ale teraz jest za późno na takie rozmyślania."
-    jump wakingUpAfterFirstNight
+    jump h_wakingUpAfterFirstNight
 
 
-label goingIntoTownFirstNight:
+label t_goingIntoTownFirstNight:
     "odwracasz się w stronę urzędu miasta i widzisz ogromne jezioro w tle"
     "Ta woda w jeziorze jest całkiem spokojna, prawie jak w basenie"
     "Potem patrzysz w bok i widzisz tę nieodkrytą część małego miasteczka Bratgren"
     "Gdzie ty chcesz iść?"
     menu:
         "JEZIORO!!!":
-            jump firstNightLakeVisit
+            jump l_firstNightLakeVisit
         "MIASTO!!":
-            jump firstNightTownWalk
+            jump l_firstNightTownWalk
 
 define hasToApologiseToPiotr = False
 define metWiktoriaP = False
-label firstNightTownWalk:
+label t_firstNightTownWalk:
     you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
     "rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
     "Barbara nie powiedziała ci, czym właściwie jest ten festiwal, ani co ludzie wtedy robią, ani nawet czego on dotyczy,"
@@ -262,9 +262,9 @@ label firstNightTownWalk:
     wp "Zginęła w biurze kurowskiej. dokładnie tam gdzie ona teraz siedzi"
     wp "ostatnie słowa bjork to były 'I thought i could organize freedom. How scandinavian of me'"
     wp "To był tragiczny dzień dla całego miasta i od tamtej pory co rok duchy powstają z martwych"
-    jump firstNightTownWalkQuestionsMenu
+    jump t_firstNightTownWalkQuestionsMenu
 
-label firstNightTownWalkQuestionsMenu:
+label t_firstNightTownWalkQuestionsMenu:
     you "{i}mam tyle pytań...{/i}"
     menu:
         "Co się stało z sabriną":
@@ -278,7 +278,7 @@ label firstNightTownWalkQuestionsMenu:
             wp "Nikt nie wie"
             wp "Ale chyba była delulu"
             you "{i}czemu nikt w tym mieście nie pamięta NAJWAŻNIEJSZYCH rzeczy z historii to jest takie dziwne{/i}"
-            jump firstNightTownWalkQuestionsMenu
+            jump t_firstNightTownWalkQuestionsMenu
         "Jak umarła Bjork":
             wp "Bjork była z Islandii co nie?"
             you "No no"
@@ -291,7 +291,7 @@ label firstNightTownWalkQuestionsMenu:
             wp "A no tak zapomniałam najważniejszej rzeczy"
             wp "Ogólnie mieliśmy podpalić tą łódkę ale jakaś siła wciągnęłą ją pod wodę"
             you "jak można o takim czymś zapomnieć??"
-            jump firstNightTownWalkQuestionsMenu
+            jump t_firstNightTownWalkQuestionsMenu
         "Czy mogę rozmiawiać z tymi duchami":
             wp "PO PIERWSZE..."
             wp "to nie są duchy tylko dusze"
@@ -302,12 +302,12 @@ label firstNightTownWalkQuestionsMenu:
             wp "i tak, możesz z nimi rozmawiać. tylko podczas tego festiwalu"
             wp "a właściwie to one mogą mówić tylko przez te siedem dni"
             wp "możesz je zobaczyć przez cały rok ale nie bój się nie będą cię nawiedzać"
-            jump firstNightTownWalkQuestionsMenu
+            jump t_firstNightTownWalkQuestionsMenu
         "Wiem już wszystko":
-            jump afterFirstNightTownWalkQuestionsMenu
+            jump t_afterFirstNightTownWalkQuestionsMenu
 
 define fountainLoreReceived = False
-label afterFirstNightTownWalkQuestionsMenu:
+label t_afterFirstNightTownWalkQuestionsMenu:
     you "Czy jest coś jeszcze, co powinienem wiedzieć?"
     wp "Tak, zapomniałam ci powiedzieć, czemu w ogóle opowiadam ci o tym kościele."
     you "Słucham?"
@@ -350,10 +350,10 @@ label afterFirstNightTownWalkQuestionsMenu:
     scene bg citysquarenight with dissolve
     "Zaczynasz iść do domu. Głowa ciąży ci od nadmiaru informacji które właśnie otrzymałeś."
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
-    jump wakingUpAfterFirstNight
+    jump h_wakingUpAfterFirstNight
 
 
-label goingToTownToKurowskaDueToHungerDayTwo:
+label t_goingToTownToKurowskaDueToHungerDayTwo:
     scene bg citysquareday with dissolve
     play sound "sfx_footsteps_b.mp3"
     "Idąc do Kurowskiej podziwiasz budynki i przyrodę, ponieważ dzień wcześniej nie dało się tego zrobić."
@@ -366,11 +366,11 @@ label goingToTownToKurowskaDueToHungerDayTwo:
     "Ludzie są prawdopodobnie przyzwyczajeni do niekończących się chmur stratus pokrywających niebo"
     "Gdy podchodzisz do urzędu, on znowu robi na tobie wrażenie, nie tak wielkie jak wczoraj, ale dalej jest bardzo inponujące."
     "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa"
-    jump goingToTownToKurowskaDueToHungerDayTwoPartTwo
+    jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo
 
 define workedAtVasili = False
 define workedAtFilip = False
-label goingToFindAJob:
+label t_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
     "Wychodzisz na zewnątrz żeby zastanowić się co powinieneś zrobić dalej."
@@ -383,19 +383,19 @@ label goingToFindAJob:
             you "{i}Pójdę do niego tylko dlatego, że jestem ciekaw{/i}" 
             you "{i}Poza tym chyba nie mam innej opcji{/i}" 
             $ workedAtVasili = True
-            jump workingAtVasili
+            jump l_workingAtVasili
         "Filip":
             you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
             $ workedAtFilip = True
-            jump workingAtFilip
+            jump l_workingAtFilip
     
-label gotMoney:
+label t_gotMoney:
     scene bg citysquareday with dissolve
     "Masz dość bycia głodnym, więc idziesz prosto do BBB."
     "(Big Buły Bakery)"
-    call gotMoneyBakeryEntrance
+    call t_gotMoneyBakeryEntrance
 
-label gotMoneyBakeryEntrance:
+label t_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
     "Piekarnia jest rzeczywiście duża. Zapachy rozchodzące się po ulicy prowadzą cię do szału."
     "Zapach drożdży unosi się w powietrzu, a za szybą jest wiele wypieków."
@@ -432,9 +432,9 @@ label gotMoneyBakeryEntrance:
             wp "Śpiewał 'Międzynarodówkę'?"
             you "Tak..."
             wp "Współczuję..."
-    call gotMoneyBakeryCustomer
+    call t_gotMoneyBakeryCustomer
 
-label gotMoneyBakeryCustomer:
+label t_gotMoneyBakeryCustomer:
     frau "A cóż to za bezczelne pytanie?"
     frau "Oczywiście, że mam pieniądze."
     frau "Tylko dzisiaj brakuje mi 23 foryntów."
@@ -457,9 +457,9 @@ label gotMoneyBakeryCustomer:
             show fraucrusty normal at offscreenleft with move
             "Frau Crusty wychodzi z piekarni bez tortu skipem C"
     hide fraucrusty
-    call gotMoneyBakeryTea
+    call t_gotMoneyBakeryTea
 
-label gotMoneyBakeryTea:
+label t_gotMoneyBakeryTea:
     wp "Okeeej."
     m "Hejka."
     wp "No cześć, co tam?"

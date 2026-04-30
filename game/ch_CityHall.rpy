@@ -156,7 +156,7 @@ label ch_kurowskaBureaucracyMenu:
             k "Dlatego nasz rynek jest dla nas miejscem świętym."
             k "Jeśli chcesz wiedzieć więcej to moge ci wyporzyczyć książkę na ten temat. Jednak to nie dzisiaj, gdzieś mi się zapodziała"
             you "{i}Warto by było coś się więcej o tym miejscu dowiedzieć, skoro mam tu zostać na zawsze.{/i}"
-            jump kurowskaBureaucracyMenu
+            jump ch_kurowskaBureaucracyMenu
 
         "Zapytaj o nocleg." if not askedAboutHousing:
             $ askedAboutHousing = True
@@ -168,7 +168,7 @@ label ch_kurowskaBureaucracyMenu:
             you "Oczywiście że będę pracował!!!"
             k "Mam nadzieję, że mnie nie cyganisz."
             you "{i}I klasa. Dom za darmo? W snach mi się to nie śniło.{/i}"
-            jump kurowskaBureaucracyMenu
+            jump ch_kurowskaBureaucracyMenu
 
         "Zapytaj o pracę." if not askedAboutWork:
             $ askedAboutWork = True
@@ -191,7 +191,7 @@ label ch_kurowskaBureaucracyMenu:
             k "No to w takim razie nie mam nic. Jutro bedę w stanie powiedzieć wiecęj, dlatego dzisiaj jesteś wolny."
             k "Tylko zgłoś się do mnie jutro."
             you "Spoko"
-            jump kurowskaBureaucracyMenu
+            jump ch_kurowskaBureaucracyMenu
 
         "Powiedz coś o jej wyglądzie." if not commentedOnKurowskasAppearance:
             $ commentedOnKurowskasAppearance = True
@@ -202,7 +202,7 @@ label ch_kurowskaBureaucracyMenu:
                     k "Ha ha, dziękuje. Oczywiście, że można, trzeba się tylko zgłosić do naszej krawcowej."
                     k "Jest na rynku, obok piekarni"
                     $ friendship["Kurowska"] += 1
-                    jump kurowskaBureaucracyMenu
+                    jump ch_kurowskaBureaucracyMenu
                 "Powiedz coś o jej fryzurze":
                     you "jakie wydarzenia doprowadziły cię do zrobienia sobie tej fryzury"
                     k "Masz jakiś problem z moimi lśniącymi włosami z reklamy maybelline?"
@@ -215,14 +215,14 @@ label ch_kurowskaBureaucracyMenu:
                     scene bg secretary with vpunch
                     play sound "audio/sfx_door_slam.mp3"
                     you "{i}JESZCZE ŻYJĘ! Byłoby ciężko gdyby mnie wyrzuciła na bruk. Dostałem klucze do domu, o przyjemnych rozmowach nie myślę.{/i}"
-                    jump gettingHouseKeysUniversal
+                    jump ch_gettingHouseKeysUniversal
 
 label ch_gettingHouseKeysGood:
     k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu."
     k "(ps. Kasia Dowbor go remontowała)"
     you "{i}Tam musi być luksusowo{/i}"
     you "Thank you thank you thank you"
-    jump gettingHouseKeysUniversal
+    jump ch_gettingHouseKeysUniversal
 
 label ch_gettingHouseKeysUniversal:
     scene bg cityhallinside
@@ -243,7 +243,7 @@ label ch_gettingHouseKeysUniversal:
         you "{i}Chyba przesadziłem w sekretariacie{/i}"
     you "{i}Ale bracie its not that deep{/i}"
     "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:40"
-    jump goingIntoTown
+    jump ch_goingIntoTown
         
 
 
@@ -255,11 +255,11 @@ label ch_goingIntoTown:
     menu:
         "Chcę iść do domu":
             you "{i}Chyba idę spać...{/i}"
-            jump goingHomeFirstNight
+            jump t_goingHomeFirstNight
         "Chcę zwiedzić miasto":
             you "{i}Chyba nie idę spać...{/i}"
             you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
-            jump goingIntoTownFirstNight
+            jump t_goingIntoTownFirstNight
 
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     play sound "sfx_footsteps_a.mp3"
@@ -317,9 +317,9 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do pracy.. chyba.."
     k "Tak, pamiętam"
     if rudeToKurowska == True:
-        jump goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude
+        jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude
     else:
-        jump goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
+        jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
 
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     k "Sam sobie znajdź pracę"
@@ -330,7 +330,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     show bg secretary with vpunch
     play sound "sfx_door_slam.mp3"
     you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem{/i}"
-    jump goingToFindAJob
+    jump t_goingToFindAJob
 
 
 define playerRobbed = False
@@ -372,21 +372,21 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     menu:
         "Triple T":
             if randomCorrectChoiceIndex == 1:
-                jump KamilRobberyCorrectChoice
+                jump ch_KamilRobberyCorrectChoice
             else:
-                jump KamilRobberyWrongChoice
+                jump ch_KamilRobberyWrongChoice
         "Lirili larila":
             if randomCorrectChoiceIndex == 2:
-                jump KamilRobberyCorrectChoice
+                jump ch_KamilRobberyCorrectChoice
             else:
-                jump KamilRobberyWrongChoice
+                jump ch_KamilRobberyWrongChoice
         "Garamararambraramanmararaman dan Madudungdung tak tuntung perkuntung":
             if randomCorrectChoiceIndex == 3:
-                jump KamilRobberyCorrectChoice
+                jump ch_KamilRobberyCorrectChoice
             else:
-                jump KamilRobberyWrongChoice
+                jump ch_KamilRobberyWrongChoice
         "Japa kasti":
-            jump KamilRobberyWrongChoice
+            jump ch_KamilRobberyWrongChoice
 
 define robberyStopped = False
 label ch_KamilRobberyCorrectChoice:
@@ -449,7 +449,7 @@ label ch_KamilRobberyWrongChoice:
     k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają"
     k "Znajdź. Pracę."
     hide kurowska normal with dissolve
-    jump goingToFindAJob
+    jump t_goingToFindAJob
 
 label ch_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."

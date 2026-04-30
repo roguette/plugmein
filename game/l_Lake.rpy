@@ -1,7 +1,7 @@
 define rudeToVasili = False
 define metVasili = False
 define knowsAboutVasiliGrandfatherGhost = False
-label firstNightLakeVisit:
+label l_firstNightLakeVisit:
     play music "forest.mp3" fadein 1.0
     scene bg lakenighta with dissolve
     "Schodzisz w dół, skręcasz parę razy i docierasz na piękną łąkę"
@@ -81,11 +81,11 @@ label firstNightLakeVisit:
     v "spędzam całe dnie na ulicy i jeśli się dobrze przypatrzy to można się dużo plotek nasłuchać."
     v "Ja słucham ludzi cały czas."
     v "Wiedziałeś, że kapitalizm jest zły?{nw}"
-    jump vasiliFirstNightMegaMenu
+    jump l_vasiliFirstNightMagaMenu
 
 define endorsedCommunism = False
 define heardVasiliMonologue = False
-label vasiliFirstNightMegaMenu:
+label l_vasiliFirstNightMagaMenu:
     menu:
         "Zapytaj jaką ma wiedzę na temat ryb":
             $ ryba = random.choice(["vasiliFishBrzana", "vasiliFishKoza", "vasiliFishWstegorz"])
@@ -146,7 +146,7 @@ label vasiliFirstNightMegaMenu:
                     v "Idź popieraj kapitalizm gdzieś indziej."
                     hide vasili with dissolve
                     "Odwracasz się i idziesz jaknajszybciej od niego bo nie wytrzymasz kolejnego 'towarzysza'"
-                    jump goingHomeTiredAfterVasiliFirstNight
+                    jump l_goingHomeTiredAfterVasiliFirstNight
 
             
         "Zapytaj o życie":
@@ -188,18 +188,18 @@ label vasiliFirstNightMegaMenu:
             you "Trochę późno, chyba na mnie czas. Dobranoc"
             v "Dobranoc (salutuje)"
             
-            jump goingHomeTiredAfterVasiliFirstNight
+            jump l_goingHomeTiredAfterVasiliFirstNight
 
 
     
 
 
-label goingHomeTiredAfterVasiliFirstNight:
+label l_goingHomeTiredAfterVasiliFirstNight:
     "Przez zmęczenie droga do domu trwała wieki, ale nic nie było widać, ponieważ oszczędzają na wyłączaniu latarń."
     "Pomimo braku widoczności przejscie do domu nie sprawiło ci dużo trudu."
-    jump wakingUpAfterFirstNight
+    jump h_wakingUpAfterFirstNight
 
-label vasiliFishBrzana:
+label l_vasiliFishBrzana:
     v "Brzana (łac. Barbus barbus) to średniej wielkości, typowa rzeczna ryba z rodziny karpiowatych."
     v "Występuje w dorzeczach Loary, Rodanu, Renu, Dunaju, Łaby, Odry i Wisły."
     v "Można ją też spotkać w Tamizie, Niemnie, Dniestrze i Dnieprze oraz na Półwyspie Iberyjskim."
@@ -215,10 +215,10 @@ label vasiliFishBrzana:
     v "Głównym pokarmem są larwy owadów wodnych, takie jak muchówki, chruściki, widelnice i jętki."
     v "Zjada też kiełże, mięczaki i skąposzczety."
     v "Rzadziej poluje na małe ryby."
-    jump vasiliAfterFishMonologue
+    jump l_vasiliAfterFishMonologue
 
 
-label vasiliFishKoza:
+label l_vasiliFishKoza:
     v "Koza [[1] to gatunek małej ryby [[2] słodkowodnej z rodziny piskorzowatych [[3]."
     v "Zamieszkuje Europę [[4][[5] z wyjątkiem Irlandii [[6], Szkocji, Norwegii i północnej Szwecji."
     v "Nie występuje też w Finlandii, północnej Rosji oraz południowych[[3.5] półwyspach."
@@ -233,10 +233,10 @@ label vasiliFishKoza:
     v "U nasady płetwy ogonowej znajduje się jedna duża ciemna plama[[20]."
     v "Brzuch jest biały lub żółtawy[[6]."
     v "Żywi się bezkręgowcami dennymi..."
-    jump vasiliAfterFishMonologue
+    jump l_vasiliAfterFishMonologue
 
 
-label vasiliFishWstegorz:
+label l_vasiliFishWstegorz:
     v "Wstęgor królewski to gatunek dużej, morskiej ryby strojnikokształtnej z rodziny Regalecidae."
     v "Jest zwierzęciem kosmopolitycznym — występuje w wodach Oceanu Indyjskiego, Pacyfiku, Atlantyku."
     v "Można go też spotkać w Morzu Północnym i Morzu Śródziemnym."
@@ -253,9 +253,9 @@ label vasiliFishWstegorz:
     v "Przypuszcza się, że płetwy w wodzie mają jaskrawoczerwoną barwę."
     v "Na powietrzu szybko blakną."
     v "Ciało jest jasne i srebrzyście połyskujące..."
-    jump vasiliAfterFishMonologue
+    jump l_vasiliAfterFishMonologue
 
-label vasiliAfterFishMonologue:
+label l_vasiliAfterFishMonologue:
     you "{i}... :( co ja zrobiłem. Za jakie grzechy...{/i}"
     menu:
         "Spróbuj się wymknąć.":
@@ -282,20 +282,20 @@ label vasiliAfterFishMonologue:
                     $ friendship["Vasili"] -= 2
                     you "{i}Przecież nie chciałem żeby tak wyszło. Nie mam siły (i chęci), by więcej słuchać o tych rybach. Mam dość dzisiejszego dnia!{/i}"
                     "Droga do domu była pełna przemyśleń na temat twojego postępowania w związku z Vasilijem. "
-                    jump wakingUpAfterFirstNight
+                    jump h_wakingUpAfterFirstNight
                 "Zaprezentuj wymówkę i zostań.":
                     you "Nie... tylko chciałem się przejść, bo mnie nogi bolą."
                     you "Poza tym noc jest tak piękna, że aż szkoda przespać tę noc."
                     v "Masz rację, ale wiesz co? Jeszcze nie opowiedziałem ci o mojej ULUBIONEJ rybie...."
-                    jump vasiliTalksAboutFavoriteFish
+                    jump l_vasiliTalksAboutFavoriteFish
 
         "Wysłuchaj wykładu.":
             you "Znasz może więcej ryb?"
             v "OCZYWIŚCIE, opowiem ci o mojej ULUBIONEJ rybie..."
-            jump vasiliTalksAboutFavoriteFish
+            jump l_vasiliTalksAboutFavoriteFish
     
 
-label vasiliTalksAboutFavoriteFish:
+label l_vasiliTalksAboutFavoriteFish:
     you "{i}W co ja się wkopałem... JA JUŻ NIE CHCE...{/i}"
     scene black with dissolve
     "Przez nadmiar emocji (i najwyraźniej yappowanie Vasilia) usnąłeś"
@@ -313,9 +313,9 @@ label vasiliTalksAboutFavoriteFish:
         v "Dobranoc, towarzyszu."
     "Droga do domu jest jak przez mgłę. Nie pamiętasz za dużo, ponieważ zostałeś obudzony i jesteś bardzo zaspany."
     "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w sekundzie, kiedy położyłeś głowę na poduszkę"
-    jump wakingUpAfterFirstNight
+    jump h_wakingUpAfterFirstNight
 
-label workingAtVasili:
+label l_workingAtVasili:
     scene bg lakedaya with dissolve
     play sound "sfx_footsteps_a.mp3"
     "Dzisiejsza droga nad jezioro jest, o dziwo, spokojniejsza od wczorajszej."
@@ -489,4 +489,4 @@ label workingAtVasili:
         hide vasili with dissolve
         you "{i}już nigdy tu nie wrócę{/i}" 
         you "{i}nawet jak mam umierać z głodu{/i}"
-    jump gotMoney
+    jump t_gotMoney

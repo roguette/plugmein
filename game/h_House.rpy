@@ -1,5 +1,5 @@
 define seenBjorkGhost = False
-label wakingUpAfterFirstNight:
+label h_wakingUpAfterFirstNight:
     "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
     stop music fadeout 1.0
     scene black with dissolve
@@ -70,5 +70,5 @@ label wakingUpAfterFirstNight:
     "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny"
     "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska"
     "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej"
-    jump goingToTownToKurowskaDueToHungerDayTwo
+    jump t_goingToTownToKurowskaDueToHungerDayTwo
 
