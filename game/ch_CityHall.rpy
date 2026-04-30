@@ -84,7 +84,7 @@ label ch_filipIntroduction_after:
 
 
     "{nw}"
-    jump kurowskaMysteryMenu
+    jump ch_kurowskaMysteryMenu
 
 label ch_kurowskaMysteryMenu:
     menu:
@@ -401,6 +401,7 @@ label ch_KamilRobberyCorrectChoice:
     m "Ale jak... no dobra... teraz wygrałeś ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
     hide kamil with dissolve
     you "{i}Nie będę nosił ze sobą pieniędzy{/i}"
+    jump t_gotMoney
 
 label ch_KamilRobberyWrongChoice:
     m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
@@ -520,3 +521,4 @@ label ch_workingAtFilip:
     "Po kolejnych 20 minutach kończysz pracę u filipa, który teraz leży zdruzgotany na stercie papierów."
     f 'Dzieki za pomoc, chociaż wsm nic sie nie zmieniło'
     f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'
+    jump t_gotMoney

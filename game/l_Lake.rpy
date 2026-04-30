@@ -88,7 +88,7 @@ define heardVasiliMonologue = False
 label l_vasiliFirstNightMagaMenu:
     menu:
         "Zapytaj jaką ma wiedzę na temat ryb":
-            $ ryba = random.choice(["vasiliFishBrzana", "vasiliFishKoza", "vasiliFishWstegorz"])
+            $ ryba = random.choice(["l_vasiliFishBrzana", "l_vasiliFishKoza", "l_vasiliFishWstegorz"])
             jump expression ryba
 
         "Zapytaj o poglądy polityczne" if not heardVasiliMonologue:
@@ -137,7 +137,7 @@ label l_vasiliFirstNightMagaMenu:
                     $ friendship["Vasili"] += 1
                     v "Dziękuję towarzyszu."
                     v "Wiedziałem, że mogę na ciebie liczyć."
-                    jump vasiliFirstNightMegaMenu
+                    jump l_vasiliFirstNightMagaMenu
                 "Nie dziękuję":
                     $ friendship["Vasili"] -= 1
                     v "wiedziałem, że będziesz popierał kapitalizm"
