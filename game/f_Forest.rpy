@@ -59,9 +59,7 @@ label f_piotrIntroductionMenu:
 
 label f_piotrTravelToCity:
     "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
-    if accused_piotr_of_kidnapping:
-        "Twój wzrok wraca do Piotra."
-        you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
+
     if stayed_silent_start:
         p "Co?"
         p "Czemu nic nie mówisz?"
@@ -69,7 +67,13 @@ label f_piotrTravelToCity:
         you "Kakao nie zatyka bo nie ma patyka!!!"
         "Jesteś {b}bardzo{/b} dumny ze swojej wypowiedzi."
         you "{i}Łatwo z takimi!{/i}"
-        you "Umiem gadać tylko teraz myślę."
+        you "Ale wracając, umiem gadać tylko teraz myślę."
+
+    if accused_piotr_of_kidnapping:
+        "Twój wzrok wraca do Piotra."
+        you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
+
+    "W końcu postanawiasz przemówić coś sensonwego."
     you "Nie znam nikogo, nie mam domu, i nie wiem co robić."
     "Patrzysz się w dół, na swoje ogromne łapy, które pięć minut temu były zwykłymi, ludzkimi dłońmi i powinieneś być bamboozled,{w=.5} ale nie jesteś."
     p "Chodź za mną, zaprowadzę cię do Kurowskiej, ona będzie wiedziała co z tobą zrobić."
@@ -89,30 +93,30 @@ label f_piotrTravelToCity:
     you "{i}Przed czym chcą się bronić? Chyba nie chce wiedzieć...{w=1.0} aż strach pomyśleć co może być w ukryte w tych lasach.{/i}"
     you "Czy wy kupiliście tę ścianę na Temu?"
     show piotr normal with dissolve
-    p "Jakie Temu o czym ty mówisz"
-    you "No taki sklep internetowy"
+    p "Jakie Temu o czym ty mówisz."
+    you "No taki sklep internetowy."
     p "Jaki?"
-    you "Tam można kupić wszystko ale to ci przychodzi po dwóch miesiącach"
+    you "Tam można kupić wszystko ale to ci przychodzi po dwóch miesiącach."
     p "Ale o czym ty mówisz???"
-    you "{i}Albo on jest głupi albo takie coś nie istnieje w tym świećie{/i}"
-    you "Gdzie my w ogóle jesteśmy"
-    p "Wchodzimy do miasta Bratgren"
+    you "{i}Albo on jest głupi albo takie coś nie istnieje w tym świecie...{/i}"
+    you "Gdzie my w ogóle jesteśmy?"
+    p "No przcież mówiłem!!! Wchodzimy teraz do miasta Bratgren."
     you "Znaczy to wiem ale"
     you "{i}On nic nie wie. Z kim ja rozmawiam.{/i}"
-    you "{i}Jeśli ktoś może odpowiedzieć na moje pytania, to to na pewno będzie ta Kurowska{/i}"
-    you "Nie ważne"
+    you "{i}Jeśli ktoś może odpowiedzieć na moje pytania, to to na pewno będzie ta Kurowska...{/i}"
+    you "Nie ważne..."
     play sound "sfx_footsteps_alot.mp3"
     scene bg citysquarenight with dissolve
     play music "stillofnight.mp3" fadein 0.5
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     you "Dlaczego dosłownie nikogo nie ma na ulicach?"
-    you "Jest jakiś sekret czy coś?"
-    p "No bo jest zimno dzisiaj"
-    you "Ale mi nie jest zimno"
-    p "Nie wiem jak ci nie jest zimno, ja tu zamarznę zaraz"
-    you "To chodźmy szybicej do tej Kurowskiej"
-    "Na ulicach nie ma nikogo, {w}oprócz {i}was{/i}."
-    "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późniego wieczoru, dało się wyczuć miłą{w=.6}, ciepłą{w=.6}, witającą{w=.6} i zarazem przyjazną atmosferę."
+    you "Jest jakiś sekret czy co?"
+    p "No bo jest zimno dzisiaj."
+    you "Ale mi nie jest zimno."
+    p "Nie wiem jak ci nie jest zimno, ja tu zamarznę zaraz."
+    you "To chodźmy szybicej do tej Kurowskiej!"
+    "Na ulicach nie ma nikogo{w}, oprócz {i}was{/i}."
+    "Zwróciłeś uwagę na ilość budynków, która była (g)astronomiczna. Aż w końcu dotarliście na rynek, na którym pomimo późnego wieczoru, dało się wyczuć miłą{w=.6}, ciepłą{w=.6}, witającą{w=.6} i zarazem przyjazną atmosferę."
     "Można by było powiedzieć, że ten wasz spacer jest {i}romantyczny{/i}{w=1.0}, gdyby nie to, że pewnie przez Piotra tu jesteś."
     you "{i}Brak żywej duszy na ulicach... Chyba nie jest tak późno. Mam nadzieję, że ta {u}Kurowska{/u} jeszcze ma otwarte biuro{/i}"
     "Podchodzicie do urzędu miasta. Wiedziałeś, że to wasza destynacja po wielkim{w=.6}, rozległym{w=.6}, ogromnym{w=.6} i zarazem małym herbem."
@@ -121,14 +125,15 @@ label f_piotrTravelToCity:
     "Piotr wchodzi pierwszy do sekretariatu, po czym od razu cię wyprowadza."
     show piotr normal at center
     p "Jednak nie wchodź bo muszę jeszcze z Filipem pogadać"
-    you "O czym"
+    you "O czym?"
     p "Mowa jest srebrem, a milczenie złotem."
-    "Jesteś oszołomiony arogancją Piotra. Jesteś pewny że będzie ciebie obgadywać"
+    "Jesteś oszołomiony arogancją Piotra. Jesteś pewny że będzie ciebie obgadywać."
+
     p "Siedź tu grzecznie ja zaraz wrócę."
     you "Okej"
     "{i}Ale z ciebie good boy.{nw}{/i}"
     hide piotr
-    "Siadasz na krześle obok. Krzesło się lekko ugina pod twoją ogromną dupą, ale nadal się trzyma. Ty jednak kompletnie to ignorujesz - myślisz o czymś innym."
+    "Siadasz na krześle obok. Krzesło się lekko ugina pod twojim ogromnym gyattem, ale nadal się trzyma. Ty jednak kompletnie to ignorujesz - myślisz o czymś innym."
     "O tym jak tu dotarłeś, kim jest Piotr, i co musisz robić."
     "Od razu jak się obudziłeś pod jakimś drzewem w tym lesie wiedziałeś, że coś tu nie gra..."
     "Tylko co..."
