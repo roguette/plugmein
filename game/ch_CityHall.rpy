@@ -5,127 +5,129 @@ label ch_filipIntroduction:
         "Sprowokuj piotra":
             $ wasRudeToPiotr = True
             $ friendship["Piotr"] -= 1
-            you "Obsrałeś się jak mnie zobaczyłeś Panie Piotrze więc sybau"
-            p "To nie prawda. Proszę nie oczerniać mojego wizerunku"
-            you "{i}ale dałem do pieca{/i}"
+            you "Obsrałeś się jak mnie zobaczyłeś Panie Piotrze, więc {i}SYBAU!{/i}"
+            p "To nieprawda. Proszę nie oczerniać mojego wizerunku!"
+            you "{i}Ale dałem do pieca...{/i}"
             p "..."
             jump ch_filipIntroduction_after            
         "Milcz":
-            you "{i}on nie jest tuff{/i}" 
+            you "{i}On NIE jest tuff.{/i}" 
             jump ch_filipIntroduction_after
 
 
 
 label ch_filipIntroduction_after:
-    p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał,"
-    p "teraz muszę zacząć od nowa."
+    p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał, teraz muszę zacząć od nowa."
     you "Jakim cudem to jest moja wina?"
-    you "Trzeci raz cię pytam i dalej nie wiem"
-    m "No właśnie też bym chciał usłyszeć jakim cudem to jest twoja wina w tej sytuacji"
+    you "Trzeci raz cię pytam i dalej nie wiem."
+    m "No właśnie też bym chciał usłyszeć jakim cudem to jest twoja wina w tej sytuacji."
     m "Coś mi się wydaje, że są rzeczy ważniejsze."
-    m "Ty możesz swoje rytuały zrobić nawet jutro. A [name] mógł w tym lesie umrzeć"
-    m "Chodź tu"
-    "Podchodzisz trochę bliżej do Filipa, on wstaje i podaje ci rękę"
-    "Uśmiechasz się jak w reklamie nieruchomości"
+    m "Ty możesz swoje rytuały zrobić nawet jutro. A [name] mógł w tym lesie umrzeć!"
+    m "Chodź tu."
+    "Podchodzisz trochę bliżej do Filipa, on wstaje i podaje ci rękę."
+    "Uśmiechasz się jak w reklamie nieruchomości."
     "Nie wiesz, czy możesz mu ufać, ale on na pewno ma lepsze viby od Piotra."
-    f "Cześć. Nazywam się Filip i witam w naszym małym, pięknym, fajnym i zarazem przytulnym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
-    you "No tak"
+    f "Cześć. Nazywam się Filip i witam w naszym małym{w=.6}, pięknym{w=.6}, fajnym{w=.6} i zarazem przytulnym mieście Bratgren. Pewnie masz ogromną ilość pytań?"
+    you "No tak!"
     f "A czy coś już wiesz o tym mieście?"
-    you "No nie"
-    "Filip jest uradowany tą informacją z jakiegoś powodu"
+    you "No nie..."
+    "Filip jest uradowany tą informacją z jakiegoś powodu."
     f "No to świetnie. Teraz zaprowadzę cię do Kurowskiej, ona odpowie na wszystkie twoje pytania."
-    f "Ona lubi takie rzeczy opowiadać tylko musisz się pytać"
+    f "Ona lubi takie rzeczy opowiadać tylko musisz zadać {i}odpowiednie.{/i}"
+    you "{i}TFYM ODPOWIEDNIE?!{/i}"
     f "Tylko nie stresuj się. Bądź dla niej miły i ona będzie miła dla ciebie"
     f "Aha powiem ci jeszcze jedną rzecz - nie jesteś jedyny."
     f "Wszyscy pojawiliśmy się przed tym miastem, tak jak ty."
     you "Piotr mi tego nie powiedział..."
-    f "A to czemu gatekeepujesz, panie Piotrze"
-    p "To jest mój pierwszy raz, kiedy spotykam taką osobę"
-    f "Ma sens, ale proszę następnej osobie takie rzeczy mówić"
-    f "Pan [name] pewnie się stresował przez ciebie"
-    you "no właśnie"
-    f "No dobra wracając do Kurowskiej"
-    f "Najpierw muszę się zapytać czy wolne"
-    f "Ostatnio złapałem ją na robieniu skipu C na stole... tak, więc przyjemnie nie było i nie pachniało też dobrze..."
-    you "Mam tylko jedno pytanie"
+    f "A to czemu gatekeepujesz, panie Piotrze?"
+    p "To jest mój pierwszy raz, kiedy spotykam taką osobę..."
+    f "Ma sens, ale proszę następnej osobie takie rzeczy mówić!"
+    f "Pan [name] pewnie się stresował przez ciebie."
+    you "No właśnie!!!"
+    f "No dobra wracając do Kurowskiej."
+    f "Najpierw muszę się zapytać czy pana przyjmie."
+    f "Ostatnio złapałem ją na robieniu skipu C na stole..., więc przyjemnie nie było i nie pachniało też dobrze..."
+    you "Mam tylko jedno pytanie..."
     f "Tak?"
     you "Dlaczego jeszcze nie śpicie? Czy nie jest teraz noc?"
-    f "Dzisiaj mieliśmy problem z wodą w mieście i cały dzień byliśmy zajęci tym"
-    f "W tym mieście zawsze coś się dzieje.."
-    "Filip podchodzi do drzwi i grzecznie puka"
-    f "Dobry wieczór, mam nową osobę czy mogę ją wprowadzić tutaj?"
+    f "Dzisiaj mieliśmy problem z wodą w mieście i cały dzień byliśmy tym zajęci."
+    f "W tym mieście zawsze coś się dzieje..."
+    "Filip podchodzi do drzwi i grzecznie puka."
+    # TODO dźwięk pukania
+    f "Dobry wieczór, mam nową osobę czy mogę ją tutaj wprowadzić?"
     m "Jasne!"
     play sound "audio/sfx_door_open.mp3"
-    "Filip otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi"
-    f "no no no idź idź"
+    "Filip otwiera drzwi i wpycha cię do biura, szybko zamykając za tobą drzwi."
+    f "No no no idź idź..."
 
     scene bg office
     stop music
 
     "..."
-    "Przed tobą siedzi Pani Kurowska, która ma taką aurę, że jej wzrok potrafi chłodzić pokój"
+    "Przed tobą siedzi Pani Kurowska, która ma taką aurę, że jej wzrok potrafi schłodzić pokój."
     show kurowska normal with dissolve
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
     you "Zwą...{w=1} mnie [name]."
     k "Okeeej.. Mam na imię Barbara, jestem prezydentem miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
-    you "Właśnie obudziłem się w lesie, nie wiem kim jestem, nie wiem gdzie jestem, znam tylko swoje imie"
-    you "Piotr znalazł mnie i zaprowadził mnie do pani"
-    you "No i tyle wiem"
+    you "Właśnie obudziłem się w lesie, nie wiem kim jestem, nie wiem gdzie jestem, znam tylko swoje imie."
+    you "Piotr znalazł mnie i zaprowadził mnie do Pani."
+    you "No i tyle wiem."
     k "Czyli tak jak wszyscy..."
-    "Barbara pisze coś do swojego notatnika"
+    "Barbara pisze coś do swojego notatnika."
     k "Jeszcze raz jak masz na imię???"
     you "[name]"
-    k "Jakie dziwne imię. Weź mi to przeliteruj"
+    k "Jakie dziwne imię. Weź mi to przeliteruj."
 
     $ nameSpelled = '-'.join([f"{letter}{{w=0.5}}" for letter in name])
     you "[nameSpelled]"
-    k "Okej mam"
+    k "Okej mam."
 
 
     "{nw}"
-    jump kurowskaMysteryMenu
+    jump ch_kurowskaMysteryMenu
 
 label ch_kurowskaMysteryMenu:
     menu:
         "Docieknij co to znaczy wszyscy.":
+            you: "Co to znaczy, że \"tak jak wszyscy\"?"
             k "Wszyscy, którzy tutaj mieszkają trafili w ten sam sposób do naszego miasta."
             k "Nikt nie wie skąd się tutaj bierzemy, ale jedno wiadomo - jesteśmy tutaj szczęśliwi."
         "Milcz":
             you "{i}Chyba nie wiem o co chodzi... ale boję się jej o to pytać.{/i}"
             you "{i}Może jest jeszcze jakaś agresywna.{/i}"
-    you "Mam kwerendę"
+    you "Mam kwerendę!"
     k "Słucham?"
-    you "Co jest w lesie poza miastem, i dlaczego to miasto jest w jakichś hebździnkach dolnych"
+    you "Co jest w lesie poza miastem, i dlaczego to miasto jest w jakichś hebździnkach dolnych?"
     k "Ha ha!"
-    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby"
+    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby/"
     you "..."
-    you "(w szoku)"
-    k "No właśnie dlatego Piotr robi te rytuały. Wokół tego miasta jest taka tarcza, która odpycha od siebie zlą energię"
-    you "No piotr mi mówił jak on to robi tym onyksem"
-    k "Problem jest w tym, że za jakieś 5 lat braknie nam tego onyksu"
-    k "Więc albo znajdziemy jakiś sposób na oczyszczanie tego onyksu"
-    k "Albo będziemy musieli go przenosić w 5 osób, bo będzie tak ciężki, że inaczej się nie da"
-    k "...albo wszyscy umrzemy"
+    "Jesteś w totalnym szoku!"
+    k "No właśnie dlatego Piotr robi te rytuały. Wokół tego miasta jest taka tarcza, która odpycha od siebie złą energię."
+    you "No piotr mi mówił jak on to robi tym takim onyksem."
+    k "Problem jest w tym, że za jakieś 5 lat braknie nam tego onyksu..."
+    k "Więc albo znajdziemy jakiś sposób na oczyszczanie tego onyksu."
+    k "Albo będziemy musieli przenosić onyks w 5 osób, bo będzie tak ciężki, że inaczej się nie da."
+    k "...albo wszyscy umrzemy."
     you "..."
-    you "{i}Nie daję zgody na śmierć{/i}"
-    you "{i}Na pewno coś wymyślą do tego czasu więc nie muszę się tym przejmować{/i}"
+    you "{i}Nie daję zgody na śmierć!{/i}"
+    you "{i}Na pewno coś wymyślą do tego czasu więc nie muszę się tym przejmować.{/i}"
     you "A może pani ma do mnie jakieś pytania?"
     k "Hmm...."
     k "Czy ty cokolwiek pamiętasz?"
-    "Ale ty nie pamiętasz nic. Twoja pamięc jest pusta, jak nowy dysk Simsang SSD T1 2TB Titan Gray USB-C"
-    "Próbujesz coś sobie przypomnieć, ale znowu zaczyna cię boleć głowa"
-    "Tym razem głowa cię boli jeszcze bardziej więc chwytasz się głowy i szybko zaczynasz myśleć o czymś innym"
-    you "{i}Ewidentnie coś albo ktoś nie chce, żebym coś pamiętał{/i}"
-    you "{i}Na razie lepiej będzie udawać, że nic nie rozumiem{/i}"
-    you "{i}Bo jeszcze wyczyszczą mi pamięc jeszcze raz{/i}"
+    "Ale ty nie pamiętasz nic. Twoja pamięc jest pusta, jak nowy dysk Simsang SSD T1 2TB Titan Gray USB-C."
+    "Próbujesz coś sobie przypomnieć, ale znowu zaczyna cię boleć głowa."
+    "Tym razem ból jest jegszcze gorszy niż wcześniej, więc chwytasz się jej i szybko zaczynasz myśleć o czymś innym."
+    you "{i}Ewidentnie coś albo ktoś nie chce, żebym coś pamiętał...{/i}"
+    you "{i}Na razie lepiej będzie udawać, że nic nie rozumiem.{/i}"
+    you "{i}Bo jeszcze wyczyszczą mi pamięc jeszcze raz!{/i}"
     you "Nic nie pamiętam."
-    k "Właśnie nikt w tym mieście nic nie pamięta"
-    k "Wszyscy mają jakieś zaniki pamięci"
+    k "Właśnie nikt w tym mieście nic nie pamięta..."
+    k "Wszyscy mają jakieś zaniki pamięci."
     k "Ja też."
-    you "Chciałem porozmawiać o czymś innym, nie takim ponurym jak śmierć całego miasta,"
-    you "Ale śkończyło się na tym, że wszyscy mamy alzheimera"
-    you "Było by to zabawne, gdyby nie było to tak straszne"
+    you "Chciałem porozmawiać o czymś innym, nie takim ponurym jak śmierć całego miasta..."
+    you "Ale śkończyło się na tym, że wszyscy mamy alzheimera!"
+    you "Było by to zabawne, gdyby nie było to tak straszne."
     k "Jakoś trzeba sobie radzić."
     jump ch_kurowskaBureaucracyMenu
 
@@ -146,25 +148,25 @@ label ch_kurowskaBureaucracyMenu:
             $ askedAboutCityHistory = True
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
-            you "To proszę coś mi opowiedzieć o tym mieście, bo czuję że ma potężny lore"
-            k "No to siadaj i słuchaj"
+            you "To proszę coś mi opowiedzieć o tym mieście, bo czuję że ma potężny lore."
+            k "No to siadaj i słuchaj..."
             k "Islandzka podróżniczka o imieniu Bjork stworzyła to miasto 399 lat temu."
-            "Kurowska wskazała swoim pazurem na fontannę na rynku"
-            k "Dokładnie tam stała Bjork prawie 400 lat temu i wyczuła źródło energii"
-            k "A co roku obchodzimy rocznicę miasta na rynku."
-            k "Oczywiście wszystko się dzieje wokół tej fontanny"
+            "Kurowska wskazała swoim pazurem na fontannę na rynku."
+            k "Dokładnie tam stała Bjork prawie 400 lat temu i wyczuła źródło energii..."
+            k "Z tego powodu co roku obchodzimy rocznicę miasta na rynku."
+            k "Oczywiście wszystko się dzieje wokół tej fontanny."
             k "Dlatego nasz rynek jest dla nas miejscem świętym."
-            k "Jeśli chcesz wiedzieć więcej to moge ci wyporzyczyć książkę na ten temat. Jednak to nie dzisiaj, gdzieś mi się zapodziała"
+            k "Jeśli chcesz wiedzieć więcej to moge ci wyporzyczyć książkę na ten temat. Jednak to nie dzisiaj, gdzieś mi się zapodziała..."
             you "{i}Warto by było coś się więcej o tym miejscu dowiedzieć, skoro mam tu zostać na zawsze.{/i}"
             jump ch_kurowskaBureaucracyMenu
 
         "Zapytaj o nocleg." if not askedAboutHousing:
             $ askedAboutHousing = True
-            you "Gdzie jest najbliższy hotel czy coś bo nie mam ani domu ani mieszkania, gdzie ja będę spał"
-            k "Muszę tylko znaleźć klucze do twojego domu"
+            you "Gdzie jest najbliższy hotel czy coś, bo nie mam ani domu ani mieszkania, gdzie ja będę spał?"
+            k "Muszę tylko znaleźć klucze do twojego domu..."
             you "Dom?? Za darmo???"
-            k "Oczywiście że nie za darmo. Darmowe domy mają tylko ci co pracują"
-            k "Powiedzmy że w ten sposób ja inwestuję w ciebie"
+            k "Oczywiście że nie za darmo. Darmowe domy mają tylko ci co pracują."
+            k "Powiedzmy że w ten sposób ja inwestuję w ciebie."
             you "Oczywiście że będę pracował!!!"
             k "Mam nadzieję, że mnie nie cyganisz."
             you "{i}I klasa. Dom za darmo? W snach mi się to nie śniło.{/i}"
@@ -174,23 +176,23 @@ label ch_kurowskaBureaucracyMenu:
             $ askedAboutWork = True
             you "A co z pracą?"
             you "Wiem, że filip pracuje w sekretariacie. A co robią inni?"
-            you "Inni w sensie przeciętni ludzie"
-            k "Powiem ci, że praca to znaczy robić co kolwiek na korzyść miasta."
-            k "Są rolnicy, są piekarze, są kurierzy"
-            k "A jest na przykład taki pan Vasilij, który mimo tego że mieszka w mieście i korzysta z naszej ochrony przed złem, nie robi kompletnie nic"
-            k "Vasilij tylko siedzi w domu i narzeka na rząd"
-            you "Nie no coś tam wymyślę"
-            you "Chyba umarłbym z nudów gdybym był taki jak on"
-            k "No ja też nie wiem jak mu się nie nudzi"
-            k "Kompletnie nie jestem w stanie wyobrazić takiego życia bez jakichkolwiek czynności"
-            you "{i}Pryszniców on pewnie też nie może wyobrazić{/i}"
+            you "Inni w sensie przeciętni ludzie."
+            k "Powiem ci, że praca to znaczy robić cokolwiek na korzyść miasta."
+            k "Są rolnicy, są piekarze, są kurierzy..."
+            k "A jest na przykład taki pan Vasilij, który mimo tego że mieszka w mieście i korzysta z naszej ochrony przed złem, nie robi kompletnie nic."
+            k "Vasilij tylko siedzi w domu i narzeka na rząd."
+            you "Nie no coś tam wymyślę!"
+            you "Chyba umarłbym z nudów gdybym był taki jak on."
+            k "No ja też nie wiem jak mu się nie nudzi."
+            k "Kompletnie nie jestem w stanie wyobrazić takiego życia bez jakichkolwiek czynności..."
+            you "{i}Pryszniców on pewnie też nie może wyobrazić.{/i}"
             k "Dobra wracając do twojej pracy..."
-            "Barbara przegląda dokumenty na stole, potem w stole, potem za nią"
-            "Wydaje się, że ona wie że jest praca ale nie może znaleźć tego papieru na stole"
+            "Barbara przegląda dokumenty na stole, potem w stole, potem za nią."
+            "Wydaje się, że ona wie że jest jakaś praca, ale nie może znaleźć tego papieru na stole."
             k "Do jasnej muffinki... Zgubiłam chyba..."
             k "No to w takim razie nie mam nic. Jutro bedę w stanie powiedzieć wiecęj, dlatego dzisiaj jesteś wolny."
             k "Tylko zgłoś się do mnie jutro."
-            you "Spoko"
+            you "Jasne!!! XOXO"
             jump ch_kurowskaBureaucracyMenu
 
         "Powiedz coś o jej wyglądzie." if not commentedOnKurowskasAppearance:
@@ -204,12 +206,12 @@ label ch_kurowskaBureaucracyMenu:
                     $ friendship["Kurowska"] += 1
                     jump ch_kurowskaBureaucracyMenu
                 "Powiedz coś o jej fryzurze":
-                    you "jakie wydarzenia doprowadziły cię do zrobienia sobie tej fryzury"
-                    k "Masz jakiś problem z moimi lśniącymi włosami z reklamy maybelline?"
+                    you "Jakie wydarzenia spłodziły te fryzurę?"
+                    k "Masz jakiś problem z moimi lśniącymi włosami z reklamy Maybelline?"
                     you "Nazywanie tego włosami jest dość łaskawym określeniem..."
                     k "Czy ty mnie obrażasz??"
-                    you "Myślę że daję ci coś co nazywa się konstruktywną krytyką"
-                    k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno"
+                    you "Myślę, że daję ci coś co nazywa się konstruktywną krytyką!"
+                    k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno."
                     $ rudeToKurowska = True
                     k "Dobrze w takim razie koniec tego wywiadu. Masz tutaj klucze do twojego domu, a teraz idź zanim cię wywale!"
                     scene bg secretary with vpunch
@@ -218,31 +220,30 @@ label ch_kurowskaBureaucracyMenu:
                     jump ch_gettingHouseKeysUniversal
 
 label ch_gettingHouseKeysGood:
-    k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu."
-    k "(ps. Kasia Dowbor go remontowała)"
+    k "Jeśli nie masz więcej pytań, masz tutaj klucze do twojego nowego domu.{w} (ps. Kasia Dowbor go remontowała)"
     you "{i}Tam musi być luksusowo{/i}"
-    you "Thank you thank you thank you"
+    you "Thank you! Thank you! Thank you!"
     jump ch_gettingHouseKeysUniversal
 
 label ch_gettingHouseKeysUniversal:
     scene bg cityhallinside
     play music "stillofnight.mp3"
     show piotr normal 
-    "Wychodzisz"
-    p "dobrze wszystko? coś ty długo u niej byłeś"
-    you "jesteś delulu nie było mnie dosłownie 5 minut"
-    p "*patrzy z politowaniem*"
-    p "jak ci poszło?"
-    you "patrz co mam!! *pokazuje klucze od nowego domu* (#flex)"
-    "Piotr jest zazdrosny, ponieważ musiał pracować by dostać dom"
+    "Wychodzisz z gabinetu Kurowskiej."
+    p "Wyszstko dobrze?! Coś ty długo u niej byłeś..."
+    you "Jesteś delulu nie było mnie dosłownie 5 minut."
+    p "Jak ci poszło?"
+    you "Patrz co mam!! (#flex)"
+    "Mówiąc to pokazujesz mu klucze do Twojego własnego domu."
+    "Piotr jest zazdrosny, ponieważ on musiał pracować by dostać swój dom."
     p "Aha. Okej."
-    p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM"
+    p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM!"
     hide piotr with dissolve
-    you "{i}Chyba się na mnie obraził{/i}"
+    you "{i}Chyba się na mnie obraził.{/i}"
     if wasRudeToPiotr == True:
-        you "{i}Chyba przesadziłem w sekretariacie{/i}"
-    you "{i}Ale bracie its not that deep{/i}"
-    "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:40"
+        you "{i}Chyba przesadziłem w tym sekretariacie.{/i}"
+    you "{i}Ale bracie its not that deep. No cóż, idgaf.{/i}"
+    "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:44."
     jump ch_goingIntoTown
         
 
@@ -250,14 +251,14 @@ label ch_gettingHouseKeysUniversal:
 label ch_goingIntoTown:
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "Wychodzisz z urzędu miasta i idziesz przed siebie"
-    "Nie masz pojęcia co teraz robić"
+    "Wychodzisz z urzędu miasta i idziesz przed siebie."
+    "Nie masz pojęcia co teraz robić."
     menu:
         "Chcę iść do domu":
             you "{i}Chyba idę spać...{/i}"
             jump t_goingHomeFirstNight
         "Chcę zwiedzić miasto":
-            you "{i}Chyba nie idę spać...{/i}"
+            you "{i}Jeszcze młoda godzina. Nie ma szans, że idę teraz spać.{/i}"
             you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
             jump t_goingIntoTownFirstNight
 
@@ -270,94 +271,97 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     "Kiedy Filip wychodzi od Kurowskiej z pustą tacą. Podchodzisz do niego."
     show filip normal with dissolve
     you 'Hej...'
-    f "Hejka"
+    f "Hejka."
     show filip shocked with vpunch
-    f "Boże wyglądasz okropnie co jest"
+    f "Boże wyglądasz okropnie co jest?"
     you "Od kiedy pojawiłem się w tym mieście nic nie jadłem. Masz tu jakieś jedzenie?"
     show filip normal
-    f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły rafała z kawą"
-    you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy"
-    you "Więc nie mogę kupić jedzenia"
-    you "Dosłownie zaraz umrę jeśli nic nie zjem"
-    f "Jasne"
+    f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły Rafała z kawą."
+    you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy, więc nie mogę kupić jedzenia"
+    you "Dosłownie zaraz umrę jeśli nic nie zjem!!!"
+    f "Jasne."
     show filip normal at offscreenright with move
     "Filip odkłada talerz przy zlewie a potem znika w pomieszczeniu gospodarczym."
-    "Słyszysz jak musi coś odsuwać żeby dostać się do tej bułki której tak chciałeś"
+    "Słyszysz jak musi coś odsuwać, żeby dostać się do tej bułki, którą tak pragniesz."
     show filip normal at center with move
     "Wraca i daje ci bułę Rafała. Jest twarda ale nie masz wyboru."
-    "Bierzesz bułę rafała i pochłaniasz ją. Mimo że jest przeterminowana jak tuleja wciąż smakuje jak z najwyższej półki"
-    you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra że brakuje mi słow."
+    "Bierzesz bułę Rafała i pochłaniasz ją. Mimo że jest przeterminowana ― jak Tuleja ― wciąż smakuje jak z najwyższej półki."
+    you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra, że...{w} brakuje mi słow."
     f "Smakują ci dlatego, że jesteś głodny."
     f "Ale ogólnie to są rzeczywiście smaczne. Polecam pójść do tej piekarni kiedy są świeże."
     f "Wtedy są jeszcze lepsze."
-    f "Wszyscy w tym mieście kochają buły rafała"
-    you "Gdzie je kupiłeś też chcę jak będę miał pieniądze"
-    f "No w BBB na rynku"
-    "Filip pokazuje ci palcem gdzie na mapie jest ta piekarnia"
-    "Szybko się orientujesz, gdzie to jest na rynku"
-    f "To jest tu. Ta piekarnia jest dość duża, więc na pewno ją zauważysz"
-    f "A co do pieniędzy.."
-    f "Powinieneś zapytać Kurowską o pracę ona ci pomoże"
-    you "Thank you thank you thank you"
-    you "Ratujesz mi życie w tym momencie"
-    "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym pukać identycznie jak Filip wczoraj"
+    f "Wszyscy w tym mieście kochają buły Rafała."
+    you "Gdzie je kupiłeś?? Też chcę, jak będę miał pieniądze."
+    f "No w BBB na rynku."
+    you "What do you mean BBB???"
+    f "Nie rozumiesz? {i}{u}Big Buły Bakery{/u}{/i}..."
+    you "Ma sens."
+    f "Ale wracając, to jest tu. Ta piekarnia jest dość duża, więc na pewno ją zauważysz."
+    "Filip pokazuje ci palcem na mapie gdzie jest ta piekarnia."
+    "Szybko się orientujesz, gdzie to jest na rynku."
+    f "A co do pieniędzy..."
+    f "Powinieneś zapytać Kurowską o pracę, a ona ci pomoże."
+    you "Thank you! Thank you! Thank you!"
+    you "Ratujesz mi życie w tym momencie!"
+    "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym robić to identycznie jak Filip wczoraj."
     with vpunch
     k "KTO TAK PUKA NA BELZEBUBA???"
     you "To ja."
     k "A 'ja' to kto?"
     you "[name]"
-    k "Wejdź"
+    k "Wejdź!"
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
-    "Wchodisz do jej biura i widzisz, że jest znowu jest zajęta jakimiś dokumentami"
-    you "{i}Czy ona będzie na mnie zła za to że ja tak sobie wszedłem{/i}"
+    "Wchodisz do jej biura i widzisz, że jest znowu jest zajęta jakimiś dokumentami."
+    you "{i}Czy ona będzie na mnie zła za to, że ja tak sobie wszedłem?{/i}"
     you "{i}Oby nie.{/i}"
-    you "{i}Ale przecież sama mi kazała wczoraj się zgłosić... No to dzień dobry{/i}"
+    you "{i}Ale przecież sama mi kazała wczoraj się zgłosić... No to dzień dobry.{/i}"
     show kurowska normal with dissolve
-    you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do pracy.. chyba.."
-    k "Tak, pamiętam"
+    you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
+    k "Tak, pamiętam."
     if rudeToKurowska == True:
         jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude
     else:
         jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
 
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
-    k "Sam sobie znajdź pracę"
-    you "Ale"
-    k "'ale ale ale' ale cyganisz"
-    k "Wynoś się i idź do pracy"
-    "Wściekła kurowska wyrzuca cię ze swojego biura"
+    k "Sam sobie znajdź pracę."
+    you "Ale..."
+    k "'ale ale ale' ale cyganisz!"
+    k "Wynoś się i idź do pracy!"
+    "Wściekła kurowska wyrzuca cię ze swojego biura."
     show bg secretary with vpunch
     play sound "sfx_door_slam.mp3"
-    you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem{/i}"
+    you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem...{/i}"
     jump t_goingToFindAJob
 
 
 define playerRobbed = False
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     $ randomCorrectChoiceIndex = random.randint(1, 3)
-    k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą"
-    "Kurowska znowu zaczęła szukać czegoś na swoim biurku"
+    k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
+    "Kurowska znowu zaczęła szukać czegoś na swoim biurku."
     "..."
     "Tym razem znalazła to co chciała."
-    k "Proszę. To powinno wystarczyć żebyś przeżyła zanim coś znajdziesz"
+    k "Proszę. To powinno wystarczyć żebyś przeżył zanim coś znajdziesz."
     "Kurowska dała ci sakiewkę pełną monet."
-    "Jest cholernie ciężka"
+    "Jest cholernie ciężka..."
     k "Trzymaj."
     you "Co to jest?"
-    you "Czemu te monety są takie ciężkie"
-    k "Zwykle nie używamy tych monet"
-    k "Trzymałam je w biurze i chciałam się ich pozbyć więc to jest win win situation"
-    k "A teraz idź znajdź pracę i zrób mi dumę"
-    you "Dziękuję bardzo na pewno to zrobię"
+    you "Czemu te monety są takie ciężkie?"
+    k "Zwykle nie używamy tych monet."
+    k "Trzymałam je w biurze i chciałam się ich pozbyć więc to jest win-win situation."
+    k "A teraz idź znajdź pracę i zrób żebym była dumna!"
+    you "Dziękuję bardzo, na pewno to zrobię."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    "Opuszczasz jej biuro i żegnasz się z Filipem. Teraz masz trochę pieniędzy i możesz w końcu coś robić{w=0.5} nie umierając z głodu"
+    "Opuszczasz jej biuro i żegnasz się z Filipem. Teraz masz trochę pieniędzy i możesz w końcu coś robić{w=0.5}, nie umierając z głodu"
     scene bg citysquareday with dissolve
     play sound "sfx_footsteps_b.mp3"
     "Ulice po rush hour są teraz praktycznie puste, poza kilkoma bezdomnymi i lekko groźnymi osobami."
     you "{i}Chyba aż tak długo nie spędziłem czasu u Kurowskiej, skoro nie ma praktycznie żywej duszy na ulicy. Pewnie wszyscy siedzą w pracy.{/i}"
     you "{i}A teraz pora na kupienie sobie POŻYWNEGO śniadania.{/i}"
+    "DRUGIEGO śniadania!"
     you "{i}Z tej racji pójdę sobie do BBB{/i}"
     "Przechodząc obok fontanny atakuje cię meżczyzna, chociaż jest niski, to wygląda na groźnego."
     show kamil normal with vpunch
@@ -368,7 +372,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     m "No dobra, mam serce, dlatego pozwolę ci zawalczyć o to czy będziesz musiał mi oddać twoje pieniądze."
     you "PRZECIEŻ TO NIESPRAWIEDLIWE!"
     m "Życie jest niesprawiedliwe."
-    m "Teraz odpowiedz na moje pytanie, które brzmi: 'Jakie jest mój ulubiony włoski brainrot?'"
+    m "Teraz odpowiedz na moje pytanie, które brzmi: 'Jaki jest mój ulubiony włoski brainrot?'"
     menu:
         "Triple T":
             if randomCorrectChoiceIndex == 1:
@@ -392,41 +396,41 @@ define robberyStopped = False
 label ch_KamilRobberyCorrectChoice:
     $ robberyStopped = True
     m "Grrr....."
-    "nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa"
-    m "heh.. wiedziałem że ty to powiesz"
+    "Nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa."
+    m "Heh.. wiedziałem że ty to powiesz..."
     you "{i}???{/i}"
     you "{i}To dobrze czy źle{/i}"
     m "Masz te swoje finanse..."
     you "I co, łyso ci? Teraz idź sobie zanim cię gdzieś zgłoszę."
-    m "Ale jak... no dobra... teraz wygrałeś ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
+    m "Ale jak... no dobra... teraz wygrałeś...{w} ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
     hide kamil with dissolve
-    you "{i}Nie będę nosił ze sobą pieniędzy{/i}"
+    you "{i}Nie będę nosił ze sobą pieniędzy!{/i}"
 
 label ch_KamilRobberyWrongChoice:
-    m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ"
+    m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ."
     menu:
         "Odpowiedz normalnie":
-            you "Chytry dwa razy traci"
+            you "Chytry dwa razy traci!"
             m "???"
             hide kamil with dissolve
-            you "{i}On chyba mnie nie zrozumiał{/i}"
+            you "{i}On chyba mnie nie zrozumiał...{/i}"
         "Bądź final girl":
-            you "Ale nie mam więcej"
+            you "Ale nie mam więcej."
             m "Ha-ha-ha! Jesteś biedny!"
-            you "To czemu okradasz ludzi"
+            you "To czemu okradasz ludzi?"
             you "Bo nie masz własnych pieniędzy?"
-            m "I tak nawet nie wiesz, na co to wydać"
-            you "Chciałem kupić chleb w BBB?"
+            m "I tak nawet nie wiesz, na co to wydać."
+            you "Chciałem kupić buły w BBB?"
             m "To przecież ma tyle kalorii..."
-            you "Jak tak się przejmujesz kaloriami, to pomyśl o te w swoim mózgu"
-            you "Bo ich tam nie ma jak w pepsi zero"
-            you "Puknij się w ten głupi łeb"
+            you "Jak tak się przejmujesz kaloriami, to pomyśl o te w swoim mózgu."
+            you "Bo ich tam nie ma jak w pepsi zero."
+            you "Puknij się w ten głupi i pusty łeb!"
             m "Po co??"
-            you "No zrób to"
-            "Stuka się w ten głupi łeb i wydaje to taki dźwięk, że słychać że tam nic nie ma"
-            you "No właśnie"
+            you "No zrób to."
+            "Stuka się w ten głupi łeb i wydaje to taki dźwięk, że słychać, że tam nic nie ma."
+            you "No właśnie!"
             hide kamil with dissolve
-            "Złodziej zaczyna płakać i ucieka"
+            "Złodziej zaczyna płakać i ucieka."
     you "{i}To nie mój problem.{/i}"
     you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
@@ -434,11 +438,11 @@ label ch_KamilRobberyWrongChoice:
     play sound "sfx_footsteps_a.mp3"
     "Wracasz do urzędu miasta, ale nie zastajesz Filipa, więc pukasz do drzwi Kurowskiej."
     "..."
-    you "Dzień dobry. To znowu ja"
+    you "Dzień dobry. To znowu ja."
     k "Wejdź."
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
-    "Wchodząc czujesz, że ćwiczyła skip T."
+    "Wchodząc czujesz, że ćwiczyła skip Triple-T."
     show kurowska normal with dissolve
     you "Przepraszam, że znowu przeszkadzam, ale zostałem okradziony."
     you "Zabrano mi wszystkie pieniądze. Teraz nie wiem co mam robić."
@@ -446,8 +450,8 @@ label ch_KamilRobberyWrongChoice:
     "Uśmiechasz się jak w reklamie nieruchomości."
     k "A co ja jestem wróżką?"
     you "Nie... Ale myślałem, że pomoże pani potrzebującemu..."
-    k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają"
-    k "Znajdź. Pracę."
+    k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają."
+    k "Znajdź Pracę."
     hide kurowska normal with dissolve
     jump t_goingToFindAJob
 
@@ -455,68 +459,68 @@ label ch_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    you "A to znowu ja"
-    f "Hejka"
-    you 'Jeszcze jedno pytanko'
+    you "A to znowu ja."
+    f "Hejka."
+    you 'Jeszcze jedno pytanko.'
     f 'Tak?'
-    you 'Masz może jakąś robotę dla mnie'
-    you 'czy jest dosłownie cokolwiek co mogę zrobić'
-    f 'Hmm'
+    you 'Masz może jakąś robotę dla mnie?'
+    you 'Czy jest dosłownie cokolwiek co mogę zrobić?'
+    f 'Hmm...'
     "Filip wstaje i znowu idzie do swojej szafy." 
     "Słychać, że znowu przesuwa ciężkie pudła, ale tym razem trwa to dłużej." 
     "Wychodzi z ogromnym stosem dokumentów. Potem wraca i przynosi jeszcze więcej papieru." 
     "Zanim się obejrzysz, na biurku przed tobą są już dwa wysokie stosy dokumentów, a biurko się wygina od ich ciężaru"
-    "Potem wraca z wózkiem na bagaże, tylko że zamiast walizek tam są papiery"
+    "Potem wraca z wózkiem na bagaże, tylko że zamiast walizek są tam papiery."
     you 'Co to w ogóle jest?'
-    f 'A to są po prostu jakieś papiery i poczta, która nigdy nie dotarła do Kurowskiej'
-    f 'Po prostu przez lata zbierałem i uważałem, że nie jest zbyt ważna, więc ją trzymałem'
-    f 'A teraz ona chce to wszystko zobaczyć'
-    you 'No to co mam z tym zrobić'
-    f 'Weź te wszystkie dokumenty i zanieś je do Kurowskiej'
+    f 'A to są po prostu jakieś papiery i poczta, która nigdy nie dotarła do Kurowskiej.'
+    f 'Po prostu przez lata zbierałem i uważałem, że nie jest zbyt ważna, więc ją trzymałem.'
+    f 'A teraz ona chce to wszystko zobaczyć.'
+    you 'No to co mam z tym zrobić.'
+    f 'Weź te wszystkie dokumenty i zanieś je do Kurowskiej.'
     you 'Ale nie dam rady tego unieść ty jesteś zdrowy??'
-    f 'Nie mówię ci żebyś niósł wszystko na raz głuptasie'
-    f 'Tu jest z 120kg papieru na tym biurku nie oczekuję że to podniesiesz'
-    f 'Zwłaszcza ze swoim snatched waistem'
-    you 'No spoko...'
-    "Podnosisz mały stosik papieru. Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz"
+    f 'Nie mówię ci żebyś niósł wszystko na raz głuptasie.'
+    f 'Tu jest z 120kg papieru na tym biurku nie oczekuję że to podniesiesz.'
+    f 'Zwłaszcza z twoim snatched waistem...'
+    you 'No spoko...\n {i}ZAUWAŻYŁ!!!{/i}'
+    "Podnosisz mały stosik papieru. Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz."
     "Najwidoczniej przenosisz jakieś skargi."
-    "Każdy nagłowek jest gorszy od poprzedniego"
-    "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'"
+    "Każdy nagłowek jest gorszy od poprzedniego."
+    "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
     if metVasili:
-        you "{i}Wiadomo, że chodzi o Vasiliego{/i}"
-    "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny"
-    "Nie dziwię się że Filip uznał to za nieważne - wygląda jak jakiś fanfik"
-    "{i}Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne{/i}"
-    you "{i}KTO TO NAPISAŁ{/i}"
-    "Pukasz do drzwi Kurowskiej"
+        you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
+    "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
+    "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
+    you "{i}Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne.{/i}"
+    you "{i}KTO TO NAPISAŁ?{/i}"
+    "Pukasz do drzwi Kurowskiej."
     if rudeToKurowska:
         k "KTO TAK PUKA NA BELZEBUBA??"
     else:
-        k "Wejdź"
-    "Wchodzisz do biura Kurowskiej i nie możesz uwierzyć w to, że ona serio zamierza czytać te maile"
-    you 'Gdzie to zostawić'
-    k 'Na moim stole'
-    you 'Na pewno? Ten papier nie jest skinny'
-    k 'Dobra zostaw na podłodze'
+        k "Wejdź."
+    "Wchodzisz do biura Kurowskiej i nie możesz uwierzyć w to, że ona serio zamierza czytać te maile."
+    you 'Gdzie to zostawić?'
+    k 'Na moim stole.'
+    you 'Na pewno? Ten papier NIE jest skinny.'
+    k 'Dobra zostaw na podłodze.'
     "Zostawiasz pierwszy stosik papierów na podłodze." 
     "Nosisz dzielnie jeden po drugim, ale część ciebie chce tylko czytać te śmieci."
     "Nagłówki są coraz bardziej dzikie..."
-    "{i}Kapelusz Rafała sieje dramat wśród Bratgrenian{/i}"
-    "{i}Skarga na robale z Kolorado atakujące pomidory{/i}"
-    "{i}Ktoś mi nasrał przed drzwiami do domu proszę to usunąć{/i}"
-    "{i}Pilne: Sąsiad lewituje jak dua lipa. To chyba czarna magia.{/i}"
-    "Zanim się obejrzysz przeniosłeś już wszystko i zabrakło ci nagłówków do czytania"
+    "{i}'Kapelusz Rafała sieje dramat wśród Bratgrenian.'{/i}"
+    "{i}'Skarga na robale z Kolorado atakujące pomidory.'{/i}"
+    "{i}'Ktoś mi nasrał przed drzwiami do domu proszę to usunąć.'{/i}"
+    "{i}'Pilne: Sąsiad lewituje jak dua lipa. To chyba czarna magia.'{/i}"
+    "Zanim się obejrzysz przeniosłeś już wszystko i zabrakło ci nagłówków do czytania."
     you 'Dużo tych mailów...'
-    k 'Co? jakich mailów'
-    you 'No tych które noszę od ostatnich 20 minut'
-    k 'MAILE?? prosze mi je wynieść, to praca filipa, ja mam ważniejsze rzeczy na głowie'
-    you 'to po co ja je tyle nosiłem *crying face expression*'  
-    "Bierzesz z rezygnacją kupkę mailów i wracasz do filipa"
+    k 'Co? jakich mailów?'
+    you 'No tych które noszę od ostatnich 20 minut.'
+    k 'MAILE?? prosze mi je wynieść, to praca filipa, ja mam ważniejsze rzeczy na głowie!'
+    you 'To po co ja je tyle nosiłem?'
+    "Bierzesz z rezygnacją kupkę mailów i wracasz do filipa."
     f 'A co ty tu robisz z tymi papierami?'
-    you 'Kurowska powiedziała że to ty masz odpowiadać na maile'
-    you "I że muszę z powrotem je przenieść"
-    f 'CO? zdążą zamknąć przedsionek zanim skończę odpowiadać na wszystkie...'
-    f 'No dobra... przynieś je tu wszystkie'
+    you 'Kurowska powiedziała że to ty masz odpowiadać na maile.'
+    you "I że muszę z powrotem je przenieść."
+    f 'CO? zdążą zamknąć przedsionek zanim skończę odpowiadać na nie wszystkie...'
+    f 'No dobra... przynieś je tu wszystkie.'
     "Po kolejnych 20 minutach kończysz pracę u filipa, który teraz leży zdruzgotany na stercie papierów."
-    f 'Dzieki za pomoc, chociaż wsm nic sie nie zmieniło'
+    f 'Dzieki za pomoc, chociaż w sumię nic sie nie zmieniło.'
     f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'
