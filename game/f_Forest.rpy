@@ -3,6 +3,8 @@ define accused_piotr_of_kidnapping = False
 define asked_where_i_am_start = False
 define stayed_silent_start = False
 
+# renpy-graphviz: BREAK
+
 label f_piotrIntroductionMenu:
     menu:
         "Kim ty jesteś" if not asked_who_is_piotr:
@@ -53,6 +55,7 @@ label f_piotrIntroductionMenu:
         "(nie mam więcej pytań)":
             jump f_piotrTravelToCity
 
+# renpy-graphviz: BREAK
 
 label f_piotrTravelToCity:
     "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
@@ -79,7 +82,6 @@ label f_piotrTravelToCity:
     p "Najlepiej by było jakbyś od razu dostał pr*cę i dom, ale tego nie da się przewidzieć"
     you "..."
     you "{i}{b}PR*ACA, JAKA PR*CA!!! JA NIE CHCE{/b}{/i}"
-
     "Piotr zbiera swoje kamyki do torby i prowadzi cię do tego dużego muru, który wcześniej widziałeś."
     "Droga z lasu do miasta nie jest długa, chociaż czasem może zaskoczyć {i}dziką zwierzyną.{/i}"
     "Razem z Piotrem wracacie przez most i podążacie do urzędu miasta. Pomimo późnej godziny temperatura nie jest niesprzyjająca, nawet przyjemna (idealna do skinny dipping... znaczy CO)."
@@ -144,15 +146,14 @@ label f_piotrTravelToCity:
     "Strzepujesz koszulkę, i wracasz do najbardziej produktywnej czynności - siedzenia - kompletnie ignorując to, że po tobie ktoś będzie musiał sprzątać te igły."
     "Po chwili wraca piotr i woła cię do sekretariatu..."
     scene bg secretary with dissolve
-
-
     show piotr normal at center with dissolve
     pause 0.5
     show piotr normal at leftish with move 
     show filip normal at rightish with dissolve # TODO: filip appears at the top???
-    
     f "To jest furas pod tytułem???"
     p "[name]"
     you "Ale co ja..?"
     p "No przecież zapytał się o twoje imię."
     jump ch_filipIntroduction
+
+# renpy-graphviz: BREAK

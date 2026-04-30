@@ -324,6 +324,8 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     else:
         jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
 
+# renpy-graphviz: BREAK
+
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     k "Sam sobie znajdź pracę."
     you "Ale..."
@@ -335,8 +337,9 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem...{/i}"
     jump t_goingToFindAJob
 
-
 define playerRobbed = False
+# renpy-graphviz: BREAK
+
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     $ randomCorrectChoiceIndex = random.randint(1, 3)
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
@@ -392,6 +395,8 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
         "Japa kasti":
             jump ch_KamilRobberyWrongChoice
 
+# renpy-graphviz: BREAK
+
 define robberyStopped = False
 label ch_KamilRobberyCorrectChoice:
     $ robberyStopped = True
@@ -405,6 +410,9 @@ label ch_KamilRobberyCorrectChoice:
     m "Ale jak... no dobra... teraz wygrałeś...{w} ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
     hide kamil with dissolve
     you "{i}Nie będę nosił ze sobą pieniędzy!{/i}"
+    jump t_gotMoney
+
+# renpy-graphviz: BREAK
 
 label ch_KamilRobberyWrongChoice:
     m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ."
@@ -454,6 +462,8 @@ label ch_KamilRobberyWrongChoice:
     k "Znajdź Pracę."
     hide kurowska normal with dissolve
     jump t_goingToFindAJob
+
+# renpy-graphviz: BREAK
 
 label ch_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
@@ -524,3 +534,6 @@ label ch_workingAtFilip:
     "Po kolejnych 20 minutach kończysz pracę u filipa, który teraz leży zdruzgotany na stercie papierów."
     f 'Dzieki za pomoc, chociaż w sumię nic sie nie zmieniło.'
     f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'
+    jump t_gotMoney
+
+# renpy-graphviz: BREAK

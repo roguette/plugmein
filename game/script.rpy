@@ -18,6 +18,7 @@ define lis = Character("LISa Simpson", color="#fffffa")
 define frau = Character("Frau Crusty", color="#a14f10")
 define r = Character("Rafał", color="#105da1")
 define n = Character("Niu Niu", color="#8410a1")
+define ww = Character("Wiktoria W.", color="#f6517d")
 
 init python:
     import random

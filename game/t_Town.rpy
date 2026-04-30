@@ -143,7 +143,7 @@ label t_goingIntoTownFirstNight:
         "JEZIORO!!!":
             jump l_firstNightLakeVisit
         "MIASTO!!":
-            jump l_firstNightTownWalk
+            jump t_firstNightTownWalk
 
 define hasToApologiseToPiotr = False
 define metWiktoriaP = False
@@ -352,6 +352,8 @@ label t_afterFirstNightTownWalkQuestionsMenu:
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
     jump h_wakingUpAfterFirstNight
 
+# renpy-graphviz: BREAK
+
 
 label t_goingToTownToKurowskaDueToHungerDayTwo:
     scene bg citysquareday with dissolve
@@ -368,8 +370,12 @@ label t_goingToTownToKurowskaDueToHungerDayTwo:
     "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa"
     jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo
 
+# renpy-graphviz: BREAK
+
 define workedAtVasili = False
 define workedAtFilip = False
+
+# renpy-graphviz: BREAK
 label t_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
@@ -387,13 +393,13 @@ label t_goingToFindAJob:
         "Filip":
             you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
             $ workedAtFilip = True
-            jump l_workingAtFilip
+            jump ch_workingAtFilip
     
 label t_gotMoney:
     scene bg citysquareday with dissolve
     "Masz dość bycia głodnym, więc idziesz prosto do BBB."
     "(Big Buły Bakery)"
-    call t_gotMoneyBakeryEntrance
+    jump t_gotMoneyBakeryEntrance
 
 label t_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
@@ -432,7 +438,7 @@ label t_gotMoneyBakeryEntrance:
             wp "Śpiewał 'Międzynarodówkę'?"
             you "Tak..."
             wp "Współczuję..."
-    call t_gotMoneyBakeryCustomer
+    jump t_gotMoneyBakeryCustomer
 
 label t_gotMoneyBakeryCustomer:
     frau "A cóż to za bezczelne pytanie?"
@@ -457,7 +463,7 @@ label t_gotMoneyBakeryCustomer:
             show fraucrusty normal at offscreenleft with move
             "Frau Crusty wychodzi z piekarni bez tortu skipem C"
     hide fraucrusty
-    call t_gotMoneyBakeryTea
+    jump t_gotMoneyBakeryTea
 
 label t_gotMoneyBakeryTea:
     wp "Okeeej."
@@ -733,6 +739,28 @@ label t_gotMoneyBakeryTea:
     wp "Ok."
     you "No to cześć."
     r "Cześć siedem"
+    "Po raz drugi wychodzisz z piekarni i tym razem idziesz prosto do krawcowej"
+    "Bez żadnych duchów lub jakiejś fontanny"
+    "Na szczęście to nie było trudne, bo zakład krawiecki jest tuż obok piekarni"
+    "Zakład krawiecki wygląda tak ostentacyjnie, że aż stoisz i się gapisz"
+    "Jest pięknie"
+    "Kiedy w końcu się ogarniasz, wraca ci logiczne myślenie i zaczynasz myśleć o cenach"
+    "Raczej nie masz tyle kasy, żeby coś kupić w takim miejscu"
+    "Wchodzisz do środka i się rozglądasz."
+    "Wszystko jest zastawione pięknymi sukienkami, koszulami, spodniami i innymi ubraniami, których nazw nie znasz"
+    "Odwracasz głowę i widzisz zwykłe białe koszule i nudne spodnie, które bardziej pasują do twojego budżetu"
+    "Wtedy słyszysz głos kobiety z kąta. To była krawcowa"
+    "Na początku jej nie zauważyłeś przez te wszystkie kolorowe ubrania wokół niej"
+    you "{i}Idealny kamuflaż{/i}"
+    m "Dzień dobry!"
+    you "Dzień dobry!"
+    you "Nazywam się [name] i jestem nowy w tym mieście."
+    ww "Masz fajne imię."
+    you "A dziękuję dziękuję"
+    return
+
+
+
 
 
 
