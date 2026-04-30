@@ -1,4 +1,7 @@
 define seenBjorkGhost = False
+
+# renpy-graphviz: BREAK
+
 label h_wakingUpAfterFirstNight:
     "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
     stop music fadeout 1.0
@@ -71,4 +74,6 @@ label h_wakingUpAfterFirstNight:
     "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska"
     "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej"
     jump t_goingToTownToKurowskaDueToHungerDayTwo
+
+# renpy-graphviz: BREAK
 

@@ -352,6 +352,8 @@ label t_afterFirstNightTownWalkQuestionsMenu:
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
     jump h_wakingUpAfterFirstNight
 
+# renpy-graphviz: BREAK
+
 
 label t_goingToTownToKurowskaDueToHungerDayTwo:
     scene bg citysquareday with dissolve
@@ -368,8 +370,12 @@ label t_goingToTownToKurowskaDueToHungerDayTwo:
     "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa"
     jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo
 
+# renpy-graphviz: BREAK
+
 define workedAtVasili = False
 define workedAtFilip = False
+
+# renpy-graphviz: BREAK
 label t_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
