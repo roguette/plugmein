@@ -90,7 +90,7 @@ label ch_filipIntroduction_after:
 label ch_kurowskaMysteryMenu:
     menu:
         "Docieknij co to znaczy wszyscy.":
-            you: "Co to znaczy, że \"tak jak wszyscy\"?"
+            you "Co to znaczy, że \"tak jak wszyscy\"?"
             k "Wszyscy, którzy tutaj mieszkają trafili w ten sam sposób do naszego miasta."
             k "Nikt nie wie skąd się tutaj bierzemy, ale jedno wiadomo - jesteśmy tutaj szczęśliwi."
         "Milcz":
