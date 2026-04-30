@@ -9,24 +9,24 @@ label h_wakingUpAfterFirstNight:
 
     if fountainLoreReceived != True:
         play music "sb_soulsearcher.mp3"
-        "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie spać"
-        "I zanim się obejrzysz, już śpisz"
+        "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
+        "I zanim się obejrzysz, już śpisz."
 
-        "A czekaj... już nie"
-        "Czujesz, jakbyś leciał przez swoje łóżko"
-        "Potem przez podłogę"
-        "Aż w końcu lądujesz w wodzie"
-        "Nagła zmiana temperatury sprawia że podskakujesz"
-        "Otwierasz oczy i widzisz, że jesteś w fontannie na rynku"
-        you "{i}Z tą głupią fontanną zawsze jest coś{/i}"
-        "Przed tobą pojawia się dusza"
-        m "Fontanna nie jest głupia"
-        you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy{/i}"
-        m "Spokojnie. Nie defekuj. Nie jestem złą duszą"
-        "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie"
-        "I wygląda to jak jakaś relacja parasocjalna"
-        "Taka jak na twitchu"
-        you "Kim pani jest"
+        "A czekaj... już nie."
+        "Czujesz, jakbyś leciał przez swoje łóżko."
+        "Potem przez podłogę."
+        "Aż w końcu lądujesz w wodzie."
+        "Nagła zmiana temperatury sprawia, że podskakujesz."
+        "Otwierasz oczy i widzisz, że jesteś w fontannie na rynku."
+        you "{i}Z tą głupią fontanną zawsze jest coś...{/i}"
+        "Przed tobą pojawia się dusza."
+        m "Fontanna nie jest głupia."
+        you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy.{/i}"
+        m "Spokojnie. Nie defekuj. Nie jestem złą duszą."
+        "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie."
+        "I wygląda to jak jakaś relacja parasocjalna."
+        "Taka jak na twitchu."
+        you "Kim pani jest?"
         m "Ty wiesz kim ja jestem."
         you "Aha to ty jesteś B-{nw}"
         bjork "Tak, {w=0.6}jestem Bjork"
@@ -34,46 +34,46 @@ label h_wakingUpAfterFirstNight:
         you "Czego ty ode mnie chcesz?"
         bjork "A czego TY ode mnie chcesz?"
         pause 3
-        you "Dlaczego ja tu jestem i nic nie pamiętam"
-        bjork "Odpowiedź na wszystkie pytania znajdziesz w kościele"
-        you "{i}Jezu to po co ona się mnie pytała{/i}"
+        you "Dlaczego ja tu jestem i nic nie pamiętam?"
+        bjork "Odpowiedź na wszystkie pytania znajdziesz w kościele."
+        you "{i}Jezu to po co ona się mnie pytała?{/i}"
         bjork "Słyszałam to."
-        bjork "Nie potrafię opisać wszystkiego, co musisz zobaczyć, poczuć i zrozumieć"
-        bjork "Musisz samemu to wszystko zobaczyć"
-        bjork "Nie jesteś głupi i wszystko zrozumiesz"
-        bjork "To od ciebie zależy, czy pomożesz miastu, czy doprowadzisz do jego upadku"
-        "w okamngnieniu wracasz do swojego łóżka"
+        bjork "Nie potrafię opisać wszystkiego, co musisz zobaczyć, poczuć i zrozumieć."
+        bjork "Musisz samemu to wszystko zobaczyć."
+        bjork "Nie jesteś głupi i wszystko zrozumiesz."
+        bjork "To od ciebie zależy, czy pomożesz miastu, czy doprowadzisz do jego upadku."
+        "W okamngnieniu wracasz do swojego łóżka."
         $ seenBjorkGhost = True
         stop music fadeout 0.5
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
     scene bg bedroom with fade
-    "Ten dom jest mały (ale dla ciebie jest ogromny bo [name] jest skinny i ma skinny waist)"
-    "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu"
-    "Jednak obudziło Cię uczucie głodu"
-    "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu"
+    "Ten dom jest mały (ale dla ciebie jest ogromny bo [name] jest skinny i ma skinny waist)."
+    "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu."
+    "Jednak obudziło Cię uczucie głodu."
+    "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu."
 
     scene bg kitchen with fade
-    "Idziesz do kuchni po jakieś jedzenie, na szczęście w kuchni masz dużą lodówkę"
-    "Co chcesz zjeść"
+    "Idziesz do kuchni po jakieś jedzenie, na szczęście w kuchni masz dużą lodówkę."
+    "Co chcesz zjeść?"
     menu:
         "Kawior":
-            "Jesteś na 99%% pewny że nie masz czegoś takiego w lodówce."
-            "Dostałeś ten dom za darmo, ale nie przesadzajmy. Nie ma szans że też dostałeś tak luksusowe jedzenie w prezencie"
+            "Jesteś na 99%% pewny, że nie masz czegoś takiego w lodówce."
+            "Dostałeś ten dom za darmo, ale nie przesadzajmy. Nie ma szans, że też dostałeś tak luksusowe jedzenie w prezencie"
         "Winniczki":
             you "{i}To jest chyba jedyna rzecz w mojej lodówce{/i}"
         "Dead dove":
-            "Wiadomo, że nie należy jeść martwych gołębi"
+            "Wiadomo, że nie należy jeść martwych gołębi."
         "Nie chcę jeść":
             $ hasSkinnyWaist = True
             you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
 
-    "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem który włącza i wyłącza w niej swiatło."
+    "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem, który włącza i wyłącza w niej swiatło."
     "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
-    "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny"
-    "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska"
-    "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej"
+    "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny."
+    "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska."
+    "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej."
     jump t_goingToTownToKurowskaDueToHungerDayTwo
 
 # renpy-graphviz: BREAK
