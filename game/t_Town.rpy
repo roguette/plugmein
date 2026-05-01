@@ -515,73 +515,62 @@ label t_gotMoneyBakeryTea:
     you "Współczuję."
     you "Czy ty naprawdę masz tu gdzieś cegłę?"
     r "Tak. Jestem przygotowany."
-    "Wyciągnął obiema łapami wielką czerwoną cegłę i z dumą pokazał ci ją, jakby była jego dzieckiem."
-    "Cegła była stara. Naprawdę stara."
-    "Już na pierwszy rzut oka widać było, że nie sposób określić jej wieku, o czym świadczyły niezliczone odpryski i rysy."
-    "W rzeczywistości cegła była tak stara, że przypisanie jej jakiejkolwiek liczby byłoby obrazą - nie tylko dla niej,"
-    "ale i dla osoby, która ją wykonała."
-    "Samo nazwanie jej 'starą' oznaczało wymazanie stuleci, które ta cegła przetrwała."
-    "Cegła była na tyle stara, że można ją było uznać za najstarszą rzecz na tej planecie - albo gdziekolwiek w tej chwili się znajdowałeś."
-    "Nie wiedziałeś dokładnie, gdzie jesteś, ale jedno było pewne: ta cegła była starsza niż ziemia, na której stoisz."
-    "Słowo 'starasz' przestało być dla niej przymiotnikiem - stało się jej wewnętrzną właściwością."
-    "Cegła dawno straciła ostre krawędzie i teraz była zaokrąglona,"
-    "niemal jakby była wielokrotnie używana."
-    "Jeden z rogów był szczególnie obtłuczony i nawet najmądrzejsza osoba w tym mieście nie byłaby w stanie stwierdzić, dlaczego ani kiedy do tego doszło."
-    "Tylko Rafał mógłby to wiedzieć - to znaczy, jeśli w ogóle pamięta, co się z nią stało."
-    "Jedynym zastosowaniem tej cegły jest rzucanie,"
-    "więc starasz się nie wyciągać pochopnych wniosków co do tego, kim jest ofiara."
-    "Patrząc na obtłuczony róg, można było dojść do wniosku, że jest to efekt licznych podróży powietrznych."
-    "Można by rzec, że to cud, iż cegła jeszcze nie pękła na pół."
-    "A jednak trzymała się, czego nie można powiedzieć o niektórych związkach."
-    "Gdziekolwiek Rafał dotyka cegły łapami, osypuje się z niej kurz i drobinki gliny,"
-    "jakby było to zjawisko całkowicie naturalne."
-    "Rafał jednak całkowicie ignoruje bałagan, który właśnie narobił, jakby był do tego przyzwyczajony."
-    "Ignoruje również pył na swoich miękkich łapach, najwyraźniej uznając go za problem przyszłości."
-    "W tym momencie każdy rozsądny człowiek przestałby myśleć o cegle."
-    "Ty tego jednak nie robisz."
-    "Cegła miała jedną stronę wyraźnie ciemniejszą od pozostałych, jakby przez lata była wystawiona na działanie żywiołów,"
-    "podczas gdy reszta spoczywała bezpiecznie w ścianie."
+    'Wyciągnął wielką, czerwoną cegłę obiema łapami i z dumą pokazał ją tobie, jakby była jego dzieckiem.'
+    'Cegła była stara. Naprawdę stara.'
+    'Już na pierwszy rzut oka dało się stwierdzić, że nie da się stwierdzić, ile dokładnie ma lat - liczne odpryski i rysy były na to dowodem.'
+    'Właściwie była tak stara, że przypisanie jej jakiejkolwiek liczby wydawało się obrazą nie tylko dla cegły, ale i dla tego, kto ją stworzył.'
+    "Nazwanie jej po prostu 'starą' oznaczałoby wymazanie stuleci, które przetrwała."
+    'Cegła dawno straciła ostre krawędzie i stała się zaokrąglona, jakby była używana wielokrotnie.'
+    'Jeden z rogów był szczególnie wytarty i nawet najmądrzejsza osoba w tym mieście nie potrafiłaby powiedzieć, dlaczego jest wyszczerbiony ani gdzie dokładnie jest ten róg.'
+    'Tylko Rafał mógłby to wiedzieć - o ile wie albo pamięta, co się z nią stało.'
+    'Jedynym zastosowaniem tej cegły było rzucanie, więc starasz się nie wyciągać pochopnych wniosków co do tego, kto będzie lub już był ofiarą.'
+    'Patrząc na wyszczerbiony róg, staje się jasne, że to efekt pewnego powietrznego wydarzenia.'
+    'Można by nawet uznać za cud, że cegła jeszcze nie pękła na pół.'
+    "Że jeszcze nie pękła na pół, jak arbuz spadający na nóż z 100m w jakimś filmiku na youtubie"
+    'Jej amorficzna porcelanowa struktura wciąż trzymała się mocno po tych wszystkich latach, czego nie da się powiedzieć o niektórych związkach.'
+    'Cegła była na tyle stara, że mogłaby uchodzić za najstarszy obiekt na tej planecie - albo gdziekolwiek teraz jesteś.'
+    'Nie wiesz dokładnie, gdzie jesteś, ale jedno jest pewne - ta cegła jest starsza niż ziemia, na której stoisz.'
+    'Starość nie była już dla niej przymiotnikiem, tylko wrodzoną właściwością.'
+    'Nieważne, gdzie Rafał dotyka cegły swoimi łapkami - osypuje się trochę kurzu i pokruszonej gliny, jakby cegła miała łupież.'
+    'Rafał jednak całkowicie ignoruje bałagan, który właśnie zrobił, jakby był do tego przyzwyczajony.'
+    'Ignoruje też pył na swoich miękkich łapkach, bo wie, że i tak zaraz schowa ten delikatny wyrób z gliny, więc nie ma sensu ich myć.'
+    'W tym momencie każdy rozsądny człowiek przestałby myśleć o cegle.'
+    'Ty jednak nie przestajesz.'
+    'Jedna ze stron cegły była ciemniejsza od pozostałych - jakby była wystawiona na działanie warunków atmosferycznych, podczas gdy reszta spoczywała bezpiecznie w ścianie.'
     "Prawdziwi naukowcy mogliby poświęcić całe życie badaniu tej różnicy i nadal nie dojść do porozumienia."
     "Tak tajemnicza była ta cegła."
-    "Nie sposób stwierdzić, czy Rafał ją wyjął, czy też wypadła sama."
-    "Można jednak odnieść wrażenie, że należy do tego miejsca - jej przygaszony czerwony kolor zdawał się pasować do reszty piekarni."
-    "Przy bliższym przyjrzeniu się dostrzegasz jej niedoskonałości - ślady czasu."
-    "Pęknięcia były wypełnione pyłem tak starym i tak głęboko osadzonym,"
-    "że nawet woda nie byłaby w stanie go wypłukać."
-    "Stał się on częścią tej cegły, jakby należał do niej od zawsze."
-    "Cegła była prawdopodobnie starsza od ciebie i znajdowała się w tym mieście na długo przed twoimi narodzinami."
-    "Była świadkiem setek, jeśli nie tysięcy ludzi, oraz milionów słów wypowiedzianych w jej obecności."
-    "Cegła zna wszystkie sekrety miasta - ale nie może ich zdradzić."
-    "Najwyraźniej miała też swoje miejsce pod biurkiem Rafała, tam, gdzie prowadził kasę i zajmował się codziennymi sprawami."
-    "Nie każdy klient wiedział, ani nawet mógł podejrzewać istnienie tej cegły."
-    "Jeśli Rafał wyciągnął ją przy tobie, oznaczało to jedno z dwóch:"
-    "albo jesteś ofiarą,"
-    "albo jego przyjacielem."
-    "Zauważasz również drobne, wielokolorowe plamy rozsiane po jej powierzchni."
-    "Każda z nich miała inny kształt, rozmiar i - zapewne - własną historię."
-    "Jedna mogła powstać dwa dni temu, inna dwa lata temu, i nie było sposobu, by to rozróżnić."
-    "Te wydarzenia nie zostawiały po sobie jedynie historii."
-    "Zostawiały osad."
-    "Cienką, kruchą warstwę drobnych zdarzeń, które powoli zmieniały tę cegłę - cegła po cegle, krok po kroku."
+    'Nie da się stwierdzić, czy Rafał wyjął cegłę, czy sama wypadła.'
+    'Można jednak zauważyć, że cegła {i}należy{/i} do tej piekarni, ze względu na swój charakterystyczny, ale już wyblakły, czerwony kolor, który był bardziej przygaszony niż reszta cegieł w tej piekarni.'
+    'Przy bliższym spojrzeniu widzisz wszystkie jej niedoskonałości - ślady, które zostawił czas.'
+    'Pęknięcia są wypełnione kurzem tak starym i tak głęboko osadzonym, że nawet woda nie jest w stanie tam dotrzeć.'
+    'Stały się częścią kapsuły czasu, którą jest ta cegła.'
+    'Ta cegła była prawdopodobnie starsza niż ty i znajdowała się w tym mieście długo przed twoimi narodzinami.'
+    'Widziałeś przez nią setki, jeśli nie tysiące ludzi i miliony wypowiedzianych słów.'
+    'Cegła zna wszystkie sekrety miasta, ale nie może mówić ani ujawnić prawdy.'
+    'Miała też wyraźnie wyznaczone miejsce pod biurkiem Rafała, gdzie trzymał kasę i prowadził codzienny handel.'
+    'Nie każdy klient wiedział - albo mógł nawet podejrzewać - istnienie tej cegły.'
+    'Jeśli Rafał wyciąga ją przed tobą, oznacza to, że jesteś albo ofiarą, albo jego bliskim przyjacielem.'
+    'Zauważasz też małe, wielokolorowe plamy rozsiane po jej powierzchni - każda inna, każda o innym kształcie, rozmiarze i własnej historii.'
+    'Jedna może mieć dwa dni, a druga obok niej ponad dwa lata, bez żadnej możliwości odróżnienia.'
+    'Bo w tym wszechświecie nie wynaleziono datowania radiowęglowego.'
+    "Mimo pozornej przeciętności 'losowej cegły' nie możesz pozbyć się wrażenia, że w tej amorficznej strukturze zaklęte są codzienne sprawy mieszkańców miasta Bratgren."
+    'Od nieświadomych kroków ludzi zbyt zajętych, by zwracać uwagę na zwykłą cegłę, po gęsty deszcz, który po prostu miał zmoczyć wszystkich.'
+    'Te wszystkie zdarzenia nie zostawiły po sobie tylko historii - stały się osadem.'
+    'Cienką, kruchą warstwą drobnych rzeczy, które zmieniały tę cegłę, cegła po cegle, krok po kroku.'
     "Patrzysz na małe otwory w cegle, gdy nagle coś zaczyna do ciebie docierać."
     "Cegła sprawia, że czujesz coś, czego wcześniej nie czułeś."
     "Przynajmniej nie w tym mieście."
     "Z powodów, których nie potrafisz wyjaśnić, patrzenie na nią napełnia cię determinacją."
-    "Twoje plany - te, które odkładałeś - nagle wydają się nie tylko możliwe, ale wręcz konieczne."
-    "Nie jesteś w stanie zignorować myśli, które pojawiają się w twojej głowie."
-    "Wzdychasz głęboko, niemal dramatycznie, jakbyś chciał,"
-    "żeby wszystkie inne cegły w tej przytulnej piekarni wiedziały, że rozumiesz."
-    "Rozumiesz historię, przez którą przeszła ta cegła."
-    "Ta cegła i jej historia inspirują cię, by iść dalej i się nie poddawać."
-    "Dla zwykłego człowieka to tylko cegła."
-    "Ale ty widzisz w niej coś więcej."
-    "Odnajdujesz w niej źródło inspiracji i determinacji."
-    "Mimo tej demonstracyjnej przeciętności 'zwykłej cegły' trudno było pozbyć się wrażenia, że w jej amorficznej strukturze zaklęte są wszystkie codzienne sprawy obywateli Bratgren."
-    "Wszystko, co tu się wydarzało - od nieświadomych kroków przechodniów, ludzi zbyt zajętych, by zauważyć zwykłą cegłę, po gęste deszcze, których jedynym celem było zmoczyć wszystkich bez wyjątku."
-    "Cegła była kiedyś częścią czegoś większego - czegoś bardziej monumentalnego - choć nie potrafisz powiedzieć czego."
-    "Z cegieł można zbudować wszystko - od małego muru po coś znacznie większego."
-    "Tak jak jedna z tych cegieł, jesteś częścią tego miasta."
-    "Miasta, które cię przyjęło."
+    "Dterminacją tak silną, że wszystkie twoje plany, te odkładane w nieskończoność, nagle wydają się nie tylko możliwe, ale konieczne."
+    'Nie możesz już zatrzymać tego wiru myśli, który ta starożytna architektura wywołała w twojej głowie, więc wydajesz z siebie długie, dramatyczne westchnienie.'
+    'Chcesz, by każda inna cegła w tej przytulnej kawiarni wiedziała, że rozumiesz jej historię.'
+    'Ta cegła i jej przeszłość inspirują cię, by iść dalej i się nie poddawać.'
+    'Dla zwykłej osoby to była zwykła cegła, ale twoje oczy widzą coś innego - źródło inspiracji i determinacji w tak prostym obiekcie.'
+    "Helen Keller powiedziała kiedyś - 'Alone we can do so little; together we can do so much' - i nic lepiej nie opisałoby tej cegły."
+    'Cegła była częścią czegoś większego, bardziej monumentalnego, choć nie wiesz czego.'
+    'Cegły mogą być używane do budowania wszystkiego - od małego muru podczas protestu w Paryżu po wielką willę zdolną przetrwać tornado.'
+    'Tak jak jedna z tych cegieł, ty również jesteś częścią tego miasta.'
+    'Miasta, które przyjęło cię z otwartymi ramionami.'
     r "Jezu, mam go dość, on tak mnie irytuje."
     you "Nie dziwię ci się."
     r "..."
@@ -731,9 +720,9 @@ label t_gotMoneyBakeryTea:
     r "Nikogo tu nie ma."
     you "Nie ma szans, że ona zrobiła ze mnie idiotę."
     you "Zrobiła ze mnie idiotę jak w jakimś stereotypowym filmie o duchach."
-    wp "Nie wiem jak, Rafał, ale ja ci wierzę."
+    wp "Nie wiem czy Rafał ci wierzy, ale ja tak."
     wp "Na pewno coś widziałeś."
-    r "No, w sumie."
+    r "..."
     you "I co teraz?"
     wp "Nie wiem."
     r "Nie wiem."
@@ -747,11 +736,14 @@ label t_gotMoneyBakeryTea:
     wp "Ok."
     you "No to cześć."
     r "Cześć siedem"
+    jump t_GoingToTheTailor
+
+label t_GoingToTheTailor:
     "Po raz drugi wychodzisz z piekarni i tym razem idziesz prosto do krawcowej"
     "Bez żadnych duchów lub jakiejś fontanny"
-    "Na szczęście to nie było trudne, bo zakład krawiecki jest tuż obok piekarni"
-    "Zakład krawiecki wygląda tak ostentacyjnie, że aż stoisz i się gapisz"
-    "Jest pięknie"
+    "Na szczęście to nie było trudne, bo krawcowa jest tuż obok piekarni"
+    "Jej sklep wygląda tak ostentacyjnie, że aż stoisz i się gapisz"
+    "Jest pięknie."
     "Kiedy w końcu się ogarniasz, wraca ci logiczne myślenie i zaczynasz myśleć o cenach"
     "Raczej nie masz tyle kasy, żeby coś kupić w takim miejscu"
     "Wchodzisz do środka i się rozglądasz."
@@ -790,13 +782,81 @@ label t_gotMoneyBakeryTea:
     you "Nie wiem co kupić"
     ww "Już"
     "Krawcowa wstaje i podchodzi do ciebie i zaczyna chodzić wokół ciebie"
-    "Wyciąga metr aby zmierzyć jak dużego masz skinny waista"
+    "Wyciąga metr aby zmierzyć twojego skinny waista"
     if hasSkinnyWaist:
         ww "To jest niemożliwe"
         ww "Twój skinny waist ma 3 centymetry"
     else:
         ww "Ale masz skinny waista"
     you "Właśnie w tym jest problem bo nie mogę nic wybrać"
+    ww "Diabeł tkwi w szczegółach"
+    "Wiktoria zostawia ciebie przed lustrem i gdzieś idzie"
+    "Znowu się patrzysz na te proste ubrania dla biednych ludzi"
+    "I już czujesz ten wstyd"
+    "Po chwili wraca Wiktoria z jakimś pudełkiem oraz ładnymi ubraniami"
+    "Wiktoria zostawiła pudełko na podłodze, aby pokazać ci twoje nowe ubrania"
+    "Pokazuje ci niebieskie jeansy i białą koszulkę"
+    you "{i}Niebieskie dżinsy, biała koszula...{/i}"
+    you "{i}Weszłaś do pokoju, wiesz, że aż zapiekły mnie oczy{/i}"
+    you "Zapytam się wprost"
+    you "Ile to kosztuje?"
+    ww "To wszystko czy tylko te ubrania"
+    you "Jak to wszystko? To pudełko też?"
+    ww "Tak ale do tego wrócę"
+    ww "Same te ubrania kosztują 150 foryntów"
+    you "Myślałem, że w tym sklepie zbankrutuję"
+    you "Mam tylko 670"
+    ww "Starczy ci na parę dni."
+    ww "Mówiłeś że jesteś tutaj nowy co nie?"
+    you "No tak"
+    ww "Okej to polecam zostawić 100 foryntów"
+    ww "Ponieważ jutro pan Antoni będzie zbierał podatki"
+    you "Skąd wiesz"
+    ww "On zbiera podatki co tydzień w sobotę"
+    you "Aha ma sens"
+    you "{i}Czyli dzisiaj jest piątek...{/i}"
+    you "Dobra to wracając do tych tekstyliów"
+    you "Mi się podoba"
+    ww "Cieszę się"
+    you "A teraz co to za pudełko"
+    ww "To jest taki starter pack"
+    ww "Tam są majtki, skarpetki i inne rzeczy do higieny"
+    ww "A i właśnie"
+    ww "Tych ubrań, majtek i skarpetek nie trzeba prać"
+    you "Jak to?"
+    ww "Srak to"
+    ww "Poprosiłam Piotra aby mi wynalazł magię na to"
+    ww "No i od teraz ubrania są magiczne i wgl"
+    "Te ubrania są magiczne specjalnie"
+    "Bo nie chce mi się opisywać jak robisz pranie"
+    you "Okej..."
+    you "Ile to wszystko kosztuje?"
+    ww "180 foryntów"
+    you "Proszę"
+    "Płacisz za wszystko, uśmiechając się do sprzedawczyni"
+    "Widzisz słoik z napisem 'nawodnik (nie napiwek bo ne piję piwa tylko wodę)'"
+    "Czy chesz wrzucić parę monet do tej puszki"
+    menu:
+        "Tak":
+            "Wrzucasz resztę z swoich zakupów do tego słoika"
+            ww "Thank you thank you thank you"
+            "Wiktoria uśmiecha się jak w reklamie nieruchomości"
+    you "Dziękuję!!"
+    you "A właśnie mam pytanie"
+    ww "Słucham"
+    you "Widziałem sukienkę która kosztuje 3.5341*10^(67) foryntów. Czy ktoś w tym mieście naprawdę ma tyle pieniędzy?"
+    ww "Nie"
+    ww "Jeśli ktoś chce takie coś kupić to robię im zniżkę o wielkości 100%-(7.931345876241576*10^-131)%"
+    ww "Żeby się zaprzyjaźnić z tą bogatą osobą"
+    you "Ma sens"
+    "Patrzysz się na tą sukienkę jeszcze raz, i teraz wiesz, że nie jest tyle warta, mimo tego, że jest piękna"
+    "Żegnasz się z wiktorią i wychodzisz na zewnątrz"
+    "Jest już noc, i tym razem nie chcesz szwędać po mieście"
+    "Więc wracasz do domu."
+
+
+
+
     return
 
 
