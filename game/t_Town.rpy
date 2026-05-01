@@ -147,7 +147,9 @@ label t_goingIntoTownFirstNight:
 
 define hasToApologiseToPiotr = False
 define metWiktoriaP = False
+define receivedLoreAboutChurchOnTheFirstDay = False
 label t_firstNightTownWalk:
+    $ receivedLoreAboutChurchOnTheFirstDay = True
     you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
     "rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
     "Barbara nie powiedziała ci, czym właściwie jest ten festiwal, ani co ludzie wtedy robią, ani nawet czego on dotyczy,"
@@ -561,7 +563,7 @@ label t_gotMoneyBakeryTea:
     "Cegła sprawia, że czujesz coś, czego wcześniej nie czułeś."
     "Przynajmniej nie w tym mieście."
     "Z powodów, których nie potrafisz wyjaśnić, patrzenie na nią napełnia cię determinacją."
-    "Dterminacją tak silną, że wszystkie twoje plany, te odkładane w nieskończoność, nagle wydają się nie tylko możliwe, ale konieczne."
+    "Determinacją tak silną, że wszystkie twoje plany, te odkładane w nieskończoność, nagle wydają się nie tylko możliwe, ale konieczne."
     'Nie możesz już zatrzymać tego wiru myśli, który ta starożytna architektura wywołała w twojej głowie, więc wydajesz z siebie długie, dramatyczne westchnienie.'
     'Chcesz, by każda inna cegła w tej przytulnej kawiarni wiedziała, że rozumiesz jej historię.'
     'Ta cegła i jej przeszłość inspirują cię, by iść dalej i się nie poddawać.'
@@ -778,6 +780,24 @@ label t_GoingToTheTailor:
     ww "Dobra to podejdź do mnie jak coś znajdziesz"
     "Krawcowa wraca do swojego stołu i zaczyna rysować kobiętę w swoim zeszycie."
     "W tym samym czasie masz dylemat, ponieważ nie wiesz, co masz kupić."
+    "Więc chodzisz po tym sklepie i się tylko gapisz na wszystkie tekstylia"
+    "Są przynajmniej dwa powody, dla których nie wiesz, co kupić"
+    "Pierwszy jest najprostszy. Nie wiesz czy te ubrania są drogie czy tanie"
+    "Mieszkasz w tym mieście tylko dzień, więc nie rozumiesz ich waluty"
+    "Po drugie, nie wiesz czy będziesz pasował do reszty mieszkańców"
+    "Nie zwracałeś uwagi na to, co noszą mieszkańcy tego miasta"
+    "Ale jesteś zbyt leniwy, aby wyjść ze sklepu"
+    "Na Temu można kupić kostium dużej kaczki, ale żaden psychicznie zdrowy człowiek nie wyjdzie w tym na rynek"
+    "Patrzysz się przez okno aby kogokolwiek zobaczyć ale jest już za ciemno"
+    "Światło ze sklepu odbija się w oknie, przez co kompletnie nie widać ulicy"
+    "Długo chodzisz po tym sklepie i przypadkiem wchodzisz do pokoju z napisem 'burżuazja'"
+    "W tym sklepie są identyczne ubrania, tylko że ceny są liczbami z zakresu <100,000; +9,223,372,036,854,775,807>"
+    "W rzeczywistości stoisz przed jedną z tych sukienek."
+    "Sukienka przed tobą nie wygląda nie na miejscu w tym sklepie, a jednak jej cena jest najwyższą liczbą, jaką kiedykolwiek widziałeś."
+    "Jej cena jest tak wysoka, że zostały użyte potęgi, aby ją zapisać"
+    "Wychodzisz z tego pokoju, ponieważ gdybyś coś zepsuł to byś musiał pracować całe życie, żeby spłacić 1% długu"
+    "W tym momencie chodzisz po sklepie już od godziny i znów jesteś w punkcie wyjścia: nie wiesz, co kupić"
+    "Podchodzisz do krawcowej, aby poprosić ją o pomoc i widisz piękną kobietę w jej zeszycie"
     you "Czy mogłabyś mi pomóc??"
     you "Nie wiem co kupić"
     ww "Już"
@@ -789,16 +809,31 @@ label t_GoingToTheTailor:
     else:
         ww "Ale masz skinny waista"
     you "Właśnie w tym jest problem bo nie mogę nic wybrać"
-    ww "Diabeł tkwi w szczegółach"
+    ww "A co byś chciał"
+    you "Na pewno chcę wyglądać normalnie"
+    you "Normalnie w sensie jak każdy inny mieszkaniec tego miasta"
+    "Krawcowa kładzie swoją rękę na żuchwę, robiąc taki gest aby pokazać ci że intensywnie myśli o tym, w co może cię ubrać"
+    ww "Dobra wiem. Stój tu grzecznie ja zaraz wrócę."
     "Wiktoria zostawia ciebie przed lustrem i gdzieś idzie"
     "Znowu się patrzysz na te proste ubrania dla biednych ludzi"
     "I już czujesz ten wstyd"
-    "Po chwili wraca Wiktoria z jakimś pudełkiem oraz ładnymi ubraniami"
+    "Po chwili wraca Wiktoria z ubraniami i jakimś pudełkiem"
     "Wiktoria zostawiła pudełko na podłodze, aby pokazać ci twoje nowe ubrania"
     "Pokazuje ci niebieskie jeansy i białą koszulkę"
     you "{i}Niebieskie dżinsy, biała koszula...{/i}"
     you "{i}Weszłaś do pokoju, wiesz, że aż zapiekły mnie oczy{/i}"
+    "Przykładasz do siebie najpierw koszulę a potem jeansy"
+    you "Fajnie"
+    you "Mi się podoba"
+    you "Wyglądam tak, wiesz, normalnie"
+    ww "A teraz daj mi to i weź to"
+    "Wiktoria daje ci jakieś inne ubrania"
+    "Tym razem daje ci czarną sukienkę, czarną koszulkę i duży czarny melonik"
+    you "Nie"
+    "Nawet nie przykładasz tego do siebie, ponieważ wiesz, że nigdy nie będziesz wyglądał jak Zendaya"
+    "Poza tym, już wiesz co będziesz kupował"
     you "Zapytam się wprost"
+    "Wkazujesz pazurem na jeansy z białą koszulką"
     you "Ile to kosztuje?"
     ww "To wszystko czy tylko te ubrania"
     you "Jak to wszystko? To pudełko też?"
@@ -841,6 +876,8 @@ label t_GoingToTheTailor:
             "Wrzucasz resztę z swoich zakupów do tego słoika"
             ww "Thank you thank you thank you"
             "Wiktoria uśmiecha się jak w reklamie nieruchomości"
+        "Nie":
+            "Nie wrzucasz nic, ponieważ słuchasz chopbra, melanie oraz shitseye"
     you "Dziękuję!!"
     you "A właśnie mam pytanie"
     ww "Słucham"
@@ -850,19 +887,49 @@ label t_GoingToTheTailor:
     ww "Żeby się zaprzyjaźnić z tą bogatą osobą"
     you "Ma sens"
     "Patrzysz się na tą sukienkę jeszcze raz, i teraz wiesz, że nie jest tyle warta, mimo tego, że jest piękna"
-    "Żegnasz się z wiktorią i wychodzisz na zewnątrz"
+    you "Będę to nosił loud and proud"
+    ww "Cieszy mnie to"
+    you "Dobranoc!!"
+    ww "Sayonara"
+    "Po raz ostatni uśmiechasz się jak w reklamie nieruchomości i wychodzisz ze sklepu"
     "Jest już noc, i tym razem nie chcesz szwędać po mieście"
     "Więc wracasz do domu."
+    jump t_goingHomeAfterTailorSecondDay
 
 
-
-
-    return
-
-
-
-
-
-
+label t_goingHomeAfterTailorSecondDay:
+    "Wychodzisz ze sklepu ale na zewnątrz już jest noc"
+    "Zastanawiasz się jakim cudem spędziłeś tyle czasu u krawcowej"
+    "Ale to bylo tego warte, ponieważ masz już wszystko aby zacząć tu mieszkać"
+    "Masz jedzenie, ubrania, pieniądze i nawet własny dom. Czego więcej można chcieć?"
+    "Robisz 2 kroki do przodu kiedy widzisz przed sobą kościół"
+    "Oraz osobę, która zamyka drzwi do tego kościoła, a potem bramę na klucz"
+    "Nie wiesz kim jest ta osoba, ale jesteś na 99%% pewny, że to jest ksiądz"
+    if receivedLoreAboutChurchOnTheFirstDay:
+        you "{i}Jakim cudem Wiktoria otworyła tę bramę,{/i}"
+        you "{i}jeśli on zamyką ją na klucz?{/i}"
+        you "{i}To chyba Wiktorii nie mogę ufać{/i}"
+        you "{i}Po co jej tyle powiedziałem...{/i}"
+    "Patrzysz na swoje nowe ubrania, żeby nie zwracać na siebie uwagi"
+    "Ale tak naprawdę patrzysz się na tego księdza widzeniem peryferyjnym"
+    "Kiedy ten mężczyzna jest wystarczająco daleko od kościoła, podchodzisz do niego bliżej."
+    "Jutro będziesz tu z Wiktorią"
+    "Najpierw patrzysz na niedawno zamknięte drzwi, potem na ogromny witraż"
+    "Następnie delikatnie dotykasz bramy i czujesz, jak bardzo jest zakurzona, mimo że jest używana codziennie."
+    "Teraz ten kościół jest zamknięty, więc nie możesz wejść do środka"
+    "Z powodu braku rzeczy, które możesz teraz zrobić, idziesz do domu"
+    "Gdzieś w połowie drogi masz takie przeczucie, że ktoś cię obserwuje"
+    "Powietrze wokół ciebie robi się trochę chłodniejsze. Na tyle, że to zauważasz" 
+    "Przez chwilę nie wiesz, co powinieneś zrobić: biec do domu, czy iść, jakby nic się nie działo."
+    "Nie jesteś pewien, czy w tej chwili jesteś delulu, ale potem przypominasz sobie, gdzie mieszkasz."
+    "Istnieje magia, co oznacza, że prawie na pewno czujesz, że ktoś cię obserwuje."
+    "Odwracasz się w taki sposób, aby pokazać, jak bardzo się 'nie boisz',"
+    "ale w głębi duszy masz nadzieję, że twoje oczy spotkają ptaka lub przypadkowego gryzonia."
+    "Jednak nikogo nie ma. Nie można tego powiedzieć o twoim uczuciu, które wciąż tu jest,"
+    "teraz silniejsze dzięki temu, że nie wiesz, gdzie jest twój 'szpieg'."
+    "Odwracasz się i idziesz, jakby nic się nie stało."
+    "Uczucie w końcu ustaje, gdy wchodzisz do domu i zamykasz drzwi."
+    "Na wszelki wypadek zamykasz wszystkie rolety i kładziesz się spać."
+    jump h_wakingUpSecondNightAtHome
 
 
