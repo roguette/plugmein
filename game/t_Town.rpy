@@ -28,11 +28,11 @@ label t_goingHomeFirstNight:
     "Wygląda na to, że będziesz musiał wrócić później."
     "Oddalasz się od fontanny (z tym gęstym powietrzem w prezencie) i idziesz do domu"
     scene bg colacocastreetnighta with dissolve
-    play music "stillofnight.mp3" fadeout 10.0
+    play music "town_night.mp3" fadeout 10.0
     play sound "sfx_footsteps_b.mp3"
     you "{i}Gdzie ja w ogóle mieszkam{/i}"
     "Patrzysz na klucz w swojej dłoni"
-    "Do klucza jest przypięty mały breloczek, na którym jest po prostu napisane ULICA Y/N POMOCY NIE WIEM JAK TO NAZWAĆ" # TODO: nazwać tą ulicę ??
+    "Do klucza jest przypięty mały breloczek, na którym jest po prostu napisane ul. króla Aszurnasirpala II"
     "Dzięki plot armor nie masz problemu ze znalezieniem ulicy z breloczka"
     "Na całej ulicy są tylko trzy domy, a ten na samym końcu jest twój"
 

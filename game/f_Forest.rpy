@@ -107,7 +107,7 @@ label f_piotrTravelToCity:
     you "Nie ważne..."
     play sound "sfx_footsteps_alot.mp3"
     scene bg citysquarenight with dissolve
-    play music "stillofnight.mp3" fadein 0.5
+    play music "town_night.mp3" fadein 0.5
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     you "Dlaczego dosłownie nikogo nie ma na ulicach?"
     you "Jest jakiś sekret czy co?"
@@ -149,7 +149,7 @@ label f_piotrTravelToCity:
     show piotr normal at center with dissolve
     pause 0.5
     show piotr normal at leftish with move 
-    show filip normal at rightish with dissolve # TODO: filip appears at the top???
+    show filip normal at rightish with dissolve
     f "To jest furas pod tytułem???"
     p "[name]"
     you "Ale co ja..?"

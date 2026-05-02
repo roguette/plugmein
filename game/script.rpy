@@ -36,9 +36,11 @@ default friendship = {
 
 transform leftish:
     xalign 0.25
+    yalign 1.0
 
 transform rightish:
     xalign 0.75
+    yalign 1.0
 
 label start:
     play music "audio/street.mp3" 
@@ -88,8 +90,6 @@ label start:
     play music "forest.mp3" fadein 2.0
     "Strasznie cię boli głowa, ale nie możesz podnieść ręki, aby sprawdzić czy w ogóle ją jeszcze masz."
     "Jesteś tak słaby, że nie możesz nawet otworzyć oczu."
-    
-    # TODO: "(tu będzie dzwięk kroków i wgl muzyka ale nie chciało mi się jeszcze szukać)"
     
     m "Do jasnej muffinki!!!"
     m "Proszę pana, czy pan żyje?!"

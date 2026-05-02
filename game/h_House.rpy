@@ -81,5 +81,7 @@ label h_wakingUpAfterFirstNight:
 label h_wakingUpSecondNightAtHome:
     "D'ou Pás"
 
+# renpy-graphviz: BREAK
+
 
 

@@ -53,7 +53,7 @@ label ch_filipIntroduction_after:
     f "Dzisiaj mieliśmy problem z wodą w mieście i cały dzień byliśmy tym zajęci."
     f "W tym mieście zawsze coś się dzieje..."
     "Filip podchodzi do drzwi i grzecznie puka."
-    # TODO dźwięk pukania
+    play sound "door_knock.mp3"
     f "Dobry wieczór, mam nową osobę czy mogę ją tutaj wprowadzić?"
     m "Jasne!"
     play sound "audio/sfx_door_open.mp3"
@@ -227,7 +227,7 @@ label ch_gettingHouseKeysGood:
 
 label ch_gettingHouseKeysUniversal:
     scene bg cityhallinside
-    play music "stillofnight.mp3"
+    play music "town_night.mp3"
     show piotr normal 
     "Wychodzisz z gabinetu Kurowskiej."
     p "Wyszstko dobrze?! Coś ty długo u niej byłeś..."
