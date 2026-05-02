@@ -100,7 +100,7 @@ label ch_kurowskaMysteryMenu:
     k "Słucham?"
     you "Co jest w lesie poza miastem, i dlaczego to miasto jest w jakichś hebździnkach dolnych?"
     k "Ha ha!"
-    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby/"
+    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby"
     you "..."
     "Jesteś w totalnym szoku!"
     k "No właśnie dlatego Piotr robi te rytuały. Wokół tego miasta jest taka tarcza, która odpycha od siebie złą energię."
@@ -117,7 +117,7 @@ label ch_kurowskaMysteryMenu:
     k "Czy ty cokolwiek pamiętasz?"
     "Ale ty nie pamiętasz nic. Twoja pamięc jest pusta, jak nowy dysk Simsang SSD T1 2TB Titan Gray USB-C."
     "Próbujesz coś sobie przypomnieć, ale znowu zaczyna cię boleć głowa."
-    "Tym razem ból jest jegszcze gorszy niż wcześniej, więc chwytasz się jej i szybko zaczynasz myśleć o czymś innym."
+    "Tym razem ból jest jeszcze gorszy niż wcześniej, więc chwytasz się jej i szybko zaczynasz myśleć o czymś innym."
     you "{i}Ewidentnie coś albo ktoś nie chce, żebym coś pamiętał...{/i}"
     you "{i}Na razie lepiej będzie udawać, że nic nie rozumiem.{/i}"
     you "{i}Bo jeszcze wyczyszczą mi pamięc jeszcze raz!{/i}"
@@ -226,7 +226,7 @@ label ch_gettingHouseKeysGood:
     jump ch_gettingHouseKeysUniversal
 
 label ch_gettingHouseKeysUniversal:
-    scene bg cityhallinside
+    scene bg cityhallinside with dissolve
     play music "town_night.mp3"
     show piotr normal 
     "Wychodzisz z gabinetu Kurowskiej."
@@ -303,6 +303,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     f "Powinieneś zapytać Kurowską o pracę, a ona ci pomoże."
     you "Thank you! Thank you! Thank you!"
     you "Ratujesz mi życie w tym momencie!"
+    play sound "door_knock.mp3"
     "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym robić to identycznie jak Filip wczoraj."
     with vpunch
     k "KTO TAK PUKA NA BELZEBUBA???"
@@ -367,6 +368,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     "DRUGIEGO śniadania!"
     you "{i}Z tej racji pójdę sobie do BBB{/i}"
     "Przechodząc obok fontanny atakuje cię meżczyzna, chociaż jest niski, to wygląda na groźnego."
+    play music "outfoxingthefox.mp3"
     show kamil normal with vpunch
     m "Oddaj wszystkie pieniądze jakie masz!!!"
     $ playerRobbed = True
@@ -376,6 +378,9 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     you "PRZECIEŻ TO NIESPRAWIEDLIWE!"
     m "Życie jest niesprawiedliwe."
     m "Teraz odpowiedz na moje pytanie, które brzmi: 'Jaki jest mój ulubiony włoski brainrot?'"
+    "Życie przelatuje ci przed oczami, gdy zadaje to pytanie." 
+    "Nie wiesz, co to jest brainrot, ale odpowiedzi same ci się pojawiają w głowie, jakbyś był sleeper agentem."
+    "Nie ma czasu na myślenie, tylko na działanie."
     menu:
         "Triple T":
             if randomCorrectChoiceIndex == 1:
@@ -399,15 +404,25 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
 
 define robberyStopped = False
 label ch_KamilRobberyCorrectChoice:
+    play sound "gong.mp3"
+    stop music
+    "Twoja odpowiedź jest pewna siebie, a cień wątpliwości zostaje wyparty przez wiatr."
+    "Jego uszy drgają, gdy słyszy odpowiedź, a oczy się rozszerzają."
+    "Właściwie cały wyraz jego twarzy ulega zmianie."
+    "Nie potrafisz jednak rozszyfrować reakcji oraz czy dokonałeś właściwego wyboru."
+    "Stoi tam, patrząc na ciebie, próbując podsycić napięcie"
+    m "..."
+    m "Skąd wiedziałeś?"
     $ robberyStopped = True
     m "Grrr....."
     "Nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa."
-    m "Heh.. wiedziałem że ty to powiesz..."
+    m "Heh.. Poza tym, wiedziałem że ty to powiesz..."
     you "{i}???{/i}"
     you "{i}To dobrze czy źle{/i}"
     m "Masz te swoje finanse..."
     you "I co, łyso ci? Teraz idź sobie zanim cię gdzieś zgłoszę."
     m "Ale jak... no dobra... teraz wygrałeś...{w} ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
+    play music "town_day.mp3"
     hide kamil with dissolve
     you "{i}Nie będę nosił ze sobą pieniędzy!{/i}"
     jump t_gotMoney
@@ -415,6 +430,16 @@ label ch_KamilRobberyCorrectChoice:
 # renpy-graphviz: BREAK
 
 label ch_KamilRobberyWrongChoice:
+    play sound "gong.mp3"
+    stop music
+    "Twoja odpowiedź jest pewna siebie, a cień wątpliwości zostaje wyparty przez wiatr."
+    "Jego uszy drgają, gdy słyszy odpowiedź, a oczy się rozszerzają."
+    "Właściwie cały wyraz jego twarzy ulega zmianie."
+    "Nie potrafisz jednak rozszyfrować reakcji oraz czy dokonałeś właściwego wyboru."
+    "Stoi tam, patrząc na ciebie, próbując podsycić napięcie."
+    m "..."
+    m "Nie oddam ci twoich pieniędzy."
+    you 'Do jasnej muffinki!'
     m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ."
     menu:
         "Odpowiedz normalnie":
@@ -439,6 +464,7 @@ label ch_KamilRobberyWrongChoice:
             you "No właśnie!"
             hide kamil with dissolve
             "Złodziej zaczyna płakać i ucieka."
+    play music "town_day"
     you "{i}To nie mój problem.{/i}"
     you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"

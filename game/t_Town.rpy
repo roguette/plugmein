@@ -151,7 +151,7 @@ define receivedLoreAboutChurchOnTheFirstDay = False
 label t_firstNightTownWalk:
     $ receivedLoreAboutChurchOnTheFirstDay = True
     you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
-    "rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
+    "Rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
     "Barbara nie powiedziała ci, czym właściwie jest ten festiwal, ani co ludzie wtedy robią, ani nawet czego on dotyczy,"
     "więc ta tradycja pozostaje tajemnicą którą dopiero masz odkryć."
     "Rozglądasz się i zauważasz fontannę, poza którą na rynku nie ma nic."
@@ -359,6 +359,7 @@ label t_afterFirstNightTownWalkQuestionsMenu:
 
 label t_goingToTownToKurowskaDueToHungerDayTwo:
     scene bg citysquareday with dissolve
+    play music "town_day.mp3"
     play sound "sfx_footsteps_b.mp3"
     "Idąc do Kurowskiej podziwiasz budynki i przyrodę, ponieważ dzień wcześniej nie dało się tego zrobić."
     "Droga do urzędu miasta była bardzo przyjemna, jednak najgorszą częścią było oparcie się zapachom wydobywającym się z piekarni"  
@@ -405,9 +406,11 @@ label t_gotMoney:
 
 label t_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
+    play sound "sfx_footsteps_b.mp3"
     "Piekarnia jest rzeczywiście duża. Zapachy rozchodzące się po ulicy prowadzą cię do szału."
     "Zapach drożdży unosi się w powietrzu, a za szybą jest wiele wypieków."
     scene bg bakeryinside with dissolve
+    play sound "sfx_footsteps_a.mp3"
     "Pierwsze co zauważasz w środku to plakaty Taylor Spit."
     "Ale{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}. Jest kolejka."
     show wp normal at leftish with moveinleft
@@ -417,16 +420,19 @@ label t_gotMoneyBakeryEntrance:
     if metWiktoriaP:
         you "O hej."
         wp "No cześć! Co tam?"
-        you "Masakra... Musiałem pracować..."
-        wp "Do kogo poszedłeś?"
+        
         if workedAtFilip:
+            you "Masakra... Musiałem pracować..."
+            wp "Do kogo poszedłeś?"
             you "Do Filipa."
             you "Kazał mi przenosić dokumenty do Kurowskiej."
             you "A jak już skończyłem, Kurowska kazała mi z powrotem przenieść te listy."
             you "Bo to on ma je czytać."
             wp "Trzeba było poprosić pieniądze i wyjść po czymś takim."
             wp "I skibidi."
-        if workedAtVasili:
+        elif workedAtVasili:
+            you "Masakra... Musiałem pracować..."
+            wp "Do kogo poszedłeś?"
             you "Do Vasiliego."
             if endorsedCommunism:
                 you "Wiesz co, nie było źle."
@@ -440,6 +446,13 @@ label t_gotMoneyBakeryEntrance:
             wp "Śpiewał 'Międzynarodówkę'?"
             you "Tak..."
             wp "Współczuję..."
+        else:
+            you "Czaisz, że dostałem pieniądze od Kurowskiej"
+            wp "Tak o??"
+            you "No tak"
+            you "Tak o"
+            wp "Nie za dobrze ci?"
+            you "Nie"
     jump t_gotMoneyBakeryCustomer
 
 label t_gotMoneyBakeryCustomer:
@@ -472,7 +485,7 @@ label t_gotMoneyBakeryTea:
     m "Hejka."
     wp "No cześć, co tam?"
     m "A w sumie nic, w malignie byłem cały dzień."
-    wp "Tak, standardowo."
+    wp "Tak standardowo."
     "Oboje zaczęli się śmiać."
     wp "Poproszę 3 buły Rafała."
     m "Jasne."
@@ -487,11 +500,12 @@ label t_gotMoneyBakeryTea:
     "Nagle wchodzi kolejny nieznany ci mężczyzna."
     "Wygląda jak jakiś alfons."
     show niuniu normal at leftish
-    m "Jezu no znowu ty."
     show wp normal at rightish
-    show rafal normal at left
+    show rafal normal at right 
+    with move
+    m "Jezu no znowu ty."
     m "Tak, Rafale, to ja!"
-    r "No co ty chcesz ode mnie, znowu?"
+    r "No co ty chcesz ode mnie znowu?"
     m "Pokaż, co masz pod kapeluszem."
     wp "(szeptem) To jest Niu Niu."
     wp "Ogólnie to jest taki typ, co wymyśla teorie spiskowe w tym mieście."
@@ -499,6 +513,9 @@ label t_gotMoneyBakeryTea:
     wp "On był na koncercie Taylor Spit i podczas tego koncertu ona rzuciła w niego swój kapelusz."
     wp "Od tego dnia cały czas go nosi."
     wp "A Niuniu wymyślił, że on coś ukrywa pod tym kapeluszem."
+    show rafal normal at center 
+    show wp normal at rightish 
+    with move
     r "Nie, dobra, mam dość."
     "Rafał wyciąga miotłę i uderza Niunia."
     with vpunch
@@ -593,8 +610,8 @@ label t_gotMoneyBakeryTea:
     r "Wow, ale heca."
     "Wyciągasz bułę Rafała i zaczynasz ją jeść."
     "Ale nie tak normalnie, jakbyś jadł kajzerkę z Biedronki."
-    "Tylko jak homofob jedzący banan."
-    "Odrywasz pierwszy kawałek bułki ręką i Rafał patrzy się na ciebie, jakbyś popełnił zbrodnię."
+    "Tylko jak jakiś homofob jedzący banan."
+    "Odrywasz pierwszy kawałek buły ręką i Rafał patrzy się na ciebie, jakbyś popełnił zbrodnię."
     r "Co ty robisz..."
     you "W sensie?"
     you "Jem."
@@ -658,8 +675,8 @@ label t_gotMoneyBakeryTea:
     wp "Mówiłam ci."
     r "No dobra, powiedzmy, że masz rację."
     r "I co teraz?"
-    wp "Nie wiem, ale nie będę mogła zasnąć po takim czymś."
-    wp "Trzeba coś zrobić, po prostu."
+    wp "Nie wiem, ale..."
+    wp "Trzeba coś zrobić po prostu."
     you "No rel."
     you "Jest może jakieś muzeum w tym mieście?"
     wp "No jest. To jest ten kościół."
@@ -707,6 +724,7 @@ label t_gotMoneyBakeryTea:
     bjork "{i}Listen how they grow{/i}"
     you "Czekaj, tu ja zaraz wrócę."
     bjork "Nie ufaj w{w=0.5}.{w=0.5}.{w=0.5}.{nw}"
+    play sound "sfx_footsteps_a.mp3"
     scene bg bakeryfrontday with dissolve
     "Biegniesz z powrotem do piekarni, żeby powiedzieć Rafałowi i Wiktorii o tym, co właśnie zobaczyłeś."
     "I tak ci pewnie nie uwierzą, ale musisz spróbować."
@@ -714,16 +732,21 @@ label t_gotMoneyBakeryTea:
     "Bo jak nie, to serio masz schizofrenię."
     scene bg bakeryinside with vpunch
     you "Duch Bjork jest przy fontannie."
+    with vpunch
+    play sound "sfx_footsteps_alot.mp3"
     "Wiktoria nie traci ani sekundy i wybiega z piekarni."
+    with vpunch
+    play sound "sfx_footsteps_alot.mp3"
     "Rafał biegnie za Wiktorią, nawet nie zamykając piekarni."
+    play sound "sfx_footsteps_b.mp3"
     scene bg fountainday with dissolve
     show wp normal at leftish with moveinleft
     show rafal normal at rightish with moveinleft
     r "Nikogo tu nie ma."
-    you "Nie ma szans, że ona zrobiła ze mnie idiotę."
+    you "Ona zrobiła ze mnie idiotę."
     you "Zrobiła ze mnie idiotę jak w jakimś stereotypowym filmie o duchach."
-    wp "Nie wiem czy Rafał ci wierzy, ale ja tak."
-    wp "Na pewno coś widziałeś."
+    r "Nie wiem czy Wiktoria ci wierzy, ale ja tak."
+    r "Na pewno coś widziałeś."
     r "..."
     you "I co teraz?"
     wp "Nie wiem."
@@ -741,7 +764,8 @@ label t_gotMoneyBakeryTea:
     jump t_GoingToTheTailor
 
 label t_GoingToTheTailor:
-    "Po raz drugi wychodzisz z piekarni i tym razem idziesz prosto do krawcowej"
+    play music "town_day.mp3"
+    "Tym razem idziesz prosto do krawcowej"
     "Bez żadnych duchów lub jakiejś fontanny"
     "Na szczęście to nie było trudne, bo krawcowa jest tuż obok piekarni"
     "Jej sklep wygląda tak ostentacyjnie, że aż stoisz i się gapisz"
