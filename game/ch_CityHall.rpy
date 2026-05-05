@@ -100,7 +100,7 @@ label ch_kurowskaMysteryMenu:
     k "Słucham?"
     you "Co jest w lesie poza miastem, i dlaczego to miasto jest w jakichś hebździnkach dolnych?"
     k "Ha ha!"
-    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby"
+    k "Jeśli wyjdziesz do lasu zjedzą cię potwory albo umrzesz z powodu jakiejś niszowej choroby."
     you "..."
     "Jesteś w totalnym szoku!"
     k "No właśnie dlatego Piotr robi te rytuały. Wokół tego miasta jest taka tarcza, która odpycha od siebie złą energię."
