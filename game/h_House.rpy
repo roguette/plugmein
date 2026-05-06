@@ -117,23 +117,23 @@ label h_wakingUpSecondNightAtHome:
     menu:
         "Dobrym sposobem na zarobienie pieniędzy jest high level prostytucja.":
             "Rafał wyciąga cegłę i mówi ci, żebyś wyszedł."
-            jump afterRafalDream
+            jump h_afterRafalDream
         "Nie, może spać w kuchni. Nikomu nie powiem.":
             "Rafał wyciąga cegłę i mówi ci, żebyś wyszedł."
-            jump afterRafalDream
+            jump h_afterRafalDream
         "Przejdziesz przez to. Nie martw się":
             "Rafał przytula cię i dziękuje za pomoc."
-            jump afterRafalDream
+            jump h_afterRafalDream
 
-label afterRafalDream:
+label h_afterRafalDream:
     "Nagle czujesz ciepłe promienie słońca na sobie i powoli otwierasz oczy."
     "Przez krótką chwilę zauważasz, że zasłony są otwarte, mimo że zamknąłeś je wczoraj,"
     "ale nie poświęcasz temu tyle uwagi, ile powinieneś."
     "Pewnie po prostu zapomniałeś je zasłonić."
     "Zapomniałeś, tak jak wszyscy w tym mieście."
     "Idziesz do łazienki, robisz nudne, higieniczne, prywatne a nawet relaksujące rzeczy, potem do kuchni, bo jesteś już głodny."
-    jump moornin
-label moornin:
+    jump h_moornin
+label h_moornin:
     "Otwierasz lodówkę i widzisz, że połowy bułki brakuje," 
     "a twój własny krasnal patrzy na ciebie z najwyższej półki w tej lodówce i się uśmiecha."
     "Okazuje się, że jednak MUSISZ go karmić."
@@ -168,6 +168,7 @@ label moornin:
 
     "Delikatnie odpychasz go na bok i zamykasz drzwi, po czym biegniesz sprintem na rynek,"
     "zostawiając zdezorientowaną surykatkę o bardzo długim imieniu przed drzwiami."
+    jump t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThirdDayNevermind
 
 
 # renpy-graphviz: BREAK

@@ -11,15 +11,16 @@ define f = Character("Filip", color="#a222be")
 define k = Character("Barbara K.", color="#ff41c9")
 define t = Character("Tomcio", color="#ec1f1f")
 define v = Character("Vasili", color="#6a6277")
-define wp = Character("Wiktoria P.", color="#af582d")
+define wp = Character("Wiktoria P.", color="#9ace22")
 define bjork = Character("Björk", color="#77beee")
 define kura = Character("Kura", color="#e05a17")
 define lis = Character("LISa Simpson", color="#fffffa")
-define frau = Character("Frau Crusty", color="#a14f10")
+define frau = Character("Frau Crusty", color="#e266c7")
 define r = Character("Rafał", color="#105da1")
 define n = Character("Niu Niu", color="#8410a1")
 define ww = Character("Wiktoria W.", color="#f6517d")
 define a = Character("Antonius", color="#52a88e")
+define w = Character("Wiesław", color="#843a18")
 
 init python:
     import random

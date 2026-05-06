@@ -1000,4 +1000,127 @@ label t_goingHomeAfterTailorSecondDay:
     "Z tej racji zamykasz lodówkę i kładziesz się spać"
     jump h_wakingUpSecondNightAtHome
 
+label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThirdDayNevermind:
+    "Pędzisz na rynek, jedząc po drodze jedyne jedzenie, jakie masz."
+    "Kiedy tam docierasz, widzisz stojącą tam Wiktorię."
+    wp "O hejka"
+    you "Cześć"
+    wp "..."
+    you "Dobra chodźmy do tego kościoła"
+    wp "Dobra"
+    you "Widziałem tego księdza wczoraj"
+    you "Chyba księda"
+    you "Nie jestem pewny"
+    you "Wychodził wczoraj z kościoła"
+    wp "No to na pewno był ten ksiądz"
+    wp "Ma na imię Wiesław"
+    wp "Ale wszyscy mówimy na niego wsiok bo tak się zachowuje"
+    you "Jak?"
+    wp "On jest jak osa. Osy tylko latają i żądlą"
+    wp "Tak jak on tylko pracuje w tym kościele i je"
+    wp "Przy ołtarzu jest cały święty, a w piątek po południu pewnie pije w domu"
+    "Podchodzicie do bramy i Wiktoria wsadza rękę przez pręty bramy i otwiera ją od środka."
+    if metTomcio:
+        "Tak jak ty otworzyłeś bramę Tomcia"
+    you "Czekaj jak on ma na imię?"
+    wp "Wiesław."
+    you "{i}Jego imię też jest na W{/i}"
+    you "{i}Znam już 3 takie osoby{/i}"
+    you "{i}To komu ja w końcu mam nie ufać{/i}"
+    you "Po co otworzyłaś bramę? Można bylo przejść tam"
+    "Wskazujesz pazurem na furtkę"
+    wp "Aha ja tego nie widziałam"
+    you "Tak szczerze to ja też dopiero teraz to zauważyłem"
+    "Oboje śmiejecie się z tego"
+    wp "Dobra cicho!"
+    wp "Bo wyjdzie zaraz"
+    wp "Chodź"
+    "Wiktoria podchodzi do drzwi i delikatnie puka"
+    "Po chwili słychać czyjeś mamrotanie po drugiej stronie drzwi"
+    "Otwiera się takie mini okienko i po drugiej stronie tych drzwi widać tylko parę oczu"
+    "Takie mini okienko w sensie no"
+    "Według googla to się nazywa judasz ale nie wiem do końca czy to jest to"
+    "Więc niech tak zostanie"
+    "Te oczy patrzą najpierw na Wiktorię, potem na ciebie."
+    "Wiesław westchnął, jakby Wiktoria poprosiła go o 1000 foryntów"
+    w "Co?"
+    "Widać, że nawet Wiktoria, która od wielu lat tu mieszka, nie chce z nim rozmawiać"
+    wp "Mamy nowego mieszkańca Bratgren i chcę mu wszystko pokazać"
+    wp "Czy możemy wejść"
+    w "Oho mamy świeżą krew..."
+    w "W takim razie zapraszam..."
+    you "{i}Syczy niektóre słowa tak, że teraz bardziej wygląda na węża niż na to, czymkolwiek on jest.{/i}"
+    "Ostrożnie wchodzicie do środka..."
+    w "Czy mogę zaoferować Ci {i}specjalną{/i} wycieczkę po kościele?"
+    you "Yyy..."
+    "Patrzy się na ciebie z uśmiechem jak w reklamie nieruchomości, tylko teraz jest taki creepy"
+    you "Nie, dzięki."
+    you "Wiktoria miała mi pokazać wszystko"
+    w "Ale czy ty jej ufasz? Nikt nie opowie ci o historii tego miasta lepiej ode mnie"
+    you "Tak"
+    w "No dobra..."
+    w "W takim razie nie będę przeszkadzał..."
+    "Wiesław, na szczęście, zostawia was, a potem znika w przypadkowym pokoju niedaleko ołtarza"
+    # PROSZĘ TO TAK ZOSTAWIĆ!!
+    # ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+    you "(szeptem) Czemu on jest taki dziwny??" # ❌❌❌❌do not touch❌❌❌❌❌
+    you "(szeptem) Nie mówiłaś mi o tym." # ❌❌❌❌do not touch❌❌❌❌❌
+    wp "(też szeptem) No dobra już" # ❌❌❌❌do not touch❌❌❌❌❌
+    wp "(szeptem) Chodź ale bądź cicho." # ❌❌❌❌do not touch❌❌❌❌❌
+    you "(dalej szeptem) Gdzie mam iść?" # ❌❌❌❌do not touch❌❌❌❌❌
+    wp "(chyba nie muszę tu nic więcej pisać) Tu." # ❌❌❌❌do not touch❌❌❌❌❌
+    you "(Domyśl się) Ok..." # ❌❌❌❌do not touch❌❌❌❌❌
+    # ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆
+    # okej dobra
+    "Trudno opisać, jak wygląda wnętrze tego kościoła, więc możesz spojrzeć na tło." 
+    "Bogactwo, piękno, kunszt wykonania - jest tu wszystko, wszędzie, wszystko naraz."
+    "Zaczynasz od kolumn, z których wszystkie były pokryte obrazami, każdy osadzony w złotej ramie z misternymi wzorami."
+    "Ten kościół był prawdopodobnie tak stary jak ta cegła, tylko że zadbany." 
+    "Na każdym obrazie była przedstawiona Björk i jakiś etap jej życia."
+    "Patrzysz w górę na sufit i widzisz ogromny obraz Björk budującej miasto."
+    "Wiktoria zauważa, że stoisz w szoku."
+    "Ale kiedy ona też się zatrzymuje, słyszysz, jak cicho jest w tym budynku."
+    "Jest tak cicho, że aż robi się strasznie."
+    "Na końcu kościoła widzisz ogromną złotą skrzynię ze sztyletem w środku."
+    "Przechodzisz obok Wiktorii i podchodzisz do niej bliżej."
+    you "Co to jest?"
+    wp "To jest ten nóż, którym zabito Bjork."
+    if receivedLoreAboutChurchOnTheFirstDay == False:
+        wp "Ogólnie to Bjork sama budowała to miasto, ale pojawiła się Sabrina Carpenter, która pomagała jej"
+        wp "To była najlepsza przyjaciółka bjork i też jakby ironicznie cieśla."
+        wp "Zbudowały kilka domów i ludzie zaczęli się pojawiać tak jak ty."
+        wp "Do dziś nie wiadomo skąd ci ludzie się biorą."
+        you "Nawet bjork nie wiedziała?"
+        wp "No tak."
+        wp "Jej śmierć była BARDZO tragiczna."
+        wp "Była prezydentem tylko 23 lata kiedy sabrina ją zdradziła i dźgnęła nożem."   
+        wp "Zginęła w biurze kurowskiej. dokładnie tam gdzie ona teraz siedzi."
+        wp "To był tragiczny dzień dla całego miasta."
+        wp "No i to jest ten nóż"
+    you "..."
+    "Patrzysz na nóż i twoja inteligentna głowa od razu zauważa, że coś jest nie tak."
+    "Nie chodzi o rękojeść ani sposób wykonania."
+    "Nie było to oczywiste, ale to zauważyłeś."
+    wp "Co?"
+    you "Czy to na pewno jest ten nóż, którym zabito Bjork?"
+    you "Tak na 100%%?"
+    you "Jesteś tego pewna?"
+    w "Czy chcesz powiedzieć, że ta cała historia, włącznie z tym sztyletem jest kłamstwem?"
+    "Wiesław pojawia się za tobą, gdy patrzyłeś na nóż." 
+    "Żaden z was go nie zauważył, bo chodził bardzo cicho."
+    you "Ja... Yyy..."
+    w "To.. (kipiący ze złości) To, co właśnie powiedziałeś, można porównać do plucia wszystkim w twarz"
+    you "Ale ja nie.. Ale"
+    w "Proszę WYjść."
+    you "Ale"
+    w "NATYCHMIAST"
+
+
+
+
+
+
+
+
+
 
