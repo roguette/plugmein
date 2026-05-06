@@ -79,83 +79,73 @@ label h_wakingUpAfterFirstNight:
 # renpy-graphviz: BREAK
 
 label h_wakingUpSecondNightAtHome:
-    "Zamykasz oczy i zaczynasz myśleć o funkcji kwadratowej, i wszystkich jej miejscach zerowych, o ile są," 
-    "co sprawia, że natychmiast zasypiasz."
+    "Zamykając oczy, zaczynasz myśleć o funkcji kwadratowej i wszystkich jej miejscach zerowych ― o ile istnieją ― co sprawia, że natychmiast zasypiasz." 
     "Przed całkowitą utratą świadomości masz nadzieję, że Björk nie będzie nawiedzać twoich snów." 
     "I tej nocy nie będzie."
     "Ale Rafał tak."
     "Życie cofa się o kilka godzin i znów jesteś w piekarni, czekając na Rafała."
     "Wychodzi z kuchni z bułką w ręce i zaczyna mówić z ustami pełnymi glutenu."
 
-    r "Wiesz, jestem taki samotny."
-    r "Nikt do mnie nie przychodzi pogadać."
+    r "Wiesz...{w=.3} jestem taki samotny."
+    r "Nikt do mnie nie przychodzi pogadać ― każdy chce tylko moje buły, a ja nie mam z kim słowa wymienić..."
     you "A Wiktoria to co?"
-    r "No tak ale ona rzadko tu przychodzi." 
-    r "Przez większość czasu jestem tu sam."
-    r "Siedzę w tej piekarni."
-    r "Nie mam tu NIC do roboty oprócz tych głupich bułek."
+    r "No tak, ale ona rzadko tu przychodzi..." 
+    r "Przez większość czasu jestem tu sam, jak ten palec..."
+    r "Siedzę w tej piekarni i piekę, i piekę ― {b}ILEŻ TAK MOŻNA{/b}?!"
+    r "Nie mam tu {b}NIC{/b} do roboty oprócz tych głupich buł..."
     you "Chcesz o tym porozmawiać?"
     r "Tak."
-    you "No to powiedz, co się dzieje."
-    r "Kiedyś mieszkałem w domu po drugiej stronie Bratgren." 
-    r "Nie żyliśmy zbyt burżuazyjnie, dom był mały, ale jakoś było." 
+    you "No to powiedz co się dzieje."
+    r "Kiedyś mieszkałem razem z moją mamą w domu po drugiej stronie Bratgren." 
+    r "Nie żyliśmy zbyt burżuazyjnie ― dom był mały, ale jakoś było." 
     r "Moja mama straciła pracę i ten dom był wszystkim, co nam zostało."
     r "W sensie oprócz mojej pracy."
-    r "No i tej piekarni ale no"
-    r "Mojej mamnie nie przelewa się."
-    r "To znaczy, przelewa się, ale przez dach"
-    r "Meteoryt uderzył w nasz dom."
-    r "...robiąc ogromną dziurę w dachu." 
-    r "Chyba nie muszę tłumaczyć, dlaczego to jest dużym problemem."
-    r "Nie stać mnie na naprawę dachu."
-    r "Nie będę nawet mówił o nowym domu"
-    r "I popatrz na tę piekarnię."
+    r "No i tej piekarni ale no..."
+    r "Mojej mamnie nie przelewa się.{w=.6} To znaczy, przelewa się, ale przez dach."
+    r "Meteoryt uderzył w nasz dom, robiąc przy tym ogromną dziurę w dachu..."
+    r "Chyba nie muszę tłumaczyć, dlaczego to jest dużym problemem?"
+    r "Nie stać mnie na naprawę dachu. Nie będę nawet mówił o nowym domu."
+    r "I popatrz na tę piekarnię..."
     r "Nie zmieścimy tu się we dwójkę."
-    r "Gdzie ma spać? NA MOICH BUŁACH?" 
-    r "To nie jest zgodne z BHP."
+    r "Gdzie ma spać? NA MOICH BUŁACH?!{w=.6} To nie jest zgodne z BHP." 
 
     menu:
         "Dobrym sposobem na zarobienie pieniędzy jest high level prostytucja.":
             "Rafał wyciąga cegłę i mówi ci, żebyś wyszedł."
-            jump afterRafalDream
+            jump h_afterRafalDream
         "Nie, może spać w kuchni. Nikomu nie powiem.":
             "Rafał wyciąga cegłę i mówi ci, żebyś wyszedł."
-            jump afterRafalDream
+            jump h_afterRafalDream
         "Przejdziesz przez to. Nie martw się":
             "Rafał przytula cię i dziękuje za pomoc."
-            jump afterRafalDream
+            jump h_afterRafalDream
 
-label afterRafalDream:
+label h_afterRafalDream:
     "Nagle czujesz ciepłe promienie słońca na sobie i powoli otwierasz oczy."
-    "Przez krótką chwilę zauważasz, że zasłony są otwarte, mimo że zamknąłeś je wczoraj,"
-    "ale nie poświęcasz temu tyle uwagi, ile powinieneś."
+    "Przez krótką chwilę zauważasz, że zasłony są otwarte, mimo że zamknąłeś je wczoraj{w}, ale nie poświęcasz temu tyle uwagi, ile powinieneś."
     "Pewnie po prostu zapomniałeś je zasłonić."
     "Zapomniałeś, tak jak wszyscy w tym mieście."
     "Idziesz do łazienki, robisz nudne, higieniczne, prywatne a nawet relaksujące rzeczy, potem do kuchni, bo jesteś już głodny."
-    jump moornin
-label moornin:
-    "Otwierasz lodówkę i widzisz, że połowy bułki brakuje," 
-    "a twój własny krasnal patrzy na ciebie z najwyższej półki w tej lodówce i się uśmiecha."
+    jump h_moornin
+
+label h_moornin:
+    "Otwierasz lodówkę i widzisz, że połowy bułki brakuje{w=.3}, a twój własny krasnal patrzy na ciebie z najwyższej półki i się uśmiecha." 
     "Okazuje się, że jednak MUSISZ go karmić."
-    "Bierzesz bułę, resztę zostawiasz dla krasnala i wychodzisz."
+    "Bierzesz bułę, okruszki zostawiasz dla krasnala i wychodzisz."
     "W końcu musisz być na rynku za pół godziny." 
     "W chwili, gdy masz już otworzyć drzwi, słyszysz pukanie i się wahasz." 
-    "Twoja ręka zawisa nad klamką, ale słyszysz kolejne pukanie. Z tego ambarasu otwierasz drzwi."
-    "Uchylasz je tak tylko troszeczkę, żeby zobaczyć, kto stoi na zewnątrz,"
-    "i widzisz surykatkę przy drzwiach."
-    "Uśmiecha się do ciebie takim uśmiechem, jaki mają pracownicy w customer service."
-    "Nie tak jak w reklamie nieruchomości."
-    "Ten uśmiech to taki uśmiech, jaki ludzie muszą mieć, nawet jeśli nie są szczęśliwi"
+    "W zawachaniu twoja ręka zawisa nad klamką, ale słyszysz kolejne pukanie. Z tego ambarasu otwierasz drzwi."
+    "Uchylasz je tylko troszeczkę, żeby zobaczyć kto stoi na zewnątrz{w=.3} i widzisz surykatkę przed drzwiami."
+    "Uśmiecha się do ciebie takim uśmiechem, jaki mają pracownicy w customer service ― nie tak jak w reklamach nieruchomości ― ten uśmiech to taki uśmiech, jaki ludzie muszą mieć, nawet jeśli nie są szczęśliwi."
 
-    m "Dzień dobry."
+    m "Dzień dobry"
     you "Mogę w czymś pomóc?"
     m "Tak, możesz. Przyszedłem pobrać podatki."
     you "Aha dobra, tak, oczywiście, sekundę, chwileczkę. Nigdzie nie odchodź."
-    you "Stój tu grzecznie"
+    you "Stój tu grzecznie!"
 
-    "Otwierasz drzwi, ale nie wpuszczasz przypadkowego pracownika rządowego do domu."
-    "Idziesz do sypialni, gdzie zostawiłeś wszystkie swoje rzeczy,"
-    "bierzesz wszystkie pieniądze i wracasz do drzwi wejściowych."
+    "Otwierasz drzwi, ale nie wpuszczasz przypadkowego pracownika rządu do domu."
+    "Idziesz do sypialni, gdzie zostawiłeś wszystkie swoje rzeczy, bierzesz wszystkie pieniądze i wracasz do drzwi wejściowych."
 
     you "Ile jestem winien?"
     m "100 foryntów"
@@ -164,11 +154,9 @@ label moornin:
     you "Jak masz na imię?"
     a "Antonius Cornelius-Benedictus"
     you "No to masz... yy.. anadius coś tam"
-    you "Dobra, teraz idź idź idź ja muszę gdzieś być za 10 minut"
+    you "Dobra, teraz idź, idź, idź, ja muszę gdzieś być za 10 minut"
 
-    "Delikatnie odpychasz go na bok i zamykasz drzwi, po czym biegniesz sprintem na rynek,"
-    "zostawiając zdezorientowaną surykatkę o bardzo długim imieniu przed drzwiami."
-
+    "Delikatnie odpychasz go na bok i zamykasz drzwi, po czym biegniesz sprintem na rynek{w=.3}, zostawiając zdezorientowaną surykatkę o bardzo długim i dziwnym imieniu przed drzwiami."
 
 # renpy-graphviz: BREAK
 
