@@ -1258,4 +1258,9 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
 label t_GoingToTheLibrary:
     "Na pierwszy rzut oka budynek przed tobą nie wygląda na bibliotekę." 
     "Jedyne, co go zdradza, to napis \"biblioteka publiczna\" na drzwiach."
+    you "Nigdy tu nie byłem"
+    r "No co ty nie powiesz"
+    you "DOBRA CICHO BĄDŹ"
+    you "Lets go girls"
+    
     
