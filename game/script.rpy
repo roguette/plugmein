@@ -21,6 +21,7 @@ define n = Character("Niu Niu", color="#8410a1")
 define ww = Character("Wiktoria W.", color="#f6517d")
 define a = Character("Antonius", color="#52a88e")
 define w = Character("Wiesław", color="#843a18")
+define b = Character("Bartosz", color="#3ab954")
 
 init python:
     import random

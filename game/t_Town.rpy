@@ -1262,5 +1262,41 @@ label t_GoingToTheLibrary:
     r "No co ty nie powiesz"
     you "DOBRA CICHO BĄDŹ"
     you "Lets go girls"
-    
-    
+    "Okazuje się, że ta biblioteka jest większa, niż się wydawało z zewnątrz."
+    you "Dzień dobry!"
+    m "Dzień dobry."
+    you "Nazywam się [name] i mieszkam tu od 2 dni. Szukam informacji o tym mieście"
+    b "Ja mam na imię Bartosz, a książki o Bratgrenie, których potrzebujesz, znajdują się na półce nr 2"
+    "Patrzysz się dookoła, i widzisz, że obok ciebie jest półka nr. 2367"
+    "Odwracasz się do Rafała i Wiktorii, i mówisz do nich, zdruzgotany"
+    you "Jak duża jest ta biblioteka"
+    you "Gdzie są te książki"
+    wp "Ale skąd ja mam wiedzieć, ja tu nigdy nie byłam"
+    r "To się zapytaj"
+    "Odwracasz się do Bartosza i uśmiechasz się jak 9/10 dentystów w reklamie pasty do zębów"
+    "Nie musisz nawet zadawać pytania, ponieważ Bartosz wszystko słyszał"
+    b "Tu idziesz prosto, do końca korytarza."
+    b "Potem, idź w lewo i dalej prosto"
+    b "Po prawej stronie będziesz miał półki. Znajdź półkę 14856"
+    b "Kiedy ją znajdziesz idź tam, dalej prosto, i po lewej będziesz miał schody"
+    b "Idź 40 schodek do góry (nie więcej)"
+    b "Potem idź 50 kroków na wschód i idź 3 schodki w dół"
+    b "Przejdź obok naruszenia zasad BHP, a półka, której potrzebujesz, będzie po prawej stronie"
+    b "Tu masz mapę"
+    "Bartosz daje ci zwiniętą karteczkę wielkości prostopadłościanu o wymiarach 10cm, 6cm, 0.4cm, ale kiedy ją rozwijasz staje się tak wielka jak ty"
+    you "Dziękuję..."
+    "O dziwo, dojście do tej półki zajęło wam jakieś 3 minuty"
+    "Ale wywróciłeś się na schodach, więc teraz boli cię stopa"
+    you "Ale dużo tu tych książek o Bratgrenie"
+    you "Patrzcie. Tu nawet jest coś dla dzieci"
+    "Wyciągasz \"Opowieści z Bratgren\""
+    menu:
+        "CZYTAMY":
+            ""
+
+        "Nie":
+            "Ale jesteś nudny"
+
+
+
+
