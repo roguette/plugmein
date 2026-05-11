@@ -806,6 +806,7 @@ label t_gotMoneyBakeryTea:
 
 label t_GoingToTheTailor:
     play music "town_day.mp3"
+    scene bg lanastreetday with dissolve
     "Tym razem idziesz prosto do krawcowej."
     "Bez żadnych duchów lub jakiejś fontanny."
     "Na szczęście to nie było trudne, bo krawcowa jest tuż obok piekarni."
@@ -814,11 +815,15 @@ label t_GoingToTheTailor:
     "Kiedy w końcu się ogarniasz, wraca ci logiczne myślenie i zaczynasz myśleć o cenach."
     "Raczej nie masz tyle kasy, żeby coś kupić w takim miejscu."
     "Jednakże, wchodzisz do środka i się rozglądasz."
+    scene bg tailorshop with dissolve
+    play sound "sfx_door_open.mp3"
+    play music "tailor.mp3"
     "Wszystko jest zastawione pięknymi sukienkami, koszulami, spodniami i innymi ubraniami, których nazw nie znasz."
     "Odwracasz głowę i widzisz zwykłe białe koszule i nudne spodnie, które bardziej pasują do twojego budżetu."
     "Wtedy słyszysz głos kobiety z kąta. To była krawcowa."
     "Na początku jej nie zauważyłeś przez te wszystkie kolorowe ubrania wokół niej."
     you "{i}Idealny kamuflaż{/i}"
+    show ww normal with dissolve
     m "Dzień dobry!"
     you "Dzień dobry!"
     you "Nazywam się [name] i jestem nowy w tym mieście."
@@ -843,6 +848,7 @@ label t_GoingToTheTailor:
     ww "No to dobra, szukasz czegoś?"
     you "Na razie tylko się rozglądam, bo nie wiem czy mam pieniądze na takie ubrania"
     you "Są piękne i w tym jest problem"
+    show ww normal at offscreenleft with move
     ww "Dobra, to podejdź do mnie jak coś znajdziesz"
     "Krawcowa wraca do swojego stołu i zaczyna rysować roznegliżowaną kobietę w swoim zeszycie."
     "W tym samym czasie masz dylemat, ponieważ nie wiesz, co masz kupić."
@@ -863,6 +869,7 @@ label t_GoingToTheTailor:
     "Jej cena jest tak wysoka, że zostały użyte potęgi, aby ją zapisać."
     "Wychodzisz z tego pokoju, ponieważ gdybyś coś zepsuł to byś musiał pracować całe życie, żeby spłacić 1%% długu."
     "W tym momencie chodzisz po sklepie już od godziny i znów jesteś w punkcie wyjścia; nie wiesz, co kupić."
+    show ww normal at center with dissolve
     "Podchodzisz do krawcowej, aby poprosić ją o pomoc i widzisz piękną kobietę w jej zeszycie."
     you "Czy mogłabyś mi pomóc?"
     you "Nie wiem co kupić..."
@@ -880,10 +887,12 @@ label t_GoingToTheTailor:
     you "Normalnie w sensie{w=.3} jak każdy inny mieszkaniec tego miasta"
     "Krawcowa kładzie swoją rękę na żuchwę, robiąc taki gest aby pokazać ci, że intensywnie myśli o tym, w co może cię ubrać."
     ww "Dobra wiem{w=.3}, stój tu grzecznie ja zaraz wrócę"
+    hide ww normal with dissolve
     "Wiktoria zostawia ciebie przed lustrem i gdzieś idzie."
     "Znowu się patrzysz na te proste ubrania dla biednych ludzi."
     "I już czujesz ten wstyd, bo w porównaniu do tych drogich to te wygladają jak dla kloszardów."
     "Po chwili wraca Wiktoria z ubraniami i jakimś pudełkiem."
+    show ww normal at center with dissolve
     "Krawcowa postawiła pudełko na podłodze, aby pokazać ci twoje nowe ubrania."
     "Pokazuje ci niebieskie jeansy i białą koszulkę."
     you "{i}Niebieskie dżinsy, biała koszula...{/i}"
@@ -911,8 +920,9 @@ label t_GoingToTheTailor:
     ww "Mówiłeś, że jesteś tutaj nowy co nie?"
     you "No, tak"
     ww "Okej to polecam zostawić 100 foryntów"
-    ww "Ponieważ jutro pan Antoni będzie zbierał podatki"
+    ww "Ponieważ jutro pan Antonius będzie zbierał podatki"
     you "Skąd wiesz?"
+    ww "W pół do komina"
     ww "On zbiera podatki co tydzień w sobotę"
     you "Aha, ma sens"
     you "{i}Czyli dzisiaj jest piątek...{/i}"
@@ -935,12 +945,12 @@ label t_GoingToTheTailor:
     ww "180 foryntów"
     you "Proszę"
     "Płacisz za wszystko, uśmiechając się do sprzedawczyni."
-    "Widzisz słoik z napisem \"nawodnik (nie napiwek bo ne piję piwa tylko wodę)\"."
+    "Widzisz słoik z napisem \"nawodnik (nie napiwek bo nie piję piwa tylko wodę)\"."
     "Czy chesz wrzucić parę monet do tej puszki?"
     menu:
         "Tak":
             "Wrzucasz resztę z swoich zakupów do tego słoika"
-            ww "Thank you! Thank you! Thank you!"
+            ww "Thank you!{w=0.5} Thank you!{w=0.5} Thank you!"
             "Wiktoria uśmiecha się jak w reklamie nieruchomości."
         "Nie":
             "Nie wrzucasz nic, ponieważ słuchasz chopbra, melanie oraz shitseye"
@@ -949,7 +959,7 @@ label t_GoingToTheTailor:
     ww "Słucham?"
     you "Widziałem sukienkę która kosztuje 3.5341*10^(67) foryntów. Czy ktoś w tym mieście naprawdę ma tyle pieniędzy?"
     ww "Nie"
-    ww "Jeśli ktoś chce takie coś kupić to robię im zniżkę o wielkości 100%-(7.931345876241576*10^-131)%"
+    ww "Jeśli ktoś chce takie coś kupić to robię im zniżkę o wielkości 100%%-(7.931345876241576*10^-131)%%"
     ww "Żeby się zaprzyjaźnić z tą bogatą osobą"
     you "Ma sens"
     "Patrzysz się na tą sukienkę jeszcze raz, i teraz wiesz, że nie jest tyle warta, mimo tego, że jest piękna."
@@ -962,6 +972,9 @@ label t_GoingToTheTailor:
 
 
 label t_goingHomeAfterTailorSecondDay:
+    scene bg lanastreetnight with dissolve
+    play sound "sfx_door_open.mp3"
+    play music "town_night.mp3" fadein 1.0
     "Wychodząc ze sklepu, orientujesz się, że zapadła już noc."
     "Zastanawiasz się jakim cudem spędziłeś tyle czasu u krawcowej."
     "Ale to było tego warte, ponieważ masz już wszystko aby zacząć tu mieszkać."
@@ -976,11 +989,13 @@ label t_goingHomeAfterTailorSecondDay:
     "Patrzysz na swoje nowe ubrania, żeby nie zwracać na siebie uwagi."
     "Ale tak naprawdę, patrzysz się na tego księdza widzeniem peryferyjnym."
     "Kiedy ten mężczyzna jest wystarczająco daleko od kościoła, podchodzisz do niego bliżej."
+    scene bg churchnighta with dissolve
     "Jutro będziesz tu z Wiktorią."
     "Najpierw patrzysz na niedawno zamknięte drzwi, potem na ogromny witraż"
     "Następnie delikatnie dotykasz bramy i czujesz, jak bardzo jest zakurzona, mimo że jest używana codziennie."
     "Teraz ten kościół jest zamknięty, więc nie możesz wejść do środka."
     "Z powodu braku rzeczy, które możesz teraz zrobić, idziesz do domu."
+    scene bg colacocastreetnighta with dissolve
     "Gdzieś w połowie drogi masz takie przeczucie, że ktoś cię obserwuje."
     "Powietrze wokół ciebie robi się lekko chłodniejsze. Na tyle, że to zauważasz..." 
     "Przez chwilę nie wiesz, co powinieneś zrobić: biec do domu, czy być nonchalant ― iść, jakby nic się nie działo."
