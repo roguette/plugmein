@@ -52,7 +52,7 @@ label start:
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
-    jump t_GoingToTheTailor
+    jump h_wakingUpSecondNightAtHome
     scene bg busstopa with dissolve
 
     you "{i}No szybciej już{/i}"

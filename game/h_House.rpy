@@ -79,6 +79,7 @@ label h_wakingUpAfterFirstNight:
 # renpy-graphviz: BREAK
 
 label h_wakingUpSecondNightAtHome:
+    play music "sleep.mp3" fadein 3
     "Zamykając oczy, zaczynasz myśleć o funkcji kwadratowej i wszystkich jej miejscach zerowych ― o ile istnieją ― co sprawia, że natychmiast zasypiasz." 
     "Przed całkowitą utratą świadomości masz nadzieję, że Björk nie będzie nawiedzać twoich snów." 
     "I tej nocy nie będzie."
@@ -121,7 +122,9 @@ label h_wakingUpSecondNightAtHome:
             jump h_afterRafalDream
 
 label h_afterRafalDream:
+    stop music fadeout 0.2
     "Nagle czujesz ciepłe promienie słońca na sobie i powoli otwierasz oczy."
+    scene bg bedroom with dissolve
     "Przez krótką chwilę zauważasz, że zasłony są otwarte, mimo że zamknąłeś je wczoraj{w}, ale nie poświęcasz temu tyle uwagi, ile powinieneś."
     "Pewnie po prostu zapomniałeś je zasłonić."
     "Zapomniałeś, tak jak wszyscy w tym mieście."
@@ -129,13 +132,20 @@ label h_afterRafalDream:
     jump h_moornin
 
 label h_moornin:
+    scene bg kitchen with dissolve
+    play sound "sfx_footsteps_b.mp3"
     "Otwierasz lodówkę i widzisz, że połowy bułki brakuje{w=.3}, a twój własny krasnal patrzy na ciebie z najwyższej półki i się uśmiecha." 
     "Okazuje się, że jednak MUSISZ go karmić."
     "Bierzesz bułę, okruszki zostawiasz dla krasnala i wychodzisz."
     "W końcu musisz być na rynku za pół godziny." 
+    play sound "door_knock.mp3"
     "W chwili, gdy masz już otworzyć drzwi, słyszysz pukanie i się wahasz." 
-    "W zawachaniu twoja ręka zawisa nad klamką, ale słyszysz kolejne pukanie. Z tego ambarasu otwierasz drzwi."
+    play sound "door_knock_aggressive.mp3"
+    "W zawachaniu twoja ręka zawisa nad klamką, ale słyszysz kolejne pukanie."
+    
+    "Z tego ambarasu otwierasz drzwi."
     "Uchylasz je tylko troszeczkę, żeby zobaczyć kto stoi na zewnątrz{w=.3} i widzisz surykatkę przed drzwiami."
+    show antonius normal with dissolve
     "Uśmiecha się do ciebie takim uśmiechem, jaki mają pracownicy w customer service ― nie tak jak w reklamach nieruchomości ― ten uśmiech to taki uśmiech, jaki ludzie muszą mieć, nawet jeśli nie są szczęśliwi."
 
     m "Dzień dobry"
@@ -143,10 +153,11 @@ label h_moornin:
     m "Tak, możesz. Przyszedłem pobrać podatki."
     you "Aha dobra, tak, oczywiście, sekundę, chwileczkę. Nigdzie nie odchodź."
     you "Stój tu grzecznie!"
-
+    scene bg bedroom with dissolve
     "Otwierasz drzwi, ale nie wpuszczasz przypadkowego pracownika rządu do domu."
     "Idziesz do sypialni, gdzie zostawiłeś wszystkie swoje rzeczy, bierzesz wszystkie pieniądze i wracasz do drzwi wejściowych."
-
+    scene bg kitchen with dissolve
+    show antonius normal with dissolve
     you "Ile jestem winien?"
     m "100 foryntów"
     you "Jaka ładna liczba!"
@@ -156,6 +167,9 @@ label h_moornin:
     you "No to masz... yy.. anadius coś tam"
     you "Dobra, teraz idź, idź, idź, ja muszę gdzieś być za 10 minut"
 
+    play sound "sfx_footsteps_alot.mp3"
+    play music "town_day.mp3"
+    scene bg lanastreetday with dissolve
     "Delikatnie odpychasz go na bok i zamykasz drzwi, po czym biegniesz sprintem na rynek{w=.3}, zostawiając zdezorientowaną surykatkę o bardzo długim i dziwnym imieniu przed drzwiami."
     jump t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThirdDayNevermind
 # renpy-graphviz: BREAK

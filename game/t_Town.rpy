@@ -136,7 +136,7 @@ label t_goingHomeFirstNight:
 
 label t_goingIntoTownFirstNight:
     "Odwracasz się w stronę urzędu miasta i widzisz ogromne jezioro w tle."
-    "Ta woda na choryzoncie jest całkiem przejrzysta, prawie jak w basenie."
+    "Ta woda na horyzoncie jest całkiem przejrzysta, prawie jak w basenie."
     "Potem patrzysz w bok i widzisz tę nieodkrytą część małego miasteczka Bratgren."
     "Gdzie ty chcesz iść?"
     menu:
@@ -150,6 +150,7 @@ define metWiktoriaP = False
 define receivedLoreAboutChurchOnTheFirstDay = False
 label t_firstNightTownWalk:
     $ receivedLoreAboutChurchOnTheFirstDay = True
+    scene bg lanastreetnight with dissolve
     you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
     "Rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
     "Barbara nie powiedziała ci, czym właściwie jest ten festiwal, ani co ludzie wtedy robią, ani nawet czego on dotyczy, więc ta tradycja pozostaje tajemnicą, którą dopiero masz odkryć."
@@ -1035,6 +1036,7 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "On jest jak osa. Osy tylko latają i żądlą"
     wp "Tak jak on tylko pracuje w tym kościele i je"
     wp "Przy ołtarzu jest cały święty, a w piątek po południu pewnie pije w domu"
+    scene bg churchdaya with dissolve
     "Podchodzicie do bramy i Wiktoria wsadza rękę przez pręty bramy i otwiera ją od środka."
     if metTomcio:
         "Tak jak ty otworzyłeś bramę Tomcia"
@@ -1069,7 +1071,14 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     you "{i}Czy on jest głupi? Przecież od razu powiedziała..{/i}"
     w "W takim razie zapraszam..."
     you "{i}Syczy niektóre słowa tak, że teraz bardziej wygląda na węża niż na to, czymkolwiek on jest.{/i}"
+    stop music
+    scene bg churchinside with dissolve
+    play sound "sfx_door_open.mp3"
+    play music "church_normal.mp3" fadein 1.0
+    show wieslaw normal at offscreenleft
     "Ostrożnie wchodzicie do środka..."
+    show wieslaw normal at leftish with move
+    show wp normal at rightish with dissolve
     w "Czy mogę zaoferować Ci {i}specjalną{/i} wycieczkę po kościele?"
     you "Yyy..."
     "Patrzy się na ciebie z uśmiechem jak w reklamie nieruchomości, tylko ten uśmiech jest taki creepy"
@@ -1079,6 +1088,7 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     you "Tak"
     w "No dobra..."
     w "W takim razie nie będę przeszkadzał..."
+    show wieslaw normal at offscreenleft with move
     "Wiesław, na szczęście, zostawia was, a potem znika w przypadkowym pokoju niedaleko ołtarza"
     # PROSZĘ TO TAK ZOSTAWIĆ!!
     # ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
@@ -1104,6 +1114,9 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     "Jest tak cicho, że aż robi się strasznie."
     "Na końcu kościoła widzisz ogromną złotą skrzynię ze sztyletem w środku."
     "Przechodzisz obok Wiktorii i podchodzisz do niej bliżej."
+    scene bg churchknife with dissolve
+    show wp normal at right with dissolve
+    play sound "sfx_footsteps_a.mp3"
     you "Co to jest?"
     wp "To jest ten nóż, którym zabito Bjork."
     if receivedLoreAboutChurchOnTheFirstDay == False:
@@ -1125,7 +1138,10 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "Co?"
     you "Czy to na pewno jest ten nóż, którym zabito Bjork?"
     you "Tak na 100%%?"
+    show wieslaw normal at offscreenleft
     you "Jesteś tego pewna?"
+    show wieslaw normal at leftish with move
+    with vpunch
     w "Czy chcesz powiedzieć, że ta cała historia, włącznie z tym sztyletem jest kłamstwem?"
     "Wiesław pojawia się za tobą, gdy patrzyłeś na nóż." 
     "Żaden z was go nie zauważył, bo chodził bardzo cicho."
@@ -1138,6 +1154,9 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     "Czujesz, że jeśli teraz nie wyjdziesz, zostaniesz pobity."
     "Widzisz, jak wściekłość narasta w oczach Wiesława z każdą sekundą." 
     "Więc wychodzisz."
+    scene bg churchdaya with dissolve
+    play sound "sfx_footsteps_a.mp3"
+    stop music fadeout 0.5
     wp "Co to ma być??"
     you "No rel on jest taki niemiły dla mnie."
     wp "Nie. Mówię o tobie." 
@@ -1152,7 +1171,10 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "Ale co ty robisz..."
     wp "Bez jaj.."
     "Bo ona też jest ciekawa tego miasta." 
-    "Ostrożnie poruszasz głową."
+    "Ostrożnie wchodzisz do środka."
+    scene bg churchinside with dissolve
+    play sound "sfx_door_open.mp3"
+    play music "church_normal.mp3" fadein 1.0
     "Kiedy Wiesław znów znika w swoim pokoiku, otwierasz drzwi i gestem ręki wskazujesz Wiktorii, żeby poszła z tobą."
     "Podczas gdy ona stara się jak najciszej je zamknąć, ty już jesteś przed tajemniczym pokojem, do którego Wiesław cały czas wchodzi."
     "Widzisz Wiktorię na drugim końcu korytarza, przykładającą pazur do skroni, pokazując, że oszalałeś i ma ciebie dość"
@@ -1167,6 +1189,8 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "Konieczne do czego?"
     you "Nie mogę cię tu zostawić bez pokazania ci tego, co widziałem."
     you "Chodź, spójrz na nóż."
+    scene bg churchknife with dissolve
+    show wp normal at right with dissolve
     wp "No i co z nim?"
     you "Spójrz na krew." 
     you "Widzisz, jaka jest jasno czerwona?"
@@ -1182,11 +1206,22 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "Tę kopię łatwo ukraść. Jestem pewna, że prawdziwy nóż jest chroniony a nie tak jak tu"
     wp "Każdy tu może przyjść i wyjąć ten nóż"
     you "To akurat prawda, ale..."
-    you "Możesz nie rozumieć tego jeszcze, ale chodzi mi o coś innego. Ja-"
+    you "{cps=10}Możesz nie rozumieć tego jeszcze, ale chodzi mi o coś innego. Ja-{/cps}{nw}"
+    stop music
+    play sound "door_knock_aggressive.mp3"
     "Słyszysz przekręcenie klamki i widzisz, że Wiesław próbuje wyjść."
+    play music "outfoxingthefox.mp3"
     wp "On może wyjść przez okno. Musimy uciekać."
+    show wp normal at offscreenleft with move
     "Wybiegasz z kościoła jak najszybciej, całkowicie ignorując konieczność zachowania ciszy i biegniesz do piekarni." 
+    scene bg churchdaya with dissolve
+    scene bg lanastreetday with dissolve
+    scene bg bakeryfrontday with dissolve
+    scene bg bakeryinside with dissolve
+    show wp normal at leftish
+    show rafal normal at rightish
     "Biegniesz do piekarni i na szczęście nikogo tam nie ma."
+    play music "bakery.mp3"
     wp "Rafał, zamknij drzwi. Natychmiast."
     r "Dlaczego?"
     wp "Zamknij je. Natychmiast."
@@ -1254,6 +1289,22 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     r "Mam tak wielką dupę, że mogę na nią skoczyć i zrobić trzęsienie ziemi."
     r "Tym otworzymy drzwi"
     "Jest ci ciężko w to uwierzyć, ale Rafał jest tak pewny swojego pomysłu, że to powinno się udać"
+    r "Pewnie mi nie wierzysz."
+    r "Watch and learn"
+    window hide 
+    show rafal normal:
+        easeout 1.0 yoffset -500
+        easeout_cubic 5.0 rotate 7200
+        easein 0.15 yoffset 20
+    pause 6.15
+    with vpunch 
+    with vpunch 
+    with vpunch 
+    with vpunch
+    with vpunch 
+    with vpunch 
+
+    window show
     you "Ok"
     wp "Ok"
     wp "To w takim razie co robimy"
