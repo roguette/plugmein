@@ -6,35 +6,47 @@ define m = Character("???", color="#808080") #mystery speaker
 
 image side piotr = "piotr side.png"
 
-define p = Character("Piotr", image="piotr", color="#a222be")
-define f = Character("Filip", color="#a222be")
-define k = Character("Barbara K.", color="#ff41c9")
-define t = Character("Tomcio", color="#ec1f1f")
-define v = Character("Vasili", color="#6a6277")
-define wp = Character("Wiktoria P.", color="#9ace22")
-define bjork = Character("Björk", color="#77beee")
-define kura = Character("Kura", color="#e05a17")
-define lis = Character("LISa Simpson", color="#fffffa")
-define frau = Character("Frau Crusty", color="#e266c7")
-define r = Character("Rafał", color="#105da1")
-define n = Character("Niuniu", color="#8410a1")
-define ww = Character("Wiktoria W.", color="#f6517d")
-define a = Character("Antonius", color="#52a88e")
-define w = Character("Wiesław", color="#843a18")
-define b = Character("Bartosz", color="#3ab954")
+define p        = Character("Piotr",        color="#a222be")
+define f        = Character("Filip",        color="#a222be")
+define k        = Character("Barbara K.",   color="#ff41c9")
+define t        = Character("Tomcio",       color="#ec1f1f")
+define v        = Character("Vasili",       color="#6a6277")
+define wp       = Character("Wiktoria P.",  color="#9ace22")
+define bjork    = Character("Björk",        color="#77beee")
+define kura     = Character("Kura",         color="#e05a17")
+define lis      = Character("LISa Simpson", color="#fffffa")
+define frau     = Character("Frau Crusty",  color="#e266c7")
+define r        = Character("Rafał",        color="#105da1")
+define n        = Character("Niuniu",       color="#8410a1")
+define ww       = Character("Wiktoria W.",  color="#f6517d")
+define a        = Character("Antonius",     color="#52a88e")
+define w        = Character("Wiesław",      color="#843a18")
+define b        = Character("Bartosz",      color="#3ab954")
+define pe       = Character("Petitty",      color="#abcdef")
 
 init python:
     import random
 
 default friendship = {
-    "Piotr": 0, 
-    "Filip": 0, 
+    "Piotr": 0,
+    "Filip": 0,
     "Kurowska": 0,
+    "Barbara K.": 0,
     "Tomcio": 0,
     "Vasili": 0,
+    "Björk": 0,
+    "Kura": 0,
+    "LISa Simpson": 0,
+    "Frau Crusty": 0,
     "Rafal": 0,
+    "Rafał": 0,
+    "Niuniu": 0,
     "WiktoriaP": 0,
-    "WiktoriaW": 0
+    "WiktoriaW": 0,
+    "Antonius": 0,
+    "Wiesław": 0,
+    "Bartosz": 0,
+    "Petitty": 0,
 }
 
 transform leftish:
@@ -47,12 +59,11 @@ transform rightish:
 
 label start:
     play music "audio/street.mp3" 
-    
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
-    jump t_GoingToTheLibrary
+    jump l_GoingToTheLibrary
     scene bg busstopa with dissolve
 
     you "{i}No szybciej już{/i}"

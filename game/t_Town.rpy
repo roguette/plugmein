@@ -1,6 +1,6 @@
 define metTomcio = False
 define rudeToTomcio = False
-
+# renpy-graphviz: BREAK
 label t_goingHomeFirstNight:
     "Decydujesz, że ci się nie chce, więc idziesz do swojego nowego domu."
     "Czujesz dreszcze przebiegające cię po plecach."
@@ -133,7 +133,7 @@ label t_goingHomeFirstNight:
     "Nie wyglądał on przytulnie, ale teraz jest za późno na takie rozmyślania."
     jump h_wakingUpAfterFirstNight
 
-
+# renpy-graphviz: BREAK
 label t_goingIntoTownFirstNight:
     "Odwracasz się w stronę urzędu miasta i widzisz ogromne jezioro w tle."
     "Ta woda na horyzoncie jest całkiem przejrzysta, prawie jak w basenie."
@@ -403,13 +403,13 @@ label t_goingToFindAJob:
             you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
             $ workedAtFilip = True
             jump ch_workingAtFilip
-    
+# renpy-graphviz: BREAK
 label t_gotMoney:
     scene bg citysquareday with dissolve
     "Masz dość bycia głodnym, więc idziesz prosto do BBB."
     "(Big Buły Bakery)"
     jump t_gotMoneyBakeryEntrance
-
+# renpy-graphviz: BREAK
 label t_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
     play sound "sfx_footsteps_b.mp3"
@@ -487,7 +487,7 @@ label t_gotMoneyBakeryCustomer:
             "Frau Crusty wychodzi z piekarni bez tortu skipem C."
     hide fraucrusty
     jump t_gotMoneyBakeryTea
-
+# renpy-graphviz: BREAK
 label t_gotMoneyBakeryTea:
     wp "Okeeej."
     m "Hejka."
@@ -804,7 +804,7 @@ label t_gotMoneyBakeryTea:
     you "No to cześć."
     r "Cześć siedem!!!"
     jump t_GoingToTheTailor
-
+# renpy-graphviz: BREAK
 label t_GoingToTheTailor:
     play music "town_day.mp3"
     scene bg lanastreetday with dissolve
@@ -1016,7 +1016,7 @@ label t_goingHomeAfterTailorSecondDay:
     "Jest skupiony tylko na światełku w tej lodówce."
     "Z tej racji zamykasz lodówkę i kładziesz się spać."
     jump h_wakingUpSecondNightAtHome
-
+# renpy-graphviz: BREAK
 label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThirdDayNevermind:
     "Pędzisz na rynek, jedząc po drodze jedyne jedzenie, jakie masz."
     "Kiedy tam docierasz, widzisz stojącą tam Wiktorię."
@@ -1055,7 +1055,7 @@ label t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThird
     wp "Chodź!"
     jump c_enteringChurch
 
-label t_goingBackToTheBakeryAfterEscapingChurch 
+label t_goingBackToTheBakeryAfterEscapingChurch:
     scene bg churchdaya with dissolve
     scene bg lanastreetday with dissolve
     scene bg bakeryfrontday with dissolve
@@ -1162,6 +1162,7 @@ label t_goingBackToTheBakeryAfterEscapingChurch
     "Wszystko w tym mieście rzeczywiście jest blisko."
     "Nie mnie to oceniać, czy to przez to, że miasto jest naprawdę małe, czy przez to, że wszystko jest na rynku."
     "Znasz osoby, które nie są w stanie przejść trzech kilometrów."
+
     jump l_GoingToTheLibrary
 
 

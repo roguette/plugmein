@@ -1,3 +1,5 @@
+define metPetitty = False
+# renpy-graphviz: BREAK
 label l_GoingToTheLibrary:
     "Na pierwszy rzut oka budynek przed tobą nie wygląda na bibliotekę." 
     "Jedyne, co go zdradza, to napis \"biblioteka publiczna\" na drzwiach."
@@ -166,11 +168,143 @@ label l_GoingToTheLibrary:
     you "Ale warto było spróbować"
     you "Dobra to masz może więcej książek??"
     you "Mamy trochę czasu to możemy poszukać czegoś"
-    b "No to wszystko jest w tym rogu"
+    b "No to tu wszędzie są książki o tym mieście"
+    b "Ale większość jest w tym rogu"
     b "Pokazywałem wam przecież"
     you "Aha okej"
     you "Let's go girls"
+    wp "Ty idź tam a ja pójdę gdzieś indziej"
+    r "No ja też"
+    wp "Jak coś znajdziesz to idź do nas"
+    you "Ok..."
     "Wracasz do miejsca, w którym znaleźliście kataster, ale teraz ktoś tam stoi"
-    you "Dzień dobry?"
-    m "Dzień dobry."
-    
+    "Widzisz, że ten ktoś czta mangę"
+    "Czy chcesz z nim gadać?"
+    menu:
+        "Tak":
+            you "Dzień dobry?"
+            m "Dzień dobry."
+            $ metPetitty = True
+            jump l_petittyFirstEncounter
+        "Hell nah":
+            "Stwierdzasz, że on jest dziwny więc omijasz go szerokim łukiem"
+            jump l_afterPetitty
+# renpy-graphviz: BREAK
+label l_petittyFirstEncounter:
+    menu:
+        "Przedstaw się":
+            you "Nazywam sie [name] i mieszkam tutaj od 3 dni"
+            m "Ok"
+            pe "A ja jestem Petitty i ja czytam mangi"
+            menu:
+                "Wstyd":
+                    $ friendship["Petitty"] -= 1
+                    "Petitty robi side eye"
+                    jump l_tooAssertive
+                "Współczuję":
+                    $ friendship["Petitty"] -= 1
+                    "Petitty robi side eye"
+                    jump l_tooAssertive
+                "Masakra":
+                    $ friendship["Petitty"] -= 1
+                    "Petitty robi side eye"
+                    jump l_tooAssertive
+                "Omg serio?? Ja też :3":
+                    pe "Omg serio? Wow"
+                    pe "Choziaż..."
+                    you "Jakie jest twoje ulubione anime???"
+                    pe "..."
+                    pe ">.<"
+                    pe "Multiple parts!"
+                    you "Omg! To jest niesamowite! BO MOJE TEŻ!!"
+                    pe "Nie wierzę ci"
+                    you "Ale mówię prawdę! Naprawdę kocham to anime!"
+                    pe "To odpowiedz dobrze na moje pytania"
+                    pe "Tylko tak udowodnisz, że nie nie kłamiesz.."
+                    $ correctAnswersPetitty = 0
+                    jump l_PetittyQuiz
+        "\"Przedstaw się\"":
+            jump l_tooAssertive
+            
+# renpy-graphviz: BREAK
+label l_tooAssertive:
+    $ friendship["Petitty"] -= 1
+    you "Przedstaw się."
+    "Czujesz się jak alfa"
+    "Ale.."
+    "Ten ktoś najwidoczniej przestraszył się z powodu twojej asertywności i wybiegł z biblioteki do swojej piwnicy"
+    you "???"
+    jump l_afterPetitty
+# renpy-graphviz: BREAK
+label l_PetittyQuiz:
+    pe "Jakiego koloru są włosy loczka"
+    menu:
+        "koloru kiwi":
+            $ correctAnswersPetitty -= 1
+        "czerwone":
+            $ correctAnswersPetitty -= 1
+        "kości słoniowej":
+            $ correctAnswersPetitty -= 1
+        "różowo-fioletowe":
+            $ correctAnswersPetitty += 1
+
+    pe "Okej..."
+    pe "Jak nazywa się ostatnia wyspa, na której znajduje się skarb?"
+    menu:
+        "Lodestar":
+            $ correctAnswersPetitty += 1
+        "God Valley":
+            $ correctAnswersPetitty -= 1
+        "Laugh Tale":
+            $ correctAnswersPetitty -= 1
+        "Genshin Impact":
+            "Heh... {i}nie{/i}"
+            $ correctAnswersPetitty -= 1
+
+    pe "Hmm.."
+    pe "Jak nazywają się bracia Lampardiego?"
+    menu:
+        "Lena i Katarzyna":
+            "Stary nie ugotowałeś"
+            $ correctAnswersPetitty -= 1
+        "Ace i Sabo":
+            $ correctAnswersPetitty += 1
+        "Zoro i Sabrina":
+            $ correctAnswersPetitty -= 1
+        "Nami i Chopper":
+            $ correctAnswersPetitty -= 1
+
+    pe "Ostatnie pytanie.."
+    pe "W jaki sposób Ivashkiv uleczył Lampardi'ego przed walką na Marinefield?"
+    menu:
+        "Zawiózł go do szpitala":
+            $ correctAnswersPetitty -= 1
+        "Naszpikował go hormonami":
+            $ correctAnswersPetitty += 1
+        "Dał mu 3 nerki tak na wszelki wypadek":
+            $ correctAnswersPetitty -= 1
+        "Nie leczył go":
+            $ correctAnswersPetitty -= 1
+        "Brak danych":
+            $ correctAnswersPetitty -= 1
+        "Nie powiem":
+            $ correctAnswersPetitty -= 1
+
+    if correctAnswersPetitty == 4:
+        pe "Nie mogę w to uwierzyć!"
+        pe "Naprawdę znasz to anime!"
+        pe "Chcesz być besties???"
+        you "..."
+        you "OCZYWIŚCIE!!!"
+        pe "AAAAA :3"
+        "Petitty ucieka do swojej piwnicy,{w=0.5} bo znalazł przyjaciela{w=0.5}(swojego pierwszego)"
+        $ friendship["Petitty"] += 1
+    else:
+        pe "Wow, wiedziałem, że kłamiesz."
+        pe "Ty fejku jeden, myślałem że w końcu ktoś zmatchuje mój freak"
+        $ friendship["Petitty"] -= 1
+        "Petitty ucieka do swojej piwnicy"
+    jump l_afterPetitty
+# renpy-graphviz: BREAK
+label l_afterPetitty:
+    "ok"

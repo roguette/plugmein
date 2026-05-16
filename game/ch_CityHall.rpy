@@ -1,5 +1,6 @@
 
 define wasRudeToPiotr = False
+# renpy-graphviz: BREAK
 label ch_filipIntroduction:
     menu:
         "Sprowokuj piotra":
@@ -15,7 +16,7 @@ label ch_filipIntroduction:
             jump ch_filipIntroduction_after
 
 
-
+# renpy-graphviz: BREAK
 label ch_filipIntroduction_after:
     p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał, teraz muszę zacząć od nowa."
     you "Jakim cudem to jest moja wina?"
@@ -464,7 +465,7 @@ label ch_KamilRobberyWrongChoice:
             you "No właśnie!"
             hide kamil with dissolve
             "Złodziej zaczyna płakać i ucieka."
-    play music "town_day"
+    play music "town_day.mp3"
     you "{i}To nie mój problem.{/i}"
     you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
