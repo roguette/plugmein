@@ -1165,7 +1165,8 @@ label t_goingBackToTheBakeryAfterEscapingChurch:
 
     jump l_GoingToTheLibrary
 
-
+label t_firstTimeLeftTheLibraryBeforeRaidingChurch:
+    ""
     
 
 

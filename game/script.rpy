@@ -63,7 +63,7 @@ label start:
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
-    jump l_GoingToTheLibrary
+    jump runningFromTheChurch
     scene bg busstopa with dissolve
 
     you "{i}No szybciej już{/i}"
@@ -162,7 +162,129 @@ label start:
 
     jump f_piotrIntroductionMenu
 
+label runningFromTheChurch:
+    scene bg catacombs
+    stop music
+    show rafal normal at leftish
+    show wp normal at center
+    you "Wiki co to jest za tobą?"
+    "(teraz kliknij RAZ i nic nie klikaj póki ta cutscena się nie skończy bo nwm jak to zablokować)"
+    show eyes behind wp with dissolve:
+        yalign 0.5
+        xalign 0.65
+    window hide
+    $ renpy.pause(0.5, hard=True)
+    play sound "running_from_church.mp3"
+    pause 1.35
+    with vpunch
+    show rafal at offscreenleft 
+    show wp at offscreenright 
+    with move 
+    with vpunch
+    scene bg churchstairs with vpunch
+    show rafal normal with vpunch:
+        xalign 0.4
+        yalign 0.4
+        zoom 0.5
 
+        linear 0.6 xalign 0.8 zoom 1.2
+        linear 0.2 xpos -200
+    with vpunch
+    with vpunch
+    show wp normal with vpunch:
+        xalign 0.4
+        yalign 0.4
+        zoom 0.5
+
+        linear 0.9 xalign 0.7 zoom 1.2
+        linear 0.1 xpos -200
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg churchinside with vpunch
+    show rafal normal at offscreenleft
+    show wp normal at offscreenleft
+    with vpunch
+    show rafal normal:
+        xpos -100
+        linear 2.1 xpos 2000
+        linear 0.2 xpos 2000
+        linear 0.3 xpos 1900
+        linear 0.3 xpos 1900
+        linear 0.3 xpos 2500
+    show wp normal:
+        xpos -100
+        linear 0.2 xpos -100
+        linear 2 xpos 1700
+        linear 0.3 xpos 1700
+        linear 0.5 xpos 2500
+    pause 3
+    scene bg lanastreetnight with vpunch
+    with vpunch
+    show rafal normal at leftish with dissolve
+    with vpunch
+    show rafal normal at offscreenleft with move
+    with vpunch
+    show wp normal at leftish with dissolve
+    with vpunch
+    show wp normal at offscreenright with move 
+    with vpunch 
+    scene bg colacocastreetnighta with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg kitchen with fade
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg bedroom with fade
+    scene black
+    pause 3
+    scene bg bedroom with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg kitchen with fade
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg colacocastreetnighta with fade
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    scene bg lanastreetday with fade
+    with vpunch
+    with vpunch
+    with vpunch
+    with vpunch
+    show bg citysquareday with fade
+    play music "town_day.mp3"
+    stop sound
+    window show
+    show rafal normal at leftish 
+    show wp normal at rightish 
+    with dissolve
+    "..."
+
+    jump runningFromTheChurch
  
 
 label gameEndCreditsScene:

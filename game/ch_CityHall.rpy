@@ -70,7 +70,7 @@ label ch_filipIntroduction_after:
     you "Dobry wieczór..."
     k "Witam cię w miasteczku Bratgren! Jak cię zwą?"
     you "Zwą...{w=1} mnie [name]."
-    k "Okeeej.. Mam na imię Barbara, jestem prezydentem miasta. Sprawuję tutaj władzę od 17 lat. Co cię tutaj sprowadza?"
+    k "Okeeej.. Mam na imię Barbara, jestem prezydentem miasta. Sprawuję tutaj władzę od 7 lat. Co cię tutaj sprowadza?"
     you "Właśnie obudziłem się w lesie, nie wiem kim jestem, nie wiem gdzie jestem, znam tylko swoje imie."
     you "Piotr znalazł mnie i zaprowadził mnie do Pani."
     you "No i tyle wiem."
