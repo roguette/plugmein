@@ -39,26 +39,50 @@ label f_piotrIntroductionMenu:
         "Oskarż o porwanie" if not accused_piotr_of_kidnapping:
             $ accused_piotr_of_kidnapping = True
             $ friendship["Piotr"] -= 1
-            you "Wiem już wszystko o tobie..."
-            you "To ty mnie porwałeś!{w} Jesteś okrutnym kłamcą!"
-            "Wpadasz w malignę i zaczynasz płakać, walić głową o ziemię, tarzać się w malinach - dosłownie jak Raskolnikow."
-            you "Dlaczegooooooo...!!!"
-            you "To ty mnie porwałeś tą {b}różdżką{/b}."
-            p "Bijesz mnie psychicznie, o co mnie oskarżasz!"
-            you "To {b}co{/b} ty tutaj robisz?"
-            p "Oczyszczałem las sobie, a {b}TY{/b} mi cały rytuał zepsułeś!"
-            you "Jakim cudem {b}ja{/b} jestem winny w tej sytuacji?"
-            p "{b}Strzelę ci stringami jak jeszcze raz oskarżysz mnie o porwanie!!!{/b}"
-            you "..."
-            you "{i}Może moje słowa były trochę niemiłe...{/i}"
+            you "I can see right through your lies"
+            you "You think im not the sharpest tool in the shed"
+            you "But you are wrong!"
+            p "What"
+            you "You are trying to play 5d chess with me"
+            p "And how exactly am i doing that?"
+            you "You kidnapped me and you erased my memory"
+            you "I can smell it in the air it has that kidnapping smell"
+            "With every word you say his expression goes more and more grim"
+            p "Is this ragebait?"
+            you "No"
+            p "I did not kidnap anyone"
+            you "Thats exactly what a kidnapper would say"
+            p "Ok then prove that i kidnapped you"
+            you "Prove that you did not"
+            you "zatkało kakao???"
+            p "Okay lets go your way"
+            p "Even if i did kidnap you and even if i erased your memory"
+            p "You know nothing and you still need your help"
+            p "What are you gonna do alone in the forest"
+            you "Larp worms and live underground?"
+            p "Not with that waist"
+            you "EXCUSE ME"
+            "You aren't evil and you aren't stupid either"
+            "It's just ragebait. Prankless harm"
+            "You give him a sassy hmph and after little thinking you realize you actually do need his help"
+            you "Fine. I guess you are right this once"
+            p "Jeszcze raz mi takie dyrdymały powiesz ja ci strzelę stringami"
             jump f_piotrIntroductionMenu
         "Zapytaj się gdzie jesteś" if not asked_where_i_am_start:
             $ asked_where_i_am_start = True
-            you "Ale gdzie ja jestem?"
-            p "Jesteś w okolicach Bratgren."
-            you "???"
-            you "Czy ja wyglądam na osobę która wie co to jest za miejsce?! (bffr im not on mat-geo-ai pff)"
-            "Piotr robi eyeroll, wzdycha i milczy."
+            you "Where am I?"
+            p "In a forest near Bratgren"
+            p "Bratgren is the city we all live in"
+            you "That's so cool I thought you live up there in the trees"
+            p "That is NOT TRUE"
+            you "And where is this bratgren?"
+            if accused_piotr_of_kidnapping:
+                you "Or did you lie about that too?"
+            p "Right behind you."
+            "Theres a huge wall behind you and you can only assume it guards a city"
+            "You try to hide the embarrassment on your face because you havent even thought of turning around"
+            you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
+            p "Do you ever shut up?"
             jump f_piotrIntroductionMenu
         "milcz" if not stayed_silent_start:
             $ stayed_silent_start = True
@@ -70,7 +94,7 @@ label f_piotrIntroductionMenu:
 # renpy-graphviz: BREAK
 
 label f_piotrTravelToCity:
-    "Patrzysz się dookoła i widzisz tylko drzewa, a za Piotrem, z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
+    "Patrzysz się dookoła i widzisz tylko drzewa, a z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
 
     if stayed_silent_start:
         p "Co?"
@@ -82,10 +106,11 @@ label f_piotrTravelToCity:
         you "Ale wracając, umiem gadać tylko teraz myślę."
 
     if accused_piotr_of_kidnapping:
-        "Twój wzrok wraca do Piotra."
+        "Twój wzrok wraca do Piotra ale nie tak romantycznie tylko tak 'o jezu znowu ten yy jak on miał na imię??'."
         you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
 
-    "W końcu postanawiasz przemówić coś sensonwego."
+    "W końcu postanawiasz przemówić coś sensownego."
+    "you also decide that it would be best to calm down"
     you "Nie znam nikogo, nie mam domu, i nie wiem co robić."
     "Patrzysz się w dół, na swoje ogromne łapy, które pięć minut temu były zwykłymi, ludzkimi dłońmi i powinieneś być bamboozled,{w=.5} ale nie jesteś."
     p "Chodź za mną, zaprowadzę cię do Kurowskiej, ona będzie wiedziała co z tobą zrobić."
@@ -95,9 +120,15 @@ label f_piotrTravelToCity:
     you "..."
     you "{i}{b}PR*ACA, JAKA PR*CA!!! JA NIE CHCE{/b}{/i}"
     "Piotr zbiera swoje kamyki do torby i prowadzi cię do tego dużego muru, który wcześniej widziałeś."
+    you "So you are not gonna do the ritual?"
+    p "You are more important right now"
+    you "{i}is he flirting with me right now{/i}"
+    you "I HAVE A GIRLFRIEND"
+    p "No"
+    "Damn it"
     "Droga z lasu do miasta nie jest długa, chociaż czasem może zaskoczyć {i}dziką zwierzyną.{/i}"
     "Razem z Piotrem wracacie przez most i podążacie do urzędu miasta. Pomimo późnej godziny temperatura nie jest niesprzyjająca, nawet przyjemna (idealna do skinny dipping... znaczy CO)."
-    scene bg entrancenight with fade 
+    scene bg entrancenight with fade
     "Podchodzicie razem do ogromnej drewnianej bramy, za którą jest duże{w=.6}, rozległe{w=.6}, pachnące{w=.6} i zarazem podśmierdujące miasto."
     you "{i}Czy ten most nie jest za stary?{/i}"
     you "{i}Przecież on się może w każdym momencie zawalić.{/i}"
@@ -122,7 +153,6 @@ label f_piotrTravelToCity:
     play music "town_night.mp3" fadein 0.5
     "Przechodzicie przez bramę do miasta, które jest zupełnie puste."
     you "Dlaczego dosłownie nikogo nie ma na ulicach?"
-    you "Jest jakiś sekret czy co?"
     p "No bo jest zimno dzisiaj."
     you "Ale mi nie jest zimno."
     p "Nie wiem jak ci nie jest zimno, ja tu zamarznę zaraz."
@@ -140,7 +170,6 @@ label f_piotrTravelToCity:
     you "O czym?"
     p "Mowa jest srebrem, a milczenie złotem."
     "Jesteś oszołomiony arogancją Piotra. Jesteś pewny że będzie ciebie obgadywać."
-
     p "Siedź tu grzecznie ja zaraz wrócę."
     you "Okej"
     "{i}Ale z ciebie good boy.{nw}{/i}"
@@ -151,7 +180,7 @@ label f_piotrTravelToCity:
     "Tylko co..."
     "Rozluźniasz się i opierasz się o ścianę, czując jak sosnowe igły kłują cię w plecy."
     "Zostały na twojej koszulce od kiedy leżałeś w lesie."
-    "Czujesz wstyd, ponieważ przeszedłeś przez całe miasto, wyglądając jak pijak."
+    "Czujesz wstyd, ponieważ przeszedłeś przez całe miasto, wyglądając jak idiota."
     you "{i}Tyle aury straciłem{/i}"
     you "{i}Ale nikogo nie było na zewnątrz. Nikt mnie nie zobaczył{/i}"
     you "{i}Chyba że ktoś patrzył się przez okno?{/i}"

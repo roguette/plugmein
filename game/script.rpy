@@ -153,7 +153,7 @@ label start:
     you "Tak."
     "Piotr podchodzi do tego koła i podnosi dwa kamienie."
     menu:
-        "!Omg they are dark like your crusty ass nails"
+        "!Omg they are dark like your crusty ass nails":
             p "!Hell no"
         "!Can i have one?":
             p "!Hell no"
@@ -172,7 +172,7 @@ label start:
     p "So as i was saying... before your rude ass interrupted me"
     p "Theres a limited supply of these stones"
     p "We use them for clearing bad energy in this forest"
-    p "You should be thankful im doing this because if it werent for me monsters would have mauled you like bts stans on twitter"
+    "You should be thankful he is doing this because if it werent for the magical bird in front of you monsters would have mauled you like bts stans on twitter"
     you "{i}Okay that is indeed terrifying{/i}"
     p "anyways... back to those stones"
     p "If a stone is too heavy i leave it at home"
