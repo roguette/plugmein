@@ -1163,11 +1163,83 @@ label t_goingBackToTheBakeryAfterEscapingChurch:
     "Nie mnie to oceniać, czy to przez to, że miasto jest naprawdę małe, czy przez to, że wszystko jest na rynku."
     "Znasz osoby, które nie są w stanie przejść trzech kilometrów."
 
-    jump l_GoingToTheLibrary
+    jump li_GoingToTheLibrary
 
 label t_firstTimeLeftTheLibraryBeforeRaidingChurch:
-    ""
+    you "Rafaaał"
+    r "Co"
+    you "Która jest godzina?"
+    r "18:53"
+    you "No to chodźmy do twojej piekarni bo stąd widać kościół"
+    you "Będzie widać kiedy Wiesław wyjdzie"
+    scene bg bakeryinside with dissolve
+    "Rafał zamyka żaluzje, a następnie otwiera je na tyle, by móc zobaczyć, co dzieje się na zewnątrz" 
+    $ bakeryMetPeopleSum = metVasili + metPetitty
+    if metVasili:
+        with vpunch
+        with vpunch
+        with vpunch
+        "Widizisz Vasiliego próbującego iść cicho ale każdy jego krok powoduje trzęsienie ziemi"   
+        with vpunch
+        you "Co on tu robi"
+        wp "Znasz go?"
+        you "Tak"
+        if endorsedCommunism:
+            you "Jest całkiem fajny"
+        else:
+            wp "Współczuję"
+        "..."
+    if metPetitty:
+        "['Następnie widzisz' if bakeryMetPeopleSum > 1 else "Widzisz"] Petittiego przy drziwach do piekarni"
+        you "A co on tu robi??"
+        you "Może on nas nie widział?"
+        "Petitty puka do drzwi"
+        r "Jezu co znowu"
+        "Rafał otwiera drzwi, a petitty stoi przy wejści z puppy eyes"
+        you "Co"
+        pe "Widziałem, że tu poszedłeś..."
+        pe "J-ja chcę porozmawiać...."
+        menu:
+            "Nie bo jestem zajęty nie przeszkadzaj":
+                $ friendship["Petitty"] -= 1
+                with vpunch
+                pe "TO SĄ WYMÓWKI!!"
+                you "Nie drzyj się"
+                pe "JESTEŚ TAKI NIEMIŁY"
+                "Zamykasz drzwi."
+                "Wciąż słychać jego stłumiony krzyk za zamkniętymi drzwiami."
+                "Chwilę mu zajmuje, zanim się uspokoi, a potem wraca do swojej piwnicy."
+            "Innym razem, obiecuję":
+                $ friendship["Petitty"] += 1
+                pe "A dlaczego nie teraz?"
+                you "..."
+                you "{i}Tzeba wymyślić wymówkę...{/i}"
+                you "Jestem na randce"
+                pe "O mój boże! Znowu zamnkęli przedsionek!"
+                pe "To w takim razie nie będę ci przeszkadzał{w=1}, hihi."
+                "Petitty robi piruet i ucieka do swojej jaskini"
+    if bakeryMetPeopleSum == 0:
+        you "Dziwne to jest"
+        r "Co"
+        you "Że jest tak pusto na ulicach"
+        r "..."
     
+    wp "Cicho"
+    r "Co"
+    wp "Ale zamknij się"
+    you "Czemu jesteś taka niemiła? Tłumacz się"
+    wp "Wiesław wyszedł z kośioła"
+    "Wsuwasz pazury między żaluzje, ponieważ nic nie widzisz"
+    "Rzeczywiście, Wiesław wyszedł z kościoła, i tak jak wczoraj, zamknął bramę i poszedł w tym samym kierunku"
+    r "Chodź"
+    "Rafał zaczyna otwierać drzwi ale zatrzymujesz go"
+    you "Poczekaj bo może wróci zaraz"
+    "Stoicie przy drzwiach w ciszy.{w=0.5}.{w=0.5}.{w=0.5}"
+    "Ale Wiesław nie wrócił"
+    you "Dobra chyba możemy iść"
+    "Wychodzicie, starając się przy tym nie robić hałasu"
+    
+
 
 
 
