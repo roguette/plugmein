@@ -2,7 +2,7 @@
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
 define mks = Character("MKS 23", color="#fafafa")
-define m = Character("???", color="#808080") #mystery speaker
+define m = Character("???", color="#808080") # mystery speaker
 
 image side piotr = "piotr side.png"
 
@@ -31,15 +31,13 @@ default friendship = {
     "Piotr": 0,
     "Filip": 0,
     "Kurowska": 0,
-    "Barbara K.": 0,
     "Tomcio": 0,
     "Vasili": 0,
     "Björk": 0,
     "Kura": 0,
     "LISa Simpson": 0,
     "Frau Crusty": 0,
-    "Rafal": 0,
-    "Rafał": 0,
+    "Rafal": 0
     "Niuniu": 0,
     "WiktoriaP": 0,
     "WiktoriaW": 0,

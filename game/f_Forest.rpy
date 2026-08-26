@@ -3,7 +3,7 @@ define accused_piotr_of_kidnapping = False
 define asked_where_i_am_start = False
 define stayed_silent_start = False
 
-# renpy-graphviz: BREAK
+
 
 label f_piotrIntroductionMenu:
     menu:
@@ -91,7 +91,7 @@ label f_piotrIntroductionMenu:
         "(nie mam więcej pytań)":
             jump f_piotrTravelToCity
 
-# renpy-graphviz: BREAK
+
 
 label f_piotrTravelToCity:
     "Patrzysz się dookoła i widzisz tylko drzewa, a z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
@@ -197,4 +197,3 @@ label f_piotrTravelToCity:
     p "No przecież zapytał się o twoje imię."
     jump ch_filipIntroduction
 
-# renpy-graphviz: BREAK

@@ -1,6 +1,6 @@
 define seenBjorkGhost = False
 define hasSkinnyWaist = False
-# renpy-graphviz: BREAK
+
 
 label h_wakingUpAfterFirstNight:
     "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
@@ -76,7 +76,7 @@ label h_wakingUpAfterFirstNight:
     "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej."
     jump t_goingToTownToKurowskaDueToHungerDayTwo
 
-# renpy-graphviz: BREAK
+
 
 label h_wakingUpSecondNightAtHome:
     play music "sleep.mp3" fadein 3
@@ -172,7 +172,7 @@ label h_moornin:
     scene bg lanastreetday with dissolve
     "Delikatnie odpychasz go na bok i zamykasz drzwi, po czym biegniesz sprintem na rynek{w=.3}, zostawiając zdezorientowaną surykatkę o bardzo długim i dziwnym imieniu przed drzwiami."
     jump t_goingToTownBecauseYouAreGoingToTheLocalChurchSecondDayWaitNoItIsTheThirdDayNevermind
-# renpy-graphviz: BREAK
+
 
 
 

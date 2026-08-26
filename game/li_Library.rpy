@@ -1,5 +1,5 @@
 define metPetitty = False
-# renpy-graphviz: BREAK
+
 label li_GoingToTheLibrary:
     "Na pierwszy rzut oka budynek przed tobą nie wygląda na bibliotekę." 
     "Jedyne, co go zdradza, to napis \"biblioteka publiczna\" na drzwiach."
@@ -189,7 +189,7 @@ label li_GoingToTheLibrary:
         "Hell nah":
             "Stwierdzasz, że on jest dziwny więc omijasz go szerokim łukiem"
             jump li_afterPetitty
-# renpy-graphviz: BREAK
+
 label li_petittyFirstEncounter:
     menu:
         "Przedstaw się":
@@ -226,7 +226,7 @@ label li_petittyFirstEncounter:
         "\"Przedstaw się\"":
             jump li_tooAssertive
             
-# renpy-graphviz: BREAK
+
 label li_tooAssertive:
     $ friendship["Petitty"] -= 1
     you "Przedstaw się."
@@ -235,7 +235,7 @@ label li_tooAssertive:
     "Ten ktoś najwidoczniej przestraszył się z powodu twojej asertywności i wybiegł z biblioteki do swojej piwnicy"
     you "???"
     jump li_afterPetitty
-# renpy-graphviz: BREAK
+
 label li_PetittyQuiz:
     pe "Jakiego koloru są włosy loczka"
     menu:
@@ -305,7 +305,7 @@ label li_PetittyQuiz:
         $ friendship["Petitty"] -= 1
         "Petitty ucieka do swojej piwnicy"
     jump li_afterPetitty
-# renpy-graphviz: BREAK
+
 label li_afterPetitty:
     "..."
     you "{i}Są rzeczy ważne i ważniejsze{/i}"

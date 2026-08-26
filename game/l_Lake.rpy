@@ -2,7 +2,7 @@ define rudeToVasili = False
 define metVasili = False
 define knowsAboutVasiliGrandfatherGhost = False
 
-# renpy-graphviz: BREAK
+
 
 label l_firstNightLakeVisit:
     play music "forest.mp3" fadein 1.0
@@ -85,7 +85,7 @@ label l_firstNightLakeVisit:
 
 define endorsedCommunism = False
 define heardVasiliMonologue = False
-# renpy-graphviz: BREAK
+
 label l_vasiliFirstNightMagaMenu:
     menu:
         "Zapytaj jaką ma wiedzę na temat ryb":
@@ -194,13 +194,13 @@ label l_vasiliFirstNightMagaMenu:
 
     
 
-# renpy-graphviz: BREAK
+
 label l_goingHomeTiredAfterVasiliFirstNight:
     "Przez zmęczenie droga do domu trwała wieki, ale nic nie było widać, ponieważ oszczędzają przez wyłączanie latarni."
     "Pomimo braku widoczności przejscie do domu nie sprawiło ci dużo trudu."
     jump h_wakingUpAfterFirstNight
 
-# renpy-graphviz: BREAK
+
 label l_vasiliFishBrzana:
     v "Brzana (łac. Barbus barbus) to średniej wielkości, typowa rzeczna ryba z rodziny karpiowatych."
     v "Występuje w dorzeczach Loary, Rodanu, Renu, Dunaju, Łaby, Odry i Wisły."
@@ -219,7 +219,7 @@ label l_vasiliFishBrzana:
     v "Rzadziej poluje na małe ryby."
     jump l_vasiliAfterFishMonologue
 
-# renpy-graphviz: BREAK
+
 label l_vasiliFishKoza:
     v "Koza [[1] to gatunek małej ryby [[2] słodkowodnej z rodziny piskorzowatych [[3]."
     v "Zamieszkuje Europę [[4][[5] z wyjątkiem Irlandii [[6], Szkocji, Norwegii i północnej Szwecji."
@@ -237,7 +237,7 @@ label l_vasiliFishKoza:
     v "Żywi się bezkręgowcami dennymi..."
     jump l_vasiliAfterFishMonologue
 
-# renpy-graphviz: BREAK
+
 label l_vasiliFishWstegorz:
     v "Wstęgor królewski to gatunek dużej, morskiej ryby strojnikokształtnej z rodziny Regalecidae."
     v "Jest zwierzęciem kosmopolitycznym — występuje w wodach Oceanu Indyjskiego, Pacyfiku, Atlantyku."
@@ -257,7 +257,7 @@ label l_vasiliFishWstegorz:
     v "Ciało jest jasne i srebrzyście połyskujące..."
     jump l_vasiliAfterFishMonologue
 
-# renpy-graphviz: BREAK
+
 label l_vasiliAfterFishMonologue:
     you "{i}Co ja zrobiłem. Za jakie grzechy...{/i}"
     menu:
@@ -297,7 +297,7 @@ label l_vasiliAfterFishMonologue:
             v "{b}OCZYWIŚCIE{/b}, opowiem ci o mojej {b}ULUBIONEJ{/b} rybie..."
             jump l_vasiliTalksAboutFavoriteFish
     
-# renpy-graphviz: BREAK
+
 label l_vasiliTalksAboutFavoriteFish:
     you "{i}W co ja się wkopałem... JA JUŻ NIE CHCE...{/i}"
     scene black with dissolve
@@ -318,7 +318,7 @@ label l_vasiliTalksAboutFavoriteFish:
     "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w tym momencie, kiedy położyłeś głowę na poduszkę"
     jump h_wakingUpAfterFirstNight
 
-# renpy-graphviz: BREAK
+
 label l_workingAtVasili:
     scene bg lakedaya with dissolve
     play sound "sfx_footsteps_a.mp3"

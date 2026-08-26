@@ -1,4 +1,4 @@
-# renpy-graphviz: BREAK
+
 label c_enteringChurch:
     "Wiktoria podchodzi do drzwi i delikatnie puka."
     "Po chwili słychać czyjeś mamrotanie po drugiej stronie drzwi."

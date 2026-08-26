@@ -1,6 +1,6 @@
 
 define wasRudeToPiotr = False
-# renpy-graphviz: BREAK
+
 label ch_filipIntroduction:
     menu:
         "Sprowokuj piotra":
@@ -16,7 +16,7 @@ label ch_filipIntroduction:
             jump ch_filipIntroduction_after
 
 
-# renpy-graphviz: BREAK
+
 label ch_filipIntroduction_after:
     p "Oczyszczałem las, jak mi kazałeś, a on pojawił się koło mnie i zepsuł mój rytuał, teraz muszę zacząć od nowa."
     you "Jakim cudem to jest moja wina?"
@@ -328,7 +328,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwo:
     else:
         jump ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude
 
-# renpy-graphviz: BREAK
+
 
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     k "Sam sobie znajdź pracę."
@@ -342,7 +342,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasRude:
     jump t_goingToFindAJob
 
 define playerRobbed = False
-# renpy-graphviz: BREAK
+
 
 label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
     $ randomCorrectChoiceIndex = random.randint(1, 3)
@@ -403,7 +403,7 @@ label ch_goingToTownToKurowskaDueToHungerDayTwoPartTwoButYourNameWasNotRude:
         "Japa kasti":
             jump ch_KamilRobberyWrongChoice
 
-# renpy-graphviz: BREAK
+
 
 define robberyStopped = False
 label ch_KamilRobberyCorrectChoice:
@@ -430,7 +430,7 @@ label ch_KamilRobberyCorrectChoice:
     you "{i}Nie będę nosił ze sobą pieniędzy!{/i}"
     jump t_gotMoney
 
-# renpy-graphviz: BREAK
+
 
 label ch_KamilRobberyWrongChoice:
     play sound "gong.mp3"
@@ -492,7 +492,7 @@ label ch_KamilRobberyWrongChoice:
     hide kurowska normal with dissolve
     jump t_goingToFindAJob
 
-# renpy-graphviz: BREAK
+
 
 label ch_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
@@ -565,4 +565,4 @@ label ch_workingAtFilip:
     f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'
     jump t_gotMoney
 
-# renpy-graphviz: BREAK
+
