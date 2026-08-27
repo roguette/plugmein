@@ -14,7 +14,14 @@
 # ===============================================
 
 
-
+image mess = Animation(
+    "images/mess_gif/0.png", 1,
+    "images/mess_gif/1.png", 1,
+    "images/mess_gif/2.png", 1,
+    "images/mess_gif/3.png", 1,
+    "images/mess_gif/4.png", 1,
+    "images/mess_gif/5.png", 1,
+)
 
 
 # =============================================== GLOBAL CONFIGS
@@ -85,14 +92,80 @@ transform rightish:
 # =============================================== START
 
 label start:
+    stop music
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
 
 
-    jump ch02_watch_your_mouth
+    jump ch00_bus_stop
 
 # =============================================== MISC
+
+
+transform chapter_text_animation:
+    alpha 0.0
+    zoom 1.0
+
+    linear 1.0 alpha 1.0
+
+
+transform title_text_animation:
+    alpha 0.0
+    zoom 1.0
+
+    pause 3.870
+    linear 0.001 alpha 1.0
+
+
+transform smallFadeIn:
+    alpha 0.0
+    linear 1.0 alpha 1.0
+
+
+screen chapterTransition(chapter_text, title_text):
+
+    timer 7.459 action Return()
+
+    add Solid("#000000")
+
+    add "mess":
+        xalign 0.8
+        yalign 0.5
+        xsize 700
+        ysize 700
+        at smallFadeIn
+        
+
+    text chapter_text:
+        xpos 0.1
+        xanchor 0.0
+        yalign 0.45
+        color "#ffffff"
+        size 80
+        at chapter_text_animation
+
+    text title_text:
+        xpos 0.1
+        xanchor 0.0
+        yalign 0.55
+        color "#ffffff"
+        size 40
+        at title_text_animation
+    
+
+
+label chapterTransition(chapter_text, title_text):
+
+    with dissolve
+    window hide
+    play audio "audio/sfx_chapter_transition.mp3"
+    
+    call screen chapterTransition(chapter_text, title_text)
+    stop audio fadeout 0.0
+    window show
+    with dissolve
+    return
 
 label runningFromTheChurch:
     scene bg catacombs

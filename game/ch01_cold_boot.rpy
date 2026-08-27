@@ -28,6 +28,7 @@ define heardVasiliMonologue = False
 
 label ch01_cold_boot:
     "{cps=1}...{/cps}"
+    stop sound fadeout 0.5
     "{cps=25}Zostałeś właśnie potrącony przez mks 23{w} (do przybówki).{/cps}"
     "{cps=20}Twoje krzyki usłyszał tylko kierowca tego autobusu.{/cps}"
     "{cps=15}Który pewnie już uciekł i jedzie sobie dalej.{/cps}"
@@ -36,7 +37,7 @@ label ch01_cold_boot:
     play music "forest.mp3" fadein 2.0
     "Strasznie cię boli głowa, ale nie możesz podnieść ręki, aby sprawdzić czy w ogóle ją jeszcze masz."
     "Jesteś tak słaby, że nie możesz nawet otworzyć oczu."
-    
+    call chapterTransition("Akt 1", "No ale co ja")
     m "Do jasnej muffinki!!!"
     m "Proszę pana, czy pan żyje?!"
     "Ktoś kładzie swoją rękę na twoim ramieniu i próbuje cię obudzić, a jego długie pazury wbijają ci się w skórę."

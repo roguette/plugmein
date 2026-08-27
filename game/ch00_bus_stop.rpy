@@ -24,10 +24,10 @@ label ch00_bus_stop:
     pause 2.5
     you "AAAAAAAAAAAAAAAAAAA{nw}"
     scene black
-
     pause 3.0
     stop music fadeout 2.0
     window show
+    stop sound fadeout 0.5
 
     jump ch01_cold_boot
 
