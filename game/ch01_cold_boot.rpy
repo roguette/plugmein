@@ -34,10 +34,10 @@ label ch01_cold_boot:
     "{cps=15}Który pewnie już uciekł i jedzie sobie dalej.{/cps}"
     "{cps=2}...{/cps}"
     "Mimo tego,{w=.5} o dziwo,{w=.5} żyjesz{w=.5}<3"
-    play music "forest.mp3" fadein 2.0
     "Strasznie cię boli głowa, ale nie możesz podnieść ręki, aby sprawdzić czy w ogóle ją jeszcze masz."
     "Jesteś tak słaby, że nie możesz nawet otworzyć oczu."
-    call chapterTransition("Akt 1", "No ale co ja")
+    call chapterTransition("Akt 1", "Zatkało kakao?")
+    play music "forest.mp3" fadein 2.0
     m "Do jasnej muffinki!!!"
     m "Proszę pana, czy pan żyje?!"
     "Ktoś kładzie swoją rękę na twoim ramieniu i próbuje cię obudzić, a jego długie pazury wbijają ci się w skórę."

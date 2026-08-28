@@ -5,9 +5,10 @@ define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
     "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
     "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), #TODO: cityslopedownnight does not exist
+    "lakefield": ("bg lakedaya", "bg lakedayb")
 }
 
-default minutesToTravel = 5
+
 
 init python:
     def loc_bg(loc):
@@ -15,18 +16,15 @@ init python:
         return day_img if time.isDay() else night_img
 
     def travel_to(screen_name):
-        time.advanceTime(minutes=minutesToTravel)
-        if time.hour >= 18:
-            renpy.jump("too_late")
-        else:
-            renpy.show_screen(screen_name)
-            renpy.transition(dissolve)
+        renpy.show_screen(screen_name)
+        renpy.transition(dissolve)
 
 screen s_walkable_Square():
     tag map
 
     add loc_bg("square")
     vbox:
+        # lana street arrow
         xpos 0.08 ypos 0.75
         imagebutton:
             idle "ui/square_left.png"
@@ -34,11 +32,28 @@ screen s_walkable_Square():
             action Function(travel_to, "s_walkable_LanaStreet")
             
     vbox:
+        # field slope arrow
         xpos 0.25 ypos 0.6
         imagebutton:
             idle "ui/square_lake.png"
             hover "ui/square_lake_hover.png"
             action Function(travel_to, "s_walkable_LakeSlope")
+
+    vbox:
+        # city hall arrow
+        xpos 0.45 ypos 0.68
+        imagebutton:
+            idle "ui/square_city_hall.png"
+            hover "ui/square_city_hall_hover.png"
+            action [SetVariable("_map_loc", "square"), SetVariable("_map_dest", "city_hall"), Jump("map_leave")]
+
+    vbox:
+        # fountain arrow
+        xpos 0.61 ypos 0.87
+        imagebutton:
+            idle "ui/square_fountain.png"
+            hover "ui/square_fountain_hover.png"
+            action [SetVariable("_map_loc", "square"), SetVariable("_map_dest", "fountain"), Jump("map_leave")]
 
 
 screen s_walkable_LanaStreet():
@@ -46,23 +61,26 @@ screen s_walkable_LanaStreet():
 
     add loc_bg("lanastreet")
     vbox:
+        # back to the square arrow
         xpos 0.5 ypos 0.8
         imagebutton:
             idle "ui/back_to_square_a.png"
             hover "ui/back_to_square_a_hover.png"
             action Function(travel_to, "s_walkable_Square")
     vbox:
+        # church arrow
         xpos 0.25 ypos 0.6
         imagebutton:
             idle "ui/to_church.png"
             hover "ui/to_church_hover.png"
-            action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "test_church"), Jump("map_leave")]
+            action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "church"), Jump("map_leave")]
     vbox:
+        # bakery arrow
         xpos 0.8 ypos 0.67
         imagebutton:
             idle "ui/to_bakery.png"
             hover "ui/to_bakery_hover.png"
-            action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "test_bakery"), Jump("map_leave")]
+            action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "bakery"), Jump("map_leave")]
 
 
 screen s_walkable_LakeSlope():
@@ -70,33 +88,70 @@ screen s_walkable_LakeSlope():
 
     add loc_bg("lakeslope")
     vbox:
+        # back to square arrow
         xpos 0.1 ypos 0.85
         imagebutton:
             idle "ui/back_to_square_a.png"
             hover "ui/back_to_square_a_hover.png"
             action Function(travel_to, "s_walkable_Square")
 
+    vbox:
+        # field arrow
+        xpos 0.49 ypos 0.42
+        imagebutton:
+            idle "ui/square_lake.png"
+            hover "ui/square_lake_hover.png"
+            action Function(travel_to, "s_walkable_LakeField")
+
+screen s_walkable_LakeField():
+    tag map
+    
+    add loc_bg("lakefield")
+
+    vbox:
+        xpos 0.1 ypos 0.85
+        imagebutton:
+            idle "ui/back_to_square_a.png"
+            hover "ui/back_to_square_a_hover.png"
+            action Function(travel_to, "s_walkable_LakeSlope")
+
+    vbox:
+        xpos 0.5 ypos 0.5
+        imagebutton:
+            idle "images/direction_sign.png"
+            action [SetVariable("_map_loc", "lakefield"), SetVariable("_map_dest", "lake_direction_sign"), Jump("map_leave")]
+    
+
 label map_leave:
     scene expression loc_bg(_map_loc)
     jump expression _map_dest
 
-label too_late:
-    "its too late to be outside"
-    jump ch02_watch_your_mouth
+# ======================================== exit labels
 
-
-label test_bakery:
-    scene bg bakeryfrontday with dissolve
+label lake_direction_sign:
     menu:
-        "go in":
-            scene bg citysquareday with dissolve
-            "you got le buns and ate them while watching the fountain"
-            call screen s_walkable_Square()
-        "No":
-            scene bg lanastreetday with dissolve
-            call screen s_walkable_LanaStreet()
+        "Lake ↑":
+            "There's nothing to do there at this moment"
+        "Vasili's house →":
+            "There's nothing to do there at this moment"
+        "Niuniu's house →":
+            "There's nothing to do there at this moment"
 
+    call screen s_walkable_LakeField()
 
-label test_church:
-    "test_church"
-    return
+label fountain:
+    "There's nothing to do near the fountain at this moment"
+    call screen s_walkable_Square()
+
+label city_hall:
+    "There's nothing to do in the town hall at this moment"
+    call screen s_walkable_Square()
+
+label church:
+    "There's nothing to do at the church at this moment"
+    call screen s_walkable_LanaStreet()
+
+label bakery:
+    "There's nothing to do in the bakery at this moment"
+    call screen s_walkable_LanaStreet()
+

@@ -118,9 +118,9 @@ transform rightish:
 label start:
     stop music
 
-    #show screen s_clock
-    #call screen s_walkable_Square()
-    
+    show screen s_clock
+    call screen s_walkable_Square()
+
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
