@@ -27,32 +27,32 @@ screen s_walkable_Square():
         # lana street arrow
         xpos 0.08 ypos 0.75
         imagebutton:
-            idle "ui/square_left.png"
-            hover "ui/square_left_hover.png"
+            idle "images/arrows/270_b.png"
+            hover "images/arrows/270_b_hover.png"
             action Function(travel_to, "s_walkable_LanaStreet")
             
     vbox:
         # field slope arrow
         xpos 0.25 ypos 0.6
         imagebutton:
-            idle "ui/square_lake.png"
-            hover "ui/square_lake_hover.png"
+            idle "images/arrows/0_a.png"
+            hover "images/arrows/0_a_hover.png"
             action Function(travel_to, "s_walkable_LakeSlope")
 
     vbox:
         # city hall arrow
         xpos 0.45 ypos 0.68
         imagebutton:
-            idle "ui/square_city_hall.png"
-            hover "ui/square_city_hall_hover.png"
+            idle "images/arrows/0_a.png"
+            hover "images/arrows/0_a_hover.png"
             action [SetVariable("_map_loc", "square"), SetVariable("_map_dest", "city_hall"), Jump("map_leave")]
 
     vbox:
         # fountain arrow
         xpos 0.61 ypos 0.87
         imagebutton:
-            idle "ui/square_fountain.png"
-            hover "ui/square_fountain_hover.png"
+            idle "images/arrows/45_b.png"
+            hover "images/arrows/45_b_hover.png"
             action [SetVariable("_map_loc", "square"), SetVariable("_map_dest", "fountain"), Jump("map_leave")]
 
 
@@ -64,22 +64,22 @@ screen s_walkable_LanaStreet():
         # back to the square arrow
         xpos 0.5 ypos 0.8
         imagebutton:
-            idle "ui/back_to_square_a.png"
-            hover "ui/back_to_square_a_hover.png"
+            idle "images/arrows/180_a.png"
+            hover "images/arrows/180_a_hover.png"
             action Function(travel_to, "s_walkable_Square")
     vbox:
         # church arrow
         xpos 0.25 ypos 0.6
         imagebutton:
-            idle "ui/to_church.png"
-            hover "ui/to_church_hover.png"
+            idle "images/arrows/270_b.png"
+            hover "images/arrows/270_b_hover.png"
             action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "church"), Jump("map_leave")]
     vbox:
         # bakery arrow
         xpos 0.8 ypos 0.67
         imagebutton:
-            idle "ui/to_bakery.png"
-            hover "ui/to_bakery_hover.png"
+            idle "images/arrows/90_a.png"
+            hover "images/arrows/90_a_hover.png"
             action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "bakery"), Jump("map_leave")]
 
 
@@ -91,16 +91,16 @@ screen s_walkable_LakeSlope():
         # back to square arrow
         xpos 0.1 ypos 0.85
         imagebutton:
-            idle "ui/back_to_square_a.png"
-            hover "ui/back_to_square_a_hover.png"
+            idle "images/arrows/180_a.png"
+            hover "images/arrows/180_a_hover.png"
             action Function(travel_to, "s_walkable_Square")
 
     vbox:
         # field arrow
         xpos 0.49 ypos 0.42
         imagebutton:
-            idle "ui/square_lake.png"
-            hover "ui/square_lake_hover.png"
+            idle "images/arrows/0_a.png"
+            hover "images/arrows/0_a_hover.png"
             action Function(travel_to, "s_walkable_LakeField")
 
 screen s_walkable_LakeField():
@@ -111,8 +111,8 @@ screen s_walkable_LakeField():
     vbox:
         xpos 0.1 ypos 0.85
         imagebutton:
-            idle "ui/back_to_square_a.png"
-            hover "ui/back_to_square_a_hover.png"
+            idle "images/arrows/180_a.png"
+            hover "images/arrows/180_a_hover.png"
             action Function(travel_to, "s_walkable_LakeSlope")
 
     vbox:
