@@ -62,7 +62,7 @@ screen s_walkable_LanaStreet():
     add loc_bg("lanastreet")
     vbox:
         # back to the square arrow
-        xpos 0.5 ypos 0.8
+        xpos 0.5 ypos 0.9
         imagebutton:
             idle "images/arrows/180_a.png"
             hover "images/arrows/180_a_hover.png"
@@ -109,10 +109,10 @@ screen s_walkable_LakeField():
     add loc_bg("lakefield")
 
     vbox:
-        xpos 0.1 ypos 0.85
+        xpos 0.2 ypos 0.9
         imagebutton:
-            idle "images/arrows/180_a.png"
-            hover "images/arrows/180_a_hover.png"
+            idle "images/arrows/180_b.png"
+            hover "images/arrows/180_b_hover.png"
             action Function(travel_to, "s_walkable_LakeSlope")
 
     vbox:
