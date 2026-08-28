@@ -34,6 +34,30 @@ define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 init python:
     import random
 
+    class TimeClass:
+        def __init__(self):
+            self.day = 1
+            self.hour = 17
+            self.minute = 0
+
+        def getTimeString(self):
+            return f"{self.hour:02d}:{self.minute:02d}"
+
+        def advanceTime(self, minutes=0, hours=0):
+            newMinutes = self.minute + minutes
+            hours_skipped = newMinutes // 60
+
+            self.minute = newMinutes % 60
+            total_hours = self.hour + hours_skipped + hours
+
+            self.day += total_hours // 24
+            self.hour = total_hours % 24
+            renpy.transition(dissolve, layer="screens")
+
+        def isDay(self):
+            return 6 < self.hour < 18
+
+default time = TimeClass()
 # =============================================== CHARACTER DEFINITIONS
 
 define mks      = Character("MKS 23",       color="#fafafa")
@@ -93,6 +117,10 @@ transform rightish:
 
 label start:
     stop music
+
+    #show screen s_clock
+    #call screen s_walkable_Square()
+    
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
     define you = Character("[name]")
