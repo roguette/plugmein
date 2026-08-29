@@ -30,18 +30,31 @@ define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
 # =============================================== INIT PYTHON
- 
+
+define location_bgs = {
+    "square": ("bg citysquareday", "bg citysquarenight"),
+    "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
+    "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), #TODO: cityslopedownnight does not exist
+    "lakefield": ("bg lakedaya", "bg lakenighta"),
+    "fountain": ("bg fountainday", "bg fountainnight")
+}
+
+
 init python:
     import random
 
+    def loc_bg(loc):
+        day_img, night_img = location_bgs[loc]
+        return day_img if time.isDay() else night_img
+
     class TimeClass:
         def __init__(self):
-            self.day = 1
-            self.hour = 17
+            self.chapter = 1
+            self.hour = 18
             self.minute = 0
 
         def getTimeString(self):
-            return f"{self.hour:02d}:{self.minute:02d}"
+            return f"Chapter {self.chapter} {self.hour:02d}:{self.minute:02d}"
 
         def advanceTime(self, minutes=0, hours=0):
             newMinutes = self.minute + minutes
@@ -50,9 +63,15 @@ init python:
             self.minute = newMinutes % 60
             total_hours = self.hour + hours_skipped + hours
 
-            self.day += total_hours // 24
+            self.chapter += total_hours // 24
             self.hour = total_hours % 24
             renpy.transition(dissolve, layer="screens")
+        
+        def setTime(self, hours, minutes):
+            self.hour = hours
+            self.minute = minutes
+            renpy.transition(dissolve, layer="screens")
+
 
         def isDay(self):
             return 6 < self.hour < 18
@@ -118,8 +137,8 @@ transform rightish:
 label start:
     stop music
 
-    show screen s_clock
-    call screen s_walkable_Square()
+    # show screen s_clock
+    # call screen s_walkable_Square()
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()

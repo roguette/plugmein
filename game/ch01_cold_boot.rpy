@@ -1,8 +1,8 @@
 
-define asked_who_is_piotr = False
-define accused_piotr_of_kidnapping = False
-define asked_where_i_am_start = False
-define stayed_silent_start = False
+define askedWhoPiotrWas = False
+define accusedPiotrOfKidnapping = False
+define askedWhereIAmStart = False
+define stayedSilentStart = False
 define wasRudeToPiotr = False
 define askedAboutCityHistory = False
 define askedAboutHousing = False
@@ -25,6 +25,169 @@ define askedAboutGhostsTalking = False
 define fountainLoreReceived = False
 define endorsedCommunism = False
 define heardVasiliMonologue = False
+
+
+# region INTERACTIONS
+
+label ch01_m_fountainFirstClick:
+    scene expression loc_bg("fountain") with dissolve
+    "You spy with your little eye..."
+    "and its a fountain..."
+    you "{i}No tourists?{/i}"
+    "There aren't any coins on the bottom of the fountain"
+    you "{i}Well, atleast they dont have to scoop them out twice a week like in Rome{/i}"
+    "You look around and there's not a single soul out"
+    ".{w=0.5}.{w=0.5}."
+    menu:
+        "Touch the water":
+            you "{i}i HAVE to touch it{/i}"
+            "Either there's too little water in the fountain or the edges are way too tall for you"
+            "Almost like they dont want random people touching the water"
+            ".{w=0.5}.{w=0.5}."
+            "!"
+            you "{i}Huh{/i}"
+            "You now have: {w=0.5}{b}a wet finger{/b}!"
+
+        "Do not":
+            you "Why am i even considering this"
+            "and you were right to think that"
+            "what if this city had more tricks up its sleeve and the water was poisonous"
+            you "{i}Hell no{/i}"
+    return
+
+label ch01_m_fountainSecondClick:
+    scene expression loc_bg("fountain") with dissolve
+    "Your attitude towards the fountain is as cold as the water in it"
+    "There's nothing to do here at this moment"
+    return
+    
+
+label ch01_m_cityHallRudeToKurowska:
+    you "{i}Hell no i'm not going back in there{/i}"
+    you "{i}She's gonna eat me alive!{/i}"
+    return
+
+label ch01_m_cityHallNormalFirstInteraction:
+    you "{i}I have more questions...{/i}"
+    scene bg cityhallinside with dissolve
+    "Everything here is new to you because i chose this cliche way to start a visual novel"
+    "That way i have more control over the lore and what can happen"
+    scene bg secretary with dissolve
+    show filip normal with dissolve
+    if rudeToKurowska:
+        f "Oh. It's you."
+        you "What?"
+        f "What do u want"
+        # happy meal
+        menu:
+            "What's her problem":
+                "Filip's face contorted"
+                "It looks like he's having a nightmare"
+                f "Girl i-"
+                f "you literally le insulted her hair"
+                f "She spends so much money to have maybelline hair and you just..."
+                "He waves his hands around due to the lack of words"
+                f "That was rude"
+                menu:
+                    "That was constructive criticism":
+                        "It's been a long day and Filip is very tired and you are NOT helping."
+                        "He covers his face and pretends to sob dramatically"
+                        f "When will you finally understand?"
+                        f "She is the president you HAVE to be on good terms with her"
+                        f "She has a ton of power over you and you chose to fight her"
+                        f "Play stupid games win stupid prizes"
+
+                    "Hmph! I will apologize if you so wish.":
+                        f "Good"
+                        f "Wait no hold on"
+                        f "What are you going to say"
+                        f "I dont want you to say something stupid and get into more trouble"
+                        "You put your hand on your chin and pretend to think really hard"
+                        menu:
+                            "I was on drugs and thought you were bald":
+                                pass
+                            "I had something in my eye":
+                                pass
+                            "I lied because im a pick me":
+                                pass
+                            "I thought her weave reminded me of my dead hamster":
+                                pass
+                        "Filip starts giggling uncontrollably"
+                        "You arent sure if its your answers which made him laugh or your stupidity"
+                        f "Yeah no that is not gonna work. You will have to come up with something better"
+                        you "Hmm.."
+                        you "Ok i will do something tomorrow"
+                        you "I'm too tired for this today"
+    else:
+        f "Oh hey"
+        you "I have a question..."
+        menu:
+            "Where is my house":
+                "Filip rolls his eyes dramatically"
+                f "Did you even look at the keys"
+                f "Theres an address attached"
+                "You take the keys and put them on the table and inspect them closely"
+                "Indeed, there is a small keychain with a street name written on it"
+                you "But isnt this like dangerous?"
+                f "How"
+                you "If i lose my keys the person who finds them will be able to unlock my house"
+                f "Then rip the tag off and write your name"
+                f "If someone finds the keys they will give them to us"
+                you "And what if they dont"
+                "Filip has clearly had enough and sighs"
+                f "Then you will come to me and we will come up with something"
+            "Where is everyone":
+                f "Its almost midnight and its cold as hell outside"
+                f "If you werent \"born\" today you would be asleep right now"
+                "You audibly breathe out"
+                you "{i}I guess he's right{/i}"
+                you "{i}I'd rather be in a warm bed than here{/i}"
+                you "Oh."
+                f "And yes, we have alot of residents"
+                f "It's just that its, you know, late"
+                f "Come to the square tomorrow and you will see"
+            "What's in the forest":
+                f "Ebola"
+                "your eyes widen"
+                f "Jk its not ebola its bts stans"
+                you "Oh! That's cute"
+                you "What do i need to do if i see one"
+                f "You dont look like you can end bts so you can sing dynamite and pretend you are an army"
+                you "I'd rather die"
+                you "And piotr was trying to clean the forest?"
+                f "Yes"
+                f "Now you know why you shouldn't go to the forest"
+                you "{i}We will see about that{/i}"
+            "Are there any tourist traps?":
+                f "No there aren't any"
+                f "Because we don't have any tourists"
+                you "How"
+                f "It's just us here in Bratgren"
+                you "So theres literally no one else?"
+                f "As far as we are aware, yes"
+                f "The forest is way too dangerous so we didnt explore it much"
+                you "That's a shame"
+                f "Why? Are you already trying to escape?"
+                you "I came from a rich family and my bedroom was the size of the square outside soo"
+                you "So this feels like prison"
+                "Filip giggles"
+                f "Yeah right"
+                f "If you ever accidentally slip and tumble all the way into the forest and meet the monsters in it"
+                f "Sing a bts song"
+        you "Okay..."
+        you "Well i dont want to take up more of your PRECIOUS time"
+        you "Thank you and goodnight"
+        f "Bye"
+    return
+
+label ch01_m_enteringChurch:
+    "Walking up to the church you feel a sudden breeze of air graze your back"
+    scene bg churchnighta with dissolve
+    "The building in front of you, which you can only assume is a church, looks very old and a bit dilapidated"
+    jump ch01_firstNightTownWalkPartB
+
+
+# endregion
 
 label ch01_cold_boot:
     "{cps=1}...{/cps}"
@@ -141,8 +304,8 @@ label ch01_cold_boot:
 
 label ch01_piotrIntroductionMenu:
     menu:
-        "Kim ty jesteś" if not asked_who_is_piotr:
-            $ asked_who_is_piotr = True
+        "Kim ty jesteś" if not askedWhoPiotrWas:
+            $ askedWhoPiotrWas = True
             you "Okay but jokes aside i have to know who you are"
             you "Are you my dad or something"
             p "My name is Piotr and i am a magician, if you remember"
@@ -170,8 +333,8 @@ label ch01_piotrIntroductionMenu:
             p "Thats not how it works"
             
             jump ch01_piotrIntroductionMenu
-        "Oskarż o porwanie" if not accused_piotr_of_kidnapping:
-            $ accused_piotr_of_kidnapping = True
+        "Oskarż o porwanie" if not accusedPiotrOfKidnapping:
+            $ accusedPiotrOfKidnapping = True
             $ friendship["Piotr"] -= 1
             you "I can see right through your lies"
             you "You think im not the sharpest tool in the shed"
@@ -202,15 +365,15 @@ label ch01_piotrIntroductionMenu:
             you "Fine. I guess you are right this once"
             p "Jeszcze raz mi takie dyrdymały powiesz ja ci strzelę stringami"
             jump ch01_piotrIntroductionMenu
-        "Zapytaj się gdzie jesteś" if not asked_where_i_am_start:
-            $ asked_where_i_am_start = True
+        "Zapytaj się gdzie jesteś" if not askedWhereIAmStart:
+            $ askedWhereIAmStart = True
             you "Where am I?"
             p "In a forest near Bratgren"
             p "Bratgren is the city we all live in"
             you "That's so cool I thought you live up there in the trees"
             p "That is NOT TRUE"
             you "And where is this bratgren?"
-            if accused_piotr_of_kidnapping:
+            if accusedPiotrOfKidnapping:
                 you "Or did you lie about that too?"
             p "Right behind you."
             "Theres a huge wall behind you and you can only assume it guards a city"
@@ -218,8 +381,8 @@ label ch01_piotrIntroductionMenu:
             you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
             p "Do you ever shut up?"
             jump ch01_piotrIntroductionMenu
-        "milcz" if not stayed_silent_start:
-            $ stayed_silent_start = True
+        "milcz" if not stayedSilentStart:
+            $ stayedSilentStart = True
             you "{i}Milcząc chyba nic się nie dowiem{/i}"
             jump ch01_piotrIntroductionMenu
         "(nie mam więcej pytań)":
@@ -228,7 +391,7 @@ label ch01_piotrIntroductionMenu:
 label ch01_afterPiotrIntroductionMenu:
     "Patrzysz się dookoła i widzisz tylko drzewa, a z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
 
-    if stayed_silent_start:
+    if stayedSilentStart:
         p "Co?"
         p "Czemu nic nie mówisz?"
         p "{b}Zatkało kakao?{/b}"
@@ -237,7 +400,7 @@ label ch01_afterPiotrIntroductionMenu:
         you "{i}Łatwo z takimi!{/i}"
         you "Ale wracając, umiem gadać tylko teraz myślę."
 
-    if accused_piotr_of_kidnapping:
+    if accusedPiotrOfKidnapping:
         "Twój wzrok wraca do Piotra ale nie tak romantycznie tylko tak 'o jezu znowu ten yy jak on miał na imię??'."
         you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
 
@@ -550,6 +713,7 @@ label ch01_gettingHouseKeysUniversal:
     p "Jak ci poszło?"
     you "Patrz co mam!! (#flex)"
     "Mówiąc to pokazujesz mu klucze do Twojego własnego domu."
+    "Podnosisz klucze do twarzy Piotra i widzisz brelok z adresem"
     "Piotr jest zazdrosny, ponieważ on musiał pracować by dostać swój dom."
     p "Aha. Okej."
     p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM!"
@@ -559,6 +723,8 @@ label ch01_gettingHouseKeysUniversal:
         you "{i}Chyba przesadziłem w tym sekretariacie.{/i}"
     you "{i}Ale bracie its not that deep. No cóż, idgaf.{/i}"
     "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:44."
+    $ time.setTime(23,44)
+    show screen s_clock
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
     "Wychodzisz z urzędu miasta i idziesz przed siebie."
@@ -570,7 +736,8 @@ label ch01_gettingHouseKeysUniversal:
         "Chcę zwiedzić miasto":
             you "{i}Jeszcze młoda godzina. Nie ma szans, że idę teraz spać.{/i}"
             you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
-            jump ch01_goingIntoTownFirstNight
+            window hide
+            call screen s_walkable_Square()
         
 label ch01_goingHomeFirstNight:
     "Decydujesz, że ci się nie chce, więc idziesz do swojego nowego domu."
@@ -707,26 +874,14 @@ label ch01_goingHomeFirstNight:
     scene black with dissolve
     jump ch02_watch_your_mouth
 
-label ch01_goingIntoTownFirstNight:
-    "Odwracasz się w stronę urzędu miasta i widzisz ogromne jezioro w tle."
-    "Ta woda na horyzoncie jest całkiem przejrzysta, prawie jak w basenie."
-    "Potem patrzysz w bok i widzisz tę nieodkrytą część małego miasteczka Bratgren."
-    "Gdzie ty chcesz iść?"
-    menu:
-        "JEZIORO!!!":
-            jump ch01_lakeVisit
-        "MIASTO!!":
-            jump ch01_firstNightTownWalk
 
 label ch01_firstNightTownWalk:
     $ receivedLoreAboutChurchOnTheFirstDay = True
     scene bg lanastreetnight with dissolve
-    you "{i}Możę znajdę tu coś ciekawego do zwiedzenia. Ten rynek wydaje się być trochę pusty, ale może mnie czymś zaskoczy.{/i}"
-    "Rozglądasz się po rynku i próbujesz wyobrazić sobie ten coroczny festiwal właśnie tutaj na rynku."
-    "Barbara nie powiedziała ci, czym właściwie jest ten festiwal, ani co ludzie wtedy robią, ani nawet czego on dotyczy, więc ta tradycja pozostaje tajemnicą, którą dopiero masz odkryć."
-    "Rozglądasz się i zauważasz fontannę, poza którą na rynku nie ma nic."
-    "Widzisz kościół w oddali i postanawiasz się mu przyjrzeć."
-    scene bg churchnighta with dissolve
+    jump ch01_firstNightTownWalkPartB
+
+# ch01_m_enteringChurch goes here and i dont want lanastreet in the bg
+label ch01_firstNightTownWalkPartB:
     "Gdy już postanawiasz spuścić wzrok z tego pięknego zabytku architektury, widzisz...{w=.1} kogoś."
     you "{i}W KOŃCU!{/i}"
     you "{i}Pierwszy raz widzę kogoś na tej ulicy.{/i}"
@@ -758,6 +913,8 @@ label ch01_firstNightTownWalk:
     wp "[name] [name] [name]"
     "Rzucasz jej surowe spojrzenie ― niemalże piorunujesz ją wzrokiem."
     wp "Skoro już tu jesteś to mogę równie dobrze opowiedzieć ci coś o tym mieście."
+    scene bg churchnighta with dissolve
+    show wp normal at leftish with moveinleft
     "Wiktoria otwiera bramę przed kościołem, żeby umożliwić ci bliższe obejźrnięcie."
     "Zrobiłeś tylko 3 kroki do przodu, więc twój widok niewiele się zmienił."
     "(Czego się spodziewałeś?)"

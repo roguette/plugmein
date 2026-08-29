@@ -10,7 +10,6 @@ label ch02_watch_your_mouth:
         play music "sb_soulsearcher.mp3"
         "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
         "I zanim się obejrzysz, już śpisz."
-
         "A czekaj... już nie."
         "Czujesz, jakbyś leciał przez swoje łóżko."
         "Potem przez podłogę."

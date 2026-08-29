@@ -1,19 +1,7 @@
 default _map_loc = None
 default _map_dest = None
 
-define location_bgs = {
-    "square": ("bg citysquareday", "bg citysquarenight"),
-    "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
-    "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), #TODO: cityslopedownnight does not exist
-    "lakefield": ("bg lakedaya", "bg lakedayb")
-}
-
-
-
 init python:
-    def loc_bg(loc):
-        day_img, night_img = location_bgs[loc]
-        return day_img if time.isDay() else night_img
 
     def travel_to(screen_name):
         renpy.show_screen(screen_name)
@@ -82,6 +70,17 @@ screen s_walkable_LanaStreet():
             hover "images/arrows/90_a_hover.png"
             action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "bakery"), Jump("map_leave")]
 
+    if time.chapter == 1:
+        vbox:
+            # wiktoria p
+            xpos 0.4 ypos 0.42
+            imagebutton:
+                xanchor 0.5
+                yanchor 0.5
+                idle "wp silhouette"
+                action [SetVariable("_map_loc", "lanastreet"), SetVariable("_map_dest", "ch01_firstNightTownWalk"), Jump("map_leave")]
+
+
 
 screen s_walkable_LakeSlope():
     tag map
@@ -131,27 +130,71 @@ label map_leave:
 label lake_direction_sign:
     menu:
         "Lake ↑":
-            "There's nothing to do there at this moment"
+            if time.chapter == 1:
+                jump ch01_lakeVisit
+            else:
+                call generic_unavailable
         "Vasili's house →":
-            "There's nothing to do there at this moment"
+            call generic_unavailable
         "Niuniu's house →":
-            "There's nothing to do there at this moment"
+            call generic_unavailable
 
-    call screen s_walkable_LakeField()
+    call screen s_walkable_LakeField() with dissolve
 
+
+default ch01_f_visitedFountain = False
 label fountain:
-    "There's nothing to do near the fountain at this moment"
-    call screen s_walkable_Square()
+    if time.chapter == 1:
+        if ch01_f_visitedFountain == False:
+            call ch01_m_fountainFirstClick
+            $ ch01_f_visitedFountain = True
+        else:
+            call ch01_m_fountainSecondClick
+    else:
+        call generic_unavailable
+    
+    call screen s_walkable_Square() with dissolve
 
+default ch01_f_wentToCityHall = False
 label city_hall:
-    "There's nothing to do in the town hall at this moment"
-    call screen s_walkable_Square()
+    if time.chapter == 1:
+        if rudeToKurowska == True:
+            call ch01_m_cityHallRudeToKurowska
+        else:
+            if ch01_f_wentToCityHall == False:
+                $ ch01_f_wentToCityHall = True
+                call ch01_m_cityHallNormalFirstInteraction
+            else:
+                "Filip is very busy. I shouldn't be bothering him right now"
+
+    else:
+        call generic_unavailable
+
+    call screen s_walkable_Square() with dissolve
+
 
 label church:
-    "There's nothing to do at the church at this moment"
-    call screen s_walkable_LanaStreet()
+    if time.chapter == 1:
+        # jumping because y/n wont go back to the map after this
+        jump ch01_m_enteringChurch
+    else:
+        call generic_unavailable
+    call screen s_walkable_LanaStreet() with dissolve
 
+default ch01_f_triedBakery = False
 label bakery:
-    "There's nothing to do in the bakery at this moment"
-    call screen s_walkable_LanaStreet()
+    if time.chapter == 1:
+        if ch01_f_triedBakery == False:
+            "The bakery is now closed (duh)"
+            "You can see countless pastries behind it and your stomach growls"
+            "You will have to come back tomorrow"
+            $ ch01_f_triedBakery = True
+        else:
+            call generic_unavailable
+    else:
+        call generic_unavailable
+    call screen s_walkable_LanaStreet() with dissolve
 
+
+label generic_unavailable:
+    "There's nothing to do here at this moment"
