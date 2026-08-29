@@ -5,11 +5,14 @@ define robberyStopped = False
 define metPetitty = False
 
 label ch02_watch_your_mouth:
+    "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
+    "I zanim się obejrzysz, już śpisz."
+
+    call chapterTransition("Akt 2", "lorem ipsum")
 
     if fountainLoreReceived != True:
         play music "sb_soulsearcher.mp3"
-        "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
-        "I zanim się obejrzysz, już śpisz."
+        
         "A czekaj... już nie."
         "Czujesz, jakbyś leciał przez swoje łóżko."
         "Potem przez podłogę."
@@ -20,11 +23,10 @@ label ch02_watch_your_mouth:
         "Przed tobą pojawia się dusza."
         m "Fontanna nie jest głupia."
         you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy.{/i}"
-        m "Spokojnie. Nie defekuj. Nie jestem złą duszą."
+        m "Dać ci pampersy?"
         "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie."
-        "I wygląda to jak jakaś relacja parasocjalna."
-        "Taka jak na twitchu."
-        you "Kim pani jest?"
+        "I wygląda to jak relacja parasocjalna na twitchu."
+        you "Kim Pani jest?"
         m "Ty wiesz kim ja jestem."
         you "Aha to ty jesteś B-{nw}"
         bjork "Tak, {w=0.6}jestem Bjork"
@@ -32,13 +34,18 @@ label ch02_watch_your_mouth:
         you "Czego ty ode mnie chcesz?"
         bjork "A czego TY ode mnie chcesz?"
         pause 3
+        you "No a kto do mnie przyszedł"
+        you "No bez jaj"
         you "Dlaczego ja tu jestem i nic nie pamiętam?"
         bjork "Odpowiedź na wszystkie pytania znajdziesz w kościele."
         you "{i}Jezu to po co ona się mnie pytała?{/i}"
         bjork "Słyszałam to."
         bjork "Nie potrafię opisać wszystkiego, co musisz zobaczyć, poczuć i zrozumieć."
-        bjork "Musisz samemu to wszystko zobaczyć."
         bjork "Nie jesteś głupi i wszystko zrozumiesz."
+        you "Ej rzeczywiście"
+        you "To skoro nie jestem głupi to będę szedł za głosem wątroby"
+        bjork "Nie serca?"
+        you "To jest sen więc jesteś w mojej głowie i to jest moja wyobraźnia i wgl"
         bjork "To od ciebie zależy, czy pomożesz miastu, czy doprowadzisz do jego upadku."
         "W okamngnieniu wracasz do swojego łóżka."
         $ seenBjorkGhost = True
@@ -791,7 +798,7 @@ label ch02_gotMoneyBakeryTea:
     "Rafał gryzie tę bułkę jak normalna osoba."
     r "No, teraz mam nadzieję, że umiesz."
     r "A tak na marginesie, za dużo soli wsypałem do ciasta."
-    you "Imo jest smaczna."
+    you "nie no dobra jest"
     you "Lubię sól."
     you "Masz jakieś wersje tej buły, czy tylko takie common jak jajo w Adopt Me?"
     r "No, mam tylko takie zwykłe, bo nie mam pomysłu."
@@ -861,7 +868,7 @@ label ch02_gotMoneyBakeryTea:
     "Od kiedy Kurowska opowiedziała ci o tym mieście, wiedziałeś, że coś jest nie tak."
     "Trudno powiedzieć, czy to była twoja inteligencja{w=0.5}, czy po prostu jesteś normalnie taki podejrzliwy wobec wszystkiego."
     you "No tak."
-    you "Imo to miasto ogólnie jest dziwne."
+    you "To miasto ogólnie jest dziwne."
     you "Na przykład, czemu to miasto leży w jakimś losowym mieście?"
     you "I dlaczego tu jest tylko jedno miasto?"
     you "Ja mam uwierzyć w to, że nikomu nie chciało się osiedlić gdzieś indziej?"
