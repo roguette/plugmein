@@ -626,16 +626,22 @@ label ch01_kurowskaDialogMenu:
             $ askedAboutCityHistory = True
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
-            you "To proszę coś mi opowiedzieć o tym mieście, bo czuję że ma potężny lore."
-            k "No to siadaj i słuchaj..."
-            k "Islandzka podróżniczka o imieniu Bjork stworzyła to miasto 399 lat temu."
-            "Kurowska wskazała swoim pazurem na fontannę na rynku."
-            k "Dokładnie tam stała Bjork prawie 400 lat temu i wyczuła źródło energii..."
-            k "Z tego powodu co roku obchodzimy rocznicę miasta na rynku."
-            k "Oczywiście wszystko się dzieje wokół tej fontanny."
-            k "Dlatego nasz rynek jest dla nas miejscem świętym."
-            k "Jeśli chcesz wiedzieć więcej to moge ci wyporzyczyć książkę na ten temat. Jednak to nie dzisiaj, gdzieś mi się zapodziała..."
-            you "{i}Warto by było coś się więcej o tym miejscu dowiedzieć, skoro mam tu zostać na zawsze.{/i}"
+            k "See the portrait on the wall? That's bjork"
+            k "You should take a good look at it and remember her face"
+            k "She is, i mean was, the most important lady in this city"
+            k "Theres a very very long story and i will tell you that some other time"
+            k "What you need to know is that we aren't the only city in this world"
+            k "Theres, for example, Lupus"
+            k "Bjork was born in Lupus and one day, she got kicked out of it"
+            k "Bratren is the city she started"
+            you "And where did I come from?"
+            k "We actually don't know"
+            k "People just started appearing at some point"
+            you "That's not suspicious"
+            k "Would you rather go back to the forest?"
+            you "{i}Damn it shes right{/i}"
+            you "No"
+            k "Exactly"
             jump ch01_kurowskaDialogMenu
 
         "Zapytaj o nocleg." if not askedAboutHousing:
@@ -728,19 +734,6 @@ label ch01_gettingHouseKeysUniversal:
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
     "Wychodzisz z urzędu miasta i idziesz przed siebie."
-    "Nie masz pojęcia co teraz robić."
-    menu:
-        "Chcę iść do domu":
-            you "{i}Chyba idę spać...{/i}"
-            jump ch01_goingHomeFirstNight
-        "Chcę zwiedzić miasto":
-            you "{i}Jeszcze młoda godzina. Nie ma szans, że idę teraz spać.{/i}"
-            you "{i}Miasto duże, zobaczę ile ma do zaoferowania.{/i}"
-            window hide
-            call screen s_walkable_Square()
-        
-label ch01_goingHomeFirstNight:
-    "Decydujesz, że ci się nie chce, więc idziesz do swojego nowego domu."
     "Czujesz dreszcze przebiegające cię po plecach."
     "Ale{w=0.6} nie wiesz dokładnie, co je spowodowało - to, że nie ma żywej duszy{w=0.6}, czy to, że po prostu jest zimno."
     you "{i}Boże czemu jest tak zimno???{/i}"
@@ -749,8 +742,12 @@ label ch01_goingHomeFirstNight:
     you "{i}Czy oni w ogóle mają tu zimy?{/i}"
     you "{i}Chyba, że to jest wiosna...{/i}"
     you "{i}Nie chcę zimy!{/i}"
-    "Mówiąc to, tupnąłeś nóżką jakbyś wino robił."
-    "Patrzysz się w górę w poszukiwaniu odpowiedzi, ale widzisz tylko ciemne, puste i nudne niebo."
+    "Mówiąc to, tupnąłeś nóżką jakbyś robił wino."
+    "Patrzysz się w górę w poszukiwaniu odpowiedzi, ale widzisz tylko ciemne, puste a nawet nudne niebo."
+    "Nie masz pojęcia co teraz robić."
+    call screen s_walkable_Square()
+        
+label ch01_goingHomeFirstNight:
     "Jedyny fakt o tym mieście, którego jesteś w 100%% pewien, to jest to, że fontanna jest magiczna."
     "Podchodzisz więc bliżej, żeby jej się lepiej przyjrzeć..."
     
@@ -799,7 +796,7 @@ label ch01_goingHomeFirstNight:
             m "Czy mogę ci w czymś pomóc??"
             you "AAAAA!!!"
             #TODO: (S)creaming sound
-            "w oka mgnieniu odwracasz się i widzisz sąsiada, którego chciałeś odwiedzić ― jeszcze zaspanego."
+            "w okamgnieniu odwracasz się i widzisz sąsiada, którego chciałeś odwiedzić ― jeszcze zaspanego."
             show tomcio normal with dissolve
             "Gość jest zbudowany jak byk (i to tak dosłownie) ― wysoki i szeroki."
             you "{i}Whoopsie daisy yoo hoo{/i}"
@@ -1011,7 +1008,7 @@ label ch01_firstNightTownWalkQuestionsMenu:
             wp "Nikt nie wie."
             wp "Ale chyba była delulu."
             you "{i}Czemu nikt w tym mieście nie pamięta {b}NAJWAŻNIEJSZYCH{/b} rzeczy z historii, to jest takie dziwne...{/i}"
-            jump ch01_firstNightTownWalkQuestionsMenu
+            jump ch01_firstNightTownWalkQuestionsMenu 
         "Jak umarła Bjork" if not askedAboutBjorkDeath:
             $ askedAboutBjorkDeath = True
             wp "Bjork była z Islandii, no co nie?"

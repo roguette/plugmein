@@ -34,9 +34,10 @@ define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
     "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
-    "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), #TODO: cityslopedownnight does not exist
+    "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), # TODO: cityslopedownnight does not exist
     "lakefield": ("bg lakedaya", "bg lakenighta"),
-    "fountain": ("bg fountainday", "bg fountainnight")
+    "fountain": ("bg fountainday", "bg fountainnight"),
+    "house": ("bg houseday", "bg housenight")
 }
 
 
@@ -139,6 +140,7 @@ label start:
 
     # show screen s_clock
     # call screen s_walkable_Square()
+    call screen s_House()
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
