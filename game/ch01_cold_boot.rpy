@@ -23,6 +23,7 @@ default ch01_wpAskedWhereIAm = False
 default ch01_wpAskedWhatHappenedToMe = False
 default endorsedCommunism = False
 default heardVasiliMonologue = False
+default knowsAboutVasili = False
 
 
 # region INTERACTIONS
@@ -780,7 +781,7 @@ label ch01_gettingHouseKeysUniversal:
     you "{i}Ale bracie its not that deep. No cóż, idgaf.{/i}"
     "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:44."
     $ time.setTime(23,44)
-    show screen s_clock
+    show screen s_Clock
     scene bg citysquarenight with dissolve
     play sound "sfx_footsteps_a.mp3"
     "Wychodzisz z urzędu miasta i idziesz przed siebie."
@@ -849,6 +850,7 @@ label ch01_firstNightTownWalkPartB:
     you "What? Why? Is he dangerous"
     wp "No he is worse"
     wp "He is so annoying oh my god"
+    $ knowsAboutVasili = True
     wp "Right behind you theres a bakery right?"
     wp "When rafał, the owner, was closing he had a few buns that were going to go stale"
     wp "So instead of being wasteful he gave them away to people"

@@ -138,7 +138,7 @@ transform rightish:
 label start:
     stop music
 
-    # show screen s_clock
+    # show screen s_Clock
     # call screen s_walkable_Square()
     define you = Character("TEST")#Character("[name]")
     call screen s_House()

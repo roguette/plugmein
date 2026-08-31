@@ -1,4 +1,4 @@
-screen s_clock:
+screen s_Clock:
     zorder 100
 
     text time.getTimeString():
