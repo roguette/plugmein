@@ -10,46 +10,45 @@ label ch02_watch_your_mouth:
 
     call chapterTransition("Akt 2", "lorem ipsum")
 
-    if fountainLoreReceived != True:
-        play music "sb_soulsearcher.mp3"
-        
-        "A czekaj... już nie."
-        "Czujesz, jakbyś leciał przez swoje łóżko."
-        "Potem przez podłogę."
-        "Aż w końcu lądujesz w wodzie."
-        "Nagła zmiana temperatury sprawia, że podskakujesz."
-        "Otwierasz oczy i widzisz, że jesteś w fontannie na rynku."
-        you "{i}Z tą głupią fontanną zawsze jest coś...{/i}"
-        "Przed tobą pojawia się dusza."
-        m "Fontanna nie jest głupia."
-        you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy.{/i}"
-        m "Dać ci pampersy?"
-        "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie."
-        "I wygląda to jak relacja parasocjalna na twitchu."
-        you "Kim Pani jest?"
-        m "Ty wiesz kim ja jestem."
-        you "Aha to ty jesteś B-{nw}"
-        bjork "Tak, {w=0.6}jestem Bjork"
-        pause 5
-        you "Czego ty ode mnie chcesz?"
-        bjork "A czego TY ode mnie chcesz?"
-        pause 3
-        you "No a kto do mnie przyszedł"
-        you "No bez jaj"
-        you "Dlaczego ja tu jestem i nic nie pamiętam?"
-        bjork "Odpowiedź na wszystkie pytania znajdziesz w kościele."
-        you "{i}Jezu to po co ona się mnie pytała?{/i}"
-        bjork "Słyszałam to."
-        bjork "Nie potrafię opisać wszystkiego, co musisz zobaczyć, poczuć i zrozumieć."
-        bjork "Nie jesteś głupi i wszystko zrozumiesz."
-        you "Ej rzeczywiście"
-        you "To skoro nie jestem głupi to będę szedł za głosem wątroby"
-        bjork "Nie serca?"
-        you "To jest sen więc jesteś w mojej głowie i to jest moja wyobraźnia i wgl"
-        bjork "To od ciebie zależy, czy pomożesz miastu, czy doprowadzisz do jego upadku."
-        "W okamngnieniu wracasz do swojego łóżka."
-        $ seenBjorkGhost = True
-        stop music fadeout 0.5
+
+    play music "sb_soulsearcher.mp3"
+    
+    "A czekaj... już nie."
+    "Czujesz, jakbyś leciał przez swoje łóżko."
+    "Potem przez podłogę."
+    "Aż w końcu lądujesz w wodzie."
+    "Nagła zmiana temperatury sprawia, że podskakujesz."
+    "Otwierasz oczy i widzisz, że jesteś w fontannie na rynku."
+    you "{i}Z tą głupią fontanną zawsze jest coś...{/i}"
+    "Przed tobą pojawia się dusza."
+    m "Fontanna nie jest głupia."
+    you "{i}Jeśli this ho czyta moje thoughts to się zesram to jest crazy.{/i}"
+    m "Dać ci pampersy?"
+    "Postanawiasz coś powiedzieć normalnie, bo się robi niezręcznie."
+    "I wygląda to jak relacja parasocjalna na twitchu."
+    you "Kim Pani jest?"
+    m "Ty wiesz kim ja jestem."
+    you "Aha to ty jesteś B-{nw}"
+    bjork "Tak, {w=0.6}jestem Bjork"
+    pause 5
+    you "Czego ty ode mnie chcesz?"
+    bjork "A czego TY ode mnie chcesz?"
+    pause 3
+    you "No a kto do mnie przyszedł"
+    you "No bez jaj"
+    you "Dlaczego ja tu jestem i nic nie pamiętam?"
+    bjork "Odpowiedź na wszystkie pytania znajdziesz w kościele."
+    you "{i}Jezu to po co ona się mnie pytała?{/i}"
+    bjork "Słyszałam to."
+    bjork "Nie potrafię opisać wszystkiego, co musisz zobaczyć, poczuć i zrozumieć."
+    bjork "Nie jesteś głupi i wszystko zrozumiesz."
+    you "Ej rzeczywiście"
+    you "To skoro nie jestem głupi to będę szedł za głosem wątroby"
+    bjork "Nie serca?"
+    you "To jest sen więc jesteś w mojej głowie i to jest moja wyobraźnia i wgl"
+    bjork "To od ciebie zależy, czy pomożesz miastu, czy doprowadzisz do jego upadku."
+    "W okamngnieniu wracasz do swojego łóżka."
+    stop music fadeout 0.5
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
@@ -879,8 +878,6 @@ label ch02_gotMoneyBakeryTea:
     if metWiktoriaP:
         you "Od ciebie też dużo się dowiedziałem."
         "Patrzysz się na Wiktorię."
-    if seenBjorkGhost:
-        you "Poza tym widziałem dusze Bjork."
     you "Dziwne to wszystko."
     wp "WIDZISZ RAFAŁ!!!"
     wp "Mówiłam ci."
@@ -920,13 +917,11 @@ label ch02_gotMoneyBakeryTea:
     "W końcu twój wzrok pada na napis w obcym języku, którego wcześniej nie widziałeś."
     you "Co za dziad to pisał..."
     show bjork normal with dissolve
-    if seenBjorkGhost:
-        you "Znowu ty."
-    else:
-        you "Hejka?"
-        you "Czekaj, czy ty nie jesteś Bjork przypadkiem?"
-        bjork "Jestem."
-        you "Omg, widziałem twój portret."
+
+    you "Hejka?"
+    you "Czekaj, czy ty nie jesteś Bjork przypadkiem?"
+    bjork "Jestem."
+    you "Omg, widziałem twój portret."
     "Jesteś w szoku, że widzisz duszę Bjork przed sobą."
     "Nikt inny na rynku pewnie tego nie widzi, ponieważ nikt na to nie reaguje."
     "Wygląda, jakbyś miał schizofrenię przez to, że gadasz do fontanny."

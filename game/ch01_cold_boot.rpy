@@ -11,7 +11,6 @@ default commentedOnKurowskasAppearance = False
 default rudeToKurowska = False
 default metTomcio = False
 default rudeToTomcio = False
-default seenBjorkGhost = False
 default hasSkinnyWaist = False
 default rudeToVasili = False
 default metVasili = False
@@ -19,10 +18,9 @@ default knowsAboutVasiliGrandfatherGhost = False
 default hasToApologiseToPiotr = False
 default metWiktoriaP = False
 default receivedLoreAboutChurchOnTheFirstDay = False
-default askedAboutSabrina = False
-default askedAboutBjorkDeath = False
-default askedAboutGhostsTalking = False
-default fountainLoreReceived = False
+default ch01_wpAskedWhoIsBjork = False
+default ch01_wpAskedWhereIAm = False
+default ch01_wpAskedWhatHappenedToMe = False
 default endorsedCommunism = False
 default heardVasiliMonologue = False
 
@@ -113,8 +111,7 @@ label ch01_m_fountainSecondClick:
     scene expression loc_bg("fountain") with dissolve
     "Your attitude towards the fountain is as cold as the water in it"
     "There's nothing to do here at this moment"
-    return
-    
+    return  
 
 label ch01_m_cityHallRudeToKurowska:
     you "{i}Hell no i'm not going back in there{/i}"
@@ -239,7 +236,6 @@ label ch01_m_enteringChurch:
     scene bg churchnighta with dissolve
     "The building in front of you, which you can only assume is a church, looks very old and a bit dilapidated"
     jump ch01_firstNightTownWalkPartB
-
 
 # endregion
 
@@ -801,7 +797,6 @@ label ch01_gettingHouseKeysUniversal:
     "Nie masz pojęcia co teraz robić."
     call screen s_walkable_Square()
 
-
 label ch01_firstNightTownWalk:
     $ receivedLoreAboutChurchOnTheFirstDay = True
     scene bg lanastreetnight with dissolve
@@ -818,19 +813,19 @@ label ch01_firstNightTownWalkPartB:
     you "{i}Czego onx chce???{/i}"
     "Podchodzisz bliżej do tajemniczej sylwetki przed kościołem, zachowując przy tym wszystkie środki bezpieczeństwa."
     show wp normal with dissolve
-    you "Dobry wieczór...?"
-    m "Czy my się znamy?"
-    you "Nie wydaję mi się."
-    m "Ty nie pracujesz przypadkiem po drugiej stronie miasta?"
-    you "No nie, bo jestem tutaj nowy!"
-    m "Aha."
-    m "No to cześć."
-    you "..."
-    m "..."
-    you "..."
-    $ metWiktoriaP = True
-    wp "Mam na imię Wiktoria."
-    you "Miło cię poznać! Mam na imię [name]."
+    you "Hi?"
+    m "Oops"
+    m "I thought you were someone else"
+    you "Really?"
+    m "Yeah this is very awkward... Sorry"
+    you "Omg there are more people outside?"
+    m "What? Yes"
+    m "Are you new here or something"
+    you "Yes i was born today"
+    "She giggles just a tiny bit"
+    wp "Well i am Wiktoria and i live down the street"
+    wp "And you are ..??"
+    you "[name]"
     "Uśmiechasz się jak w reklamie nieruchomości."
 
     $ newName = name.strip().split(" ")[0].lower()#  "Dupa 3.0" -> "dupa"
@@ -838,173 +833,113 @@ label ch01_firstNightTownWalkPartB:
     wp "No właśnie miałam mówić, że wyglądasz na [newName]."
     wp "Masz fajne imię."
     wp "[name] [name] [name]"
-    "Rzucasz jej surowe spojrzenie ― niemalże piorunujesz ją wzrokiem."
-    wp "Skoro już tu jesteś to mogę równie dobrze opowiedzieć ci coś o tym mieście."
-    scene bg churchnighta with dissolve
-    show wp normal at leftish with moveinleft
-    "Wiktoria otwiera bramę przed kościołem, żeby umożliwić ci bliższe obejźrnięcie."
-    "Zrobiłeś tylko 3 kroki do przodu, więc twój widok niewiele się zmienił."
-    "(Czego się spodziewałeś?)"
-    wp "Wiesz, że Bjork jest założycielką naszego miasta?"
-    you "No tak, kurowska mi o niej mówiła. Założyła nasze miasto jakieś czterysta lat temu."
-    wp "Nie do końca. Bjork założyła nasze miasto 399 lat temu a 400 rocznica będzie obchodzona podczas tegorocznych zielonych świątek."
-    you "Wow! Ale heca."
-    wp "No rel. Bjork to islandzka podróżniczka która to wszystko zaczęła."
-    wp "Była zwykłą kobietą ― jak większość kobiet tutaj w bratgren."
-    wp "Pewnego dnia Bjork obudziła się i miała wizję, w której pojawiła się dusza, która coś jej tam wyszeptała."
-    "Wiktoria wskazuje na witraż. Patrzysz na niego i dopiero z tą narracją uświadamiasz sobie, że to duch."
-    "Wpatrujesz się w witraż próbując obejrzeć go pod różnymi kątami."
-    wp "Czy coś jest nie tak?"
-    you "Nie, nie to nic."
-    wp "Bjork zrobiła ten witraż swoimi rękami."
-    you "Aha teraz ma sens czemu jest taki..."
-    "Patrzy sie na ciebie jakbyś właśnie zabił starą lichwiarkę i jej siostrę."
-    "{i}Może lepiej nie obrażać ich wierzeń...{/i}"
-    with vpunch
-    # TODO: *gulp* - dodaj dźwięk a nie takie chyry byry mi tutaj robisz
-    you "...{w=.3} Tzn ma taki...{w=.6} unikalny styl ― nigdy wcześniej czegoś takiego nie widziałem."
-    wp "{b}No ja myślę!{/b}"
-    wp "Ale wracając, nikt nie wie co ta dusza tam wyszeptała do Bjork, a ten witraż to jedyna interpretacja szeptu jaką mamy."
-    wp "Po spotkaniu z tą duszą jej serce wypełniło się determinacją, więc poszła szukać miejsca z najlepszym vibem."
-    wp "Bjork dużo pisała w swoim dzienniku."
-    wp "Pierwsze co napisała to \"If travel is searching, and home what's been found, im not stopping.\""
-    wp "Zaczęła podróżować po całym świecie w poszukiwaniu idealnego miejsca na miasto."
-    you "Wow! Ale diva."
-    wp "No rel ona była taką {b}final girl{/b}."
-    you "Ej, rell."
-    wp "A wiesz co po tych podróżach zrobiła?"
-    you "Nie."
-    wp "Ale to było pytanie retoryczne..."
-    "-1000 aury!"
-    you "No dobra mów już!"
-    wp "Szła tu gdzieś przez las, gdy poczuła taki mega fajny vibe."
-    wp "Zorientowała się od razu, że ten vibe był lepszy niż wszystkie i od razu wiedziała że to miejsce nadaje się na miasto."
-    wp "Ale ostatnio ta tarcza osłabła i czarodzieje tacy jak Piotr muszą pomagać nam chronić Bratgren."
-    you "Właśnie obudziłem się pierwszy raz obok Piotra, jak robił jakiś rytuał."
-    wp "Serio?"
-    you "Noooo..."
-    you "Od razu myślałem, że to jego wina i wgl masakra z nim."
-    you "Ale chyba jest spoko..."
-    wp "No fajny jest on wszystkim pomaga."
-    you "Weź bo teraz wyszedłem na niemiłego..."
-    wp "No to przeproś go?"
-    $ hasToApologiseToPiotr = True
-    you "No, no przeproszę..."
-    you "No ale dobra, wracając do tej Bjorkowej."
-    you "Ona to miasto sama zbudowała?"
-    wp "Nie no, oczywiście, że nie."
-    wp "Po pierwsze, wtedy miasto było dużo mniejsze. Minęło w końcu czterysta lat, trochę się rozrosło."
-    wp "A po drugie, nie była sama..."
-    you "OKEJ...??"
-    wp "Była jeszcze{w=.3} Sabrina Carpenter."
-    "Nie wiesz czemu, ale to imię brzmi znajomo, chociaż nikt nigdy ci go nie wspominał."
-    "To bardzo dziwne i cię trochę niepokoi."
-    you "{i}Gdzieś to imię już słyszałem...{/i}"
-    you "{i}Czemu ja ją kojarzę?{/i}"
-    you "{i}Chyba jest ważna!{/i}{nw}"
-    wp "Halo, czy ty mnie w ogóle słuchasz?"
-    you "Yyy... tak, tak mów."
-    wp "A więc to była najlepsza przyjaciółka Bjork i też jakby ironicznie cieśla."
-    wp "Zbudowały kilka domów i ludzie zaczęli się pojawiać ― tak jak ty."
-    wp "I tak w ogóle to do dziś nie wiadomo skąd ci ludzie się biorą."
-    you "Nawet Bjork nie wiedziała?"
-    wp "No{w=.3} nie."
-    wp "A teraz plot twist! Zgadnij jak ona umarła..."
-    you "Została łysa?"
-    wp "Co?{w=.3} Nie?"
-    wp "Jej śmierć była {b}BARDZO{/b} tragiczna."
-    wp "Była prezydentem tylko 23 lata kiedy sabrina ją zdradziła i dźgnęła nożem!!!"
-    you "{i}A teraz {b}mi{/b} jest łyso, bo nie wiedziałem tego faktu.{/i}"
-    you "{i}Wiedziałem, że sabrina jest ważna!!!{/i}"    
-    wp "Zginęła w aktualnym biurze kurowskiej. Dokładnie tam, gdzie ona teraz siedzi."
-    wp "Ostatnie słowa Bjork były \"I thought I could organize freedom. How scandinavian of me...\""
-    wp "To był tragiczny dzień dla całego miasta i od tamtej pory co rok duchy powstają z martwych."
-    you "{i}Mam tyle pytań...{/i}"
-    jump ch01_firstNightTownWalkQuestionsMenu
-
-label ch01_firstNightTownWalkQuestionsMenu:
-    if askedAboutSabrina and askedAboutBjorkDeath and askedAboutGhostsTalking:
-        jump ch01_afterFirstNightTownWalkQuestionsMenu
-
+    "It's your turn to giggle"
+    "You lean onto the church's fence and try to be nonchalant"
+    you "So where were you going on this fine evening, young lady?"
+    wp "I had too much coffee and i couldnt fall asleep"
+    you "And you chose to go outside? What if this place is dangerous"
+    wp "Like you would know anything about that"
+    wp "Actually yes, it is dangerous"
+    you "How"
+    wp "Vasili might be outside"
+    you "Whomstve is vasili"
+    wp "Oh my god you dont know?"
+    you "No"
+    wp "That is a BLESSING you should keep it that way"
+    you "What? Why? Is he dangerous"
+    wp "No he is worse"
+    wp "He is so annoying oh my god"
+    wp "Right behind you theres a bakery right?"
+    wp "When rafał, the owner, was closing he had a few buns that were going to go stale"
+    wp "So instead of being wasteful he gave them away to people"
+    wp "And his high calorie verity shaped ass said that..."
+    "wiktoria points her finger up and starts speaking in a forced, nerdy voice"
+    wp "Boli mnie wszystko co nagle"
+    wp "Chodzi o dyskomfort jaki czuje?"
+    wp "Zwracam uwagę na dyskomfort?"
+    wp "Domyślam się że macie beke ze mnie"
+    wp "Hmph!"
+    you "dobra sybau"
+    wp "And thats not all!"
+    wp "He wants to abolish the government"
+    you "I've heard enough"
+    you "Now i'm scared of him too"
+    you "Where does he live?"
+    wp "By the lake. his house is the one with red aura coming off of it"
+    you "okay..."
+    "you twitch at the thought of coming anywhere near him"
+    wp "As you can see im his #1 fan"
+    you "And my mother is lady gaga"
+    "Wiktoria laughs at your sassiness"
+    wp "Lets go together"
+    wp "You dont want to be alone when {i}he{/i} starts talking to you"
+    "You walk to the square talking about how you both hate it when you are trying to open yoghurt and the foil splits in two"
+    scene expression loc_bg("square")
+    show wp normal at center with dissolve
+    wp "So tell me, how were the first few hours in bratgren"
+    you "So i woke up in the forest..."
+    wp "okay and then what"
+    you "Piotr was in front of me so i immediately thought its all his fault"
+    you "So i was kinda rude to him and you know"
+    you "He led me to Kurowska and she gave me a house"
+    if rudeToKurowska:
+        you "I was rude to her too"
+    "Wiktoria starts laughing uncontrollably"
+    wp "What happened to your attitude"
+    wp "You weren't rude to me"
+    you "Stop it i calmed down now"
+    "Wiktoria also calms down"
+    wp "Okay but you have to apologize for being rude"
+    you "We will see about that"
+    "you both laugh"
+    wp "I also appeared in the forest just like you"
+    wp "But i didnt have piotr to help me"
+    wp "I had to follow my instincts"
+    you "And you have been here for how many years?"
+    wp "Like 8"
+    you "Ohh so like you are a local at this point"
+    you "You must know alot about Bratgren"
+    wp "Yeah i guess you could say so"
+    you "Could you tell me about this city?"
+    wp "Is there anything specific you would like to know?"
+    you "Well.."
     menu:
-        "Co się stało z sabriną" if not askedAboutSabrina:
-            $ askedAboutSabrina = True
-            wp "Ona była w gorącej wodzie kąpana po tym jak zabiła Bjork..."
-            wp "W sensie nie było wody, a tylko temperatura{w=.6} ― została spalona na stosie."
-            you "Ej szczerze ― też bym ją spalił za to."
-            wp "No, rel!"
-            you "No, ale czekaj..."
-            you "Czemu Sabrina ją zdradziła???"
-            wp "Nikt nie wie."
-            wp "Ale chyba była delulu."
-            you "{i}Czemu nikt w tym mieście nie pamięta {b}NAJWAŻNIEJSZYCH{/b} rzeczy z historii, to jest takie dziwne...{/i}"
-            jump ch01_firstNightTownWalkQuestionsMenu 
-        "Jak umarła Bjork" if not askedAboutBjorkDeath:
-            $ askedAboutBjorkDeath = True
-            wp "Bjork była z Islandii, no co nie?"
-            you "Mnie się pytasz?!"
-            wp "Dobra nie ważne!"
-            wp "No to chcieliśmy uczcić tradycje tego kraju kiedy ona umarła."
-            wp "Ciało Bjork zostało położone na łodzi, którą wypuszczono na wyjątkowo spokojne jezioro Świtezianka."
-            you "Czemu położyliście ją na łódzi."
-            wp "Jezu czy ty mnie słuchasz...{w=.3} Mówiłam, że takie są tradycje!"
-            you "No, dobra już...{w=.3} I to wszystko?"
-            wp "A no tak ― zapomniałam najważniejszej rzeczy!"
-            wp "Ogólnie mieliśmy podpalić tę łódkę, ale jakaś siła wciągnęłą ją pod wodę..."
-            you "Jak można o czymś takim zapomnieć???"
-            jump ch01_firstNightTownWalkQuestionsMenu
-        "Czy mogę rozmiawiać z tymi duchami" if not askedAboutGhostsTalking:
-            $ askedAboutGhostsTalking = True
-            wp "PO PIERWSZE...{w=.6} To nie są duchy tylko dusze ― wkurzą się jeśli nazwiesz je duchami."
-            you "{i}Duchy i dusze to prawie to samo. Przecież mnie nie ukrzyżują jak ich zmisgenderuje...{/i}"
-            you "Ups, przepraszam nie wiedziałem."
-            wp "Nic się nie dzieje..."
-            wp "I tak, możesz z nimi rozmawiać, ale tylko podczas tego festiwalu."
-            wp "A właściwie to one mogą mówić tylko przez te siedem dni."
-            wp "Jednak nie bój żaby ― bo możesz je zobaczyć przez cały rok ― ale nie będą cię nawiedzać."
-            jump ch01_firstNightTownWalkQuestionsMenu
-
-label ch01_afterFirstNightTownWalkQuestionsMenu:
-    you "Czy jest coś jeszcze, co powinienem wiedzieć?"
-    wp "Tak, zapomniałam ci powiedzieć, czemu w ogóle opowiadam ci o tym kościele."
-    you "Słucham?"
-    wp "W tym kościele jest mnóstwo relikwii.{w=.3} Na przykład nóż, którym zabito Bjork."
-    wp "Teraz jest zamknięty, ale jeśli kiedyś będziesz potrzebować odpowiedzi, znajdziesz je tutaj."
-    you "Aha, dobra, dzięki."
-    "Opuszczasz teren kościoła, a Wiktoria zamyka za tobą bramę."
-    "Zrobiłeś tylko 3 kroki do tyłu więc twój widok niewiele się zmienił."
-    "(Czego się spodziewałeś?)"
-    you "To tyle informacji naraz..."
-    you "Na pewno do jutra wszystko zapomnę."
-    wp "Ej, rell!!!"
-    wp "Tak szczerze, sama nie wiem jak ja to pamiętam."
-    wp "W każdym razie, jeśli będziesz czegoś potrzebować, jestem tu, żeby pomóc."
-    you "Aww, dziękuję."
-    you "Dobra to teraz mi powiedz, która jest godzina?"
-    wp "No jest już po północy."
-    you "Czemu ty łazisz an rynku po północy???"
-    wp "Yyyy...{w=.6} Nie interesuj się!"
-    you "{i}SUSPICIOUS BEHAVIOUR{/i}"
-    you "Myślę, że najlepiej już pójdę do domu. Jeszcze go nawet nie widziałem."
-    wp "Czekaj, jaki dom???{w=.6} Skąd???"
-    you "Dom{w=.6}, który dostałem od Kurowskiej?"
-    wp "CO?"
-    wp "Jak to dostałeś, dom???"
-    "Pokazujesz jej klucze, które się okazują mocno spocone od twojej ręki."
-    you "No, od Kurowskiej dostałem."
-    wp "Czemu ona teraz magicznie ma swoich ulubieńców?"
-    you "Może mi ktoś wytłumaczyć, co się dzieje???"
-    wp "Kurowska zwykle nie rozdaje domów za darmo."
-    you "To nie było za darmo, powiedziała, że muszę znaleźć pracę."
-    wp "Aaaa, ona trochę nie lubi bezrobotnych."
-    wp "Cokolwiek robisz, pamiętaj, żeby płacić podatki. Wtedy będziesz miał z nią spokój."
-    wp "Jest miła tylko dla tych, co je płacą."
-    you "Oho, okej."
-    you "Dziękuję ci za wszystkie informacje, bardzo to doceniam, ale teraz chciałbym się położyć."
-    you "Dobranoc."
-    wp "Pa."
-    $ fountainLoreReceived = True
-    scene bg citysquarenight with dissolve
+        "Where am i":
+            pass
+    you "Like i know i am IN bratgren but where is this bratgren"
+    you "Is that all there is in this world"
+    wp "No. There are different cities and other people"
+    you "and where is everyone?"
+    wp "I dont really know where the closest one is"
+    wp "But it's not like that matters"
+    wp "There are gmo wolves in that forest and they will rip you apart if you dare and try to explore"
+    you "That's very rude of them"
+    you "And no one wanted to explore?"
+    wp "Actually they can and did explore"
+    wp "Piotr, the guy you were extremely rude to, is in charge of our onyx supply"
+    wp "You know if it runns out we all die and all that"
+    wp "Bjork left us a whole mountain of it and now theres much less of it left"
+    wp "So piotr is saving that onyx for when we need it"
+    wp "And to explore you need that onyx or else the monsters will try to eat you"
+    wp "Piotr is not going to give you any just to wander in the forest"
+    wp "Especially with that attitude"
+    "You laugh but deep inside you know she is right"
+    "There's a moment of silence"
+    you "Yeah i have to apologize to him"
+    wp "yeah.."
+    you "So what do you even do here"
+    you "I'll wake up tomorrow and have nothing to do"
+    you "Wait no Kurowska told me to get a job"
+    wp "You can do anything you just need to get money"
+    wp "Every week Antonius comes to collect taxes"
+    wp "It's not much but everyone has to pay"
+    you "Seems fair"
+    "you yawn very loudly"
+    you "I better get going"
+    you "It was nice talking to you"
+    wp "Goodnight [name]"
+    wp "Goodnight"
+    hide wp normal with dissolve
     "Zaczynasz iść do domu. Głowa ciąży ci od nadmiaru informacji, które właśnie otrzymałeś."
     "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem."
     call screen s_House()
