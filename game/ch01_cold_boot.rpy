@@ -1,33 +1,87 @@
 
-define askedWhoPiotrWas = False
-define accusedPiotrOfKidnapping = False
-define askedWhereIAmStart = False
-define stayedSilentStart = False
-define wasRudeToPiotr = False
-define askedAboutCityHistory = False
-define askedAboutHousing = False
-define askedAboutWork = False
-define commentedOnKurowskasAppearance = False
-define rudeToKurowska = False
-define metTomcio = False
-define rudeToTomcio = False
-define seenBjorkGhost = False
-define hasSkinnyWaist = False
-define rudeToVasili = False
-define metVasili = False
-define knowsAboutVasiliGrandfatherGhost = False
-define hasToApologiseToPiotr = False
-define metWiktoriaP = False
-define receivedLoreAboutChurchOnTheFirstDay = False
-define askedAboutSabrina = False
-define askedAboutBjorkDeath = False
-define askedAboutGhostsTalking = False
-define fountainLoreReceived = False
-define endorsedCommunism = False
-define heardVasiliMonologue = False
+default askedWhoPiotrWas = False
+default accusedPiotrOfKidnapping = False
+default askedWhereIAmStart = False
+default stayedSilentStart = False
+default wasRudeToPiotr = False
+default askedAboutCityHistory = False
+default askedAboutHousing = False
+default askedAboutWork = False
+default commentedOnKurowskasAppearance = False
+default rudeToKurowska = False
+default metTomcio = False
+default rudeToTomcio = False
+default seenBjorkGhost = False
+default hasSkinnyWaist = False
+default rudeToVasili = False
+default metVasili = False
+default knowsAboutVasiliGrandfatherGhost = False
+default hasToApologiseToPiotr = False
+default metWiktoriaP = False
+default receivedLoreAboutChurchOnTheFirstDay = False
+default askedAboutSabrina = False
+default askedAboutBjorkDeath = False
+default askedAboutGhostsTalking = False
+default fountainLoreReceived = False
+default endorsedCommunism = False
+default heardVasiliMonologue = False
 
 
 # region INTERACTIONS
+
+label ch01_h_entrance:
+    scene expression loc_bg("house")
+    $ ch01_house_seenEntrance = True
+    "The smell of old, stale things permeated the air"
+    "And that is the first thing you noticed when you walked in"
+    "If it werent for your lost memories you would have thought of the time you got stuck in the attic"
+    "For a moment you just stand there, taking in the surroundings"
+    "..."
+    you "{i}i LOVE it{/i}"
+    you "{i}I better lock the door though{/i}"
+    "*click*"
+    call screen s_House()
+
+label ch01_h_bathroom:
+    scene expression loc_bg("house")
+    you "{i}Wait{/i}"
+    you "{i}Why are there chia seeds near the toilet?{/i}"
+    call screen s_House()
+
+label ch01_h_bedroom:
+    scene expression loc_bg("house")
+    you "{i}The bed is so big and soft{/i}"
+    you "{i}I wish i could just never get out of it{/i}"
+    you "{i}Wait i actually can{/i}"
+    menu:
+        "Go to sleep":
+            scene black with dissolve
+            "You literally jump onto the bed like a hungry animal"
+            "Wait.. {w=0.5} you are a hungry animal"
+            jump ch02_watch_your_mouth
+        "No i want to explore my house first":
+            call screen s_House()
+
+label ch01_h_kitchen:
+    scene expression loc_bg("house")
+    "You can already imagine yourself not using the stove and just eating chinese takeout"
+    call screen s_House()
+
+label ch01_h_livingRoom:
+    scene expression loc_bg("house")
+    "The living room is surprisingly empty"
+    "You will have to do some furnishing because right now theres not much living to do in it"
+    "Your feet shuffled in place at the sight of the empty room and you heard the sound echoing back to you"
+    call screen s_House()
+
+label ch01_h_storageRoom:
+    scene expression loc_bg("house")
+    "There's a sticky note on one of the shelves"
+    "{i}Enjoy - Barbara{/i}"
+    you "{i}Enjoy what? Theres nothing to enjoy{/i}"
+    you "{i}I mean the house is nice{/i}"
+    you "{i}Why would she put the note here though{/i}"
+    call screen s_House()
 
 label ch01_m_fountainFirstClick:
     scene expression loc_bg("fountain") with dissolve
@@ -35,7 +89,7 @@ label ch01_m_fountainFirstClick:
     "and its a fountain..."
     you "{i}No tourists?{/i}"
     "There aren't any coins on the bottom of the fountain"
-    you "{i}Well, atleast they dont have to scoop them out twice a week like in Rome{/i}"
+    you "{i}Well, atleast they dont have to scoop them out{/i}"
     "You look around and there's not a single soul out"
     ".{w=0.5}.{w=0.5}."
     menu:
@@ -746,130 +800,6 @@ label ch01_gettingHouseKeysUniversal:
     "Patrzysz się w górę w poszukiwaniu odpowiedzi, ale widzisz tylko ciemne, puste a nawet nudne niebo."
     "Nie masz pojęcia co teraz robić."
     call screen s_walkable_Square()
-        
-label ch01_goingHomeFirstNight:
-    "Jedyny fakt o tym mieście, którego jesteś w 100%% pewien, to jest to, że fontanna jest magiczna."
-    "Podchodzisz więc bliżej, żeby jej się lepiej przyjrzeć..."
-    
-    scene bg fountainnight with dissolve
-    stop music fadeout 10.0
-    play sound "sfx_footsteps_a.mp3"
-
-    "Im bliżej jesteś do tej fontanny, tym ciszej się robi..."
-    "Nie, że wcześniej było głośno w środku nocy."
-    "Tylko, że wtedy słychać było wiatr w koronach drzew, żarzące się latarnie na ulicach, szum przelatujących ptaków, ale teraz {b}wszystko{/b} ucichło..."
-    "Wszystko oprócz szumu wody w fontannie, który z sekundy na sekundę staje się coraz bardziej uciążliwy i głośniejszy."
-    "Powietrze jest gęste i ciężkie, a ty czujesz to wyraźnie..."
-    "Nic się nie dzieje. Stoisz tam przez dłuższą chwilę, ale sytuacja nie nabiera tępa i znudziło ci się czekanie, więc postanawiasz wrócić do domu."
-    "Wygląda na to, że będziesz musiał wrócić tutaj później."
-    "Oddalasz się od fontanny i idziesz do domu."
-    scene bg colacocastreetnighta with dissolve
-    play music "town_night.mp3" fadeout 10.0
-    play sound "sfx_footsteps_b.mp3"
-    you "{i}Gdzie ja w ogóle mieszkam?{/i}"
-    "Patrzysz na klucz w swojej dłoni."
-    "Do klucza jest przypięty mały breloczek, na którym jest napisane ul. króla Aszurnasirpala II."
-    "Dzięki plot armor nie masz problemu ze znalezieniem ulicy z breloczka."
-    "Na jej długości są tylko trzy domy, a ten na samym końcu jest twój."
-
-    menu:
-        "Chcę się przywitać":
-            you "Nie chce wyjść na niemiłego, muszę się przywitać."
-            "Podchodzisz do pierwszego lepszego domu..."
-            you "{i}Czemu ma zamkniętą bramę?{/i}"
-            you "{i}Czy to dla mnie zbudowano taki tor przeszkód?{/i}"
-            you "{i}Co to ma być? Wipeout?{/i}"
-            "Na szczęście jesteś skinny więc po prostu wsadzasz rękę przez pręty bramy i otwierasz ją od środka." 
-            "Ale plot armor nie jest taki duży, więc ręka utyka ci w ogrodzeniu. Na szczęście po kilku sekundach ciągnięcia udaje ci się ją wyciągnąć."
-            "Gdyby ktoś cię teraz zobaczył, to byś stracił tyle aury..."
-            "Próbujesz nonszalancko zamknąć za sobą bramę, ale po przejściu kilku kroków się otwiera."
-            you "{i}Głupia brama!{/i}"
-            you "{i}Pff... to już nie mój problem{/i}"
-            "Dom tego sąsiada jest strasznie nudny, a brak jakichkolwiek roślin w około budynku nie poprawia tej sytuacji."
-            "Podchodzisz do drzwi i pukasz do drzwi ― tak samo jakbyś szedł na rozmowę o pracę ― i czekasz."
-            "Nikt nie otwiera, więc pukasz jeszcze raz, a dokładniej 3 razy."
-            "Znowu nikt nie otwiera..."
-            "Zdecydowałeś, że to jednak nie był najlepszy pomysł, żeby robić meet & greet z sąsiadami w nocy. Z tego powodu odwracasz się, żeby odejść, ale słyszysz za sobą ciche skrzypnięcie."
-            you "{i}Co to było?!{/i}"
-            "Postanawiasz zignorować ten dźwięk i kontynuować podróż do swojego domu."
-            "Ale nagle czyjś głęboki i gardłowy głos sprawia, że podskakujesz ze strachu."
-            m "Czy mogę ci w czymś pomóc??"
-            you "AAAAA!!!"
-            #TODO: (S)creaming sound
-            "w okamgnieniu odwracasz się i widzisz sąsiada, którego chciałeś odwiedzić ― jeszcze zaspanego."
-            show tomcio normal with dissolve
-            "Gość jest zbudowany jak byk (i to tak dosłownie) ― wysoki i szeroki."
-            you "{i}Whoopsie daisy yoo hoo{/i}"
-            you "{i}...{/i}"
-            you "{i}No i co mam teraz zrobić???{/i}"
-            you "{i}Będę chyba nonchalant.{/i}"
-            you "Nie strasz tak ludzi, to bardzo niegrzeczne!"
-            m "???"
-            m "To nie {b}ty{/b} przypadkiem pukałeś {b}mi{/b} do drzwi i to w {b}środku nocy{/b}???"
-            m "Jaki jest powód takiego ― nie ukrywajmy ― niemiłego najścia?!"
-            you "No dobra, powiedzmy że masz rację.."
-            "Sąsiad jest oszołomiony twoją arogancją i zaczyna patrzeć na ciebie jak spod byka."
-            you "Jestem twoim nowym sąsiadem i chciałem się przywitać."
-            you "Przepraszam, że chciałem być miły!"
-            m "No to cześć?"
-            you "{i}Za kogo on mnie ma że tak się do mnie odzywa!{/i}"
-            you "Czy to wszystko???"
-            m "Ale o czym chcesz gadać, jest prawie północ!!!"
-            menu:
-                "Zapytaj kim on jest":
-                    $ metTomcio = True
-                    you "Kim jesteś?"
-                    t "Nazywam się Tomcio."
-                    you "I to tyle???"
-                    you "Opowiedz coś więcej o sobie, np. czym sie zajmujesz."
-                    "Tomcio pochylił się bliżej ciebie i popatrzył się na ciebie jeszcze bardziej podejrzliwie niż wcześniej."
-                    t "A po co ci ta informacja?"
-                    you "{i}Ale dał do pieca...{/i}"
-                    you "{i}I zatkało mi kakao...{/i}"
-                    you "{i}Aha! {w=0.6}Wiem! {w=0.6}Teraz wszystko wiem! {w=0.6}Wiem jak na to odpowiedzieć! {w=0.6}Wiem wiem wiem! {w=0.6}Eureka!{/i}"
-                    you "Chcę się upewnić, że moi sąsiedzi nie szponcą nieleganie."
-                    t "Nigdy w życiu nie słyszałem {b}tak{/b} oburzającego stwierdzenia!!!"
-                    t "No ale skoro musisz wiedzieć... to pracuję dla rządu."
-                    you "Aha, ok."
-                    you "Ale nudna praca. Myślałem że coś ukrywasz."
-                    you "No to dziękuję ja idę spać."
-                    you "DOBRANOC!"
-                    hide tomcio normal with dissolve
-                    you "{i}Ten tomcio to chyba spoko gość, tylko trochę dziwny. No cóż sąsiadów się nie wybiera, przeżyję.{/i}"
-
-                "Opowiedz mu wszystko o sobie":
-                    you "Dobry wieczór."
-                    m "Raczej dobranoc!"
-                    you "Dobry―a... {w=0.3}noc???"
-                    you "Jak pan się nazywa?"
-                    you "Yyy... {w=.3}w każdym razie nie ważne. Ja będe pierwszy!!!"
-                    you "Pewnie się domyślasz, ale jestem twoim sąsiadem i jestem bardzo szczę..."
-                    "On robi krok do tyłu i zamyka ci drzwi przed nosem."
-                    hide tomcio normal with vpunch
-                    play sound "sfx_door_slam.mp3"
-
-                "Ragebait":
-                    $ rudeToTomcio = True
-                    you "A w sumie, nie ważne."
-                    "Obracasz się na pięcie i zaczynasz uciekać, podskakując."
-                    m "CZEKAJ!!!"
-                    m "Boże święty...{w=.6} czemu ty ode mnie uciekasz???"
-                    m "Czy ja naprawdę...{w=.6} jestem taki groźny???"
-                    m "Czy to przez to{w=.6}, że jestem gruby???"
-                    "On wpada w malignę, zaczyna płakać i zamyka drzwi."
-                    hide tomcio normal with dissolve
-                    you "{i}???{/i}"
-                    you "Nie mam {b}ZIELONEGO{/b} pojęcia co się właśnie stało, chyba pora na sen."
-            "Wychodzisz przez bramę, spoglądając przy tym przez ramię by upewnić się, że sąsiad cie nie goni i idziesz do domu."
-        "Chcę iść spać":
-            you "Zmęczyłem się"
-            "Czym niby??? Ale ok."
-    "Dom był niedaleko, więc szybko trafiłeś pod drzwi swojego nowego lokalu."
-    "Nie wyglądał on przytulnie, ale teraz jest za późno na takie rozmyślania."
-    "Zanim się obejrzałeś to byłeś już w domu pod kołdrą."
-    stop music fadeout 1.0
-    scene black with dissolve
-    jump ch02_watch_your_mouth
 
 
 label ch01_firstNightTownWalk:
@@ -1076,8 +1006,8 @@ label ch01_afterFirstNightTownWalkQuestionsMenu:
     $ fountainLoreReceived = True
     scene bg citysquarenight with dissolve
     "Zaczynasz iść do domu. Głowa ciąży ci od nadmiaru informacji, które właśnie otrzymałeś."
-    "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem. Z tego powodu od razu kładziesz się spać."
-    jump ch02_watch_your_mouth
+    "Z wiązku z ciężkim dniem, nie myślisz nad niczym innym niż snem."
+    call screen s_House()
 
 label ch01_lakeVisit:
     play music "forest.mp3" fadein 1.0
@@ -1266,7 +1196,7 @@ label ch01_vasiliFirstNightMagaMenu:
 label ch01_goingHomeTiredAfterVasiliFirstNight:
     "Przez zmęczenie droga do domu trwała wieki, ale nic nie było widać, ponieważ oszczędzają przez wyłączanie latarni."
     "Pomimo braku widoczności przejscie do domu nie sprawiło ci dużo trudu."
-    jump ch02_watch_your_mouth
+    call screen s_House()
 
 label ch01_vasiliFishBrzana:
     v "Brzana (łac. Barbus barbus) to średniej wielkości, typowa rzeczna ryba z rodziny karpiowatych."
@@ -1349,7 +1279,7 @@ label ch01_vasiliAfterFishMonologue:
                     $ friendship["Vasili"] -= 2
                     you "{i}Przecież nie chciałem, żeby tak wyszło. Nie mam siły (i chęci), by więcej słuchać o tych rybach. Mam dość dzisiejszego dnia!{/i}"
                     "Droga do domu była pełna przemyśleń na temat twojego postępowania w związku z Vasilijem."
-                    jump ch02_watch_your_mouth
+                    call screen s_House()
                 "Zaprezentuj wymówkę i zostań.":
                     you "Nie... tylko chciałem się przejść, bo mnie nogi bolą."
                     you "Poza tym noc jest tak piękna, że aż szkoda ją przespać."
@@ -1378,5 +1308,5 @@ label ch01_vasiliTalksAboutFavoriteFish:
     else:
         v "Dobranoc, towarzyszu."
     "Droga do domu jest jak przez mgłę. Nie pamiętasz za dużo, ponieważ zostałeś obudzony i jesteś bardzo zaspany."
-    "Jednak jakoś doczłapałeś do swojego domu i zasnąłeś w tym momencie, kiedy położyłeś głowę na poduszkę"
-    jump ch02_watch_your_mouth
+    "Jednak jakoś doczłapałeś do swojego domu"
+    call screen s_House()

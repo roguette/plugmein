@@ -140,11 +140,11 @@ label start:
 
     # show screen s_clock
     # call screen s_walkable_Square()
+    define you = Character("TEST")#Character("[name]")
     call screen s_House()
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()
-    define you = Character("[name]")
 
 
     jump ch00_bus_stop

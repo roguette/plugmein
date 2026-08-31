@@ -25,20 +25,25 @@ define buttons_ch01 = dict(
     entrance=(0.484, 0.856),
     kitchen=(0.358, 0.691),
     living_room=(0.608, 0.641),
-)
+) 
+
+define ch01_house_seenEntrance = False
+
 screen s_House():
     tag map
-
     add loc_bg("house")
 
     if time.chapter == 1:
-        use b_normal(buttons_ch01["bathroom"], "generic_unavailable_house")
-        use b_normal(buttons_ch01["bedroom"], "generic_unavailable_house")
-        use b_normal(buttons_ch01["storage_room"], "generic_unavailable_house")
-        use b_normal(buttons_ch01["entrance"], "generic_unavailable_house")
-        use b_normal(buttons_ch01["kitchen"], "generic_unavailable_house")
-        use b_normal(buttons_ch01["living_room"], "generic_unavailable_house")
-
+        
+        if ch01_house_seenEntrance == True:
+            use b_normal(buttons_ch01["bathroom"], "ch01_h_bathroom")
+            use b_normal(buttons_ch01["bedroom"], "ch01_h_bedroom")
+            use b_normal(buttons_ch01["storage_room"], "ch01_h_storageRoom")
+            use b_normal(buttons_ch01["kitchen"], "ch01_h_kitchen")
+            use b_normal(buttons_ch01["living_room"], "ch01_h_livingRoom")
+            use b_disabled(buttons_ch01["entrance"])
+        else:
+            use b_normal(buttons_ch01["entrance"], "ch01_h_entrance")
 
 label generic_unavailable_house:
     scene expression loc_bg("house")
