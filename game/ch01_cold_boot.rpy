@@ -241,6 +241,7 @@ label ch01_m_enteringChurch:
 # endregion
 
 label ch01_cold_boot:
+    $ telemetry_flag("ch01_cold_boot")
     "{cps=1}...{/cps}"
     stop sound fadeout 0.5
     "{cps=25}Zostałeś właśnie potrącony przez mks 23{w} (do przybówki).{/cps}"
@@ -741,6 +742,7 @@ label ch01_kurowskaDialogMenu:
                     $ friendship["Kurowska"] += 1
                     jump ch01_kurowskaDialogMenu
                 "Powiedz coś o jej fryzurze":
+                    $ telemetry_flag("rudeToKurowska")
                     you "Jakie wydarzenia spłodziły te fryzurę?"
                     k "Masz jakiś problem z moimi lśniącymi włosami z reklamy Maybelline?"
                     you "Nazywanie tego włosami jest dość łaskawym określeniem..."
@@ -796,6 +798,7 @@ label ch01_gettingHouseKeysUniversal:
     "Mówiąc to, tupnąłeś nóżką jakbyś robił wino."
     "Patrzysz się w górę w poszukiwaniu odpowiedzi, ale widzisz tylko ciemne, puste a nawet nudne niebo."
     "Nie masz pojęcia co teraz robić."
+    window hide
     call screen s_walkable_Square()
 
 label ch01_firstNightTownWalk:
@@ -805,6 +808,7 @@ label ch01_firstNightTownWalk:
 
 # ch01_m_enteringChurch goes here and i dont want lanastreet in the bg
 label ch01_firstNightTownWalkPartB:
+    $ telemetry_flag("choseWiktoriaP")
     "Gdy już postanawiasz spuścić wzrok z tego pięknego zabytku architektury, widzisz...{w=.1} kogoś."
     you "{i}W KOŃCU!{/i}"
     you "{i}Pierwszy raz widzę kogoś na tej ulicy.{/i}"
@@ -947,6 +951,7 @@ label ch01_firstNightTownWalkPartB:
     call screen s_House()
 
 label ch01_lakeVisit:
+    $ telemetry_flag("choseVasili")
     play music "forest.mp3" fadein 1.0
     scene bg lakenighta with dissolve
     "Schodzisz w dół, skręcasz parę razy i docierasz na piękną łąkę."

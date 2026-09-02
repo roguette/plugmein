@@ -26,6 +26,7 @@ image mess = Animation(
 
 # =============================================== GLOBAL CONFIGS
  
+define TESTING = True
 define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 
@@ -43,6 +44,35 @@ define location_bgs = {
 
 init python:
     import random
+    from datetime import datetime
+
+    # telemetry for testing
+    time_started = None
+    time_finished = None
+    telemetry_flags = []
+
+    def telemetry_start():
+        global time_started
+        time_started = datetime.now()
+
+    def telemetry_end():
+        global time_ended
+        time_ended = datetime.now()
+
+    def telemetry_flag(flag):
+        telemetry_flags.append([datetime.now(), flag])
+
+    def flatten(list):
+        for a, b in list:
+            yield str(a) + ":" + b
+
+    def telemetry_generate_result_string():
+        
+        return "zrób zrzut ekranu!\n\n" + \
+            str(time_started) + "\n" + \
+            str(time_ended) + '\n' + \
+            str(time_ended - time_started) + '\n' + \
+                '\n' + '\n'.join(flatten(telemetry_flags))
 
     def loc_bg(loc):
         day_img, night_img = location_bgs[loc]
@@ -141,7 +171,8 @@ label start:
     # show screen s_Clock
     # call screen s_walkable_Square()
     define you = Character("TEST")#Character("[name]")
-    call screen s_House()
+    # call screen s_House()
+    $ telemetry_start()
 
     $ name = renpy.input("Jak masz na imię")
     $ name = name.strip()

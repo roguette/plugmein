@@ -7,7 +7,9 @@ define metPetitty = False
 label ch02_watch_your_mouth:
     "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
     "I zanim się obejrzysz, już śpisz."
-
+    $ telemetry_end()
+    if TESTING:
+        call screen s_Telemetry()
     call chapterTransition("Akt 2", "lorem ipsum")
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
@@ -669,6 +671,12 @@ label ch02_gotMoneyBakeryTea:
     r "Tak. Jestem przygotowany."
     'Wyciągnął wielką, czerwoną cegłę obiema łapami i z dumą pokazał ją tobie, jakby była jego dzieckiem.'
     'Cegła była stara. Naprawdę stara.'
+    menu:
+        "Skip the brick":
+            $ telemetry_flag("skippedBrickDescription")
+            jump ch02_brickDescriptionEnd
+        "No i want to hear all about it":
+            pass
     'Już na pierwszy rzut oka dało się stwierdzić, że nie da się stwierdzić, ile dokładnie ma lat - liczne odpryski i rysy były na to dowodem.'
     'Właściwie była tak stara, że przypisanie jej jakiejkolwiek liczby wydawało się obrazą nie tylko dla cegły, ale i dla tego, kto ją stworzył.'
     "Nazwanie jej po prostu 'starą' oznaczałoby wymazanie stuleci, które przetrwała."
@@ -719,37 +727,14 @@ label ch02_gotMoneyBakeryTea:
     'Ta cegła i jej przeszłość inspirują cię, by iść dalej i się nie poddawać.'
     'Dla zwykłej osoby to była zwykła cegła, ale twoje oczy widzą coś innego - źródło inspiracji i determinacji w tak prostym obiekcie.'
     "Helen Keller powiedziała kiedyś - \"Alone we can do so little; together we can do so much\" - i nic lepiej nie opisałoby tej cegły."
+    jump ch02_brickDescriptionEnd
+label ch02_brickDescriptionEnd:
     'Cegła była częścią czegoś większego, bardziej monumentalnego, choć nie wiesz czego.'
     'Cegły mogą być używane do budowania wszystkiego - od małego muru podczas protestu w Paryżu po wielką willę zdolną przetrwać tornado.'
     'Tak jak jedna z tych cegieł, ty również jesteś częścią tego miasta.'
     'Miasta, które przyjęło cię z otwartymi ramionami.'
-    r "Jezu, mam go dość, on tak mnie irytuje."
-    you "Nie dziwię ci się."
-    r "..."
-    r "No dobra, co tam chciałeś?"
-    "Zapomniałeś o jedzeniu przez to, co się właśnie wydarzyło."
-    you "Poproszę 3 buły Rafała."
-    r "Jasne."
-    r "Ale czekaj, nie widziałem cię wcześniej?"
-    r "Nie pracujesz przypadkiem na drugim końcu miasta?"
-    wp "No właśnie, też mi się tak wydawało."
-    you "Nieee, jestem tutaj nowy."
-    you "Urodziłem się wczoraj, jak Konrad."
-    "Rafał uważnie cię słucha, wkładając buły do papierowej torebki."
-    r "Aha, ma sens."
-    you "Widzę, że masz plakaty Taylor Spit."
-    r "Znasz ją?"
-    you "Tak. Kojarzę ją."
-    r "Wow! Ale heca."
-    "Wyciągasz bułę Rafała i zaczynasz ją jeść."
-    "Ale nie tak normalnie, jakbyś jadł kajzerkę z Biedronki."
-    "Tylko jak jakiś homofob jedzący banana."
-    "Odrywasz pierwszy kawałek buły ręką i Rafał patrzy się na ciebie, jakbyś popełnił zbrodnię."
-    r "Co ty robisz..."
-    you "W sensie?{w=.6} Jem."
-    r "Nie umiesz w savoir vivre..."
-    you "Co???"
-    r "Daj mi to. Pokażę ci, jak to się je."
-    "Rafał gryzie tę bułkę jak normalna osoba."
-    r "No, teraz mam nadzieję, że umiesz."
+    r "Why are you staring like that"
+    you "I got inspired?"
+    r "Weirdo"
+    "Rafał puts the brick away"
     
