@@ -7,36 +7,67 @@ define metPetitty = False
 label ch02_watch_your_mouth:
     "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
     "I zanim się obejrzysz, już śpisz."
-    $ telemetry_end()
-    if TESTING:
-        call screen s_Telemetry()
+
     call chapterTransition("Akt 2", "lorem ipsum")
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
-    "Budzisz się i ponieważ jest już rano możesz lepiej przyjrzeć się swojemu domowi."
-    $ time.setTime(8,32)
-    show screen s_Clock()
+    "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up"
     scene bg houseday with dissolve
-
-    "Ten dom jest mały (ale dla ciebie jest ogromny bo [name] jest skinny i ma skinny waist)."
-    "Prawdopodobnie spałeś jakieś 10 godzin i był to najlepszy sen w Twoim życiu."
-    "Jednak obudziło Cię uczucie głodu."
-    "Od wczoraj nic nie jadłeś, ale dzisiaj musisz coś z tym zrobić, żeby nie umrzeć z głodu."
-    "Idziesz do kuchni po jakieś jedzenie, na szczęście w kuchni masz dużą lodówkę."
-    "Co chcesz zjeść?"
+    "You instinctively cover the face but you can still see the sun through the gaps between your fingers"
+    "It's time to stop being so lazy and get off the bed"
+    "Now that it's not dark anymore you can see the interior of the house better"
+    "The house didnt chage much, except for the fact that the morning light is making it feel more abandoned"
+    "You lazily get off your bed and change your clothes"
+    "It's still you in the mirror, just not smelly and covered in forest dirt"
+    "When you walk past the clock you notice the time and stop for a moment"
+    you "{i}There's no way i slept for 10 hours{/i}"
+    you "{i}Kurowska is going to think i am lazy{/i}"
+    you "{i}Hell. No.{/i}"
+    $ time.setTime(10,32)
+    show screen s_Clock()
+    "Hunger definitely contributed to waking you up from your slumber"
+    if ch01_f_triedBakery:
+        "The only thing you can think of are the pastries you saw at a bakery"
+    else:
+        "The only thing you can think of is (favorite food) and all its flavors"
+    "Luckily, there is a fridge"
+    you "{i}Okay what kind of house would this be if i didnt get food{/i}"
+    you "{i}That would be very rude{/i}"
+    you "{i}I got a whole house here why wouldnt this have food?{/i}"
+    you "{i}Oh my god what if its magical and can make any food i think of{/i}"
+    "You close your eyes and try to summon..."
     menu:
         "Kawior":
-            "Jesteś na 99%% pewny, że nie masz czegoś takiego w lodówce."
-            "Dostałeś ten dom za darmo, ale nie przesadzajmy. Nie ma szans, że też dostałeś tak luksusowe jedzenie w prezencie"
+            "This food is going to require the most concentration"
+            "You close your eyes and think of caviar and try your best to channel your inner sorcerer..."
+            you "{i}This HAS to work{/i}"
         "Winniczki":
-            you "{i}To jest chyba jedyna rzecz w mojej lodówce{/i}"
+            "This food is going to require the least concentration"
+            "You close your eyes and think of those slimy things and try your best to channel your inner sorcerer..."
+            you "{i}This HAS to work{/i}"
         "Dead dove":
-            "Wiadomo, że nie należy jeść martwych gołębi."
+            "This food is going to require some concentration"
+            "You close your eyes and think of dead doves and try your best to channel your inner sorcerer..."
+            "Suddenly you remember that you shouldn't eat dead doves"
+            you "{i}I need to dream bigger. I want a rotisserie chicken.{/i}"
         "Nie chcę jeść":
+            "Actually, you dont have to concentrate at all"
+            you "{i}Actually no if i stay hungry i will stay skinny{/i}"
             $ hasSkinnyWaist = True
             you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
 
     "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem, który włącza i wyłącza w niej swiatło."
+    you "Hello?"
+    you "Who are you?"
+    "The little gnome ignores you"
+    you "Excuse me young man what are you doing in my fridge?"
+    "While he's ignoring you, you ignore the fact that he could be deaf"
+    "He looks up at you with a gnarly smile and waves his hand"
+    "You leave the door open just in case he was trapped in there and wants to get out only for him to start dusting the top shelf"
+    you "{i}???{/i}"
+    "You closer the fridge and decide not to question what you just saw"
+    you "{i}Wait what if he's hungry{/i}"
+    you "{i}I'll get food and share{/i}"
     "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
     "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny."
     "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska."
@@ -49,11 +80,8 @@ label ch02_watch_your_mouth:
     "Brzuch ci burczy, niestety nie masz żadnych pieniędzy by zapłacić za potencjalny posiłek."
     you "{i}NIE WYTRZYMAM... taki jestem głodny. Trzeba było wczoraj pożyczyć od kogoś pieniądze. No cóż, muszę jeszcze wytrzymać do końca dnia, aż otrzymam moją dzisiejszą wypłatę.{/i}"
     "{i}Albo może zapiszą mi ten bułę na kreskę, a ja zapłacę za nią później... Chociaż ta praktyka zniknęła ż PRL-em... Dobra dam radę!!! Kto jak nie ja?{/i}"
-    "Ulice teraz tętnią życiem, każdy spieszy się do pracy, w niektórych momentach nawet ciężko przecisnąć się przez tłumy."
-    "Jednak nikt nie odważy się zbliżyć do fontanny."
-    "Patrzysz w górę i dziwisz się, że dalej nie widać słońca."
-    "Ludzie są prawdopodobnie przyzwyczajeni do niekończących się chmur stratus, pokrywających niebo."
-    "Gdy podchodzisz do urzędu, on znowu robi na tobie wrażenie, nie tak wielkie jak wczoraj, ale dalej jest bardzo inponujący."
+    "Ulice teraz tętnią życiem, każdy spieszy się do pracy."
+    "Gdy podchodzisz do urzędu, on znowu robi na tobie wrażenie, nie tak wielkie jak wczoraj, ale dalej jest bardzo imponujący."
     "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa."
     jump ch02_goingToKur
 
@@ -69,12 +97,16 @@ label ch02_goingToKur:
     f "Hejka."
     show filip shocked with vpunch
     f "Boże wyglądasz okropnie co jest?"
-    you "Od kiedy pojawiłem się w tym mieście nic nie jadłem. Masz tu jakieś jedzenie?"
+    you "Okay this is actually really awkward"
+    you "I havent eaten anything since yesterday"
+    you "Do you have literally any food here i'm hungrier than a shein worker"
     show filip normal
     f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły Rafała z kawą."
     you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy, więc nie mogę kupić jedzenia"
     you "Dosłownie zaraz umrę jeśli nic nie zjem!!!"
-    f "Jasne."
+    f "Sure. I have some stale ones i was too lazy to throw out. Is that okay?"
+    you "YES"
+    f "Okay"
     show filip normal at offscreenright with move
     "Filip odkłada talerz przy zlewie a potem znika w pomieszczeniu gospodarczym."
     "Słyszysz jak musi coś odsuwać, żeby dostać się do tej bułki, którą tak pragniesz."
@@ -143,8 +175,10 @@ label ch02_goingToKurNotRude:
     k "Trzymaj."
     you "Co to jest?"
     you "Czemu te monety są takie ciężkie?"
-    k "Zwykle nie używamy tych monet."
-    k "Trzymałam je w biurze i chciałam się ich pozbyć więc to jest win-win situation."
+    k "Because there's alot of them"
+    k "I was supposed to give this to Filip to use as change for people but then he raised the prices"
+    k "And now i do not need this"
+    k "Trzymałam je w biurze cały miesiąc i chciałam się ich pozbyć więc to jest win-win situation."
     k "A teraz idź znajdź pracę i zrób żebym była dumna!"
     you "Dziękuję bardzo, na pewno to zrobię."
     scene bg secretary with dissolve
@@ -187,7 +221,9 @@ label ch02_goingToKurNotRude:
                 jump ch02_KamilRobberyCorrectChoice
             else:
                 jump ch02_KamilRobberyWrongChoice
-        "Japa kasti":
+        "Uśmiechnij się":
+            m "Po co"
+            you "Lubię żółty"
             jump ch02_KamilRobberyWrongChoice
 
 label ch02_KamilRobberyCorrectChoice:
@@ -250,9 +286,12 @@ label ch02_KamilRobberyWrongChoice:
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
     scene bg secretary with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "Wracasz do urzędu miasta, ale nie zastajesz Filipa, więc pukasz do drzwi Kurowskiej."
+    "After being robbed there is no other choice but to go back to Kurowska"
+    "Even if she doesn't have any more money for you, it would be wise to report this"
+    "When you enter the city hall, filip is not there, which is confirmed by a cacophony of noises coming from the storage room"
+    "With no other choice, you knock on Kurowska's door"
     "..."
-    you "Dzień dobry. To znowu ja."
+    you "Dzień dobry! To znowu ja."
     k "Wejdź."
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
@@ -275,10 +314,10 @@ label ch02_goingToFindAJob:
     "Wychodzisz na zewnątrz, żeby zastanowić się co powinieneś zrobić dalej."
     "Jak powiedziała Kurowska, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
     "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
-    "Ponieważ nie chcesz dzisiaj umrzeć z głodu. Do kogo idziesz pracować?"
+    "Do kogo idziesz pracować?"
     menu:
         "Vasili (to jest ta ciekawsza opcja)" if metVasili:
-            you "{i}Pójdę do niego tylko dlatego, że jestem ciekaw.{/i}" 
+            you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
             you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
             $ workedAtVasili = True
             jump ch02_workingAtVasili
@@ -290,6 +329,8 @@ label ch02_goingToFindAJob:
 label ch02_workingAtFilip:
     "Wracasz do urzędu i idziesz do Filipa."
     scene bg secretary with dissolve
+    show filip normal with dissolve
+    "This time he is actually doing his job and not lollygagging in the storage room"
     play sound "sfx_door_open.mp3"
     you "A to znowu ja."
     f "Hejka."
@@ -298,23 +339,52 @@ label ch02_workingAtFilip:
     you 'Masz może jakąś robotę dla mnie?'
     you 'Czy jest dosłownie cokolwiek co mogę zrobić?'
     f 'Hmm...'
+    f "I {i}do{/i} need to move mail from that storage room to Kurowska but i am wayy too lazy for that"
+    you "I can do it"
+    f "Then wait here"
+    show filip normal at offscreenright with move
     "Filip wstaje i znowu idzie do swojej szafy." 
     "Słychać, że znowu przesuwa ciężkie pudła, ale tym razem trwa to dłużej." 
-    "Wychodzi z ogromnym stosem dokumentów. Potem wraca i przynosi jeszcze więcej papieru." 
-    "Zanim się obejrzysz, na biurku przed tobą są już dwa wysokie stosy dokumentów, a biurko się wygina od ich ciężaru"
-    "Potem wraca z wózkiem na bagaże, tylko że zamiast walizek są tam papiery."
-    you 'Co to w ogóle jest?'
+    you "{i}How big is that storage room what{/i}"
+    show filip normal at center with move
+    "Filip finally gets out of the suspiciously large storage room while pulling a huge luggage cart full of paper" 
+    "Zanim się obejrzysz, przed tobą są już cztery wysokie stosy papieru"
+    you "Okay i have two questions"
+    you "First of all is what the hell is in that storage room?"
+    you 'And what the hell is this'
     f 'A to są po prostu jakieś papiery i poczta, która nigdy nie dotarła do Kurowskiej.'
     f 'Po prostu przez lata zbierałem i uważałem, że nie jest zbyt ważna, więc ją trzymałem.'
     f 'A teraz ona chce to wszystko zobaczyć.'
     you 'No to co mam z tym zrobić??'
-    f 'Weź te wszystkie dokumenty i zanieś je do Kurowskiej.'
+    f 'Weź to wszystko i zanieś to do Kurowskiej.'
+    you "Cant you just shove the whole luggage cart through the door?"
+    f "No because it is too wide"
+    you "Oh my god"
     you 'Ale nie dam rady tego unieść ty jesteś zdrowy??'
     f 'Nie mówię ci żebyś niósł wszystko na raz głuptasie.'
-    f 'Tu jest z 120kg papieru na tym biurku nie oczekuję że to podniesiesz.'
+    f 'Tu jest z 120kg papieru nie oczekuję że to podniesiesz.'
     f 'Zwłaszcza z twoim snatched waistem...'
     you 'No spoko...\n {i}ZAUWAŻYŁ!!!{/i}'
-    "Podnosisz mały stosik papieru. Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz."
+    "You pick up a stack of paper the size of anna karenina and your spine cracks"
+    "Then, with all that paper still in your hand, you take one step and decide against doing a second one"
+    "You go back and leave half of your 40cm stack on the luggage cart"
+    "Only then your back allows you to move"
+    "You knock on Kurowska's door"
+    if rudeToKurowska:
+        k "KTO TAK PUKA NA BELZEBUBA??"
+    else:
+        k "Wejdź."
+    scene bg office with dissolve
+    show kurowska normal at center with dissolve
+    "You enter her office and see her knee-deep in documents, like she always is"
+    you "{i}Does she really have time to read all this?{/i}"
+    you 'Gdzie to zostawić?'
+    k 'Na moim stole.'
+    you 'Na pewno? Ten papier NIE jest skinny.'
+    k 'Dobra zostaw na podłodze.'
+    "Zostawiasz pierwszy stosik papierów na podłodze." 
+    scene black with dissolve
+    "Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz."
     "Najwidoczniej przenosisz jakieś skargi."
     "Każdy nagłowek jest gorszy od poprzedniego."
     "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
@@ -322,32 +392,25 @@ label ch02_workingAtFilip:
         you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
     "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
     "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
-    you "{i}Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne.{/i}"
+    you "{i}\"Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne.\" {/i}"
     you "{i}KTO TO NAPISAŁ?{/i}"
-    "Pukasz do drzwi Kurowskiej."
-    if rudeToKurowska:
-        k "KTO TAK PUKA NA BELZEBUBA??"
-    else:
-        k "Wejdź."
-    "Wchodzisz do biura Kurowskiej i nie możesz uwierzyć w to, że ona serio zamierza czytać te maile."
-    you 'Gdzie to zostawić?'
-    k 'Na moim stole.'
-    you 'Na pewno? Ten papier NIE jest skinny.'
-    k 'Dobra zostaw na podłodze.'
-    "Zostawiasz pierwszy stosik papierów na podłodze." 
     "Nosisz dzielnie jeden po drugim, ale część ciebie chce tylko czytać te śmieci."
     "Nagłówki są coraz bardziej dzikie..."
     "{i}'Kapelusz Rafała sieje dramat wśród Bratgrenian.'{/i}"
     "{i}'Skarga na robale z Kolorado atakujące pomidory.'{/i}"
     "{i}'Ktoś mi nasrał przed drzwiami do domu proszę to usunąć.'{/i}"
-    "{i}'Pilne: Sąsiad lewituje jak dua lipa. To chyba czarna magia.'{/i}"
+    scene bg office with dissolve
+    show kurowska normal at center with dissolve
     "Zanim się obejrzysz przeniosłeś już wszystko i zabrakło ci nagłówków do czytania."
     you 'Dużo tych mailów...'
     k 'Co? jakich mailów?'
-    you 'No tych które noszę od ostatnich 20 minut.'
+    you 'No tych które noszę od ostatnich 40 minut.'
     k 'MAILE?? prosze mi je wynieść, to praca filipa, ja mam ważniejsze rzeczy na głowie!'
     you 'To po co ja je tyle nosiłem?'
+    k "Ty mi powiedz"
     "Bierzesz z rezygnacją kupkę mailów i wracasz do filipa."
+    scene bg secretary with dissolve
+    show filip normal with dissolve
     f 'A co ty tu robisz z tymi papierami?'
     you 'Kurowska powiedziała że to ty masz odpowiadać na maile.'
     you "I że muszę z powrotem je przenieść."
@@ -533,7 +596,7 @@ label ch02_workingAtVasili:
 label ch02_gotMoney:
     scene bg citysquareday with dissolve
     "Masz dość bycia głodnym, więc idziesz prosto do BBB."
-    "(Big Buły Bakery)"
+    "(Big Buły Bakery) duhh"
     jump ch02_gotMoneyBakeryEntrance
 
 label ch02_gotMoneyBakeryEntrance:
@@ -545,6 +608,9 @@ label ch02_gotMoneyBakeryEntrance:
     play sound "sfx_footsteps_a.mp3"
     "Pierwsze co zauważasz w środku to plakaty Taylor Spit."
     "Ale{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}. Jest kolejka."
+    "This leaves you with time to take in the surroundings"
+    "From the brick walls to the warm glow of incandescent light bulbs, every piece of the interior was deliberately chosen by the owner"
+    "Every little detail, even the posters made the bakery feel premium - a word your wallet is not ready to hear"
     show wp normal at leftish with moveinleft
     show fraucrusty normal at center with moveinleft
     show rafal normal at rightish with moveinright
@@ -569,7 +635,7 @@ label ch02_gotMoneyBakeryEntrance:
             you "Do Vasiliego."
             if endorsedCommunism:
                 you "Wiesz co, nie było źle."
-                you "Mamy lekko podobne poglądy polityczne."
+                you "Mamy podobne poglądy polityczne."
                 "Wiktoria robi bombastic side eye."
             else:
                 you "Jezu, to była masakra, cały czas o komuniźmie gadał."
@@ -737,4 +803,50 @@ label ch02_brickDescriptionEnd:
     you "I got inspired?"
     r "Weirdo"
     "Rafał puts the brick away"
-    
+    r "Okay so what do you want"
+    you "Uhhh"
+    "There are many buns laid out in front of you"
+    "Each one was deliberately laid out to appear different"
+    "when in reality its the same exact thing"
+    you "I'll have four buns"
+    "Rafał wipes his dirty paws and assembles your order"
+    r "Anything else?"
+    you "Do you have any cold drinks i could buy?"
+    r "Yes i sell bottled performative-ness"
+    you "what"
+    r "Its an iced matcha latte"
+    you "No thank you"
+    "The black cat eagerly taps the buttons on the cash register"
+    r "That will be $80"
+    you "Uhh.. i have a really stupid question"
+    r "Yes?"
+    you "Is $80 alot of money?"
+    you "You know, i was born yesterday"
+    r "Actually it i{wp}"
+    wp "Don't answer Rafał i know what you are going to say"
+    wp "Its not alot but its not spare change"
+    wp "There's cheaper food across the street if you want that"
+    wp "In here you are also paying for the skills needed to make such a bun"
+    "BBB is the equivalent of a millenial burger place with black gloves, fake brick walls and food served on a cutting board"
+    "Except this place is cheaper"
+    you "Here you go"
+    r "Thank you and BON APPETIT"
+    you "Bye"
+    "You look at the rest of the money in your hands and start thinking"
+    "Would you still have the money in your hand right now if Piotr didnt come to help?"
+    "And to think that you were so rude to him"
+    you "{i}I really do need to apologize to him{/i}"
+    you "Wait"
+    you "Where does Piotr live?"
+    wp "He has a potions shop down the street"
+    wp "You wont miss it theres a sign outside"
+    you "Okay thanks"
+    you "I should get going"
+    wp "Bye"
+    you "Bye! Also thanks for the buns"
+    r "No problem senorita"
+
+    $ telemetry_end()
+    if TESTING:
+        call screen s_Telemetry()
+
