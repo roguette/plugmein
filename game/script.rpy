@@ -38,7 +38,8 @@ define location_bgs = {
     "lakeslope": ("bg cityslopedownday", "bg cityslopedownday"), # TODO: cityslopedownnight does not exist
     "lakefield": ("bg lakedaya", "bg lakenighta"),
     "fountain": ("bg fountainday", "bg fountainnight"),
-    "house": ("bg houseday", "bg housenight")
+    "house": ("bg houseday", "bg housenight"),
+    "cityexit": ("bg cityexitday", "bg cityexitnight")
 }
 
 

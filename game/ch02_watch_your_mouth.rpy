@@ -1,8 +1,14 @@
-define playerRobbed = False
-define workedAtVasili = False
-define workedAtFilip = False
-define robberyStopped = False
-define metPetitty = False
+default playerRobbed = False
+default workedAtVasili = False
+default workedAtFilip = False
+default robberyStopped = False
+default metPetitty = False
+default gotCoffeeForPiotr = False
+default gotCakeForPiotr = False
+default gotBreadForPiotr = False
+default piotrFoodPoints = 0
+default piotrWritingPoints = 0
+
 
 label ch02_watch_your_mouth:
     "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
@@ -768,6 +774,7 @@ label ch02_gotMoneyBakeryTea:
     'Ignoruje też pył na swoich miękkich łapkach, bo wie, że i tak zaraz schowa ten delikatny wyrób z gliny, więc nie ma sensu ich myć.'
     'W tym momencie każdy rozsądny człowiek przestałby myśleć o cegle.'
     'Ty jednak nie przestajesz.'
+    show wp normal at offscreenright with move
     'Jedna ze stron cegły była ciemniejsza od pozostałych - jakby była wystawiona na działanie warunków atmosferycznych, podczas gdy reszta spoczywała bezpiecznie w ścianie.'
     "Prawdziwi naukowcy mogliby poświęcić całe życie badaniu tej różnicy i nadal nie dojść do porozumienia."
     "Tak tajemnicza była ta cegła."
@@ -806,9 +813,11 @@ label ch02_brickDescriptionEnd:
     'Tak jak jedna z tych cegieł, ty również jesteś częścią tego miasta.'
     'Miasta, które przyjęło cię z otwartymi ramionami.'
     r "Why are you staring like that"
+    "The sudden question catches you off-guard, interrupting your delusions"
     you "I got inspired?"
+    "When you snap back to reality you notice Wiktoria had already left the bakery"
     r "Weirdo"
-    "Rafał puts the brick away"
+    "Rafał puts the brick back where it belongs - below the register"
     r "Okay so what do you want"
     you "Uhhh"
     "There are many buns laid out in front of you"
@@ -828,29 +837,201 @@ label ch02_brickDescriptionEnd:
     r "Yes?"
     you "Is $80 alot of money?"
     you "You know, i was born yesterday"
-    r "Actually it i{wp}"
-    wp "Don't answer Rafał i know what you are going to say"
-    wp "Its not alot but its not spare change"
-    wp "There's cheaper food across the street if you want that"
-    wp "In here you are also paying for the skills needed to make such a bun"
+    r "Its not alot but its not spare change"
+    r "There's cheaper food across the street if you want that"
+    r "In here you are also paying for the skills needed to make such a bun"
     "BBB is the equivalent of a millenial burger place with black gloves, fake brick walls and food served on a cutting board"
     "Except this place is cheaper"
     you "Here you go"
     r "Thank you and BON APPETIT"
     you "Bye"
-    "You look at the rest of the money in your hands and start thinking"
-    "Would you still have the money in your hand right now if Piotr didnt come to help?"
+    "You look at the bag of coins in your hand and start thinking"
+    "Would you still be holding money right now if Piotr didnt come to help?"
     "And to think that you were so rude to him"
     you "{i}I really do need to apologize to him{/i}"
     you "Wait"
     you "Where does Piotr live?"
-    wp "He has a potions shop down the street"
-    wp "You wont miss it theres a sign outside"
+    r "He has a potions shop down the street"
+    r "Piotr lives in the same building"
+    r "You wont miss it theres a sign outside"
     you "Okay thanks"
-    you "I should get going"
-    wp "Bye"
-    you "Bye! Also thanks for the buns"
+    you "But... i'm not done"
+    you "I have an unusual request"
+    you "So yesterday I was rude to Piotr and I need to apologize to him. What should i get?"
+    r "Well.. I dont know how to describe it BUT if he was a color he would be blue"
+    r "And not the sky blue because that has too much sky"
+    r "Also he wouldnt be navy blue either bc its blue with responsibilities"
+    r "Its the kind of blue you think of when looking at something green"
+    r "Maybe get something.. rectangular..??"
+    "With every word Rafal says your confidence quickly gets replaced with confusion"
+    "They say that a smile goes a long way when trying to be polite"
+    "That is exactly why you keep smiling even though you have absolutely no idea what he is saying"
+    "you scratch your head in pure confusion"
+    you "{i}Just smile and nod...{/i}"
+    you "Okay that makes sense"
+    menu:
+        "3 cups of coffee in a paper bag":
+            $ gotCoffeeForPiotr = True
+            $ piotrFoodPoints = 2
+        "Bread in a paper bag":
+            $ gotBreadForPiotr = True
+            $ piotrFoodPoints = 0
+        "A slice of red velvet cake (in a paper bag)":
+            $ gotCakeForPiotr = True
+            $ piotrFoodPoints = 1
+
+    r "Okay give me just a moment!"
+    "Rafał twirls on his right foot and assembles your order with pride"
+    "You watch him swiftly assemble your order, and when he comes back you are already ready to pay"
+    "He puts your apology gift on the table, and the plain paper bag gives you an idea"
+    you "Can i have a pen i want to write something"
+    r "Yes sure"
+    you "{i}I want to write...{/i}"
+    menu:
+        "Sorry :(":
+            $ piotrWritingPoints = 2
+        "Sorry but be more fun next time":
+            $ piotrWritingPoints = 0
+        "Sorry i forgot your name":
+            $ piotrWritingPoints = 1
+        "Sorry, i forgot your name":
+            $ piotrWritingPoints = 0
+    "You scribble away trying to keep every letter steady and even with the rest"
+    you "{i}Perfect{/i}"
+    you "Okay that should be it. Thank you very much"
     r "No problem senorita"
+    you "Bye"
+    r "Byee"
+    scene expression loc_bg("lanastreet") with dissolve
+    "Finally happy, you leave the bakery and head straight to Piotr"
+    scene expression loc_bg("cityexit") with dissolve
+    "Rafał was right - it {i}was{/i} hard to miss the shop"
+    "Especially the HUGE wooden door which was blocking half the pavement"
+    scene bg potionshop with dissolve
+    you "HELLO EVERYONE"
+    "Your impatience knows no bounds. You are ready to jump over the counter just to apologize to piotr"
+    you "{i}Where is this little bird{/i}"
+    you "PIooooOTR come here"
+    "Piotr emerges from the back of the shop"
+    show piotr normal at center with dissolve
+    you "{i}Why does he leave his shop open if he spends most of the time there{/i}"
+    you "{i}Thats like sooo dangerous gurl i-{/i}"
+    "Piotr opens his mouth to start speaking but before he can mutter a single word you overpower him with your proclamation"
+    you "I've come to announce that i am a different [name]"
+    you "I am no longer [name] i am now [name] version TWO"
+    you "You hear me? I am version DOS. Even tres!"
+    you "I can even be version four but i dont even know how to say four in spanish"
+    you "That's how great i am"
+    you "And to prove how much i've changed i hereby bequeath you a little treat"
+    "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
+    you "Enjoy"
+
+    if gotCakeForPiotr:
+        "Piotr carefully looks inside the oil-staned paper bag before noticing the message"
+    elif gotBreadForPiotr:
+        "Piotr carefully looks inside the extremely rectangular paper bag before noticing the message"
+    elif gotCoffeeForPiotr:
+        "Piotr smells the aroma of fresh coffee and quickly tears the bag apart, before noticing the message"
+        "The message you wrote with great care and precision stayed intact due to sheer luck"
+
+    "His eyes quickly skim the text"
+    if piotrWritingPoints == 2:
+        "He exhales and lowers his guard"
+        "Piotr cant possibly be mad at you"
+    if piotrWritingPoints == 1:
+        "Piotr ignores the message and moves on"
+    elif piotrWritingPoints == 0:
+        "Piotr's eyes widen"
+        p "what the"
+        p "WHAT IS THIS"
+    you "Now don't be so shy. Please indulge in this bratgrenian delicacy"
+
+    if gotCakeForPiotr:
+        "Piotr decided that taking the cake out was too risky so he ripped the bag"
+        "Which revealed a slightly-smooshed cake"
+        "The cake doesn't look very presentable anymore but its still edible"
+        you "Like i said, Enjoy"
+
+    elif gotBreadForPiotr:
+        "Piotr lifts the bag because he has had enough and does not want to deal with this right now"
+        "When suddenly..."
+        "The bag rips and the bread falls out onto the tabletop, leaving a dent"
+        "you start laughing very loudly and very obnoxiously"
+        you "WHY DID IT FALL OUT LIKE THAT"
+        "You are the only one laughing"
+        you "I haven't laughed this much in a while"
+        p "Great there's now a dent"
+        you "okay okay wait"
+        you "Here's the receipt. You can go back to the store and return it for store credit"
+        "Piotr rolls his eyes"
+        you "i'm actually really sorry this was supposed to be an actual gift but i didnt check the bread"
+    elif gotCoffeeForPiotr:
+        you "One is poisoned by the way"
+        p "WHAT"
+        p "No thank you"
+        you "Just kidding"
+        you "żarcik kosmonaucik"
+        "piotr looks suspiciously at the coffees and exhales"
+    
+    you "Apology accepted?"
+
+    if piotrFoodPoints + piotrWritingPoints > 2:
+        p "Yes."
+        p "Thank you"
+        you "And thank {i}you{/i} for being as cool as a cucumber"
+        p "Don't push it"
+    elif piotrFoodPoints + piotrWritingPoints > 1:
+        p "Yeah i guess"
+        you "I can hear the doubt in your voice that is extremely rude"
+        you "Where are your manners young man"
+        p "That's exactly what i'm talking about you are NEVER serious"
+        you "{i}Hmph!{/i}"
+        you "{i}This isn't the end of it{/i}"
+    else:
+        p "Hell no"
+        you "Aww why"
+        p "I was working and you just barged into my shop"
+        p "Just to waste my time"
+        you "Where are your manners young man"
+
+    you "Okay okay fine"
+    you "Ignore the food i just wanted to say sorry"
+    you "Yes i can be rude but im not rude because i have tofu with you its just because im sassy like that"
+    p "..."
+    "Piotr inspects you top to bottom, his gaze landing on your eyes and piercing you"
+    p "Fine"
+    p "You will change"
+    you "???"
+    you "{i}No YOU will change{/i}"
+    you "So what were you working on"
+    p "A ritual"
+    you "That's it. Just some nondescript ritual?"
+    p "Well if you MUST know i was getting ready to do a spell"
+    you "SO YOU ARENT JUST A BORING FOREST JANITOR"
+    you "I knew you had it in you"
+    p "Actually that is exactly what i was going to do"
+    you "..."
+    "You dramatically roll your eyes, larping disappointment"
+    p "Do you want to come and see how i do it?"
+    "The bored [name] quickly turned into amused [name]"
+    you "I'm all ears. What do i have to do?"
+    p "Shut up and not touch anything"
+    you "I cant promise to not touch anything but i will try"
+    p "There's always something with you"
+    p "Let's go"
+    scene bg black with dissolve
+    "Piotr takes you outside of the city"
+    "This feels very wrong even though you have walked just a few steps out"
+    "He takes you to a small clearing about ten meters from the drawbridge"
+    scene bg forestday with dissolve
+    p "Today i want you to just stand there and do nothing"
+    p "I'm not sure this will even work with you around i do this alone"
+    you "Okay"
+    p "Pretend you are a tree or something"
+    "you stand straighter than ever"
+
+
+
 
     $ telemetry_end()
     if TESTING:
