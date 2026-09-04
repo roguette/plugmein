@@ -4,10 +4,9 @@
 # to tu sie zaczyna
 #
 # le contents:
-# GLOBAL CONFIGS
+# GLOBAL VARIABLES
 # INIT PYTHON
 # CHARACTER DEFINITIONS
-# GLOBAL VARIABLES
 # TRANSFORMS
 # START
 # MISC
@@ -23,16 +22,13 @@ image mess = Animation(
     "images/mess_gif/5.png", 1,
 )
 
-
-# =============================================== GLOBAL CONFIGS
- 
+# =============================================== GLOBAL VARIABLES
+default friendship = dict()
+default flags = list()
 define TESTING = True
 define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
-default friendship = dict()
-default flags = list()
 
-# =============================================== INIT PYTHON
 
 define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
@@ -44,6 +40,7 @@ define location_bgs = {
     "cityexit": ("bg cityexitday", "bg cityexitnight")
 }
 
+# =============================================== INIT PYTHON
 
 init python:
     import random
