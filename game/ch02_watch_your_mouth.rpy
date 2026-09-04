@@ -1021,7 +1021,7 @@ label ch02_brickDescriptionEnd:
     p "Let's go"
     scene bg black with dissolve
     "Piotr takes you outside of the city"
-    "This feels very wrong even though you have walked just a few steps out"
+    "Walking even two steps outside feels very wrong after all that you've heard about the forest"
     "He takes you to a small clearing about ten meters from the drawbridge"
     scene bg forestday with dissolve
     p "Today i want you to just stand there and do nothing"
@@ -1029,6 +1029,7 @@ label ch02_brickDescriptionEnd:
     you "Okay"
     p "Pretend you are a tree or something"
     "you stand straighter than ever"
+    
 
 
 
