@@ -150,7 +150,7 @@ label ch02_goingToKur:
     show kurowska normal with dissolve
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
     k "Tak, pamiętam."
-    if "rudeToKurowska" not in flags:
+    if flag("rudeToKurowska"):
         jump ch02_goingToKurRude
     else:
         jump ch02_goingToKurNotRude
@@ -317,7 +317,7 @@ label ch02_goingToFindAJob:
     "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
     "Do kogo idziesz pracować?"
     menu:
-        "Vasili (to jest ta ciekawsza opcja)" if "metVasili" in flags:
+        "Vasili (to jest ta ciekawsza opcja)" if flag("metVasili"):
             you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
             you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
             $ flags.append("workedAtVasili")
@@ -371,7 +371,7 @@ label ch02_workingAtFilip:
     "You go back and leave half of your 40cm stack on the luggage cart"
     "Only then your back allows you to move"
     "You knock on Kurowska's door"
-    if "rudeToKurowska" not in flags:
+    if flag("rudeToKurowska"):
         k "KTO TAK PUKA NA BELZEBUBA??"
     else:
         k "Wejdź."
@@ -440,7 +440,7 @@ label ch02_workingAtVasili:
     "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
     "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony ― bo jedyny ― wędkarz."
     show vasili normal with dissolve
-    if "endorsedCommunism" in flags:
+    if flag("endorsedCommunism"):
         v "Witaj towarzyszu."
         you "Yyy? Cześć..."
         v "Co cię sprowadza w {b}NASZE{/b} skromne progi...{w=.6} HAHAHA bo wiesz...{w=.6} kolektywizacja majątku..."
@@ -617,11 +617,11 @@ label ch02_gotMoneyBakeryEntrance:
     show rafal normal at rightish with moveinright
     "Przed tobą są dwie osoby."
     "Pierwszą w kolejce jest Frau Crusty."
-    if "metWiktoriaP" in flags:
+    if flag("metWiktoriaP"):
         you "O, hej."
         wp "No cześć! Co tam?"
         
-        if "workedAtFilip" in flags:
+        if flag("workedAtFilip"):
             you "Masakra... Musiałem pracować..."
             wp "Do kogo poszedłeś?"
             you "Do Filipa."
@@ -630,11 +630,11 @@ label ch02_gotMoneyBakeryEntrance:
             you "Bo to on ma je czytać."
             wp "Trzeba było zarządać pieniędzy i wyjść po czymś takim."
             wp "I skibidi."
-        elif "workedAtVasili" in flags:
+        elif flag("workedAtVasili"):
             you "Masakra... Musiałem pracować..."
             wp "Do kogo poszedłeś?"
             you "Do Vasiliego."
-            if "endorsedCommunism" in flags:
+            if flag("endorsedCommunism"):
                 you "Wiesz co, nie było źle."
                 you "Mamy podobne poglądy polityczne."
                 "Wiktoria robi bombastic side eye."
@@ -915,11 +915,11 @@ label ch02_brickDescriptionEnd:
     "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
     you "Enjoy"
 
-    if "gotCakeForPiotr" in flags:
+    if flag("gotCakeForPiotr"):
         "Piotr carefully looks inside the oil-staned paper bag before noticing the message"
-    elif "gotBreadForPiotr" in flags:
+    elif flag("gotBreadForPiotr"):
         "Piotr carefully looks inside the extremely rectangular paper bag before noticing the message"
-    elif "gotCoffeeForPiotr" in flags:
+    elif flag("gotCoffeeForPiotr"):
         "Piotr smells the aroma of fresh coffee and quickly tears the bag apart, before noticing the message"
         "The message you wrote with great care and precision stayed intact due to sheer luck"
 
@@ -935,13 +935,13 @@ label ch02_brickDescriptionEnd:
         p "WHAT IS THIS"
     you "Now don't be so shy. Please indulge in this bratgrenian delicacy"
 
-    if "gotCakeForPiotr" in flags:
+    if flag("gotCakeForPiotr"):
         "Piotr decided that taking the cake out was too risky so he ripped the bag"
         "Which revealed a slightly-smooshed cake"
         "The cake doesn't look very presentable anymore but its still edible"
         you "Like i said, Enjoy"
 
-    elif "gotBreadForPiotr" in flags:
+    elif flag("gotBreadForPiotr"):
         "Piotr lifts the bag because he has had enough and does not want to deal with this right now"
         "When suddenly..."
         "The bag rips and the bread falls out onto the tabletop, leaving a dent"
@@ -954,7 +954,7 @@ label ch02_brickDescriptionEnd:
         you "Here's the receipt. You can go back to the store and return it for store credit"
         "Piotr rolls his eyes"
         you "i'm actually really sorry this was supposed to be an actual gift but i didnt check the bread"
-    elif "gotCoffeeForPiotr" in flags:
+    elif flag("gotCoffeeForPiotr"):
         you "One is poisoned by the way"
         p "WHAT"
         p "No thank you"

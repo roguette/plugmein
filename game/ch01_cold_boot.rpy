@@ -101,7 +101,7 @@ label ch01_m_cityHallNormalFirstInteraction:
     "That way i have more control over the lore and what can happen"
     scene bg secretary with dissolve
     show filip normal with dissolve
-    if "rudeToKurowska" not in flags:
+    if not flag("rudeToKurowska"):
         f "Oh. It's you."
         you "What?"
         f "What do u want"
@@ -360,7 +360,7 @@ label ch01_piotrIntroductionMenu:
             p "Thats not how it works"
             
             jump ch01_piotrIntroductionMenu
-        "Oskarż o porwanie" if "accusedPiotrOfKidnapping" not in flags:
+        "Oskarż o porwanie" if not flag("accusedPiotrOfKidnapping"):
             $ flag("accusedPiotrOfKidnapping", True)
             $ friendship["Piotr"] -= 1
             you "I can see right through your lies"
@@ -392,7 +392,7 @@ label ch01_piotrIntroductionMenu:
             you "Fine. I guess you are right this once"
             p "Jeszcze raz mi takie dyrdymały powiesz ja ci strzelę stringami"
             jump ch01_piotrIntroductionMenu
-        "Zapytaj się gdzie jesteś" if "askedWhereIAmStart" not in flags:
+        "Zapytaj się gdzie jesteś" if not flag("askedWhereIAmStart"):
             $ flag("askedWhereIAmStart", True)
             you "Where am I?"
             p "In a forest near Bratgren"
@@ -400,7 +400,7 @@ label ch01_piotrIntroductionMenu:
             you "That's so cool I thought you live up there in the trees"
             p "That is NOT TRUE"
             you "And where is this bratgren?"
-            if "accusedPiotrOfKidnapping" in flags:
+            if flag("accusedPiotrOfKidnapping"):
                 you "Or did you lie about that too?"
             p "Right behind you."
             "Theres a huge wall behind you and you can only assume it guards a city"
@@ -408,7 +408,7 @@ label ch01_piotrIntroductionMenu:
             you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
             p "Do you ever shut up?"
             jump ch01_piotrIntroductionMenu
-        "milcz" if "stayedSilentStart" not in flags:
+        "milcz" if not flag("stayedSilentStart"):
             $ flag("stayedSilentStart", True)
             you "{i}Milcząc chyba nic się nie dowiem{/i}"
             jump ch01_piotrIntroductionMenu
@@ -418,7 +418,7 @@ label ch01_piotrIntroductionMenu:
 label ch01_afterPiotrIntroductionMenu:
     "Patrzysz się dookoła i widzisz tylko drzewa, a z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
 
-    if "stayedSilentStart" in flags:
+    if flag("stayedSilentStart"):
         p "Co?"
         p "Czemu nic nie mówisz?"
         p "{b}Zatkało kakao?{/b}"
@@ -427,7 +427,7 @@ label ch01_afterPiotrIntroductionMenu:
         you "{i}Łatwo z takimi!{/i}"
         you "Ale wracając, umiem gadać tylko teraz myślę."
 
-    if "accusedPiotrOfKidnapping" in flags:
+    if flag("accusedPiotrOfKidnapping"):
         "Twój wzrok wraca do Piotra ale nie tak romantycznie tylko tak 'o jezu znowu ten yy jak on miał na imię??'."
         you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
 
@@ -651,7 +651,7 @@ label ch01_kurowskaDialogMenu:
 
     k "Czy masz jakieś pytania?"
     menu:
-        "Zapytaj o historię miasta." if "askedAboutCityHistory" not in flags:
+        "Zapytaj o historię miasta." if not flag("askedAboutCityHistory"):
             $ flag("askedAboutCityHistory", True)
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
@@ -673,7 +673,7 @@ label ch01_kurowskaDialogMenu:
             k "Exactly"
             jump ch01_kurowskaDialogMenu
 
-        "Zapytaj o nocleg." if "askedAboutHousing" not in flags:
+        "Zapytaj o nocleg." if not flag("askedAboutHousing"):
             $ flag("askedAboutHousing", True)
             you "Gdzie jest najbliższy hotel czy coś, bo nie mam ani domu ani mieszkania, gdzie ja będę spał?"
             k "Muszę tylko znaleźć klucze do twojego domu..."
@@ -685,7 +685,7 @@ label ch01_kurowskaDialogMenu:
             you "{i}I klasa. Dom za darmo? W snach mi się to nie śniło.{/i}"
             jump ch01_kurowskaDialogMenu
 
-        "Zapytaj o pracę." if "askedAboutWork" not in flags:
+        "Zapytaj o pracę." if not flag("askedAboutWork"):
             $ flag("askedAboutWork", True)
             you "A co z pracą?"
             you "Wiem, że filip pracuje w sekretariacie. A co robią inni?"
@@ -708,7 +708,7 @@ label ch01_kurowskaDialogMenu:
             you "Jasne!!! XOXO"
             jump ch01_kurowskaDialogMenu
 
-        "Powiedz coś o jej wyglądzie." if "commentedOnKurowskasAppearance" not in flags:
+        "Powiedz coś o jej wyglądzie." if not flag("commentedOnKurowskasAppearance"):
             $ flag("commentedOnKurowskasAppearance", True)
             menu:
                 "Powiedz coś o jej ubiorze":
@@ -755,7 +755,7 @@ label ch01_gettingHouseKeysUniversal:
     p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM!"
     hide piotr with dissolve
     you "{i}Chyba się na mnie obraził.{/i}"
-    if "wasRudeToPiotr" in flags:
+    if flag("wasRudeToPiotr"):
         you "{i}Chyba przesadziłem w tym sekretariacie.{/i}"
     you "{i}Ale bracie its not that deep. No cóż, idgaf.{/i}"
     "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:44."
@@ -865,7 +865,7 @@ label ch01_firstNightTownWalkPartB:
     you "Piotr was in front of me so i immediately thought its all his fault"
     you "So i was kinda rude to him and you know"
     you "He led me to Kurowska and she gave me a house"
-    if "rudeToKurowska" not in flags:
+    if flag("rudeToKurowska"):
         you "I was rude to her too"
     "Wiktoria starts laughing uncontrollably"
     wp "What happened to your attitude"
@@ -1012,7 +1012,7 @@ label ch01_vasiliFirstNightMagaMenu:
             $ ryba = random.choice(["ch01_vasiliFishBrzana", "ch01_vasiliFishKoza", "ch01_vasiliFishWstegorz"])
             jump expression ryba
 
-        "Zapytaj o poglądy polityczne" if "heardVasiliMonologue" not in flags:
+        "Zapytaj o poglądy polityczne" if not flag("heardVasiliMonologue"):
             $ flags.append("heardVasiliMonologue") 
             v "Nie wierzę, że Kurowska jest dobrą prezydentką."
             v "Kurowska to coś gorszego niż zło."
@@ -1091,7 +1091,7 @@ label ch01_vasiliFirstNightMagaMenu:
                         v "Ale było minęło i teraz trzeba żyć dalej."
                 "Milcz":
                     you "{i}Jestem trochę ciekawy o jaki wypadek chodzi, ale Vasili wydaję się być wrażliwym człowiekiem.{/i}"
-                    if "rudeToVasili" not in flags:
+                    if flag("rudeToVasili"):
                         you "{i}Może lepiej zostawię to w spokoju.{/i}"
                     else:
                         you "{i}Skoro tyle gada to równie dobrze może mi opowiedzieć o swoim dziadku.{/i}"

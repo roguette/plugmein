@@ -12,6 +12,10 @@
 # MISC
 # ===============================================
 
+init python:
+    import random
+    from datetime import datetime
+    from collections import defaultdict
 
 image mess = Animation(
     "images/mess_gif/0.png", 1,
@@ -23,12 +27,13 @@ image mess = Animation(
 )
 
 # =============================================== GLOBAL VARIABLES
-default friendship = dict()
-default flags = list()
+default friendship = defaultdict(int)
+default flags = set()
 define TESTING = True
 define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
-
+default name = ""
+define you = Character("[name]")
 
 define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
@@ -43,17 +48,14 @@ define location_bgs = {
 # =============================================== INIT PYTHON
 
 init python:
-    import random
-    from datetime import datetime
-
     def flag(name, change_to=None):
         if change_to is None:
             return name in flags
+
+        if change_to:
+            flags.add(name)
         else:
-            if change_to == True:
-                flags.append(name)
-            else:
-                flags.remove(name)
+            flags.discard(name)
 
     # telemetry for testing
     time_started = None
@@ -67,8 +69,8 @@ init python:
         time_started = datetime.now()
 
     def telemetry_end():
-        global time_ended
-        time_ended = datetime.now()
+        global time_finished
+        time_finished = datetime.now()
 
     def telemetry_flag(flag):
         telemetry_flags.append([datetime.now(), flag])
@@ -81,8 +83,8 @@ init python:
         
         return "zrób zrzut ekranu!\n\n" + \
             str(time_started) + "\n" + \
-            str(time_ended) + '\n' + \
-            str(time_ended - time_started) + '\n' + \
+            str(time_finished) + '\n' + \
+            str(time_finished - time_started) + '\n' + \
                 '\n' + '\n'.join(flatten(telemetry_flags))
 
     def loc_bg(loc):
@@ -161,15 +163,13 @@ transform rightish:
 label start:
     stop music
 
-    # show screen s_Clock
-    # call screen s_walkable_Square()
-    define you = Character("TEST")#Character("[name]")
-    # call screen s_House()
     $ telemetry_start()
 
-    $ name = renpy.input("Jak masz na imię")
-    $ name = name.strip()
-
+    if TESTING or renpy.is_in_test():
+        $ name = "TEST"
+    else:
+        $ name = renpy.input("Jak masz na imię")
+        $ name = name.strip()
 
     jump ch00_bus_stop
 
