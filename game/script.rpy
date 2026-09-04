@@ -30,7 +30,7 @@ image mess = Animation(
 default friendship = defaultdict(int)
 default flags = set()
 define TESTING = True
-define config.default_text_cps = 110
+define config.default_text_cps = 130
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 default name = ""
 define you = Character("[name]")
@@ -42,7 +42,8 @@ define location_bgs = {
     "lakefield": ("bg lakedaya", "bg lakenighta"),
     "fountain": ("bg fountainday", "bg fountainnight"),
     "house": ("bg houseday", "bg housenight"),
-    "cityexit": ("bg cityexitday", "bg cityexitnight")
+    "cityexit": ("bg cityexitday", "bg cityexitnight"),
+    "forest": ("bg forestday", "bg forestnight")
 }
 
 # =============================================== INIT PYTHON
@@ -85,7 +86,7 @@ init python:
             str(time_started) + "\n" + \
             str(time_finished) + '\n' + \
             str(time_finished - time_started) + '\n' + \
-                '\n' + '\n'.join(flatten(telemetry_flags))
+                '\n' + '\n'.join(flatten(telemetry_flags)) + "\n" + ", ".join(flags)
 
     def loc_bg(loc):
         day_img, night_img = location_bgs[loc]

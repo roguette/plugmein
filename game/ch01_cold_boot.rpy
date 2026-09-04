@@ -252,20 +252,20 @@ label ch01_cold_boot:
     you "{i}Co on ze mną zrobił???{/i}"
     you "{i}To chyba {cps=10}{b}on{/b}{/cps} mnie tutaj przywołał, jak jakiegoś ducha.{/i}"
     "Patrzysz się na niego z podejrzliwością, jak spod byka niemalże."
-    you "!Who the hell are you"
-    you "!And why did you put me in this cliche visual novel situation"
-    you "!Waking up in the forest and all that"
+    you "Who the hell are you"
+    you "And why did you put me in this cliche visual novel situation"
+    you "Waking up in the forest and all that"
     m "Nie drzyj się, jesteś w lesie!!!"
-    you "!Oh no no no you are going to answer all my questions first"
-    you "!You have 10 seconds until i let you know i ate eggs for breakfast"
-    p "!Can you shut up for once"
-    p "!You are in a forest so SHUT UP"
+    you "Oh no no no you are going to answer all my questions first"
+    you "You have 10 seconds until i let you know i ate eggs for breakfast"
+    p "Can you shut up for once"
+    p "You are in a forest so SHUT UP"
     p "Nazywam się Piotr i jestem czarodziejem."
-    you "!Magician? Like a birthday party magician?"
+    you "Magician? Like a birthday party magician?"
     p "???"
-    you "!Like do you do silly tricks like pulling rabbits out of your conveniently huge top hat"
-    p "!No that is called animal abuse"
-    you "!Oh"
+    you "Like do you do silly tricks like pulling rabbits out of your conveniently huge top hat"
+    p "No that is called animal abuse"
+    you "Oh"
     you "{i}!He's so cute i cannot be angry at him{/i}"
     you "{i}!A little feisty but i can tolerate that{/i}"
     "Patrzysz się dookoła i widzisz obok siebie koło z czarnych kamieni."
@@ -277,22 +277,22 @@ label ch01_cold_boot:
     you "Tak."
     "Piotr podchodzi do tego koła i podnosi dwa kamienie."
     menu:
-        "!Omg they are dark like your crusty ass nails":
-            p "!Hell no"
-        "!Can i have one?":
-            p "!Hell no"
+        "Omg they are dark like your crusty ass nails":
+            p "Hell no"
+        "Can i have one?":
+            p "Hell no"
     p "To jest onyks. Używam tych kamieni do usuwania złych vibeów z tego lasu."
     p "Im więcej złej energii wchłaniają, tym są cięższe. Patrz tu..."
-    "!your enthusiasm knows no bounds so you add a few ohs here and there to support the conversation"
+    "your enthusiasm knows no bounds so you add a few ohs here and there to support the conversation"
     p "Weź ten i ten i zrób takie six―seven."
     "Jeden z tych kamieni rzeczywiście jest o wiele cieższy od drugiego. Mimo tego, że są prawie identyczne."
     you "Ale heca!"
-    you "!So why are you carrying these heavy stones are you stupid"
-    p "!No its because {nw}"
-    p "!Actually no i've been nothing but nice to you and you are rude like this"
-    p "!I am not telling you anytihng"
+    you "So why are you carrying these heavy stones are you stupid"
+    p "No its because {nw}"
+    p "Actually no i've been nothing but nice to you and you are rude like this"
+    p "I am not telling you anytihng"
     you "{i}this bitch{/i}"
-    you "!Okay fine sorry i got a little carried away you can continue"
+    you "Okay fine sorry i got a little carried away you can continue"
     p "So as i was saying... before your rude ass interrupted me"
     p "Theres a limited supply of these stones"
     p "We use them for clearing bad energy in this forest"
@@ -331,7 +331,7 @@ label ch01_cold_boot:
 
 label ch01_piotrIntroductionMenu:
     menu:
-        "Kim ty jesteś" if ("askedWhoPiotrWas" not in flags):
+        "Kim ty jesteś" if flag("askedWhoPiotrWas"):
             $ flag("askedWhoPiotrWas", True)
             you "Okay but jokes aside i have to know who you are"
             you "Are you my dad or something"
@@ -644,14 +644,12 @@ label ch01_afterPiotrRagebaitMenu:
     jump ch01_kurowskaDialogMenu
 
 label ch01_kurowskaDialogMenu:
-    if  "askedAboutHousing" in flags and \
-        "askedAboutCityHistory" in flags and \
-        "askedAboutWork" in flags:
+    if flag("askedAboutHousing") and flag("askedAboutCityHistory")  and flag("askedAboutWork"):
         jump ch01_gettingHouseKeysGood
 
     k "Czy masz jakieś pytania?"
     menu:
-        "Zapytaj o historię miasta." if not flag("askedAboutCityHistory"):
+        "Zapytaj o historię miasta." if not flag(""):
             $ flag("askedAboutCityHistory", True)
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
@@ -831,7 +829,7 @@ label ch01_firstNightTownWalkPartB:
     you "What? Why? Is he dangerous"
     wp "No he is worse"
     wp "He is so annoying oh my god"
-    $ flags.append("knowsAboutVasili")
+    $ flag("knowsAboutVasili", True)
     wp "Right behind you theres a bakery right?"
     wp "When rafał, the owner, was closing he had a few buns that were going to go stale"
     wp "So instead of being wasteful he gave them away to people"
@@ -1013,7 +1011,7 @@ label ch01_vasiliFirstNightMagaMenu:
             jump expression ryba
 
         "Zapytaj o poglądy polityczne" if not flag("heardVasiliMonologue"):
-            $ flags.append("heardVasiliMonologue") 
+            $ flag("heardVasiliMonologue", True) 
             v "Nie wierzę, że Kurowska jest dobrą prezydentką."
             v "Kurowska to coś gorszego niż zło."
             v "Zaczęła zaciskać kapitalistyczną smycz ― każdy musiał znaleźć pr―{w=.6} pr―{w=.6} pra...cę."
@@ -1054,7 +1052,7 @@ label ch01_vasiliFirstNightMagaMenu:
             v "Czy zagłosujesz na mnie?"
             menu:
                 "Tak":
-                    $ flags.append("endorsedCommunism")
+                    $ flag("endorsedCommunism", True)
                     $ friendship["Vasili"] += 1
                     v "Dziękuję towarzyszu."
                     v "Wiedziałem, że mogę na ciebie liczyć."

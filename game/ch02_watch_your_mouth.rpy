@@ -7,6 +7,8 @@ label ch02_watch_your_mouth:
     "I zanim się obejrzysz, już śpisz."
 
     call chapterTransition("Akt 2", "lorem ipsum")
+    $ time.chapter = 2
+    $ time.setTime(10,32)
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up"
@@ -21,7 +23,6 @@ label ch02_watch_your_mouth:
     you "{i}There's no way i slept for 10 hours{/i}"
     you "{i}Kurowska is going to think i am lazy{/i}"
     you "{i}Hell. No.{/i}"
-    $ time.setTime(10,32)
     show screen s_Clock()
     "Hunger definitely contributed to waking you up from your slumber"
     if ch01_f_triedBakery:
@@ -320,11 +321,11 @@ label ch02_goingToFindAJob:
         "Vasili (to jest ta ciekawsza opcja)" if flag("metVasili"):
             you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
             you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
-            $ flags.append("workedAtVasili")
+            $ flag("workedAtVasili", True)
             jump ch02_workingAtVasili
         "Filip":
             you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
-            $ flags.append("workedAtFilip")
+            $ flag("workedAtFilip", True)
             jump ch02_workingAtFilip
 
 label ch02_workingAtFilip:
@@ -389,7 +390,7 @@ label ch02_workingAtFilip:
     "Najwidoczniej przenosisz jakieś skargi."
     "Każdy nagłowek jest gorszy od poprzedniego."
     "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
-    if ("metVasili" in flags) or ("knowsAboutVasili" in flags):
+    if flag("metVasili") or flag("knowsAboutVasili"):
         you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
     "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
     "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
@@ -860,13 +861,13 @@ label ch02_brickDescriptionEnd:
     you "Okay that makes sense"
     menu:
         "3 cups of coffee in a paper bag":
-            $ flags.append("gotCoffeeForPiotr")
+            $ flag("gotCoffeeForPiotr", True)
             $ piotrFoodPoints = 2
         "Bread in a paper bag":
-            $ flags.append("gotBreadForPiotr")
+            $ flag("gotBreadForPiotr", True)
             $ piotrFoodPoints = 0
         "A slice of red velvet cake (in a paper bag)":
-            $ flags.append("gotCakeForPiotr")
+            $ flag("gotCakeForPiotr", True)
             $ piotrFoodPoints = 1
 
     r "Okay give me just a moment!"
@@ -994,8 +995,8 @@ label ch02_brickDescriptionEnd:
     you "{i}No YOU will change{/i}"
     you "So what were you working on"
     p "A ritual"
-    you "That's it. Just some nondescript ritual?"
-    p "Well if you MUST know i was getting ready to do a spell"
+    you "That's it? Just some nondescript ritual?"
+    p "Well if you MUST know i was getting ready to do a cleansing spell"
     you "SO YOU ARENT JUST A BORING FOREST JANITOR"
     you "I knew you had it in you"
     p "Actually that is exactly what i was going to do"
@@ -1008,7 +1009,7 @@ label ch02_brickDescriptionEnd:
     you "I cant promise to not touch anything but i will try"
     p "There's always something with you"
     p "Let's go"
-    scene bg black with dissolve
+    scene black with dissolve
     "Piotr takes you outside of the city"
     "Walking even two steps outside feels very wrong after all that you've heard about the forest"
     "He takes you to a small clearing about ten meters from the drawbridge"
@@ -1027,12 +1028,126 @@ label ch02_brickDescriptionEnd:
     "You hold it for about ten seconds before putting it on the floor"
     "Piotr is too preoccupied with his magic to notice that though"
     "He claws at the onyx stones on the ground and arranges them in a small circle"
+    "Piotr squats to get closer to the ground in order to start the spell"
+    "He moves his claws as if he was squeezing a gigantic nee doh"
+    "For the first few seconds nothing seems to happen"
+    "..."
+    "!"
+    "A small twig which just so happened to be inside the circle snapped in half"
+    "Then, a leaf starts levitating"
+    "Then another, then two more, and before you know it theres random things in the air - sticks, stones, leaves and even a bamboozled rat"
+    you "what the"
+    p "You were supposed to stay silent"
+    "The way some of the items fell back down shows piotr is struggling with the ruitual"
+    "Seeing this, you decide to shut up for once and witness an expert do his job"
+    "Piotr gives the imaginary nee doh a final squeeze and a gust of wind sweeps through the forest"
+    "You don't notice it at first, but it feels like the forest got a tiny bit more color"
+    you "{i}What the hell just happened{/i}"
+    you "{i}I feel... enlightened???{/i}"
+    you "{i}Focus [name], focus{/i}"
+    you "{i}I have to stay nonchalant{/i}"
+    you "Is that it?"
+    p "Yes"
+    you "I don't feel different"
+    you "What exactly did you do?"
+    p "What do you mean i just finished cleaning this area"
+    you "Huh"
+    p "If you dont feel different its because this forest was already clean or you are just ignorant"
+    p "And i think its the latter one"
+    you "Hmph!"
+    you "Show me how to do this i will do better than you"
+    p "No"
+    p "Not now atleast"
+    p "I will let you do it next time i have to clean the forest"
+    you "Okay i will be waiting patientlyn't"
+    you "And so like monsters wont come here for a while?"
+    p "Exactly"
+    you "What even are those monsters"
+    p "Lupus made these gmo wolves with bad energy to kill us all"
+    you "Who??"
+    p "Oh my god can you stop asking questions my head already hurts"
+    p "It's not like it matters it doesn't exist anyore"
+    p "And we have to deal with what some idiots have done a hundred years ago"
+    p "That is all you have to know"
+    you "Woah no need to be rude"
+    p "Play stupid games win stupid prizes"
+    p "If you want to learn magic you have to know the basics"
+    p "First lesson: foraging"
+    you "How is that going to help me"
+    p "And how are you going to make potions if you dont know which herbs do what"
+    "You were about to say something witty in response but realize he has a point right before you start speaking"
+    p "Follow me"
+    "Now that the forest was cleared of ebola you can safely, and with confidence, advance deeper"
+    scene bg forestdayb with dissolve
+    show piotr normal with moveinleft
+    p "This is where i get mushrooms"
+    p "Oh look there is one right here"
+    p "Can you tell if its poisonous or edible?"
+    menu:
+        "(pretend theres an image)" # TODO: add images here
 
-
-
-
-
+        "Looks deadly":
+            p "You are correct. Eating this will kill you"
+        "No it looks delicious":
+            p "Dont even think about it"
+            p "Had you not apologized to me i would have served it to you"
+    p "This mushroom makes you do involuntary cartwheels"
+    you "And how is that deadly?"
+    p "Well you cant stop while the mushroom is in your system period"
+    p "What if you injure yourself"
+    you "{i}Oh god{/i}"
+    p "You have alot to learn"
+    p "Here's a book you can read to learn about foraging mushrooms"
+    "You received: {i}Mushrooms 101 for absolute dumbasses{/i}"
+    you "i will definitely be judging this book by its cover"
+    you "Thank you"
+    p "you are welcome"
+    p "We should go now"
+    scene black with dissolve
+    "Piotr trips over a small stone and falls down onto the floor"
+    "You help him get up{w=0.5} but only because he can still teach you things"
+    "Other than that walking back felt much faster than walking to this spot"
+    scene expression loc_bg("cityexit") with dissolve
+    show piotr normal at center with dissolve
+    $ time.setTime(18,12)
+    p "Okay repeat what i told you"
+    you "Oh my god fine"
+    you "{i}I promise i will not go back to the forest alone{/i}"
+    p "Good"
+    p "I hope you learned something new today"
+    you "Yes i did thank you"
+    p "No problem"
+    you "Byeeeeeeeeeeeee{nw}"
+    "You dont even wait for piotr to reply and head straight to the city exit"
+    scene expression loc_bg("forest") with dissolve
+    "Nothing will match the audacity needed to do this"
+    "Knowing piotr will come to yell at you soon, you breathe in as much forest air as possible"
+    show piotr angry at center with dissolve
+    "Piotr's presence ruins your hyperventilation"
+    you "Oh my god what do you want"
+    p "No we are not doing this"
+    p "Get out"
+    you "Out of the city?"
+    with vpunch
+    p "NO"
+    you "Fine ill go home"
+    "You take one last whiff of this now prohibited air and walk back into the city"
+    scene expression loc_bg("cityexit") with dissolve
+    show piotr angry at center with dissolve
+    "This time piotr is standing by the exit to make sure you don't sneak out again"
+    you "You know i can just climb over the wall"
+    "But he doesn't even reply he just points somewhere to show you to get out"
+    you "Hmph! You won this time... but this isnt the end of it"
+    hide piotr with dissolve
+    you "How dare he tell me what to do"
+    you "I'll just find a different exit he cant stop me"
+    if flag("endorsedCommunism"):
+        you "{i}What if what Vasili said about the lanterns was true?{/i}"
+        you "{i}Then he can definitely spy on me{/i}"
+    you "Tonight i will give it a rest but tomorrow i'm going loca"
     $ telemetry_end()
     if TESTING:
+        call screen s_Telemetry()
+        call screen s_Telemetry()
         call screen s_Telemetry()
 
