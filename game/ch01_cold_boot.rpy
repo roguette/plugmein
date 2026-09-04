@@ -339,7 +339,7 @@ label ch01_cold_boot:
 label ch01_piotrIntroductionMenu:
     menu:
         "Kim ty jesteś" if ("askedWhoPiotrWas" not in flags):
-            $ flags.append("askedWhoPiotrWas")
+            $ flag("askedWhoPiotrWas", True)
             you "Okay but jokes aside i have to know who you are"
             you "Are you my dad or something"
             p "My name is Piotr and i am a magician, if you remember"
@@ -368,7 +368,7 @@ label ch01_piotrIntroductionMenu:
             
             jump ch01_piotrIntroductionMenu
         "Oskarż o porwanie" if "accusedPiotrOfKidnapping" not in flags:
-            $ flags.append("accusedPiotrOfKidnapping")
+            $ flag("accusedPiotrOfKidnapping", True)
             $ friendship["Piotr"] -= 1
             you "I can see right through your lies"
             you "You think im not the sharpest tool in the shed"
@@ -400,7 +400,7 @@ label ch01_piotrIntroductionMenu:
             p "Jeszcze raz mi takie dyrdymały powiesz ja ci strzelę stringami"
             jump ch01_piotrIntroductionMenu
         "Zapytaj się gdzie jesteś" if "askedWhereIAmStart" not in flags:
-            $ flags.append("askedWhereIAmStart")
+            $ flag("askedWhereIAmStart", True)
             you "Where am I?"
             p "In a forest near Bratgren"
             p "Bratgren is the city we all live in"
@@ -416,7 +416,7 @@ label ch01_piotrIntroductionMenu:
             p "Do you ever shut up?"
             jump ch01_piotrIntroductionMenu
         "milcz" if "stayedSilentStart" not in flags:
-            $ flags.append("stayedSilentStart")
+            $ flag("stayedSilentStart", True)
             you "{i}Milcząc chyba nic się nie dowiem{/i}"
             jump ch01_piotrIntroductionMenu
         "(nie mam więcej pytań)":
@@ -526,7 +526,7 @@ label ch01_afterPiotrIntroductionMenu:
     p "No przecież zapytał się o twoje imię."
     menu:
         "Sprowokuj piotra":
-            $ flags.append("wasRudeToPiotr")
+            $ flag("wasRudeToPiotr", True)
             $ friendship["Piotr"] -= 1
             you "Obsrałeś się jak mnie zobaczyłeś Panie Piotrze, więc {i}SYBAU!{/i}"
             p "To nieprawda. Proszę nie oczerniać mojego wizerunku!"
@@ -651,15 +651,15 @@ label ch01_afterPiotrRagebaitMenu:
     jump ch01_kurowskaDialogMenu
 
 label ch01_kurowskaDialogMenu:
-    if  "askedAboutHousing" in flags and 
-        "askedAboutCityHistory" in flags and 
+    if  "askedAboutHousing" in flags and \
+        "askedAboutCityHistory" in flags and \
         "askedAboutWork" in flags:
         jump ch01_gettingHouseKeysGood
 
     k "Czy masz jakieś pytania?"
     menu:
         "Zapytaj o historię miasta." if "askedAboutCityHistory" not in flags:
-            $ flags.append("askedAboutCityHistory")
+            $ flag("askedAboutCityHistory", True)
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
             k "See the portrait on the wall? That's bjork"
@@ -681,7 +681,7 @@ label ch01_kurowskaDialogMenu:
             jump ch01_kurowskaDialogMenu
 
         "Zapytaj o nocleg." if "askedAboutHousing" not in flags:
-            $ flags.append("askedAboutHousing")
+            $ flag("askedAboutHousing", True)
             you "Gdzie jest najbliższy hotel czy coś, bo nie mam ani domu ani mieszkania, gdzie ja będę spał?"
             k "Muszę tylko znaleźć klucze do twojego domu..."
             you "Dom?? Za darmo???"
@@ -693,7 +693,7 @@ label ch01_kurowskaDialogMenu:
             jump ch01_kurowskaDialogMenu
 
         "Zapytaj o pracę." if "askedAboutWork" not in flags:
-            $ flags.append("askedAboutWork")
+            $ flag("askedAboutWork", True)
             you "A co z pracą?"
             you "Wiem, że filip pracuje w sekretariacie. A co robią inni?"
             you "Inni w sensie przeciętni ludzie."
@@ -716,7 +716,7 @@ label ch01_kurowskaDialogMenu:
             jump ch01_kurowskaDialogMenu
 
         "Powiedz coś o jej wyglądzie." if "commentedOnKurowskasAppearance" not in flags:
-            $ flags.append("commentedOnKurowskasAppearance")
+            $ flag("commentedOnKurowskasAppearance", True)
             menu:
                 "Powiedz coś o jej ubiorze":
                     you "Czy każdy może kupić takie ubrania?"
@@ -733,7 +733,7 @@ label ch01_kurowskaDialogMenu:
                     k "Czy ty mnie obrażasz??"
                     you "Myślę, że daję ci coś co nazywa się konstruktywną krytyką!"
                     k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno."
-                    $ flags.append("rudeToKurowska")
+                    $ flag("rudeToKurowska", True)
                     k "Dobrze w takim razie koniec tego wywiadu. Masz tutaj klucze do twojego domu, a teraz idź zanim cię wywale!"
                     scene bg secretary with vpunch
                     play sound "audio/sfx_door_slam.mp3"
@@ -801,7 +801,7 @@ label ch01_firstNightTownWalkPartB:
     you "{i}Czego onx chce???{/i}"
     "Podchodzisz bliżej do tajemniczej sylwetki przed kościołem, zachowując przy tym wszystkie środki bezpieczeństwa."
     show wp normal with dissolve
-    $ flags.append("metWiktoriaP")
+    $ flag("metWiktoriaP", True)
     you "Hi?"
     m "Oops"
     m "I thought you were someone else"
@@ -973,7 +973,7 @@ label ch01_lakeVisit:
                 "Jak on miał na imie?":
                     m "Grzegorz Brą z Owy"
     you "Nazywam się [name]."
-    $ flags.append("metVasili")
+    $ flag("metVasili", True)
     v "Witaj! Mam na imię Vasili. Warzę eliksiry, w wolnym czasię łowię ryby i lubię też śpiewać."
     you "O jak fajnie, pewnie dużo ludzi zna twój głos?"
     v "No nie wiem...{w=.3} śpiewam tylko jak jestem sam...{w=.3} nie mnie to oceniać."
@@ -1006,7 +1006,7 @@ label ch01_lakeVisit:
             you "la la la la la {w=1.5}la"
             v "No cóż... Mówiłem, że nie jestem specjalistą..."
             $ friendship["Vasili"] -= 1
-            $ flags.append("rudeToVasili")
+            $ flag("rudeToVasili", True)
     
     v "To o czym chciałbyś się dowiedzieć? Wiem tutaj praktycznie wszystko ― spędzam całe dnie na ulicy i jeśli się dobrze przysłucha to można dużo informacji uzyskać."
     v "Ja słucham ludzi cały czas."

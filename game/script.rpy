@@ -29,6 +29,8 @@ image mess = Animation(
 define TESTING = True
 define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
+default friendship = dict()
+default flags = list()
 
 # =============================================== INIT PYTHON
 
@@ -47,10 +49,21 @@ init python:
     import random
     from datetime import datetime
 
+    def flag(name, change_to=None):
+        if change_to is None:
+            return name in flags
+        else:
+            if change_to == True:
+                flags.append(name)
+            else:
+                flags.remove(name)
+
     # telemetry for testing
     time_started = None
     time_finished = None
     telemetry_flags = []
+
+    
 
     def telemetry_start():
         global time_started
@@ -108,7 +121,7 @@ init python:
         def isDay(self):
             return 6 < self.hour < 18
 
-default time = TimeClass()
+
 # =============================================== CHARACTER DEFINITIONS
 
 define mks      = Character("MKS 23",       color="#fafafa")
@@ -133,9 +146,8 @@ define pe       = Character("Petitty",      color="#abcdef")
 
 
 # =============================================== GLOBAL VARIABLES
- 
-default friendship = dict()
-default flags = list()
+
+default time = TimeClass()
 
 # =============================================== TRANSFORMS
 
