@@ -59,7 +59,6 @@ label ch02_watch_your_mouth:
         "Nie chcę jeść":
             "Actually, you dont have to concentrate at all"
             you "{i}Actually no if i stay hungry i will stay skinny{/i}"
-            $ hasSkinnyWaist = True
             you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
 
     "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem, który włącza i wyłącza w niej swiatło."
@@ -159,7 +158,7 @@ label ch02_goingToKur:
     show kurowska normal with dissolve
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
     k "Tak, pamiętam."
-    if rudeToKurowska == True:
+    if "rudeToKurowska" not in flags:
         jump ch02_goingToKurRude
     else:
         jump ch02_goingToKurNotRude
@@ -328,7 +327,7 @@ label ch02_goingToFindAJob:
     "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
     "Do kogo idziesz pracować?"
     menu:
-        "Vasili (to jest ta ciekawsza opcja)" if metVasili:
+        "Vasili (to jest ta ciekawsza opcja)" if "metVasili" in flags:
             you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
             you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
             $ workedAtVasili = True
@@ -382,7 +381,7 @@ label ch02_workingAtFilip:
     "You go back and leave half of your 40cm stack on the luggage cart"
     "Only then your back allows you to move"
     "You knock on Kurowska's door"
-    if rudeToKurowska:
+    if "rudeToKurowska" not in flags:
         k "KTO TAK PUKA NA BELZEBUBA??"
     else:
         k "Wejdź."
@@ -400,7 +399,7 @@ label ch02_workingAtFilip:
     "Najwidoczniej przenosisz jakieś skargi."
     "Każdy nagłowek jest gorszy od poprzedniego."
     "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
-    if metVasili or knowsAboutVasili:
+    if ("metVasili" in flags) or knowsAboutVasili:
         you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
     "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
     "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
@@ -628,7 +627,7 @@ label ch02_gotMoneyBakeryEntrance:
     show rafal normal at rightish with moveinright
     "Przed tobą są dwie osoby."
     "Pierwszą w kolejce jest Frau Crusty."
-    if metWiktoriaP:
+    if "metWiktoriaP" in flags:
         you "O, hej."
         wp "No cześć! Co tam?"
         
@@ -1024,12 +1023,21 @@ label ch02_brickDescriptionEnd:
     "Walking even two steps outside feels very wrong after all that you've heard about the forest"
     "He takes you to a small clearing about ten meters from the drawbridge"
     scene bg forestday with dissolve
+    show piotr normal at center with dissolve
     p "Today i want you to just stand there and do nothing"
     p "I'm not sure this will even work with you around i do this alone"
     you "Okay"
     p "Pretend you are a tree or something"
     "you stand straighter than ever"
-    
+    p "Hold my bag"
+    p "Actually no wait"
+    "Piotr takes the bag and dumps its contents on the floor"
+    p "Now hold it"
+    you "Ok"
+    "You hold it for about ten seconds before putting it on the floor"
+    "Piotr is too preoccupied with his magic to notice that though"
+    "He claws at the onyx stones on the ground and arranges them in a small circle"
+
 
 
 

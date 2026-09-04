@@ -1,29 +1,11 @@
-
-default askedWhoPiotrWas = False
-default accusedPiotrOfKidnapping = False
-default askedWhereIAmStart = False
-default stayedSilentStart = False
-default wasRudeToPiotr = False
-default askedAboutCityHistory = False
-default askedAboutHousing = False
-default askedAboutWork = False
-default commentedOnKurowskasAppearance = False
-default rudeToKurowska = False
-default metTomcio = False
-default rudeToTomcio = False
-default hasSkinnyWaist = False
-default rudeToVasili = False
-default metVasili = False
-default knowsAboutVasiliGrandfatherGhost = False
-default hasToApologiseToPiotr = False
-default metWiktoriaP = False
-default receivedLoreAboutChurchOnTheFirstDay = False
 default ch01_wpAskedWhoIsBjork = False
 default ch01_wpAskedWhereIAm = False
 default ch01_wpAskedWhatHappenedToMe = False
 default endorsedCommunism = False
 default heardVasiliMonologue = False
 default knowsAboutVasili = False
+
+
 
 
 # region INTERACTIONS
@@ -126,7 +108,7 @@ label ch01_m_cityHallNormalFirstInteraction:
     "That way i have more control over the lore and what can happen"
     scene bg secretary with dissolve
     show filip normal with dissolve
-    if rudeToKurowska:
+    if "rudeToKurowska" not in flags:
         f "Oh. It's you."
         you "What?"
         f "What do u want"
@@ -356,8 +338,8 @@ label ch01_cold_boot:
 
 label ch01_piotrIntroductionMenu:
     menu:
-        "Kim ty jesteś" if not askedWhoPiotrWas:
-            $ askedWhoPiotrWas = True
+        "Kim ty jesteś" if ("askedWhoPiotrWas" not in flags):
+            $ flags.append("askedWhoPiotrWas")
             you "Okay but jokes aside i have to know who you are"
             you "Are you my dad or something"
             p "My name is Piotr and i am a magician, if you remember"
@@ -385,8 +367,8 @@ label ch01_piotrIntroductionMenu:
             p "Thats not how it works"
             
             jump ch01_piotrIntroductionMenu
-        "Oskarż o porwanie" if not accusedPiotrOfKidnapping:
-            $ accusedPiotrOfKidnapping = True
+        "Oskarż o porwanie" if "accusedPiotrOfKidnapping" not in flags:
+            $ flags.append("accusedPiotrOfKidnapping")
             $ friendship["Piotr"] -= 1
             you "I can see right through your lies"
             you "You think im not the sharpest tool in the shed"
@@ -417,15 +399,15 @@ label ch01_piotrIntroductionMenu:
             you "Fine. I guess you are right this once"
             p "Jeszcze raz mi takie dyrdymały powiesz ja ci strzelę stringami"
             jump ch01_piotrIntroductionMenu
-        "Zapytaj się gdzie jesteś" if not askedWhereIAmStart:
-            $ askedWhereIAmStart = True
+        "Zapytaj się gdzie jesteś" if "askedWhereIAmStart" not in flags:
+            $ flags.append("askedWhereIAmStart")
             you "Where am I?"
             p "In a forest near Bratgren"
             p "Bratgren is the city we all live in"
             you "That's so cool I thought you live up there in the trees"
             p "That is NOT TRUE"
             you "And where is this bratgren?"
-            if accusedPiotrOfKidnapping:
+            if "accusedPiotrOfKidnapping" in flags:
                 you "Or did you lie about that too?"
             p "Right behind you."
             "Theres a huge wall behind you and you can only assume it guards a city"
@@ -433,8 +415,8 @@ label ch01_piotrIntroductionMenu:
             you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
             p "Do you ever shut up?"
             jump ch01_piotrIntroductionMenu
-        "milcz" if not stayedSilentStart:
-            $ stayedSilentStart = True
+        "milcz" if "stayedSilentStart" not in flags:
+            $ flags.append("stayedSilentStart")
             you "{i}Milcząc chyba nic się nie dowiem{/i}"
             jump ch01_piotrIntroductionMenu
         "(nie mam więcej pytań)":
@@ -443,7 +425,7 @@ label ch01_piotrIntroductionMenu:
 label ch01_afterPiotrIntroductionMenu:
     "Patrzysz się dookoła i widzisz tylko drzewa, a z 300 metrów dalej jest ogromny mur. Taki ogromny, że mógłby to być Wielki Mur Chiński - ale wyglądał na za bardzo z Temu, żeby był oryginalny."
 
-    if stayedSilentStart:
+    if "stayedSilentStart" in flags:
         p "Co?"
         p "Czemu nic nie mówisz?"
         p "{b}Zatkało kakao?{/b}"
@@ -452,7 +434,7 @@ label ch01_afterPiotrIntroductionMenu:
         you "{i}Łatwo z takimi!{/i}"
         you "Ale wracając, umiem gadać tylko teraz myślę."
 
-    if accusedPiotrOfKidnapping:
+    if "accusedPiotrOfKidnapping" in flags:
         "Twój wzrok wraca do Piotra ale nie tak romantycznie tylko tak 'o jezu znowu ten yy jak on miał na imię??'."
         you "{i}Czy on naprawdę potrafi strzelać stringami..?{w} Jego pazury pewnie by rozszarpały te stringi.{/i}"
 
@@ -544,7 +526,7 @@ label ch01_afterPiotrIntroductionMenu:
     p "No przecież zapytał się o twoje imię."
     menu:
         "Sprowokuj piotra":
-            $ wasRudeToPiotr = True
+            $ flags.append("wasRudeToPiotr")
             $ friendship["Piotr"] -= 1
             you "Obsrałeś się jak mnie zobaczyłeś Panie Piotrze, więc {i}SYBAU!{/i}"
             p "To nieprawda. Proszę nie oczerniać mojego wizerunku!"
@@ -669,13 +651,15 @@ label ch01_afterPiotrRagebaitMenu:
     jump ch01_kurowskaDialogMenu
 
 label ch01_kurowskaDialogMenu:
-    if askedAboutHousing and askedAboutCityHistory and askedAboutWork:
+    if  "askedAboutHousing" in flags and 
+        "askedAboutCityHistory" in flags and 
+        "askedAboutWork" in flags:
         jump ch01_gettingHouseKeysGood
 
     k "Czy masz jakieś pytania?"
     menu:
-        "Zapytaj o historię miasta." if not askedAboutCityHistory:
-            $ askedAboutCityHistory = True
+        "Zapytaj o historię miasta." if "askedAboutCityHistory" not in flags:
+            $ flags.append("askedAboutCityHistory")
             you "A czy Bratgren ma jakąś historię?"
             k "Wywalę cię zaraz. Oczywiście, że ma."
             k "See the portrait on the wall? That's bjork"
@@ -696,8 +680,8 @@ label ch01_kurowskaDialogMenu:
             k "Exactly"
             jump ch01_kurowskaDialogMenu
 
-        "Zapytaj o nocleg." if not askedAboutHousing:
-            $ askedAboutHousing = True
+        "Zapytaj o nocleg." if "askedAboutHousing" not in flags:
+            $ flags.append("askedAboutHousing")
             you "Gdzie jest najbliższy hotel czy coś, bo nie mam ani domu ani mieszkania, gdzie ja będę spał?"
             k "Muszę tylko znaleźć klucze do twojego domu..."
             you "Dom?? Za darmo???"
@@ -708,8 +692,8 @@ label ch01_kurowskaDialogMenu:
             you "{i}I klasa. Dom za darmo? W snach mi się to nie śniło.{/i}"
             jump ch01_kurowskaDialogMenu
 
-        "Zapytaj o pracę." if not askedAboutWork:
-            $ askedAboutWork = True
+        "Zapytaj o pracę." if "askedAboutWork" not in flags:
+            $ flags.append("askedAboutWork")
             you "A co z pracą?"
             you "Wiem, że filip pracuje w sekretariacie. A co robią inni?"
             you "Inni w sensie przeciętni ludzie."
@@ -731,8 +715,8 @@ label ch01_kurowskaDialogMenu:
             you "Jasne!!! XOXO"
             jump ch01_kurowskaDialogMenu
 
-        "Powiedz coś o jej wyglądzie." if not commentedOnKurowskasAppearance:
-            $ commentedOnKurowskasAppearance = True
+        "Powiedz coś o jej wyglądzie." if "commentedOnKurowskasAppearance" not in flags:
+            $ flags.append("commentedOnKurowskasAppearance")
             menu:
                 "Powiedz coś o jej ubiorze":
                     you "Czy każdy może kupić takie ubrania?"
@@ -749,7 +733,7 @@ label ch01_kurowskaDialogMenu:
                     k "Czy ty mnie obrażasz??"
                     you "Myślę, że daję ci coś co nazywa się konstruktywną krytyką!"
                     k "Zaraz ty i twoja konstruktywna krytyka zostaną wywaleni przez to okno."
-                    $ rudeToKurowska = True
+                    $ flags.append("rudeToKurowska")
                     k "Dobrze w takim razie koniec tego wywiadu. Masz tutaj klucze do twojego domu, a teraz idź zanim cię wywale!"
                     scene bg secretary with vpunch
                     play sound "audio/sfx_door_slam.mp3"
@@ -778,7 +762,7 @@ label ch01_gettingHouseKeysUniversal:
     p "W takim razie muszę iść dokończyć rytuał z wcześniej, w którym mi przeszkodziłeś. ŻEGNAM!"
     hide piotr with dissolve
     you "{i}Chyba się na mnie obraził.{/i}"
-    if wasRudeToPiotr == True:
+    if "wasRudeToPiotr" in flags:
         you "{i}Chyba przesadziłem w tym sekretariacie.{/i}"
     you "{i}Ale bracie its not that deep. No cóż, idgaf.{/i}"
     "Przed wyjściem z urzędu miasta patrzysz się na zegar, i widzisz, że jest 23:44."
@@ -802,7 +786,6 @@ label ch01_gettingHouseKeysUniversal:
     call screen s_walkable_Square()
 
 label ch01_firstNightTownWalk:
-    $ receivedLoreAboutChurchOnTheFirstDay = True
     scene bg lanastreetnight with dissolve
     jump ch01_firstNightTownWalkPartB
 
@@ -818,6 +801,7 @@ label ch01_firstNightTownWalkPartB:
     you "{i}Czego onx chce???{/i}"
     "Podchodzisz bliżej do tajemniczej sylwetki przed kościołem, zachowując przy tym wszystkie środki bezpieczeństwa."
     show wp normal with dissolve
+    $ flags.append("metWiktoriaP")
     you "Hi?"
     m "Oops"
     m "I thought you were someone else"
@@ -888,7 +872,7 @@ label ch01_firstNightTownWalkPartB:
     you "Piotr was in front of me so i immediately thought its all his fault"
     you "So i was kinda rude to him and you know"
     you "He led me to Kurowska and she gave me a house"
-    if rudeToKurowska:
+    if "rudeToKurowska" not in flags:
         you "I was rude to her too"
     "Wiktoria starts laughing uncontrollably"
     wp "What happened to your attitude"
@@ -985,12 +969,11 @@ label ch01_lakeVisit:
             you "Yyy...{w=.3} no ducha widziałem." 
             m "To są duchy zmarłych."
             m "Przychodzę tu w nocy bo czasami pojawia się duch mojego dziadka."
-            $ knowsAboutVasiliGrandfatherGhost = True
             menu:
                 "Jak on miał na imie?":
                     m "Grzegorz Brą z Owy"
     you "Nazywam się [name]."
-    $ metVasili = True
+    $ flags.append("metVasili")
     v "Witaj! Mam na imię Vasili. Warzę eliksiry, w wolnym czasię łowię ryby i lubię też śpiewać."
     you "O jak fajnie, pewnie dużo ludzi zna twój głos?"
     v "No nie wiem...{w=.3} śpiewam tylko jak jestem sam...{w=.3} nie mnie to oceniać."
@@ -1023,7 +1006,7 @@ label ch01_lakeVisit:
             you "la la la la la {w=1.5}la"
             v "No cóż... Mówiłem, że nie jestem specjalistą..."
             $ friendship["Vasili"] -= 1
-            $ rudeToVasili = True
+            $ flags.append("rudeToVasili")
     
     v "To o czym chciałbyś się dowiedzieć? Wiem tutaj praktycznie wszystko ― spędzam całe dnie na ulicy i jeśli się dobrze przysłucha to można dużo informacji uzyskać."
     v "Ja słucham ludzi cały czas."
@@ -1115,7 +1098,7 @@ label ch01_vasiliFirstNightMagaMenu:
                         v "Ale było minęło i teraz trzeba żyć dalej."
                 "Milcz":
                     you "{i}Jestem trochę ciekawy o jaki wypadek chodzi, ale Vasili wydaję się być wrażliwym człowiekiem.{/i}"
-                    if rudeToVasili == False:
+                    if "rudeToVasili" not in flags:
                         you "{i}Może lepiej zostawię to w spokoju.{/i}"
                     else:
                         you "{i}Skoro tyle gada to równie dobrze może mi opowiedzieć o swoim dziadku.{/i}"

@@ -134,25 +134,8 @@ define pe       = Character("Petitty",      color="#abcdef")
 
 # =============================================== GLOBAL VARIABLES
  
-default friendship = {
-    "Piotr": 0,
-    "Filip": 0,
-    "Kurowska": 0,
-    "Tomcio": 0,
-    "Vasili": 0,
-    "Björk": 0,
-    "Kura": 0,
-    "LISa Simpson": 0,
-    "Frau Crusty": 0,
-    "Rafal": 0,
-    "Niuniu": 0,
-    "WiktoriaP": 0,
-    "WiktoriaW": 0,
-    "Antonius": 0,
-    "Wiesław": 0,
-    "Bartosz": 0,
-    "Petitty": 0,
-}
+default friendship = dict()
+default flags = list()
 
 # =============================================== TRANSFORMS
 
