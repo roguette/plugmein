@@ -4,10 +4,9 @@
 # to tu sie zaczyna
 #
 # le contents:
-# GLOBAL CONFIGS
+# GLOBAL VARIABLES
 # INIT PYTHON
 # CHARACTER DEFINITIONS
-# GLOBAL VARIABLES
 # TRANSFORMS
 # START
 # MISC
@@ -23,15 +22,15 @@ image mess = Animation(
     "images/mess_gif/5.png", 1,
 )
 
+# =============================================== GLOBAL VARIABLES
 
-# =============================================== GLOBAL CONFIGS
- 
+default time = TimeClass()
+default friendship = dict()
+default flags = list()
+
 define TESTING = True
 define config.default_text_cps = 110
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
-
-# =============================================== INIT PYTHON
-
 define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
     "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
@@ -42,10 +41,12 @@ define location_bgs = {
     "cityexit": ("bg cityexitday", "bg cityexitnight")
 }
 
+# =============================================== INIT PYTHON
 
 init python:
     import random
     from datetime import datetime
+
 
     # telemetry for testing
     time_started = None
@@ -108,7 +109,7 @@ init python:
         def isDay(self):
             return 6 < self.hour < 18
 
-default time = TimeClass()
+
 # =============================================== CHARACTER DEFINITIONS
 
 define mks      = Character("MKS 23",       color="#fafafa")
@@ -130,12 +131,6 @@ define a        = Character("Antonius",     color="#52a88e")
 define w        = Character("Wiesław",      color="#843a18")
 define b        = Character("Bartosz",      color="#3ab954")
 define pe       = Character("Petitty",      color="#abcdef")
-
-
-# =============================================== GLOBAL VARIABLES
- 
-default friendship = dict()
-default flags = list()
 
 # =============================================== TRANSFORMS
 

@@ -1,11 +1,3 @@
-default playerRobbed = False
-default workedAtVasili = False
-default workedAtFilip = False
-default robberyStopped = False
-default metPetitty = False
-default gotCoffeeForPiotr = False
-default gotCakeForPiotr = False
-default gotBreadForPiotr = False
 default piotrFoodPoints = 0
 default piotrWritingPoints = 0
 
@@ -206,7 +198,6 @@ label ch02_goingToKurNotRude:
     play music "outfoxingthefox.mp3"
     show kamil normal with vpunch
     m "Oddaj wszystkie pieniądze jakie masz!!!"
-    $ playerRobbed = True
     you "CO! Nie proszę, nie rób mi krzywdy, ale nie mogę dać ci tych pieniędzy."
     you "Nie jadłem nic od wczoraj, te pieniądze dostałem w prezencie. Muszę je wykorzystać na jedzenie i ubranie, bom głodny i goły."
     m "No dobra, mam serce, dlatego pozwolę ci zawalczyć o to czy będziesz musiał mi oddać twoje pieniądze."
@@ -247,7 +238,6 @@ label ch02_KamilRobberyCorrectChoice:
     "Stoi tam, patrząc na ciebie, próbując podsycić napięcie"
     m "..."
     m "Skąd wiedziałeś?"
-    $ robberyStopped = True
     m "Grrr....."
     "Nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa."
     m "Heh.. Poza tym, wiedziałem że ty to powiesz..."
@@ -330,11 +320,11 @@ label ch02_goingToFindAJob:
         "Vasili (to jest ta ciekawsza opcja)" if "metVasili" in flags:
             you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
             you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
-            $ workedAtVasili = True
+            $ flags.append("workedAtVasili")
             jump ch02_workingAtVasili
         "Filip":
             you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
-            $ workedAtFilip = True
+            $ flags.append("workedAtFilip")
             jump ch02_workingAtFilip
 
 label ch02_workingAtFilip:
@@ -399,7 +389,7 @@ label ch02_workingAtFilip:
     "Najwidoczniej przenosisz jakieś skargi."
     "Każdy nagłowek jest gorszy od poprzedniego."
     "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
-    if ("metVasili" in flags) or knowsAboutVasili:
+    if ("metVasili" in flags) or ("knowsAboutVasili" in flags):
         you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
     "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
     "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
@@ -450,7 +440,7 @@ label ch02_workingAtVasili:
     "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
     "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony ― bo jedyny ― wędkarz."
     show vasili normal with dissolve
-    if endorsedCommunism:
+    if "endorsedCommunism" in flags:
         v "Witaj towarzyszu."
         you "Yyy? Cześć..."
         v "Co cię sprowadza w {b}NASZE{/b} skromne progi...{w=.6} HAHAHA bo wiesz...{w=.6} kolektywizacja majątku..."
@@ -631,7 +621,7 @@ label ch02_gotMoneyBakeryEntrance:
         you "O, hej."
         wp "No cześć! Co tam?"
         
-        if workedAtFilip:
+        if "workedAtFilip" in flags:
             you "Masakra... Musiałem pracować..."
             wp "Do kogo poszedłeś?"
             you "Do Filipa."
@@ -640,11 +630,11 @@ label ch02_gotMoneyBakeryEntrance:
             you "Bo to on ma je czytać."
             wp "Trzeba było zarządać pieniędzy i wyjść po czymś takim."
             wp "I skibidi."
-        elif workedAtVasili:
+        elif "workedAtVasili" in flags:
             you "Masakra... Musiałem pracować..."
             wp "Do kogo poszedłeś?"
             you "Do Vasiliego."
-            if endorsedCommunism:
+            if "endorsedCommunism" in flags:
                 you "Wiesz co, nie było źle."
                 you "Mamy podobne poglądy polityczne."
                 "Wiktoria robi bombastic side eye."
@@ -870,13 +860,13 @@ label ch02_brickDescriptionEnd:
     you "Okay that makes sense"
     menu:
         "3 cups of coffee in a paper bag":
-            $ gotCoffeeForPiotr = True
+            $ flags.append("gotCoffeeForPiotr")
             $ piotrFoodPoints = 2
         "Bread in a paper bag":
-            $ gotBreadForPiotr = True
+            $ flags.append("gotBreadForPiotr")
             $ piotrFoodPoints = 0
         "A slice of red velvet cake (in a paper bag)":
-            $ gotCakeForPiotr = True
+            $ flags.append("gotCakeForPiotr")
             $ piotrFoodPoints = 1
 
     r "Okay give me just a moment!"
@@ -925,11 +915,11 @@ label ch02_brickDescriptionEnd:
     "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
     you "Enjoy"
 
-    if gotCakeForPiotr:
+    if "gotCakeForPiotr" in flags:
         "Piotr carefully looks inside the oil-staned paper bag before noticing the message"
-    elif gotBreadForPiotr:
+    elif "gotBreadForPiotr" in flags:
         "Piotr carefully looks inside the extremely rectangular paper bag before noticing the message"
-    elif gotCoffeeForPiotr:
+    elif "gotCoffeeForPiotr" in flags:
         "Piotr smells the aroma of fresh coffee and quickly tears the bag apart, before noticing the message"
         "The message you wrote with great care and precision stayed intact due to sheer luck"
 
@@ -945,13 +935,13 @@ label ch02_brickDescriptionEnd:
         p "WHAT IS THIS"
     you "Now don't be so shy. Please indulge in this bratgrenian delicacy"
 
-    if gotCakeForPiotr:
+    if "gotCakeForPiotr" in flags:
         "Piotr decided that taking the cake out was too risky so he ripped the bag"
         "Which revealed a slightly-smooshed cake"
         "The cake doesn't look very presentable anymore but its still edible"
         you "Like i said, Enjoy"
 
-    elif gotBreadForPiotr:
+    elif "gotBreadForPiotr" in flags:
         "Piotr lifts the bag because he has had enough and does not want to deal with this right now"
         "When suddenly..."
         "The bag rips and the bread falls out onto the tabletop, leaving a dent"
@@ -964,7 +954,7 @@ label ch02_brickDescriptionEnd:
         you "Here's the receipt. You can go back to the store and return it for store credit"
         "Piotr rolls his eyes"
         you "i'm actually really sorry this was supposed to be an actual gift but i didnt check the bread"
-    elif gotCoffeeForPiotr:
+    elif "gotCoffeeForPiotr" in flags:
         you "One is poisoned by the way"
         p "WHAT"
         p "No thank you"

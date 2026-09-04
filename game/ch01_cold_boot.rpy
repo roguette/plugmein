@@ -1,10 +1,3 @@
-default ch01_wpAskedWhoIsBjork = False
-default ch01_wpAskedWhereIAm = False
-default ch01_wpAskedWhatHappenedToMe = False
-default endorsedCommunism = False
-default heardVasiliMonologue = False
-default knowsAboutVasili = False
-
 
 
 
@@ -838,7 +831,7 @@ label ch01_firstNightTownWalkPartB:
     you "What? Why? Is he dangerous"
     wp "No he is worse"
     wp "He is so annoying oh my god"
-    $ knowsAboutVasili = True
+    $ flags.append("knowsAboutVasili")
     wp "Right behind you theres a bakery right?"
     wp "When rafał, the owner, was closing he had a few buns that were going to go stale"
     wp "So instead of being wasteful he gave them away to people"
@@ -1019,8 +1012,8 @@ label ch01_vasiliFirstNightMagaMenu:
             $ ryba = random.choice(["ch01_vasiliFishBrzana", "ch01_vasiliFishKoza", "ch01_vasiliFishWstegorz"])
             jump expression ryba
 
-        "Zapytaj o poglądy polityczne" if not heardVasiliMonologue:
-            $ heardVasiliMonologue = True
+        "Zapytaj o poglądy polityczne" if "heardVasiliMonologue" not in flags:
+            $ flags.append("heardVasiliMonologue") 
             v "Nie wierzę, że Kurowska jest dobrą prezydentką."
             v "Kurowska to coś gorszego niż zło."
             v "Zaczęła zaciskać kapitalistyczną smycz ― każdy musiał znaleźć pr―{w=.6} pr―{w=.6} pra...cę."
@@ -1061,7 +1054,7 @@ label ch01_vasiliFirstNightMagaMenu:
             v "Czy zagłosujesz na mnie?"
             menu:
                 "Tak":
-                    $ endorsedCommunism = True
+                    $ flags.append("endorsedCommunism")
                     $ friendship["Vasili"] += 1
                     v "Dziękuję towarzyszu."
                     v "Wiedziałem, że mogę na ciebie liczyć."
