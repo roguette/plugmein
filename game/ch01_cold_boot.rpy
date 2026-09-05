@@ -209,7 +209,7 @@ label ch01_m_cityHallNormalFirstInteraction:
 
 label ch01_m_enteringChurch:
     "Walking up to the church you feel a sudden breeze of air graze your back"
-    scene bg churchnighta with dissolve
+    scene bg churchnight with dissolve
     "The building in front of you, which you can only assume is a church, looks very old and a bit dilapidated"
     jump ch01_firstNightTownWalkPartB
 
@@ -1064,7 +1064,7 @@ label ch01_vasiliFirstNightMagaMenu:
                     you "To jak to działa, że mówisz że to nasz dom ale mnie wyganiasz?"
                     v "Idź popieraj kapitalizm gdzieś indziej."
                     hide vasili with dissolve
-                    "Odwracasz się i idziesz jak najszybciej od niego bo nie wytrzymasz kolejnego "towarzysza"."
+                    "Odwracasz się i idziesz jak najszybciej od niego bo nie wytrzymasz kolejnego \"towarzysza\"."
                     jump ch01_goingHomeTiredAfterVasiliFirstNight
 
             

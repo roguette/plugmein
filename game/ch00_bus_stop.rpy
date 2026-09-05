@@ -1,6 +1,6 @@
 label ch00_bus_stop:
     play music "audio/street.mp3" 
-    scene bg busstopa with dissolve
+    scene bg busstop with dissolve
 
     you "{i}No szybciej już{/i}"
     "Szybko, nerwowo, impulsywnie oraz intensywnie wciskasz przycisk na światłach (ten taki żółty)."

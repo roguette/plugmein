@@ -20,12 +20,12 @@ screen s_walkable_Square():
             action Function(travel_to, "s_walkable_LanaStreet")
             
     vbox:
-        # field slope arrow
+        # Crouticlocks street arrow
         xpos 0.25 ypos 0.6
         imagebutton:
             idle "images/arrows/0_a.png"
             hover "images/arrows/0_a_hover.png"
-            action Function(travel_to, "s_walkable_LakeSlope")
+            action Function(travel_to, "s_walkable_CrouticlocksStreet")
 
     vbox:
         # city hall arrow
@@ -82,10 +82,10 @@ screen s_walkable_LanaStreet():
 
 
 
-screen s_walkable_LakeSlope():
+screen s_walkable_CrouticlocksStreet():
     tag map
 
-    add loc_bg("lakeslope")
+    add loc_bg("crouticlocksstreet")
     vbox:
         # back to square arrow
         xpos 0.1 ypos 0.85
@@ -100,25 +100,25 @@ screen s_walkable_LakeSlope():
         imagebutton:
             idle "images/arrows/0_a.png"
             hover "images/arrows/0_a_hover.png"
-            action Function(travel_to, "s_walkable_LakeField")
+            action Function(travel_to, "s_walkable_Field")
 
-screen s_walkable_LakeField():
+screen s_walkable_Field():
     tag map
     
-    add loc_bg("lakefield")
+    add loc_bg("field")
 
     vbox:
         xpos 0.2 ypos 0.9
         imagebutton:
             idle "images/arrows/180_b.png"
             hover "images/arrows/180_b_hover.png"
-            action Function(travel_to, "s_walkable_LakeSlope")
+            action Function(travel_to, "s_walkable_Field")
 
     vbox:
         xpos 0.5 ypos 0.5
         imagebutton:
-            idle "images/direction_sign.png"
-            action [SetVariable("_map_loc", "lakefield"), SetVariable("_map_dest", "lake_direction_sign"), Jump("map_leave")]
+            idle "direction_sign"
+            action [SetVariable("_map_loc", "field"), SetVariable("_map_dest", "lake_direction_sign"), Jump("map_leave")]
     
 
 label map_leave:
@@ -139,7 +139,7 @@ label lake_direction_sign:
         "Niuniu's house →":
             call generic_unavailable
 
-    call screen s_walkable_LakeField() with dissolve
+    call screen s_walkable_Field() with dissolve
 
 
 default ch01_f_visitedFountain = False

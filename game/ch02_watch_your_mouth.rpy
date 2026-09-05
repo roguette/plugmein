@@ -469,7 +469,7 @@ label ch02_workingAtVasili:
         you "No dobra... w takim razie ide pozbierać jajka...?"
         v "Zebrać akcyzę."
         v "Tylko pamiętaj o bezwzględności."
-        "Oddalając się słyszysz jak Vasili zaczyna śpiewać "Międzynarodówkę"."
+        "Oddalając się słyszysz jak Vasili zaczyna śpiewać \"Międzynarodówkę\"."
         you "{i}JUŻ NIGDY TUTAJ NIE WRACAM...{w=.6} może tylko po pieniądze...{/i}"
         scene bg kurnik with dissolve
         "Jak Vasili mówił, kurnik był zaraz za domem." 
