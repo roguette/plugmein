@@ -230,7 +230,6 @@ screen chapterTransition(chapter_text, title_text):
 
 
 label chapterTransition(chapter_text, title_text):
-
     with dissolve
     window hide
     play audio "audio/sfx_chapter_transition.mp3"

@@ -112,7 +112,7 @@ screen s_walkable_Field():
         imagebutton:
             idle "images/arrows/180_b.png"
             hover "images/arrows/180_b_hover.png"
-            action Function(travel_to, "s_walkable_Field")
+            action Function(travel_to, "s_walkable_Square")
 
     vbox:
         xpos 0.5 ypos 0.5
