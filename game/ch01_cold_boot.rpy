@@ -235,7 +235,7 @@ label ch01_cold_boot:
 
     scene bg forestnight with vpunch
 
-    you "AAAAA!!!!"
+    you "AAAAA!!!!" #
     you "Proszę mnie nie dotykać!!!"
     you "This is my no-no square!!!"
     you "Stranger Danger!!!"
