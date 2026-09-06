@@ -12,7 +12,7 @@
 # MISC
 # ===============================================
 
-init python:
+init -2 python:
     import random
     from datetime import datetime
     from collections import defaultdict
@@ -32,6 +32,7 @@ default flags = set()
 define TESTING = True
 define config.default_text_cps = 130
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
+define build_name = "github"
 default name = ""
 define you = Character("[name]")
 

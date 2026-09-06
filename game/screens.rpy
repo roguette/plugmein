@@ -356,24 +356,61 @@ screen main_menu():
 
     add gui.main_menu_background
 
-    ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    vbox:
+        xpos 0.1
+        yalign 0.7
 
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
+        spacing gui.navigation_spacing
 
-    if gui.show_name:
+        if main_menu:
+            textbutton _("Start"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action Start()
 
-        vbox:
-            style "main_menu_vbox"
+        else:
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            textbutton _("History"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("history")
 
-            text "[config.version]":
-                style "main_menu_version"
+            textbutton _("Save"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("save")
+
+        textbutton _("Load"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("load")
+
+        textbutton _("Preferences"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("preferences")
+
+        textbutton _("About"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("about")
+
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            textbutton _("Controls"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action ShowMenu("help")
+
+        if renpy.variant("pc"):
+            textbutton _("Quit"):
+                text_idle_color "#7a4c2d"
+                text_hover_color "#ae602e"
+                action Quit(confirm=not main_menu)
+    text "[config.name!t] v[config.version], build \"[build_name]\"":
+        size 20
+        color "#ffffff"
+        xpos 0.084
+        ypos 0.862
 
 
 style main_menu_frame is empty

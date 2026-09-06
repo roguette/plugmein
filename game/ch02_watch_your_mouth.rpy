@@ -1,6 +1,80 @@
 default piotrFoodPoints = 0
 default piotrWritingPoints = 0
 
+#region INTERACTIONS
+label ch02_h_entrance:
+    scene expression loc_bg("house")
+    if flag("ch02_locked_door"):
+        "*click*"
+        "The door is now unlocked"
+        $ flag("ch02_locked_door", False)
+    else:
+        "*click*"
+        "The door is now locked"
+        $ flag("ch02_locked_door", True)
+    call screen s_House()
+
+
+label ch02_h_window:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_fridge:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_table:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_sink:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_suspicious_pot:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_normal_pot:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_bathroom:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_pantry:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+label ch02_h_wardrobe:
+    scene expression loc_bg("house")
+
+    call screen s_House()
+
+
+#endregion
+
+
+
+
+
 
 label ch02_watch_your_mouth:
     "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
@@ -1280,9 +1354,10 @@ label ch02_piotrRitualEnd:
     you "{i}No way in HELL am i going back to that forest. No thank you.{/i}"
     hide piotr with dissolve
     you "{i}Next week i'm going loca{/i}"
+    call screen s_House()
     $ telemetry_end()
-    if TESTING:
-        call screen s_Telemetry()
-        call screen s_Telemetry()
-        call screen s_Telemetry()
+    # if TESTING:
+    #     call screen s_Telemetry()
+    #     call screen s_Telemetry()
+    #     call screen s_Telemetry()
 

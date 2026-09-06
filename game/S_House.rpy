@@ -27,15 +27,26 @@ define buttons_ch01 = dict(
     living_room=(0.608, 0.641),
 ) 
 
-define ch01_house_seenEntrance = False
+define buttons_ch02 = dict(
+    entrance=(0.486, 0.863),
+    window=(0.34, 0.878),
+    fridge=(0.342, 0.469),
+    table=(0.359, 0.697),
+    sink=(0.236, 0.678),
+    suspicious_pot=(0.738, 0.563),
+    normal_pot=(0.742, 0.762),
+    bathroom=(0.282, 0.252),
+    pantry=(0.411, 0.177),
+    bed=(0.661, 0.211),
+    wardrobe=(0.54, 0.18),
+)
 
 screen s_House():
     tag map
     add loc_bg("house")
 
     if time.chapter == 1:
-        
-        if ch01_house_seenEntrance == True:
+        if flag("ch01_house_seenEntrance"):
             use b_normal(buttons_ch01["bathroom"], "ch01_h_bathroom")
             use b_normal(buttons_ch01["bedroom"], "ch01_h_bedroom")
             use b_normal(buttons_ch01["storage_room"], "ch01_h_storageRoom")
@@ -44,6 +55,17 @@ screen s_House():
             use b_disabled(buttons_ch01["entrance"])
         else:
             use b_normal(buttons_ch01["entrance"], "ch01_h_entrance")
+    elif time.chapter == 2:
+        use b_normal(buttons_ch02["entrance"], "ch02_h_entrance")
+        use b_normal(buttons_ch02["window"], "ch02_h_window")
+        use b_normal(buttons_ch02["fridge"], "ch02_h_fridge")
+        use b_normal(buttons_ch02["table"], "ch02_h_table")
+        use b_normal(buttons_ch02["sink"], "ch02_h_sink")
+        use b_normal(buttons_ch02["suspicious_pot"], "ch02_h_suspicious_pot")
+        use b_normal(buttons_ch02["normal_pot"], "ch02_h_normal_pot")
+        use b_normal(buttons_ch02["bathroom"], "ch02_h_bathroom")
+        use b_normal(buttons_ch02["pantry"], "ch02_h_pantry")
+        use b_normal(buttons_ch02["wardrobe"], "ch02_h_wardrobe")
 
 label generic_unavailable_house:
     scene expression loc_bg("house")
