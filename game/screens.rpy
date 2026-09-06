@@ -358,7 +358,7 @@ screen main_menu():
 
     vbox:
         xpos 0.1
-        yalign 0.7
+        yalign 0.65
 
         spacing gui.navigation_spacing
 
@@ -385,32 +385,34 @@ screen main_menu():
                 text_hover_color "#ae602e"
                 action ShowMenu("load")
 
-        textbutton _("Preferences"):
-                text_idle_color "#7a4c2d"
-                text_hover_color "#ae602e"
-                action ShowMenu("preferences")
-
-        textbutton _("About"):
-                text_idle_color "#7a4c2d"
-                text_hover_color "#ae602e"
-                action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-            textbutton _("Controls"):
-                text_idle_color "#7a4c2d"
-                text_hover_color "#ae602e"
-                action ShowMenu("help")
 
         if renpy.variant("pc"):
             textbutton _("Quit"):
                 text_idle_color "#7a4c2d"
                 text_hover_color "#ae602e"
                 action Quit(confirm=not main_menu)
+
+    hbox:
+        xpos 0.1
+        ypos 0.81
+        spacing 5
+        yanchor 0.5
+        imagebutton:
+            idle "images/buttons/settings_a.png"
+            hover "images/buttons/settings_a.png"
+            action ShowMenu("preferences")
+
+        imagebutton:
+            idle "images/buttons/info_a.png"
+            hover "images/buttons/info_a.png"
+            action ShowMenu("about")
+
     text "[config.name!t] v[config.version], build \"[build_name]\"":
         size 20
         color "#ffffff"
-        xpos 0.084
-        ypos 0.862
+        yanchor 0.0
+        xpos 0
+        ypos 1
 
 
 style main_menu_frame is empty

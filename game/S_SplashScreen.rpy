@@ -32,6 +32,8 @@ screen S_StartMessage():
 
 
 label splashscreen:
+    if TESTING:
+        return
     show screen S_StartMessage
     pause 9 
     hide screen S_StartMessage with dissolve
