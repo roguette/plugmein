@@ -1052,28 +1052,22 @@ label ch01_vasiliFirstNightMagaMenu:
             v "Nie daj się zwieść latarniom ― oświetlenie miasta to w rzeczywistości sieć inwigilacji."
             v "Latarnie mają oczy{w=1}.{w=1}.{w=1}."
             v "Jakieś dziesięć lat temu nasze wody zostały zakażone."
-            v "Ludzie umierali od trucizny w tej wodzie."
             v "Po wypiciu tej cieczy robiłeś się fioletowy i umierałeś."
             v "To były dobre czasy."
             v "Wszyscy robili coś razem i sobie pomagali."
             v "Było cierpienie, ale było ono wspólne."
             v "Kapitalizm nam to odebrał."
-            v "Teraz mamy tylko sterylną opresję, a proletariat nic nie może zrobić."
+            v "Teraz mamy tylko opresję, a proletariat nic nie może zrobić."
             v "Dlatego kandyduję na prezydenta Bratgren!"
             v "Pod moim przewodnictwem miasto wejdzie w nową erę antykapitalistycznej równowagi."
             v "Zniesiemy własność prywatną."
-            v "Praca będzie losowana boską metodą."
-            v "Wszystkie banki zostaną zlikwidowane."
-            v "Ich budynki przerobimy na centra dystrybucji pyongyang cold noodles."
-            v "Pyongyang cold noodles będą podawane lodowato zimne ― żeby proletariat był czujny."
-            v "Beton to symbol ucisku."
-            v "Każdy dom zostanie zburzony i odbudowany z drewna."
-            v "Naprawimy miasto gałązka po gałązce."
+            "Hearing this insane monologue you cant help it and zone out for god knows how long"
+            "Due to sheer luck Vasili doesnt notice you ignoring him and continues his sleep-inducing monologue"
             v "Dekadencja burżuazji musi zostać zakończona."
             v "Głosuj na mnie, towarzyszu!!!"
-
-            v "Czy zagłosujesz na mnie?"
+            "Consciousness goes back into you right after he finished the speech"
             menu:
+                v "Czy zagłosujesz na mnie?"
                 "Tak":
                     $ flag("endorsedCommunism", True)
                     $ friendship["Vasili"] += 1

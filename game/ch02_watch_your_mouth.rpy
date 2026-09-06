@@ -13,10 +13,10 @@ label ch02_watch_your_mouth:
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up"
     scene bg houseday with dissolve
-    "You instinctively cover the face but you can still see the sun through the gaps between your fingers"
+    "You instinctively cover your face but you can still see the sun through the gaps between your fingers"
     "It's time to stop being so lazy and get off the bed"
     "Now that it's not dark anymore you can see the interior of the house better"
-    "The house didnt chage much, except for the fact that the morning light is making it feel more abandoned"
+    "The house didnt chage much, except for the fact that the morning light is making it feel less abandoned"
     "You lazily get off your bed and change your clothes"
     "It's still you in the mirror, just not smelly and covered in forest dirt"
     "When you walk past the clock you notice the time and stop for a moment"
@@ -32,8 +32,7 @@ label ch02_watch_your_mouth:
     "Luckily, there is a fridge"
     you "{i}Okay what kind of house would this be if i didnt get food{/i}"
     you "{i}That would be very rude{/i}"
-    you "{i}I got a whole house here why wouldnt this have food?{/i}"
-    you "{i}Oh my god what if its magical and can make any food i think of{/i}"
+    you "{i}Oh my god what if its magical and can just summon food{/i}"
     "You close your eyes and try to summon..."
     menu:
         "Kawior":
@@ -68,7 +67,7 @@ label ch02_watch_your_mouth:
     "You leave the door open just in case he was trapped in there and wants to get out only for him to start dusting the top shelf"
     you "{i}???{/i}"
     "Due to pure confusion you close the fridge door"
-    you "{i}If i wont look at it it will go away{/i}"
+    you "{i}Did I summon that?{/i}"
     you "{i}Wait what if he's hungry{/i}"
     you "{i}I'll get food and share{/i}"
     "The gnome was only a brief distraction from the calories in your stomach, or lack thereof"
@@ -168,7 +167,6 @@ label ch02_goingToKurRude:
     jump ch02_goingToFindAJob
 
 label ch02_goingToKurNotRude:
-    $ randomCorrectChoiceIndex = random.randint(1, 3)
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
     "Kurowska znowu zaczęła szukać czegoś na swoim biurku."
     "..."
@@ -204,26 +202,16 @@ label ch02_goingToKurNotRude:
     m "No dobra, mam serce, dlatego pozwolę ci zawalczyć o to czy będziesz musiał mi oddać twoje pieniądze."
     you "PRZECIEŻ TO NIESPRAWIEDLIWE!"
     m "Życie jest niesprawiedliwe."
-    m "Teraz odpowiedz na moje pytanie, które brzmi: 'Jaki jest mój ulubiony włoski brainrot?'"
+    m "Teraz odpowiedz na moje pytanie, które brzmi: 'STOLICĄ FRANCJI JEST?'"
     "Życie przelatuje ci przed oczami, gdy zadaje to pytanie." 
-    "Nie wiesz, co to jest brainrot, ale odpowiedzi same ci się pojawiają w głowie, jakbyś był sleeper agentem."
     "Nie ma czasu na myślenie, tylko na działanie."
     menu:
-        "Triple T":
-            if randomCorrectChoiceIndex == 1:
-                jump ch02_KamilRobberyCorrectChoice
-            else:
-                jump ch02_KamilRobberyWrongChoice
-        "Lirili larila":
-            if randomCorrectChoiceIndex == 2:
-                jump ch02_KamilRobberyCorrectChoice
-            else:
-                jump ch02_KamilRobberyWrongChoice
-        "Garamararambraramanmararaman dan Madudungdung tak tuntung perkuntung":
-            if randomCorrectChoiceIndex == 3:
-                jump ch02_KamilRobberyCorrectChoice
-            else:
-                jump ch02_KamilRobberyWrongChoice
+        "Paryż":
+            jump ch02_KamilRobberyCorrectChoice
+
+        "Timbuktu":
+            jump ch02_KamilRobberyWrongChoice
+
         "Uśmiechnij się":
             m "Po co"
             you "Lubię żółty"
@@ -249,7 +237,7 @@ label ch02_KamilRobberyCorrectChoice:
     m "Ale jak... no dobra... teraz wygrałeś...{w} ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
     play music "town_day.mp3"
     hide kamil with dissolve
-    you "{i}Nie będę nosił ze sobą pieniędzy!{/i}"
+    you "{i}Nie będę nosił ze sobą pieniędzy...{/i}"
     jump ch02_gotMoney
 
 label ch02_KamilRobberyWrongChoice:
@@ -277,13 +265,13 @@ label ch02_KamilRobberyWrongChoice:
             you "Bo nie masz własnych pieniędzy?"
             m "I tak nawet nie wiesz, na co to wydać."
             you "Chciałem kupić buły w BBB?"
-            m "To przecież ma tyle kalorii..."
+            m "Przecież mają tyle kalorii..."
             you "Jak tak się przejmujesz kaloriami, to pomyśl o te w swoim mózgu."
             you "Bo ich tam nie ma jak w pepsi zero."
             hide kamil with dissolve
             "Złodziej zaczyna płakać i ucieka."
+            you "{i}To nie mój problem.{/i}"
     play music "town_day.mp3"
-    you "{i}To nie mój problem.{/i}"
     you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
     scene bg secretary with dissolve
@@ -297,7 +285,7 @@ label ch02_KamilRobberyWrongChoice:
     k "Wejdź."
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
-    "Wchodząc czujesz, że ćwiczyła skip Triple-T."
+    "Wchodząc czujesz, że ćwiczyła skip B."
     show kurowska normal with dissolve
     you "Przepraszam, że znowu przeszkadzam, ale zostałem okradziony."
     you "Zabrano mi wszystkie pieniądze. Teraz nie wiem co mam robić."
@@ -543,7 +531,7 @@ label ch02_workingAtVasili:
         you "Ile dostanę za swoją ciężką pracę?"
         v "Jak to nie ma lisów za moim domem?"  
         you "Powiedziałem co powiedziałem, bo tak jest?"  
-        v "Ugh, może nie wyszły bo jesteś nowy."
+        v "Bruh. może nie wyszły bo jesteś nowy."
         v "Powinieneś tam zostać, może wtedy przyjdą."  
         hide vasili with dissolve
         "Wracasz za jego dom po raz kolejny i widzisz małego liska jedzącego z wiaderka, które tam zostawiłeś."
@@ -576,15 +564,14 @@ label ch02_workingAtVasili:
         you "Daj mi pieniądze i idę."
         v "Czekaj!"  
         "Vasili podnosi liska."
-        v "Mam uprawnienia na kręgarza!"
-        "Nie widzisz co robi, ale słyszysz ASMR i jest to trochę straszne."
+        "Nie widzisz co robi, ale słyszysz ASMR."
         v "Proszę. Już lepiej."  
         lis "Dzięki!!!"  
         "Lisek robi piruet i odskakuje do lasu."
         hide lis with dissolve
         you "Co{w=1} się właśnie stało..."  
         show vasili normal at center with move 
-        v "Ta głupia zawsze sobie coś skręca. Musiałem zostać kręgarzem przez nią."
+        v "Ta głupia zawsze sobie coś skręca."
         you "Okej...{w=.6} nie będę zadawać pytań."
         you "Po prostu mi zapłać i idę."
         v "Dobra. Masz."
@@ -876,8 +863,8 @@ label ch02_brickDescriptionEnd:
     "He puts your apology gift on the table, and the plain paper bag gives you an idea"
     you "Can i have a pen i want to write something"
     r "Yes sure"
-    you "{i}I want to write...{/i}"
     menu:
+        you "{i}I want to write...{/i}"
         "Sorry :(":
             $ piotrWritingPoints = 2
         "Sorry but be more fun next time":
@@ -950,7 +937,7 @@ label ch02_brickDescriptionEnd:
         you "WHY DID IT FALL OUT LIKE THAT"
         "You are the only one laughing"
         you "I haven't laughed this much in a while"
-        p "Great there's now a dent"
+        p "Great. You ruined my table"
         you "okay okay wait"
         you "Here's the receipt. You can go back to the store and return it for store credit"
         "Piotr rolls his eyes"
@@ -966,11 +953,13 @@ label ch02_brickDescriptionEnd:
     you "Apology accepted?"
 
     if piotrFoodPoints + piotrWritingPoints > 2:
+        $ flag("piotrApologyAccepted", True)
         p "Yes."
         p "Thank you"
         you "And thank {i}you{/i} for being as cool as a cucumber"
         p "Don't push it"
     elif piotrFoodPoints + piotrWritingPoints > 1:
+        $ flag("piotrApologyAccepted", True)
         p "Yeah i guess"
         you "I can hear the doubt in your voice that is extremely rude"
         you "Where are your manners young man"
@@ -983,6 +972,7 @@ label ch02_brickDescriptionEnd:
         p "I was working and you just barged into my shop"
         p "Just to waste my time"
         you "Where are your manners young man"
+        jump ch02_piotrApologyDenied
 
     you "Okay okay fine"
     you "Ignore the food i just wanted to say sorry"
@@ -1029,7 +1019,7 @@ label ch02_brickDescriptionEnd:
     "Piotr is too preoccupied with his magic to notice that though"
     "He claws at the onyx stones on the ground and arranges them in a small circle"
     "Piotr squats to get closer to the ground in order to start the spell"
-    "He moves his claws as if he was squeezing a gigantic nee doh"
+    "He moves his claws as if he was squeezing a ball made out of pure magic"
     "For the first few seconds nothing seems to happen"
     "..."
     "!"
@@ -1038,15 +1028,90 @@ label ch02_brickDescriptionEnd:
     "Then another, then two more, and before you know it theres random things in the air - sticks, stones, leaves and even a bamboozled rat"
     you "what the"
     p "You were supposed to stay silent"
-    "The way some of the items fell back down shows piotr is struggling with the ruitual"
+    "Some of the levitating things fell down, which could only mean one thing - Piotr was struggling with the ritual"
     "Seeing this, you decide to shut up for once and witness an expert do his job"
-    "Piotr gives the imaginary nee doh a final squeeze and a gust of wind sweeps through the forest"
+    "Piotr gives the magic ball a final squeeze and a gust of wind sweeps through the forest"
     "You don't notice it at first, but it feels like the forest got a tiny bit more color"
     you "{i}What the hell just happened{/i}"
     you "{i}I feel... enlightened???{/i}"
     you "{i}Focus [name], focus{/i}"
     you "{i}I have to stay nonchalant{/i}"
     you "Is that it?"
+    jump ch02_piotrRitualEnd
+
+label ch02_piotrApologyDenied:
+    p "Get out of my shop"
+    you "No"
+    with vpunch
+    p "Get. Out."
+    you "Okay okay fine"
+    p "And don't you dare try to steal anything while i'm gone"
+    scene expression loc_bg("cityexit") with dissolve 
+    you "{i}How dare he kick me out{/i}"
+    you "{i}I even got him food{/i}"
+    if flag("workedAtFilip") or flag("workedAtVasili"):
+        you "{i}That i bought with my own hard earned money!{/i}"
+    else:
+        you "{i}That i bought with Barbara's money!{/i}"
+
+    "While you are standing and eating in the middle of the street, you see piotr leaving the potion shop"
+    "You get a {i}very bright idea and pretend you are going the other way{/i}"
+    "When Piotr is far enough away you start following him..."
+    you "{i}Where is he going...{/i}"
+    "You figure that if Piotr is going somewhere its safe to follow him"
+    "So there you are, sneaking into the very dangerous forest, alone"
+    scene bg forestday with dissolve
+    "Walking even two steps outside feels very wrong after all that you've heard about the forest"
+    "Trying to follow Piotr here is actually really hard becasue you have to balance three things at once:"
+    "The first is the fog - you can't lose piotr or else you will get lost"
+    "the second is the noise - if piotr hears you it's over"
+    "And the third is not dying to a wolf"
+    show piotr normal at center with dissolve
+    "Piotr stops at a clearing and dumps the contents of his backpack onto the ground"
+    "He claws at the onyx stones on the ground and arranges them in a small circle"
+    "Piotr squats to get closer to the ground in order to start the spell"
+    "He moves his claws as if he was squeezing a magical ball of energy"
+    "For the first few seconds nothing seems to happen"
+    "..."
+    "!"
+    "A small twig which just so happened to be inside the circle snapped in half"
+    "Then, a leaf starts levitating"
+    "Then another, then two more, and before you know it theres random things in the air - sticks, stones, leaves and even a bamboozled rat"
+    you "{i}what the{/i}"
+    "Some of the levitating things fell down, which could only mean one thing - Piotr was struggling with the ritual"
+    "He can probably sense you."
+    "Piotr gives the imaginary ball of energy a final squeeze and a gust of wind sweeps through the forest"
+    "You don't notice it at first, but it feels like the forest got a tiny bit more color"
+    you "{i}What the hell just happened{/i}"
+    you "{i}I feel... enlightened???{/i}"
+    you "{i}Focus [name], focus{/i}"
+    you "{i}I have to stay nonchalant{/i}"
+
+    p "Now come on now i know you are there"
+    "You froze right in your tracks"
+    you "{i}How did he even{/i}"
+    you "{i}This is so creepy{/i}"
+    "A tree that you used to cover yourself with now seems too thin"
+    "What you should do is admit to spying on piotr but you are frozen in fear, standing behind a random tree"
+    p "Come out i don't have all day"
+    "You reluctantly come out from behind the tree"
+    you "Hi"
+    "Piotr looks at you and exhales all the air out of his bird lungs"
+    p "I guess i should have expected this"
+    p "What the hell are you doing here?"
+    you "Spying on you"
+    p "But i told you not to follow me"
+    you "You told me not to steal anything"
+    you "And you didnt say anything about spying on you"
+    "Piotr is clearly tired of your shenanigans"
+    you "Can you blame me though? All this magic is so interesting"
+    p "Yeah i get it. That is exactly why i got into magic"
+    p "It just seemed so cool you know"
+    p "So you saw the ritual right?"
+    you "Yeah. Is that it?"
+    jump ch02_piotrRitualEnd
+
+label ch02_piotrRitualEnd:
     p "Yes"
     you "I don't feel different"
     you "What exactly did you do?"
@@ -1063,14 +1128,31 @@ label ch02_brickDescriptionEnd:
     you "And so like monsters wont come here for a while?"
     p "Exactly"
     you "What even are those monsters"
-    p "Lupus made these gmo wolves with bad energy to kill us all"
-    you "Who??"
+    p "There was a city that made these gmo wolves with bad energy to kill us all"
+    you "What city"
     p "Oh my god can you stop asking questions my head already hurts"
     p "It's not like it matters it doesn't exist anyore"
     p "And we have to deal with what some idiots have done a hundred years ago"
     p "That is all you have to know"
     you "Woah no need to be rude"
-    p "Play stupid games win stupid prizes"
+    if not flag("piotrApologyAccepted"):
+        p "And there was no need to spy on me"
+        you "Okay sorry for that"
+        you "I wanted to apologize for being rude"
+        you "For real this time"
+        "Piotr scans you, especially your face, trying to find even a hint of ill intent and finds nothing"
+        "Your words are as genuine as they can get"
+        p "Sometimes you are just too much"
+        "Piotr starts thinking and the silence is DEAFENING"
+        you "I promise i will be less of a nuisance from now on"
+        p "Okay fine"
+        you "Now you can teach me magic"
+        p "Oh my god"
+        you "Pretty please"
+        p "Fine"
+    else:
+        p "Play stupid games win stupid prizes"
+    "Annoying as you are, Piotr loves teaching people random things so he just can't say no to this opportunity"
     p "If you want to learn magic you have to know the basics"
     p "First lesson: foraging"
     you "How is that going to help me"
@@ -1091,10 +1173,7 @@ label ch02_brickDescriptionEnd:
         "No it looks delicious":
             p "Dont even think about it"
             p "Had you not apologized to me i would have served it to you"
-    p "This mushroom makes you do involuntary cartwheels"
-    you "And how is that deadly?"
-    p "Well you cant stop while the mushroom is in your system period"
-    p "What if you injure yourself"
+    p "This makes your head fall off"
     you "{i}Oh god{/i}"
     p "You have alot to learn"
     p "Here's a book you can read to learn about foraging mushrooms"
@@ -1118,33 +1197,89 @@ label ch02_brickDescriptionEnd:
     you "Yes i did thank you"
     p "No problem"
     you "Byeeeeeeeeeeeee{nw}"
-    "You dont even wait for piotr to reply and head straight to the city exit"
+    "You dont even wait for piotr to reply and head straight to le forest"
     scene expression loc_bg("forest") with dissolve
     "Nothing will match the audacity needed to do this"
     "Knowing piotr will come to yell at you soon, you breathe in as much forest air as possible"
+    you "{i}Illegal air.{/i}"
+    "..."
+    "Something rustles somewhere behind the trees"
+    "..."
+    "{cps=15}snap{/cps}"
+    with vpunch
+    "!"
+    "Piotr hasnt told you what those gmo wolves look like, so you just imagine the scariest wolf you could hiding behind a tree"
+    you "{size=+10}{i}HELL NO.{/i}{/size}"
+    "You turn around and immediately RUN back toward the city"
+    scene expression loc_bg("forest") with vpunch
+    "Unfortunately Piotr has chosen this exact moment to come looking for you"
     show piotr angry at center with dissolve
-    "Piotr's presence ruins your hyperventilation"
-    you "Oh my god what do you want"
-    p "No we are not doing this"
-    p "Get out"
-    you "Out of the city?"
+    "You slam directly into him"
+    hide piotr with dissolve
+    "...knocking him over"
+    you "{size=+12}RUN.{/size}"
+    p "WHAT?"
+    you "{size=+12}RUN!!{/size}"
+    p "WHY?!"
+    "You are already several meters away"
+    show piotr angry at center
+    "Piotr is still sitting exactly where you knocked him over"
+    "He looks less like somebody escaping a monster and more like somebody trying to understand what the hell just happened."
+    you "PIOTR RUN"
+    p "FROM WHAT"
+    you "I HEARD SOMETHING"
+    "{cps=15}another loud snap{/cps}"
+    with vpunch
+    you "{size=+14}OH MY GOD{/size}"
+    "You sprint back towards him and grab Piotr by his leg"
+    p "What are you-"
+    "You start dragging him towards the city."
+    with vpunch
+    p "HEY"
+    with vpunch
+    p "STOP IT"
+    you "I AM SAVING YOUR LIFE"
+    p "YOU ARE DRAGGING ME THROUGH THE DIRT"
+    you "You're welcome"
+    p "LET GO OF ME"
+    you "I LITERALLY TOLD YOU TO RUN"
+    p "FROM WHAT"
+    you "I HEARD A WOLF"
+    p "WELL DID YOU SEE ONE"
+    you "No"
+    p "LET GO OF ME [name]"
+    "You continue dragging Piotr through the dirt despite his protests"
+    p "I CAN WALK"
+    you "THEN WHY WERENT YOU WALKING"
+    p "BECAUSE YOU KNOCKED ME OVER"
+    you "{i}He has a point{/i}"
+    you "{i}but this is NOT the time for constructive criticism{/i}"
+    scene expression loc_bg("cityexit") with dissolve
+    "You finally cross back into the city and release piotrs leg from your grip"
+    show piotr angry at center with moveinbottom
+    "Piotr gets off the ground, all covered in leaves, grime, and everything else that previously was on the floor"
+    p "..."
+    you "We made it."
+    "Piotr crosses his arms and just stands there, his expression grim and menacing"
+    "He doesn't speak, and he doesn't really have to because his facial expressions tells you everything"
+    p "I hate you"
+    you "Can i breathe in more of that forest air"
     with vpunch
     p "NO"
-    you "Fine ill go home"
-    "You take one last whiff of this now prohibited air and walk back into the city"
-    scene expression loc_bg("cityexit") with dissolve
-    show piotr angry at center with dissolve
-    "This time piotr is standing by the exit to make sure you don't sneak out again"
+    "Piotr checks his pockets to see if anything had fallen out, and pulls out a key"
+    "He closes the huge wooden door inside the raised drawbridge and locks it"
+    you "YOU HAD A KEY???"
+    p "Yes. Now i will sleep peacefully"
     you "You know i can just climb over the wall"
     "But he doesn't even reply he just points somewhere to show you to get out"
     you "Hmph! You won this time... but this isnt the end of it"
+    p "And before you go..."
+    p "If you want to be this reckless can you please wait a week or two"
+    p "Because if anything happens to you people are going to think its my fault"
+    you "Hmph! We will see about that!"
+    you "{i}No way in HELL am i going back to that forest. No thank you.{/i}"
     hide piotr with dissolve
-    you "How dare he tell me what to do"
-    you "I'll just find a different exit he cant stop me"
-    if flag("endorsedCommunism"):
-        you "{i}What if what Vasili said about the lanterns was true?{/i}"
-        you "{i}Then he can definitely spy on me{/i}"
-    you "Tonight i will give it a rest but tomorrow i'm going loca"
+    you "{i}Next week i'm going loca{/i}"
     $ telemetry_end()
     if TESTING:
         call screen s_Telemetry()
