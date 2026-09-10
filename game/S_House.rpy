@@ -32,11 +32,9 @@ define buttons_ch02 = dict(
     window=(0.34, 0.878),
     fridge=(0.342, 0.469),
     table=(0.359, 0.697),
-    sink=(0.236, 0.678),
     suspicious_pot=(0.738, 0.563),
     normal_pot=(0.742, 0.762),
     bathroom=(0.282, 0.252),
-    pantry=(0.411, 0.177),
     bed=(0.661, 0.211),
     wardrobe=(0.54, 0.18),
 )
@@ -60,11 +58,13 @@ screen s_House():
         use b_normal(buttons_ch02["window"], "ch02_h_window")
         use b_normal(buttons_ch02["fridge"], "ch02_h_fridge")
         use b_normal(buttons_ch02["table"], "ch02_h_table")
-        use b_normal(buttons_ch02["sink"], "ch02_h_sink")
-        use b_normal(buttons_ch02["suspicious_pot"], "ch02_h_suspicious_pot")
+        if flag("ch02_seen_suspicious_pot"):
+            use b_disabled(buttons_ch02["suspicious_pot"])
+        else:
+            use b_normal(buttons_ch02["suspicious_pot"], "ch02_h_suspicious_pot")
         use b_normal(buttons_ch02["normal_pot"], "ch02_h_normal_pot")
         use b_normal(buttons_ch02["bathroom"], "ch02_h_bathroom")
-        use b_normal(buttons_ch02["pantry"], "ch02_h_pantry")
+        use b_normal(buttons_ch02["bed"], "ch02_h_bed")
         use b_normal(buttons_ch02["wardrobe"], "ch02_h_wardrobe")
 
 label generic_unavailable_house:

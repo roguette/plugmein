@@ -2,6 +2,21 @@ default piotrFoodPoints = 0
 default piotrWritingPoints = 0
 
 #region INTERACTIONS
+
+label ch02_h_bed:
+    menu:
+        you "{i}I want to...{/i}"
+
+        "Go to sleep (Next day)":
+            "You close your eyes and before you know it you drift off to sleep"
+            "You did well today"
+
+        "Explore the house":
+            you "{i}I still need to check something...{/i}"
+            call screen s_House()
+
+
+
 label ch02_h_entrance:
     scene expression loc_bg("house")
     if flag("ch02_locked_door"):
@@ -17,55 +32,100 @@ label ch02_h_entrance:
 
 label ch02_h_window:
     scene expression loc_bg("house")
+    if flag("ch02_seen_bug"):
+        "Theres a WEST CONIFER SEED BUG outside the window, crawling, doing whatever its little brain is telling it to"
+    else:
+        "There's nothing particularly interesting about the window"
+        "The bug is gone"
 
     call screen s_House()
 
 
 label ch02_h_fridge:
     scene expression loc_bg("house")
+    if flag("ch02_opened_fridge"):
+        you "{i}No{/i}"
+    else:
+        $ flag("ch02_opened_fridge", True)
+        "As you open the door the gnome jumps onto his little feet and hurriedly turns on the light in the fridge"
+        "Still weirded out by his existence, you smile and notice he is very happy to see you"
+        you "Hello"
+        you "{i}Still deaf{/i}"
+        if flag("ch02_ate_at_table"):
+            $ flag("ch02_angry_gnome", True)
+            you "I'm so sorry i don't have any food"
+            "But the gnome seems to have broken the language barrier this ONE time"
+            "He stomps his little foot against the thin shelf, crosses his arms and turns around"
+            you "I'll get you food tomorrow i promise!"
+            "But he doesn't hear you this time and just stands there"
+            "Disgusted by your selfishness, you close the fridge door"
+        else:
+            "You put the rest of your buns on the top shelf, just in case the gnome was hungry and close the door"
+            "The little gnome dives into the paper bag"
+            "Someone is CLEARLY hungry"
 
     call screen s_House()
 
 
 label ch02_h_table:
     scene expression loc_bg("house")
-
-    call screen s_House()
-
-
-label ch02_h_sink:
-    scene expression loc_bg("house")
-
+    if flag("ch02_opened_fridge"):
+        "You don't have any food to eat"
+    else:
+        $ flag("ch02_ate_at_table", True)
+        "You put the paper bag with Rafał's buns onto the table and devour all of them, leaving zero trace of their existence"
+        you "{i}Now to shower and i can go sleep{/i}"
     call screen s_House()
 
 
 label ch02_h_suspicious_pot:
     scene expression loc_bg("house")
-
+    $ flag("ch02_seen_suspicious_pot", True)
+    # no if because the button will be disabled in s_house
+    "This pot looks identical to the one near it"
+    "Its a regular, probably extremely heavy, flower pot"
+    "Drawn on it were oriental-style crane drawings"
+    "Everything was standing on a very basic nightstand"
+    "It's age was made visible by the coffee mug stains on the top surface"
+    "The nightstand had two drawers - one bigger, one smaller with two similar metal handles"
+    "Everything was supported by four also similar metal legs, which were standing on the..."
+    you "{i}Wait what is that{/i}"
+    "You were certain was just a smudge in the ground was actually a keyhole in the ground"
+    "When you kneel to inspect it closer, you see a handle further away under the nightstand"
+    "Turns out it was NOT standing on the floor"
+    "You move the plant before trying to pry it open, which, unsurprisingly, fails"
+    "While getting up your keys fall out, and you take another look at them"
+    "None match the round keyhole."
+    you "{i}Tomorrow i'm going to Kurowska to ask her about this{/i}"
+    "Just in case, you move the plant back where it was and move on"
     call screen s_House()
 
 
 label ch02_h_normal_pot:
     scene expression loc_bg("house")
-
+    "There's nothing unusual about THIS pot"
     call screen s_House()
 
 
 label ch02_h_bathroom:
     scene expression loc_bg("house")
-
-    call screen s_House()
-
-
-label ch02_h_pantry:
-    scene expression loc_bg("house")
-
+    if flag("ch02_took_a_shower"):
+        "The shower wasnt as horrifying as you thought was it?"
+    else:
+        $ flag("ch02_took_a_shower", True)
+        "Everything about the shower seems intimidating"
+        "Your irrational fear of taking a shower almost took over, but you decided that you are strong and independent so you step in"
+        "..."
+        "You are now clean"
     call screen s_House()
 
 
 label ch02_h_wardrobe:
     scene expression loc_bg("house")
-
+    "This is the only place that, surprisingly, wasnt empty when you arrived"
+    "You couldn't say you had many clothes either - there were a few shirts and pants"
+    "Just some basic neccessities until you buy something better"
+    "The clothes you got were probably hand-me-downs from some shelter"
     call screen s_House()
 
 
