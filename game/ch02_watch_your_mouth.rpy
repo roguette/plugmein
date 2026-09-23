@@ -29,6 +29,7 @@ label ch02_h_entrance:
         $ flag("ch02_locked_door", True)
     call screen s_House()
 
+    
 
 label ch02_h_window:
     scene expression loc_bg("house")
@@ -60,6 +61,7 @@ label ch02_h_fridge:
             "But he doesn't hear you this time and just stands there"
             "Disgusted by your selfishness, you close the fridge door"
         else:
+            $ flag("ch02_fed_gnome", True)
             "You put the rest of your buns on the top shelf, just in case the gnome was hungry and close the door"
             "The little gnome dives into the paper bag"
             "Someone is CLEARLY hungry"

@@ -6,7 +6,7 @@
 label ch01_h_entrance:
     scene expression loc_bg("house")
     $ flag("ch01_house_seenEntrance", True)
-    "The smell of old, stale things permeated the air"
+    "The smell of old, stale things permeates the air"
     "And that is the first thing you noticed when you walked in"
     "For a moment you just stand there, taking in the surroundings"
     "..."

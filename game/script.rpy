@@ -173,7 +173,7 @@ label start:
         $ name = renpy.input("Jak masz na imię")
         $ name = name.strip()
 
-    jump ch00_bus_stop
+    jump ch03_lush_life
 
 # =============================================== MISC
 

@@ -1,2 +1,76 @@
 label ch03_lush_life:
+    scene black with dissolve
+    stop music fadeout 1
+    call chapterTransition("Akt 3", "Jak sobie pościelesz, tak się wyśpisz")
+    $ time.setTime(9, 13)
+    show screen s_Clock()
+    scene expression loc_bg("house") with vpunch
+    "!"
+    "You are woken up by the sound of someone banging at your door"
+    "If it wasnt for this random dude waking you up, you would have slept way longer"
+    if flag("ch02_locked_door"):
+        "Tonight you slept fine"
+    else:
+        "the window in your bedroom was left open, letting the freezing air in."
+        "You did not sleep well"
+    "..."
+    you "{i}Oh my god who is that{/i}"
+    "As much as you want to go back to sleep, you can't due to the very loud and obnoxious banging on your door"
+    you "{i}Jesus what could someone possibly want at 3 am in the morning{/i}"
+    "You quickly get off the bed and get dressed before wading over to the front door"
+    "Right now theres only one emotion in your head - anger"
+    "How dare that \"someone\" interrupt your pretty princess sleep"
+    "You try to walk closer and try to make as little noise as possible to not alert the person on the other side"
+    "When you are at the door, you move very slowly, and move the peephole cover away"
+    "It made a light scraping sound, which made you freeze for a moment"
+    "..."
+    "Looking through the peephole you can see a really annoyed otter"
+    "..."
+    you "Oh my god who the hell are you"
+    m "What?"
+    you "You literally woke me up"
+    you "Who are you and what do you want"
+    m "I am Sir Antonitek Mogwaj Pawolathabus and i am from the Bratgren tax department"
+    you "You came here to collect taxes?"
+    a "Precisely"
+    you "What if you are a scammer"
+    a "Ok i have no time for this"
+    "He looks down at his clipboard and starts mumbling something while writing"
+    a "Did... not... pay..."
+    "You quickly open the door"
+    you "Wait wait wait no no no"
+    "Now that you are outside you can get a better look at the otter"
+    # TODO: finish his sprite and add a description
+    you "How about I go to Kurowska and pay there"
+    you "I'll ask about you and next time i will pay you if it turns out you aren't a fraud"
+    a "..."
+    a "Seems reasonable i guess"
+    a "I will still have to write that you didn't pay"
+    "Its day three and life is already risky here"
+    "One wrong move and you are going to be homeless"
+    you "Can i bribe you"
+    a "Yes you can give me $150 and then i will say you paid"
+    a "And you wont have to go to Kurowska"
+    you "Very funny but no"
+    you "Okay now go go go i have to do something"
+    you "I'll pay by 12:00"
+    a "Fine."
+    you "Byeee"
+    "You close the door on him and go back inside"
+    "And the first thing that you do is get the money needed to pay the tax"
+    "When you are about to leave with the money, you look one last time at the fridge and remember that it's a bad habit to start your day without breakfast"
+    you "{i}I wonder if the gnome is still there{/i}"
+    "You gently open the fridge..."
+    if flag("ch02_fed_gnome"):
+        "...and see the gnome greeting you, almost as if he is welcoming you into your own fridge"
+        "When you reach for the one bun you left in the fridge, you notice a part of it is gone"
+        "Turns out you DO need to feed him"
+        "You eat the rest of the food and close the door"
+    else:
+        "The gnome went into hibernation mode and is sleeping, tucked away in a corner"
+        "Trying your best to not wake him up, you close the door"
+        "No food for you"
+    "Either way you have to get more, but with the money you will have after paying the taxes you wont have much left"
+    you "{i}It's time to find a real job{/i}"
     
+

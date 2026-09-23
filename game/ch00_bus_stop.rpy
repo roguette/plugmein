@@ -2,15 +2,22 @@ label ch00_bus_stop:
     play music "audio/street.mp3" 
     scene bg busstop with dissolve
 
-    you "{i}No szybciej już{/i}"
-    "Szybko, nerwowo, impulsywnie oraz intensywnie wciskasz przycisk na światłach (ten taki żółty)."
-    "Wczoraj naprawiali światła właśnie na tym przejściu i ewidentnie coś zepsuli."
+    
+    you "{i}Oh my god can this light even turn green???{/i}"
+    "You already pushed the big yellow button to cross the street,"
+    "So clicking it twenty more times shouldn't help it in any way."
+    "According to you, it absolutely should."
     "{cps=1}...{/cps}"
-    "Stoisz na tym przejściu z minutę, a światła dalej są czerwone."
-    you "{i}Zostały mi tylko 2 minuty, a muszę jeszcze iść do baru {w=.5}po matchę.{/i}"
-    you "{i}Jeśli jeszcze raz się spóźnię to obniżą mi zachowanie.{/i}"
+    "It's now been about thirty seconds, which is completely absurd"
+    "Yesterday there was a construction crew replacing the traffic lights, and clearly, they messed something up."
+    "You reach for your phone to check the time, which proudly displayed 7:53."
+    you "{i}Great. I have two minutes, in which i have to not only get to class, but first go to the cafeteria {w=.5}to buy matcha.{/i}"
+    you "{i}If i come to class late one more time they will change my behavior grade.{/i}"
+    "You hit the button a bunch more times out of desperation.{w=.5}"
     "{cps=1}...{/cps}"
-    you "{i}O dobra mam zielone mogę przejść!{/i}"
+    "!"
+    "The traffic light on the other side of the street turns green without any warning, and you don't even check if there are any cars coming."
+    "You just run like a fool."
 
     show bus at center
 
