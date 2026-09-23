@@ -1112,7 +1112,7 @@ label ch02_brickDescriptionEnd:
 
     you "Okay okay fine"
     you "Ignore the food i just wanted to say sorry"
-    you "Yes i can be rude but im not rude because i have tofu with you its just because im sassy like that"
+    you "Yes i can be rude but I'm not rude because i have tofu with you its just because I'm sassy like that"
     p "..."
     "Piotr inspects you top to bottom, his gaze landing on your eyes and piercing you"
     p "Fine"
