@@ -41,7 +41,7 @@ label ch03_lush_life:
     you "Wait wait wait no no no"
     "Now that you are outside you can get a better look at the otter"
     # TODO: finish his sprite and add a description
-    you "How about I go to Kurowska and pay there"
+    you "How about I go to  Barbara and pay there"
     you "I'll ask about you and next time i will pay you if it turns out you aren't a fraud"
     a "..."
     a "Seems reasonable i guess"
@@ -50,7 +50,7 @@ label ch03_lush_life:
     "One wrong move and you are going to be homeless"
     you "Can i bribe you"
     a "Yes you can give me $150 and then i will say you paid"
-    a "And you wont have to go to Kurowska"
+    a "And you wont have to go to  Barbara"
     you "Very funny but no"
     you "Okay now go go go i have to do something"
     you "I'll pay by 12:00"

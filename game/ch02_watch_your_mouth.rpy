@@ -98,7 +98,7 @@ label ch02_h_suspicious_pot:
     "You move the plant before trying to pry it open, which, unsurprisingly, fails"
     "While getting up your keys fall out, and you take another look at them"
     "None match the round keyhole."
-    you "{i}Tomorrow i'm going to Kurowska to ask her about this{/i}"
+    you "{i}Tomorrow i'm going to  Barbara to ask her about this{/i}"
     "Just in case, you move the plant back where it was and move on"
     call screen s_House()
 
@@ -157,7 +157,7 @@ label ch02_watch_your_mouth:
     "It's still you in the mirror, just not smelly and covered in forest dirt"
     "When you walk past the clock you notice the time and stop for a moment"
     you "{i}There's no way i slept for 10 hours{/i}"
-    you "{i}Kurowska is going to think i am lazy{/i}"
+    you "{i} Barbara is going to think i am lazy{/i}"
     you "{i}Hell. No.{/i}"
     show screen s_Clock()
     "Hunger definitely contributed to waking you up from your slumber"
@@ -209,7 +209,7 @@ label ch02_watch_your_mouth:
     "The gnome was only a brief distraction from the calories in your stomach, or lack thereof"
     "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
     "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny."
-    "W mieście jest jedna osoba, która może ci teraz pomóc - Kurowska."
+    "W mieście jest jedna osoba, która może ci teraz pomóc -  Barbara."
     "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej."
     scene bg citysquareday with dissolve
     play music "town_day.mp3"
@@ -251,7 +251,7 @@ label ch02_goingToKur:
     "Słyszysz jak musi coś odsuwać, żeby dostać się do tej bułki, którą tak pragniesz."
     show filip normal at center with move
     "Wraca i daje ci bułę Rafała. Jest twarda ale nie masz wyboru."
-    "Bierzesz bułę Rafała i pochłaniasz ją. Mimo że jest przeterminowana ― jak Tuleja ― wciąż smakuje jak z najwyższej półki."
+    "Bierzesz bułę Rafała i pochłaniasz ją. Mimo że jest przeterminowana - jak Tuleja - wciąż smakuje jak z najwyższej półki."
     you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra, że...{w} brakuje mi słow."
     f "Smakują ci dlatego, że jesteś głodny."
     f "Ale ogólnie to są rzeczywiście smaczne. Polecam pójść do tej piekarni kiedy są świeże."
@@ -286,7 +286,7 @@ label ch02_goingToKur:
     show kurowska normal with dissolve
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
     k "Tak, pamiętam."
-    if flag("rudeToKurowska"):
+    if flag("rudeTo Barbara"):
         jump ch02_goingToKurRude
     else:
         jump ch02_goingToKurNotRude
@@ -304,11 +304,11 @@ label ch02_goingToKurRude:
 
 label ch02_goingToKurNotRude:
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
-    "Kurowska znowu zaczęła szukać czegoś na swoim biurku."
+    " Barbara znowu zaczęła szukać czegoś na swoim biurku."
     "..."
     "Tym razem znalazła to co chciała."
     k "Proszę. To powinno wystarczyć żebyś przeżył zanim coś znajdziesz."
-    "Kurowska dała ci sakiewkę pełną monet."
+    " Barbara dała ci sakiewkę pełną monet."
     "Jest cholernie ciężka..."
     k "Trzymaj."
     you "Co to jest?"
@@ -412,10 +412,10 @@ label ch02_KamilRobberyWrongChoice:
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
     scene bg secretary with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "After being robbed there is no other choice but to go back to Kurowska"
+    "After being robbed there is no other choice but to go back to  Barbara"
     "Even if she doesn't have any more money for you, it would be wise to report this"
     "When you enter the city hall, filip is not there, which is confirmed by a cacophony of noises coming from the storage room"
-    "With no other choice, you knock on Kurowska's door"
+    "With no other choice, you knock on  Barbara's door"
     "..."
     you "Dzień dobry! To znowu ja."
     k "Wejdź."
@@ -438,7 +438,7 @@ label ch02_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
     "Wychodzisz na zewnątrz, żeby zastanowić się co powinieneś zrobić dalej."
-    "Jak powiedziała Kurowska, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
+    "Jak powiedziała  Barbara, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
     "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
     "Do kogo idziesz pracować?"
     menu:
@@ -448,7 +448,7 @@ label ch02_goingToFindAJob:
             $ flag("workedAtVasili", True)
             jump ch02_workingAtVasili
         "Filip":
-            you "{i}Kurowska nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
+            you "{i} Barbara nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
             $ flag("workedAtFilip", True)
             jump ch02_workingAtFilip
 
@@ -465,7 +465,7 @@ label ch02_workingAtFilip:
     you 'Masz może jakąś robotę dla mnie?'
     you 'Czy jest dosłownie cokolwiek co mogę zrobić?'
     f 'Hmm...'
-    f "I {i}do{/i} need to move mail from that storage room to Kurowska but i am wayy too lazy for that"
+    f "I {i}do{/i} need to move mail from that storage room to  Barbara but i am wayy too lazy for that"
     you "I can do it"
     f "Then wait here"
     show filip normal at offscreenright with move
@@ -495,8 +495,8 @@ label ch02_workingAtFilip:
     "Then, with all that paper still in your hand, you take one step and decide against doing a second one"
     "You go back and leave half of your 40cm stack on the luggage cart"
     "Only then your back allows you to move"
-    "You knock on Kurowska's door"
-    if flag("rudeToKurowska"):
+    "You knock on  Barbara's door"
+    if flag("rudeTo Barbara"):
         k "KTO TAK PUKA NA BELZEBUBA??"
     else:
         k "Wejdź."
@@ -538,7 +538,7 @@ label ch02_workingAtFilip:
     scene bg secretary with dissolve
     show filip normal with dissolve
     f 'A co ty tu robisz z tymi papierami?'
-    you 'Kurowska powiedziała że to ty masz odpowiadać na maile.'
+    you ' Barbara powiedziała że to ty masz odpowiadać na maile.'
     you "I że muszę z powrotem je przenieść."
     f 'CO? zdążą zamknąć przedsionek zanim skończę odpowiadać na nie wszystkie...'
     f 'No dobra... przynieś je tu wszystkie.'
@@ -563,23 +563,23 @@ label ch02_workingAtVasili:
     play sound "sfx_footsteps_a.mp3"
     you "{i}Wydaję się być bezpiecznie, może tam mieszka Vasili...{/i}"
     "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
-    "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony ― bo jedyny ― wędkarz."
+    "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony - bo jedyny - wędkarz."
     show vasili normal with dissolve
     if flag("endorsedCommunism"):
         v "Witaj towarzyszu."
         you "Yyy? Cześć..."
         v "Co cię sprowadza w {b}NASZE{/b} skromne progi...{w=.6} HAHAHA bo wiesz...{w=.6} kolektywizacja majątku..."
         you "haha.. rozumiem. Ale nie przyszedłem tutaj na pogaduszki."
-        you "Kurowska kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie, czy nie masz coś dla mnie do roboty."
+        you " Barbara kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie, czy nie masz coś dla mnie do roboty."
         v "Ach ten wolny rynek...{w=.3} same z nim problemy..."
         v "W normalnym zakładzie miałbyś pracę od razu, a teraz tak się musisz bawić."
         you "No więc...{w=.3} masz może coś co mógłbym zrobić? Bardzo mi na tym zależy."
         you "Nie mam nawet pieniędzy na jedzenie."
-        v "No dobra... chociaż będzie to pierwszy i {b}OSTATNI{/b} raz jak ci dajemy pracę ― nie cierpimy wolnego rynku..."
+        v "No dobra... chociaż będzie to pierwszy i {b}OSTATNI{/b} raz jak ci dajemy pracę - nie cierpimy wolnego rynku..."
         v "To tak jak mówiliśmy, musisz skolektywizować akcyzę od drobnomieszczaństwa przesiądującego w naszym gmaszysku." 
         v "My jako szlachcice wymagamy od ciebie pełnego posłuszeństwa i bierności wobec błagań oraz przekupstw od ludzi niższych od nas." 
         v "Innymi słowy musisz zebrać jajka od naszych kur z kurnika za naszym domem." 
-        v "Dodatkowo prosimy cię o potępienie poczynań burżuazji, poprzez naznaczenie dobrej ścieżki umysłowej, używając do tego biografii naszego wspaniałego przywódcy oraz ojca naszego narodu ― Ogułki, który powinien rządzić naszym pospólstwem przez kolejne dziesiątki lat." 
+        v "Dodatkowo prosimy cię o potępienie poczynań burżuazji, poprzez naznaczenie dobrej ścieżki umysłowej, używając do tego biografii naszego wspaniałego przywódcy oraz ojca naszego narodu - Ogułki, który powinien rządzić naszym pospólstwem przez kolejne dziesiątki lat." 
         v "Czyli jak zbierzesz jajka, przeczytaj kurom biografię o naszym {b}OJCU{/b}."
         you "..."
         you "{i}Bruh...{w=.6} Co tutaj się dzieje???{w=.6}{/i}"
@@ -588,7 +588,7 @@ label ch02_workingAtVasili:
         you "To mogę się do ciebie wprowadzić?"
         v "Niestety nie." 
         v "Twój rodowód nie pozwala na rozpust wobec twoich aksjomatów." 
-        v "Twoje poczynania i zobowiązania są odmienne, dlategoż z tego ambarasu nie jesteśmy w żadnej ewentualności ― w mocy nadanej nam przez naszego pana i ojca Ogułki ― podarować ci schronienie w naszym niewystawnym miejscu bytowania." 
+        v "Twoje poczynania i zobowiązania są odmienne, dlategoż z tego ambarasu nie jesteśmy w żadnej ewentualności - w mocy nadanej nam przez naszego pana i ojca Ogułki - podarować ci schronienie w naszym niewystawnym miejscu bytowania." 
         you "{i}{b}BRO WTF CO TU SIĘ DZIEJE. JA NIE CHCE. CHCE DO DOMU... naszego DOMU???{/b}{/i}"
         you "No dobra... w takim razie ide pozbierać jajka...?"
         v "Zebrać akcyzę."
@@ -607,7 +607,7 @@ label ch02_workingAtVasili:
         show kura with dissolve
         kura "To ja.{w=.6} Tutaj na dole."
         kura "Tak to ja jestem symbolem wiejskiego ludu gnębionego przez burżuazyjne jaja wielkiego kapitału."
-        kura "Lub przedstawicielem klasy niskiej ― bo na wysokich półkach siedzi burżuacja ― towaru wartościowego zwanego drobiem."
+        kura "Lub przedstawicielem klasy niskiej - bo na wysokich półkach siedzi burżuacja - towaru wartościowego zwanego drobiem."
         you "Chyba mam schizofrenię.... to wszystko przez tę jego czerwoną aurę."
         kura"Stety nie...{w=.6} my umiemy mówić."
         kura "Vasili nas nauczył, bo stwierdził, że woli wysłuchiwać problemy klasy niskiej, niż się z nimi uporywać..."
@@ -632,10 +632,10 @@ label ch02_workingAtVasili:
         v "Witaj!"
         you "Cześć..."
         v "Co się sprowadza w moje skromne progi."
-        you "Kurowska kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie czy nie masz coś dla mnie do roboty."
+        you " Barbara kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie czy nie masz coś dla mnie do roboty."
         you "No więc... masz może coś co mógłbym zrobić?"
         you "Bardzo mi na tym zależy. Nie mam nawet pieniędzy na jedzenie."
-        v "Jasne... niech tylko pomyślę co...{w=.3} hm...{w=.6} Dobra już wiem ― potrzebuję, żebyś nakarmił moje lisy."
+        v "Jasne... niech tylko pomyślę co...{w=.3} hm...{w=.6} Dobra już wiem - potrzebuję, żebyś nakarmił moje lisy."
         v "Nie miałem dzisiaj czasu na to, więc pewnie są trochę wściekłe."
         v "Ale wiem, że dasz sobie rady."
         v "Ich wybieg jest zaraz za domem."
@@ -750,7 +750,7 @@ label ch02_gotMoneyBakeryEntrance:
             wp "Do kogo poszedłeś?"
             you "Do Filipa."
             you "Kazał mi przenosić dokumenty do Kurowskiej."
-            you "A jak już skończyłem, Kurowska kazała mi z powrotem przenieść te listy."
+            you "A jak już skończyłem,  Barbara kazała mi z powrotem przenieść te listy."
             you "Bo to on ma je czytać."
             wp "Trzeba było zarządać pieniędzy i wyjść po czymś takim."
             wp "I skibidi."
@@ -817,7 +817,7 @@ label ch02_gotMoneyBakeryTea:
     "Z tyłu widać całe koszyki z bułami Rafała."
     "Patrzysz się na te buły jak na monoporcje z Los Angeles."
     "Tylko, że buły Rafała nie kosztują $15 za 150g."
-    "Nie masz zielonego pojęcia jaka to waluta jest w tym mieście ― pierwszy raz się z nią spotykasz."
+    "Nie masz zielonego pojęcia jaka to waluta jest w tym mieście - pierwszy raz się z nią spotykasz."
     "Niby coś tam masz, ale nie wiesz czy tego starczy na jedną bułę, czy sto."
     you "{i}Te buły są tutaj mega popularne.{/i}"
     you "{i}Ale bym zjadł taką..{/i}"
@@ -1057,7 +1057,7 @@ label ch02_brickDescriptionEnd:
         "Piotr's eyes widen"
         p "what the"
         p "WHAT IS THIS"
-    you "Now don't be so shy. Please indulge in this bratgrenian delicacy"
+    you "Now don't be so shy. Please indulge in this Bratgrenian delicacy"
 
     if flag("gotCakeForPiotr"):
         "Piotr decided that taking the cake out was too risky so he ripped the bag"
