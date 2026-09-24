@@ -39,7 +39,7 @@ define you = Character("[name]")
 define location_bgs = {
     "square": ("bg citysquareday", "bg citysquarenight"),
     "lanastreet": ("bg lanastreetday", "bg lanastreetnight"),
-    "crouticlocksstreet": ("bg crouticlocksstreetday", "bg crouticlocksstreetday"), # TODO: crouticlocksstreetnight does not exist
+    "crouticlocksstreet": ("bg crouticlocksstreetday", "bg crouticlocksstreetnight"),
     "field": ("bg fieldday", "bg fieldnight"),
     "fountain": ("bg fountainday", "bg fountainnight"),
     "house": ("bg houseday", "bg housenight"),

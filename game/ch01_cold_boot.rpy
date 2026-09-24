@@ -6,204 +6,197 @@
 label ch01_h_entrance:
     scene expression loc_bg("house")
     $ flag("ch01_house_seenEntrance", True)
-    "The smell of old, stale things permeates the air"
+    "The smell of old, stale things permeates the air."
     "And that is the first thing you noticed when you walked in"
     "For a moment you just stand there, taking in the surroundings"
     "..."
-    you "{i}i LOVE it{/i}"
-    you "{i}I better lock the door though{/i}"
+    you "{i}I love it{/i}"
+    you "{i}I better lock the door though.{/i}"
     "*click*"
-    call screen s_House()
+    call screen s_House()  
 
 label ch01_h_bathroom:
     scene expression loc_bg("house")
-    you "{i}Wait{/i}"
+    you "{i}Wait...{/i}"
     you "{i}Why are there chia seeds near the toilet?{/i}"
     call screen s_House()
 
 label ch01_h_bedroom:
     scene expression loc_bg("house")
-    you "{i}The bed is so big and soft{/i}"
-    you "{i}I wish i could just never get out of it{/i}"
-    you "{i}Wait i actually can{/i}"
+    you "{i}The bed is so big and soft...{/i}"
+    you "{i}I wish I could just never get out of it.{/i}"
     menu:
         "Go to sleep":
             scene black with dissolve
-            "You literally jump onto the bed like a hungry animal"
-            "Wait.. {w=0.5} you are a hungry animal"
+            "You literally jump onto the bed like a hungry animal."
+            "Wait... {w=0.5}You are a hungry animal."
             jump ch02_watch_your_mouth
-        "No i want to explore my house first":
+        "No I want to explore my house first":
             call screen s_House()
 
 label ch01_h_kitchen:
     scene expression loc_bg("house")
-    "You can already imagine yourself not using the stove and just eating chinese takeout"
+    "You can already imagine yourself not using the stove and just eating chinese takeout."
     call screen s_House()
-
+ 
 label ch01_h_livingRoom:
     scene expression loc_bg("house")
-    "The living room is surprisingly empty"
-    "You will have to do some furnishing because right now theres not much living to do in it"
-    "Your feet shuffled in place at the sight of the empty room and you heard the sound echoing back to you"
+    you "{i}So this is the living room?{/i}"
+    "There isn't even a couch to sit on. The room is just empty."
+    "When your feet shuffle in place the sound echoes back to you."
     call screen s_House()
 
 label ch01_h_storageRoom:
     scene expression loc_bg("house")
-    "There's a sticky note on one of the shelves"
-    "{i}Enjoy - Barbara{/i}"
-    you "{i}Enjoy what? Theres nothing to enjoy{/i}"
-    you "{i}I mean the house is nice{/i}"
-    you "{i}Why would she put the note here though{/i}"
+    "There's a sticky note on one of the shelves."
+    "{i}Enjoy\n- Barbara{/i}"
+    you "{i}Enjoy what? Theres nothing to enjoy.{/i}"
+    you "{i}I mean the house is nice.{/i}"
+    you "{i}Why would she put the note here though?{/i}"
     call screen s_House()
 
 label ch01_m_fountainFirstClick:
     scene expression loc_bg("fountain") with dissolve
-    "You spy with your little eye..."
-    "and its a fountain..."
-    you "{i}No tourists?{/i}"
-    "There aren't any coins on the bottom of the fountain"
-    you "{i}Well, atleast they dont have to scoop them out{/i}"
+    "As you walk up to the fountain, you are more and more convinced that its out of place."
+    "It's old, has alot of cracks and is covered in lichens."
+    "Something underneath is is still pumping water, after probably hundreds of years."
+    you "{i}Where is this water coming from?{/i}"
     "You look around and there's not a single soul out"
     ".{w=0.5}.{w=0.5}."
     menu:
         "Touch the water":
             you "{i}i HAVE to touch it{/i}"
-            "Either there's too little water in the fountain or the edges are way too tall for you"
-            "Almost like they dont want random people touching the water"
+            "Either there's too little water in the fountain or the edges are way too tall for you."
+            "Almost like they dont want random people touching the water."
             ".{w=0.5}.{w=0.5}."
             "!"
             you "{i}Huh{/i}"
             "You now have: {w=0.5}{b}a wet finger{/b}!"
 
         "Do not":
-            you "Why am i even considering this"
-            "and you were right to think that"
-            "what if this city had more tricks up its sleeve and the water was poisonous"
-            you "{i}Hell no{/i}"
+            "Looking at the water you almost touched you cant help but sigh."
+            "Where are your manners?"
+    "You stare at the water for a moment, letting it soothe your nerves."
     return
 
 label ch01_m_fountainSecondClick:
     scene expression loc_bg("fountain") with dissolve
-    "Your attitude towards the fountain is as cold as the water in it"
-    "There's nothing to do here at this moment"
+    "Your attitude towards the fountain is as cold as the water in it."
     return  
 
 label ch01_m_cityHallRudeToBarbara:
-    you "{i}Hell no i'm not going back in there{/i}"
+    you "{i}Hell no i'm not going back in there.{/i}"
     you "{i}She's gonna eat me alive!{/i}"
     return
 
 label ch01_m_cityHallNormalFirstInteraction:
     you "{i}I have more questions...{/i}"
     scene bg cityhallinside with dissolve
-    "Everything here is new to you because i chose this cliche way to start a visual novel"
-    "That way i have more control over the lore and what can happen"
     scene bg secretary with dissolve
     show filip normal with dissolve
-    if not flag("rudeToBarbara"):
+    if flag("rudeToBarbara"):
         f "Oh. It's you."
         you "What?"
-        f "What do u want"
+        f "What do you want?"
         # happy meal
         menu:
-            "What's her problem":
-                "Filip's face contorted"
-                "It looks like he's having a nightmare"
-                f "Girl i-"
-                f "you literally le insulted her hair"
-                f "She spends so much money to have maybelline hair and you just..."
-                "He waves his hands around due to the lack of words"
-                f "That was rude"
+            "What's her problem?":
+                "Filip's face contorted,"
+                "It looks like he's having a nightmare."
+                "He rolls his eyes dramatically and lets out a very tired sigh."
+                f "You literally insulted her hair."
+                f "She spends so much money to have Le Maybelline hair and you just..."
+                "He waves his hands around due to the lack of words."
+                f "You were very rude."
                 menu:
                     "That was constructive criticism":
-                        "It's been a long day and Filip is very tired and you are NOT helping."
-                        "He covers his face and pretends to sob dramatically"
+                        "It's been a long day and you are NOT helping."
+                        "He covers his face and pretends to sob dramatically."
                         f "When will you finally understand?"
-                        f "She is the president you HAVE to be on good terms with her"
-                        f "She has a ton of power over you and you chose to fight her"
-                        f "Play stupid games win stupid prizes"
+                        f "She is the president you HAVE to be on good terms with her."
+                        f "She has a ton of power over you and you chose to fight her."
+                        f "Play stupid games win stupid prizes."
 
                     "Hmph! I will apologize if you so wish.":
-                        f "Good"
-                        f "Wait no hold on"
-                        f "What are you going to say"
-                        f "I dont want you to say something stupid and get into more trouble"
-                        "You put your hand on your chin and pretend to think really hard"
+                        f "Good."
+                        f "Wait no hold on!"
+                        f "What are you going to say."
+                        f "I dont want you to say something stupid and get into more trouble."
                         menu:
-                            "I was on drugs and thought you were bald":
+                            "You put your hand on your chin and pretend to think really hard..."
+                            "I was on drugs and thought she was bald.":
                                 pass
-                            "I had something in my eye":
+                            "I had something in my eye.":
                                 pass
-                            "I lied because I'm a pick me":
+                            "I lied because I'm a pick me.":
                                 pass
-                            "I thought her weave reminded me of my dead hamster":
+                            "I thought her weave reminded me of my dead hamster.":
                                 pass
-                        "Filip starts giggling uncontrollably"
-                        "You arent sure if its your answers which made him laugh or your stupidity"
-                        f "Yeah no that is not gonna work. You will have to come up with something better"
+                        "Filip snickers at your ridiculous answers."
+                        "You arent sure if its your answers which made him laugh or your stupidity."
+                        f "Yeah no that is not gonna work. You will have to come up with something better."
                         you "Hmm.."
-                        you "Ok i will do something tomorrow"
-                        you "I'm too tired for this today"
+                        you "Ok I will do something tomorrow."
+                        you "I'm too tired for this today."
+                        
     else:
-        f "Oh hey"
+        f "Hey there!"
+        you "Hey Filip."
         you "I have a question..."
         menu:
             "Where is my house":
-                "Filip rolls his eyes dramatically"
-                f "Did you even look at the keys"
-                f "Theres an address attached"
+                "Filip rolls his eyes dramatically."
+                f "Did you even look at the keys?"
                 "You take the keys and put them on the table and inspect them closely"
-                "Indeed, there is a small keychain with a street name written on it"
+                "Indeed, there is a small keychain with a street name written on it."
                 you "But isnt this like dangerous?"
                 f "How"
-                you "If i lose my keys the person who finds them will be able to unlock my house"
-                f "Then rip the tag off and write your name"
-                f "If someone finds the keys they will give them to us"
-                you "And what if they dont"
-                "Filip has clearly had enough and sighs"
-                f "Then you will come to me and we will come up with something"
+                you "If I lose my keys the person who finds them will be able to unlock my house."
+                f "Then rip the tag off and write your name."
+                f "If someone finds the keys they will give them to us."
+                you "And what if they dont?"
+                "Filip has clearly had enough and sighs."
+                f "Then you will come to me and we will come up with something."
             "Where is everyone":
                 f "Its almost midnight and its cold as hell outside"
                 f "If you werent \"born\" today you would be asleep right now"
-                "You audibly breathe out"
-                you "{i}I guess he's right{/i}"
-                you "{i}I'd rather be in a warm bed than here{/i}"
-                you "Oh."
-                f "And yes, we have alot of residents"
-                f "It's just that its, you know, late"
-                f "Come to the square tomorrow and you will see"
+                you "{i}Exactly. I'm already tired of listening to people.{/i}"
+                you "Makese sense."
+                f "And yes, we have residents."
+                f "It's just that its, you know, late."
+                f "Come to the square tomorrow and you will see."
             "What's in the forest":
-                f "Ebola"
-                "your eyes widen"
-                f "Jk its not ebola its bts stans"
-                you "Oh! That's cute"
-                you "What do i need to do if i see one"
-                f "You dont look like you can end bts so you can sing dynamite and pretend you are an army"
-                you "I'd rather die"
-                you "And piotr was trying to clean the forest?"
-                f "Yes"
-                f "Now you know why you shouldn't go to the forest"
-                you "{i}We will see about that{/i}"
+                f "Ebola!"
+                "Your eyes widen in horror."
+                f "Just kidding."
+                f "There are deadly wolves that WILL eat you."
+                you "That doesn't make it any better."
+                f "I don't see the issue. Just don't go out and you will be fine."
+                you "{i}We will see about that.{/i}"
+                you "They cant just waltz into the city?"
+                f "No, there are people protecting Bratgren from all sorts of stuff."
+                f "Wolves arent an issue."
             "Are there any tourist traps?":
-                f "No there aren't any"
-                f "Because we don't have any tourists"
-                you "How"
-                f "It's just us here in Bratgren"
+                f "No."
+                f "Because we don't have any tourists."
+                you "How?"
+                f "It's just us here in Bratgren."
                 you "So theres literally no one else?"
-                f "As far as we are aware, yes"
-                f "The forest is way too dangerous so we didnt explore it much"
-                you "That's a shame"
+                f "As far as we are aware, yes."
+                f "The forest is way too dangerous so we didnt explore it much."
+                you "That's a shame..."
                 f "Why? Are you already trying to escape?"
-                you "I came from a rich family and my bedroom was the size of the square outside soo"
-                you "So this feels like prison"
-                "Filip giggles"
-                f "Yeah right"
+                you "I came from a rich family and my house was way bigger than this city."
+                you "So this feels like prison."
+                "Filip finds you absolutely amusing and giggles."
+                f "Yeah, right."
                 f "If you ever accidentally slip and tumble all the way into the forest and meet the monsters in it"
-                f "Sing a bts song"
+                f "Run back to the city."
         you "Okay..."
-        you "Well i dont want to take up more of your PRECIOUS time"
-        you "Thank you and goodnight"
-        f "Bye"
+    you "Well I dont want to take up more of your PRECIOUS time."
+    you "Thank you and goodnight."
+    f "Bye!"
+    "You leave the city hall..."
     return
 
 label ch01_m_enteringChurch:
@@ -223,8 +216,8 @@ label ch01_cold_boot:
     "{cps=15}Who already fled the scene.{/cps}"
     "{cps=2}...{/cps}"
     "Somehow, you are still alive <3"
-    "Now that everything has cut to black, you can only feel the pain in your head"
-    "You can't even check if you still have it because you are THAT weak"
+    "Now that everything has cut to black, you can only feel the pain in your head."
+    "You can't even check if you still have it because you are THAT weak."
     "I mean you DID get hit by a bus..."
     call chapterTransition("Akt 1", "So what now?")
     play music "forest.mp3" fadein 2.0
@@ -258,13 +251,13 @@ label ch01_cold_boot:
     you "Waking up in the forest and all that?"
     m "Do not yell you are in a forest!!!"
     you "Oh no no no... You are going to answer all of my questions first."
-    you "You have 10 seconds until i let you know i had eggs for breakfast."
+    you "You have 10 seconds until I let you know I had eggs for breakfast."
     p "I won't ask you again."
     p "My name is Piotr and I am a wizard."
     you "Wizard? Like a birthday party wizard?"
     p "???"
     you "Like do you do silly tricks like pulling rabbits out of your huge top hat?"
-    with vpnuch
+    with vpunch
     p "If you don't shut up wolves will hear us and eat us both."
     "Piotr's serious tone finally gets to you."
     you "Okay okay calm down."
@@ -310,7 +303,7 @@ label ch01_cold_boot:
     p "Nothing, {i}yet{/i}."
     you "What do you mean {i}yet{/i}??"
     p "I was cleaning the forest and this had nothing to do with you"
-    p "I mean i was going to and then i saw you."
+    p "I mean I was going to and then I saw you."
     you "{i}Is he a janitor or something??{/i}"
     you "What do you mean clean?? I don't see your broom."
     "Piotr puts his hand over his forehead, already sick of your impertinence."
@@ -325,10 +318,10 @@ label ch01_cold_boot:
     you "{i}True. they are way too fast..{/i}"
     you "So when are you gonna answer my questions?"
     "Piotr looks at you with pure confusion."
-    p "I have answered all your questions up until this point. How did you manage to answer questions without me noticing?" 
+    p "I have answered all your questions up until this point. How did you manage to ask questions without me noticing?" 
     you "{i}Why is he so rude to me?{/i}"
     you "{i}Fine. This isn't over though.{/i}"
-    you "{i}When i find some sort of civilization i will just tell everyone he kept me in his basement{/i}"
+    you "{i}When I find some sort of civilization I will just tell everyone he kept me in his basement{/i}"
     you "{i}Does he have a basement though? What if he doesnt?{/i}"
     you "Do you have a basement?"
     p "What? Yes. Why?{nw}"
@@ -362,9 +355,6 @@ label ch01_piotrIntroductionMenu:
             "Name one thing. Your city. Your school. Your parents."
             "Nothing."
             "..."
-            "What's weird is that you know what you like and what you hate."
-            "But you cannot remember why or how that is"
-            "Its almost as if you just survived amnesia and became a new person"
             you "I survived cancer but got short and long term memory loss!"
             "Piotr shakes his head in disbelief."
             p "Thats not how it works."
@@ -378,7 +368,7 @@ label ch01_piotrIntroductionMenu:
             you "But you are wrong!"
             p "What?"
             you "You are trying to play 5d chess with me!"
-            p "And how exactly am i doing that?"
+            p "And how exactly am I doing that?"
             you "I can smell it in the air it has that kidnapping smell!"
             "With every word you say his expression goes more and more grim."
             p "Is this ragebait?"
@@ -448,7 +438,7 @@ label ch01_afterPiotrIntroductionMenu:
         p "You will understand why later."
         p "I can't just leave you here."
         you "Since when are you so kind to me?"
-        p "Just because i am nice like that."
+        p "Just because I am nice like that."
         p "Also I would go to jail if someone found out that I didnt help you."
         "You giggle at his joke but deep down you are wondering if Piotr would leave you all alone in this forest, had that law not existed."
         
@@ -464,7 +454,7 @@ label ch01_afterPiotrIntroductionMenu:
     you "{i}I already don't like this place. The people here rely on outdated technology that should've been replaced ages ago.{/i}"
     you "{i}Why do the need such tall walls? Overreaction final boss{/i}"
 
-    show piotr normal with dissolv
+    show piotr normal with dissolve
 
     you "Where even are we?"
     p "I already told you! We're about to enter the city of Bratgren."
@@ -482,7 +472,7 @@ label ch01_afterPiotrIntroductionMenu:
     p "Because it's cold?"
     you "I'm not cold."
     p "I don't know how you're not cold. I'm about to freeze out here."
-    you "Then let's get to  Barbara faster."
+    you "Then let's get to Barbara faster."
     "There is almost nobody on the streets{w}, apart from {i}the two of you{/i}."
     "You notice that the amount of buildings is astronomical. Eventually, you reach the town square, where, despite the late hour, you can still feel a pleasant{w=.6}, warm{w=.6}, welcoming{w=.6}, and an almost friendly atmosphere."
     "You could almost call your little walk romantic{w=1.0}, if it weren't for the fact that Piotr is probably the reason you're here in the first place."
@@ -546,8 +536,9 @@ label ch01_afterPiotrRagebaitMenu:
     you "Thank you."
     f "So Piotr, tell me, what were you doing when you found [name]?"
     p "I was cleansing the forest like you told me to, and he showed up next to me and ruined my ritual. Now I have to start all over again."
-    with vpunch
-    you "HOW IS THAT MY FAULT?"
+    you "How could I have possibly ruined it if you haven't even started?"
+    p "I was about to?"
+    you "And how is any of that MY fault?"
     you "This is the third time I'm asking and I still don't know."
     f "Exactly, I'd also like to hear how any of this is your fault."
     f "I feel like there are more important things right now."
@@ -564,7 +555,7 @@ label ch01_afterPiotrRagebaitMenu:
     you "No!"
     "For some reason, Filip is delighted by this information."
     "You tilt your head and lower your eyebrows to signal your confusion, which gets ignored"
-    f "Perfect. I'll take you to  Barbara now. She'll answer all your questions."
+    f "Perfect. I'll take you to Barbara now. She'll answer all your questions."
     f "She likes explaining this stuff, you just have to ask the {i}right{/i} questions."
     you "{i}TFYM THE RIGHT QUESTIONS?!{/i}"
     f "Just don't stress about it. Be nice to her and she'll be nice to you."
@@ -672,7 +663,7 @@ label ch01_kurowskaDialogMenu:
             k "We are a small community built near lake Świtezianka."
             you "And what do you do?"
             k "We do everything a city does? I dont understand the question."
-            you "No no, i understand."
+            you "No no, I understand."
             you "Piotr told me you have to protect the city from some sort of monsters."
             k "Yes.. they are very very dangerous."
             k "Piotr is like a hero in here. Protecting the city from them is risky."
@@ -796,7 +787,7 @@ label ch01_firstNightTownWalk:
     scene bg lanastreetnight with dissolve
     jump ch01_firstNightTownWalkPartB
 
-# ch01_m_enteringChurch goes here and i dont want lanastreet in the bg
+# ch01_m_enteringChurch goes here and I dont want lanastreet in the bg
 label ch01_firstNightTownWalkPartB:
     $ telemetry_flag("choseWiktoriaP")
     "Just as you decide to look away from this beautiful architectural monument, you see...{w=.1} someone."
@@ -892,14 +883,14 @@ label ch01_firstNightTownWalkPartB:
     wp "Like 8"
     you "Ohh so like you are a local at this point."
     you "You must know alot about Bratgren."
-    wp "Yeah i guess you could say so."
+    wp "Yeah I guess you could say so."
     you "Could you tell me about this city?"
     wp "Is there anything specific you would like to know?"
     menu:
         you "Well.."
         "Where am i?":
             pass
-    you "Like i know i am IN Bratgren but where is this Bratgren"
+    you "Like I know I am IN Bratgren but where is this Bratgren"
     you "Are there other cities?"
     wp "Well no not really."
     wp "I mean... I've heard that there are more cities out there."
@@ -1020,7 +1011,7 @@ label ch01_lakeVisit:
 label ch01_vasiliFirstNightMagaMenu:
     menu:
         "Ask about his knowledge of fish":
-            $ ryba = random.choice(["ch01_vasiliFishBrzana", "ch01_vasiliFishKoza", "ch01_vasiliFishWstegorz"])
+            $ ryba = random.choice(["ch01_vasiliFishA", "ch01_vasiliFishB", "ch01_vasiliFishC"])
             jump expression ryba
 
         "Ask about his political views" if not flag("heardVasiliMonologue"):
@@ -1121,59 +1112,38 @@ label ch01_goingHomeTiredAfterVasiliFirstNight:
     call screen s_House()
 
 # TODO: COPY PASTE AN ENGLISH WIKIPEDIA ARTICLE NOT POLISH ??
-label ch01_vasiliFishBrzana:
-    v "Brzana (łac. Barbus barbus) to średniej wielkości, typowa rzeczna ryba z rodziny karpiowatych."
-    v "Występuje w dorzeczach Loary, Rodanu, Renu, Dunaju, Łaby, Odry i Wisły."
-    v "Można ją też spotkać w Tamizie, Niemnie, Dniestrze i Dnieprze oraz na Półwyspie Iberyjskim."
-    v "Została introdukowana we Włoszech i Maroku."
-    v "Osiąga przeciętnie około 70 cm długości."
-    v "Maksymalnie dorasta do 120 cm i może ważyć do 12 kg."
-    v "Brzana ma długie, niskie i walcowate ciało."
-    v "Jest ono przystosowane do życia w nurcie rzeki."
-    v "Grzbiet ma oliwkowozielony lub ciemnoszary."
-    v "Boki są jaśniejsze, a brzuch biały."
-    v "Płetwy grzbietowa i ogonowa są szare z ciemniejszym obrzeżeniem."
-    v "Pozostałe płetwy mają czerwonawy kolor."
-    v "Głównym pokarmem są larwy owadów wodnych, takie jak muchówki, chruściki, widelnice i jętki."
-    v "Zjada też kiełże, mięczaki i skąposzczety."
-    v "Rzadziej poluje na małe ryby."
+label ch01_vasiliFishA:
+    v "Salmon are commercially important euryhaline ray-finned fish."
+    v "They belong to the genera Salmo[[1] and Oncorhynchus."
+    v "Both genera are part of the family Salmonidae[[2]."
+    v "Salmo species are[[4] native to tributaries of the North Atlantic basin."
+    v "Oncorhynchus species are native to tributaries of the North Pacific basin."
+    v "Salmon is a colloquial[[80] or common name used for fish in this group."
+    v "It is not a scientifi[[123]c name."
+    v "Closely related fish[[0] include[[-4] trout[[3.1], char[[NaN], grayling[[654], whitefish, lenok and taimen."
+    v "They[[67] are[[67] coldwater[[67] fish[[67] found[[67] mainly[[67] in[[67] subarctic[[67] and cooler temperate regions."
+    v "Some sporadic endorheic[[159264831759] populations also occur in Central Asia."
     jump ch01_vasiliAfterFishMonologue
 
-label ch01_vasiliFishKoza:
-    v "Koza [[1] to gatunek małej ryby [[2] słodkowodnej z rodziny piskorzowatych [[3]."
-    v "Zamieszkuje Europę [[4][[5] z wyjątkiem Irlandii [[6], Szkocji, Norwegii i północnej Szwecji."
-    v "Nie występuje też w Finlandii, północnej Rosji oraz południowych[[3.5] półwyspach."
-    v "Chodzi o Półwysep Iberyjski[[7][[8], Apeniński[[67] i Bałkański."
-    v "Osiąga przeciętnie ok. 10[[10]] cm[[9]."
-    v "Maksymalnie dorasta do 13,5[[13,5]] cm długości[[123]."
-    v "Ma wydłużone ciało[[10]."
-    v "Posiada obronne, ruchome kolce[[11] w okolicy oka[[12][[13]."
-    v "Grzbiet jest brązowoszary[[14] i pokryty[[1] ciemnymi plamkami."
-    v "Wzdłuż boków biegną dwa[[2], rzadziej jeden[[1], rzędy plam."
-    v "Jest ich zwykle 10-20, są duże, okrągłe i ciemne[[15]."
-    v "U nasady płetwy ogonowej znajduje się jedna duża ciemna plama[[2650]."
-    v "Brzuch jest biały lub żółtawy[[6]."
-    v "Żywi się bezkręgowcami dennymi..."
+label ch01_vasiliFishB:
+    v "Trout is a generic common name for numerous species of carnivorous freshwater fish."
+    v "These species belong to the genera Oncorhynchus, Salmo and Salvelinus."
+    v "All three genera are members of the subfamily Salmoninae."
+    v "Salmoninae belongs to the family Salmonidae."
+    v "The word trout is also used for some similar-shaped non-salmonid fish."
+    v "One example is the spotted seatrout, also known as the speckled trout."
     jump ch01_vasiliAfterFishMonologue
 
-label ch01_vasiliFishWstegorz:
-    v "Wstęgor królewski to gatunek dużej, morskiej ryby strojnikokształtnej z rodziny Regalecidae."
-    v "Jest zwierzęciem kosmopolitycznym — występuje w wodach Oceanu Indyjskiego, Pacyfiku, Atlantyku."
-    v "Można go też spotkać w Morzu Północnym i Morzu Śródziemnym."
-    v "Wstęgor osiąga zazwyczaj do 8 metrów długości."
-    v "Maksymalna potwierdzona długość wynosi 11 m."
-    v "Istnieje jednak doniesienie o osobniku, który miał aż 17 metrów."
-    v "Maksymalna potwierdzona masa ciała wynosiła 272 kg."
-    v "Ma bardzo wąskie, taśmowate i mocno bocznie spłaszczone ciało."
-    v "Wzdłuż niego ciągnie się płetwa grzbietowa, od głowy do ogona."
-    v "Służy ona też do napędu."
-    v "Płetwa ma ponad 300 promieni, co jest rekordową liczbą."
-    v "Pierwszych kilkanaście jest wysokich i zakończonych ozdobnymi zgrubieniami."
-    v "Przypominają one koronę, stąd nazwa \"królewski\"."
-    v "Przypuszcza się, że płetwy w wodzie mają jaskrawoczerwoną barwę."
-    v "Na powietrzu szybko blakną."
-    v "Ciało jest jasne i srebrzyście połyskujące..."
-    jump ch01_vasiliAfterFishMonologue
+label ch01_vasiliFishC:
+    v "Tuna are saltwater fish belonging to the tribe Thunnini."
+    v "Thunnini is a subgrouping of the Scombridae family."
+    v "The tribe comprises 15 species across five genera."
+    v "Their sizes vary greatly between species."
+    v "The bullet tuna is among the smaller species."
+    v "The Atlantic bluefin tuna is among the largest."
+    v "Atlantic bluefin tuna average around 2 metres in length."
+    v "They are believed to live for up to 50 years."
+    jump ch01_vasiliAfterFishMonologue 
 
 label ch01_vasiliAfterFishMonologue:
     you "{i}What have I done. What did I do to deserve this...{/i}"
@@ -1217,10 +1187,10 @@ label ch01_vasiliAfterFishMonologue:
 label ch01_vasiliTalksAboutFavoriteFish:
     you "{i}What have I gotten myself into... I DON'T WANT THIS ANYMORE...{/i}"
     scene black with dissolve
-    "Overwhelmed by emotion and the endless fish lectures - you fall asleep."
+    "Overwhelmed by the endless fish lectures you fall asleep."
     "But Vasili notices."
     v "[name]!"
-    v "Are you listening to me?" 
+    v "Are you even listening to me?" 
     you "Sorry. It's really late, and I think I should go to sleep."
     v "I think you should go to sleep. Lack of sleep isn't healthy!"
     v "You know, I care about your health."

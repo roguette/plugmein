@@ -98,7 +98,7 @@ label ch02_h_suspicious_pot:
     "You move the plant before trying to pry it open, which, unsurprisingly, fails"
     "While getting up your keys fall out, and you take another look at them"
     "None match the round keyhole."
-    you "{i}Tomorrow i'm going to  Barbara to ask her about this{/i}"
+    you "{i}Tomorrow i'm going to Barbara to ask her about this{/i}"
     "Just in case, you move the plant back where it was and move on"
     call screen s_House()
 
@@ -209,7 +209,7 @@ label ch02_watch_your_mouth:
     "The gnome was only a brief distraction from the calories in your stomach, or lack thereof"
     "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
     "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny."
-    "W mieście jest jedna osoba, która może ci teraz pomóc -  Barbara."
+    "W mieście jest jedna osoba, która może ci teraz pomóc - Barbara."
     "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej."
     scene bg citysquareday with dissolve
     play music "town_day.mp3"
@@ -286,7 +286,7 @@ label ch02_goingToKur:
     show kurowska normal with dissolve
     you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
     k "Tak, pamiętam."
-    if flag("rudeTo Barbara"):
+    if flag("rudeToBarbara"):
         jump ch02_goingToKurRude
     else:
         jump ch02_goingToKurNotRude
@@ -304,11 +304,11 @@ label ch02_goingToKurRude:
 
 label ch02_goingToKurNotRude:
     k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
-    " Barbara znowu zaczęła szukać czegoś na swoim biurku."
+    "Barbara znowu zaczęła szukać czegoś na swoim biurku."
     "..."
     "Tym razem znalazła to co chciała."
     k "Proszę. To powinno wystarczyć żebyś przeżył zanim coś znajdziesz."
-    " Barbara dała ci sakiewkę pełną monet."
+    "Barbara dała ci sakiewkę pełną monet."
     "Jest cholernie ciężka..."
     k "Trzymaj."
     you "Co to jest?"
@@ -412,10 +412,10 @@ label ch02_KamilRobberyWrongChoice:
     you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
     scene bg secretary with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "After being robbed there is no other choice but to go back to  Barbara"
+    "After being robbed there is no other choice but to go back to Barbara"
     "Even if she doesn't have any more money for you, it would be wise to report this"
     "When you enter the city hall, filip is not there, which is confirmed by a cacophony of noises coming from the storage room"
-    "With no other choice, you knock on  Barbara's door"
+    "With no other choice, you knock on Barbara's door"
     "..."
     you "Dzień dobry! To znowu ja."
     k "Wejdź."
@@ -438,7 +438,7 @@ label ch02_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
     "Wychodzisz na zewnątrz, żeby zastanowić się co powinieneś zrobić dalej."
-    "Jak powiedziała  Barbara, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
+    "Jak powiedziała Barbara, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
     "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
     "Do kogo idziesz pracować?"
     menu:
@@ -448,7 +448,7 @@ label ch02_goingToFindAJob:
             $ flag("workedAtVasili", True)
             jump ch02_workingAtVasili
         "Filip":
-            you "{i} Barbara nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
+            you "{i}Barbara nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
             $ flag("workedAtFilip", True)
             jump ch02_workingAtFilip
 
@@ -465,7 +465,7 @@ label ch02_workingAtFilip:
     you 'Masz może jakąś robotę dla mnie?'
     you 'Czy jest dosłownie cokolwiek co mogę zrobić?'
     f 'Hmm...'
-    f "I {i}do{/i} need to move mail from that storage room to  Barbara but i am wayy too lazy for that"
+    f "I {i}do{/i} need to move mail from that storage room to Barbara but i am wayy too lazy for that"
     you "I can do it"
     f "Then wait here"
     show filip normal at offscreenright with move
@@ -495,7 +495,7 @@ label ch02_workingAtFilip:
     "Then, with all that paper still in your hand, you take one step and decide against doing a second one"
     "You go back and leave half of your 40cm stack on the luggage cart"
     "Only then your back allows you to move"
-    "You knock on  Barbara's door"
+    "You knock on Barbara's door"
     if flag("rudeTo Barbara"):
         k "KTO TAK PUKA NA BELZEBUBA??"
     else:
@@ -750,7 +750,7 @@ label ch02_gotMoneyBakeryEntrance:
             wp "Do kogo poszedłeś?"
             you "Do Filipa."
             you "Kazał mi przenosić dokumenty do Kurowskiej."
-            you "A jak już skończyłem,  Barbara kazała mi z powrotem przenieść te listy."
+            you "A jak już skończyłem, Barbara kazała mi z powrotem przenieść te listy."
             you "Bo to on ma je czytać."
             wp "Trzeba było zarządać pieniędzy i wyjść po czymś takim."
             wp "I skibidi."

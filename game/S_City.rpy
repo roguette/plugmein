@@ -158,8 +158,8 @@ label fountain:
 default ch01_f_wentToCityHall = False
 label city_hall:
     if time.chapter == 1:
-        if flag("rudeTo Barbara"):
-            call ch01_m_cityHallRudeTo Barbara
+        if flag("rudeToBarbara"):
+            call ch01_m_cityHallRudeToBarbara
         else:
             if ch01_f_wentToCityHall == False:
                 $ ch01_f_wentToCityHall = True
