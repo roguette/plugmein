@@ -1,7 +1,7 @@
 label ch03_lush_life:
     scene black with dissolve
     stop music fadeout 1
-    call chapterTransition("Akt 3", "Jak sobie pościelesz, tak się wyśpisz")
+    call chapterTransition("Akt 3", "Jak sobie pościelesz, tak się wyśpisz") from _call_chapterTransition_2
     $ time.setTime(9, 13)
     show screen s_Clock()
     scene expression loc_bg("house") with vpunch

@@ -29,7 +29,7 @@ image mess = Animation(
 # =============================================== GLOBAL VARIABLES
 default friendship = defaultdict(int)
 default flags = set()
-define TESTING = True
+define TESTING = False
 define config.default_text_cps = 130
 define config.main_menu_music = "audio/ShouldersOfGiants.mp3"
 define build_name = "github"
@@ -173,7 +173,7 @@ label start:
         $ name = renpy.input("Jak masz na imię")
         $ name = name.strip()
 
-    jump ch03_lush_life
+    jump ch00_bus_stop
 
 # =============================================== MISC
 

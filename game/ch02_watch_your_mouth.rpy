@@ -135,29 +135,26 @@ label ch02_h_wardrobe:
 
 
 
-
-
-
 label ch02_watch_your_mouth:
-    "Jesteś bardzo głodny, ale nie aż tak, żeby przez to nie iść spać."
-    "I zanim się obejrzysz, już śpisz."
+    "You are very hungry, but not so hungry you can't sleep."
+    "And before you know it you fall asleep."
 
-    call chapterTransition("Akt 2", "lorem ipsum")
+    call chapterTransition("Akt 2", "Hey. It's me.") from _call_chapterTransition_1
     $ time.chapter = 2
     $ time.setTime(10,32)
 
     ".{w=0.5}.{w=0.5}.{w=0.5}"
-    "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up"
+    "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up."
     scene bg houseday with dissolve
-    "You instinctively cover your face but you can still see the sun through the gaps between your fingers"
+    "You instinctively cover yourself but you can still see the sun through the gaps between your fingers."
     "It's time to stop being so lazy and get off the bed"
     "Now that it's not dark anymore you can see the interior of the house better"
-    "The house didnt chage much, except for the fact that the morning light is making it feel less abandoned"
-    "You lazily get off your bed and change your clothes"
-    "It's still you in the mirror, just not smelly and covered in forest dirt"
+    "The house didnt change much, except for the fact that the morning light is making it feel less abandoned."
+    "You lazily get off your bed and change your clothes in front of a mirror."
+    "It's still you in the reflection, just not smelly and covered in forest dirt"
     "When you walk past the clock you notice the time and stop for a moment"
-    you "{i}There's no way i slept for 10 hours{/i}"
-    you "{i} Barbara is going to think i am lazy{/i}"
+    you "{i}There's no way I slept for 10 hours{/i}"
+    you "{i}Barbara is going to think I am lazy{/i}"
     you "{i}Hell. No.{/i}"
     show screen s_Clock()
     "Hunger definitely contributed to waking you up from your slumber"
@@ -171,11 +168,11 @@ label ch02_watch_your_mouth:
     you "{i}Oh my god what if its magical and can just summon food{/i}"
     "You close your eyes and try to summon..."
     menu:
-        "Kawior":
+        "Caviar":
             "This food is going to require the most concentration"
             "You close your eyes and think of caviar and try your best to channel your inner sorcerer..."
             you "{i}This HAS to work{/i}"
-        "Winniczki":
+        "French snails":
             "This food is going to require the least concentration"
             "You close your eyes and think of those slimy things and try your best to channel your inner sorcerer..."
             you "{i}This HAS to work{/i}"
@@ -184,12 +181,12 @@ label ch02_watch_your_mouth:
             "You close your eyes and think of dead doves and try your best to channel your inner sorcerer..."
             "Suddenly you remember that you shouldn't eat dead doves"
             you "{i}I need to dream bigger. I want a rotisserie chicken.{/i}"
-        "Nie chcę jeść":
+        "I'm not hungry":
             "Actually, you dont have to concentrate at all"
             you "{i}Actually no if i stay hungry i will stay skinny{/i}"
-            you "{i}Po takiej diecie mój snatched waist będzie potężny, może tylko się czegoś napiję.{/i}"
+            you "{i}I'm gonna be so skinny after this! I'll just get something to drink.{/i}"
 
-    "Otwierasz lodówkę i ku twojemu zdziwieniu nie ma w tej lodówce nic poza krasnalem, który włącza i wyłącza w niej swiatło."
+    "You open the fridge and, to your surprise, there is nothing in it except a gnome who keeps turning the light on and off."
     you "{i}What the hell{/i}"
     you "Hello?"
     you "Who are you?"
@@ -207,209 +204,208 @@ label ch02_watch_your_mouth:
     you "{i}Wait what if he's hungry{/i}"
     you "{i}I'll get food and share{/i}"
     "The gnome was only a brief distraction from the calories in your stomach, or lack thereof"
-    "Wychodząc z domu prawie zapominasz zamknąć drzwi, ale w ostatnim momencie przypomniałeś sobie w jakiej okolicy mieszkasz."
-    "Prawie mdlejesz z głodu. Chyba nie opłacało ci się być skinny."
-    "W mieście jest jedna osoba, która może ci teraz pomóc - Barbara."
-    "Prawdopodobnie właśnie pracuje, więc postanawiasz udać się prosto do niej."
+    "As you leave the house, you almost forget to close the door, but at the last moment you remember what kind of neighborhood you live in."
+    "You nearly faint from hunger. It seems being skinny wasn't worth it."
+    "There is one person in town who can help you right now - Barbara."
+    "She is probably at work, so you decide to go straight to her."
     scene bg citysquareday with dissolve
     play music "town_day.mp3"
     play sound "sfx_footsteps_b.mp3"
-    "Idąc do Kurowskiej, podziwiasz budynki i przyrodę, ponieważ dzień wcześniej nie dało się tego zrobić."
-    "Droga do urzędu miasta była bardzo przyjemna, jednak najgorszą częścią było zignorowanie zapachów wydobywających się z piekarni."  
-    "Brzuch ci burczy, niestety nie masz żadnych pieniędzy by zapłacić za potencjalny posiłek."
-    you "{i}NIE WYTRZYMAM... taki jestem głodny. Trzeba było wczoraj pożyczyć od kogoś pieniądze. No cóż, muszę jeszcze wytrzymać do końca dnia, aż otrzymam moją dzisiejszą wypłatę.{/i}"
-    "{i}Albo może zapiszą mi ten bułę na kreskę, a ja zapłacę za nią później... Chociaż ta praktyka zniknęła ż PRL-em... Dobra dam radę!!! Kto jak nie ja?{/i}"
-    "Ulice teraz tętnią życiem, każdy spieszy się do pracy."
-    "Gdy podchodzisz do urzędu, on znowu robi na tobie wrażenie, nie tak wielkie jak wczoraj, ale dalej jest bardzo imponujący."
-    "Nie ma czasu do stracenia i wchodzisz do budynku, szukając Filipa."
+    "On your way to see Barbara, you admire the buildings and nature, since you couldn't do so the day before."
+    "The walk to city hall was very pleasant, though the worst part was ignoring the smells coming from the bakery."
+    "Your stomach is growling, but unfortunately you don't have any money to pay for a potential meal."
+    you "{i}I CAN'T TAKE IT... I'm so hungry. I should have borrowed money from someone yesterday. Well, I just have to hold out until the end of the day.{/i}"
+    you "{i}Or maybe they'll let me put this bread on credit and I'll pay for it later... Although that practice disappeared with the fall of the PRL...{/i}"
+    you "I can do this!!!"
+    "The streets are now bustling with life, and everyone is hurrying to work."
+    "As you approach city hall, it impresses you once again—not as much as yesterday, but it is still very impressive."
+    "There is no time to waste, so you enter the building and look for Filip."
     jump ch02_goingToKur
 
 label ch02_goingToKur:
     play sound "sfx_footsteps_a.mp3"
     scene bg cityhallinside with dissolve
-    "Wchodząc do środka czujesz zapach świeżo zaparzonej kawy i bułek. Ten zapach prowadzi cię do szału."
+    "As you walk inside, you smell freshly brewed coffee and warm buns. The smell is driving you insane."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    "Kiedy Filip wychodzi od Kurowskiej z pustą tacą. Podchodzisz do niego."
+    "As Filip leaves Barbara's office carrying an empty tray, you walk up to him."
     show filip normal with dissolve
-    you 'Hej...'
-    f "Hejka."
+    you 'Hey...'
+    f "Heyy! "
     show filip shocked with vpunch
-    f "Boże wyglądasz okropnie co jest?"
+    f "God, you look awful. What happened?"
     you "Okay this is actually really awkward"
     you "I havent eaten anything since yesterday"
     you "Do you have literally any food here i'm hungrier than a shein worker"
     show filip normal
-    f "Tak. Codziennie przynoszę Kurowskiej ciepłe buły Rafała z kawą."
-    you "Czy mógłbyś mi dać jedną? Nie mam żadnych pięniędzy, więc nie mogę kupić jedzenia"
-    you "Dosłownie zaraz umrę jeśli nic nie zjem!!!"
+    f "Yeah. Every day I bring Barbara Rafał's warm buns with coffee."
+    you "Could you give me one? I don't have any money, so I can't buy food."
+    you "I'm literally about to DIE if I don't eat something!!!"
     f "Sure. I have some stale ones i was too lazy to throw out. Is that okay?"
     you "YES"
     f "Okay"
     show filip normal at offscreenright with move
-    "Filip odkłada talerz przy zlewie a potem znika w pomieszczeniu gospodarczym."
-    "Słyszysz jak musi coś odsuwać, żeby dostać się do tej bułki, którą tak pragniesz."
+    "Filip puts the plate down by the sink and disappears into the storage room."
+    "You can hear him moving something out of the way just to reach the bun you so desperately crave."
     show filip normal at center with move
-    "Wraca i daje ci bułę Rafała. Jest twarda ale nie masz wyboru."
-    "Bierzesz bułę Rafała i pochłaniasz ją. Mimo że jest przeterminowana - jak Tuleja - wciąż smakuje jak z najwyższej półki."
-    you "O mój boże z czego ta bułka jest zrobiona? Jest czerstwa ale jest tak dobra, że...{w} brakuje mi słow."
-    f "Smakują ci dlatego, że jesteś głodny."
-    f "Ale ogólnie to są rzeczywiście smaczne. Polecam pójść do tej piekarni kiedy są świeże."
-    f "Wtedy są jeszcze lepsze."
-    f "Wszyscy w tym mieście kochają buły Rafała."
-    you "Gdzie je kupiłeś?? Też chcę, jak będę miał pieniądze."
-    f "No w BBB na rynku."
+    "He comes back and hands you one of Rafał's buns. It's stale, but you don't exactly have a choice."
+    "You grab Rafał's bun and devour it. Even though it's expired - just like Tuleja - it still tastes top-tier."
+    you "Oh my god, what is this thing made of? It's stale but it's so good that...{w} I have no words."
+    f "It tastes that good because you're starving."
+    f "But honestly, they are actually really good. You should go to the bakery when they're fresh."
+    f "They're even better then."
+    f "Everyone in this city loves Rafał's buns."
+    you "Where did you buy them?? I want one too when I have money."
+    f "At BBB in the town square."
     you "What do you mean BBB???"
-    f "Nie rozumiesz? {i}{u}Big Buły Bakery{/u}{/i}..."
-    you "Ma sens."
-    f "Ale wracając, to jest tu. Ta piekarnia jest dość duża, więc na pewno ją zauważysz."
-    "Filip pokazuje ci palcem na mapie gdzie jest ta piekarnia."
-    "Szybko się orientujesz, gdzie to jest na rynku."
-    f "A co do pieniędzy..."
-    f "Powinieneś zapytać Kurowską o pracę, a ona ci pomoże."
+    f "You don't get it? {i}{u}Big Buns Bakery{/u}{/i}..."
+    f "Anyway, it's right here. The bakery is pretty big, so you'll definitely notice it."
+    "Filip points out the bakery's location on the map."
+    "You quickly figure out where it is in the town square."
+    f "And about the money..."
+    f "You should ask Barbara about work. She'll help you."
     you "Thank you! Thank you! Thank you!"
-    you "Ratujesz mi życie w tym momencie!"
+    you "You're literally saving my life right now!"
     play sound "door_knock.mp3"
-    "Grzecznie pukasz do drzwi Kurowskiej, próbując przy tym robić to identycznie jak Filip wczoraj."
+    "You politely knock on Barbara's door, trying to do it exactly the way Filip did yesterday."
     with vpunch
-    k "KTO TAK PUKA NA BELZEBUBA???"
-    you "To ja."
-    k "A 'ja' to kto?"
+    k "WHO IS THAT?"
+    you "It's me!"
+    k "And who's 'me'?"
     you "[name]"
-    k "Wejdź!"
+    k "Come in."
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
-    "Wchodisz do jej biura i widzisz, że jest znowu jest zajęta jakimiś dokumentami."
-    you "{i}Czy ona będzie na mnie zła za to, że ja tak sobie wszedłem?{/i}"
-    you "{i}Oby nie.{/i}"
-    you "{i}Ale przecież sama mi kazała wczoraj się zgłosić... No to dzień dobry.{/i}"
+    "You enter her office and see that she's once again busy with some documents."
+    you "{i}Is she going to be mad at me for just walking in here like this?{/i}"
+    you "{i}I hope not.{/i}"
+    you "{i}But she literally told me yesterday to come back... So, good morning I guess.{/i}"
     show kurowska normal with dissolve
-    you "Dzień dobry. Wczoraj mi Pani powiedziała żebym ja się zgłosił do tej pracy.. chyba.."
-    k "Tak, pamiętam."
+    you "Good morning. Yesterday you told me to come see you about that job... I think..."
+    k "Yes, I remember."
     if flag("rudeToBarbara"):
         jump ch02_goingToKurRude
     else:
         jump ch02_goingToKurNotRude
 
 label ch02_goingToKurRude:
-    k "Sam sobie znajdź pracę."
-    you "Ale..."
-    k "'ale ale ale' ale cyganisz!"
-    k "Wynoś się i idź do pracy!"
-    "Wściekła kurowska wyrzuca cię ze swojego biura."
+    k "Find yourself a job."
+    you "But..."
+    k "'But, but, but' - quit trying to weasel your way out of it!"
+    k "Get out and go find work!"
+    "A furious Barbara throws you out of her office."
     show bg secretary with vpunch
     play sound "sfx_door_slam.mp3"
-    you "{i}Następnym razem powinienem ją przeprośić za to, co jej powiedziałem...{/i}"
+    you "{i}I didn't even get the chance to apologize...{/i}"
     jump ch02_goingToFindAJob
 
 label ch02_goingToKurNotRude:
-    k "Musisz sam znaleźć pracę. Po prostu zapytaj znajomych na pewno ci pomogą."
-    "Barbara znowu zaczęła szukać czegoś na swoim biurku."
+    k "You have to find a job yourself. Just ask your friends, I'm sure they'll help you."
+    "Barbara starts looking for something on her desk again."
     "..."
-    "Tym razem znalazła to co chciała."
-    k "Proszę. To powinno wystarczyć żebyś przeżył zanim coś znajdziesz."
-    "Barbara dała ci sakiewkę pełną monet."
-    "Jest cholernie ciężka..."
-    k "Trzymaj."
-    you "Co to jest?"
-    you "Czemu te monety są takie ciężkie?"
+    "This time, she actually finds what she was looking for."
+    k "Here. This should be enough to keep you alive until you find something."
+    "Barbara gives you a pouch full of coins."
+    "It's ridiculously heavy..."
+    k "Here."
+    you "What is this?"
+    you "Why are these coins so heavy?"
     k "Because there's alot of them"
     k "I was supposed to give this to Filip to use as change for people but then he raised the prices"
     k "And now i do not need this"
-    k "Trzymałam je w biurze cały miesiąc i chciałam się ich pozbyć więc to jest win-win situation."
-    k "A teraz idź znajdź pracę i zrób żebym była dumna!"
-    you "Dziękuję bardzo, na pewno to zrobię."
+    k "I've kept them in my office for a whole month and wanted to get rid of them anyway, so this is a win-win situation."
+    k "Now go find a job and make me proud!"
+    you "Thank you so much. I definitely will."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    "Opuszczasz jej biuro i żegnasz się z Filipem. Teraz masz trochę pieniędzy i możesz w końcu coś robić{w=0.5}, nie umierając z głodu"
+    "You leave her office and say goodbye to Filip. Now you finally have some money and can actually do things{w=0.5} without starving to death."
     scene bg citysquareday with dissolve
     play sound "sfx_footsteps_b.mp3"
-    "Ulice po rush hour są teraz praktycznie puste, poza kilkoma bezdomnymi i lekko groźnymi osobami."
-    you "{i}Chyba aż tak długo nie spędziłem czasu u Kurowskiej, skoro nie ma praktycznie żywej duszy na ulicy. Pewnie wszyscy siedzą w pracy.{/i}"
-    you "{i}A teraz pora na kupienie sobie POŻYWNEGO śniadania.{/i}"
-    "DRUGIEGO śniadania!"
-    you "{i}Z tej racji pójdę sobie do BBB{/i}"
-    "Przechodząc obok fontanny atakuje cię meżczyzna, chociaż jest niski, to wygląda na groźnego."
+    "After rush hour, the streets are practically empty apart from a few homeless people and some mildly threatening individuals."
+    you "{i}I couldn't have spent THAT long at Barbara's if there's barely a living soul on the street. Everyone's probably at work.{/i}"
+    you "{i}And now it's time to buy myself a NUTRITIOUS breakfast.{/i}"
+    you "{i}I'm going to BBB.{/i}"
+    "As you walk past the fountain, a man attacks you. He's short, but still threatening."
     play music "outfoxingthefox.mp3"
     show kamil normal with vpunch
-    m "Oddaj wszystkie pieniądze jakie masz!!!"
-    you "CO! Nie proszę, nie rób mi krzywdy, ale nie mogę dać ci tych pieniędzy."
-    you "Nie jadłem nic od wczoraj, te pieniądze dostałem w prezencie. Muszę je wykorzystać na jedzenie i ubranie, bom głodny i goły."
-    m "No dobra, mam serce, dlatego pozwolę ci zawalczyć o to czy będziesz musiał mi oddać twoje pieniądze."
-    you "PRZECIEŻ TO NIESPRAWIEDLIWE!"
-    m "Życie jest niesprawiedliwe."
-    m "Teraz odpowiedz na moje pytanie, które brzmi: 'STOLICĄ FRANCJI JEST?'"
-    "Życie przelatuje ci przed oczami, gdy zadaje to pytanie." 
-    "Nie ma czasu na myślenie, tylko na działanie."
+    m "Give me all the money you have!!!"
+    you "WHAT! No, please don't hurt me, but I can't give you this money."
+    you "I haven't eaten anything since yesterday. I got this money as a gift. I need it for food and clothes because I'm hungry and basically naked."
+    m "Alright, I have a heart, so I'll let you fight for whether or not you have to give me your money."
+    you "THAT'S LITERALLY NOT FAIR!"
+    m "Life isn't fair."
+    m "Now answer my question: 'What's the capital of France?'"
+    "Your entire life flashes before your eyes as he asks the question."
+    "There is no time to think. Only to act."
     menu:
-        "Paryż":
+        "Paris":
             jump ch02_KamilRobberyCorrectChoice
 
         "Timbuktu":
             jump ch02_KamilRobberyWrongChoice
 
-        "Uśmiechnij się":
-            m "Po co"
-            you "Lubię żółty"
+        "Tell him to smile more":
+            m "Why"
+            you "Yellow is my favorite color"
             jump ch02_KamilRobberyWrongChoice
 
 label ch02_KamilRobberyCorrectChoice:
     play sound "gong.mp3"
     stop music
-    "Twoja odpowiedź jest pewna siebie, a cień wątpliwości zostaje wyparty przez wiatr."
-    "Jego uszy drgają, gdy słyszy odpowiedź, a oczy się rozszerzają."
-    "Właściwie cały wyraz jego twarzy ulega zmianie."
-    "Nie potrafisz jednak rozszyfrować reakcji oraz czy dokonałeś właściwego wyboru."
-    "Stoi tam, patrząc na ciebie, próbując podsycić napięcie"
+    "You answer with confidence as every shadow of doubt is swept away by the wind."
+    "His ears twitch when he hears your answer, and his eyes widen."
+    "In fact, his entire expression changes."
+    "You still can't decipher his reaction or tell whether you made the right choice."
+    "He stands there staring at you, trying to build suspense."
     m "..."
-    m "Skąd wiedziałeś?"
+    m "How did you know?"
     m "Grrr....."
-    "Nieznajomy mężczyzna zaczyna na ciebie warczeć jak alfa."
-    m "Heh.. Poza tym, wiedziałem że ty to powiesz..."
+    "The strange man starts growling at you like an alpha."
+    m "Heh... Besides, I knew you were going to say that..."
     you "{i}???{/i}"
-    you "{i}To dobrze czy źle{/i}"
-    m "Masz te swoje finanse..."
-    you "I co, łyso ci? Teraz idź sobie zanim cię gdzieś zgłoszę."
-    m "Ale jak... no dobra... teraz wygrałeś...{w} ALE NASTĘPNYM RAZEM NIE BĘDZIE TO TAKIE ŁATWE!!!!"
+    you "{i}Is that good or bad{/i}"
+    m "Fine, keep your precious finances..."
+    you "How do you like that, huh? Now get out of here before I report you somewhere."
+    m "But how... fine... you win this time...{w} BUT NEXT TIME IT WON'T BE THIS EASY!!!!"
     play music "town_day.mp3"
     hide kamil with dissolve
-    you "{i}Nie będę nosił ze sobą pieniędzy...{/i}"
+    you "{i}I'm not carrying money around with me anymore...{/i}"
     jump ch02_gotMoney
 
 label ch02_KamilRobberyWrongChoice:
     play sound "gong.mp3"
     stop music
-    "Twoja odpowiedź jest pewna siebie, a cień wątpliwości zostaje wyparty przez wiatr."
-    "Jego uszy drgają, gdy słyszy odpowiedź, a oczy się rozszerzają."
-    "Właściwie cały wyraz jego twarzy ulega zmianie."
-    "Nie potrafisz jednak rozszyfrować reakcji oraz czy dokonałeś właściwego wyboru."
-    "Stoi tam, patrząc na ciebie, próbując podsycić napięcie."
+    "You answer with confidence as every shadow of doubt is swept away by the wind."
+    "His ears twitch when he hears your answer, and his eyes widen."
+    "In fact, his entire expression changes."
+    "You still can't decipher his reaction or tell whether you made the right choice."
+    "He stands there staring at you, trying to build suspense."
     m "..."
-    m "Nie oddam ci twoich pieniędzy."
-    you 'Do jasnej muffinki!'
-    m "NOI ESSA, A TERAZ SPADAJ ZANIM CI JESZCZE WIĘCEJ ZABIORĘ."
+    m "I'm not giving your money back."
+    you 'Damn it!'
+    m "GG FREAKING EZ, NOW GET LOST BEFORE I TAKE EVEN MORE FROM YOU."
     menu:
-        "Odpowiedz normalnie":
-            you "Chytry dwa razy traci!"
+        "Respond normally":
+            you "Buy cheap, buy twice."
             m "???"
             hide kamil with dissolve
-            you "{i}On chyba mnie nie zrozumiał...{/i}"
-        "Bądź final girl":
-            you "Ale nie mam więcej."
-            m "Ha-ha-ha! Jesteś biedny!"
-            you "To czemu okradasz ludzi?"
-            you "Bo nie masz własnych pieniędzy?"
-            m "I tak nawet nie wiesz, na co to wydać."
-            you "Chciałem kupić buły w BBB?"
-            m "Przecież mają tyle kalorii..."
-            you "Jak tak się przejmujesz kaloriami, to pomyśl o te w swoim mózgu."
-            you "Bo ich tam nie ma jak w pepsi zero."
+            you "{i}I don't think he understood me...{/i}"
+        "Be a final girl":
+            you "But I don't have anything else."
+            m "Ha-ha-ha! You're poor!"
+            you "Then why are you robbing people?"
+            you "Because you don't have any money of your own?"
+            m "You don't even know what you'd spend it on anyway."
+            you "I wanted to buy buns at BBB?"
+            m "But those have so many calories..."
+            you "If you're that worried about calories, think about the ones in your brain."
+            you "Because there are none, just like Pepsi Zero."
             hide kamil with dissolve
-            "Złodziej zaczyna płakać i ucieka."
-            you "{i}To nie mój problem.{/i}"
+            "The thief starts crying and runs away."
+            you "{i}Not my problem.{/i}"
     play music "town_day.mp3"
-    you "{i}Przez tego idiotę teraz muszę wrócić do Kurowskiej i zapytać co robić...{/i}"
-    you "{i}Trochę się boję co może ona zrobić, ale no cóż, nic innego nie mogę wymyślić.{/i}"
+    you "{i}Because of that idiot, now I have to go back to Barbara and ask what I'm supposed to do...{/i}"
+    you "{i}I'm kind of scared of what she might do, but whatever. I can't think of anything else.{/i}"
     scene bg secretary with dissolve
     play sound "sfx_footsteps_a.mp3"
     "After being robbed there is no other choice but to go back to Barbara"
@@ -417,514 +413,512 @@ label ch02_KamilRobberyWrongChoice:
     "When you enter the city hall, filip is not there, which is confirmed by a cacophony of noises coming from the storage room"
     "With no other choice, you knock on Barbara's door"
     "..."
-    you "Dzień dobry! To znowu ja."
-    k "Wejdź."
+    you "Good morning! It's me again."
+    k "Come in."
     scene bg office with dissolve
     play sound "sfx_door_open.mp3"
-    "Wchodząc czujesz, że ćwiczyła skip B."
+    "As you walk in, you can tell she's been practicing skip B."
     show kurowska normal with dissolve
-    you "Przepraszam, że znowu przeszkadzam, ale zostałem okradziony."
-    you "Zabrano mi wszystkie pieniądze. Teraz nie wiem co mam robić."
-    you "Czy będzie mogła pani mi pomóc?"
-    "Uśmiechasz się jak w reklamie nieruchomości."
-    k "A co ja jestem wróżką?"
-    you "Nie... Ale myślałem, że pomoże pani potrzebującemu..."
-    k "Oddałam ci wszystko co miałam. Inni nic nie dostali i nie narzekają."
-    k "Znajdź. Pracę."
+    you "Sorry to bother you again, but I got robbed."
+    you "They took all my money. Now I don't know what I'm supposed to do."
+    you "Could you help me?"
+    "You smile like you're in a real estate commercial."
+    k "What am I, a fortune teller?"
+    you "No... But I thought you'd help someone in need..."
+    k "I gave you everything I had. Nobody else got anything, and they're not complaining."
+    k "Find. A. Job."
     hide kurowska normal with dissolve
     jump ch02_goingToFindAJob
 
 label ch02_goingToFindAJob:
     scene bg citysquareday with dissolve
     play sound "sfx_door_open.mp3"
-    "Wychodzisz na zewnątrz, żeby zastanowić się co powinieneś zrobić dalej."
-    "Jak powiedziała Barbara, powinieneś wybrać kogoś kogo znasz i pójść do niego, żeby poprosić o pracę."
-    "Stoisz na rynku i rozglądasz się, jakbyś miał całować ziemie, trzymając cyprysowy krzyżyk."
-    "Do kogo idziesz pracować?"
+    "You go outside to figure out what you should do next."
+    "Like Barbara said, you should pick someone you know and go ask them for work."
+    "You stand in the town square looking around like you're about to kiss the ground while holding a cypress cross."
+    "Who do you go work for?"
     menu:
-        "Vasili (to jest ta ciekawsza opcja)" if flag("metVasili"):
-            you "{i}Pójdę do niego tylko dla fabuły.{/i}" 
-            you "{i}Poza tym chyba nie mam lepszej opcji.{/i}" 
+        "Vasili (this is the more interesting option)" if flag("metVasili"):
+            you "{i}I'll go to him just for the plot.{/i}" 
+            you "{i}Besides, I don't think I have a better option.{/i}" 
             $ flag("workedAtVasili", True)
             jump ch02_workingAtVasili
         "Filip":
-            you "{i}Barbara nie ma dla mnie roboty, ale Filip już może mieć.{/i}" 
+            you "{i}Barbara doesn't have any work for me, but Filip might.{/i}" 
             $ flag("workedAtFilip", True)
             jump ch02_workingAtFilip
 
 label ch02_workingAtFilip:
-    "Wracasz do urzędu i idziesz do Filipa."
+    "You go back to city hall and head over to Filip."
     scene bg secretary with dissolve
     show filip normal with dissolve
     "This time he is actually doing his job and not lollygagging in the storage room"
     play sound "sfx_door_open.mp3"
-    you "A to znowu ja."
-    f "Hejka."
-    you 'Jeszcze jedno pytanie.'
-    f 'Tak?'
-    you 'Masz może jakąś robotę dla mnie?'
-    you 'Czy jest dosłownie cokolwiek co mogę zrobić?'
+    you "It's me again."
+    f "Hii."
+    you 'One more question.'
+    f 'Yeah?'
+    you 'Do you have any work for me?'
+    you 'Is there literally anything I can do?'
     f 'Hmm...'
     f "I {i}do{/i} need to move mail from that storage room to Barbara but i am wayy too lazy for that"
     you "I can do it"
     f "Then wait here"
     show filip normal at offscreenright with move
-    "Filip wstaje i znowu idzie do swojej szafy." 
-    "Słychać, że znowu przesuwa ciężkie pudła, ale tym razem trwa to dłużej." 
+    "Filip gets up and goes into his closet again." 
+    "You can hear him moving heavy boxes again, but this time it takes longer." 
     you "{i}How big is that storage room what{/i}"
     show filip normal at center with move
     "Filip finally gets out of the suspiciously large storage room while pulling a huge luggage cart full of paper" 
-    "Zanim się obejrzysz, przed tobą są już cztery wysokie stosy papieru"
+    "Before you know it, there are four tall stacks of paper in front of you"
     you "Okay i have two questions"
     you "First of all is what the hell is in that storage room?"
     you 'And what the hell is this'
-    f 'A to są po prostu jakieś papiery i poczta, która nigdy nie dotarła do Kurowskiej.'
-    f 'Po prostu przez lata zbierałem i uważałem, że nie jest zbyt ważna, więc ją trzymałem.'
-    f 'A teraz ona chce to wszystko zobaczyć.'
-    you 'No to co mam z tym zrobić??'
-    f 'Weź to wszystko i zanieś to do Kurowskiej.'
+    f 'Oh, that\'s just some paperwork and mail that never made it to Kurowska.'
+    f 'I just kept collecting it for years and figured it wasn\'t that important, so I held onto it.'
+    f 'And now she wants to see all of it.'
+    you 'So what am I supposed to do with this??'
+    f 'Take all of it and bring it to Kurowska.'
     you "Cant you just shove the whole luggage cart through the door?"
     f "No because it is too wide"
     you "Oh my god"
-    you 'Ale nie dam rady tego unieść ty jesteś zdrowy??'
-    f 'Nie mówię ci żebyś niósł wszystko na raz głuptasie.'
-    f 'Tu jest z 120kg papieru nie oczekuję że to podniesiesz.'
-    f 'Zwłaszcza z twoim snatched waistem...'
-    you 'No spoko...\n {i}ZAUWAŻYŁ!!!{/i}'
+    you 'But I can\'t lift all that, are you insane??'
+    f 'I\'m not telling you to carry it all at once, dummy.'
+    f 'There\'s like 120kg of paper here, I don\'t expect you to lift all of it.'
+    f 'Especially with that snatched waist of yours...'
+    you 'Okay cool...\n {i}HE NOTICED!!!{/i}'
     "You pick up a stack of paper the size of anna karenina and your spine cracks"
     "Then, with all that paper still in your hand, you take one step and decide against doing a second one"
     "You go back and leave half of your 40cm stack on the luggage cart"
     "Only then your back allows you to move"
     "You knock on Barbara's door"
     if flag("rudeTo Barbara"):
-        k "KTO TAK PUKA NA BELZEBUBA??"
+        k "WHO KNOCKS LIKE THAT FOR BEELZEBUB'S SAKE??"
     else:
-        k "Wejdź."
+        k "Come in."
     scene bg office with dissolve
     show kurowska normal at center with dissolve
     "You enter her office and see her knee-deep in documents, like she always is"
     you "{i}Does she really have time to read all this?{/i}"
-    you 'Gdzie to zostawić?'
-    k 'Na moim stole.'
-    you 'Na pewno? Ten papier NIE jest skinny.'
-    k 'Dobra zostaw na podłodze.'
-    "Zostawiasz pierwszy stosik papierów na podłodze." 
+    you 'Where do I put this?'
+    k 'On my desk.'
+    you 'Are you sure? This paper is NOT skinny.'
+    k 'Fine, leave it on the floor.'
+    "You leave the first stack of papers on the floor." 
     scene black with dissolve
-    "Po chwili zaczyna ci się nudzić, więc czytasz to co przenosisz."
-    "Najwidoczniej przenosisz jakieś skargi."
-    "Każdy nagłowek jest gorszy od poprzedniego."
-    "Pierwsza strona ma tytuł 'Raport o hałaśliwych sąsiadach'."
+    "After a while you get bored, so you start reading what you're carrying."
+    "Apparently, you're carrying some complaints."
+    "Every headline is worse than the last."
+    "The first page is titled 'Report on Noisy Neighbors'."
     if flag("metVasili") or flag("knowsAboutVasili"):
-        you "{i}Wiadomo, że chodzi o Vasiliego pff..{/i}"
-    "Z każdą linijką coraz trudniej powstrzymać śmiech, bo ten raport jest tak absurdalny, że aż nierealny."
-    "Nie dziwota że Filip uznał to za nieważne - wygląda jak jakiś fanfik."
-    you "{i}\"Krzyczenie 'WYPAROWAĆ BURŻUAZJĘ!!!' podczas mojej pracy było niestosowne.\" {/i}"
-    you "{i}KTO TO NAPISAŁ?{/i}"
-    "Nosisz dzielnie jeden po drugim, ale część ciebie chce tylko czytać te śmieci."
-    "Nagłówki są coraz bardziej dzikie..."
-    "{i}'Kapelusz Rafała sieje dramat wśród Bratgrenian.'{/i}"
-    "{i}'Skarga na robale z Kolorado atakujące pomidory.'{/i}"
-    "{i}'Ktoś mi nasrał przed drzwiami do domu proszę to usunąć.'{/i}"
+        you "{i}Obviously it\'s about Vasili, pff..{/i}"
+    "With every line it gets harder not to laugh because this report is so absurd it barely feels real."
+    "No wonder Filip decided it wasn't important - it looks like some kind of fanfic."
+    you "{i}\"Shouting 'VAPORIZE THE BOURGEOISIE!!!' while I was working was inappropriate.\" {/i}"
+    you "{i}WHO WROTE THIS?{/i}"
+    "You bravely carry them one by one, but part of you just wants to keep reading this garbage."
+    "The headlines keep getting wilder..."
+    "{i}'Rafał's hat is causing drama among Bratgrenians.'{/i}"
+    "{i}'Complaint about Colorado bugs attacking tomatoes.'{/i}"
+    "{i}'Someone took a shit in front of my house, please remove it.'{/i}"
     scene bg office with dissolve
     show kurowska normal at center with dissolve
-    "Zanim się obejrzysz przeniosłeś już wszystko i zabrakło ci nagłówków do czytania."
-    you 'Dużo tych mailów...'
-    k 'Co? jakich mailów?'
-    you 'No tych które noszę od ostatnich 40 minut.'
-    k 'MAILE?? prosze mi je wynieść, to praca filipa, ja mam ważniejsze rzeczy na głowie!'
-    you 'To po co ja je tyle nosiłem?'
-    k "Ty mi powiedz"
-    "Bierzesz z rezygnacją kupkę mailów i wracasz do filipa."
+    "Before you know it, you've moved everything and run out of headlines to read."
+    you 'That\'s a lot of mail...'
+    k 'What? What mail?'
+    you 'The stuff I\'ve been carrying for the last 40 minutes.'
+    k 'MAIL?? Please get it out of here, that\'s Filip\'s job, I have more important things to deal with!'
+    you 'Then why did I spend so long carrying it all here?'
+    k "You tell me"
+    "You dejectedly pick up the pile of mail and go back to Filip."
     scene bg secretary with dissolve
     show filip normal with dissolve
-    f 'A co ty tu robisz z tymi papierami?'
-    you ' Barbara powiedziała że to ty masz odpowiadać na maile.'
-    you "I że muszę z powrotem je przenieść."
-    f 'CO? zdążą zamknąć przedsionek zanim skończę odpowiadać na nie wszystkie...'
-    f 'No dobra... przynieś je tu wszystkie.'
-    "Po kolejnych 20 minutach kończysz pracę u filipa, który teraz leży zdruzgotany na stercie papierów."
-    f 'Dzieki za pomoc, chociaż w sumię nic sie nie zmieniło.'
-    f 'Zgodnie z obietnicą masz tu od mnie kilka drobniaków.'
+    f 'What are you doing back here with those papers?'
+    you 'Barbara said you\'re the one who\'s supposed to answer the mail.'
+    you "And that I have to carry it all back."
+    f 'WHAT? They\'ll close the vestibule before I finish answering all of these...'
+    f 'Fine... bring all of it here.'
+    "After another 20 minutes, you finish working for Filip, who is now lying devastated on top of a pile of papers."
+    f 'Thanks for the help, even though basically nothing changed.'
+    f 'As promised, here\'s some spare change.'
     jump ch02_gotMoney
 
 label ch02_workingAtVasili:
     scene bg lakedaya with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "Dzisiejsza droga nad jezioro jest, o dziwo, spokojniejsza od wczorajszej."
-    "Pomimo dnia i w okół tętniącego życia, było ciszej niż poprzedniej nocy."
-    "W tle było tylko słychać ptaki, brak śpiewów Vasiliego sprawiał, że życie było lepsze."
+    "The walk to the lake today is, surprisingly, calmer than yesterday."
+    "Despite it being daytime and life bustling all around, it was quieter than last night."
+    "All you could hear in the background were birds. The lack of Vasili singing made life better."
     scene bg lakedayb with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "Kiedy docierasz nad jezioro, nie zastajesz żywej duszy."
-    "Jedyne co widzisz to dym unoszący się z chatki, położonej zaraz obok jeziora. Jednak, widzisz unoszącą się zieloną aurę."
-    "{i}Ta zielona aura... Chyba tam musi żyć ktoś odklejony od rzeczywistości. Innym razem odwiedzę tę posiadłość.{/i}"
-    "Nie znajdując Vasiliego, wracasz się w stronę urzędu miasta. W oddali jednak zauważasz domek, który wydawał się dość przytulny."
+    "When you reach the lake, there's not a soul in sight."
+    "The only thing you see is smoke rising from a cabin right next to the lake. You also notice a green aura floating around it."
+    "{i}That green aura... Whoever lives there must be completely detached from reality. I'll visit that place another time.{/i}"
+    "Unable to find Vasili, you start heading back toward city hall. In the distance, however, you notice a house that looks pretty cozy."
     scene bg vasilihouse with dissolve
     play sound "sfx_footsteps_a.mp3"
-    you "{i}Wydaję się być bezpiecznie, może tam mieszka Vasili...{/i}"
-    "Podchodziwszy bliżej, coraz bardziej było słychać stłumione śpiewy."
-    "Kiedy zapukałeś do domu, wyszedł przez drzwi, twój ulubiony - bo jedyny - wędkarz."
+    you "{i}Seems safe enough, maybe Vasili lives there...{/i}"
+    "As you get closer, the muffled singing grows louder."
+    "When you knock on the door, your favorite - also your only - fisherman steps outside."
     show vasili normal with dissolve
     if flag("endorsedCommunism"):
-        v "Witaj towarzyszu."
-        you "Yyy? Cześć..."
-        v "Co cię sprowadza w {b}NASZE{/b} skromne progi...{w=.6} HAHAHA bo wiesz...{w=.6} kolektywizacja majątku..."
-        you "haha.. rozumiem. Ale nie przyszedłem tutaj na pogaduszki."
-        you " Barbara kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie, czy nie masz coś dla mnie do roboty."
-        v "Ach ten wolny rynek...{w=.3} same z nim problemy..."
-        v "W normalnym zakładzie miałbyś pracę od razu, a teraz tak się musisz bawić."
-        you "No więc...{w=.3} masz może coś co mógłbym zrobić? Bardzo mi na tym zależy."
-        you "Nie mam nawet pieniędzy na jedzenie."
-        v "No dobra... chociaż będzie to pierwszy i {b}OSTATNI{/b} raz jak ci dajemy pracę - nie cierpimy wolnego rynku..."
-        v "To tak jak mówiliśmy, musisz skolektywizować akcyzę od drobnomieszczaństwa przesiądującego w naszym gmaszysku." 
-        v "My jako szlachcice wymagamy od ciebie pełnego posłuszeństwa i bierności wobec błagań oraz przekupstw od ludzi niższych od nas." 
-        v "Innymi słowy musisz zebrać jajka od naszych kur z kurnika za naszym domem." 
-        v "Dodatkowo prosimy cię o potępienie poczynań burżuazji, poprzez naznaczenie dobrej ścieżki umysłowej, używając do tego biografii naszego wspaniałego przywódcy oraz ojca naszego narodu - Ogułki, który powinien rządzić naszym pospólstwem przez kolejne dziesiątki lat." 
-        v "Czyli jak zbierzesz jajka, przeczytaj kurom biografię o naszym {b}OJCU{/b}."
+        v "Welcome, comrade."
+        you "Uhh? Hi..."
+        v "What brings you to {b}OUR{/b} humble abode...{w=.6} HAHAHA because you know...{w=.6} collectivization of property..."
+        you "haha.. I get it. But I didn't come here to chat."
+        you "Barbara told me to find work, so I figured I'd ask if you had anything for me to do."
+        v "Ah, the free market...{w=.3} nothing but problems..."
+        v "In a normal workplace you'd get a job immediately, and now you money."
+        you "I don't have any for food."
+        v "Fine... although this will be the first and {b}LAST{/b} time we give you work - we despise the free market..."
+        v "As we said, you must collectivize the tax from the petty bourgeoisie residing within our grand estate." 
+        v "We, as nobles, demand your full obedience and indifference toward the pleas and bribes of those beneath us." 
+        "In other words, you need to collect the eggs from the chickens in the coop." 
+        v "Additionally, we request that you condemn the actions of the bourgeoisie by setting them upon the proper intellectual path, using the biography of our magnificent leader and father of our nation - Ed Sheeran, who ought to rule over our common folk for decades to come." 
+        v "So once you've collected the eggs, read the chickens the biography of our {b}FATHER{/b}."
         you "..."
-        you "{i}Bruh...{w=.6} Co tutaj się dzieje???{w=.6}{/i}"
-        you "Troszkę dużo informacji, ale jak tak mówisz, że to wszystko jest nasze..." 
-        you "{i}Dobra mam pomysł...{w=.6} Now watch {b}THIS{/b}!!!{/i}"
-        you "To mogę się do ciebie wprowadzić?"
-        v "Niestety nie." 
-        v "Twój rodowód nie pozwala na rozpust wobec twoich aksjomatów." 
-        v "Twoje poczynania i zobowiązania są odmienne, dlategoż z tego ambarasu nie jesteśmy w żadnej ewentualności - w mocy nadanej nam przez naszego pana i ojca Ogułki - podarować ci schronienie w naszym niewystawnym miejscu bytowania." 
-        you "{i}{b}BRO WTF CO TU SIĘ DZIEJE. JA NIE CHCE. CHCE DO DOMU... naszego DOMU???{/b}{/i}"
-        you "No dobra... w takim razie ide pozbierać jajka...?"
-        v "Zebrać akcyzę."
-        v "Tylko pamiętaj o bezwzględności."
-        "Oddalając się słyszysz jak Vasili zaczyna śpiewać \"Międzynarodówkę\"."
-        you "{i}JUŻ NIGDY TUTAJ NIE WRACAM...{w=.6} może tylko po pieniądze...{/i}"
+        you "{i}What{w=.6} is happening here???{/i}"
+        you "{i}Okay I have an idea...{w=.6} Now watch {b}THIS{/b}!!!{/i}"
+        you "That's a lot of information, but if you keep saying all of this is ours..." 
+        you "So can I move in with you?"
+        v "Unfortunately not." 
+        v "Your lineage does not permit such indulgence against your axioms." 
+        v "Your actions and obligations are distinct, therefore, within this predicament, under no conceivable circumstance - by the power bestowed upon us by our lord and father Ed Sheeran - are we able to grant you shelter within our modest place of existence." 
+        you "{i}{b}WTF IS GOING ON HERE. I DON'T WANT THIS. I WANT TO GO HOME... our HOME???{/b}{/i}"
+        you "Okay... I guess I'll go collect the eggs...?"
+        v "Collect the tax."
+        v "Just remember to be ruthless."
+        "As you walk away, you hear Vasili start singing \"The Internationale\"."
+        you "{i}I'M NEVER COMING BACK HERE AGAIN...{w=.6} maybe just for the money...{/i}"
         scene bg kurnik with dissolve
-        "Jak Vasili mówił, kurnik był zaraz za domem." 
-        "Ale... nie powiedział o jednym..."
-        you "{i}KURY SĄ CZERWONE?!{w=.6} Nie wytrzymam, za chwile coś mnie powali...{/i}"
-        you "{i}DLACZEGO???{/i}"
-
-        you "Jak on mógł to wam zrobić..."
-        m "Niestety.... t-"
-        you "{b}CO?! KTO TO RZUCIŁ?!! y... POWIEDZIAŁ*{/b}"
+        "Just like Vasili said, the chicken coop is right behind the house." 
+        "But... he forgot to mention one thing..."
+        you "{i}THE CHICKENS ARE RED?!{w=.6} I can't...{/i}"
+        you "{i}WHY???{/i}"
+        you "How could he do this to you..."
+        m "Unfortunately.... y-"
+        you "{b}WHAT?! WHO SAID THAT?{/b}"
         show kura with dissolve
-        kura "To ja.{w=.6} Tutaj na dole."
-        kura "Tak to ja jestem symbolem wiejskiego ludu gnębionego przez burżuazyjne jaja wielkiego kapitału."
-        kura "Lub przedstawicielem klasy niskiej - bo na wysokich półkach siedzi burżuacja - towaru wartościowego zwanego drobiem."
-        you "Chyba mam schizofrenię.... to wszystko przez tę jego czerwoną aurę."
-        kura"Stety nie...{w=.6} my umiemy mówić."
-        kura "Vasili nas nauczył, bo stwierdził, że woli wysłuchiwać problemy klasy niskiej, niż się z nimi uporywać..."
-        you "Chyba to wytłumaczenie nie pomogło.{w=.6} Nie ważne, muszę zabrać wasze jajka."
-        kura "Co musisz zrobić???"
-        you "Zebrać jajka....{w=.6} AAAA{w=.3} zebrać akyzę???"
-        kura "Dobra, trzeba było tak od razu."
-        kura "Niestety nie mamy dużo do oddania, ponieważ Vasili rano pobierał opodatkowanie za przespaną noc..."
-        you "Dobra będzie co będzie. Muszę tylko zarobić, by coś zjeść i mnie więcej tutaj {b}NIE{/b} zobaczycie."
+        kura "Me.{w=.6} Down here."
+        kura "Yes, I am the symbol of the rural people oppressed by the bourgeois eggs of big capital."
+        kura "Or a representative of the lower class - because the bourgeoisie sits on the upper shelves - of the valuable commodity known as poultry."
+        you "I think I'm hallucinating.... this is all because of his red aura."
+        kura"Unfortunately for you...{w=.6} we can talk."
+        kura "Vasili taught us because he decided he'd rather listen to the problems of the lower class than deal with them..."
+        you "I don't think that explanation helped.{w=.6} Whatever, I need to take your eggs."
+        kura "You need to do WHAT???"
+        you "Collect the eggs....{w=.6} AHHH{w=.3} collect the tax???"
+        kura "Okay, you should've said that from the start."
+        kura "Unfortunately, we don't have much to hand over because Vasili collected a tax this morning for sleeping through the night..."
+        you "Whatever. I just need to earn enough to eat and you will {b}NOT{/b} see me here again."
         scene bg vasilihouse
-        "Wyzbierawszy wysztkie jajka, idziesz do Vasiliego, by mu je oddać. Pukasz do drzwi i znowu otwiera on je."
+        "After collecting all the eggs, you go back to Vasili to hand them over. You knock and he opens the door again."
         show vasili normal with dissolve
-        v "I jak?{w=.3} Zbieranie podatku od niższych warstw społecznych zakończyło się sukcesem?"
-        you "Tak...{w=.3} Czy mogę dostać swoją zapłatę, ponieważ umieram z głodu."
-        v "No dobra... tylko nie wiem czy zdążysz przed zamknięciem piekarni."
-        v "Dzisiaj dostawa była i pewnie kolejki po 4 godziny...{w=.6} A nie czekaj{w=.3}, wolny rynek..."
-        v "Jak się pospieszysz to zdążysz na jeszcze ciepłe buły Rafała."
-        you "Dziękuje! Do widzenia." 
-        v "Żegnaj towarzyszu."
+        v "So?{w=.3} Was collecting tax from the lower social classes a success?"
+        you "Yes...{w=.3} Can I get paid now? I'm starving."
+        v "Fine... I just don't know if you'll make it before the bakery closes."
+        v "There was a delivery today, so the lines are probably four hours long...{w=.6} Oh wait{w=.3}, free market..."
+        v "If you hurry, you can still get Rafał's buns while they're warm."
+        you "Thank you! Goodbye." 
+        v "Farewell, comrade."
         hide vasili with dissolve
     else:
-        v "Witaj!"
-        you "Cześć..."
-        v "Co się sprowadza w moje skromne progi."
-        you " Barbara kazała mi znaleźć pracę, więc stwierdziłem, że zapytam się ciebie czy nie masz coś dla mnie do roboty."
-        you "No więc... masz może coś co mógłbym zrobić?"
-        you "Bardzo mi na tym zależy. Nie mam nawet pieniędzy na jedzenie."
-        v "Jasne... niech tylko pomyślę co...{w=.3} hm...{w=.6} Dobra już wiem - potrzebuję, żebyś nakarmił moje lisy."
-        v "Nie miałem dzisiaj czasu na to, więc pewnie są trochę wściekłe."
-        v "Ale wiem, że dasz sobie rady."
-        v "Ich wybieg jest zaraz za domem."
-        v "(Na twoim miejscu bym się pospieszył, żeby nie zrobiły się zbyt złe.)"
-        you "{i}Dobra... nie jest to najcięższa praca, ale mam nadzieję, że te lisy będą dla mnie miłe.{/i}"
-        "Vasili daje ci jedzenie dla lisów w pojemniku z IKEI i wychodzisz z domu, żeby nakarmić głodne liski."
+        v "Hello!"
+        you "Hi..."
+        v "What brings you to my humble doorstep."
+        you "Barbara told me to find work, so I figured I'd ask if you had anything for me to do."
+        you "So... do you have anything I could do?"
+        you "I really need this. I don't even have money for food."
+        v "Sure... let me think...{w=.3} hm...{w=.6} Okay, I know - I need you to feed my foxes."
+        v "I haven't had time today, so they're probably a little pissed off."
+        v "But I know you can handle it."
+        v "Their enclosure is right behind the house."
+        v "(If I were you, I'd hurry before they get too angry.)"
+        you "{i}Okay... not the hardest job in the world, but I hope those foxes are nice to me.{/i}"
+        "Vasili gives you fox food in an IKEA container and you leave the house to feed the hungry little foxes."
         hide vasili with dissolve
-        "Idziesz za jego dom i widzisz..."
-        "A w sumie to nic nie widzisz, bo nie ma żadnych lisów"
-        you "{i}Excusez moi{w=.6} nikogo tu nie ma!{/i}"
+        "You go behind his house and see..."
+        "Actually, you don't see anything because there are no foxes"
+        you "{i}Excusez moi{w=.6} nobody's here!{/i}"
         menu:
-            "Wydawaj dźwięki lisa":
-                    "Nie przychodzi ci do głowy żaden lisi dźwięk."
-                    "Lisy nie miauczą, nie szczekają, nie wchodzą w tryb alpha."
-                    "A może lisy są po prostu ciche? Te wszystkie myśli przelatują ci przez głowę, podczas gdy stoisz jak idiota z pojemnikiem na jedzenie."
-        you "{i}Co ja mam robić???{w=.3} Popłaczę się zaraz...{/i}"
-        you "{i}Wiem!!!{/i}"
-        you "{i}Zostawię jedzenie za domem to przyjdą same.{/i}"
-        you "{i}Pewnie się mnie boją, dlatego ich nie widzę{/i}"
-        "Otwierasz pojemnik i zostawiasz go na ziemi, po czym wracasz do Vasiliego."
+            "Make fox noises":
+                    "You can't think of a single sound a fox makes."
+                    "Foxes don't meow, they don't bark, they don't go into alpha mode."
+                    "Maybe foxes are just quiet? All these thoughts race through your head while you stand there like an idiot holding a food container."
+        you "{i}What am I supposed to do???{w=.3} I'm about to cry...{/i}"
+        you "{i}I KNOW!!!{/i}"
+        you "{i}I'll leave the food behind the house and they'll come on their own.{/i}"
+        you "{i}They're probably scared of me, that's why I can't see them{/i}"
+        "You open the container, leave it on the ground, and go back to Vasili."
         show vasili normal with dissolve
-        v "Czy zadbałeś o zaspokojenie podstawowych potrzeb żywieniowych moich zwierząt pochodzących spoza lokalnego ekosystemu?"
+        v "Have you ensured the satisfaction of the basic nutritional needs of my animals originating from outside the local ecosystem?"
         you "{i}Hell no!{/i}"
-        you "A właśnie!{w=.3} Za twoim domem nic nie ma."
-        v "Jak to?"  
-        you "{i}Srak to!{/i}"
-        you "Tak, po prostu zostawiłem tam to jedzenie co mi dałeś."  
-        you "A teraz gdzie pieniądzę."
-        you "Ile dostanę za swoją ciężką pracę?"
-        v "Jak to nie ma lisów za moim domem?"  
-        you "Powiedziałem co powiedziałem, bo tak jest?"  
-        v "Bruh. może nie wyszły bo jesteś nowy."
-        v "Powinieneś tam zostać, może wtedy przyjdą."  
+        you "Actually!{w=.3} There's nothing behind your house."
+        v "What do you mean?"  
+        you "{i}I said what i said.{/i}"
+        you "Yeah, I just left the food you gave me there."  
+        you "Now where's the money."
+        you "How much do I get for all my hard work?"
+        v "What do you mean there are no foxes behind my house?"  
+        you "I said what I said because that's how it is?"  
+        v "Bruh. maybe they didn't come out because you're new."
+        v "You should stay there. Maybe they'll come then."  
         hide vasili with dissolve
-        "Wracasz za jego dom po raz kolejny i widzisz małego liska jedzącego z wiaderka, które tam zostawiłeś."
-        "Jego futro jest bielsze niż zęby w reklamie colgate. Jest bardzo słaby..."
-        you "{i}O{w=.3} mój{w=.3} boże!{w=.6} Czemu on jest taki słodki?{/i}"  
-        you "{i}Przecież widzę jego żebra wystające przez skórę... Czy to znaczy, że on umiera?{/i}"
-        "Wracasz do Vasiliego i pukasz w jego drzwi po raz trzeci."
+        "You go behind his house yet again and see a little fox eating from the container you left there."
+        "Its fur is whiter than the teeth in a Colgate ad. It looks very weak..."
+        you "{i}Oh{w=.3} my{w=.3} god!{w=.6} Why is it so cute?{/i}"  
+        you "{i}I can literally see its ribs through its skin... Does that mean it's dying?{/i}"
+        "You go back to Vasili and knock on his door for the third time."
         show vasili normal with vpunch
-        v "Znowu ty!"
-        you "Tam za twoim domem jest lisek, który je to jedzenie."
-        you "Jest taki chudziutki i malutki."
-        you "Co mam robić??"
-        v "Muszę go zobaczyć!"
-        "Wychodzi z domu, a za nim ciągnie się czerwona aura."
-        "Do tej pory miałeś do czynienia tylko z zieloną aurą."
-        "Ta jednak nie pachnie jak obornik."
-        "Oboje idziecie za dom i obserwujecie białego liska dalej jedzącego swoje jedzonko"
+        v "You again!"
+        you "There's a little fox behind your house eating the food."
+        you "It's very petite. What do I do??"
+        v "I need to see it!"
+        "He leaves the house with a red aura trailing behind him."
+        "You both go behind the house and watch the little white fox continue eating its food"
         show vasili normal at leftish with move 
         show lis at rightish with dissolve
-        "Jesteście blisko lisa, więc Vasili zaczyna mówić szeptem."
-        v "O mój boże, nie widzisz że on jest ranny?"
-        "Ty mu też odpowiadasz szeptem."
-        you "Skąd wiesz, że jest ranny?"  
-        v "Nie widzisz że jego noga jest zgięta 90 stopni na południe?"  
-        you "Skąd ty wiesz gdzie jest południe?"  
-        lis "Słyszę was!"  
+        if random.randint(1,100) == 1:
+            "You're close to the fox, so Vasili starts whimpering."
+        else:
+            "You're close to the fox, so Vasili starts whispering."
+        v "Oh my god, can't you see it's injured?"
+        "You whisper back."
+        you "How do you know it's injured?"  
+        v "Can't you see its leg is bent 90 degrees south?"  
+        you "How do you even know where south is?"  
+        lis "I can hear you!"  
         you "..."
-        "Patrzysz się na Vaisiliego z politowaniem."
-        you "Wiesz co...{w=.3} Mam tego dość!"  
-        you "Daj mi pieniądze i idę."
-        v "Czekaj!"  
-        "Vasili podnosi liska."
-        "Nie widzisz co robi, ale słyszysz ASMR."
-        v "Proszę. Już lepiej."  
-        lis "Dzięki!!!"  
-        "Lisek robi piruet i odskakuje do lasu."
+        "You look at Vasili with pity."
+        you "You know what...{w=.3} I've had enough!"  
+        you "Give me my money and I'm leaving."
+        v "Wait!"  
+        "Vasili picks up the little fox."
+        "You can't see what he's doing, but you hear ASMR."
+        v "There. Better."  
+        lis "Thanks!!!"  
+        "The little fox does a pirouette and hops off into the forest."
         hide lis with dissolve
-        you "Co{w=1} się właśnie stało..."  
+        you "What{w=1} just happened..."  
         show vasili normal at center with move 
-        v "Ta głupia zawsze sobie coś skręca."
-        you "Okej...{w=.6} nie będę zadawać pytań."
-        you "Po prostu mi zapłać i idę."
-        v "Dobra. Masz."
-        you "Dzięki!"
-        v "Na razie, towarzyszu!"
+        v "That idiot is always spraining something."
+        you "Okay...{w=.6} I'm not going to ask questions."
+        you "Just pay me and I'm leaving."
+        v "Fine. Here."
+        you "Thanks!"
+        v "See you, comrade!"
         hide vasili with dissolve
-        you "{i}Już nigdy tu nie wrócę!{/i}" 
-        you "{i}Nawet jak mam umierać z głodu!{/i}"
+        you "{i}I'm never coming back here again!{/i}" 
+        you "{i}Even if I have to starve!{/i}"
     jump ch02_gotMoney
     
 label ch02_gotMoney:
     scene bg citysquareday with dissolve
-    "Masz dość bycia głodnym, więc idziesz prosto do BBB."
-    "(Big Buły Bakery) duhh"
+    "You're sick of being hungry, so you head straight to BBB."
+    "(Big Buns Bakery) duhh"
     jump ch02_gotMoneyBakeryEntrance
 
 label ch02_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
     play sound "sfx_footsteps_b.mp3"
-    "Piekarnia jest rzeczywiście duża. Zapachy rozchodzące się po ulicy doprowadzają cię do szału."
-    "Zapach drożdży unosi się w powietrzu, a za szybą jest wiele wypieków."
+    "The bakery really is big. The smells drifting through the street are driving you insane."
+    "The smell of yeast hangs in the air, and the display window is packed with baked goods."
     scene bg bakeryinside with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "Pierwsze co zauważasz w środku to plakaty Taylor Spit."
-    "Ale{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}. Jest kolejka."
+    "The first thing you notice inside is the Taylor Spit posters."
+    "But.{w=0.5} There's a line."
     "This leaves you with time to take in the surroundings"
     "From the brick walls to the warm glow of incandescent light bulbs, every piece of the interior was deliberately chosen by the owner"
     "Every little detail, even the posters made the bakery feel premium - a word your wallet is not ready to hear"
     show wp normal at leftish with moveinleft
     show fraucrusty normal at center with moveinleft
     show rafal normal at rightish with moveinright
-    "Przed tobą są dwie osoby."
-    "Pierwszą w kolejce jest Frau Crusty."
+    "There are two people in front of you."
+    "First in line is Frau Crusty."
     if flag("metWiktoriaP"):
-        you "O, hej."
-        wp "No cześć! Co tam?"
+        you "Oh, hey."
+        wp "Hey! What's up?"
         
         if flag("workedAtFilip"):
-            you "Masakra... Musiałem pracować..."
-            wp "Do kogo poszedłeś?"
-            you "Do Filipa."
-            you "Kazał mi przenosić dokumenty do Kurowskiej."
-            you "A jak już skończyłem, Barbara kazała mi z powrotem przenieść te listy."
-            you "Bo to on ma je czytać."
-            wp "Trzeba było zarządać pieniędzy i wyjść po czymś takim."
-            wp "I skibidi."
+            you "It was awful... I had to work..."
+            wp "Who did you go to?"
+            you "Filip."
+            you "He made me carry documents to Kurowska."
+            you "And when I finished, Barbara made me carry all the letters back."
+            you "Because he's the one who's supposed to read them."
+            wp "You should've demanded money and left after that."
+            wp "And skibidi."
         elif flag("workedAtVasili"):
-            you "Masakra... Musiałem pracować..."
-            wp "Do kogo poszedłeś?"
-            you "Do Vasiliego."
+            you "It was awful... I had to work..."
+            wp "Who did you go to?"
+            you "Vasili."
             if flag("endorsedCommunism"):
-                you "Wiesz co, nie było źle."
-                you "Mamy podobne poglądy polityczne."
-                "Wiktoria robi bombastic side eye."
+                you "You know what, it wasn't bad."
+                you "We have similar political views."
+                "Wiktoria gives you a bombastic side eye."
             else:
-                you "Jezu, to była masakra, cały czas o komuniźmie gadał."
-            you "Szkoda gadać."
-            you "Ty go znasz lepiej ode mnie, pewnie wiesz jak to wyglądało."
+                you "Jesus, it was awful, he kept talking about communism the entire time."
+            you "Don't even get me started."
+            you "You know him better than I do, so you can probably imagine what it was like."
             wp "Let me guess."
-            wp "Śpiewał \"Międzynarodówkę\"?"
-            you "Tak..."
-            wp "Współczuję..."
+            wp "Was he singing \"The Internationale\"?"
+            you "Yeah..."
+            wp "My condolences..."
         else:
-            you "Czaisz, że dostałem pieniądze od Kurowskiej"
-            wp "Tak o??"
-            you "No tak!"
-            you "Tak o."
-            wp "Nie za dobrze ci?"
-            you "Nie."
+            you "Can you believe Kurowska gave me money"
+            wp "Just like that??"
+            you "Yep!"
+            you "Just like that."
+            wp "Aren't things going a little too well for you?"
+            you "No."
     else:
-        "Zaraz przed tobą jest Wiktoria P."
+        "Right in front of you is Wiktoria P."
     jump ch02_gotMoneyBakeryCustomer
 
 label ch02_gotMoneyBakeryCustomer:
-    frau "A cóż to za bezczelne pytanie?"
-    frau "Oczywiście, że mam pieniądze."
-    frau "Tylko dzisiaj brakuje mi 23 foryntów."
-    frau "Mogę je przynieść jutro???"
-    m "No nie jestem bankiem. To tak nie działa. Nie wydam tego tortu jeśli ktoś za niego nie zapłaci."
-    frau "Ale mam dzisiaj urodziny!!!"
+    frau "What kind of outrageous question is that?"
+    frau "Of course I have money."
+    frau "I'm just 23 forints short today."
+    frau "Can I bring them tomorrow???"
+    m "I'm not a bank. That's not how this works. I'm not giving you the cake unless someone pays for it."
+    frau "But it's my birthday today!!!"
     menu:
-        "Daj jej trochę monet":
-            you "Masz."
-            frau "Mój gyatt tutaj utknie na dobre!"
-            frau "Dziękuję Ci dobry furasie."
+        "Give her some coins":
+            you "Here."
+            frau "My gyatt is staying here for good!"
+            frau "Thank you, kind furry."
             with vpunch
             show fraucrusty normal at offscreenleft with move
-            "Frau Crusty wychodzi z piekarni z tortem skipem C."
+            "Frau Crusty leaves the bakery with the cake using a C-skip."
 
-        "Udawaj, że nic nie słyszałeś":
-            frau "Wszyscy jesteście bezczelni i agresywni."
+        "Pretend you didn't hear anything":
+            frau "You're all rude and aggressive."
             with vpunch
             show fraucrusty normal at offscreenleft with move
-            "Frau Crusty wychodzi z piekarni bez tortu skipem C."
+            "Frau Crusty leaves the bakery without the cake using a C-skip."
     hide fraucrusty
     jump ch02_gotMoneyBakeryTea
 
 label ch02_gotMoneyBakeryTea:
-    wp "Okeeej."
-    m "Hejka."
-    wp "No cześć, co tam?"
-    m "A w sumie nic, w malignie byłem cały dzień."
-    wp "Tak standardowo bym powiedziała."
-    "Oboje zaczęli się śmiać."
-    wp "Poproszę 3 buły Rafała."
-    m "Jasne."
-    "Z tyłu widać całe koszyki z bułami Rafała."
-    "Patrzysz się na te buły jak na monoporcje z Los Angeles."
-    "Tylko, że buły Rafała nie kosztują $15 za 150g."
-    "Nie masz zielonego pojęcia jaka to waluta jest w tym mieście - pierwszy raz się z nią spotykasz."
-    "Niby coś tam masz, ale nie wiesz czy tego starczy na jedną bułę, czy sto."
-    you "{i}Te buły są tutaj mega popularne.{/i}"
-    you "{i}Ale bym zjadł taką..{/i}"
-    m "Proszę."
-    "Nagle wchodzi kolejny nieznany ci mężczyzna."
-    "Wygląda jak jakiś alfons."
+    wp "Okaaay."
+    m "Hii."
+    wp "Hey, what's up?"
+    m "Nothing really, I've been delirious all day."
+    wp "Sounds pretty standard for you."
+    "They both start laughing."
+    wp "I'll have 3 Rafał buns."
+    m "Sure."
+    "You can see entire baskets full of Rafał buns in the back."
+    "You stare at those buns like they're luxury single-serve desserts from Los Angeles."
+    "Except Rafał's buns don't cost $15 for 150g."
+    "You have absolutely no idea what currency this city uses - this is the first time you've seen it."
+    "You have some money, but you don't know whether it's enough for one bun or a hundred."
+    you "{i}These buns are insanely popular here.{/i}"
+    you "{i}I would destroy one of those right now..{/i}"
+    m "Here you go."
+    "Suddenly, another man you don't recognize walks in."
+    "He looks like some kind of pimp."
     show niuniu normal at leftish
     show wp normal at rightish
     show rafal normal at right 
     with move
-    m "Jezu, to znowu ty."
-    m "Tak, Rafale, to ja!"
-    r "No co ty chcesz ode mnie znowu?"
-    m "Pokaż, co masz pod kapeluszem."
-    "Wiktoria zaczyna mówić do ciebie szeptem, żeby nie ściągnąć na siebie uwagi."
-    wp "To jest Niuniu."
-    wp "To jest taki typ, co wymyśla teorie spiskowe w tym mieście."
-    wp "I tym razem ofiarą jest Rafał."
-    wp "On był na koncercie Taylor Spit i podczas tego koncertu ona rzuciła w niego swoim kapeluszem."
-    wp "Od tego dnia cały czas go nosi."
-    wp "A Niuniu wymyślił, że on coś pod nim ukrywa."
+    m "Jesus, you again."
+    m "Yes, Rafał, it's me!"
+    r "What do you want from me this time?"
+    m "Show me what's under your hat."
+    "Wiktoria starts whispering to you so she doesn't draw attention to herself."
+    wp "That's Niuniu."
+    wp "He's the guy who comes up with conspiracy theories around town."
+    wp "And this time Rafał is the victim."
+    wp "He was at a Taylor Spit concert, and during the show she threw her hat at him."
+    wp "He's worn it ever since."
+    wp "And Niuniu decided he's hiding something underneath it."
     show rafal normal at center 
     show wp normal at rightish 
     with move
-    r "Nie, dobra, mam dość."
-    "Rafał wyciąga miotłę i uderza Niunia."
+    r "Nope, okay, I've had enough."
+    "Rafał grabs a broom and hits Niuniu."
     with vpunch
     n "AAAAA"
     r "Sharp or dull"
     n "Sharp?"
-    r "Nie. To jeszcze raz."
+    r "No. Try again."
     with vpunch
-    "Uderza go jeszcze raz."
-    n "No, to jest sharp."
-    r "Wyjdź z mojej piekarni, bo zaraz ci sharp or dull zrobię cegłą."
-    n "Dobra, dobra."
+    "He hits him again."
+    n "Yeah, that's sharp."
+    r "Get out of my bakery before I play sharp or dull with a brick."
+    n "Okay, okay."
     show niuniu normal at offscreenleft with move
     show wp normal at leftish with move
     show rafal normal at rightish with move
-    you "Współczuję."
-    you "Czy ty naprawdę masz tu gdzieś cegłę?"
-    r "Tak. Jestem przygotowany."
-    'Wyciągnął wielką, czerwoną cegłę obiema łapami i z dumą pokazał ją tobie, jakby była jego dzieckiem.'
-    'Cegła była stara. Naprawdę stara.'
+    you "My condolences."
+    you "Do you actually have a brick somewhere in here?"
+    r "Yes. I'm prepared."
+    'He pulls out a huge red brick with both paws and proudly shows it to you like it\'s his child.'
+    'The brick was old. Really old.'
     menu:
         "Skip the brick":
             $ telemetry_flag("skippedBrickDescription")
             jump ch02_brickDescriptionEnd
         "No i want to hear all about it":
             pass
-    'Już na pierwszy rzut oka dało się stwierdzić, że nie da się stwierdzić, ile dokładnie ma lat - liczne odpryski i rysy były na to dowodem.'
-    'Właściwie była tak stara, że przypisanie jej jakiejkolwiek liczby wydawało się obrazą nie tylko dla cegły, ale i dla tego, kto ją stworzył.'
-    "Nazwanie jej po prostu 'starą' oznaczałoby wymazanie stuleci, które przetrwała."
-    'Cegła dawno straciła ostre krawędzie i stała się zaokrąglona, jakby była używana wielokrotnie.'
-    'Jeden z rogów był szczególnie wytarty i nawet najmądrzejsza osoba w tym mieście nie potrafiłaby powiedzieć, dlaczego jest wyszczerbiony ani gdzie dokładnie jest ten róg.'
-    'Tylko Rafał mógłby to wiedzieć - o ile wie albo pamięta, co się z nią stało.'
-    'Jedynym zastosowaniem tej cegły było rzucanie, więc starasz się nie wyciągać pochopnych wniosków co do tego, kto będzie lub już był ofiarą.'
-    'Patrząc na wyszczerbiony róg, staje się jasne, że to efekt pewnego powietrznego wydarzenia.'
-    'Można by nawet uznać za cud, że cegła jeszcze nie pękła na pół.'
-    "Że jeszcze nie pękła na pół, jak arbuz spadający na nóż z 100m w jakimś filmiku na youtubie"
-    'Jej amorficzna porcelanowa struktura wciąż trzymała się mocno po tych wszystkich latach, czego nie da się powiedzieć o niektórych związkach.'
-    'Cegła była na tyle stara, że mogłaby uchodzić za najstarszy obiekt na tej planecie - albo gdziekolwiek teraz jesteś.'
-    'Nie wiesz dokładnie, gdzie jesteś, ale jedno jest pewne - ta cegła jest starsza niż ziemia, na której stoisz.'
-    'Starość nie była już dla niej przymiotnikiem, tylko wrodzoną właściwością.'
-    'Nieważne, gdzie Rafał dotyka cegły swoimi łapkami - osypuje się trochę kurzu i pokruszonej gliny, jakby cegła miała łupież.'
-    'Rafał jednak całkowicie ignoruje bałagan, który właśnie zrobił, jakby był do tego przyzwyczajony.'
-    'Ignoruje też pył na swoich miękkich łapkach, bo wie, że i tak zaraz schowa ten delikatny wyrób z gliny, więc nie ma sensu ich myć.'
-    'W tym momencie każdy rozsądny człowiek przestałby myśleć o cegle.'
-    'Ty jednak nie przestajesz.'
+    'At first glance, you can tell that there\'s no way to tell exactly how old it is - the countless chips and scratches make that obvious.'
+    'In fact, it was so old that assigning any number to its age felt insulting not only to the brick, but also to whoever made it.'
+    "Calling it simply 'old' would erase the centuries it had survived."
+    'The brick had long since lost its sharp edges and become rounded, as if it had been used many times.'
+    'One corner was especially worn down, and even the smartest person in town couldn\'t tell you why it was chipped or where exactly that corner even was.'
+    'Only Rafał could know - assuming he knows or remembers what happened to it.'
+    'The brick\'s only purpose was being thrown, so you try not to jump to conclusions about who will be, or already has been, its victim.'
+    'Looking at the chipped corner, it becomes clear that it is the result of some airborne event.'
+    'You could almost call it a miracle that the brick hasn\'t split in half yet.'
+    "That it hasn\'t split in half like a watermelon falling onto a knife from 100m in some YouTube video"
+    'Its amorphous porcelain structure had remained strong all these years, which is more than can be said for some relationships.'
+    'The brick was old enough to pass for the oldest object on this planet - or wherever you are now.'
+    'You don\'t know exactly where you are, but one thing is certain - this brick is older than the ground you\'re standing on.'
+    'Old age was no longer an adjective for it, but an inherent property.'
+    'No matter where Rafał touches the brick with his little paws, some dust and crumbled clay falls off, like the brick has dandruff.'
+    'Rafał completely ignores the mess he just made, as if he\'s used to it.'
+    'He also ignores the dust on his soft paws because he knows he\'ll put this delicate clay product away in a moment anyway, so there\'s no point washing them.'
+    'At this point, any reasonable person would stop thinking about the brick.'
+    'You don\'t.'
     show wp normal at offscreenright with move
-    'Jedna ze stron cegły była ciemniejsza od pozostałych - jakby była wystawiona na działanie warunków atmosferycznych, podczas gdy reszta spoczywała bezpiecznie w ścianie.'
-    "Prawdziwi naukowcy mogliby poświęcić całe życie badaniu tej różnicy i nadal nie dojść do porozumienia."
-    "Tak tajemnicza była ta cegła."
-    'Nie da się stwierdzić, czy Rafał wyjął cegłę, czy sama wypadła.'
-    'Można jednak zauważyć, że cegła {i}należy{/i} do tej piekarni, ze względu na swój charakterystyczny, ale już wyblakły, czerwony kolor, który był bardziej przygaszony niż reszta cegieł w tej piekarni.'
-    'Przy bliższym spojrzeniu widzisz wszystkie jej niedoskonałości - ślady, które zostawił czas.'
-    'Pęknięcia są wypełnione kurzem tak starym i tak głęboko osadzonym, że nawet woda nie jest w stanie tam dotrzeć.'
-    'Stały się częścią kapsuły czasu, którą jest ta cegła.'
-    'Ta cegła była prawdopodobnie starsza niż ty i znajdowała się w tym mieście długo przed twoimi narodzinami.'
-    'Widziałeś przez nią setki, jeśli nie tysiące ludzi i miliony wypowiedzianych słów.'
-    'Cegła zna wszystkie sekrety miasta, ale nie może mówić ani ujawnić prawdy.'
-    'Miała też wyraźnie wyznaczone miejsce pod biurkiem Rafała, gdzie trzymał kasę i prowadził codzienny handel.'
-    'Nie każdy klient wiedział - albo mógł nawet podejrzewać - istnienie tej cegły.'
-    'Jeśli Rafał wyciąga ją przed tobą, oznacza to, że jesteś albo ofiarą, albo jego bliskim przyjacielem.'
-    'Zauważasz też małe, wielokolorowe plamy rozsiane po jej powierzchni - każda inna, każda o innym kształcie, rozmiarze i własnej historii.'
-    'Jedna może mieć dwa dni, a druga obok niej ponad dwa lata, bez żadnej możliwości odróżnienia.'
-    'Bo w tym wszechświecie nie wynaleziono datowania radiowęglowego.'
-    "Mimo pozornej przeciętności 'losowej cegły' nie możesz pozbyć się wrażenia, że w tej amorficznej strukturze zaklęte są codzienne sprawy mieszkańców miasta Bratgren."
-    'Od nieświadomych kroków ludzi zbyt zajętych, by zwracać uwagę na zwykłą cegłę, po gęsty deszcz, który po prostu miał zmoczyć wszystkich.'
-    'Te wszystkie zdarzenia nie zostawiły po sobie tylko historii - stały się osadem.'
-    'Cienką, kruchą warstwą drobnych rzeczy, które zmieniały tę cegłę, cegła po cegle, krok po kroku.'
-    "Patrzysz na małe otwory w cegle, gdy nagle coś zaczyna do ciebie docierać."
-    "Cegła sprawia, że czujesz coś, czego wcześniej nie czułeś."
-    "Przynajmniej nie w tym mieście."
-    "Z powodów, których nie potrafisz wyjaśnić, patrzenie na nią napełnia cię determinacją."
-    "Determinacją tak silną, że wszystkie twoje plany, te odkładane w nieskończoność, nagle wydają się nie tylko możliwe, ale konieczne."
-    'Nie możesz już zatrzymać tego wiru myśli, który ta starożytna architektura wywołała w twojej głowie, więc wydajesz z siebie długie, dramatyczne westchnienie.'
-    'Chcesz, by każda inna cegła w tej przytulnej kawiarni wiedziała, że rozumiesz jej historię.'
-    'Ta cegła i jej przeszłość inspirują cię, by iść dalej i się nie poddawać.'
-    'Dla zwykłej osoby to była zwykła cegła, ale twoje oczy widzą coś innego - źródło inspiracji i determinacji w tak prostym obiekcie.'
-    "Helen Keller powiedziała kiedyś - \"Alone we can do so little; together we can do so much\" - i nic lepiej nie opisałoby tej cegły."
+    'One side of the brick was darker than the others - as if it had been exposed to the elements while the rest sat safely inside a wall.'
+    "Real scientists could spend their entire lives studying this difference and still never reach an agreement."
+    "That was how mysterious this brick was."
+    'There\'s no way to tell whether Rafał removed the brick or whether it fell out on its own.'
+    'You can tell, however, that the brick {i}belongs{/i} to this bakery because of its distinctive but faded red color, duller than the rest of the bricks in the bakery.'
+    'Looking closer, you see all its imperfections - marks left behind by time.'
+    'The cracks are filled with dust so old and so deeply embedded that not even water could reach it.'
+    'They\'ve become part of the time capsule that is this brick.'
+    'This brick was probably older than you and had been in this city long before you were born.'
+    'It has witnessed hundreds, if not thousands, of people and millions of spoken words.'
+    'The brick knows all the city\'s secrets, but it cannot speak or reveal the truth.'
+    'It also had a clearly designated spot under Rafał\'s counter, where he kept the register and handled daily business.'
+    'Not every customer knew - or could even suspect - that this brick existed.'
+    'If Rafał pulls it out in front of you, it means you\'re either a victim or a close friend.'
+    'You also notice small multicolored stains scattered across its surface - each one different, each with its own shape, size, and story.'
+    'One might be two days old while the one next to it could be over two years old, with no way to tell which is which.'
+    'Because carbon dating hasn\'t been invented in this universe.'
+    "Despite the apparent ordinariness of this 'random brick', you can't shake the feeling that the everyday lives of Bratgren's residents are somehow embedded in its amorphous structure."
+    'From the oblivious footsteps of people too busy to notice an ordinary brick, to the heavy rain that simply happened to soak everyone.'
+    'All of those events didn\'t just leave stories behind - they became sediment.'
+    'A thin, fragile layer of tiny things that changed this brick, brick by brick, step by step.'
+    "You stare at the little holes in the brick when suddenly something starts to dawn on you."
+    "The brick makes you feel something you haven't felt before."
+    "At least not in this city."
+    "For reasons you can't explain, looking at it fills you with determination."
+    "Determination so strong that all your plans, the ones you've postponed forever, suddenly seem not only possible but necessary."
+    'You can no longer stop the whirlwind of thoughts this ancient piece of architecture has caused in your head, so you let out a long, dramatic sigh.'
+    'You want every other brick in this cozy café to know that you understand its history.'
+    'This brick and its past inspire you to keep going and never give up.'
+    'To an ordinary person it was just a brick, but your eyes see something else - a source of inspiration and determination inside such a simple object.'
+    "Helen Keller once said - \"Alone we can do so little; together we can do so much\" - and nothing could describe this brick better."
     jump ch02_brickDescriptionEnd
 label ch02_brickDescriptionEnd:
-    'Cegła była częścią czegoś większego, bardziej monumentalnego, choć nie wiesz czego.'
-    'Cegły mogą być używane do budowania wszystkiego - od małego muru podczas protestu w Paryżu po wielką willę zdolną przetrwać tornado.'
-    'Tak jak jedna z tych cegieł, ty również jesteś częścią tego miasta.'
-    'Miasta, które przyjęło cię z otwartymi ramionami.'
+    'The brick was a part of something bigger, but its impossible to tell what.'
+    "Bricks can be used to build anything - from a small wall during a protest in France to a huge villa that can withstand a tornado."
+    'Just like one of those bricks, you are a part of this city'
+    'A city that welcomed you with open arms.'
     r "Why are you staring like that"
     "The sudden question catches you off-guard, interrupting your delusions"
     you "I got inspired?"
@@ -954,7 +948,6 @@ label ch02_brickDescriptionEnd:
     r "There's cheaper food across the street if you want that"
     r "In here you are also paying for the skills needed to make such a bun"
     "BBB is the equivalent of a millenial burger place with black gloves, fake brick walls and food served on a cutting board"
-    "Except this place is cheaper"
     you "Here you go"
     r "Thank you and BON APPETIT"
     you "Bye"
@@ -970,8 +963,8 @@ label ch02_brickDescriptionEnd:
     you "Okay thanks"
     you "But... i'm not done"
     you "I have an unusual request"
-    you "So yesterday I was rude to Piotr and I need to apologize to him. What should i get?"
-    r "Well.. I dont know how to describe it BUT if he was a color he would be blue"
+    you "I want to get something for Piotr. What should i get?"
+    r "Well.. I dont know how to describe him BUT if he was a color he would be blue"
     r "And not the sky blue because that has too much sky"
     r "Also he wouldnt be navy blue either bc its blue with responsibilities"
     r "Its the kind of blue you think of when looking at something green"
@@ -979,10 +972,8 @@ label ch02_brickDescriptionEnd:
     "With every word Rafal says your confidence quickly gets replaced with confusion"
     "They say that a smile goes a long way when trying to be polite"
     "That is exactly why you keep smiling even though you have absolutely no idea what he is saying"
-    "you scratch your head in pure confusion"
-    you "{i}Just smile and nod...{/i}"
-    you "Okay that makes sense"
     menu:
+        you "Okay that makes sense"
         "3 cups of coffee in a paper bag":
             $ flag("gotCoffeeForPiotr", True)
             $ piotrFoodPoints = 2
@@ -1023,7 +1014,7 @@ label ch02_brickDescriptionEnd:
     scene bg potionshop with dissolve
     you "HELLO EVERYONE"
     "Your impatience knows no bounds. You are ready to jump over the counter just to apologize to piotr"
-    you "{i}Where is this little bird{/i}"
+    you "{i}Where is this bird{/i}"
     you "PIooooOTR come here"
     "Piotr emerges from the back of the shop"
     show piotr normal at center with dissolve
@@ -1032,9 +1023,8 @@ label ch02_brickDescriptionEnd:
     "Piotr opens his mouth to start speaking but before he can mutter a single word you overpower him with your proclamation"
     you "I've come to announce that i am a different [name]"
     you "I am no longer [name] i am now [name] version TWO"
-    you "You hear me? I am version DOS. Even tres!"
-    you "I can even be version four but i dont even know how to say four in spanish"
-    you "That's how great i am"
+    you "You hear me? I am version DOS."
+    you "I can even be version three but i dont even know how to say that in spanish"
     you "And to prove how much i've changed i hereby bequeath you a little treat"
     "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
     you "Enjoy"
@@ -1103,11 +1093,6 @@ label ch02_brickDescriptionEnd:
         you "{i}Hmph!{/i}"
         you "{i}This isn't the end of it{/i}"
     else:
-        p "Hell no"
-        you "Aww why"
-        p "I was working and you just barged into my shop"
-        p "Just to waste my time"
-        you "Where are your manners young man"
         jump ch02_piotrApologyDenied
 
     you "Okay okay fine"
@@ -1117,309 +1102,85 @@ label ch02_brickDescriptionEnd:
     "Piotr inspects you top to bottom, his gaze landing on your eyes and piercing you"
     p "Fine"
     p "You will change"
-    you "???"
+    you "{i}???{/i}"
     you "{i}No YOU will change{/i}"
-    you "So what were you working on"
-    p "A ritual"
-    you "That's it? Just some nondescript ritual?"
-    p "Well if you MUST know i was getting ready to do a cleansing spell"
-    you "SO YOU ARENT JUST A BORING FOREST JANITOR"
-    you "I knew you had it in you"
-    p "Actually that is exactly what i was going to do"
-    you "..."
-    "You dramatically roll your eyes, larping disappointment"
-    p "Do you want to come and see how i do it?"
-    "The bored [name] quickly turned into amused [name]"
-    you "I'm all ears. What do i have to do?"
-    p "Shut up and not touch anything"
-    you "I cant promise to not touch anything but i will try"
-    p "There's always something with you"
-    p "Let's go"
-    scene black with dissolve
-    "Piotr takes you outside of the city"
-    "Walking even two steps outside feels very wrong after all that you've heard about the forest"
-    "He takes you to a small clearing about ten meters from the drawbridge"
-    scene bg forestday with dissolve
-    show piotr normal at center with dissolve
-    p "Today i want you to just stand there and do nothing"
-    p "I'm not sure this will even work with you around i do this alone"
-    you "Okay"
-    p "Pretend you are a tree or something"
-    "you stand straighter than ever"
-    p "Hold my bag"
-    p "Actually no wait"
-    "Piotr takes the bag and dumps its contents on the floor"
-    p "Now hold it"
-    you "Ok"
-    "You hold it for about ten seconds before putting it on the floor"
-    "Piotr is too preoccupied with his magic to notice that though"
-    "He claws at the onyx stones on the ground and arranges them in a small circle"
-    "Piotr squats to get closer to the ground in order to start the spell"
-    "He moves his claws as if he was squeezing a ball made out of pure magic"
-    "For the first few seconds nothing seems to happen"
-    "..."
-    "!"
-    "A small twig which just so happened to be inside the circle snapped in half"
-    "Then, a leaf starts levitating"
-    "Then another, then two more, and before you know it theres random things in the air - sticks, stones, leaves and even a bamboozled rat"
-    you "what the"
-    p "You were supposed to stay silent"
-    "Some of the levitating things fell down, which could only mean one thing - Piotr was struggling with the ritual"
-    "Seeing this, you decide to shut up for once and witness an expert do his job"
-    "Piotr gives the magic ball a final squeeze and a gust of wind sweeps through the forest"
-    "You don't notice it at first, but it feels like the forest got a tiny bit more color"
-    you "{i}What the hell just happened{/i}"
-    you "{i}I feel... enlightened???{/i}"
-    you "{i}Focus [name], focus{/i}"
-    you "{i}I have to stay nonchalant{/i}"
-    you "Is that it?"
-    jump ch02_piotrRitualEnd
+    jump ch02_piotrApologyAccepted
 
 label ch02_piotrApologyDenied:
-    p "Get out of my shop"
-    you "No"
-    with vpunch
-    p "Get. Out."
-    you "Okay okay fine"
-    p "And don't you dare try to steal anything while i'm gone"
-    scene expression loc_bg("cityexit") with dissolve 
-    you "{i}How dare he kick me out{/i}"
-    you "{i}I even got him food{/i}"
-    if flag("workedAtFilip") or flag("workedAtVasili"):
-        you "{i}That i bought with my own hard earned money!{/i}"
-    else:
-        you "{i}That i bought with Barbara's money!{/i}"
-
-    "While you are standing and eating in the middle of the street, you see piotr leaving the potion shop"
-    "You get a {i}very bright idea and pretend you are going the other way{/i}"
-    "When Piotr is far enough away you start following him..."
-    you "{i}Where is he going...{/i}"
-    "You figure that if Piotr is going somewhere its safe to follow him"
-    "So there you are, sneaking into the very dangerous forest, alone"
-    scene bg forestday with dissolve
-    "Walking even two steps outside feels very wrong after all that you've heard about the forest"
-    "Trying to follow Piotr here is actually really hard becasue you have to balance three things at once:"
-    "The first is the fog - you can't lose piotr or else you will get lost"
-    "the second is the noise - if piotr hears you it's over"
-    "And the third is not dying to a wolf"
-    show piotr normal at center with dissolve
-    "Piotr stops at a clearing and dumps the contents of his backpack onto the ground"
-    "He claws at the onyx stones on the ground and arranges them in a small circle"
-    "Piotr squats to get closer to the ground in order to start the spell"
-    "He moves his claws as if he was squeezing a magical ball of energy"
-    "For the first few seconds nothing seems to happen"
+    p "No."
+    you "Why?"
+    "But Piotr doesn't even reply. He just shakes his head while staring directly at you."
+    "No words come out of his angry beak, and none have to."
+    "Even your apology was rude."
     "..."
-    "!"
-    "A small twig which just so happened to be inside the circle snapped in half"
-    "Then, a leaf starts levitating"
-    "Then another, then two more, and before you know it theres random things in the air - sticks, stones, leaves and even a bamboozled rat"
-    you "{i}what the{/i}"
-    "Some of the levitating things fell down, which could only mean one thing - Piotr was struggling with the ritual"
-    "He can probably sense you."
-    "Piotr gives the imaginary ball of energy a final squeeze and a gust of wind sweeps through the forest"
-    "You don't notice it at first, but it feels like the forest got a tiny bit more color"
-    you "{i}What the hell just happened{/i}"
-    you "{i}I feel... enlightened???{/i}"
-    you "{i}Focus [name], focus{/i}"
-    you "{i}I have to stay nonchalant{/i}"
-
-    p "Now come on now i know you are there"
-    "You froze right in your tracks"
-    you "{i}How did he even{/i}"
-    you "{i}This is so creepy{/i}"
-    "A tree that you used to cover yourself with now seems too thin"
-    "What you should do is admit to spying on piotr but you are frozen in fear, standing behind a random tree"
-    p "Come out i don't have all day"
-    "You reluctantly come out from behind the tree"
-    you "Hi"
-    "Piotr looks at you and exhales all the air out of his bird lungs"
-    p "I guess i should have expected this"
-    p "What the hell are you doing here?"
-    you "Spying on you"
-    p "But i told you not to follow me"
-    you "You told me not to steal anything"
-    you "And you didnt say anything about spying on you"
-    "Piotr is clearly tired of your shenanigans"
-    you "Can you blame me though? All this magic is so interesting"
-    p "Yeah i get it. That is exactly why i got into magic"
-    p "It just seemed so cool you know"
-    p "So you saw the ritual right?"
-    you "Yeah. Is that it?"
-    jump ch02_piotrRitualEnd
-
-label ch02_piotrRitualEnd:
-    p "Yes"
-    you "I don't feel different"
-    you "What exactly did you do?"
-    p "What do you mean i just finished cleaning this area"
-    you "Huh"
-    p "If you dont feel different its because this forest was already clean or you are just ignorant"
-    p "And i think its the latter one"
-    you "Hmph!"
-    you "Show me how to do this i will do better than you"
-    p "No"
-    p "Not now atleast"
-    p "I will let you do it next time i have to clean the forest"
-    you "Okay i will be waiting patientlyn't"
-    you "And so like monsters wont come here for a while?"
-    p "Exactly"
-    you "What even are those monsters"
-    p "There was a city that made these gmo wolves with bad energy to kill us all"
-    you "What city"
-    p "Oh my god can you stop asking questions my head already hurts"
-    p "It's not like it matters it doesn't exist anyore"
-    p "And we have to deal with what some idiots have done a hundred years ago"
-    p "That is all you have to know"
-    you "Woah no need to be rude"
-    if not flag("piotrApologyAccepted"):
-        p "And there was no need to spy on me"
-        you "Okay sorry for that"
-        you "I wanted to apologize for being rude"
-        you "For real this time"
-        "Piotr scans you, especially your face, trying to find even a hint of ill intent and finds nothing"
-        "Your words are as genuine as they can get"
-        p "Sometimes you are just too much"
-        "Piotr starts thinking and the silence is DEAFENING"
-        you "I promise i will be less of a nuisance from now on"
-        p "Okay fine"
-        you "Now you can teach me magic"
-        p "Oh my god"
-        you "Pretty please"
-        p "Fine"
-    else:
-        p "Play stupid games win stupid prizes"
-    "Annoying as you are, Piotr loves teaching people random things so he just can't say no to this opportunity"
-    p "If you want to learn magic you have to know the basics"
-    p "First lesson: foraging"
-    you "How is that going to help me"
-    p "And how are you going to make potions if you dont know which herbs do what"
-    "You were about to say something witty in response but realize he has a point right before you start speaking"
-    p "Follow me"
-    "Now that the forest was cleared of ebola you can safely, and with confidence, advance deeper"
-    scene bg forestdayb with dissolve
-    show piotr normal with moveinleft
-    p "This is where i get mushrooms"
-    p "Oh look there is one right here"
-    p "Can you tell if its poisonous or edible?"
-    menu:
-        "(pretend theres an image)" # TODO: add images here
-
-        "Looks deadly":
-            p "You are correct. Eating this will kill you"
-        "No it looks delicious":
-            p "Dont even think about it"
-            p "Had you not apologized to me i would have served it to you"
-    p "This makes your head fall off"
-    you "{i}Oh god{/i}"
-    p "You have alot to learn"
-    p "Here's a book you can read to learn about foraging mushrooms"
-    "You received: {i}Mushrooms 101 for absolute dumbasses{/i}"
-    you "i will definitely be judging this book by its cover"
-    you "Thank you"
-    p "you are welcome"
-    p "We should go now"
-    scene black with dissolve
-    "Piotr trips over a small stone and falls down onto the floor"
-    "You help him get up{w=0.5} but only because he can still teach you things"
-    "Other than that walking back felt much faster than walking to this spot"
+    p "Get out."
+    you "Fine!{i}Hmph!{/i}"
     scene expression loc_bg("cityexit") with dissolve
-    show piotr normal at center with dissolve
-    $ time.setTime(18,12)
-    p "Okay repeat what i told you"
-    you "Oh my god fine"
-    you "{i}I promise i will not go back to the forest alone{/i}"
-    p "Good"
-    p "I hope you learned something new today"
-    you "Yes i did thank you"
-    p "No problem"
-    you "Byeeeeeeeeeeeee{nw}"
-    "You dont even wait for piotr to reply and head straight to le forest"
-    scene expression loc_bg("forest") with dissolve
-    "Nothing will match the audacity needed to do this"
-    "Knowing piotr will come to yell at you soon, you breathe in as much forest air as possible"
-    you "{i}Illegal air.{/i}"
+    you "{i}I did exactly what Rafał told me to and he got mad{/i}"
+    you "{i}Wow.{/i}"
+    "You head straight to Rafał. After all, you think it's all his fault"
+    "Before going back to the bakery, you wipe your feet on Piotr's cute welcome mat."
+    scene bg bakeryinside with dissolve
+    show rafal normal with dissolve
+    r "Good m- You're back!"
+    you "Yes."
+    r "Is there anything i can help you with?"
+    you "I bought the thing you told me to apologize to Piotr and now he is mad at me."
+    you "Why did you even suggest that?"
+    "For a moment, Rafał lowers his eyebrows and just stares at you."
+    r "What do you mean \"apologize\"?"
+    r "You didn't tell me you wanted to apologize."
+    you "I didn't?"
+    r "No."
     "..."
-    "Something rustles somewhere behind the trees"
+    r "How bad is it?"
+    you "Its not THAT bad, I guess. It's simple and very stupid."
+    you "When I woke up in that forest, I immediately assumed that it was Piotr who summoned me there."
+    you "So, naturally, I was angry at him and I was very rude."
+    "Rafał doesn't say anything and just exhales."
+    you "So what do i do?"
+    r "The best apology would be to leave him alone for now."
     "..."
-    "{cps=15}snap{/cps}"
-    with vpunch
-    "!"
-    "Piotr hasnt told you what those gmo wolves look like, so you just imagine the scariest wolf you could hiding behind a tree"
-    you "{size=+10}{i}HELL NO.{/i}{/size}"
-    "You turn around and immediately RUN back toward the city"
-    scene expression loc_bg("forest") with vpunch
-    "Unfortunately Piotr has chosen this exact moment to come looking for you"
-    show piotr angry at center with dissolve
-    "You slam directly into him"
-    hide piotr with dissolve
-    "...knocking him over"
-    you "{size=+12}RUN.{/size}"
-    p "WHAT?"
-    you "{size=+12}RUN!!{/size}"
-    p "WHY?!"
-    "You are already several meters away"
-    show piotr angry at center
-    "Piotr is still sitting exactly where you knocked him over"
-    "He looks less like somebody escaping a monster and more like somebody trying to understand what the hell just happened."
-    you "PIOTR RUN"
-    p "FROM WHAT"
-    you "I HEARD SOMETHING"
-    "{cps=15}another loud snap{/cps}"
-    with vpunch
-    you "{size=+14}OH MY GOD{/size}"
-    "You sprint back towards him and grab Piotr by his leg"
-    p "What are you-"
-    "You start dragging him towards the city."
-    with vpunch
-    p "HEY"
-    with vpunch
-    p "STOP IT"
-    you "I AM SAVING YOUR LIFE"
-    p "YOU ARE DRAGGING ME THROUGH THE DIRT"
-    you "You're welcome"
-    p "LET GO OF ME"
-    you "I LITERALLY TOLD YOU TO RUN"
-    p "FROM WHAT"
-    you "I HEARD A WOLF"
-    p "WELL DID YOU SEE ONE"
-    you "No"
-    p "LET GO OF ME [name]"
-    "You continue dragging Piotr through the dirt despite his protests"
-    p "I CAN WALK"
-    you "THEN WHY WERENT YOU WALKING"
-    p "BECAUSE YOU KNOCKED ME OVER"
-    you "{i}He has a point{/i}"
-    you "{i}but this is NOT the time for constructive criticism{/i}"
-    scene expression loc_bg("cityexit") with dissolve
-    "You finally cross back into the city and release piotrs leg from your grip"
-    show piotr angry at center with moveinbottom
-    "Piotr gets off the ground, all covered in leaves, grime, and everything else that previously was on the floor"
-    p "..."
-    you "We made it."
-    "Piotr crosses his arms and just stands there, his expression grim and menacing"
-    "He doesn't speak, and he doesn't really have to because his facial expressions tells you everything"
-    p "I hate you"
-    you "Can i breathe in more of that forest air"
-    with vpunch
-    p "NO"
-    "Piotr checks his pockets to see if anything had fallen out, and pulls out a key"
-    "He closes the huge wooden door inside the raised drawbridge and locks it"
-    you "YOU HAD A KEY???"
-    p "Yes. Now i will sleep peacefully"
-    you "You know i can just climb over the wall"
-    "But he doesn't even reply he just points somewhere to show you to get out"
-    you "Hmph! You won this time... but this isnt the end of it"
-    p "And before you go..."
-    p "If you want to be this reckless can you please wait a week or two"
-    p "Because if anything happens to you people are going to think its my fault"
-    you "Hmph! We will see about that!"
-    you "{i}No way in HELL am i going back to that forest. No thank you.{/i}"
-    hide piotr with dissolve
-    you "{i}Next week i'm going loca{/i}"
-    call screen s_House()
-    $ telemetry_end()
-    # if TESTING:
-    #     call screen s_Telemetry()
-    #     call screen s_Telemetry()
-    #     call screen s_Telemetry()
+    you "Okay."
+    you "Thank you for the advice."
+    r "No problem."
+    "You leave the bakery while thinking about Piotr."
+    jump ch02_afterPiotrApologyOutcome
 
+
+label ch02_piotrApologyAccepted:
+    "There's a moment of silence that makes everything very awkward. Someone HAS to start the conversation."
+    you "So what do you sell here?"
+    p "A lot of things actually."
+    p "Look around, if something piques your interest i will tell you all about it"
+    "You stop leaning on the countertop and walk around the small store."
+    "Every single shelf is covered in various bottles, trinkets, baubles, feathers, sticks and other magic-adjacent paraphernalia."
+    "Despite the store's small size, there is everything a wizard would need."
+    "You turn to the table behind you and pick up a stone covered in bright orange spikes, the color of a wet construction cone."
+    p "Don't touch that"
+    you "What is \"that\"?"
+    p "What you are holding is a very big piece of ortamite. It's heavy but very brittle."
+    p "You could crush it in your hands if you wanted to. Please don't do that."
+    you "It looks so pretty..."
+    "Careful not to break it, you grab one of the thicker spikes and inspect it closer."
+    "Up close it looks like a neon sea urchin."
+    you "Where do you even get all these?"
+    you "Do you just dig something like this up?"
+    p "No. Well yes but not everything."
+    p "While yes, you can just find stuff, I craft like 2/3rds of the things I sell here."
+    you "You can just make these??"
+    p "No i dont \"just\" make things, it takes alot of time and alot of effort."
+    you "Why would someone even want this?"
+    p "Well... not many people. People often come here to buy medicine."
+    you "{i}He dodged my question. Wow.{/i}"
+    p "If you ever become sick come to me."
+    you "I definitely will."
+    p "Now, if you dont mind, I have other matters to tend to."
+    you "It's totally fine. Thank you for showing me around."
+    p "Goodbye."
+    jump ch02_afterPiotrApologyOutcome
+    
+    
+label ch02_afterPiotrApologyOutcome:
+    scene expression loc_bg("cityexit") with dissolve
+    
