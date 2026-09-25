@@ -8,36 +8,20 @@ label ch02_h_bed:
         you "{i}I want to...{/i}"
 
         "Go to sleep (Next day)":
-            "You close your eyes and before you know it you drift off to sleep"
-            "You did well today"
+            "You close your eyes and before you know it you drift off to sleep."
 
         "Explore the house":
             you "{i}I still need to check something...{/i}"
             call screen s_House()
-
-
-
-label ch02_h_entrance:
-    scene expression loc_bg("house")
-    if flag("ch02_locked_door"):
-        "*click*"
-        "The door is now unlocked"
-        $ flag("ch02_locked_door", False)
-    else:
-        "*click*"
-        "The door is now locked"
-        $ flag("ch02_locked_door", True)
-    call screen s_House()
-
     
 
 label ch02_h_window:
     scene expression loc_bg("house")
     if flag("ch02_seen_bug"):
-        "Theres a WEST CONIFER SEED BUG outside the window, crawling, doing whatever its little brain is telling it to"
+        "Theres a west conifer seed bug outside the window, crawling, doing whatever its little brain is telling it to."
     else:
-        "There's nothing particularly interesting about the window"
-        "The bug is gone"
+        "There's nothing particularly interesting about the window."
+        "The bug is gone."
 
     call screen s_House()
 
@@ -45,26 +29,26 @@ label ch02_h_window:
 label ch02_h_fridge:
     scene expression loc_bg("house")
     if flag("ch02_opened_fridge"):
-        you "{i}No{/i}"
+        you "{i}No.{/i}"
     else:
         $ flag("ch02_opened_fridge", True)
-        "As you open the door the gnome jumps onto his little feet and hurriedly turns on the light in the fridge"
-        "Still weirded out by his existence, you smile and notice he is very happy to see you"
-        you "Hello"
-        you "{i}Still deaf{/i}"
+        "As you open the door the gnome jumps onto his little feet and hurriedly turns on the light in the fridge."
+        "Still weirded out by his existence, you smile and notice he is very happy to see you."
+        you "Hello!"
+        you "{i}Still deaf...{/i}"
         if flag("ch02_ate_at_table"):
             $ flag("ch02_angry_gnome", True)
-            you "I'm so sorry i don't have any food"
-            "But the gnome seems to have broken the language barrier this ONE time"
-            "He stomps his little foot against the thin shelf, crosses his arms and turns around"
+            you "I'm so sorry i don't have any food..."
+            "But the gnome seems to have broken the language barrier this ONE time."
+            "He stomps his little foot against the thin shelf, crosses his arms and turns around."
             you "I'll get you food tomorrow i promise!"
-            "But he doesn't hear you this time and just stands there"
-            "Disgusted by your selfishness, you close the fridge door"
+            "But he doesn't hear you this time and just stands there."
+            "Disgusted by your selfishness, you close the fridge door."
         else:
             $ flag("ch02_fed_gnome", True)
-            "You put the rest of your buns on the top shelf, just in case the gnome was hungry and close the door"
-            "The little gnome dives into the paper bag"
-            "Someone is CLEARLY hungry"
+            "You put the rest of your buns on the top shelf, just in case the gnome was hungry and close the door."
+            "The little gnome dives into the paper bag."
+            "Someone is CLEARLY hungry."
 
     call screen s_House()
 
@@ -72,40 +56,38 @@ label ch02_h_fridge:
 label ch02_h_table:
     scene expression loc_bg("house")
     if flag("ch02_opened_fridge"):
-        "You don't have any food to eat"
+        "You don't have any food."
     else:
         $ flag("ch02_ate_at_table", True)
-        "You put the paper bag with Rafał's buns onto the table and devour all of them, leaving zero trace of their existence"
-        you "{i}Now to shower and i can go sleep{/i}"
+        "You put the paper bag with Rafał's buns onto the table and devour all of them, leaving zero trace of their existence."
+        you "{i}Now to shower and i can go sleep.{/i}"
     call screen s_House()
 
 
 label ch02_h_suspicious_pot:
     scene expression loc_bg("house")
     $ flag("ch02_seen_suspicious_pot", True)
-    # no if because the button will be disabled in s_house
-    "This pot looks identical to the one near it"
-    "Its a regular, probably extremely heavy, flower pot"
-    "Drawn on it were oriental-style crane drawings"
-    "Everything was standing on a very basic nightstand"
-    "It's age was made visible by the coffee mug stains on the top surface"
-    "The nightstand had two drawers - one bigger, one smaller with two similar metal handles"
+    "This pot looks identical to the one near it."
+    "Its a regular, probably extremely heavy, flower pot."
+    "Drawn on it were oriental-style crane drawings."
+    "Everything was standing on a very basic nightstand."
+    "It's age was made visible by the coffee mug stains on the top surface."
+    "The nightstand had two drawers - one bigger, one smaller with two similar metal handles."
     "Everything was supported by four also similar metal legs, which were standing on the..."
     you "{i}Wait what is that{/i}"
-    "You were certain was just a smudge in the ground was actually a keyhole in the ground"
-    "When you kneel to inspect it closer, you see a handle further away under the nightstand"
-    "Turns out it was NOT standing on the floor"
-    "You move the plant before trying to pry it open, which, unsurprisingly, fails"
-    "While getting up your keys fall out, and you take another look at them"
-    "None match the round keyhole."
+    "What you previously thought was a dead bug turned out to be a hole in the floor."
+    "And when you inspect it closer, you see a handle further away, under the nightstand."
+    "You move the plant before pulling on it, which, unsurprisingly, fails."
+    "While getting up your keys fall out, and you take another look at them."
+    "None match the round hole."
     you "{i}Tomorrow i'm going to Barbara to ask her about this{/i}"
-    "Just in case, you move the plant back where it was and move on"
+    "Just in case, you move the plant back where it was."
     call screen s_House()
 
 
 label ch02_h_normal_pot:
     scene expression loc_bg("house")
-    "There's nothing unusual about THIS pot"
+    "There's nothing unusual about this pot."
     call screen s_House()
 
 
@@ -115,19 +97,20 @@ label ch02_h_bathroom:
         "The shower wasnt as horrifying as you thought was it?"
     else:
         $ flag("ch02_took_a_shower", True)
-        "Everything about the shower seems intimidating"
-        "Your irrational fear of taking a shower almost took over, but you decided that you are strong and independent so you step in"
+        # TODO: When theres a personality quiz at the start only show this if the person knows how to code
+        "Everything about the shower seems intimidating."
+        "You gather all your courage and step into the shower."
         "..."
-        "You are now clean"
+        "You are now clean."
     call screen s_House()
 
 
 label ch02_h_wardrobe:
     scene expression loc_bg("house")
     "This is the only place that, surprisingly, wasnt empty when you arrived"
-    "You couldn't say you had many clothes either - there were a few shirts and pants"
-    "Just some basic neccessities until you buy something better"
-    "The clothes you got were probably hand-me-downs from some shelter"
+    "There were some shorts, some pants. All of it looks cheap, almost disposable."
+    "Just some clothes to change into before you buy something new."
+
     call screen s_House()
 
 
@@ -139,71 +122,68 @@ label ch02_watch_your_mouth:
     "You are very hungry, but not so hungry you can't sleep."
     "And before you know it you fall asleep."
 
-    call chapterTransition("Akt 2", "Hey. It's me.") from _call_chapterTransition_1
+    call chapterTransition("Chapter 2", "Hey. It's me.")
     $ time.chapter = 2
-    $ time.setTime(10,32)
-
+    
     ".{w=0.5}.{w=0.5}.{w=0.5}"
     "The sun lined up perfectly with your face, which, in turn, warmed it up just enough to wake you up."
     scene bg houseday with dissolve
     "You instinctively cover yourself but you can still see the sun through the gaps between your fingers."
-    "It's time to stop being so lazy and get off the bed"
+    "It's time to stop being so lazy and get off the bed."
     "Now that it's not dark anymore you can see the interior of the house better"
     "The house didnt change much, except for the fact that the morning light is making it feel less abandoned."
     "You lazily get off your bed and change your clothes in front of a mirror."
-    "It's still you in the reflection, just not smelly and covered in forest dirt"
-    "When you walk past the clock you notice the time and stop for a moment"
-    you "{i}There's no way I slept for 10 hours{/i}"
-    you "{i}Barbara is going to think I am lazy{/i}"
-    you "{i}Hell. No.{/i}"
+    "It's still you in the reflection, just not smelly and covered in forest dirt."
+    $ time.setTime(10,32)
+    "When you walk past the clock you notice it mocking you with \"10:32\""
+    you "{i}There is no way I slept that long.{/i}"
     show screen s_Clock()
-    "Hunger definitely contributed to waking you up from your slumber"
+    "If it weren't for your hunger, you would have slept for longer."
     if ch01_f_triedBakery:
         "The only thing you can think of are the pastries you saw at a bakery"
     else:
-        "The only thing you can think of is (favorite food) and all its flavors"
-    "Luckily, there is a fridge"
-    you "{i}Okay what kind of house would this be if i didnt get food{/i}"
+        "The only thing you can think of is filling your stomach."
+    "Luckily, there is a fridge in the kitchen."
+    you "{i}Okay what kind of house would this be if I didnt get food?{/i}"
     you "{i}That would be very rude{/i}"
-    you "{i}Oh my god what if its magical and can just summon food{/i}"
-    "You close your eyes and try to summon..."
+    you "{i}Oh my god what if its magical and can just summon food...{/i}"
     menu:
+        "You close your eyes and try to summon..."
         "Caviar":
-            "This food is going to require the most concentration"
-            "You close your eyes and think of caviar and try your best to channel your inner sorcerer..."
-            you "{i}This HAS to work{/i}"
+            "You close your eyes, think of caviar and try your best to channel your inner sorcerer..."
+            "This food is going to require the most concentration."
+            you "{i}This HAS to work.{/i}"
         "French snails":
-            "This food is going to require the least concentration"
-            "You close your eyes and think of those slimy things and try your best to channel your inner sorcerer..."
-            you "{i}This HAS to work{/i}"
+            "You close your eyes, think of those slimy things and try your best to channel your inner sorcerer..."
+            "This food is going to require the least concentration."
+            you "{i}This HAS to work.{/i}"
         "Dead dove":
-            "This food is going to require some concentration"
-            "You close your eyes and think of dead doves and try your best to channel your inner sorcerer..."
-            "Suddenly you remember that you shouldn't eat dead doves"
+            "You close your eyes, think of dead doves and try your best to channel your inner sorcerer..."
+            "This food is going to require some concentration."
+            "Suddenly you remember that you shouldn't eat dead doves."
             you "{i}I need to dream bigger. I want a rotisserie chicken.{/i}"
         "I'm not hungry":
-            "Actually, you dont have to concentrate at all"
-            you "{i}Actually no if i stay hungry i will stay skinny{/i}"
+            you "{i}Actually no if i stay hungry i will stay skinny.{/i}"
             you "{i}I'm gonna be so skinny after this! I'll just get something to drink.{/i}"
 
     "You open the fridge and, to your surprise, there is nothing in it except a gnome who keeps turning the light on and off."
     you "{i}What the hell{/i}"
     you "Hello?"
     you "Who are you?"
-    "The little gnome ignores you"
-    you "sprechen sie deutsch???"
-    "While he's ignoring you, you ignore the fact that he could be deaf"
+    "The little gnome ignores you."
+    you "Sprechen sie Deutsch???"
+    "While he's ignoring you, you ignore the fact that he could be deaf."
     you "Excuse me young man what are you doing in my fridge?"
-    "He looks up at you with a gnarly smile and waves his hand"
-    you "{i}I'm not getting paid enough for this{/i}"
-    you "{i}In fact i dont get paid at all{/i}"
-    "You leave the door open just in case he was trapped in there and wants to get out only for him to start dusting the top shelf"
+    "He looks up at you with a gnarly smile and waves his hand."
+    you "{i}I'm not getting paid enough for this.{/i}"
+    you "{i}In fact I dont get paid at all.{/i}"
+    "You leave the door open just in case he was trapped in there and wants to get out only for him to start dusting the top shelf."
     you "{i}???{/i}"
-    "Due to pure confusion you close the fridge door"
+    "Due to pure confusion you close the fridge door."
     you "{i}Did I summon that?{/i}"
-    you "{i}Wait what if he's hungry{/i}"
-    you "{i}I'll get food and share{/i}"
-    "The gnome was only a brief distraction from the calories in your stomach, or lack thereof"
+    you "{i}Wait what if he's hungry.{/i}"
+    you "{i}I'll get food and share...{/i}"
+    "The gnome was only a brief distraction from the calories in your stomach, or lack thereof."
     "As you leave the house, you almost forget to close the door, but at the last moment you remember what kind of neighborhood you live in."
     "You nearly faint from hunger. It seems being skinny wasn't worth it."
     "There is one person in town who can help you right now - Barbara."
@@ -218,7 +198,7 @@ label ch02_watch_your_mouth:
     you "{i}Or maybe they'll let me put this bread on credit and I'll pay for it later... Although that practice disappeared with the fall of the PRL...{/i}"
     you "I can do this!!!"
     "The streets are now bustling with life, and everyone is hurrying to work."
-    "As you approach city hall, it impresses you once again—not as much as yesterday, but it is still very impressive."
+    "As you approach city hall, it impresses you once again - not as much as yesterday, but it is still very impressive."
     "There is no time to waste, so you enter the building and look for Filip."
     jump ch02_goingToKur
 
