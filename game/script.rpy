@@ -130,7 +130,6 @@ define m        = Character("???",          color="#808080") # mystery speaker
 define p        = Character("Piotr",        color="#a222be")
 define f        = Character("Filip",        color="#a222be")
 define k        = Character("Barbara K.",   color="#ff41c9")
-define t        = Character("Tomcio",       color="#ec1f1f")
 define v        = Character("Vasili",       color="#6a6277")
 define wp       = Character("Wiktoria P.",  color="#9ace22")
 define bjork    = Character("Björk",        color="#77beee")
