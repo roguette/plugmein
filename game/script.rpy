@@ -125,24 +125,24 @@ init python:
 
 # =============================================== CHARACTER DEFINITIONS
 
-define mks      = Character("MKS 23",       color="#fafafa")
-define m        = Character("???",          color="#808080") # mystery speaker
-define p        = Character("Peter",        color="#a222be")
-define f        = Character("Philip B.",        color="#a222be")
-define k        = Character("Barbara",   color="#ff41c9")
-define v        = Character("Vasili",       color="#6a6277")
-define wp       = Character("Victoria P.",  color="#9ace22")
-define bjork    = Character("Björk",        color="#77beee")
-define kura     = Character("Chicken",         color="#e05a17")
-define lis      = Character("Fox", color="#fffffa")
-define frau     = Character("Frau Crusty",  color="#e266c7")
-define r        = Character("Raphael",        color="#105da1")
-define n        = Character("Solomon",       color="#8410a1")
-define ww       = Character("Victoria C.",  color="#f6517d")
-define a        = Character("Antonius",     color="#52a88e")
-define w        = Character("Henry",      color="#843a18")
-define b        = Character("Bart",      color="#3ab954")
-define pe       = Character("Philip K.",      color="#abcdef")
+define mks    = Character("MKS 23",       color="#fafafa")
+define m      = Character("???",          color="#808080") # mystery speaker
+define p      = Character("Peter",        color="#a222be")
+define f      = Character("Philip B.",    color="#a222be")
+define k      = Character("Barbara",      color="#ff41c9")
+define v      = Character("Vasili",       color="#6a6277")
+define wp     = Character("Victoria P.",  color="#9ace22")
+define bjork  = Character("Björk",        color="#77beee")
+define kura   = Character("Chicken",      color="#e05a17")
+define lis    = Character("Fox",          color="#fffffa")
+define frau   = Character("Frau Crusty",  color="#e266c7")
+define r      = Character("Raphael",      color="#105da1")
+define n      = Character("Solomon",      color="#8410a1")
+define ww     = Character("Victoria C.",  color="#f6517d")
+define a      = Character("Antonius",     color="#52a88e")
+define w      = Character("Henry",        color="#843a18")
+define b      = Character("Bart",         color="#3ab954")
+define pe     = Character("Philip K.",    color="#abcdef")
 
 
 # =============================================== GLOBAL VARIABLES
