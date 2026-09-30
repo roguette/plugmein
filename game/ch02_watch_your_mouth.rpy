@@ -1,5 +1,5 @@
-default piotrFoodPoints = 0
-default piotrWritingPoints = 0
+default peterFoodPoints = 0
+default peterWritingPoints = 0
 
 #region INTERACTIONS
 
@@ -932,18 +932,18 @@ label ch02_brickDescriptionEnd:
     r "Thank you and BON APPETIT"
     you "Bye"
     "You look at the bag of coins in your hand and start thinking"
-    "Would you still be holding money right now if Piotr didnt come to help?"
+    "Would you still be holding money right now if Peter didnt come to help?"
     "And to think that you were so rude to him"
     you "{i}I really do need to apologize to him{/i}"
     you "Wait"
-    you "Where does Piotr live?"
+    you "Where does Peter live?"
     r "He has a potions shop down the street"
-    r "Piotr lives in the same building"
+    r "Peter lives in the same building"
     r "You wont miss it theres a sign outside"
     you "Okay thanks"
     you "But... i'm not done"
     you "I have an unusual request"
-    you "I want to get something for Piotr. What should i get?"
+    you "I want to get something for Peter. What should i get?"
     r "Well.. I dont know how to describe him BUT if he was a color he would be blue"
     r "And not the sky blue because that has too much sky"
     r "Also he wouldnt be navy blue either bc its blue with responsibilities"
@@ -955,14 +955,14 @@ label ch02_brickDescriptionEnd:
     menu:
         you "Okay that makes sense"
         "3 cups of coffee in a paper bag":
-            $ flag("gotCoffeeForPiotr", True)
-            $ piotrFoodPoints = 2
+            $ flag("gotCoffeeForPeter", True)
+            $ peterFoodPoints = 2
         "Bread in a paper bag":
-            $ flag("gotBreadForPiotr", True)
-            $ piotrFoodPoints = 0
+            $ flag("gotBreadForPeter", True)
+            $ peterFoodPoints = 0
         "A slice of red velvet cake (in a paper bag)":
-            $ flag("gotCakeForPiotr", True)
-            $ piotrFoodPoints = 1
+            $ flag("gotCakeForPeter", True)
+            $ peterFoodPoints = 1
 
     r "Okay give me just a moment!"
     "Rafał twirls on his right foot and assembles your order with pride"
@@ -973,13 +973,13 @@ label ch02_brickDescriptionEnd:
     menu:
         you "{i}I want to write...{/i}"
         "Sorry :(":
-            $ piotrWritingPoints = 2
+            $ peterWritingPoints = 2
         "Sorry but be more fun next time":
-            $ piotrWritingPoints = 0
+            $ peterWritingPoints = 0
         "Sorry i forgot your name":
-            $ piotrWritingPoints = 1
+            $ peterWritingPoints = 1
         "Sorry, i forgot your name":
-            $ piotrWritingPoints = 0
+            $ peterWritingPoints = 0
     "You scribble away trying to keep every letter steady and even with the rest"
     you "{i}Perfect{/i}"
     you "Okay that should be it. Thank you very much"
@@ -987,20 +987,20 @@ label ch02_brickDescriptionEnd:
     you "Bye"
     r "Byee"
     scene expression loc_bg("lanastreet") with dissolve
-    "Finally happy, you leave the bakery and head straight to Piotr"
+    "Finally happy, you leave the bakery and head straight to Peter"
     scene expression loc_bg("cityexit") with dissolve
     "Rafał was right - it {i}was{/i} hard to miss the shop"
     "Especially the HUGE wooden door which was blocking half the pavement"
     scene bg potionshop with dissolve
     you "HELLO EVERYONE"
-    "Your impatience knows no bounds. You are ready to jump over the counter just to apologize to piotr"
+    "Your impatience knows no bounds. You are ready to jump over the counter just to apologize to peter"
     you "{i}Where is this bird{/i}"
     you "PIooooOTR come here"
-    "Piotr emerges from the back of the shop"
-    show piotr normal at center with dissolve
+    "Peter emerges from the back of the shop"
+    show peter normal at center with dissolve
     you "{i}Why does he leave his shop open if he spends most of the time there{/i}"
     you "{i}Thats like sooo dangerous gurl i-{/i}"
-    "Piotr opens his mouth to start speaking but before he can mutter a single word you overpower him with your proclamation"
+    "Peter opens his mouth to start speaking but before he can mutter a single word you overpower him with your proclamation"
     you "I've come to announce that i am a different [name]"
     you "I am no longer [name] i am now [name] version TWO"
     you "You hear me? I am version DOS."
@@ -1009,34 +1009,34 @@ label ch02_brickDescriptionEnd:
     "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
     you "Enjoy"
 
-    if flag("gotCakeForPiotr"):
-        "Piotr carefully looks inside the oil-staned paper bag before noticing the message"
-    elif flag("gotBreadForPiotr"):
-        "Piotr carefully looks inside the extremely rectangular paper bag before noticing the message"
-    elif flag("gotCoffeeForPiotr"):
-        "Piotr smells the aroma of fresh coffee and quickly tears the bag apart, before noticing the message"
+    if flag("gotCakeForPeter"):
+        "Peter carefully looks inside the oil-staned paper bag before noticing the message"
+    elif flag("gotBreadForPeter"):
+        "Peter carefully looks inside the extremely rectangular paper bag before noticing the message"
+    elif flag("gotCoffeeForPeter"):
+        "Peter smells the aroma of fresh coffee and quickly tears the bag apart, before noticing the message"
         "The message you wrote with great care and precision stayed intact due to sheer luck"
 
     "His eyes quickly skim the text"
-    if piotrWritingPoints == 2:
+    if peterWritingPoints == 2:
         "He exhales and lowers his guard"
-        "Piotr cant possibly be mad at you"
-    if piotrWritingPoints == 1:
-        "Piotr ignores the message and moves on"
-    elif piotrWritingPoints == 0:
-        "Piotr's eyes widen"
+        "Peter cant possibly be mad at you"
+    if peterWritingPoints == 1:
+        "Peter ignores the message and moves on"
+    elif peterWritingPoints == 0:
+        "Peter's eyes widen"
         p "what the"
         p "WHAT IS THIS"
     you "Now don't be so shy. Please indulge in this Bratgrenian delicacy"
 
-    if flag("gotCakeForPiotr"):
-        "Piotr decided that taking the cake out was too risky so he ripped the bag"
+    if flag("gotCakeForPeter"):
+        "Peter decided that taking the cake out was too risky so he ripped the bag"
         "Which revealed a slightly-smooshed cake"
         "The cake doesn't look very presentable anymore but its still edible"
         you "Like i said, Enjoy"
 
-    elif flag("gotBreadForPiotr"):
-        "Piotr lifts the bag because he has had enough and does not want to deal with this right now"
+    elif flag("gotBreadForPeter"):
+        "Peter lifts the bag because he has had enough and does not want to deal with this right now"
         "When suddenly..."
         "The bag rips and the bread falls out onto the tabletop, leaving a dent"
         "you start laughing very loudly and very obnoxiously"
@@ -1046,26 +1046,26 @@ label ch02_brickDescriptionEnd:
         p "Great. You ruined my table"
         you "okay okay wait"
         you "Here's the receipt. You can go back to the store and return it for store credit"
-        "Piotr rolls his eyes"
+        "Peter rolls his eyes"
         you "i'm actually really sorry this was supposed to be an actual gift but i didnt check the bread"
-    elif flag("gotCoffeeForPiotr"):
+    elif flag("gotCoffeeForPeter"):
         you "One is poisoned by the way"
         p "WHAT"
         p "No thank you"
         you "Just kidding"
         you "żarcik kosmonaucik"
-        "piotr looks suspiciously at the coffees and exhales"
+        "peter looks suspiciously at the coffees and exhales"
     
     you "Apology accepted?"
 
-    if piotrFoodPoints + piotrWritingPoints > 2:
-        $ flag("piotrApologyAccepted", True)
+    if peterFoodPoints + peterWritingPoints > 2:
+        $ flag("peterApologyAccepted", True)
         p "Yes."
         p "Thank you"
         you "And thank {i}you{/i} for being as cool as a cucumber"
         p "Don't push it"
-    elif piotrFoodPoints + piotrWritingPoints > 1:
-        $ flag("piotrApologyAccepted", True)
+    elif peterFoodPoints + peterWritingPoints > 1:
+        $ flag("peterApologyAccepted", True)
         p "Yeah i guess"
         you "I can hear the doubt in your voice that is extremely rude"
         you "Where are your manners young man"
@@ -1073,23 +1073,23 @@ label ch02_brickDescriptionEnd:
         you "{i}Hmph!{/i}"
         you "{i}This isn't the end of it{/i}"
     else:
-        jump ch02_piotrApologyDenied
+        jump ch02_peterApologyDenied
 
     you "Okay okay fine"
     you "Ignore the food i just wanted to say sorry"
     you "Yes i can be rude but I'm not rude because i have tofu with you its just because I'm sassy like that"
     p "..."
-    "Piotr inspects you top to bottom, his gaze landing on your eyes and piercing you"
+    "Peter inspects you top to bottom, his gaze landing on your eyes and piercing you"
     p "Fine"
     p "You will change"
     you "{i}???{/i}"
     you "{i}No YOU will change{/i}"
-    jump ch02_piotrApologyAccepted
+    jump ch02_peterApologyAccepted
 
-label ch02_piotrApologyDenied:
+label ch02_peterApologyDenied:
     p "No."
     you "Why?"
-    "But Piotr doesn't even reply. He just shakes his head while staring directly at you."
+    "But Peter doesn't even reply. He just shakes his head while staring directly at you."
     "No words come out of his angry beak, and none have to."
     "Even your apology was rude."
     "..."
@@ -1099,13 +1099,13 @@ label ch02_piotrApologyDenied:
     you "{i}I did exactly what Rafał told me to and he got mad{/i}"
     you "{i}Wow.{/i}"
     "You head straight to Rafał. After all, you think it's all his fault"
-    "Before going back to the bakery, you wipe your feet on Piotr's cute welcome mat."
+    "Before going back to the bakery, you wipe your feet on Peter's cute welcome mat."
     scene bg bakeryinside with dissolve
     show rafal normal with dissolve
     r "Good m- You're back!"
     you "Yes."
     r "Is there anything i can help you with?"
-    you "I bought the thing you told me to apologize to Piotr and now he is mad at me."
+    you "I bought the thing you told me to apologize to Peter and now he is mad at me."
     you "Why did you even suggest that?"
     "For a moment, Rafał lowers his eyebrows and just stares at you."
     r "What do you mean \"apologize\"?"
@@ -1115,7 +1115,7 @@ label ch02_piotrApologyDenied:
     "..."
     r "How bad is it?"
     you "Its not THAT bad, I guess. It's simple and very stupid."
-    you "When I woke up in that forest, I immediately assumed that it was Piotr who summoned me there."
+    you "When I woke up in that forest, I immediately assumed that it was Peter who summoned me there."
     you "So, naturally, I was angry at him and I was very rude."
     "Rafał doesn't say anything and just exhales."
     you "So what do i do?"
@@ -1124,11 +1124,11 @@ label ch02_piotrApologyDenied:
     you "Okay."
     you "Thank you for the advice."
     r "No problem."
-    "You leave the bakery while thinking about Piotr."
-    jump ch02_afterPiotrApologyOutcome
+    "You leave the bakery while thinking about Peter."
+    jump ch02_afterPeterApologyOutcome
 
 
-label ch02_piotrApologyAccepted:
+label ch02_peterApologyAccepted:
     "There's a moment of silence that makes everything very awkward. Someone HAS to start the conversation."
     you "So what do you sell here?"
     p "A lot of things actually."
@@ -1158,9 +1158,9 @@ label ch02_piotrApologyAccepted:
     p "Now, if you dont mind, I have other matters to tend to."
     you "It's totally fine. Thank you for showing me around."
     p "Goodbye."
-    jump ch02_afterPiotrApologyOutcome
+    jump ch02_afterPeterApologyOutcome
     
     
-label ch02_afterPiotrApologyOutcome:
+label ch02_afterPeterApologyOutcome:
     scene expression loc_bg("cityexit") with dissolve
     

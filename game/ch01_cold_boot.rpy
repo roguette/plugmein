@@ -232,7 +232,7 @@ label ch01_cold_boot:
     you "AAAAA!!!!" 
     you "DON'T TOUCH ME!!!"
     you "Stranger Danger!!!"
-    show piotr normal at center with dissolve
+    show peter normal at center with dissolve
     "You gather all your strength to open your eyes to see who the hell woke you up."
     "There's a tall bird guy in front of you, looking at you all weird."
     "Everything in you wants to scoot away from him, but you cant because of the tree behind you."
@@ -253,33 +253,33 @@ label ch01_cold_boot:
     you "Oh no no no... You are going to answer all of my questions first."
     you "You have 10 seconds until I let you know I had eggs for breakfast."
     p "I won't ask you again."
-    p "My name is Piotr and I am a wizard."
+    p "My name is Peter and I am a wizard."
     you "Wizard? Like a birthday party wizard?"
     p "???"
     you "Like do you do silly tricks like pulling rabbits out of your huge top hat?"
     with vpunch
     p "If you don't shut up wolves will hear us and eat us both."
-    "Piotr's serious tone finally gets to you."
+    "Peter's serious tone finally gets to you."
     you "Okay okay calm down."
     you "You should have started with that."
     "You instinctively try to push yourself away from him one more time, still impossible because of the tree behind you."
     "Maybe you {i}should{/i} be scared of him"
     p "Thank you."
     p "Now get off the dirt you look like a mess."
-    "Piotr gives you a hand, and you are unsure how to grab it and not touch his sharp claws"
+    "Peter gives you a hand, and you are unsure how to grab it and not touch his sharp claws"
     p "What?"
     p "I don't bite."
     # https://en.wikipedia.org/wiki/Temperate_broadleaf_and_mixed_forests
     "You reluctantly take his hand and get off the floor, taking time to clean yourself."
     "When you get up a gentle breeze sweeps through the forest, making you shiver a little."
-    "Piotr examines you carefully while you are looking for an escape route."
+    "Peter examines you carefully while you are looking for an escape route."
     "First, your gaze turns to the dense forest, covered in even denser fog."
     "Then, you notice the tree crowns covering the night sky."
     "And finally, you notice the forest floor covered in browned birch leaves and pine needles from the pine tree behind you."
     "Amongst those leaves there are countless shrubs, stones, bugs and even more random plants."
     "There's even a small daffodil fighting for its life. {w=0.5}The daffodil is losing."
     "It's leaves had long turned gray and wilted away, leaving just the pretty yellow flower intact."
-    "Then, your gaze wanders to Piotr, and more specifically his stuff."
+    "Then, your gaze wanders to Peter, and more specifically his stuff."
     "His backpack was on the ground, tucked away behind a bush in front of a circle made out of stones."
     you "{i}What is that?{/i}"
     you "{i}Oh my god what if he DID summon me?{/i}"
@@ -291,7 +291,7 @@ label ch01_cold_boot:
     p "To?"
     "He points with one of his long,{w=.5} black,{w=.5} scary,{w=.5} and even crooked{w=.5} claws at a circle made of black stone."
     you "Yes."
-    "Piotr goes to the ritual site to pick up two stones."
+    "Peter goes to the ritual site to pick up two stones."
     p "This, is onyx. I use it for rituals."
     you "Oh."
     you "So you did summon me?"
@@ -299,14 +299,14 @@ label ch01_cold_boot:
     you "That's actually really cool."
     you "What were you doing before you isekaied me here?"
     p "I did not summon you."
-    you "Then what {i}did{/i} you do Mr. Piotr?"
+    you "Then what {i}did{/i} you do Mr. Peter?"
     p "Nothing, {i}yet{/i}."
     you "What do you mean {i}yet{/i}??"
     p "I was cleaning the forest and this had nothing to do with you"
     p "I mean I was going to and then I saw you."
     you "{i}Is he a janitor or something??{/i}"
     you "What do you mean clean?? I don't see your broom."
-    "Piotr puts his hand over his forehead, already sick of your impertinence."
+    "Peter puts his hand over his forehead, already sick of your impertinence."
     p "I don't sweep the forest. I do spiritual cleanses, not washing trees with a mop."
     you "{i}Whatever that means.{/i}"
     you "And you havent started yet?"
@@ -317,7 +317,7 @@ label ch01_cold_boot:
     p "Im sure you couldnt even hurt a fly."
     you "{i}True. they are way too fast..{/i}"
     you "So when are you gonna answer my questions?"
-    "Piotr looks at you with pure confusion."
+    "Peter looks at you with pure confusion."
     p "I have answered all your questions up until this point. How did you manage to ask questions without me noticing?" 
     you "{i}Why is he so rude to me?{/i}"
     you "{i}Fine. This isn't over though.{/i}"
@@ -326,16 +326,16 @@ label ch01_cold_boot:
     you "Do you have a basement?"
     p "What? Yes. Why?{nw}"
     you "{i}Bingo.{/i}"
-    jump ch01_piotrIntroductionMenu
+    jump ch01_peterIntroductionMenu
 
-label ch01_piotrIntroductionMenu:
+label ch01_peterIntroductionMenu:
     menu:
-        "Who are you?" if not flag("askedWhoPiotrWas"):
-            $ flag("askedWhoPiotrWas", True)
+        "Who are you?" if not flag("askedWhoPeterWas"):
+            $ flag("askedWhoPeterWas", True)
             you "I have to know who you really are."
             you "Are you my dad or something?"
-            p "My name is Piotr and I am a wizard."
-            you "Hi my name is Piotr I am a wizard."
+            p "My name is Peter and I am a wizard."
+            you "Hi my name is Peter I am a wizard."
             "You do a very robotic dance while repeating the same phrase over and over again."
             you "Is that your whole personality?"
             p "No?"
@@ -356,13 +356,13 @@ label ch01_piotrIntroductionMenu:
             "Nothing."
             "..."
             you "I survived cancer but got short and long term memory loss!"
-            "Piotr shakes his head in disbelief."
+            "Peter shakes his head in disbelief."
             p "Thats not how it works."
             
-            jump ch01_piotrIntroductionMenu
-        "I know you kidnapped me!!!" if not flag("accusedPiotrOfKidnapping"):
-            $ flag("accusedPiotrOfKidnapping", True)
-            $ friendship["Piotr"] -= 1
+            jump ch01_peterIntroductionMenu
+        "I know you kidnapped me!!!" if not flag("accusedPeterOfKidnapping"):
+            $ flag("accusedPeterOfKidnapping", True)
+            $ friendship["Peter"] -= 1
             you "I can see right through your lies!"
             you "You think I'm not the sharpest tool in the shed!"
             you "But you are wrong!"
@@ -390,32 +390,32 @@ label ch01_piotrIntroductionMenu:
             "You give him a sassy hmph and after little thinking you realize you actually do need his help."
             you "Fine. I guess you are right this once."
             p "Say such nonsense one more time and see what happens."
-            jump ch01_piotrIntroductionMenu
+            jump ch01_peterIntroductionMenu
         "Where am I?" if not flag("askedWhereIAmStart"):
             $ flag("askedWhereIAmStart", True)
             p "In a forest near Bratgren."
             p "Bratgren is like the city we all live in."
             you "That's so cool! I thought you live up there in the trees."
-            "Piotr glares at you menacingly."
+            "Peter glares at you menacingly."
             you "And where is this Bratgren?"
-            if flag("accusedPiotrOfKidnapping"):
+            if flag("accusedPeterOfKidnapping"):
                 you "Or did you lie about that too?"
             p "Right behind you actually."
             "Theres a huge wall behind you and you can only assume it guards a city."
             "You try to hide the embarrassment on your face because up until this point you haven't thought of turning around."
             you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
             p "Do you ever shut up?"
-            jump ch01_piotrIntroductionMenu
-        "(I have no more questions)" if any([flag("askedWhereIAmStart"), flag("askedWhoPiotrWas"), flag("accusedPiotrOfKidnapping")]):
-            jump ch01_afterPiotrIntroductionMenu
+            jump ch01_peterIntroductionMenu
+        "(I have no more questions)" if any([flag("askedWhereIAmStart"), flag("askedWhoPeterWas"), flag("accusedPeterOfKidnapping")]):
+            jump ch01_afterPeterIntroductionMenu
 
-label ch01_afterPiotrIntroductionMenu:
+label ch01_afterPeterIntroductionMenu:
     "You look around the forest one more time, hoping for a change. Nothing grabs your attention - even the huge wall behind you."
     "The wall was really tall, but also really boring."
     p "What?"
     p "Why are you so silent all of a sudden?"
     p "Cat got your tongue?"
-    "Piotr is very proud of himself."
+    "Peter is very proud of himself."
     you "What would you do if you woke up in a random forest?"
     you "There's alot to take in."
     you "I dont know anyone, or where I am, or who I am."
@@ -426,7 +426,7 @@ label ch01_afterPiotrIntroductionMenu:
     p "It would be best if you got a j*b and a home right away, but that can't be predicted."
     you "..."
     you "{i}{b}A J*B??? I DON'T WANT A J*B{/b}{/i}"
-    "Piotr seems happy working as a forest janitor. Impossible."
+    "Peter seems happy working as a forest janitor. Impossible."
     you "So you are not gonna do the ritual?"
     p "You are more important right now."
     p "You will understand why later."
@@ -439,11 +439,11 @@ label ch01_afterPiotrIntroductionMenu:
     you "Since when are you so kind to me?"
     p "Just because I am nice like that."
     p "Also I would go to jail if someone found out that I didnt help you."
-    "You giggle at his joke but deep down you are wondering if Piotr would leave you all alone in this forest, had that law not existed."
+    "You giggle at his joke but deep down you are wondering if Peter would leave you all alone in this forest, had that law not existed."
     
 
     "The road from the forest to the city isn't long, although sometimes it can surprise you with some {i}wildlife.{/i}"
-    "Together with Piotr, you cross the bridge and make your way toward the city hall. Despite the late hour, the temperature isn't unpleasant. It's actually pretty nice."
+    "Together with Peter, you cross the bridge and make your way toward the city hall. Despite the late hour, the temperature isn't unpleasant. It's actually pretty nice."
 
     scene bg entrancenight with fade
 
@@ -453,7 +453,7 @@ label ch01_afterPiotrIntroductionMenu:
     you "{i}I already don't like this place. The people here rely on outdated technology that should've been replaced ages ago.{/i}"
     you "{i}Why do the need such tall walls? Overreaction final boss{/i}"
 
-    show piotr normal with dissolve
+    show peter normal with dissolve
 
     you "Where even are we?"
     p "I already told you! We're about to enter the city of Bratgren."
@@ -466,7 +466,7 @@ label ch01_afterPiotrIntroductionMenu:
     scene bg citysquarenight with dissolve
     play music "town_night.mp3" fadein 0.5
 
-    "Piotr leads you through the gates of Bratgren, revealing a very picturesque city."
+    "Peter leads you through the gates of Bratgren, revealing a very picturesque city."
     you "Why is there almost nobody on the streets?"
     p "Because it's cold?"
     you "I'm not cold."
@@ -474,29 +474,29 @@ label ch01_afterPiotrIntroductionMenu:
     you "Then let's get to Barbara faster."
     "There is almost nobody on the streets{w}, apart from {i}the two of you{/i}."
     "You notice that the amount of buildings is astronomical. Eventually, you reach the town square, where, despite the late hour, you can still feel a pleasant{w=.6}, warm{w=.6}, welcoming{w=.6}, and an almost friendly atmosphere."
-    "You could almost call your little walk romantic{w=1.0}, if it weren't for the fact that Piotr is probably the reason you're here in the first place."
+    "You could almost call your little walk romantic{w=1.0}, if it weren't for the fact that Peter is probably the reason you're here in the first place."
     you "{i}Not a living soul on the streets... It can't be {i}that{/i} late. I hope Barbara's office is still open.{/i}"
     "You approach city hall. You know you've reached your destination thanks to the massive{w=.6}, sprawling{w=.6}, enormous{w=.6}, and simultaneously tiny coat of arms."
     "The building has this...{w=0.5} government aura to it."
 
     scene bg cityhallinside with dissolve
 
-    "Piotr enters the reception office first, only to immediately lead you back outside."
+    "Peter enters the reception office first, only to immediately lead you back outside."
 
-    show piotr normal at center
+    show peter normal at center
 
     p "Actually, don't come in yet. I still need to talk to Filip."
     you "About what?"
     p "Speech is silver, silence is golden."
-    "You're stunned by Piotr's arrogance. You're certain he's about to talk shit about you."
+    "You're stunned by Peter's arrogance. You're certain he's about to talk shit about you."
     p "Sit here and behave. I'll be right back."
     you "Okay."
     "{i}What a good boy you are.{nw}{/i}"
 
-    hide piotr
+    hide peter
 
     "You sit down on a nearby chair. It bends slightly beneath your enormous gyatt, but somehow holds together. You completely ignore this, though. Your mind is somewhere else."
-    "All of this is so overwhelming. You're thinking about how you got here, who Piotr is, and what you're supposed to do now."
+    "All of this is so overwhelming. You're thinking about how you got here, who Peter is, and what you're supposed to do now."
     "Feeling pine needles prick your back, you relax and lean against the wall."
     "They've been stuck to your shirt ever since you were lying in the forest."
     "You feel embarrassed. You walked through the entire city looking like a mess."
@@ -504,36 +504,36 @@ label ch01_afterPiotrIntroductionMenu:
     you "{i}But nobody was outside. Nobody saw me.{/i}"
     you "{i}Unless someone was watching through a window..??{/i}"
     "You brush off your shirt and return to the most productive activity imaginable: sitting around, completely ignoring the fact that someone is going to have to clean up all those pine needles after you."
-    "After a while, Piotr comes back and calls you into the reception office..."
+    "After a while, Peter comes back and calls you into the reception office..."
 
     scene bg secretary with dissolve
-    show piotr normal at center with dissolve
+    show peter normal at center with dissolve
     pause 0.5
-    show piotr normal at leftish with move 
+    show peter normal at leftish with move 
     show filip normal at rightish with dissolve
 
     f "Hi! What's your name?"
-    "You are startled by the ferret's energy, now that you got used to the lack of it near Piotr."
+    "You are startled by the ferret's energy, now that you got used to the lack of it near Peter."
     you "Me..?"
     p "He literally asked {i}you{/i}."
     menu:
-        "Provoke Piotr":
-            $ flag("wasRudeToPiotr", True)
-            $ friendship["Piotr"] -= 1
-            you "You shat yourself when you saw me, Mr. Piotr, so {i}SYBAU!{/i}"
+        "Provoke Peter":
+            $ flag("wasRudeToPeter", True)
+            $ friendship["Peter"] -= 1
+            you "You shat yourself when you saw me, Mr. Peter, so {i}SYBAU!{/i}"
             p "That's not true. Don't tarnish my reputation."
             you "{i}Clock it.{/i}"
             p "..."
-            jump ch01_afterPiotrRagebaitMenu            
+            jump ch01_afterPeterRagebaitMenu            
         "Stay silent":
             you "{i}He is NOT tuff.{/i}" 
-            jump ch01_afterPiotrRagebaitMenu
+            jump ch01_afterPeterRagebaitMenu
 
-label ch01_afterPiotrRagebaitMenu:
+label ch01_afterPeterRagebaitMenu:
     you "I... am [name]."
     f "Holy guacamole! What a peculiar name."
     you "Thank you."
-    f "So Piotr, tell me, what were you doing when you found [name]?"
+    f "So Peter, tell me, what were you doing when you found [name]?"
     p "I was cleansing the forest like you told me to, and he showed up next to me and ruined my ritual. Now I have to start all over again."
     you "How could I have possibly ruined it if you haven't even started?"
     p "I was about to?"
@@ -546,16 +546,16 @@ label ch01_afterPiotrRagebaitMenu:
     f "Come here."
     "You walk a little closer to Filip. He stands up and offers you his hand."
     "You smile like you're in a real estate commercial."
-    "You don't know if you can trust him, but his vibes are definitely better than Piotr's."
-    you "THAT is how you greet people, Mr. Piotr."
+    "You don't know if you can trust him, but his vibes are definitely better than Peter's."
+    you "THAT is how you greet people, Mr. Peter."
     f "Hi. My name is Filip, and welcome to our small{w=.6}, beautiful{w=.6}, lovely{w=.6}, and at the same time cozy city of Bratgren. You probably have a huge amount of questions?"
     you "Yes!"
     f "Do you already know anything about this city?"
     you "No!"
     "You tilt your head and lower your eyebrows to signal your confusion, which gets ignored"
     f "Perfect. I'll take you to Barbara now. She'll answer all your questions."
-    you "Piotr didn't tell me anything..."
-    f "Then why are you gatekeeping, Piotr?"
+    you "Peter didn't tell me anything..."
+    f "Then why are you gatekeeping, Peter?"
     p "This is the first time I've ever found someone in the forest?"
     f "Then do the right thing next time!"
     f "[name] was probably stressed because of you."
@@ -590,7 +590,7 @@ label ch01_afterPiotrRagebaitMenu:
     you "My name is [name]. Nice to meet you."
     k "Okaaay.. My name is Barbara, I'm the president of this city. I've been in charge here for 7 years. What brings you here?"
     you "I just woke up in the forest. I don't know who I am, I don't know where I am, I only know my name."
-    you "Piotr found me and brought me to you."
+    you "Peter found me and brought me to you."
     you "And that's all I know."
     k "So, just like everyone else..."
     "Barbara writes something in her notebook."
@@ -621,9 +621,10 @@ label ch01_afterPiotrRagebaitMenu:
     k "If you go out into the forest, wolves will eat you or you'll die from some niche disease."
     you "..."
     "You are in complete shock."
-    k "That's exactly why Piotr performs those cleansing rituals."
-    you "Yeah, Piotr told me how he does it with that onyx thing."
+    k "That's exactly why Peter performs those cleansing rituals."
+    you "Yeah, Peter told me how he does it with that onyx thing."
     k "Exactly."
+    k "Those rituals are also what's keeping the monsters away."
     you "That's actually really cool."
     "The concept of magic really intrigues you."
     "What if you too can do these rituals and become a powerful magician"
@@ -631,9 +632,7 @@ label ch01_afterPiotrRagebaitMenu:
     k "Hmm...."
     k "Do you remember anything at all?"
     "But you remember nothing. Your memory is empty, like a brand new Samsung SSD T1 2TB Titan Gray USB-C drive."
-    "Your survivor instincts kick in and you think about this question"
-    "No, you dont remember most things"
-    "Yes, you remember some things, like most of your general knowledge"
+    "However, you remember some things, like most of your general knowledge, like how to cook an egg."
     you "{i}For now, it's probably better to pretend I don't remember anything.{/i}"
     you "{i}What if they wipe my memory again!{/i}"
     you "I don't remember anything."
@@ -665,9 +664,9 @@ label ch01_kurowskaDialogMenu:
             you "And what do you do?"
             k "We do everything a city does? I dont understand the question."
             you "No no, I understand."
-            you "Piotr told me you have to protect the city from some sort of monsters."
+            you "Peter told me you have to protect the city from some sort of monsters."
             k "Yes.. they are very very dangerous."
-            k "Piotr is like a hero in here. Protecting the city from them is risky."
+            k "Peter is like a hero in here. Protecting the city from them is risky."
             you "I see. So i'm guessing you can't really go outside?"
             k "No."
             you "Seems really boring."
@@ -749,20 +748,20 @@ label ch01_gettingHouseKeysGood:
 label ch01_gettingHouseKeysUniversal:
     scene bg cityhallinside with dissolve
     play music "town_night.mp3"
-    show piotr normal 
+    show peter normal 
     "You leave Barbara's office."
     p "Everything okay?! You were in there for a while..."
     you "You are very delulu, I was gone for 5 minutes."
     p "How did it go?"
     you "Look what I got!! (#flex)"
     "As you say this, you show him the keys to your new house."
-    "You hold the keys up to Piotr's face and notice an address on the keychain."
+    "You hold the keys up to Peter's face and notice an address on the keychain."
     "{i}Colacoca st. 4{/i}"
     p "Wow ok."
     p "In that case, I have to go finish the ritual from earlier that you interrupted. GOODBYE!"
-    hide piotr with dissolve
+    hide peter with dissolve
     you "{i}He's just jealous. He will forget about it tomorrow.{/i}"
-    if flag("wasRudeToPiotr"):
+    if flag("wasRudeToPeter"):
         you "{i}I think I went a little too far in that office.{/i}"
     you "{i}I mean it's not that deep. Whatever, I don't care.{/i}"
     "Before leaving the city hall, you look at the clock and see that it's 23:44"
@@ -865,7 +864,7 @@ label ch01_firstNightTownWalkPartB:
     wp "So tell me, how were the first few hours in Bratgren"
     you "So I woke up in the forest..."
     wp "This is getting interesting."
-    you "Piotr was in front of me so I immediately thought its all his fault."
+    you "Peter was in front of me so I immediately thought its all his fault."
     you "So I was kinda rude to him, you know?"
     you "He led me to Barbara and she gave me a house."
     if flag("rudeToBarbara"):
@@ -876,7 +875,7 @@ label ch01_firstNightTownWalkPartB:
     you "We will see about that!"
     "You both giggle at the thought of an apology."
     wp "I appeared in the forest just like you."
-    wp "But I didnt have Piotr to help me."
+    wp "But I didnt have Peter to help me."
     you "How did you know where to go?"
     wp "I woke up near the gate."
     you "Lucky you!"
@@ -898,10 +897,10 @@ label ch01_firstNightTownWalkPartB:
     you "That's very rude of them."
     you "And no one {i}wanted{/i} to explore?"
     wp "Actually I think we can explore the forest"
-    wp "Piotr, the guy you were extremely rude to, is in charge of all the onyx"
+    wp "Peter, the guy you were extremely rude to, is in charge of all the onyx"
     wp "He is very protective of it"
     wp "And to explore you need that onyx for protection."
-    wp "Piotr is not going to give you any just to wander in the forest."
+    wp "Peter is not going to give you any just to wander in the forest."
     wp "Especially after you were rude to him."
     "You laugh but deep inside you know she is right."
     "There's a moment of silence, which kills the mood."
@@ -1024,7 +1023,7 @@ label ch01_vasiliFirstNightMagaMenu:
             v "You think she builds roads?"
             v "NEIN!!!{nw}"
             v "She only makes it easier for you to get to work so you can produce more things."
-            v "She banned Piotr from helping Wiktoria on the farm."
+            v "She banned Peter from helping Wiktoria on the farm."
             v "Because then she wouldn't have to work."
             you "But then Wiktoria could work somewhere else? That makes no sense."
             "Vasili ignores your argument and continues his rant."

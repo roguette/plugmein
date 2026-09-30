@@ -68,9 +68,9 @@ image lis = "images/characters/lis.png"
 
 image niuniu normal = "images/characters/niuniu normal.png"
 
-image piotr angry = "images/characters/piotr angry.png"
-image piotr normal = "images/characters/piotr normal.png"
-image piotr side = "images/characters/piotr side.png"
+image peter angry = "images/characters/peter angry.png"
+image peter normal = "images/characters/peter normal.png"
+image peter side = "images/characters/peter side.png"
 
 image rafal normal = "images/characters/rafal normal.png"
 
