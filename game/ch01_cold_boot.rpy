@@ -67,14 +67,14 @@ label ch01_m_fountainFirstClick:
         "Touch the water":
             you "{i}i HAVE to touch it{/i}"
             "Either there's too little water in the fountain or the edges are way too tall for you."
-            "Almost like they dont want random people touching the water."
+            "Almost like they don't want random people touching the water."
             ".{w=0.5}.{w=0.5}."
             "!"
             you "{i}Huh{/i}"
             "You now have: {w=0.5}{b}a wet finger{/b}!"
 
         "Do not":
-            "Looking at the water you almost touched you cant help but sigh."
+            "Looking at the water you almost touched you can't help but sigh."
             "Where are your manners?"
     "You stare at the water for a moment, letting it soothe your nerves."
     return
@@ -101,7 +101,7 @@ label ch01_m_cityHallNormalFirstInteraction:
         # happy meal
         menu:
             "What's her problem?":
-                "Filip's face contorted,"
+                "Philip's face contorted,"
                 "It looks like he's having a nightmare."
                 "He rolls his eyes dramatically and lets out a very tired sigh."
                 f "You literally insulted her hair."
@@ -121,7 +121,7 @@ label ch01_m_cityHallNormalFirstInteraction:
                         f "Good."
                         f "Wait no hold on!"
                         f "What are you going to say."
-                        f "I dont want you to say something stupid and get into more trouble."
+                        f "I don't want you to say something stupid and get into more trouble."
                         menu:
                             "You put your hand on your chin and pretend to think really hard..."
                             "I was on drugs and thought she was bald.":
@@ -132,7 +132,7 @@ label ch01_m_cityHallNormalFirstInteraction:
                                 pass
                             "I thought her weave reminded me of my dead hamster.":
                                 pass
-                        "Filip snickers at your ridiculous answers."
+                        "Philip snickers at your ridiculous answers."
                         "You arent sure if its your answers which made him laugh or your stupidity."
                         f "Yeah no that is not gonna work. You will have to come up with something better."
                         you "Hmm.."
@@ -141,11 +141,11 @@ label ch01_m_cityHallNormalFirstInteraction:
                         
     else:
         f "Hey there!"
-        you "Hey Filip."
+        you "Hey Philip."
         you "I have a question..."
         menu:
             "Where is my house":
-                "Filip rolls his eyes dramatically."
+                "Philip rolls his eyes dramatically."
                 f "Did you even look at the keys?"
                 "You take the keys and put them on the table and inspect them closely"
                 "Indeed, there is a small keychain with a street name written on it."
@@ -154,8 +154,8 @@ label ch01_m_cityHallNormalFirstInteraction:
                 you "If I lose my keys the person who finds them will be able to unlock my house."
                 f "Then rip the tag off and write your name."
                 f "If someone finds the keys they will give them to us."
-                you "And what if they dont?"
-                "Filip has clearly had enough and sighs."
+                you "And what if they don't?"
+                "Philip has clearly had enough and sighs."
                 f "Then you will come to me and we will come up with something."
             "Where is everyone":
                 f "Its almost midnight and its cold as hell outside"
@@ -173,7 +173,7 @@ label ch01_m_cityHallNormalFirstInteraction:
                 you "That doesn't make it any better."
                 f "I don't see the issue. Just don't go out and you will be fine."
                 you "{i}We will see about that.{/i}"
-                you "They cant just waltz into the city?"
+                you "They can't just waltz into the city?"
                 f "No, there are people protecting Bratgren from all sorts of stuff."
                 f "Wolves arent an issue."
             "Are there any tourist traps?":
@@ -183,17 +183,17 @@ label ch01_m_cityHallNormalFirstInteraction:
                 f "It's just us here in Bratgren."
                 you "So theres literally no one else?"
                 f "As far as we are aware, yes."
-                f "The forest is way too dangerous so we didnt explore it much."
+                f "The forest is way too dangerous so we didn't explore it much."
                 you "That's a shame..."
                 f "Why? Are you already trying to escape?"
                 you "I came from a rich family and my house was way bigger than this city."
                 you "So this feels like prison."
-                "Filip finds you absolutely amusing and giggles."
+                "Philip finds you absolutely amusing and giggles."
                 f "Yeah, right."
                 f "If you ever accidentally slip and tumble all the way into the forest and meet the monsters in it"
                 f "Run back to the city."
         you "Okay..."
-    you "Well I dont want to take up more of your PRECIOUS time."
+    you "Well I don't want to take up more of your PRECIOUS time."
     you "Thank you and goodnight."
     f "Bye!"
     "You leave the city hall..."
@@ -235,11 +235,11 @@ label ch01_cold_boot:
     show peter normal at center with dissolve
     "You gather all your strength to open your eyes to see who the hell woke you up."
     "There's a tall bird guy in front of you, looking at you all weird."
-    "Everything in you wants to scoot away from him, but you cant because of the tree behind you."
+    "Everything in you wants to scoot away from him, but you can't because of the tree behind you."
     "So you just sit there and look at him."
     you "{i}A bird???{/i}"
     "You need a moment to let all this sink in. About ten seconds.\n{w=1.0}1 {w=1.0}2 {w=1.0}3 {w=1.0}4 {w=1.0}5 {w=1.0}6 {w=1.0}7 {w=1.0}8 {w=1.0}9 {w=1.0}10{nw}"
-    "Finally calmed down, you cant help but notice his very magical-looking attire."
+    "Finally calmed down, you can't help but notice his very magical-looking attire."
     "You almost lean in to look closer, but then you snap back to reality."
     "When a bird hatches from its egg, the first thing it sees becomes it's mother. Allegedly."
     "Something similar happens with you, except you think the opposite."
@@ -403,7 +403,7 @@ label ch01_peterIntroductionMenu:
             p "Right behind you actually."
             "Theres a huge wall behind you and you can only assume it guards a city."
             "You try to hide the embarrassment on your face because up until this point you haven't thought of turning around."
-            you "How convenient. Are you sure you didnt move it there with magic just to embarrass me?"
+            you "How convenient. Are you sure you didn't move it there with magic just to embarrass me?"
             p "Do you ever shut up?"
             jump ch01_peterIntroductionMenu
         "(I have no more questions)" if any([flag("askedWhereIAmStart"), flag("askedWhoPeterWas"), flag("accusedPeterOfKidnapping")]):
@@ -418,7 +418,7 @@ label ch01_afterPeterIntroductionMenu:
     "Peter is very proud of himself."
     you "What would you do if you woke up in a random forest?"
     you "There's alot to take in."
-    you "I dont know anyone, or where I am, or who I am."
+    you "I don't know anyone, or where I am, or who I am."
     "You look down at your huge paws, which five minutes ago were ordinary human hands, and you should be bamboozled,{w=.5} but you're not."
     p "Come with me, I'll take you to Ms. Barbara. She'll know what to do with you."
     you "Should I be afraid???" 
@@ -438,7 +438,7 @@ label ch01_afterPeterIntroductionMenu:
     p "I can't just leave you here."
     you "Since when are you so kind to me?"
     p "Just because I am nice like that."
-    p "Also I would go to jail if someone found out that I didnt help you."
+    p "Also I would go to jail if someone found out that I didn't help you."
     "You giggle at his joke but deep down you are wondering if Peter would leave you all alone in this forest, had that law not existed."
     
 
@@ -485,7 +485,7 @@ label ch01_afterPeterIntroductionMenu:
 
     show peter normal at center
 
-    p "Actually, don't come in yet. I still need to talk to Filip."
+    p "Actually, don't come in yet. I still need to talk to Philip."
     you "About what?"
     p "Speech is silver, silence is golden."
     "You're stunned by Peter's arrogance. You're certain he's about to talk shit about you."
@@ -544,11 +544,11 @@ label ch01_afterPeterRagebaitMenu:
     f "You can do your rituals tomorrow if you have to. [name] could have died in that forest!"
     you "Exactly!"
     f "Come here."
-    "You walk a little closer to Filip. He stands up and offers you his hand."
+    "You walk a little closer to Philip. He stands up and offers you his hand."
     "You smile like you're in a real estate commercial."
     "You don't know if you can trust him, but his vibes are definitely better than Peter's."
     you "THAT is how you greet people, Mr. Peter."
-    f "Hi. My name is Filip, and welcome to our small{w=.6}, beautiful{w=.6}, lovely{w=.6}, and at the same time cozy city of Bratgren. You probably have a huge amount of questions?"
+    f "Hi. My name is Philip, and welcome to our small{w=.6}, beautiful{w=.6}, lovely{w=.6}, and at the same time cozy city of Bratgren. You probably have a huge amount of questions?"
     you "Yes!"
     f "Do you already know anything about this city?"
     you "No!"
@@ -571,12 +571,12 @@ label ch01_afterPeterRagebaitMenu:
     you "Why are you still awake? Isn't it nighttime?"
     f "We had a problem with the city's water today and spent the whole day dealing with it."
     f "There's always something going on in this city."
-    "Filip walks up to the door and politely knocks."
+    "Philip walks up to the door and politely knocks."
     play sound "door_knock.mp3"
     f "Good evening, I have a new person here. Can I bring him in?"
     m "Sure!"
     play sound "audio/sfx_door_open.mp3"
-    "Filip opens the door and shoves you into the office, quickly closing it behind you."
+    "Philip opens the door and shoves you into the office, quickly closing it behind you."
     f "Go, go, go..."
 
     scene bg office
@@ -662,7 +662,7 @@ label ch01_kurowskaDialogMenu:
             you "So what is this Bratgren?"
             k "We are a small community built near lake Świtezianka."
             you "And what do you do?"
-            k "We do everything a city does? I dont understand the question."
+            k "We do everything a city does? I don't understand the question."
             you "No no, I understand."
             you "Peter told me you have to protect the city from some sort of monsters."
             k "Yes.. they are very very dangerous."
@@ -696,7 +696,7 @@ label ch01_kurowskaDialogMenu:
         "Ask about work." if not flag("askedAboutWork"):
             $ flag("askedAboutWork", True)
             you "What about work?"
-            you "I know Filip works here, with you. What does everyone else do?"
+            you "I know Philip works here, with you. What does everyone else do?"
             you "Everyone else as in regular people."
             k "Around here, work basically means doing anything that benefits the city or its people."
             k "There are farmers, bakers, couriers..."
@@ -786,9 +786,9 @@ label ch01_firstNightTownWalk:
     scene bg lanastreetnight with dissolve
     jump ch01_firstNightTownWalkPartB
 
-# ch01_m_enteringChurch goes here and I dont want lanastreet in the bg
+# ch01_m_enteringChurch goes here and I don't want lanastreet in the bg
 label ch01_firstNightTownWalkPartB:
-    $ telemetry_flag("choseWiktoriaP")
+    $ telemetry_flag("choseVictoriaP")
     "Just as you decide to look away from this beautiful architectural monument, you see...{w=.1} someone."
     you "{i}FINALLY!{/i}"
     you "{i}This is the first person I've seen on this street.{/i}"
@@ -798,7 +798,7 @@ label ch01_firstNightTownWalkPartB:
     you "{i}What do they want???{/i}"
     "You approach the mysterious figure in front of the church while taking every possible safety precaution."
     show wp normal with dissolve
-    $ flag("metWiktoriaP", True)
+    $ flag("metVictoriaP", True)
     you "Hi?"
     m "Oops."
     m "I thought you were someone else."
@@ -837,7 +837,7 @@ label ch01_firstNightTownWalkPartB:
     wp "He is SO annoying..."
     $ flag("knowsAboutVasili", True)
     wp "See that bakery behind you?"
-    wp "When Rafał was closing he had a few buns that were going to go stale"
+    wp "When Raphael was closing he had a few buns that were going to go stale"
     wp "So instead of being wasteful he gave them away to people"
     wp "And his high calorie verity shaped ass said that..."
     "Victoria points her finger up to the sky and starts speaking in a forced, very nerdy voice"
@@ -855,9 +855,9 @@ label ch01_firstNightTownWalkPartB:
     "You twitch at the thought of coming anywhere near him"
     wp "As you can tell I'm his #1 fan."
     you "And my mother is lady gaga."
-    "Wiktoria laughs at your sassiness."
+    "Victoria laughs at your sassiness."
     wp "Lets walk together."
-    wp "You dont want to be alone when {i}he{/i} starts talking to you."
+    wp "You don't want to be alone when {i}he{/i} starts talking to you."
     "You walk to the square talking about how you both hate it when you are trying to open yoghurt and the foil splits in two."
     scene expression loc_bg("square")
     show wp normal at center with dissolve
@@ -875,7 +875,7 @@ label ch01_firstNightTownWalkPartB:
     you "We will see about that!"
     "You both giggle at the thought of an apology."
     wp "I appeared in the forest just like you."
-    wp "But I didnt have Peter to help me."
+    wp "But I didn't have Peter to help me."
     you "How did you know where to go?"
     wp "I woke up near the gate."
     you "Lucky you!"
@@ -1023,9 +1023,9 @@ label ch01_vasiliFirstNightMagaMenu:
             v "You think she builds roads?"
             v "NEIN!!!{nw}"
             v "She only makes it easier for you to get to work so you can produce more things."
-            v "She banned Peter from helping Wiktoria on the farm."
+            v "She banned Peter from helping Victoria on the farm."
             v "Because then she wouldn't have to work."
-            you "But then Wiktoria could work somewhere else? That makes no sense."
+            you "But then Victoria could work somewhere else? That makes no sense."
             "Vasili ignores your argument and continues his rant."
             v "Don't be fooled by the streetlights - the city lighting is actually a surveillance network."
             v "The streetlights have eyes!"
@@ -1039,7 +1039,7 @@ label ch01_vasiliFirstNightMagaMenu:
             v "That's why I'm running for president of Bratgren!"
             v "Under my leadership, the city will enter a new era of anti-capitalist balance."
             v "We will abolish private property."
-            "Hearing this insane monologue you cant help it and zone out for god knows how long."
+            "Hearing this insane monologue you can't help it and zone out for god knows how long."
             "Due to sheer luck Vasili doesnt notice you ignoring him and continues his sleep-inducing monologue."
             v "The decadence of the bourgeoisie must be brought to an end."
             v "Vote for me, comrade!!!"

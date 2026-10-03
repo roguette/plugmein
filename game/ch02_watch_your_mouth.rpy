@@ -17,7 +17,8 @@ label ch02_h_bed:
 
 label ch02_h_window:
     scene expression loc_bg("house")
-    if flag("ch02_seen_bug"):
+    if not flag("ch02_seen_bug"):
+        $ flag("ch02_seen_bug", True)
         "Theres a west conifer seed bug outside the window, crawling, doing whatever its little brain is telling it to."
     else:
         "There's nothing particularly interesting about the window."
@@ -33,22 +34,21 @@ label ch02_h_fridge:
     else:
         $ flag("ch02_opened_fridge", True)
         "As you open the door the gnome jumps onto his little feet and hurriedly turns on the light in the fridge."
-        "Still weirded out by his existence, you smile and notice he is very happy to see you."
-        you "Hello!"
+        you "Hello!!"
         you "{i}Still deaf...{/i}"
         if flag("ch02_ate_at_table"):
             $ flag("ch02_angry_gnome", True)
-            you "I'm so sorry i don't have any food..."
+            you "I'm so sorry I don't have any food..."
             "But the gnome seems to have broken the language barrier this ONE time."
             "He stomps his little foot against the thin shelf, crosses his arms and turns around."
-            you "I'll get you food tomorrow i promise!"
+            you "I'll get you food tomorrow I promise!"
             "But he doesn't hear you this time and just stands there."
             "Disgusted by your selfishness, you close the fridge door."
         else:
             $ flag("ch02_fed_gnome", True)
             "You put the rest of your buns on the top shelf, just in case the gnome was hungry and close the door."
             "The little gnome dives into the paper bag."
-            "Someone is CLEARLY hungry."
+            "Someone is definitely hungry."
 
     call screen s_House()
 
@@ -59,8 +59,8 @@ label ch02_h_table:
         "You don't have any food."
     else:
         $ flag("ch02_ate_at_table", True)
-        "You put the paper bag with Rafał's buns onto the table and devour all of them, leaving zero trace of their existence."
-        you "{i}Now to shower and i can go sleep.{/i}"
+        "You put the paper bag with Raphael's buns onto the table and devour all of them, leaving zero trace of their existence."
+        you "{i}Now to shower and I can go sleep.{/i}"
     call screen s_House()
 
 
@@ -68,14 +68,13 @@ label ch02_h_suspicious_pot:
     scene expression loc_bg("house")
     $ flag("ch02_seen_suspicious_pot", True)
     "This pot looks identical to the one near it."
-    "Its a regular, probably extremely heavy, flower pot."
-    "Drawn on it were oriental-style crane drawings."
+    "Its a regular, probably extremely heavy, flower pot with asian cranes."
     "Everything was standing on a very basic nightstand."
     "It's age was made visible by the coffee mug stains on the top surface."
-    "The nightstand had two drawers - one bigger, one smaller with two similar metal handles."
+    "The nightstand had two drawers - one bigger, one smaller with similar metal handles."
     "Everything was supported by four also similar metal legs, which were standing on the..."
     you "{i}Wait what is that{/i}"
-    "What you previously thought was a dead bug turned out to be a hole in the floor."
+    "What you previously thought was a dead bug turned out to be a keyhole in the floor."
     "And when you inspect it closer, you see a handle further away, under the nightstand."
     "You move the plant before pulling on it, which, unsurprisingly, fails."
     "While getting up your keys fall out, and you take another look at them."
@@ -107,10 +106,9 @@ label ch02_h_bathroom:
 
 label ch02_h_wardrobe:
     scene expression loc_bg("house")
-    "This is the only place that, surprisingly, wasnt empty when you arrived"
+    "This is the only place that, surprisingly, wasnt empty when you arrived."
     "There were some shorts, some pants. All of it looks cheap, almost disposable."
     "Just some clothes to change into before you buy something new."
-
     call screen s_House()
 
 
@@ -131,7 +129,7 @@ label ch02_watch_your_mouth:
     "You instinctively cover yourself but you can still see the sun through the gaps between your fingers."
     "It's time to stop being so lazy and get off the bed."
     "Now that it's not dark anymore you can see the interior of the house better"
-    "The house didnt change much, except for the fact that the morning light is making it feel less abandoned."
+    "The house didn't change much, except for the fact that the morning light is making it feel less abandoned."
     "You lazily get off your bed and change your clothes in front of a mirror."
     "It's still you in the reflection, just not smelly and covered in forest dirt."
     $ time.setTime(10,32)
@@ -144,8 +142,8 @@ label ch02_watch_your_mouth:
     else:
         "The only thing you can think of is filling your stomach."
     "Luckily, there is a fridge in the kitchen."
-    you "{i}Okay what kind of house would this be if I didnt get food?{/i}"
-    you "{i}That would be very rude{/i}"
+    you "{i}Okay what kind of house would this be if I didn't get food?{/i}"
+    you "{i}That would be very rude.{/i}"
     you "{i}Oh my god what if its magical and can just summon food...{/i}"
     menu:
         "You close your eyes and try to summon..."
@@ -162,11 +160,8 @@ label ch02_watch_your_mouth:
             "This food is going to require some concentration."
             "Suddenly you remember that you shouldn't eat dead doves."
             you "{i}I need to dream bigger. I want a rotisserie chicken.{/i}"
-        "I'm not hungry":
-            you "{i}Actually no if i stay hungry i will stay skinny.{/i}"
-            you "{i}I'm gonna be so skinny after this! I'll just get something to drink.{/i}"
 
-    "You open the fridge and, to your surprise, there is nothing in it except a gnome who keeps turning the light on and off."
+    "You open the fridge and, to your surprise, there's nothing in it except a gnome who keeps turning the light on and off."
     you "{i}What the hell{/i}"
     you "Hello?"
     you "Who are you?"
@@ -176,14 +171,13 @@ label ch02_watch_your_mouth:
     you "Excuse me young man what are you doing in my fridge?"
     "He looks up at you with a gnarly smile and waves his hand."
     you "{i}I'm not getting paid enough for this.{/i}"
-    you "{i}In fact I dont get paid at all.{/i}"
+    you "{i}In fact I don't get paid at all.{/i}"
     "You leave the door open just in case he was trapped in there and wants to get out only for him to start dusting the top shelf."
     you "{i}???{/i}"
-    "Due to pure confusion you close the fridge door."
     you "{i}Did I summon that?{/i}"
     you "{i}Wait what if he's hungry.{/i}"
     you "{i}I'll get food and share...{/i}"
-    "The gnome was only a brief distraction from the calories in your stomach, or lack thereof."
+    "The gnome was only a brief distraction from the lack of calories in your stomach."
     "As you leave the house, you almost forget to close the door, but at the last moment you remember what kind of neighborhood you live in."
     "You nearly faint from hunger. It seems being skinny wasn't worth it."
     "There is one person in town who can help you right now - Barbara."
@@ -194,21 +188,21 @@ label ch02_watch_your_mouth:
     "On your way to see Barbara, you admire the buildings and nature, since you couldn't do so the day before."
     "The walk to city hall was very pleasant, though the worst part was ignoring the smells coming from the bakery."
     "Your stomach is growling, but unfortunately you don't have any money to pay for a potential meal."
-    you "{i}I CAN'T TAKE IT... I'm so hungry. I should have borrowed money from someone yesterday. Well, I just have to hold out until the end of the day.{/i}"
-    you "{i}Or maybe they'll let me put this bread on credit and I'll pay for it later... Although that practice disappeared with the fall of the PRL...{/i}"
+    you "{i}I CAN'T TAKE IT!!! I'm so hungry. I should have borrowed money from someone yesterday.{/i}"
+    you "{i}Or maybe they'll let me put this bread on credit and I'll pay for it later. Nevermind, that disappeared with the fall of USSR.{/i}"
     you "I can do this!!!"
     "The streets are now bustling with life, and everyone is hurrying to work."
     "As you approach city hall, it impresses you once again - not as much as yesterday, but it is still very impressive."
-    "There is no time to waste, so you enter the building and look for Filip."
-    jump ch02_goingToKur
+    "There is no time to waste, so you enter the building and look for Philip."
+    jump ch02_goingToBarbara
 
-label ch02_goingToKur:
+label ch02_goingToBarbara:
     play sound "sfx_footsteps_a.mp3"
     scene bg cityhallinside with dissolve
     "As you walk inside, you smell freshly brewed coffee and warm buns. The smell is driving you insane."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    "As Filip leaves Barbara's office carrying an empty tray, you walk up to him."
+    "As Philip leaves Barbara's office carrying an empty tray, you walk up to him."
     show filip normal with dissolve
     you 'Hey...'
     f "Heyy! "
@@ -218,36 +212,33 @@ label ch02_goingToKur:
     you "I havent eaten anything since yesterday"
     you "Do you have literally any food here i'm hungrier than a shein worker"
     show filip normal
-    f "Yeah. Every day I bring Barbara Rafał's warm buns with coffee."
+    f "Yeah. Every day I bring Barbara Raphael's warm buns with coffee."
     you "Could you give me one? I don't have any money, so I can't buy food."
     you "I'm literally about to DIE if I don't eat something!!!"
-    f "Sure. I have some stale ones i was too lazy to throw out. Is that okay?"
+    f "Sure. I have some stale ones I was too lazy to throw out. Is that okay?"
     you "YES"
     f "Okay"
     show filip normal at offscreenright with move
-    "Filip puts the plate down by the sink and disappears into the storage room."
+    "Philip puts the plate down by the sink and disappears into the storage room."
     "You can hear him moving something out of the way just to reach the bun you so desperately crave."
     show filip normal at center with move
-    "He comes back and hands you one of Rafał's buns. It's stale, but you don't exactly have a choice."
-    "You grab Rafał's bun and devour it. Even though it's expired - just like Tuleja - it still tastes top-tier."
+    "He comes back and hands you one of Raphael's buns. It's stale, but you don't exactly have a choice."
+    "You grab Raphael's bun and devour it. Even though it's expired - just like Tuleja - it still tastes top-tier." # TODO: remember what this meant ???
     you "Oh my god, what is this thing made of? It's stale but it's so good that...{w} I have no words."
-    f "It tastes that good because you're starving."
-    f "But honestly, they are actually really good. You should go to the bakery when they're fresh."
-    f "They're even better then."
-    f "Everyone in this city loves Rafał's buns."
+    f "It tastes good because you're starving."
+    f "You should go to the bakery when they're fresh. Everyone here LOVES Raphael's buns."
     you "Where did you buy them?? I want one too when I have money."
     f "At BBB in the town square."
     you "What do you mean BBB???"
     f "You don't get it? {i}{u}Big Buns Bakery{/u}{/i}..."
     f "Anyway, it's right here. The bakery is pretty big, so you'll definitely notice it."
-    "Filip points out the bakery's location on the map."
-    "You quickly figure out where it is in the town square."
+    "Philip points out the bakery's location on the map."
     f "And about the money..."
     f "You should ask Barbara about work. She'll help you."
     you "Thank you! Thank you! Thank you!"
     you "You're literally saving my life right now!"
     play sound "door_knock.mp3"
-    "You politely knock on Barbara's door, trying to do it exactly the way Filip did yesterday."
+    "You politely knock on Barbara's door, trying to do it exactly the way Philip did yesterday."
     with vpunch
     k "WHO IS THAT?"
     you "It's me!"
@@ -264,22 +255,21 @@ label ch02_goingToKur:
     you "Good morning. Yesterday you told me to come see you about that job... I think..."
     k "Yes, I remember."
     if flag("rudeToBarbara"):
-        jump ch02_goingToKurRude
+        jump ch02_goingToBarbaraRude
     else:
-        jump ch02_goingToKurNotRude
+        jump ch02_goingToBarbaraNotRude
 
-label ch02_goingToKurRude:
-    k "Find yourself a job."
+label ch02_goingToBarbaraRude:
+    k "Find it yourself." 
     you "But..."
-    k "'But, but, but' - quit trying to weasel your way out of it!"
-    k "Get out and go find work!"
-    "A furious Barbara throws you out of her office."
+    k "'But, but, but' Stop trying to be lazy."
+    k "Get out and go find work."
     show bg secretary with vpunch
     play sound "sfx_door_slam.mp3"
     you "{i}I didn't even get the chance to apologize...{/i}"
     jump ch02_goingToFindAJob
 
-label ch02_goingToKurNotRude:
+label ch02_goingToBarbaraNotRude:
     k "You have to find a job yourself. Just ask your friends, I'm sure they'll help you."
     "Barbara starts looking for something on her desk again."
     "..."
@@ -290,30 +280,30 @@ label ch02_goingToKurNotRude:
     k "Here."
     you "What is this?"
     you "Why are these coins so heavy?"
-    k "Because there's alot of them"
-    k "I was supposed to give this to Filip to use as change for people but then he raised the prices"
-    k "And now i do not need this"
+    k "Because there's alot of them?"
+    k "I was supposed to give this to Philip to use as change for people but then he raised the prices"
+    k "And now I do not need this"
     k "I've kept them in my office for a whole month and wanted to get rid of them anyway, so this is a win-win situation."
     k "Now go find a job and make me proud!"
     you "Thank you so much. I definitely will."
     scene bg secretary with dissolve
     play sound "sfx_door_open.mp3"
-    "You leave her office and say goodbye to Filip. Now you finally have some money and can actually do things{w=0.5} without starving to death."
+    "You leave her office and say goodbye to Philip. Now you finally have some money and can actually do things{w=0.5} without starving to death."
     scene bg citysquareday with dissolve
     play sound "sfx_footsteps_b.mp3"
     "After rush hour, the streets are practically empty apart from a few homeless people and some mildly threatening individuals."
     you "{i}I couldn't have spent THAT long at Barbara's if there's barely a living soul on the street. Everyone's probably at work.{/i}"
     you "{i}And now it's time to buy myself a NUTRITIOUS breakfast.{/i}"
     you "{i}I'm going to BBB.{/i}"
-    "As you walk past the fountain, a man attacks you. He's short, but still threatening."
+    "As you walk past the fountain, a man attacks you. He's short, but very threatening."
     play music "outfoxingthefox.mp3"
     show kamil normal with vpunch
     m "Give me all the money you have!!!"
-    you "WHAT! No, please don't hurt me, but I can't give you this money."
-    you "I haven't eaten anything since yesterday. I got this money as a gift. I need it for food and clothes because I'm hungry and basically naked."
-    m "Alright, I have a heart, so I'll let you fight for whether or not you have to give me your money."
-    you "THAT'S LITERALLY NOT FAIR!"
-    m "Life isn't fair."
+    you "No."
+    you "I need it for food and clothes because I'm hungry and basically naked."
+    m "Alrighty then, I'll let you fight for your money."
+    you "But this isn't fair!"
+    m "Life is never fair."
     m "Now answer my question: 'What's the capital of France?'"
     "Your entire life flashes before your eyes as he asks the question."
     "There is no time to think. Only to act."
@@ -366,13 +356,12 @@ label ch02_KamilRobberyWrongChoice:
     m "GG FREAKING EZ, NOW GET LOST BEFORE I TAKE EVEN MORE FROM YOU."
     menu:
         "Respond normally":
-            you "Buy cheap, buy twice."
-            m "???"
+            you "You know that I can report you?"
+            m "You will never catch me!"
             hide kamil with dissolve
-            you "{i}I don't think he understood me...{/i}"
         "Be a final girl":
             you "But I don't have anything else."
-            m "Ha-ha-ha! You're poor!"
+            m "HA! You're poor!"
             you "Then why are you robbing people?"
             you "Because you don't have any money of your own?"
             m "You don't even know what you'd spend it on anyway."
@@ -388,10 +377,10 @@ label ch02_KamilRobberyWrongChoice:
     you "{i}I'm kind of scared of what she might do, but whatever. I can't think of anything else.{/i}"
     scene bg secretary with dissolve
     play sound "sfx_footsteps_a.mp3"
-    "After being robbed there is no other choice but to go back to Barbara"
-    "Even if she doesn't have any more money for you, it would be wise to report this"
-    "When you enter the city hall, filip is not there, which is confirmed by a cacophony of noises coming from the storage room"
-    "With no other choice, you knock on Barbara's door"
+    "After being robbed there is no other choice but to go back to Barbara."
+    "Even if she doesn't have any more money for you, it would be wise to report this."
+    "When you enter the city hall, Philip is not there, which is confirmed by a cacophony of noises coming from the storage room."
+    "With no other choice, you knock on Barbara's door."
     "..."
     you "Good morning! It's me again."
     k "Come in."
@@ -402,8 +391,8 @@ label ch02_KamilRobberyWrongChoice:
     you "Sorry to bother you again, but I got robbed."
     you "They took all my money. Now I don't know what I'm supposed to do."
     you "Could you help me?"
-    "You smile like you're in a real estate commercial."
-    k "What am I, a fortune teller?"
+    "You smile like like Tiahra Nelson."
+    k "You think I'm some sort of fairy?"
     you "No... But I thought you'd help someone in need..."
     k "I gave you everything I had. Nobody else got anything, and they're not complaining."
     k "Find. A. Job."
@@ -423,16 +412,16 @@ label ch02_goingToFindAJob:
             you "{i}Besides, I don't think I have a better option.{/i}" 
             $ flag("workedAtVasili", True)
             jump ch02_workingAtVasili
-        "Filip":
-            you "{i}Barbara doesn't have any work for me, but Filip might.{/i}" 
-            $ flag("workedAtFilip", True)
-            jump ch02_workingAtFilip
+        "Philip":
+            you "{i}Barbara doesn't have any work for me, but Philip might.{/i}" 
+            $ flag("workedAtPhilip", True)
+            jump ch02_workingAtPhilip
 
-label ch02_workingAtFilip:
-    "You go back to city hall and head over to Filip."
+label ch02_workingAtPhilip:
+    "You go back to city hall and head over to Philip."
     scene bg secretary with dissolve
     show filip normal with dissolve
-    "This time he is actually doing his job and not lollygagging in the storage room"
+    "This time he is actually doing his job and not lollygagging in the storage room."
     play sound "sfx_door_open.mp3"
     you "It's me again."
     f "Hii."
@@ -441,48 +430,47 @@ label ch02_workingAtFilip:
     you 'Do you have any work for me?'
     you 'Is there literally anything I can do?'
     f 'Hmm...'
-    f "I {i}do{/i} need to move mail from that storage room to Barbara but i am wayy too lazy for that"
-    you "I can do it"
-    f "Then wait here"
+    f "I {i}do{/i} need to move mail from that storage room to Barbara but I am wayy too lazy for that."
+    you "I can do it."
+    f "Then wait here."
     show filip normal at offscreenright with move
-    "Filip gets up and goes into his closet again." 
+    "Philip gets up and goes back into his closet again." 
     "You can hear him moving heavy boxes again, but this time it takes longer." 
-    you "{i}How big is that storage room what{/i}"
+    you "{i}How big is that storage room???{/i}"
     show filip normal at center with move
-    "Filip finally gets out of the suspiciously large storage room while pulling a huge luggage cart full of paper" 
-    "Before you know it, there are four tall stacks of paper in front of you"
-    you "Okay i have two questions"
-    you "First of all is what the hell is in that storage room?"
-    you 'And what the hell is this'
-    f 'Oh, that\'s just some paperwork and mail that never made it to Kurowska.'
+    "Philip finally gets out of the suspiciously large storage room with a huge luggage cart full of paper." 
+    you "Okay I have two questions"
+    you "First of all is what the hell is that storage room?"
+    you 'And what the hell is this???'
+    f 'Oh, that\'s just some paperwork and mail that never made it to Barbara.'
     f 'I just kept collecting it for years and figured it wasn\'t that important, so I held onto it.'
     f 'And now she wants to see all of it.'
     you 'So what am I supposed to do with this??'
-    f 'Take all of it and bring it to Kurowska.'
+    f 'Take all of it and bring it to Barbara.'
     you "Cant you just shove the whole luggage cart through the door?"
-    f "No because it is too wide"
-    you "Oh my god"
+    f "No, because it is too wide."
+    you "Oh my god."
     you 'But I can\'t lift all that, are you insane??'
     f 'I\'m not telling you to carry it all at once, dummy.'
-    f 'There\'s like 120kg of paper here, I don\'t expect you to lift all of it.'
+    f 'There\'s like 30 thousand pages here, I don\'t expect you to lift all of it.'
     f 'Especially with that snatched waist of yours...'
-    you 'Okay cool...\n {i}HE NOTICED!!!{/i}'
-    "You pick up a stack of paper the size of anna karenina and your spine cracks"
-    "Then, with all that paper still in your hand, you take one step and decide against doing a second one"
+    you 'Okay..\n {i}HE NOTICED!!!{/i}'
+    "You pick up a stack of paper the size of Anna Karenina and your spine cracks."
+    "Then, with all that paper still in your hand, you take one step and decide against doing a second one."
     "You go back and leave half of your 40cm stack on the luggage cart"
-    "Only then your back allows you to move"
-    "You knock on Barbara's door"
-    if flag("rudeTo Barbara"):
-        k "WHO KNOCKS LIKE THAT FOR BEELZEBUB'S SAKE??"
+    "Only then your back allows you to move."
+    "You knock on Barbara's door..."
+    if flag("rudeToBarbara"):
+        k "ARE YOU CRAZY YOU ARE GOING TO PUNCH A HOLE THROUGH MY DOOR??"
     else:
         k "Come in."
     scene bg office with dissolve
     show kurowska normal at center with dissolve
-    "You enter her office and see her knee-deep in documents, like she always is"
+    "You enter her office and see her knee-deep in documents, like she always is."
     you "{i}Does she really have time to read all this?{/i}"
     you 'Where do I put this?'
     k 'On my desk.'
-    you 'Are you sure? This paper is NOT skinny.'
+    you "No because there's alot and i dont want to pay for a new desk."
     k 'Fine, leave it on the floor.'
     "You leave the first stack of papers on the floor." 
     scene black with dissolve
@@ -491,14 +479,13 @@ label ch02_workingAtFilip:
     "Every headline is worse than the last."
     "The first page is titled 'Report on Noisy Neighbors'."
     if flag("metVasili") or flag("knowsAboutVasili"):
-        you "{i}Obviously it\'s about Vasili, pff..{/i}"
+        you "{i}Obviously it's about Vasili..{/i}"
     "With every line it gets harder not to laugh because this report is so absurd it barely feels real."
-    "No wonder Filip decided it wasn't important - it looks like some kind of fanfic."
-    you "{i}\"Shouting 'VAPORIZE THE BOURGEOISIE!!!' while I was working was inappropriate.\" {/i}"
-    you "{i}WHO WROTE THIS?{/i}"
+    "No wonder Philip decided it wasn't important - it looks like some kind of fanfic."
+    "{i}\"Shouting 'VAPORIZE THE BOURGEOISIE!!!' while I was working was inappropriate.\" {/i}"
     "You bravely carry them one by one, but part of you just wants to keep reading this garbage."
     "The headlines keep getting wilder..."
-    "{i}'Rafał's hat is causing drama among Bratgrenians.'{/i}"
+    "{i}'Raphael's hat is causing drama among Bratgrenians.'{/i}"
     "{i}'Complaint about Colorado bugs attacking tomatoes.'{/i}"
     "{i}'Someone took a shit in front of my house, please remove it.'{/i}"
     scene bg office with dissolve
@@ -507,18 +494,18 @@ label ch02_workingAtFilip:
     you 'That\'s a lot of mail...'
     k 'What? What mail?'
     you 'The stuff I\'ve been carrying for the last 40 minutes.'
-    k 'MAIL?? Please get it out of here, that\'s Filip\'s job, I have more important things to deal with!'
+    k 'MAIL?? Please get it out of here, that\'s Philip\'s job, I have more important things to deal with!'
     you 'Then why did I spend so long carrying it all here?'
-    k "You tell me"
-    "You dejectedly pick up the pile of mail and go back to Filip."
+    k "You tell me."
+    "You DEJECTEDLY pick up the pile of mail and go back to Philip."
     scene bg secretary with dissolve
     show filip normal with dissolve
     f 'What are you doing back here with those papers?'
     you 'Barbara said you\'re the one who\'s supposed to answer the mail.'
     you "And that I have to carry it all back."
-    f 'WHAT? They\'ll close the vestibule before I finish answering all of these...'
+    f 'WHAT? They\'ll close the Beforehay before I finish answering all of these...'
     f 'Fine... bring all of it here.'
-    "After another 20 minutes, you finish working for Filip, who is now lying devastated on top of a pile of papers."
+    "After another 20 minutes, you finish working for Philip, who is now lying devastated on top of a pile of papers."
     f 'Thanks for the help, even though basically nothing changed.'
     f 'As promised, here\'s some spare change.'
     jump ch02_gotMoney
@@ -539,7 +526,7 @@ label ch02_workingAtVasili:
     play sound "sfx_footsteps_a.mp3"
     you "{i}Seems safe enough, maybe Vasili lives there...{/i}"
     "As you get closer, the muffled singing grows louder."
-    "When you knock on the door, your favorite - also your only - fisherman steps outside."
+    "When you knock on the door, your favorite, also your only, fisherman steps outside."
     show vasili normal with dissolve
     if flag("endorsedCommunism"):
         v "Welcome, comrade."
@@ -548,10 +535,10 @@ label ch02_workingAtVasili:
         you "haha.. I get it. But I didn't come here to chat."
         you "Barbara told me to find work, so I figured I'd ask if you had anything for me to do."
         v "Ah, the free market...{w=.3} nothing but problems..."
-        v "In a normal workplace you'd get a job immediately, and now you money."
-        you "I don't have any for food."
+        v "In a normal workplace you'd get a job and money immediately."
+        you "Haha... I don't have any money for food."
         v "Fine... although this will be the first and {b}LAST{/b} time we give you work - we despise the free market..."
-        v "As we said, you must collectivize the tax from the petty bourgeoisie residing within our grand estate." 
+        v "You must collectivize the tax from the petty bourgeoisie residing within our grand estate." 
         v "We, as nobles, demand your full obedience and indifference toward the pleas and bribes of those beneath us." 
         "In other words, you need to collect the eggs from the chickens in the coop." 
         v "Additionally, we request that you condemn the actions of the bourgeoisie by setting them upon the proper intellectual path, using the biography of our magnificent leader and father of our nation - Ed Sheeran, who ought to rule over our common folk for decades to come." 
@@ -564,7 +551,7 @@ label ch02_workingAtVasili:
         v "Unfortunately not." 
         v "Your lineage does not permit such indulgence against your axioms." 
         v "Your actions and obligations are distinct, therefore, within this predicament, under no conceivable circumstance - by the power bestowed upon us by our lord and father Ed Sheeran - are we able to grant you shelter within our modest place of existence." 
-        you "{i}{b}WTF IS GOING ON HERE. I DON'T WANT THIS. I WANT TO GO HOME... our HOME???{/b}{/i}"
+        you "{i}{b}WTF??? I DON'T WANT THIS. I WANT TO GO HOME... our HOME???{/b}{/i}"
         you "Okay... I guess I'll go collect the eggs...?"
         v "Collect the tax."
         v "Just remember to be ruthless."
@@ -589,7 +576,7 @@ label ch02_workingAtVasili:
         kura "You need to do WHAT???"
         you "Collect the eggs....{w=.6} AHHH{w=.3} collect the tax???"
         kura "Okay, you should've said that from the start."
-        kura "Unfortunately, we don't have much to hand over because Vasili collected a tax this morning for sleeping through the night..."
+        kura "Unfortunately, we don't have much to hand over because Vasili collected a tax this morning."
         you "Whatever. I just need to earn enough to eat and you will {b}NOT{/b} see me here again."
         scene bg vasilihouse
         "After collecting all the eggs, you go back to Vasili to hand them over. You knock and he opens the door again."
@@ -598,14 +585,14 @@ label ch02_workingAtVasili:
         you "Yes...{w=.3} Can I get paid now? I'm starving."
         v "Fine... I just don't know if you'll make it before the bakery closes."
         v "There was a delivery today, so the lines are probably four hours long...{w=.6} Oh wait{w=.3}, free market..."
-        v "If you hurry, you can still get Rafał's buns while they're warm."
+        v "If you hurry, you can still get Raphael's buns while they're warm."
         you "Thank you! Goodbye." 
         v "Farewell, comrade."
         hide vasili with dissolve
     else:
         v "Hello!"
         you "Hi..."
-        v "What brings you to my humble doorstep."
+        v "What brings you to my humble doorstep?"
         you "Barbara told me to find work, so I figured I'd ask if you had anything for me to do."
         you "So... do you have anything I could do?"
         you "I really need this. I don't even have money for food."
@@ -615,16 +602,16 @@ label ch02_workingAtVasili:
         v "Their enclosure is right behind the house."
         v "(If I were you, I'd hurry before they get too angry.)"
         you "{i}Okay... not the hardest job in the world, but I hope those foxes are nice to me.{/i}"
-        "Vasili gives you fox food in an IKEA container and you leave the house to feed the hungry little foxes."
+        "Vasili gives you fox food and you waste no time going to the hopefully less communist foxes."
         hide vasili with dissolve
         "You go behind his house and see..."
-        "Actually, you don't see anything because there are no foxes"
+        "Actually, you don't see anything because there are no foxes."
         you "{i}Excusez moi{w=.6} nobody's here!{/i}"
         menu:
             "Make fox noises":
-                    "You can't think of a single sound a fox makes."
-                    "Foxes don't meow, they don't bark, they don't go into alpha mode."
-                    "Maybe foxes are just quiet? All these thoughts race through your head while you stand there like an idiot holding a food container."
+                "You can't think of a single sound a fox makes."
+                "Foxes don't meow, they don't bark, they don't go alpha mode."
+                "Maybe foxes are just quiet? All these thoughts race through your head while you stand there like an idiot holding a food container."
         you "{i}What am I supposed to do???{w=.3} I'm about to cry...{/i}"
         you "{i}I KNOW!!!{/i}"
         you "{i}I'll leave the food behind the house and they'll come on their own.{/i}"
@@ -635,17 +622,17 @@ label ch02_workingAtVasili:
         you "{i}Hell no!{/i}"
         you "Actually!{w=.3} There's nothing behind your house."
         v "What do you mean?"  
-        you "{i}I said what i said.{/i}"
+        you "{i}I said what I said.{/i}"
         you "Yeah, I just left the food you gave me there."  
         you "Now where's the money."
         you "How much do I get for all my hard work?"
         v "What do you mean there are no foxes behind my house?"  
         you "I said what I said because that's how it is?"  
-        v "Bruh. maybe they didn't come out because you're new."
+        v "Bruh. maybe they didn't come out because you're new to them."
         v "You should stay there. Maybe they'll come then."  
         hide vasili with dissolve
         "You go behind his house yet again and see a little fox eating from the container you left there."
-        "Its fur is whiter than the teeth in a Colgate ad. It looks very weak..."
+        "Its fur is whiter than the teeth in a toothpaste ad. It looks very weak..."
         you "{i}Oh{w=.3} my{w=.3} god!{w=.6} Why is it so cute?{/i}"  
         you "{i}I can literally see its ribs through its skin... Does that mean it's dying?{/i}"
         "You go back to Vasili and knock on his door for the third time."
@@ -655,18 +642,17 @@ label ch02_workingAtVasili:
         you "It's very petite. What do I do??"
         v "I need to see it!"
         "He leaves the house with a red aura trailing behind him."
-        "You both go behind the house and watch the little white fox continue eating its food"
+        "You both go behind the house and watch the little white fox continue eating its food."
         show vasili normal at leftish with move 
         show lis at rightish with dissolve
         if random.randint(1,100) == 1:
             "You're close to the fox, so Vasili starts whimpering."
         else:
             "You're close to the fox, so Vasili starts whispering."
-        v "Oh my god, can't you see it's injured?"
-        "You whisper back."
-        you "How do you know it's injured?"  
-        v "Can't you see its leg is bent 90 degrees south?"  
-        you "How do you even know where south is?"  
+        v "{size=-10}Oh my god, can't you see it's injured?{/size}"
+        you "{size=-10}How do you know it's injured?{/size}"
+        v "{size=-10}Can't you see its leg is bent 90 degrees south?{/size}"
+        you "{size=-10}How do you even know where south is?{/size}"
         lis "I can hear you!"  
         you "..."
         "You look at Vasili with pity."
@@ -682,8 +668,7 @@ label ch02_workingAtVasili:
         you "What{w=1} just happened..."  
         show vasili normal at center with move 
         v "That idiot is always spraining something."
-        you "Okay...{w=.6} I'm not going to ask questions."
-        you "Just pay me and I'm leaving."
+        you "I'm not going to ask questions. Just pay me and I'm leaving."
         v "Fine. Here."
         you "Thanks!"
         v "See you, comrade!"
@@ -696,9 +681,6 @@ label ch02_gotMoney:
     scene bg citysquareday with dissolve
     "You're sick of being hungry, so you head straight to BBB."
     "(Big Buns Bakery) duhh"
-    jump ch02_gotMoneyBakeryEntrance
-
-label ch02_gotMoneyBakeryEntrance:
     scene bg bakeryfrontday with dissolve
     play sound "sfx_footsteps_b.mp3"
     "The bakery really is big. The smells drifting through the street are driving you insane."
@@ -709,25 +691,25 @@ label ch02_gotMoneyBakeryEntrance:
     "But.{w=0.5} There's a line."
     "This leaves you with time to take in the surroundings"
     "From the brick walls to the warm glow of incandescent light bulbs, every piece of the interior was deliberately chosen by the owner"
-    "Every little detail, even the posters made the bakery feel premium - a word your wallet is not ready to hear"
+    "Every little detail, even the posters made the bakery feel premium - a word your wallet is not ready to hear."
     show wp normal at leftish with moveinleft
     show fraucrusty normal at center with moveinleft
     show rafal normal at rightish with moveinright
     "There are two people in front of you."
     "First in line is Frau Crusty."
-    if flag("metWiktoriaP"):
+    if flag("metVictoriaP"):
         you "Oh, hey."
         wp "Hey! What's up?"
         
-        if flag("workedAtFilip"):
+        if flag("workedAtPhilip"):
             you "It was awful... I had to work..."
             wp "Who did you go to?"
-            you "Filip."
-            you "He made me carry documents to Kurowska."
+            you "Philip."
+            you "He made me carry documents to Barbara."
             you "And when I finished, Barbara made me carry all the letters back."
             you "Because he's the one who's supposed to read them."
             wp "You should've demanded money and left after that."
-            wp "And skibidi."
+            you "I didn't have to beacause Philip paid me."
         elif flag("workedAtVasili"):
             you "It was awful... I had to work..."
             wp "Who did you go to?"
@@ -735,9 +717,11 @@ label ch02_gotMoneyBakeryEntrance:
             if flag("endorsedCommunism"):
                 you "You know what, it wasn't bad."
                 you "We have similar political views."
-                "Wiktoria gives you a bombastic side eye."
+                "Victoria gives you a bombastic side eye."
             else:
-                you "Jesus, it was awful, he kept talking about communism the entire time."
+                you "IT WAS HORRIBLE! It felt like listening to proletariat-"
+                with vpunch
+                you "I MEAN PROPAGANDA."
             you "Don't even get me started."
             you "You know him better than I do, so you can probably imagine what it was like."
             wp "Let me guess."
@@ -745,14 +729,14 @@ label ch02_gotMoneyBakeryEntrance:
             you "Yeah..."
             wp "My condolences..."
         else:
-            you "Can you believe Kurowska gave me money"
+            you "Can you believe Barbara gave me money."
             wp "Just like that??"
-            you "Yep!"
+            you "Yes."
             you "Just like that."
             wp "Aren't things going a little too well for you?"
             you "No."
     else:
-        "Right in front of you is Wiktoria P."
+        "Right in front of you is Victoria P."
     jump ch02_gotMoneyBakeryCustomer
 
 label ch02_gotMoneyBakeryCustomer:
@@ -765,17 +749,16 @@ label ch02_gotMoneyBakeryCustomer:
     menu:
         "Give her some coins":
             you "Here."
-            frau "My gyatt is staying here for good!"
             frau "Thank you, kind furry."
             with vpunch
             show fraucrusty normal at offscreenleft with move
-            "Frau Crusty leaves the bakery with the cake using a C-skip."
+            "Frau Crusty leaves the bakery with the cake using Skip C."
 
         "Pretend you didn't hear anything":
             frau "You're all rude and aggressive."
             with vpunch
             show fraucrusty normal at offscreenleft with move
-            "Frau Crusty leaves the bakery without the cake using a C-skip."
+            "Frau Crusty leaves the bakery without the cake using Skip C."
     hide fraucrusty
     jump ch02_gotMoneyBakeryTea
 
@@ -783,18 +766,18 @@ label ch02_gotMoneyBakeryTea:
     wp "Okaaay."
     m "Hii."
     wp "Hey, what's up?"
-    m "Nothing really, I've been delirious all day."
+    m "Nothing really, I felt delusional all day."
     wp "Sounds pretty standard for you."
     "They both start laughing."
-    wp "I'll have 3 Rafał buns."
+    wp "I'll have 3 buns."
     m "Sure."
-    "You can see entire baskets full of Rafał buns in the back."
-    "You stare at those buns like they're luxury single-serve desserts from Los Angeles."
-    "Except Rafał's buns don't cost $15 for 150g."
+    "You can see entire baskets full of buns in the back."
+    "You stare at those buns like they're luxury desserts from Los Angeles."
+    "Except Raphael's buns don't cost $15 for 150g."
     "You have absolutely no idea what currency this city uses - this is the first time you've seen it."
     "You have some money, but you don't know whether it's enough for one bun or a hundred."
     you "{i}These buns are insanely popular here.{/i}"
-    you "{i}I would destroy one of those right now..{/i}"
+    you "{i}I want to destroy one of those with my chompers right NOW.{/i}"
     m "Here you go."
     "Suddenly, another man you don't recognize walks in."
     "He looks like some kind of pimp."
@@ -802,30 +785,30 @@ label ch02_gotMoneyBakeryTea:
     show wp normal at rightish
     show rafal normal at right 
     with move
-    m "Jesus, you again."
-    m "Yes, Rafał, it's me!"
+    m "It's you."
+    m "Yes, Raphael, it's me!"
     r "What do you want from me this time?"
     m "Show me what's under your hat."
-    "Wiktoria starts whispering to you so she doesn't draw attention to herself."
-    wp "That's Niuniu."
+    "Victoria starts whispering to you so she doesn't draw attention to herself."
+    wp "That's Solomon."
     wp "He's the guy who comes up with conspiracy theories around town."
-    wp "And this time Rafał is the victim."
+    wp "And this time Raphael is the victim."
     wp "He was at a Taylor Spit concert, and during the show she threw her hat at him."
     wp "He's worn it ever since."
-    wp "And Niuniu decided he's hiding something underneath it."
+    wp "And Solomon decided he's hiding something underneath it."
     show rafal normal at center 
     show wp normal at rightish 
     with move
     r "Nope, okay, I've had enough."
-    "Rafał grabs a broom and hits Niuniu."
+    "Raphael grabs a broom and hits Solomon."
     with vpunch
-    n "AAAAA"
-    r "Sharp or dull"
+    n "Ow!"
+    r "Sharp or dull?"
     n "Sharp?"
     r "No. Try again."
     with vpunch
     "He hits him again."
-    n "Yeah, that's sharp."
+    n "Sharp."
     r "Get out of my bakery before I play sharp or dull with a brick."
     n "Okay, okay."
     show niuniu normal at offscreenleft with move
@@ -840,24 +823,23 @@ label ch02_gotMoneyBakeryTea:
         "Skip the brick":
             $ telemetry_flag("skippedBrickDescription")
             jump ch02_brickDescriptionEnd
-        "No i want to hear all about it":
+        "No I want to hear all about it":
             pass
     'At first glance, you can tell that there\'s no way to tell exactly how old it is - the countless chips and scratches make that obvious.'
     'In fact, it was so old that assigning any number to its age felt insulting not only to the brick, but also to whoever made it.'
     "Calling it simply 'old' would erase the centuries it had survived."
     'The brick had long since lost its sharp edges and become rounded, as if it had been used many times.'
     'One corner was especially worn down, and even the smartest person in town couldn\'t tell you why it was chipped or where exactly that corner even was.'
-    'Only Rafał could know - assuming he knows or remembers what happened to it.'
+    'Only Raphael could know - assuming he knows or remembers what happened to it.'
     'The brick\'s only purpose was being thrown, so you try not to jump to conclusions about who will be, or already has been, its victim.'
     'Looking at the chipped corner, it becomes clear that it is the result of some airborne event.'
     'You could almost call it a miracle that the brick hasn\'t split in half yet.'
-    "That it hasn\'t split in half like a watermelon falling onto a knife from 100m in some YouTube video"
     'Its amorphous porcelain structure had remained strong all these years, which is more than can be said for some relationships.'
     'The brick was old enough to pass for the oldest object on this planet - or wherever you are now.'
     'You don\'t know exactly where you are, but one thing is certain - this brick is older than the ground you\'re standing on.'
-    'Old age was no longer an adjective for it, but an inherent property.'
-    'No matter where Rafał touches the brick with his little paws, some dust and crumbled clay falls off, like the brick has dandruff.'
-    'Rafał completely ignores the mess he just made, as if he\'s used to it.'
+    'Old age was no longer an adjective for it, but it\'s intrinsic property.'
+    'No matter where Raphael touches the brick with his little paws, some dust and crumbled clay falls off, like the brick has dandruff.'
+    'Raphael completely ignores the mess he just made, as if he\'s used to it.'
     'He also ignores the dust on his soft paws because he knows he\'ll put this delicate clay product away in a moment anyway, so there\'s no point washing them.'
     'At this point, any reasonable person would stop thinking about the brick.'
     'You don\'t.'
@@ -865,7 +847,7 @@ label ch02_gotMoneyBakeryTea:
     'One side of the brick was darker than the others - as if it had been exposed to the elements while the rest sat safely inside a wall.'
     "Real scientists could spend their entire lives studying this difference and still never reach an agreement."
     "That was how mysterious this brick was."
-    'There\'s no way to tell whether Rafał removed the brick or whether it fell out on its own.'
+    'There\'s no way to tell whether Raphael removed the brick or whether it fell out on its own.'
     'You can tell, however, that the brick {i}belongs{/i} to this bakery because of its distinctive but faded red color, duller than the rest of the bricks in the bakery.'
     'Looking closer, you see all its imperfections - marks left behind by time.'
     'The cracks are filled with dust so old and so deeply embedded that not even water could reach it.'
@@ -873,9 +855,9 @@ label ch02_gotMoneyBakeryTea:
     'This brick was probably older than you and had been in this city long before you were born.'
     'It has witnessed hundreds, if not thousands, of people and millions of spoken words.'
     'The brick knows all the city\'s secrets, but it cannot speak or reveal the truth.'
-    'It also had a clearly designated spot under Rafał\'s counter, where he kept the register and handled daily business.'
+    'It also had a clearly designated spot under Raphael\'s counter, where he kept the register and handled daily business.'
     'Not every customer knew - or could even suspect - that this brick existed.'
-    'If Rafał pulls it out in front of you, it means you\'re either a victim or a close friend.'
+    'If Raphael pulls it out in front of you, it means you\'re either a victim or a close friend.'
     'You also notice small multicolored stains scattered across its surface - each one different, each with its own shape, size, and story.'
     'One might be two days old while the one next to it could be over two years old, with no way to tell which is which.'
     'Because carbon dating hasn\'t been invented in this universe.'
@@ -883,56 +865,54 @@ label ch02_gotMoneyBakeryTea:
     'From the oblivious footsteps of people too busy to notice an ordinary brick, to the heavy rain that simply happened to soak everyone.'
     'All of those events didn\'t just leave stories behind - they became sediment.'
     'A thin, fragile layer of tiny things that changed this brick, brick by brick, step by step.'
-    "You stare at the little holes in the brick when suddenly something starts to dawn on you."
+    "You stare at the imperfect holes in the brick when suddenly something clicks."
     "The brick makes you feel something you haven't felt before."
     "At least not in this city."
     "For reasons you can't explain, looking at it fills you with determination."
-    "Determination so strong that all your plans, the ones you've postponed forever, suddenly seem not only possible but necessary."
-    'You can no longer stop the whirlwind of thoughts this ancient piece of architecture has caused in your head, so you let out a long, dramatic sigh.'
+    "Determination so strong that all your plans, the ones you've pushed into the far and almost improbable future, suddenly seem not only possible but necessary."
+    'You can no longer stop the flood of thoughts this ancient piece of architecture has caused in your head, so you let out a long, dramatic sigh.'
     'You want every other brick in this cozy café to know that you understand its history.'
     'This brick and its past inspire you to keep going and never give up.'
     'To an ordinary person it was just a brick, but your eyes see something else - a source of inspiration and determination inside such a simple object.'
     "Helen Keller once said - \"Alone we can do so little; together we can do so much\" - and nothing could describe this brick better."
     jump ch02_brickDescriptionEnd
 label ch02_brickDescriptionEnd:
+    hide wp normal with dissolve
     'The brick was a part of something bigger, but its impossible to tell what.'
     "Bricks can be used to build anything - from a small wall during a protest in France to a huge villa that can withstand a tornado."
-    'Just like one of those bricks, you are a part of this city'
+    'Just like one of those bricks, you are a part of this city.'
     'A city that welcomed you with open arms.'
     r "Why are you staring like that"
-    "The sudden question catches you off-guard, interrupting your delusions"
+    "The sudden question catches you off-guard, interrupting your delusions."
     you "I got inspired?"
-    "When you snap back to reality you notice Wiktoria had already left the bakery"
-    r "Weirdo"
-    "Rafał puts the brick back where it belongs - below the register"
-    r "Okay so what do you want"
-    you "Uhhh"
-    "There are many buns laid out in front of you"
-    "Each one was deliberately laid out to appear different"
-    "when in reality its the same exact thing"
-    you "I'll have four buns"
-    "Rafał wipes his dirty paws and assembles your order"
+    "When you snap back to reality you notice Victoria had already left the bakery."
+    "Raphael puts the brick back where it belongs - below the register."
+    r "How may i help you?"
+    you "Uhhh..."
+    "There are many buns laid out in front of you."
+    "Each one was deliberately laid out to appear different."
+    "When in reality its the same exact thing."
+    you "I'll have four buns."
+    "Raphael wipes his dirty paws and assembles your order."
     r "Anything else?"
-    you "Do you have any cold drinks i could buy?"
-    r "Yes i sell bottled performative-ness"
-    you "what"
-    r "Its an iced matcha latte"
-    you "No thank you"
-    "The black cat eagerly taps the buttons on the cash register"
-    r "That will be $80"
-    you "Uhh.. i have a really stupid question"
+    you "Do you have any cold drinks I could buy?"
+    r "There's Yuzu matcha with oat milk, wired headphones and a book written by a female author"
+    you "No thank you."
+    "The black cat eagerly taps the buttons on the cash register."
+    r "That will be $80."
+    you "Uhh.. I have a really stupid question.."
     r "Yes?"
     you "Is $80 alot of money?"
-    you "You know, i was born yesterday"
-    r "Its not alot but its not spare change"
-    r "There's cheaper food across the street if you want that"
-    r "In here you are also paying for the skills needed to make such a bun"
-    "BBB is the equivalent of a millenial burger place with black gloves, fake brick walls and food served on a cutting board"
-    you "Here you go"
-    r "Thank you and BON APPETIT"
-    you "Bye"
-    "You look at the bag of coins in your hand and start thinking"
-    "Would you still be holding money right now if Peter didnt come to help?"
+    you "You know.. I was born yesterday.."
+    r "Its not alot but its not spare change."
+    r "There's cheaper food across the street if you want that."
+    r "In here you are also paying for the skills needed to make such buns."
+    "BBB is the equivalent of a millenial burger place with black gloves, fake brick walls and food served on a cutting board."
+    you "Here."
+    r "Thank you and BON APPETIT!"
+    you "Bye."
+    "You look at the money in your hand and start thinking."
+    "Would you still be doing this well if Peter didn't come to help?"
     "And to think that you were so rude to him"
     you "{i}I really do need to apologize to him{/i}"
     you "Wait"
@@ -943,17 +923,15 @@ label ch02_brickDescriptionEnd:
     you "Okay thanks"
     you "But... i'm not done"
     you "I have an unusual request"
-    you "I want to get something for Peter. What should i get?"
-    r "Well.. I dont know how to describe him BUT if he was a color he would be blue"
-    r "And not the sky blue because that has too much sky"
-    r "Also he wouldnt be navy blue either bc its blue with responsibilities"
-    r "Its the kind of blue you think of when looking at something green"
+    you "I want to get something for Peter. What should I get?"
+    r "Well.. I don't know how to describe him BUT if he was a color he would be blue."
+    r "And not the sky blue because that has too much sky."
+    r "Also he wouldnt be navy blue either because its blue with responsibilities."
+    r "Its the kind of blue you think of when looking at something green."
     r "Maybe get something.. rectangular..??"
-    "With every word Rafal says your confidence quickly gets replaced with confusion"
-    "They say that a smile goes a long way when trying to be polite"
-    "That is exactly why you keep smiling even though you have absolutely no idea what he is saying"
+    "With every word Rafal says your confidence gets shrouded by confusion."
     menu:
-        you "Okay that makes sense"
+        you "Okay that makes sense!"
         "3 cups of coffee in a paper bag":
             $ flag("gotCoffeeForPeter", True)
             $ peterFoodPoints = 2
@@ -965,10 +943,10 @@ label ch02_brickDescriptionEnd:
             $ peterFoodPoints = 1
 
     r "Okay give me just a moment!"
-    "Rafał twirls on his right foot and assembles your order with pride"
+    "Raphael twirls on his right foot and assembles your order with pride"
     "You watch him swiftly assemble your order, and when he comes back you are already ready to pay"
     "He puts your apology gift on the table, and the plain paper bag gives you an idea"
-    you "Can i have a pen i want to write something"
+    you "Can I have a pen I want to write something"
     r "Yes sure"
     menu:
         you "{i}I want to write...{/i}"
@@ -976,9 +954,9 @@ label ch02_brickDescriptionEnd:
             $ peterWritingPoints = 2
         "Sorry but be more fun next time":
             $ peterWritingPoints = 0
-        "Sorry i forgot your name":
+        "Sorry I forgot your name":
             $ peterWritingPoints = 1
-        "Sorry, i forgot your name":
+        "Sorry, I forgot your name":
             $ peterWritingPoints = 0
     "You scribble away trying to keep every letter steady and even with the rest"
     you "{i}Perfect{/i}"
@@ -989,7 +967,7 @@ label ch02_brickDescriptionEnd:
     scene expression loc_bg("lanastreet") with dissolve
     "Finally happy, you leave the bakery and head straight to Peter"
     scene expression loc_bg("cityexit") with dissolve
-    "Rafał was right - it {i}was{/i} hard to miss the shop"
+    "Raphael was right - it {i}was{/i} hard to miss the shop"
     "Especially the HUGE wooden door which was blocking half the pavement"
     scene bg potionshop with dissolve
     you "HELLO EVERYONE"
@@ -1001,11 +979,11 @@ label ch02_brickDescriptionEnd:
     you "{i}Why does he leave his shop open if he spends most of the time there{/i}"
     you "{i}Thats like sooo dangerous gurl i-{/i}"
     "Peter opens his mouth to start speaking but before he can mutter a single word you overpower him with your proclamation"
-    you "I've come to announce that i am a different [name]"
-    you "I am no longer [name] i am now [name] version TWO"
+    you "I've come to announce that I am a different [name]"
+    you "I am no longer [name] I am now [name] version TWO"
     you "You hear me? I am version DOS."
-    you "I can even be version three but i dont even know how to say that in spanish"
-    you "And to prove how much i've changed i hereby bequeath you a little treat"
+    you "I can even be version three but I don't even know how to say that in spanish"
+    you "And to prove how much i've changed I hereby bequeath you a little treat"
     "You put on a smug grin before placing the paper bag directly onto the table, and sliding it over the countertop, careful not to scratch it"
     you "Enjoy"
 
@@ -1020,7 +998,7 @@ label ch02_brickDescriptionEnd:
     "His eyes quickly skim the text"
     if peterWritingPoints == 2:
         "He exhales and lowers his guard"
-        "Peter cant possibly be mad at you"
+        "Peter can't possibly be mad at you"
     if peterWritingPoints == 1:
         "Peter ignores the message and moves on"
     elif peterWritingPoints == 0:
@@ -1033,7 +1011,7 @@ label ch02_brickDescriptionEnd:
         "Peter decided that taking the cake out was too risky so he ripped the bag"
         "Which revealed a slightly-smooshed cake"
         "The cake doesn't look very presentable anymore but its still edible"
-        you "Like i said, Enjoy"
+        you "Like I said, Enjoy"
 
     elif flag("gotBreadForPeter"):
         "Peter lifts the bag because he has had enough and does not want to deal with this right now"
@@ -1047,13 +1025,12 @@ label ch02_brickDescriptionEnd:
         you "okay okay wait"
         you "Here's the receipt. You can go back to the store and return it for store credit"
         "Peter rolls his eyes"
-        you "i'm actually really sorry this was supposed to be an actual gift but i didnt check the bread"
+        you "i'm actually really sorry this was supposed to be an actual gift but I didn't check the bread"
     elif flag("gotCoffeeForPeter"):
         you "One is poisoned by the way"
         p "WHAT"
         p "No thank you"
         you "Just kidding"
-        you "żarcik kosmonaucik"
         "peter looks suspiciously at the coffees and exhales"
     
     you "Apology accepted?"
@@ -1066,7 +1043,7 @@ label ch02_brickDescriptionEnd:
         p "Don't push it"
     elif peterFoodPoints + peterWritingPoints > 1:
         $ flag("peterApologyAccepted", True)
-        p "Yeah i guess"
+        p "Yeah I guess"
         you "I can hear the doubt in your voice that is extremely rude"
         you "Where are your manners young man"
         p "That's exactly what i'm talking about you are NEVER serious"
@@ -1076,8 +1053,8 @@ label ch02_brickDescriptionEnd:
         jump ch02_peterApologyDenied
 
     you "Okay okay fine"
-    you "Ignore the food i just wanted to say sorry"
-    you "Yes i can be rude but I'm not rude because i have tofu with you its just because I'm sassy like that"
+    you "Ignore the food I just wanted to say sorry"
+    you "Yes I can be rude but I'm not rude because I have tofu with you its just because I'm sassy like that"
     p "..."
     "Peter inspects you top to bottom, his gaze landing on your eyes and piercing you"
     p "Fine"
@@ -1096,18 +1073,18 @@ label ch02_peterApologyDenied:
     p "Get out."
     you "Fine!{i}Hmph!{/i}"
     scene expression loc_bg("cityexit") with dissolve
-    you "{i}I did exactly what Rafał told me to and he got mad{/i}"
+    you "{i}I did exactly what Raphael told me to and he got mad{/i}"
     you "{i}Wow.{/i}"
-    "You head straight to Rafał. After all, you think it's all his fault"
+    "You head straight to Raphael. After all, you think it's all his fault"
     "Before going back to the bakery, you wipe your feet on Peter's cute welcome mat."
     scene bg bakeryinside with dissolve
     show rafal normal with dissolve
     r "Good m- You're back!"
     you "Yes."
-    r "Is there anything i can help you with?"
+    r "Is there anything I can help you with?"
     you "I bought the thing you told me to apologize to Peter and now he is mad at me."
     you "Why did you even suggest that?"
-    "For a moment, Rafał lowers his eyebrows and just stares at you."
+    "For a moment, Raphael lowers his eyebrows and just stares at you."
     r "What do you mean \"apologize\"?"
     r "You didn't tell me you wanted to apologize."
     you "I didn't?"
@@ -1117,8 +1094,8 @@ label ch02_peterApologyDenied:
     you "Its not THAT bad, I guess. It's simple and very stupid."
     you "When I woke up in that forest, I immediately assumed that it was Peter who summoned me there."
     you "So, naturally, I was angry at him and I was very rude."
-    "Rafał doesn't say anything and just exhales."
-    you "So what do i do?"
+    "Raphael doesn't say anything and just exhales."
+    you "So what do I do?"
     r "The best apology would be to leave him alone for now."
     "..."
     you "Okay."
@@ -1132,7 +1109,7 @@ label ch02_peterApologyAccepted:
     "There's a moment of silence that makes everything very awkward. Someone HAS to start the conversation."
     you "So what do you sell here?"
     p "A lot of things actually."
-    p "Look around, if something piques your interest i will tell you all about it"
+    p "Look around, if something piques your interest I will tell you all about it"
     "You stop leaning on the countertop and walk around the small store."
     "Every single shelf is covered in various bottles, trinkets, baubles, feathers, sticks and other magic-adjacent paraphernalia."
     "Despite the store's small size, there is everything a wizard would need."
@@ -1149,13 +1126,13 @@ label ch02_peterApologyAccepted:
     p "No. Well yes but not everything."
     p "While yes, you can just find stuff, I craft like 2/3rds of the things I sell here."
     you "You can just make these??"
-    p "No i dont \"just\" make things, it takes alot of time and alot of effort."
+    p "No I don't \"just\" make things, it takes alot of time and alot of effort."
     you "Why would someone even want this?"
     p "Well... not many people. People often come here to buy medicine."
     you "{i}He dodged my question. Wow.{/i}"
     p "If you ever become sick come to me."
     you "I definitely will."
-    p "Now, if you dont mind, I have other matters to tend to."
+    p "Now, if you don't mind, I have other matters to tend to."
     you "It's totally fine. Thank you for showing me around."
     p "Goodbye."
     jump ch02_afterPeterApologyOutcome

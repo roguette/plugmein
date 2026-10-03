@@ -136,7 +136,7 @@ label lake_direction_sign:
                 call generic_unavailable
         "Vasili's house →":
             call generic_unavailable
-        "Niuniu's house →":
+        "Solomon's house →":
             call generic_unavailable
 
     call screen s_walkable_Field() with dissolve
@@ -165,7 +165,7 @@ label city_hall:
                 $ ch01_f_wentToCityHall = True
                 call ch01_m_cityHallNormalFirstInteraction
             else:
-                "Filip is very busy. I shouldn't be bothering him right now"
+                "Philip is very busy. I shouldn't be bothering him right now"
 
     else:
         call generic_unavailable

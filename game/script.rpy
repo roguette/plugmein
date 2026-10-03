@@ -169,7 +169,7 @@ label start:
     if TESTING or renpy.is_in_test():
         $ name = "TEST"
     else:
-        $ name = renpy.input("Jak masz na imię")
+        $ name = renpy.input("What is your name?")
         $ name = name.strip()
 
     jump ch00_bus_stop
